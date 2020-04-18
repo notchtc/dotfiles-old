@@ -1,0 +1,13 @@
+# Aliases
+# Shorter apt commands
+alias apt-install="sudo apt-get install"
+alias apt-remove="sudo apt-get remove"
+alias apt-update"sudo apt-get upgrade"
+alias ppa-add="sudo add-apt-repository"
+alias ppa-update="sudo apt-get update"
+# Time saving
+alias src="source"
+alias e="$EDITOR"
+alias filec="echo 'File count:\n$(ls -l -A | grep -v ^l | wc -l)'"
+alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
+
