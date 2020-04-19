@@ -10,6 +10,7 @@ Plug 'ObserverOfTime/coloresque.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'shinchu/lightline-gruvbox.vim'
 Plug 'preservim/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 call plug#end()
 
 set number
@@ -19,6 +20,8 @@ set clipboard=unnamedplus
 set mouse+=a
 set guicursor+=a:blinkon1
 set background=dark
+
+map <C-n> :NERDTreeToggle<CR>
 
 let g:lightline = {
       \ 'colorscheme': 'gruvbox',
