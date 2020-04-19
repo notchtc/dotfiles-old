@@ -1,10 +1,6 @@
 # Cha0t1c's Dotfiles
-This repo is used for keeping my own dotfiles and so you can use them too if You want.
-
-## Screenshots
-![Terminal on Startup](https://cha0t1c-is-a.living-me.me/i/dvxt.png)
-![Terminal in Neovim](https://cha0t1c-is-a.living-me.me/i/0do4.png)
-![Nerdtree in Neovim](https://cha0t1c-is-a.living-me.me/i/1hfn.png)
+This repo is used for keeping my own dotfiles and so you can use them too if You want.\
+[Screenshots](#screenshots) are at the bottom
 
 ## Things you need
 (to use every dotfile)
@@ -35,3 +31,8 @@ I recommend using the things mentioned in [Things you need](#things-you-need)
 - filec (Counts all the files in a directory except **.**, **..** and **symlinks**)
 - e (Opens the neovim or something different if you changed it in the .ea file)
 - src (basically source but shorter)
+
+## Screenshots
+![Terminal on Startup](https://cha0t1c-is-a.living-me.me/i/dvxt.png)
+![Terminal in Neovim](https://cha0t1c-is-a.living-me.me/i/0do4.png)
+![Nerdtree in Neovim](https://cha0t1c-is-a.living-me.me/i/1hfn.png)
