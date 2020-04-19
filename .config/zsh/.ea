@@ -23,6 +23,7 @@ export PATH="$JAVA_HOME/bin:$ZSH_CONFIG_FILES:$PATH"
 # Shorter apt commands
 alias apt-install="sudo apt-get install"
 alias apt-remove="sudo apt-get remove"
+alias apt-clean="sudo apt-get autoremove"
 alias apt-update"sudo apt-get upgrade"
 alias ppa-add="sudo add-apt-repository"
 alias ppa-update="sudo apt-get update"
