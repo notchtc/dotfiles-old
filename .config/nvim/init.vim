@@ -13,7 +13,7 @@ Plug 'preservim/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 call plug#end()
 
-set number
+set number relativenumber
 set hlsearch
 set noshowmode
 set clipboard=unnamedplus
