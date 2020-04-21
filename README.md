@@ -34,5 +34,6 @@ I recommend using the things mentioned in [Things you need](#things-you-need)
 
 ## Screenshots
 ![Terminal on Startup](https://cha0t1c-is-a.living-me.me/i/e3bq.png)
+(To make ufetch look like on the screenshot remove ${bold} from the color variables and replace the current colors in ${insert_name_of_color} to cyan)
 ![Terminal in Neovim](https://cha0t1c-is-a.living-me.me/i/0yl8.png)
 ![Nerdtree in Neovim](https://cha0t1c-is-a.living-me.me/i/24ot.png)
