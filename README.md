@@ -33,6 +33,6 @@ I recommend using the things mentioned in [Things you need](#things-you-need)
 - src (basically source but shorter)
 
 ## Screenshots
-![Terminal on Startup](https://cha0t1c-is-a.living-me.me/i/dvxt.png)
-![Terminal in Neovim](https://cha0t1c-is-a.living-me.me/i/0do4.png)
-![Nerdtree in Neovim](https://cha0t1c-is-a.living-me.me/i/1hfn.png)
+![Terminal on Startup](https://cha0t1c-is-a.living-me.me/i/e3bq.png)
+![Terminal in Neovim](https://cha0t1c-is-a.living-me.me/i/0yl8.png)
+![Nerdtree in Neovim](https://cha0t1c-is-a.living-me.me/i/24ot.png)
