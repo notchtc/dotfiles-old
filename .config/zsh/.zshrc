@@ -34,17 +34,15 @@ COMPLETION_WAITING_DOTS="true"
 plugins=(git
 	zsh-autosuggestions
 	zsh-syntax-highlighting
-	zsh-vim-mode
 	)
 
 source $ZSH/oh-my-zsh.sh
 
 source $DOTZSH/.ea
 
+bindkey -v
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-compinit -d $XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION
-xdotool key Escape
-echo "\033c"
 zsh ~/.local/bin/ufetch.sh
