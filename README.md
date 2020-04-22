@@ -7,7 +7,6 @@ This repo is used for keeping my own dotfiles and so you can use them too if You
    - [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh)
       - [Powerlevel10k](https://github.com/romkatv/powerlevel10k)
          - The [MesloLGS NF](https://github.com/romkatv/powerlevel10k/blob/master/README.md#meslo-nerd-font-patched-for-powerlevel10k) font
-      - [zsh-vim-mode](https://github.com/softmoth/zsh-vim-mode)
       - [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
    - [ufetch](https://gitlab.com/jschx/ufetch) (Preferably installed in **~/.local/bin** under the name **ufetch.sh**, so that you don't need to change the .zshrc file)
 - xdotool (To enter normal vim-mode on startup)
