@@ -28,8 +28,9 @@ alias apt-update"sudo apt-get upgrade"
 alias ppa-add="sudo add-apt-repository"
 alias ppa-update="sudo apt-get update"
 # Time saving
+alias sudo="sudo "
 alias src="source"
 alias e="$EDITOR"
-alias filec="echo 'File count:\n$(ls -l -A | grep -v ^l | wc -l)'"
+alias filec="echo 'File count:\n$(ls -A -l | grep -v ^l | wc -l)'"
 alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
-
+alias clrt='cd ~/.local/share/Trash/files && rm -r * && cd ~-'
