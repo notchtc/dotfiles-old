@@ -8,10 +8,11 @@ This repo is used for keeping my own dotfiles and so you can use them too if You
       - [Powerlevel10k](https://github.com/romkatv/powerlevel10k)
          - The [MesloLGS NF](https://github.com/romkatv/powerlevel10k/blob/master/README.md#meslo-nerd-font-patched-for-powerlevel10k) font
       - [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
-   - [ufetch](https://gitlab.com/jschx/ufetch) (Preferably installed in **~/.local/bin** under the name **ufetch.sh**, so that you don't need to change the .zshrc file)
-- xdotool (To enter normal vim-mode on startup)
+   - neofetch
 - Neovim (to use the neovim config file, obviously)
    - [vim-plug](https://github.com/junegunn/vim-plug)  (The Neovim config file downloads this automatically)
+- i3
+   - polybar
 
 Note: I assume that you know something about ~~GNU/Linux, or as I've recently taken to calling it, GNU plus~~ Linux.
 I highly recommend using the things mentioned in [Things you need](#things-you-need), unless you want to do some editing.
@@ -28,6 +29,5 @@ I highly recommend using the things mentioned in [Things you need](#things-you-n
 - src (Basically source but shorter)
 ## Screenshots
 ![Terminal on Startup](https://cha0t1c-is-a.living-me.me/i/e3bq.png)
-(To make ufetch look like on the screenshot remove ${bold} from the color variables and replace the current colors in ${insert_name_of_color} to cyan)
 ![Terminal in Neovim](https://cha0t1c-is-a.living-me.me/i/0yl8.png)
 ![Nerdtree in Neovim](https://cha0t1c-is-a.living-me.me/i/24ot.png)
