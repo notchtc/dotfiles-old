@@ -28,6 +28,4 @@ I highly recommend using the things mentioned in [Things you need](#things-you-n
 - e (Opens Neovim or something different if you changed it in the .ea file)
 - src (Basically source but shorter)
 ## Screenshots
-![Terminal on Startup](https://cha0t1c-is-a.living-me.me/i/e3bq.png)
-![Terminal in Neovim](https://cha0t1c-is-a.living-me.me/i/0yl8.png)
-![Nerdtree in Neovim](https://cha0t1c-is-a.living-me.me/i/24ot.png)
+New screenshots coming soon
