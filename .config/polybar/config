@@ -18,14 +18,14 @@
 
 [colors]
 ;background = ${xrdb:color0:#222}
-background = #222
-background-alt = #444
+background = #32302f
+background-alt = #282828
 ;foreground = ${xrdb:color7:#222}
-foreground = #dfdfdf
-foreground-alt = #555
-primary = #ffb52a
-secondary = #e60053
-alert = #bd2c40
+foreground = #ffffff
+foreground-alt = #928374
+primary = #d79921
+secondary = #b16286
+alert = #8f3f71
 
 [bar/example]
 monitor = ${env:MONITOR:HDMI-1}
@@ -33,8 +33,8 @@ width = 100%
 height = 27
 ;offset-x = 1%
 ;offset-y = 1%
-radius = 6.0
-fixed-center = false
+radius = 3.5
+fixed-center = false 
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -43,7 +43,7 @@ line-size = 3
 line-color = #f00
 
 border-size = 2
-border-color = #00000000
+border-color = #1d2021
 
 padding-left = 0
 padding-right = 2
@@ -207,7 +207,7 @@ type = internal/cpu
 interval = 2
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #f90000
+format-underline = #d3869b
 label = %percentage:2%%
 
 [module/memory]
@@ -215,7 +215,7 @@ type = internal/memory
 interval = 2
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #4bffdc
+format-underline = #83a598
 label = %percentage_used%%
 
 [module/wlan]
@@ -268,7 +268,7 @@ time-alt = %H:%M:%S
 
 format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #0a6cf5
+format-underline = #458588
 
 label = %date% %time%
 
@@ -283,19 +283,19 @@ label-muted =  muted
 label-muted-foreground = #666
 
 bar-volume-width = 10
-bar-volume-foreground-0 = #55aa55
-bar-volume-foreground-1 = #55aa55
-bar-volume-foreground-2 = #55aa55
-bar-volume-foreground-3 = #55aa55
-bar-volume-foreground-4 = #55aa55
-bar-volume-foreground-5 = #f5a70a
-bar-volume-foreground-6 = #ff5555
+bar-volume-foreground-0 = #79740e
+bar-volume-foreground-1 = #79740e
+bar-volume-foreground-2 = #98971a
+bar-volume-foreground-3 = #98971a
+bar-volume-foreground-4 = #fabd2f
+bar-volume-foreground-5 = #fe8019
+bar-volume-foreground-6 = #fb4934
 bar-volume-gradient = false
-bar-volume-indicator = |
+bar-volume-indicator = ▊
 bar-volume-indicator-font = 2
-bar-volume-fill = ─
+bar-volume-fill = █
 bar-volume-fill-font = 2
-bar-volume-empty = ─
+bar-volume-empty = █
 bar-volume-empty-font = 2
 bar-volume-empty-foreground = ${colors.foreground-alt}
 
@@ -334,7 +334,7 @@ adapter = ACAD
 full-at = 98
 
 format-charging = <animation-charging> <label-charging>
-format-charging-underline = #ffb52a
+format-charging-underline = #fabd2f
 
 format-discharging = <animation-discharging> <label-discharging>
 format-discharging-underline = ${self.format-charging-underline}
@@ -366,7 +366,7 @@ thermal-zone = 0
 warn-temperature = 60
 
 format = <ramp> <label>
-format-underline = #f50a4d
+format-underline = #fb4934
 format-warn = <ramp> <label-warn>
 format-warn-underline = ${self.format-underline}
 
