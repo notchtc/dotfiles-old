@@ -30,7 +30,7 @@ font pango:MesloLGS NF 10
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+t exec urxvt
+bindsym $mod+Return exec urxvt
 
 # open browser
 bindsym $mod+b exec chromium
@@ -164,3 +164,4 @@ client.urgent #cc241d #cc241d #ebdbb2 #282828
 
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec --no-startup-id nitrogen --restore
+exec --no-startup-id keepassxc 
