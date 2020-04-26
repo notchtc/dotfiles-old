@@ -38,12 +38,8 @@ bindsym $mod+b exec chromium
 # kill focused window
 bindsym $mod+Shift+q kill
 
-# start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run
-# There also is the (new) i3-dmenu-desktop which only displays applications
-# shipping a .desktop file. It is a wrapper around dmenu, so you need that
-# installed.
-# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+# start rofi (a program launcher)
+bindsym $mod+d exec rofi -show run
 
 # change focus
 bindsym $mod+j focus left
@@ -126,13 +122,18 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
+# lock
+bindsym $mod+Shift+w exec dm-tool lock
+
 # Volume controls
 bindsym XF86AudioRaiseVolume exec amixer -q -D pulse sset Master 5%+
 bindsym XF86AudioLowerVolume exec amixer -q -D pulse sset Master 5%- 
 bindsym XF86AudioMute exec amixer -q -D pulse sset Master toggle
-bindsym XF86AudioPlay exec playerctl play-pause
-bindsym XF86AudioNext exec playerctl next
-bindsym XF86AudioPrev exec playerctl previous
+
+# Screenshot
+bindsym --release Print exec scrot ~/Stuff/Images/Screenshots/Screenshot%Y-%m-%d%H:%M:%S.png
+bindsym --release $mod+Print exec scrot -s ~/Stuff/Images/Screenshots/Screenshot%Y-%m-%d%H:%M:%S.png
+
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -159,12 +160,15 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
+ 
+client.focused #9d0006 #9d0006 #f9f5d7 #fb4934 #9d0006
+client.focused_inactive #928374 #928374 #f9f5d7 #cc241d #928374
+client.unfocused #32302f #32302f #928374 #9d0006 #32302f
 
-client.focused #689d6a #689d6a #282828 #282828
-client.focused_inactive #1d2021 #1d2021 #928374 #282828
-client.unfocused #32302f #32302f #928374 #282828
-client.urgent #cc241d #cc241d #ebdbb2 #282828
+client.background #928374
+
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="task_dialog"] floating enable
 
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec --no-startup-id nitrogen --restore
-exec --no-startup-id keepassxc 
