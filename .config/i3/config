@@ -30,7 +30,7 @@ font pango:MesloLGS NF 10
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec urxvt
+bindsym $mod+t exec urxvt -name urxvt; workspace $ws4
 
 # open browser
 bindsym $mod+b exec chromium
@@ -92,28 +92,28 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 # switch to workspace
-bindsym $mod+1 workspace 1
-bindsym $mod+2 workspace 2
-bindsym $mod+3 workspace 3
-bindsym $mod+4 workspace 4
-bindsym $mod+5 workspace 5
-bindsym $mod+6 workspace 6
-bindsym $mod+7 workspace 7
-bindsym $mod+8 workspace 8
-bindsym $mod+9 workspace 9
-bindsym $mod+0 workspace 10
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws10
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace 1
-bindsym $mod+Shift+2 move container to workspace 2
-bindsym $mod+Shift+3 move container to workspace 3
-bindsym $mod+Shift+4 move container to workspace 4
-bindsym $mod+Shift+5 move container to workspace 5
-bindsym $mod+Shift+6 move container to workspace 6
-bindsym $mod+Shift+7 move container to workspace 7
-bindsym $mod+Shift+8 move container to workspace 8
-bindsym $mod+Shift+9 move container to workspace 9
-bindsym $mod+Shift+0 move container to workspace 10
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9
+bindsym $mod+Shift+0 move container to workspace $ws10
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -133,7 +133,6 @@ bindsym XF86AudioMute exec amixer -q -D pulse sset Master toggle
 # Screenshot
 bindsym --release Print exec scrot ~/Stuff/Images/Screenshots/Screenshot%Y-%m-%d%H:%M:%S.png
 bindsym --release $mod+Print exec scrot -s ~/Stuff/Images/Screenshots/Screenshot%Y-%m-%d%H:%M:%S.png
-
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -160,15 +159,39 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
- 
-client.focused #9d0006 #9d0006 #f9f5d7 #fb4934 #9d0006
-client.focused_inactive #928374 #928374 #f9f5d7 #cc241d #928374
-client.unfocused #32302f #32302f #928374 #9d0006 #32302f
+
+# Workspaces
+set $ws1 "1. General"
+set $ws2 "2. Discord"
+set $ws3 "3. Music"
+set $ws4 "4. Hackerman"
+set $ws5 "5. Work"
+set $ws6 "6. Games"
+set $ws7 7
+set $ws8 8
+set $ws9 9
+set $ws10 10
+
+# Assigning apps to workspaces
+for_window [class="discord"] move container to workspace $ws2
+assign [class="mpv"] $ws3
+assign [instance="urxvt"] $ws4
+assign [class="Gimp"] $ws5
+assign [class="openmw"] $ws6
+assign [class="openmw-launcher"] $ws6
+assign [class="Steam"] $ws6
+for_window [class="Steam"] floating enable
+
+# Gaps
+gaps inner 9
+gaps outer 1
+smart_gaps on
 
 client.background #928374
 
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="task_dialog"] floating enable
+for_window [class=".*"] border pixel 1.5
 
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec --no-startup-id nitrogen --restore
