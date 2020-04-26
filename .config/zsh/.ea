@@ -17,14 +17,14 @@ export EDITOR="nvim"
 export BROWSER="chromium"
 export JAVA_HOME=/usr/lib/jvm/java-1.8.0-amazon-corretto/jre
 
-export PATH="$JAVA_HOME/bin:$ZSH_CONFIG_FILES:$PATH"
+export PATH="$JAVA_HOME/bin:$ZSH_CONFIG_FILES:$HOME/.cargo/bin:$PATH"
 
 # Aliases
 # Shorter apt commands
 alias apt-install="sudo apt-get install"
 alias apt-remove="sudo apt-get remove"
 alias apt-clean="sudo apt-get autoremove"
-alias apt-update"sudo apt-get upgrade"
+alias apt-update="sudo apt-get upgrade"
 alias ppa-add="sudo add-apt-repository"
 alias ppa-update="sudo apt-get update"
 # Time saving
