@@ -130,6 +130,9 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 bindsym XF86AudioRaiseVolume exec amixer -q -D pulse sset Master 5%+
 bindsym XF86AudioLowerVolume exec amixer -q -D pulse sset Master 5%- 
 bindsym XF86AudioMute exec amixer -q -D pulse sset Master toggle
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
