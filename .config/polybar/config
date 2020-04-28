@@ -17,24 +17,22 @@
 ;==========================================================
 
 [colors]
-;background = ${xrdb:color0:#222}
-background = #32302f
-background-alt = #282828
-;foreground = ${xrdb:color7:#222}
-foreground = #ffffff
-foreground-alt = #928374
-primary = #d79921
-secondary = #b16286
-alert = #8f3f71
+background = ${xrdb:color0:#222}
+background-alt = ${xrdb:color1:#444}
+foreground = ${xrdb:color7:#222}
+foreground-alt = ${xrdb:color7:#222} 
+primary = ${xrdb:color1:#222}
+secondary = ${xrdb:color2:#222}
+alert = ${xrdb:color3:#222}
 
 [bar/example]
-monitor = ${env:MONITOR:HDMI-1}
+;monitor = ${env:MONITOR:HDMI-1}
 width = 100%
 height = 27
 ;offset-x = 1%
 ;offset-y = 1%
-radius = 3.5
-fixed-center = false 
+radius = 6.5
+fixed-center = false
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -42,8 +40,8 @@ foreground = ${colors.foreground}
 line-size = 3
 line-color = #f00
 
-border-size = 2
-border-color = #1d2021
+border-size = 0
+border-color = ${xrdb:color0:#222}
 
 padding-left = 0
 padding-right = 2
@@ -51,12 +49,11 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = "Anonymice Nerd Font:pixelsize=10;1"
-font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
-font-2 = "Font Awesome 5 Free:pixelsize=10:antialias=true;1"
+font-0 = Anonymous Pro:pixelsize=10;1
+font-1 = unifont:fontformat=truetype:size=8:antialias=true;0
+font-2 = siji:pixelsize=10;1
 
 modules-left = i3
-modules-center = mpd
 modules-right = filesystem xbacklight pulseaudio memory cpu battery temperature date powermenu
 
 tray-position = right
@@ -73,6 +70,8 @@ tray-padding = 2
 
 ;scroll-up = i3wm-wsnext
 ;scroll-down = i3wm-wsprev
+
+enable-ipc = true
 
 cursor-click = pointer
 cursor-scroll = ns-resize
@@ -205,17 +204,17 @@ card = intel_backlight
 [module/cpu]
 type = internal/cpu
 interval = 2
-format-prefix = " "
+format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #d3869b
+format-underline = #f90000
 label = %percentage:2%%
 
 [module/memory]
 type = internal/memory
 interval = 2
-format-prefix = " "
+format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #83a598
+format-underline = #4bffdc
 label = %percentage_used%%
 
 [module/wlan]
@@ -266,9 +265,9 @@ date-alt = " %Y-%m-%d"
 time = %H:%M
 time-alt = %H:%M:%S
 
-format-prefix = 
+format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #458588
+format-underline = #0a6cf5
 
 label = %date% %time%
 
@@ -276,26 +275,26 @@ label = %date% %time%
 type = internal/pulseaudio
 
 format-volume = <label-volume> <bar-volume>
-label-volume =   %percentage%%
+label-volume = VOL %percentage%%
 label-volume-foreground = ${root.foreground}
 
-label-muted =  muted
+label-muted = 🔇 muted
 label-muted-foreground = #666
 
 bar-volume-width = 10
-bar-volume-foreground-0 = #79740e
-bar-volume-foreground-1 = #79740e
-bar-volume-foreground-2 = #98971a
-bar-volume-foreground-3 = #98971a
-bar-volume-foreground-4 = #fabd2f
-bar-volume-foreground-5 = #fe8019
-bar-volume-foreground-6 = #fb4934
+bar-volume-foreground-0 = #55aa55
+bar-volume-foreground-1 = #55aa55
+bar-volume-foreground-2 = #55aa55
+bar-volume-foreground-3 = #55aa55
+bar-volume-foreground-4 = #55aa55
+bar-volume-foreground-5 = #f5a70a
+bar-volume-foreground-6 = #ff5555
 bar-volume-gradient = false
-bar-volume-indicator = ▊
+bar-volume-indicator = |
 bar-volume-indicator-font = 2
-bar-volume-fill = █
+bar-volume-fill = ─
 bar-volume-fill-font = 2
-bar-volume-empty = █
+bar-volume-empty = ─
 bar-volume-empty-font = 2
 bar-volume-empty-foreground = ${colors.foreground-alt}
 
@@ -334,12 +333,12 @@ adapter = ACAD
 full-at = 98
 
 format-charging = <animation-charging> <label-charging>
-format-charging-underline = #fabd2f
+format-charging-underline = #ffb52a
 
 format-discharging = <animation-discharging> <label-discharging>
 format-discharging-underline = ${self.format-charging-underline}
 
-format-full-prefix = "  "
+format-full-prefix = " "
 format-full-prefix-foreground = ${colors.foreground-alt}
 format-full-underline = ${self.format-charging-underline}
 
@@ -366,7 +365,7 @@ thermal-zone = 0
 warn-temperature = 60
 
 format = <ramp> <label>
-format-underline = #fb4934
+format-underline = #f50a4d
 format-warn = <ramp> <label-warn>
 format-warn-underline = ${self.format-underline}
 
@@ -374,9 +373,9 @@ label = %temperature-c%
 label-warn = %temperature-c%
 label-warn-foreground = ${colors.secondary}
 
-ramp-0 = 
-ramp-1 = 
-ramp-2 = 
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
 ramp-foreground = ${colors.foreground-alt}
 
 [module/powermenu]
