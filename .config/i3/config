@@ -40,6 +40,7 @@ bindsym $mod+Shift+q kill
 
 # start rofi (a program launcher)
 bindsym $mod+d exec rofi -show run
+bindysm $mod+Shift+d exec rofi -show combi
 
 # change focus
 bindsym $mod+j focus left
@@ -129,6 +130,12 @@ bindsym $mod+Shift+w exec dm-tool lock
 bindsym XF86AudioRaiseVolume exec amixer -q -D pulse sset Master 5%+
 bindsym XF86AudioLowerVolume exec amixer -q -D pulse sset Master 5%- 
 bindsym XF86AudioMute exec amixer -q -D pulse sset Master toggle
+
+# Media Controls
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioPause exec playerctl pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
 
 # Screenshot
 bindsym --release Print exec scrot ~/Stuff/Images/Screenshots/Screenshot%Y-%m-%d%H:%M:%S.png
