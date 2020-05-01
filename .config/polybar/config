@@ -49,13 +49,13 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = Anonymous Pro:pixelsize=10;1
+font-0 = Cozette:pixelsize=11;1
 font-1 = unifont:fontformat=truetype:size=8:antialias=true;0
 font-2 = siji:pixelsize=10;1
 
 modules-left = i3
 modules-center = spotify
-modules-right = filesystem xbacklight pulseaudio memory cpu battery temperature date powermenu
+modules-right = filesystem pulseaudio memory cpu wlan eth battery temperature date powermenu
 
 tray-position = right
 tray-padding = 2
@@ -104,6 +104,7 @@ interval = 25
 mount-0 = /
 
 label-mounted = %mountpoint%%{F-}: %percentage_used%%
+label-mounted-foreground = ${xrdb:color4}
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.foreground-alt}
 
@@ -235,7 +236,7 @@ interface = wlp3s0
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
-format-connected-underline = #9f78e1
+format-connected-underline = ${xrdb:color5:#9f78e1}
 label-connected = %essid%
 
 format-disconnected =
@@ -256,7 +257,7 @@ type = internal/network
 interface = enp2s0
 interval = 3.0
 
-format-connected-underline = #55aa55
+format-connected-underline = ${xrdb:color13:#55aa55}
 format-connected-prefix = " "
 format-connected-prefix-foreground = ${colors.foreground-alt}
 label-connected = %local_ip%
@@ -272,7 +273,7 @@ type = internal/date
 interval = 5
 
 date =
-date-alt = " %Y-%m-%d"
+date-alt = " %d-%m-%Y"
 
 time = %H:%M
 time-alt = %H:%M:%S
@@ -291,17 +292,17 @@ label-volume =  %percentage%%
 label-volume-foreground = ${root.foreground}
 
 label-muted =  muted
-label-muted-foreground = #666
+label-muted-foreground = ${xrdb:color1:#666}
 
 bar-volume-width = 10
-bar-volume-foreground-0 = #55aa55
-bar-volume-foreground-1 = #55aa55
-bar-volume-foreground-2 = #55aa55
-bar-volume-foreground-3 = #55aa55
-bar-volume-foreground-4 = #55aa55
-bar-volume-foreground-5 = #f5a70a
-bar-volume-foreground-6 = #ff5555
-bar-volume-gradient = true
+bar-volume-foreground-0 = ${xrdb:color10:#55aa55}
+bar-volume-foreground-1 = ${xrdb:color10:#55aa55}
+bar-volume-foreground-2 = ${xrdb:color10:#55aa55}
+bar-volume-foreground-3 = ${xrdb:color10:#55aa55}
+bar-volume-foreground-4 = ${xrdb:color10:#55aa55}
+bar-volume-foreground-5 = ${xrdb:color11:#f5a70a}
+bar-volume-foreground-6 = ${xrdb:color9:#ff5555}
+bar-volume-gradient = false
 bar-volume-indicator = 
 bar-volume-indicator-font = 2
 bar-volume-indicator-foreground = ${xrdb:color11:#fcf005}
