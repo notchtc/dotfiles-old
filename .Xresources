@@ -1,8 +1,5 @@
 !! URxvt Appearance
-URxvt.font: xft:MesloLGS NF:style=Regular:size=10
-URxvt.boldFont: xft:MesloLGS NF:style=Bold
-URxvt.italicFont: xft:MesloLGS NF:style=Italic
-URxvt.boldItalicFont: xft:MesloLGS NF:style=BoldItalic
+URxvt.font: xft:Cozette:size=11
 Xft.dpi:111
 URxvt.letterSpace: 0
 URxvt.lineSpace: 0
@@ -18,7 +15,7 @@ URxvt.iso14755: false
 URxvt.iso14755_52: false
 
 !! Plugins n Keybinds
-URxvt.perl-ext-common: default,matcher
+URxvt.perl-ext-common: default,matcher,font-size
 ! Launching URLs
 URxvt.url-launcher: /usr/bin/xdg-open
 URxvt.matcher.button: 1
@@ -38,3 +35,10 @@ URxvt.keysym.Control-Meta-c: builtin-string:
 URxvt.keysym.Control-Meta-v: builtin-string:
 ! Clear terminal
 URxvt.keysym.M-l: command:\033c
+! Font size changing
+URxvt.keysym.C-Up:     font-size:increase
+URxvt.keysym.C-Down:   font-size:decrease
+URxvt.keysym.C-S-Up:   font-size:incglobal
+URxvt.keysym.C-S-Down: font-size:decglobal
+URxvt.keysym.C-equal:  font-size:reset
+URxvt.keysym.C-slash:  font-size:show
