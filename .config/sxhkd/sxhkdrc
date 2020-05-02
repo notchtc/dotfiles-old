@@ -2,6 +2,10 @@
 # wm independent hotkeys
 #
 
+# make sxhkd reload its configuration files:
+super + Escape
+	pkill -USR1 -x sxhkd
+
 # terminal emulator
 super + t
 	urxvt
@@ -11,16 +15,38 @@ super + d
 	rofi -show run
 
 # browser
-
 super + b
 	chromium
-
+# change wallpaper
 super + p
 	wal -i ~/Stuff/Images/Wallpapers/
 
-# make sxhkd reload its configuration files:
-super + Escape
-	pkill -USR1 -x sxhkd
+# change volume
+XF86AudioRaiseVolume
+	perl /bin/pavolume +5%
+
+XF86AudioLowerVolume
+	perl /bin/pavolume -5%
+
+XF86AudioMute
+	perl /bin/pavolume toggle
+
+# media controls
+XF86AudioPlay
+	playerctl play-pause
+
+XF86AudioNext
+	playerctl next
+
+XF86AudioPrev
+	playerctl previous
+
+# screenshots
+Print
+	scrot ~/Stuff/Images/Screenshots/Screenshot%Y-%m-%d%H:%M:%S.png
+
+super + Print
+	sleep 0.2 && scrot -s ~/Stuff/Images/Screenshots/Screenshot%Y-%m-%d%H:%M:%S.png
 
 #
 # bspwm hotkeys
