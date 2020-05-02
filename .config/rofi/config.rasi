@@ -1,5 +1,6 @@
+@import "/usr/share/rofi/themes/sidebar.rasi"
 configuration {
-/*	modi: "window,run,ssh";*/
+/*	modi: "window,run,ssh,combi";*/
 /*	width: 50;*/
 /*	lines: 15;*/
 /*	columns: 1;*/
@@ -137,4 +138,4 @@ configuration {
 /*	me-accept-entry: "MouseDPrimary";*/
 /*	me-accept-custom: "Control+MouseDPrimary";*/
 }
-@import "/usr/share/rofi/themes/gruvbox-dark-soft.rasi"
+@import "~/.cache/wal/colors-rofi-dark.rasi"

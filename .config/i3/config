@@ -130,7 +130,6 @@ bindsym XF86AudioLowerVolume exec perl /bin/pavolume -5%
 
 # Media Controls
 bindsym XF86AudioPlay exec playerctl play-pause
-bindsym XF86AudioPause exec playerctl pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
