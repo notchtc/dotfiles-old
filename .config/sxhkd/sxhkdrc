@@ -7,7 +7,7 @@ super + Escape
 	pkill -USR1 -x sxhkd
 
 # terminal emulator
-super + t
+super + Return
 	urxvt
 
 # program launcher
@@ -17,6 +17,7 @@ super + d
 # browser
 super + b
 	chromium
+
 # change wallpaper
 super + p
 	wal -i ~/Stuff/Images/Wallpapers/
