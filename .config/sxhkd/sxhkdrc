@@ -12,7 +12,7 @@ super + Return
 
 # program launcher
 super + d
-	dmenu_run -fn 'Cozette'	
+	dmenu_run -b -fn 'Cozette'
 
 # browser
 super + b
