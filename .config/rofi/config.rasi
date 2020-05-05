@@ -1,4 +1,5 @@
 @import "/usr/share/rofi/themes/sidebar.rasi"
+@import "~/.cache/wal/colors-rofi-dark.rasi"
 configuration {
 /*	modi: "window,run,ssh,combi";*/
 /*	width: 50;*/
@@ -138,4 +139,3 @@ configuration {
 /*	me-accept-entry: "MouseDPrimary";*/
 /*	me-accept-custom: "Control+MouseDPrimary";*/
 }
-@import "~/.cache/wal/colors-rofi-dark.rasi"

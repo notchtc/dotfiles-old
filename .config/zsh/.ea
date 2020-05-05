@@ -17,7 +17,7 @@ export EDITOR="nvim"
 export BROWSER="chromium"
 export JAVA_HOME=/usr/lib/jvm/java-1.8.0-amazon-corretto/jre
 
-export PATH="$JAVA_HOME/bin:$ZSH_CONFIG_FILES:$PATH"
+export PATH="$JAVA_HOME/bin:$ZSH_CONFIG_FILES:$HOME/.local/bin/:$PATH"
 
 # Aliases
 # Shorter apt commands
