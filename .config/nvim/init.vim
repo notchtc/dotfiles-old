@@ -6,7 +6,6 @@ endif
 
 call plug#begin('~/.config/nvim/plugged')
 Plug 'tpope/vim-fugitive'
-Plug 'ObserverOfTime/coloresque.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'preservim/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
@@ -18,12 +17,11 @@ set noshowmode
 set clipboard=unnamedplus
 set mouse+=a
 set guicursor+=a:blinkon1
-set background=dark
 
 map <C-n> :NERDTreeToggle<CR>
 
 let g:lightline = {
-      \ 'colorscheme': 'solarized',
+      \ 'colorscheme': 'nord',
       \ 'active': { 
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
@@ -36,5 +34,4 @@ let g:lightline = {
       \},
       \}
 
-let g:coloresque_extra_filetypes = ['vim', 'text']
 

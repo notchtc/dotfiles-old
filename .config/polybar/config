@@ -54,23 +54,12 @@ font-1 = unifont:fontformat=truetype:size=8:antialias=true;0
 font-2 = siji:pixelsize=10;1
 
 modules-left = bspwm 
-modules-center = spotify
 modules-right = filesystem pulseaudio memory cpu wlan eth battery temperature date powermenu
 
 tray-position = right
 tray-padding = 2
-;tray-background = #0063ff
 
 wm-restack = bspwm
-;wm-restack = i3
-
-;override-redirect = true
-
-;scroll-up = bspwm-desknext
-;scroll-down = bspwm-deskprev
-
-;scroll-up = i3wm-wsnext
-;scroll-down = i3wm-wsprev
 
 enable-ipc = true
 
@@ -299,29 +288,28 @@ label = %date% %time%
 [module/pulseaudio]
 type = internal/pulseaudio
 
-format-volume = <label-volume> <bar-volume>
-label-volume =  %percentage%%
-label-volume-foreground = ${root.foreground}
+format-volume = <bar-volume> <label-volume>
+label-volume = %percentage%%
+label-volume-foreground = ${colors.foreground}
 
-label-muted =  muted
+label-muted = 
 label-muted-foreground = ${colors.foreground-alt}
 
-bar-volume-width = 10
+bar-volume-width = 6
 bar-volume-foreground-0 = ${xrdb:color6:#55aa55}
 bar-volume-foreground-1 = ${xrdb:color6:#55aa55}
-bar-volume-foreground-2 = ${xrdb:color6:#55aa55}
-bar-volume-foreground-3 = ${xrdb:color6:#55aa55}
-bar-volume-foreground-4 = ${xrdb:color6:#55aa55}
-bar-volume-foreground-5 = ${xrdb:color11:#f5a70a}
-bar-volume-foreground-6 = ${xrdb:color9:#ff5555}
+bar-volume-foreground-2 = ${xrdb:color11:#f5a70a}
+bar-volume-foreground-3 = ${xrdb:color9:#ff5555}
 bar-volume-gradient = true
 bar-volume-indicator = |
+bar-volume-indicator-foreground = ${xrdb:color3}
 bar-volume-indicator-font = 1
 bar-volume-fill = -
 bar-volume-fill-font = 1
 bar-volume-empty = -
+bar-volume-empty-foreground = ${xrdb:color1}
 bar-volume-empty-font = 1
-bar-volume-empty-foreground = ${xrdb:color8:#808080}
+
 
 [module/alsa]
 type = internal/alsa
@@ -431,14 +419,6 @@ menu-2-0 = power off
 menu-2-0-exec = sudo poweroff
 menu-2-1 = cancel
 menu-2-1-exec = menu-open-0
-
-[module/spotify]
-type = custom/script
-interval = 1
-format-prefix = " "
-format = <label>
-exec = python ~/.config/polybar/plugins/spotify.py -f '{artist} - {song}'
-format-underline = ${xrdb:color2:#1db954}
 
 [settings]
 screenchange-reload = true
