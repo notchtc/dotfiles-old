@@ -12,7 +12,7 @@ super + Return
 
 # program launcher
 super + d
-	rofi -show run
+	dmeni_run -fn 'Cozette'	
 
 # browser
 super + b
