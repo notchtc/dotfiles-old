@@ -20,7 +20,7 @@ super + b
 
 # change wallpaper
 super + p
-	wal -i ~/Stuff/Images/Wallpapers/
+	hsetroot -cover ~/Images/Wallpapers/$(ls ~/Images/Wallpapers/ | shuf -n1)
 
 # change volume
 XF86AudioRaiseVolume
