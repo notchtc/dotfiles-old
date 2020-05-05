@@ -12,7 +12,7 @@ super + Return
 
 # program launcher
 super + d
-	dmeni_run -fn 'Cozette'	
+	dmenu_run -fn 'Cozette'	
 
 # browser
 super + b
@@ -55,7 +55,7 @@ super + Print
 
 # quit bspwm normally
 super + shift + e
-	bspc quit
+	echo -e "No\nYes" | dmenu -i -p "Do you really want to quit" \ == "Yes" && bspc quit
 
 # reload bspwm
 super + shift + r
