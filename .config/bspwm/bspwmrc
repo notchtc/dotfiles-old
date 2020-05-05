@@ -1,7 +1,6 @@
 #! /bin/sh
 
 sxhkd &
-wal -R &
 dbus-launch compton -CG --config ~/.config/compton.conf &
 ~/.config/polybar/launch.sh &
 
