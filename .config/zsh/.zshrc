@@ -10,8 +10,6 @@ export DOTZSH=$HOME/.config/zsh
 
 source $DOTZSH/.ea
 
-bindkey -v
-
 source $DOTZSH/antigen.zsh
 
 antigen use oh-my-zsh
@@ -25,12 +23,9 @@ antigen theme romkatv/powerlevel10k
 
 antigen apply
 
-# Import colorscheme from 'wal' asynchronously
-# &   # Run the process in the background.
-# ( ) # Hide shell job control messages.
-(cat ~/.cache/wal/sequences &)
+pfetch
 
-neofetch
+bindkey -v
 
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
