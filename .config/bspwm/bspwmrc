@@ -1,6 +1,7 @@
 #! /bin/sh
 
 sxhkd &
+hsetroot -cover ~/.local/tmp/cwall.png
 dbus-launch compton -CG --config ~/.config/compton.conf &
 ~/.config/polybar/launch.sh &
 
