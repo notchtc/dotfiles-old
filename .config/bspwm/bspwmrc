@@ -25,4 +25,3 @@ bspc config presel_border_color "$color1"
 bspc rule -a Gimp state=floating follow=on
 bspc rule -a Steam state=floating follow=on
 bspc rule -a discord desktop=^2
-bspc rule -a Ripcord desktop=^2
