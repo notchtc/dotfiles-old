@@ -1,45 +1,58 @@
-!! Colors
-#define nord0 #2E3440
-#define nord1 #3B4252
-#define nord2 #434C5E
-!! Colors
-#define nord3 #4C566A
-#define nord4 #D8DEE9
-#define nord5 #E5E9F0
-#define nord6 #ECEFF4
-#define nord7 #8FBCBB
-#define nord8 #88C0D0
-#define nord9 #81A1C1
-#define nord10 #5E81AC
-#define nord11 #BF616A
-#define nord12 #D08770
-#define nord13 #EBCB8B
-#define nord14 #A3BE8C
-#define nord15 #B48EAD
+!---------------------------------------------------------------------------
+! Selenized black color palette for urxvt and X Window System
+!
+#define    bg_0        #181818
+#define    bg_1        #252525
+#define    bg_2        #3b3b3b
+#define    dim_0       #777777
+#define    fg_0        #b9b9b9
+#define    fg_1        #dedede
 
-*.foreground:   nord4
-*.background:   nord0
-*.cursorColor:  nord4
-*fading: 35
-*fadeColor: nord3
+#define    red         #ed4a46
+#define    green       #70b433
+#define    yellow      #dbb32d
+#define    blue        #368aeb
+#define    magenta     #eb6eb7
+#define    cyan        #3fc5b7
+#define    orange      #e67f43
+#define    violet      #a580e2
 
-*.color0: nord1
-*.color1: nord11
-*.color2: nord14
-*.color3: nord13
-*.color4: nord9
-*.color5: nord15
-*.color6: nord8
-*.color7: nord5
-*.color8: nord3
-*.color9: nord11
-*.color10: nord14
-*.color11: nord13
-*.color12: nord9
-*.color13: nord15
-*.color14: nord7
-*.color15: nord6
+#define    br_red      #ff5e56
+#define    br_green    #83c746
+#define    br_yellow   #efc541
+#define    br_blue     #4f9cfe
+#define    br_magenta  #ff81ca
+#define    br_cyan     #56d8c9
+#define    br_orange   #fa9153
+#define    br_violet   #b891f5
 
+*background:              bg_0
+*foreground:              fg_0
+*fading:                  40
+*fadeColor:               bg_0
+*cursorColor:             fg_1
+*pointerColorBackground:  bg_2
+*pointerColorForeground:  fg_1
+
+! normal colors: "black", red, green, yellow, blue, magenta, cyan, "white"
+*color0:     bg_1
+*color1:     red
+*color2:     green
+*color3:     yellow
+*color4:     blue
+*color5:     magenta
+*color6:     cyan
+*color7:     dim_0
+
+! bright/bold versions of colors (in the same order)
+*color8:     bg_2
+*color9:     br_red
+*color10:    br_green
+*color11:    br_yellow
+*color12:    br_blue
+*color13:    br_magenta
+*color14:    br_cyan
+*color15:    fg_1
 !! URxvt Appearance
 URxvt.font: xft:Cozette:size=11
 Xft.dpi:111
