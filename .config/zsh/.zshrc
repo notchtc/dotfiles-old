@@ -1,31 +1,39 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
 # Path of ZSH config files
 export DOTZSH=$HOME/.config/zsh
 
 source $DOTZSH/.ea
 
-source $DOTZSH/antigen.zsh
+### Added by Zinit's installer
+if [[ ! -f $HOME/.local/.zinit/bin/zinit.zsh ]]; then
+    print -P "%F{33}▓▒░ %F{220}Installing %F{33}DHARMA%F{220} Initiative Plugin Manager (%F{33}zdharma/zinit%F{220})…%f"
+    command mkdir -p "$HOME/.local/.zinit" && command chmod g-rwX "$HOME/.local/.zinit"
+    command git clone https://github.com/zdharma/zinit "$HOME/.local/.zinit/bin" && \
+        print -P "%F{33}▓▒░ %F{34}Installation successful.%f%b" || \
+        print -P "%F{160}▓▒░ The clone has failed.%f%b"
+fi
 
-antigen use oh-my-zsh
+source "$HOME/.local/.zinit/bin/zinit.zsh"
+autoload -Uz _zinit
+(( ${+_comps} )) && _comps[zinit]=_zinit
 
-antigen bundle git
+# Load a few important annexes, without Turbo
+# (this is currently required for annexes)
+zinit light-mode for \
+    zinit-zsh/z-a-patch-dl \
+    zinit-zsh/z-a-as-monitor \
+    zinit-zsh/z-a-bin-gem-node
 
-antigen bundle zsh-users/zsh-syntax-highlighting
-antigen bundle zsh-users/zsh-autosuggestions
+### End of Zinit's installer chunk
 
-antigen theme romkatv/powerlevel10k
+# Plugins
+zinit light robobenklein/zinc
 
-antigen apply
+zinit ice wait lucid atload'_zsh_autosuggest_start'
+zinit light zsh-users/zsh-autosuggestions
+
+zinit light zdharma/fast-syntax-highlighting
 
 pfetch
 
 bindkey -v
 
-# To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
-[[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
