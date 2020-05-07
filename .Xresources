@@ -54,7 +54,7 @@
 *color14:    br_cyan
 *color15:    fg_1
 !! URxvt Appearance
-URxvt.font: xft:Cozette:size=11
+URxvt.font: xft:Cozette:size=10
 Xft.dpi:111
 URxvt.letterSpace: 0
 URxvt.lineSpace: 0
@@ -74,13 +74,6 @@ URxvt.perl-ext-common: default,matcher,font-size
 URxvt.url-launcher: /usr/bin/xdg-open
 URxvt.matcher.button: 1
 URxvt.matcher.rend.0: Uline Bold fg5
-! Navigation
-URxvt.keysym.M-k: command:\033]720;1\007
-URxvt.keysym.M-j: command:\033]721;1\007
-URxvt.keysym.Control-k: command:\033[1;5A
-URxvt.keysym.Control-j: command:\033[1;5B
-URxvt.keysym.Control-l: command:\033[1;5C
-URxvt.keysym.Control-h: command:\033[1;5D
 ! Copy and pasting
 URxvt.keysym.Shift-Control-V: eval:paste_clipboard
 URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
@@ -88,11 +81,4 @@ URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
 URxvt.keysym.Control-Meta-c: builtin-string:
 URxvt.keysym.Control-Meta-v: builtin-string:
 ! Clear terminal
-URxvt.keysym.M-l: command:\033c
-! Font size changing
-URxvt.keysym.C-Up:     font-size:increase
-URxvt.keysym.C-Down:   font-size:decrease
-URxvt.keysym.C-S-Up:   font-size:incglobal
-URxvt.keysym.C-S-Down: font-size:decglobal
-URxvt.keysym.C-equal:  font-size:reset
-URxvt.keysym.C-slash:  font-size:show
+URxvt.keysym.Control-l: command:\033c
