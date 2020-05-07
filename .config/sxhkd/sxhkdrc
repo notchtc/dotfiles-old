@@ -49,6 +49,11 @@ Print
 super + Print
 	sleep 0.2 && scrot -s ~/Stuff/Images/Screenshots/Screenshot%Y-%m-%d%H:%M:%S.png
 
+super + shift + x
+	sudo poweroff
+super + alt + x
+	sudo reboot
+
 #
 # bspwm hotkeys
 #
