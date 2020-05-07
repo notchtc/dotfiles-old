@@ -55,7 +55,7 @@ super + Print
 
 # quit bspwm normally
 super + shift + e
-	echo -e "No\nYes" | dmenu -i -p "Do you really want to quit" \ == "Yes" && bspc quit
+	bspc quit
 
 # reload bspwm
 super + shift + r
