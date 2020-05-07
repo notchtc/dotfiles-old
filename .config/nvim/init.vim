@@ -21,7 +21,7 @@ set guicursor+=a:blinkon1
 map <C-n> :NERDTreeToggle<CR>
 
 let g:lightline = {
-      \ 'colorscheme': 'nord',
+      \ 'colorscheme': 'selenized_dark',
       \ 'active': { 
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
