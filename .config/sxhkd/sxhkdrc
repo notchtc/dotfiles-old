@@ -44,7 +44,7 @@ XF86AudioPrev
 
 # screenshots
 Print
-	scrot ~/Stuff/Images/Screenshots/Screenshot%Y-%m-%d%H:%M:%S.png
+	scrot ~/Stuff/Images/Screenshots/Screenshot%Y-%m-%d%H:%M:%S.png && notify-send "Screenshot taken!"
 
 super + Print
 	sleep 0.2 && scrot -s ~/Stuff/Images/Screenshots/Screenshot%Y-%m-%d%H:%M:%S.png
