@@ -6,12 +6,12 @@ export XDG_DATA_HOME=$HOME/.local/share
 export XDG_CONFIG_HOME=$HOME/.config
 export XDG_CACHE_HOME=$HOME/.cache
 
-export HISTFILE="$XDG_DATA_HOME"/zsh/history
-export GTK2_RC_FILES="$XDG_CONFIG_HOME"/gtk-2.0/gtkrc
-export GNUPGHOME="$XDG_DATA_HOME"/gnupg
-export ICEAUTHORITY="$XDG_CACHE_HOME"/ICEauthority
-export GEM_HOME="$XDG_DATA_HOME"/gem
-export GEM_SPEC_CACHE="$XDG_CACHE_HOME"/gem
+export HISTFILE=$XDG_DATA_HOME/zsh/history
+export GTK2_RC_FILES=$XDG_CONFIG_HOME/gtk-2.0/gtkrc
+export GNUPGHOME=$XDG_DATA_HOME/gnupg
+export ICEAUTHORITY=$XDG_CACHE_HOME/ICEauthority
+export GEM_HOME=$XDG_DATA_HOME/gem
+export GEM_SPEC_CACHE=$XDG_CACHE_HOME/gem
 
 export EDITOR="nvim"
 export BROWSER="chromium"
@@ -31,6 +31,8 @@ alias ppa-update="sudo apt-get update"
 alias sudo="sudo "
 alias src="source"
 alias e="$EDITOR"
-alias filec="echo 'File count:\n$(ls -A -l | grep -v ^l | wc -l)'"
-alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
-alias clrt='cd ~/.local/share/Trash/files && rm -r * && cd ~-'
+alias filec="ls -A -l | grep -v ^l | wc -l"
+alias config="git --git-dir=$HOME/dotfiles/ --work-tree=$HOME"
+alias clrt="cd ~/.local/share/Trash/files && rm -r * && cd ~-"
+# Misc
+alias ls="ls --color"
