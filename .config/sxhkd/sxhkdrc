@@ -8,11 +8,11 @@ super + Escape
 
 # terminal emulator
 super + Return
-	urxvt
+	st
 
 # program launcher
 super + d
-	dmenu_run -b -fn 'Cozette'
+	dmenu_run
 
 # browser
 super + b
@@ -50,9 +50,9 @@ super + Print
 	sleep 0.2 && scrot -s ~/Stuff/Images/Screenshots/Screenshot%Y-%m-%d%H:%M:%S.png
 
 super + shift + x
-	sudo poweroff
+	zsh ~/.local/bin/dprompt "Do you want to shutdown?" "shutdown -h now"
 super + alt + x
-	sudo reboot
+	zsh ~/.local/bin/dprompt "Do you want to reboot" "reboot"
 
 #
 # bspwm hotkeys

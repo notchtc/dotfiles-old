@@ -1,6 +1,6 @@
 # Exports
 
-export TERM="xterm-256color"
+export TERM="st-256color"
 
 export XDG_DATA_HOME=$HOME/.local/share
 export XDG_CONFIG_HOME=$HOME/.config
@@ -17,7 +17,9 @@ export EDITOR="nvim"
 export BROWSER="chromium"
 export JAVA_HOME=/usr/lib/jvm/java-1.8.0-amazon-corretto/jre
 
-export PATH="$JAVA_HOME/bin:$ZSH_CONFIG_FILES:$HOME/.local/bin/:$PATH"
+export LANG="en_US.utf8"
+
+export PATH="$JAVA_HOME/bin:$ZSH_CONFIG_FILES:$HOME/.local/bin:$PATH"
 
 # Aliases
 # Shorter apt commands
@@ -32,7 +34,11 @@ alias sudo="sudo "
 alias src="source"
 alias e="$EDITOR"
 alias filec="ls -A -l | grep -v ^l | wc -l"
+# Git repositories
 alias config="git --git-dir=$HOME/dotfiles/ --work-tree=$HOME"
-alias clrt="cd ~/.local/share/Trash/files && rm -r * && cd ~-"
+alias gdwm="git --git-dir=$HOME/.local/builds/git/dwm --work-tree=$HOME/.local/builds/dwm"
+alias gslstatus="git --git-dir=$HOME/.local/builds/git/slstatus --work-tree=$HOME/.local/builds/slstatus"
+alias gdmenu="git --git-dir=$HOME/.local/builds/git/dmenu --work-tree=$HOME/.local/builds/dmenu"
+alias gst="git --git-dir=$HOME/.local/builds/git/st --work-tree=$HOME/.local/builds/st"
 # Misc
 alias ls="ls --color"

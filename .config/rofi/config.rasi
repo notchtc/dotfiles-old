@@ -1,9 +1,9 @@
 configuration {
 /*	modi: "window,run,ssh,combi";*/
 /*	width: 50;*/
-/*	lines: 15;*/
+/*	lines: 1;*/
 /*	columns: 1;*/
-/*	font: "Anonymous Pro 12";*/
+	font: "Cozette 10";
 /*	bw: 1;*/
 /*	location: 0;*/
 /*	padding: 5;*/
@@ -11,7 +11,7 @@ configuration {
 /*	xoffset: 0;*/
 /*	fixed-num-lines: true;*/
 /*	show-icons: true;*/
-/*	terminal: "urxvt";*/
+	terminal: "st";
 /*	ssh-client: "ssh";*/
 /*	ssh-command: "{terminal} -e {ssh-client} {host}";*/
 /*	run-command: "{cmd}";*/
@@ -50,7 +50,7 @@ configuration {
 /*	window-format: "{w}    {i}{c}   {t}";*/
 /*	click-to-exit: true;*/
 /*	show-match: true;*/
-/*	theme: ;*/
+	theme: "dmenu";
 /*	color-normal: ;*/
 /*	color-urgent: ;*/
 /*	color-active: ;*/
@@ -137,4 +137,3 @@ configuration {
 /*	me-accept-entry: "MouseDPrimary";*/
 /*	me-accept-custom: "Control+MouseDPrimary";*/
 }
-@import "/usr/share/rofi/themes/Adapta-Nokto.rasi"

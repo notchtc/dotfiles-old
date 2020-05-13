@@ -26,7 +26,8 @@ zinit light-mode for \
 ### End of Zinit's installer chunk
 
 # Plugins
-zinit light robobenklein/zinc
+zinit ice wait'!0'
+zinit light sindresorhus/pure
 
 zinit ice wait lucid atload'_zsh_autosuggest_start'
 zinit light zsh-users/zsh-autosuggestions

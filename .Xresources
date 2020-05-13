@@ -53,32 +53,3 @@
 *color13:    br_magenta
 *color14:    br_cyan
 *color15:    fg_1
-!! URxvt Appearance
-URxvt.font: xft:Cozette:size=10
-Xft.dpi:111
-URxvt.letterSpace: 0
-URxvt.lineSpace: 0
-URxvt.geometry: 92x24
-URxvt.internalBorder: 24
-URxvt.cursorBlink: true
-URxvt.saveline: 2048
-URxvt.scrollBar: false
-URxvt.scrollBar_right: false
-URxvt.urgentOnBell: true
-URxvt.iso14755: false
-URxvt.iso14755_52: false
-
-!! Plugins n Keybinds
-URxvt.perl-ext-common: default,matcher,font-size
-! Launching URLs
-URxvt.url-launcher: /usr/bin/xdg-open
-URxvt.matcher.button: 1
-URxvt.matcher.rend.0: Uline Bold fg5
-! Copy and pasting
-URxvt.keysym.Shift-Control-V: eval:paste_clipboard
-URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
-! Turning off Control-Alt-C/V
-URxvt.keysym.Control-Meta-c: builtin-string:
-URxvt.keysym.Control-Meta-v: builtin-string:
-! Clear terminal
-URxvt.keysym.Control-l: command:\033c
