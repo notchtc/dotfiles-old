@@ -53,3 +53,10 @@
 *color13:    br_magenta
 *color14:    br_cyan
 *color15:    fg_1
+
+dwm.normbordercolor: bg_2
+dwm.normbgcolor: bg_1
+dwm.normfgcolor: fg_1
+dwm.selbordercolor: red
+dwm.selbgcolor: red
+dwm.selfgcolor: fg_1
