@@ -53,7 +53,3 @@
 *color13:    br_magenta
 *color14:    br_cyan
 *color15:    fg_1
-
-dmenu.background: bg_0
-dmenu.foreground: fg_1
-dmenu.selbackground: br_red

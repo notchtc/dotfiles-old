@@ -22,7 +22,7 @@ map <F6> :setlocal spell! spelllang=en_us<CR>
 
 autocmd BufWritePost config.h,config.def.h !sudo make install clean
 autocmd BufWritePost .zshrc,.ea !. ~/.config/zsh/.zshrc
-autocmd BufWritePost .Xresources !xrdb ~/.Xresources
+autocmd BufWritePost .Xresources !xrdb ~/.config/X11/.Xresources
 
 let g:lightline = {
       \ 'colorscheme': 'selenized_dark',
