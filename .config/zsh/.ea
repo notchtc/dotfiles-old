@@ -19,7 +19,7 @@ export JAVA_HOME=/usr/lib/jvm/java-1.8.0-amazon-corretto/jre
 
 export LANG="en_US.utf8"
 
-export PATH="$JAVA_HOME/bin:$ZSH_CONFIG_FILES:$HOME/.local/bin:$PATH"
+export PATH="$JAVA_HOME/bin:$ZSH_CONFIG_FILES:$HOME/.local/bin:/opt/:$PATH"
 
 # Aliases
 # Shorter apt commands
@@ -37,8 +37,8 @@ alias filec="ls -A -l | grep -v ^l | wc -l"
 # Git repositories
 alias config="git --git-dir=$HOME/dotfiles/ --work-tree=$HOME"
 alias gdwm="git --git-dir=$HOME/.local/builds/git/dwm --work-tree=$HOME/.local/builds/dwm"
-alias gslstatus="git --git-dir=$HOME/.local/builds/git/slstatus --work-tree=$HOME/.local/builds/slstatus"
-alias gdmenu="git --git-dir=$HOME/.local/builds/git/dmenu --work-tree=$HOME/.local/builds/dmenu"
+alias gsls="git --git-dir=$HOME/.local/builds/git/slstatus --work-tree=$HOME/.local/builds/slstatus"
+alias gdm="git --git-dir=$HOME/.local/builds/git/dmenu --work-tree=$HOME/.local/builds/dmenu"
 alias gst="git --git-dir=$HOME/.local/builds/git/st --work-tree=$HOME/.local/builds/st"
 # Misc
 alias ls="ls --color"

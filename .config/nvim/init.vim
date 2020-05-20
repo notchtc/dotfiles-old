@@ -20,7 +20,7 @@ set clipboard=unnamedplus
 map <F5> :setlocal spell! spelllang=pl_pl<CR>
 map <F6> :setlocal spell! spelllang=en_us<CR>
 
-autocmd BufWritePost config.h,config.def.h !sudo make install clean
+autocmd BufWritePost config.h,config.def.h !sudo make clean install
 autocmd BufWritePost .zshrc,.ea !. ~/.config/zsh/.zshrc
 autocmd BufWritePost .Xresources !xrdb ~/.config/X11/.Xresources
 
