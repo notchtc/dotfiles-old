@@ -31,7 +31,6 @@ alias ppa-add="sudo add-apt-repository"
 alias ppa-update="sudo apt-get update"
 # Time saving
 alias sudo="sudo "
-alias src="source"
 alias e="$EDITOR"
 alias filec="ls -A -l | grep -v ^l | wc -l"
 # Git repositories
