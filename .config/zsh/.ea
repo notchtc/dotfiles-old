@@ -14,7 +14,7 @@ export GEM_HOME=$XDG_DATA_HOME/gem
 export GEM_SPEC_CACHE=$XDG_CACHE_HOME/gem
 
 export EDITOR="nvim"
-export BROWSER="chromium"
+export BROWSER="tor"
 export JAVA_HOME=/usr/lib/jvm/java-1.8.0-amazon-corretto/jre
 
 export LANG="en_US.utf8"

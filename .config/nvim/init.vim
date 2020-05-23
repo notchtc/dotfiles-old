@@ -4,9 +4,10 @@ if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-call plug#begin('~/.config/nvim/plugged')
+call plug#begin('~/.config/nvim/plugins')
 Plug 'tpope/vim-fugitive'
 Plug 'itchyny/lightline.vim'
+Plug 'altercation/vim-colors-solarized'
 call plug#end()
 
 set number relativenumber
@@ -17,6 +18,10 @@ set guicursor+=a:blinkon1
 
 set clipboard=unnamedplus
 
+set termguicolors
+set background=dark
+colorscheme solarized
+
 map <F5> :setlocal spell! spelllang=pl_pl<CR>
 map <F6> :setlocal spell! spelllang=en_us<CR>
 
@@ -25,7 +30,7 @@ autocmd BufWritePost .zshrc,.ea !. ~/.config/zsh/.zshrc
 autocmd BufWritePost .Xresources !xrdb ~/.config/X11/.Xresources
 
 let g:lightline = {
-      \ 'colorscheme': 'selenized_dark',
+      \ 'colorscheme': 'selenized_black',
       \ 'active': { 
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
