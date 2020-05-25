@@ -1,0 +1,4 @@
+auto-reload yes
+macro m set browser "mpv %u"; open-in-browser ;
+macro c set browser "chromium %u"; open-in-browser ;
+macro b set browser "/opt/Tor/firefox %u"; open-in-browser ;
