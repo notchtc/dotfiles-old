@@ -7,7 +7,6 @@ endif
 call plug#begin('~/.config/nvim/plugins')
 Plug 'tpope/vim-fugitive'
 Plug 'itchyny/lightline.vim'
-Plug 'file://$HOME/.config/nvim/plugins/selenized-vim'
 call plug#end()
 
 set number relativenumber
@@ -20,7 +19,6 @@ set clipboard=unnamedplus
 
 set termguicolors
 set background=dark
-colorscheme solarized
 
 map <F5> :setlocal spell! spelllang=pl_pl<CR>
 map <F6> :setlocal spell! spelllang=en_us<CR>
