@@ -59,7 +59,7 @@ modules-right = filesystem pulseaudio memory cpu wlan eth battery temperature da
 tray-position = right
 tray-padding = 2
 
-override-redirect = true
+override-redirect = false
 
 enable-ipc = true
 
