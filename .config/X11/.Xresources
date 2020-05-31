@@ -1,3 +1,6 @@
+!---------------------------------------------------------------------------
+! Selenized black color palette for urxvt and X Window System
+!
 #define    bg_0        #181818
 #define    bg_1        #252525
 #define    bg_2        #3b3b3b
