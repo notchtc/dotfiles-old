@@ -7,7 +7,7 @@ endif
 call plug#begin('~/.config/nvim/plugins')
 Plug 'tpope/vim-fugitive'
 Plug 'itchyny/lightline.vim'
-Plug 'altercation/vim-colors-solarized'
+Plug 'file://$HOME/.config/nvim/plugins/selenized-vim'
 call plug#end()
 
 set number relativenumber
@@ -42,5 +42,4 @@ let g:lightline = {
       \   'lineinfo': '%31:%-2v%<',
       \},
       \}
-
 
