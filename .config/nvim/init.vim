@@ -5,6 +5,7 @@ if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.config/nvim/plugins')
+Plug 'mattn/emmet-vim'
 Plug 'tpope/vim-fugitive'
 Plug 'itchyny/lightline.vim'
 call plug#end()
