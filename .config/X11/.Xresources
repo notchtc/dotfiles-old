@@ -1,30 +1,24 @@
-!---------------------------------------------------------------------------
-! Selenized black color palette for urxvt and X Window System
-!
-#define    bg_0        #181818
-#define    bg_1        #252525
-#define    bg_2        #3b3b3b
-#define    dim_0       #777777
-#define    fg_0        #b9b9b9
-#define    fg_1        #dedede
+! Uses the gruvbox dark pallete (https://github.com/morhetz/gruvbox-contrib/blob/master/xresources/gruvbox-dark.xresources) edited to use defines
+#define    bg_0        #1d2021
+#define    bg_1        #282828
+#define    bg_2        #928374
+#define    dim_0       #a89984
+#define    fg_0        #ebdbb2
+#define    fg_1        #ebdbb2
 
-#define    red         #ed4a46
-#define    green       #70b433
-#define    yellow      #dbb32d
-#define    blue        #368aeb
-#define    magenta     #eb6eb7
-#define    cyan        #3fc5b7
-#define    orange      #e67f43
-#define    violet      #a580e2
+#define    red         #cc241d
+#define    green       #98971a
+#define    yellow      #d79921
+#define    blue        #458588
+#define    magenta     #b16286
+#define    cyan        #689d6a
 
-#define    br_red      #ff5e56
-#define    br_green    #83c746
-#define    br_yellow   #efc541
-#define    br_blue     #4f9cfe
-#define    br_magenta  #ff81ca
-#define    br_cyan     #56d8c9
-#define    br_orange   #fa9153
-#define    br_violet   #b891f5
+#define    br_red      #fb4934
+#define    br_green    #b8bb26
+#define    br_yellow   #fabd2f
+#define    br_blue     #83a598
+#define    br_magenta  #d3869b
+#define    br_cyan     #8ec07c
 
 *background:              bg_0
 *foreground:              fg_0
@@ -53,3 +47,11 @@
 *color13:    br_magenta
 *color14:    br_cyan
 *color15:    fg_1
+
+! dwm
+dwm.normbgcolor: bg_0
+dwm.normbordercolor: dim_0
+dwm.normfgcolor: fg_0
+dwm.selfgcolor: fg_1
+dwm.selbordercolor: red
+dwm.selbgcolor: br_red
