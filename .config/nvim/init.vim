@@ -5,7 +5,7 @@ if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.config/nvim/plugins')
-Plug 'mitermayer/vim-prettier'
+Plug 'Chiel92/vim-autoformat'
 Plug 'mattn/emmet-vim'
 Plug 'tpope/vim-fugitive'
 Plug 'morhetz/gruvbox'
@@ -30,6 +30,8 @@ map <F6> :setlocal spell! spelllang=en_us<CR>
 autocmd BufWritePost config.h,config.def.h,blocks.h !sudo make clean install
 autocmd BufWritePost .zshrc,.ea !. ~/.config/zsh/.zshrc
 autocmd BufWritePost .Xresources !xrdb ~/.config/X11/.Xresources
+
+au BufWrite * :Autoformat
 
 let g:loaded_python_provider = 0
 let g:python3_host_prog = '/usr/bin/python3'
