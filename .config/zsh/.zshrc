@@ -1,11 +1,12 @@
 # Plugins
-source .config/zsh/plugins/fsh/fast-syntax-highlighting.plugin.zsh
+source $HOME/.config/zsh/plugins/fsh/fast-syntax-highlighting.plugin.zsh
 
 # Prompt
 PS1="[%F{red}%n%F{yellow}@%F{cyan}%m %F{yellow}%~%F{reset}] %F{red}~%F{reset} "
 
-# Exports
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 
+# Exports
 export XDG_DATA_HOME=$HOME/.local/share
 export XDG_CONFIG_HOME=$HOME/.config
 export XDG_CACHE_HOME=$HOME/.cache
@@ -19,14 +20,14 @@ export GEM_SPEC_CACHE=$XDG_CACHE_HOME/gem
 
 export EDITOR="nvim"
 export BROWSER="chromium"
+
 export JAVA_HOME=/usr/lib/jvm/java-1.8.0-amazon-corretto/jre
 
 export LANG="en_US.utf8"
 
-export PATH="$JAVA_HOME/bin:$ZSH_CONFIG_FILES:$HOME/.local/bin:/opt/:$PATH"
-
 export NVM_DIR="$HOME/.config/nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+
+export PATH="$JAVA_HOME/bin:$ZSH_CONFIG_FILES:$HOME/.local/bin:/opt/:$PATH"
 
 # Aliases
 # Shorter apt commands
