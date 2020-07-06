@@ -32,7 +32,5 @@ autocmd BufWritePost config.h,config.def.h,blocks.h !sudo make clean install
 autocmd BufWritePost .zshrc,.ea !. ~/.config/zsh/.zshrc
 autocmd BufWritePost .Xresources !xrdb ~/.config/X11/.Xresources
 
-au BufWrite * :Autoformat
-
 let g:loaded_python_provider = 0
 let g:python3_host_prog = '/usr/bin/python3'
