@@ -1,3 +1,9 @@
+if not functions -q fisher
+    set -q XDG_CONFIG_HOME; or set XDG_CONFIG_HOME ~/.config
+    curl https://git.io/fisher --create-dirs -sLo $XDG_CONFIG_HOME/fish/functions/fisher.fish
+    fish -c fisher
+end
+
 # Exports
 set XDG_DATA_HOME $HOME/.local/share
 set XDG_CONFIG_HOME $HOME/.config
@@ -11,6 +17,8 @@ fish_vi_key_bindings
 # Start X at login
 if status is-login
     if test -z "$DISPLAY" -a "$XDG_VTNR" = 1
-        exec startx "/home/cha0t1c/.config/X11/.xinitrc" -- -keeptty
+        # use this one if you don't want to place your .xinitrc somewhere else
+	# exec startx -- -keeptty
+	exec startx "~/.config/X11/.xinitrc" -- -keeptty
     end
 end
