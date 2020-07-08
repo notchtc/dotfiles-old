@@ -17,8 +17,6 @@ fish_vi_key_bindings
 # Start X at login
 if status is-login
     if test -z "$DISPLAY" -a "$XDG_VTNR" = 1
-        # use this one if you don't want to place your .xinitrc somewhere else
-	# exec startx -- -keeptty
-	exec startx "~/.config/X11/.xinitrc" -- -keeptty
+        exec startx -- -keeptty
     end
 end
