@@ -10,7 +10,7 @@ set XDG_CONFIG_HOME $HOME/.config
 set XDG_CACHE_HOME $HOME/.cache
 set EDITOR "nvim"
 set BROWSER "chromium"
-set -U fish_user_paths $fish_user_paths $HOME/.local/bin /opt/
+set -U fish_user_paths $fish_user_paths $HOME/.local/bin /opt/ $GOPATH/bin
 
 fish_vi_key_bindings
 
