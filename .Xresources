@@ -1,55 +1,28 @@
-!---------------------------------------------------------------------------
 ! Selenized black color palette for urxvt and X Window System
-!
-#define    bg_0        #181818
-#define    bg_1        #252525
-#define    bg_2        #3b3b3b
-#define    dim_0       #777777
-#define    fg_0        #b9b9b9
-#define    fg_1        #dedede
-
-#define    red         #ed4a46
-#define    green       #70b433
-#define    yellow      #dbb32d
-#define    blue        #368aeb
-#define    magenta     #eb6eb7
-#define    cyan        #3fc5b7
-#define    orange      #e67f43
-#define    violet      #a580e2
-
-#define    br_red      #ff5e56
-#define    br_green    #83c746
-#define    br_yellow   #efc541
-#define    br_blue     #4f9cfe
-#define    br_magenta  #ff81ca
-#define    br_cyan     #56d8c9
-#define    br_orange   #fa9153
-#define    br_violet   #b891f5
-
-*background:              bg_0
-*foreground:              fg_0
+*background:              #181818
+*foreground:              #b9b9b9
 *fading:                  40
-*fadeColor:               bg_0
-*cursorColor:             fg_1
-*pointerColorBackground:  bg_2
-*pointerColorForeground:  fg_1
+*fadeColor:               #181818
+*cursorColor:             #dedede
+*pointerColorBackground:  #3b3b3b
+*pointerColorForeground:  #dedede
 
 ! normal colors: "black", red, green, yellow, blue, magenta, cyan, "white"
-*color0:     bg_1
-*color1:     red
-*color2:     green
-*color3:     yellow
-*color4:     blue
-*color5:     magenta
-*color6:     cyan
-*color7:     dim_0
+*color0:     #252525
+*color1:     #ed4a46
+*color2:     #70b433
+*color3:     #dbb32d
+*color4:     #368aeb
+*color5:     #eb6eb7
+*color6:     #efc5b7
+*color7:     #777777
 
 ! bright/bold versions of colors (in the same order)
-*color8:     bg_2
-*color9:     br_red
-*color10:    br_green
-*color11:    br_yellow
-*color12:    br_blue
-*color13:    br_magenta
-*color14:    br_cyan
-*color15:    fg_1
+*color8:     #3b3b3b
+*color9:     #ff5e56
+*color10:    #83c746
+*color11:    #efc541
+*color12:    #4f9cfe
+*color13:    #ff81ca
+*color14:    #58d8c9
+*color15:    #dedede
