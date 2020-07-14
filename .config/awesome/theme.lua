@@ -94,10 +94,6 @@ theme = theme_assets.recolor_titlebar(
     theme, xrdb.color1, "focus", "press"
 )
 
--- Define the icon theme for application icons. If not set then the icons
--- from /usr/share/icons and /usr/share/icons/hicolor will be used.
-theme.icon_theme = nil
-
 -- Generate Awesome icon:
 theme.awesome_icon = theme_assets.awesome_icon(
     theme.menu_height, theme.bg_focus, theme.fg_focus
@@ -113,6 +109,8 @@ theme.taglist_squares_unsel = theme_assets.taglist_squares_unsel(
 )
 
 theme.wallpaper = "~/.local/tmp/cwall.png"
+
+theme.tasklist_disable_icon = true
 
 return theme
 

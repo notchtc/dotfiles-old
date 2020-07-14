@@ -14,10 +14,6 @@ local hotkeys_popup = require("awful.hotkeys_popup").widget
 -- when client with a matching name is opened:
 require("awful.hotkeys_popup.keys")
 
--- Load Debian menu entries
-local debian = require("debian.menu")
-local has_fdo, freedesktop = pcall(require, "freedesktop")
-
 -- Widgets
 
 -- {{{ Error handling
@@ -103,7 +99,8 @@ myawesomemenu = {
 }
 
 mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
-                                    { "open terminal", terminal }
+                                    { "shutdown", function() awful.spawn.with_shell("shutdown -h now") end },
+				    { "reboot", function() awful.spawn.with_shell("reboot -f") end }
                                   }
                         })
 
@@ -122,7 +119,7 @@ mykeyboardlayout = awful.widget.keyboardlayout()
 local vicious = require("vicious")
 
 myvolume = wibox.widget.textbox()
-vicious.register(myvolume, vicious.widgets.volume, "<span fgcolor='dodgerblue'>$2 $1%  </span>", 0, {"Master", "-D", "pulse"})
+vicious.register(myvolume, vicious.widgets.volume, "<span fgcolor='dodgerblue'> $2 $1%  </span>", 99, {"Master", "-D", "pulse"})
 
 mycpu = wibox.widget.textbox()
 vicious.register(mycpu, vicious.widgets.cpu, "<span fgcolor='lawngreen'> $1%  </span>", 50)
@@ -226,7 +223,6 @@ awful.screen.connect_for_each_screen(function(s)
         layout = wibox.layout.align.horizontal,
         { -- Left widgets
             layout = wibox.layout.fixed.horizontal,
-            -- mylauncher
 	    s.mytaglist,
             s.mypromptbox,
         },
@@ -239,7 +235,7 @@ awful.screen.connect_for_each_screen(function(s)
 	    mybattery,
 	    mydate,
             wibox.widget.systray(),
-	    s.mylayoutbox,
+	    mylauncher,
     	},
     }
 end)
@@ -357,29 +353,36 @@ globalkeys = gears.table.join(
    
    -- Volume Keys
    awful.key({}, "XF86AudioLowerVolume", function ()
-     awful.util.spawn("amixer -q -D pulse sset Master 5%-", false)
+     awful.util.spawn("amixer -D pulse sset Master 5%-", false)
      vicious.force({myvolume})
    end),
+
    awful.key({}, "XF86AudioRaiseVolume", function ()
-     awful.util.spawn("amixer -q -D pulse sset Master 5%+", false)
+     awful.util.spawn("amixer -D pulse sset Master 5%+", false)
      vicious.force({myvolume})
    end),
+
    awful.key({}, "XF86AudioMute", function ()
-     awful.util.spawn("amixer -D pulse set Master 1+ toggle", false)
+     awful.util.spawn("amixer -D pulse sset Master toggle", false)
      vicious.force({myvolume})
    end),
    -- Media Keys
    awful.key({}, "XF86AudioPlay", function()
      awful.util.spawn("playerctl play-pause", false)
    end),
+
    awful.key({}, "XF86AudioNext", function()
      awful.util.spawn("playerctl next", false)
    end),
+
    awful.key({}, "XF86AudioPrev", function()
      awful.util.spawn("playerctl previous", false)
    end),
 
    awful.key({ modkey, "Shift" }, "p", function () awful.spawn.with_shell("sxiv -ft ~/stuff/images/wallpapers/", false)
+   end),
+
+   awful.key({ modkey }, "n", function () awful.spawn.with_shell("x-terminal-emulator -e newsboat", false)
    end)
 )
 
@@ -510,22 +513,14 @@ awful.rules.rules = {
           "copyq",  -- Includes session name in class.
         },
         class = {
-          "Arandr",
           "discord",
-	  "Gpick",
-          "Kruler",
-          "MessageWin",  -- kalarm.
           "Sxiv",
-          "Wpa_gui",
-          "pinentry",
-          "veromix",
-          "xtightvncviewer"},
-
+          "mpv",
+  	},
         name = {
           "Event Tester",  -- xev.
         },
         role = {
-          "AlarmWindow",  -- Thunderbird's calendar.
           "pop-up",       -- e.g. Google Chrome's (detached) Developer Tools.
         }
       }, properties = { floating = true }},
