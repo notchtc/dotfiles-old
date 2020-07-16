@@ -10,7 +10,7 @@ set XDG_CONFIG_HOME $HOME/.config
 set XDG_CACHE_HOME $HOME/.cache
 set EDITOR "nvim"
 set BROWSER "chromium"
-set -U fish_user_paths $fish_user_paths $HOME/.local/bin /opt/ $GOPATH/bin
+set -U fish_user_paths $fish_user_paths $HOME/.local/bin /opt/ /usr/local/go/bin
 
 fish_vi_key_bindings
 
@@ -18,5 +18,5 @@ fish_vi_key_bindings
 if status is-login
 	if test -z "$DISPLAY" -a "$XDG_VTNR" = 1
 		exec startx -- -keeptty
-		end
+	end
 end
