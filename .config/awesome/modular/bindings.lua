@@ -1,6 +1,7 @@
 -- Importing stuff
 local gears = require("gears")
 local awful = require("awful")
+local vicious = require("vicious")
 local hotkeys_popup = require("awful.hotkeys_popup").widget require("awful.hotkeys_popup.keys")
 
 -- {{{ Mouse bindings
