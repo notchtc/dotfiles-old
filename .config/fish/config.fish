@@ -10,9 +10,15 @@ set XDG_CONFIG_HOME $HOME/.config
 set XDG_CACHE_HOME $HOME/.cache
 set EDITOR "nvim"
 set BROWSER "chromium"
-set -U fish_user_paths $fish_user_paths $HOME/.local/bin
+set -U fish_user_paths $PATH $HOME/.local/bin
 
 fish_vi_key_bindings
+
+# Abbreviations
+abbr  --add e "nvim"
+
+# Other
+set fish_greeting
 
 # Start X at login
 if status is-login

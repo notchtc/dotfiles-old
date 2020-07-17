@@ -153,7 +153,7 @@ awful.screen.connect_for_each_screen(function(s)
 
     -- Date and Time Widget
     mydatetime = wibox.widget.textbox()
-    vicious.register(mydatetime, vicious.widgets.date, "<span fgcolor='orange'> %a %d.%m.%Y  </span><span fgcolor='indianred'> %H:%M  </span>")
+    vicious.register(mydatetime, vicious.widgets.date, "<span fgcolor='orange'> %a %d.%m.%Y   %H:%M  </span>")
 
     -- Add widgets to the wibox
     s.mywibox:setup {
@@ -166,7 +166,8 @@ awful.screen.connect_for_each_screen(function(s)
         s.mytasklist, -- Middle widget
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
-       	    myvolume,
+       	    -- mykeyboardlayout,
+	    myvolume,
 	    mycpu,
 	    mymem,
 	    mybattery,
