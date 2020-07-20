@@ -8,14 +8,16 @@ end
 set XDG_DATA_HOME $HOME/.local/share
 set XDG_CONFIG_HOME $HOME/.config
 set XDG_CACHE_HOME $HOME/.cache
-set EDITOR "nvim"
+set QT_QPA_PLATFORMTHEME qt5ct
+set EDITOR "emacs"
 set BROWSER "chromium"
-set -U fish_user_paths $PATH $HOME/.local/bin
+set fish_user_paths $PATH $HOME/.local/bin $HOME/.emacs.d/bin
 
 fish_vi_key_bindings
 
 # Abbreviations
-abbr  --add e "nvim"
+abbr --add e "$EDITOR"
+abbr --add se "sudo $EDITOR"
 
 # Other
 set fish_greeting

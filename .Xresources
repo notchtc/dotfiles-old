@@ -1,28 +1,47 @@
-! Selenized black color palette for urxvt and X Window System
-*background:              #181818
-*foreground:              #b9b9b9
-*fading:                  40
-*fadeColor:               #181818
-*cursorColor:             #dedede
-*pointerColorBackground:  #3b3b3b
-*pointerColorForeground:  #dedede
+! Copyright (c) 2016-present Arctic Ice Studio <development@arcticicestudio.com>
+! Copyright (c) 2016-present Sven Greb <code@svengreb.de>
 
-! normal colors: "black", red, green, yellow, blue, magenta, cyan, "white"
-*color0:     #252525
-*color1:     #ed4a46
-*color2:     #70b433
-*color3:     #dbb32d
-*color4:     #368aeb
-*color5:     #eb6eb7
-*color6:     #efc5b7
-*color7:     #777777
+! Project:    Nord XResources
+! Version:    0.1.0
+! Repository: https://github.com/arcticicestudio/nord-xresources
+! License:    MIT
 
-! bright/bold versions of colors (in the same order)
-*color8:     #3b3b3b
-*color9:     #ff5e56
-*color10:    #83c746
-*color11:    #efc541
-*color12:    #4f9cfe
-*color13:    #ff81ca
-*color14:    #58d8c9
-*color15:    #dedede
+#define nord0 #2E3440
+#define nord1 #3B4252
+#define nord2 #434C5E
+#define nord3 #4C566A
+#define nord4 #D8DEE9
+#define nord5 #E5E9F0
+#define nord6 #ECEFF4
+#define nord7 #8FBCBB
+#define nord8 #88C0D0
+#define nord9 #81A1C1
+#define nord10 #5E81AC
+#define nord11 #BF616A
+#define nord12 #D08770
+#define nord13 #EBCB8B
+#define nord14 #A3BE8C
+#define nord15 #B48EAD
+
+*.foreground:   nord4
+*.background:   nord0
+*.cursorColor:  nord4
+*fading: 35
+*fadeColor: nord3
+
+*.color0: nord1
+*.color1: nord11
+*.color2: nord14
+*.color3: nord13
+*.color4: nord9
+*.color5: nord15
+*.color6: nord8
+*.color7: nord5
+*.color8: nord3
+*.color9: nord11
+*.color10: nord14
+*.color11: nord13
+*.color12: nord9
+*.color13: nord15
+*.color14: nord7
+*.color15: nord6

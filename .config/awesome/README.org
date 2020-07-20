@@ -1,3 +1,22 @@
+#+TITLE: Cha0t1c's Awesome Config
+#+PROPERTY: header-args :tangle rc.lua
+
+This is my [[https://awesomewm.org][awesome]] config.
+It's split into modules so the main file isn't big and bloated.
+
+* Table of contents :toc:
+- [[#dependencies][Dependencies]]
+- [[#import-required-libraries][Import Required Libraries]]
+- [[#import-modules][Import Modules]]
+- [[#error-handling][Error Handling]]
+- [[#signals][Signals]]
+
+* Dependencies
++ [[https://github.com/vicious-widgets/vicious][vicious]]
+  Required for widgets (date and clock too)
+* Import Required Libraries
+This will import libraries required by commands in this config file.
+#+BEGIN_SRC lua
 -- Standard awesome library
 local gears = require("gears")
 local awful = require("awful")
@@ -8,17 +27,42 @@ local wibox = require("wibox")
 local beautiful = require("beautiful")
 -- Notification library
 local naughty = require("naughty")
+#+END_SRC
 
+* Import Modules
+This will import modules found in the modular folder.
++ Vars
+  This module contains some variables used by other modules.
++ Bindings
+  This module contains keybindings and (commented out) mouse bindings.
++ Rules
+  This module applies rules like:
+  + Border Width/Border Color
+  + Floating Client
+  + Titlebars
+    In this config you need to enable them
+    #+BEGIN_SRC lua
     titlebars_enabled = false
-
+    #+END_SRC
+    to
+    #+BEGIN_SRC lua
     titlebars_enabled = true
+   #+END_SRC
++ Bar
+  This module affects the bar on the top of the screen.
++ Autolaunch
+  This module just launches things on startup.
 
+#+BEGIN_SRC lua
 local vars = require("modular/vars")
 local bindings = require("modular/bindings")
 local rules = require("modular/rules")
 local bar = require("modular/bar")
 local autolaunch = require("modular/autolaunch")
+#+END_SRC
 
+* Error Handling
+#+BEGIN_SRC lua
 -- Check if awesome encountered an error during startup and fell back to
 -- another config (This code will only ever execute for the fallback config)
 if awesome.startup_errors then
@@ -41,7 +85,10 @@ do
         in_error = false
     end)
 end
+#+END_SRC
 
+* Signals
+#+BEGIN_SRC lua
 -- Signal function to execute when a new client appears.
 client.connect_signal("manage", function (c)
     -- Set the windows at the slave,
@@ -108,3 +155,4 @@ end)
 
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
+#+END_SRC
