@@ -1,9 +1,32 @@
+#+TITLE: Cha0t1c's Neovim Config
+#+PROPERTY: header-args :tangle init.vim
+
+I am an /evil/ person, that's why I made this :)
+That pun was intended.
+
+* Table Of Contents :toc:
+- [[#plugins][Plugins]]
+  - [[#download-plugin-manager][Download Plugin Manager]]
+  - [[#plugins-1][Plugins]]
+- [[#basics][Basics]]
+- [[#looks][Looks]]
+- [[#other][Other]]
+  - [[#bufwrites][Bufwrites]]
+  - [[#keybinds][Keybinds]]
+  - [[#fish][Fish]]
+
+* Plugins
+** Download Plugin Manager
+#+BEGIN_SRC vim
 if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
 	silent !curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs
 				\ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 	autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
-
+#+END_SRC
+** Plugins
+This is the list of plugins. :PlugInstall downloads them, :PlugUpgrade updates vim-plug (the plugin manager), :PlugClean removes ones removed from this list.
+#+BEGIN_SRC vim
 call plug#begin('~/.config/nvim/plugins')
 Plug 'mattn/emmet-vim'
 Plug 'airblade/vim-gitgutter'
@@ -13,13 +36,18 @@ Plug 'Chiel92/vim-autoformat'
 Plug 'itchyny/lightline.vim'
 Plug '~/.config/nvim/plugins/selenized/' " https://github.com/jan-warchol/selenized/tree/master/editors/vim
 call plug#end()
-
+#+END_SRC
+* Basics
+Some basic stuff
+#+BEGIN_SRC vim
 set nocompatible
 set number relativenumber
 set clipboard+=unnamedplus
 " Don't @ me
 setlocal foldmethod=indent
-
+#+END_SRC
+* Looks
+#+BEGIN_SRC vim
 set background=dark
 colorscheme selenized_bw
 hi Normal ctermbg=NONE
@@ -28,19 +56,29 @@ set noshowmode
 let g:lightline = {
 			\ 'colorscheme': 'selenized_black',
 			\}
-
+#+END_SRC
+* Other
+Don't place an comment when making an newline
+#+BEGIN_SRC vim
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
-
+#+END_SRC
+** Bufwrites
+#+BEGIN_SRC vim
 autocmd BufWritePre * %s/\n\+\%$//e " Remove trailing newlines
 
 autocmd BufWritePost *Xresources,*Xdefaults !xrdb % " Reload .Xresources/.Xdefaults on reload
-
+#+END_SRC
+** Keybinds
+#+BEGIN_SRC vim
 " Save file and go to previous/next one.
 noremap ;p :wN<CR>
 noremap ;n :wn<CR>
 " Format file
 noremap <F3> :Autoformat<CR>:w<CR>
-
+#+END_SRC
+** Fish
+#+BEGIN_SRC vim
 if &shell =~# 'fish$'
 	set shell=sh
 endif
+#+END_SRC
