@@ -10,7 +10,7 @@ set XDG_CONFIG_HOME $HOME/.config
 set XDG_CACHE_HOME $HOME/.cache
 set QT_QPA_PLATFORMTHEME qt5ct
 set EDITOR "emacs"
-set BROWSER "chromium"
+set BROWSER "firefox"
 set fish_user_paths $PATH $HOME/.local/bin $HOME/.emacs.d/bin
 
 fish_vi_key_bindings
