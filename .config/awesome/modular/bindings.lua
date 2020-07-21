@@ -2,6 +2,7 @@
 local gears = require("gears")
 local awful = require("awful")
 local vicious = require("vicious")
+local naughty = require("naughty")
 local hotkeys_popup = require("awful.hotkeys_popup").widget require("awful.hotkeys_popup.keys")
 
 -- {{{ Mouse bindings
@@ -108,9 +109,19 @@ globalkeys = gears.table.join(
               {description = "lua execute prompt", group = "awesome"}),
 
     -- Screenshots
-    awful.key({ }, "Print", function () awful.util.spawn("scrot -e 'mv $f ~/stuff/images/screenshots/ 2>/dev/null'", false) end),
+    awful.key({ }, "Print", function ()
+            awful.util.spawn("scrot -e 'mv $f ~/stuff/images/screenshots/ 2>/dev/null'", false)
+            naughty.notify{
+                title="Screenshot taken!"
+            }
+    end),
 
-    awful.key({ "Shift" }, "Print", nil, function () awful.util.spawn("scrot -s -e 'mv $f ~/stuff/images/screenshots/ 2>/dev/null'", false) end),
+    awful.key({ "Shift" }, "Print", nil, function ()
+            awful.util.spawn("scrot -s -e 'mv $f ~/stuff/images/screenshots/ 2>/dev/null'", false)
+            naughty.notify{
+                title="Screenshot taken!"
+            }
+    end),
 
    -- Volume Keys
    awful.key({}, "XF86AudioLowerVolume", function ()

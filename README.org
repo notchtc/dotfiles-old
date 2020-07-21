@@ -1,0 +1,14 @@
+#+TITLE: Cha0t1c's Dotfiles
+#+AUTHOR: Cha0t1c
+
+This repo contains my dotfiles.
+Scripts are [[https://gitlab.com/cha0t1c/scripts][here.]]
+* Contains
++ .Xresources
++ [[https://awesomewm.org/][awesome]]
++ [[https://github.com/chjj/compton][compton]]
++ [[https://github.com/hlissner/doom-emacs][doom emacs]]
++ [[https://fishshell.com/][fish]]
++ fontconfig
++ [[https://newsboat.org/][newsboat]]
++ [[https://neovim.io/][neovim]]

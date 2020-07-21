@@ -1,4 +1,5 @@
-#+TITLE: Cha0t1c's Awesome Config
+#+TITLE: Awesome Config
+#+AUTHOR: Cha0t1c
 #+PROPERTY: header-args :tangle rc.lua
 
 This is my [[https://awesomewm.org][awesome]] config.
