@@ -21,14 +21,14 @@ fish_vi_key_bindings
 abbr --add e "$EDITOR"
 abbr --add se "sudo $EDITOR"
 
-# Other
-set -U fish_greeting
-# Stupid Rice Shit
-neofetch
-
 # Start X at login
 if status is-login
 	if test -z "$DISPLAY" -a "$XDG_VTNR" = 1
 		exec startx -- -keeptty
 	end
 end
+
+# Other
+set -U fish_greeting
+# Stupid Rice Shit
+neofetch
