@@ -13,6 +13,8 @@ set EDITOR "emacs"
 set BROWSER "firefox"
 set fish_user_paths $PATH $HOME/.local/bin $HOME/.emacs.d/bin
 
+source ~/.config/fish/bobthe.fish
+
 fish_vi_key_bindings
 
 # Abbreviations
@@ -20,7 +22,9 @@ abbr --add e "$EDITOR"
 abbr --add se "sudo $EDITOR"
 
 # Other
-set fish_greeting
+set -U fish_greeting
+# Stupid Rice Shit
+neofetch
 
 # Start X at login
 if status is-login

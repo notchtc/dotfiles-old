@@ -15,13 +15,13 @@ local themes_path = gfs.get_themes_dir()
 local theme = dofile(themes_path.."default/theme.lua")
 -- load vector assets' generators for this theme
 
-theme.font          = "monospace 8.45"
+theme.font          = "monospace 8"
 
 theme.bg_normal     = xrdb.background
 theme.bg_focus      = xrdb.color14
 theme.bg_urgent     = xrdb.color9
 theme.bg_minimize   = xrdb.color8
-theme.bg_systray    = theme.bg_normal
+theme.bg_systray    = theme.bg_normal 
 
 theme.fg_normal     = xrdb.foreground
 theme.fg_focus      = theme.bg_normal

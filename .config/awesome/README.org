@@ -20,6 +20,7 @@ This is my [[https://awesomewm.org][awesome]] config.
   - [[#floating-clients][Floating Clients]]
 - [[#error-handling][Error Handling]]
 - [[#signals][Signals]]
+- [[#autorun][Autorun]]
 
 * Dependencies
 + [[https://github.com/vicious-widgets/vicious][vicious]]
@@ -611,4 +612,9 @@ end)
 
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
+#+END_SRC
+* Autorun
+#+BEGIN_SRC lua
+awful.spawn.with_shell("xrdb -merge .Xresources")
+awful.spawn.with_shell("compton")
 #+END_SRC
