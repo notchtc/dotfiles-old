@@ -28,8 +28,8 @@ theme.fg_focus      = theme.bg_normal
 theme.fg_urgent     = theme.bg_normal
 theme.fg_minimize   = theme.bg_normal
 
-theme.useless_gap   = dpi(5)
-theme.border_width  = dpi(2)
+theme.useless_gap   = dpi(6)
+theme.border_width  = dpi(1)
 theme.border_normal = xrdb.color0
 theme.border_focus  = theme.bg_focus
 theme.border_marked = xrdb.color10
@@ -52,7 +52,7 @@ theme.tooltip_bg = theme.bg_normal
 -- menu_[bg|fg]_[normal|focus]
 -- menu_[border_color|border_width]
 theme.menu_submenu_icon = themes_path.."default/submenu.png"
-theme.menu_height = dpi(16)
+theme.menu_height = dpi(20)
 theme.menu_width  = dpi(100)
 
 -- You can add as many variables as
@@ -100,7 +100,7 @@ theme.awesome_icon = theme_assets.awesome_icon(
 )
 
 -- Generate taglist squares:
-local taglist_square_size = dpi(3)
+local taglist_square_size = dpi(4)
 theme.taglist_squares_sel = theme_assets.taglist_squares_sel(
     taglist_square_size, theme.fg_normal
 )

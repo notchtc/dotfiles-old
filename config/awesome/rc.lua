@@ -163,7 +163,7 @@ awful.screen.connect_for_each_screen(function(s)
 
     -- Volume widget
     myvolume = wibox.widget.textbox()
-    vicious.register(myvolume, vicious.widgets.volume, "<span fgcolor='dodgerblue'> $2 $1%  </span>", 99, {"Master", "-D", "pulse"})
+    vicious.register(myvolume, vicious.widgets.volume, "<span fgcolor='crimson'> $2 $1%  </span>", 99, {"Master", "-D", "pulse"})
 
     -- CPU Widget
     mycpu = wibox.widget.textbox()
@@ -175,11 +175,11 @@ awful.screen.connect_for_each_screen(function(s)
 
     -- Battery Widget
     mybattery = wibox.widget.textbox()
-    vicious.register(mybattery, vicious.widgets.bat, "<span fgcolor='gold'> $2%  </span>", 50, "BAT1")
+    vicious.register(mybattery, vicious.widgets.bat, "<span fgcolor='yellow'> $2%  </span>", 50, "BAT1")
 
     -- Date and Time Widget
     mydatetime = wibox.widget.textbox()
-    vicious.register(mydatetime, vicious.widgets.date, "<span fgcolor='orange'> %a %d.%m.%Y   %H:%M  </span>")
+    vicious.register(mydatetime, vicious.widgets.date, "<span fgcolor='gold'> %a %d.%m.%Y   %H:%M  </span>")
 
     -- Add widgets to the wibox
     s.mywibox:setup {
