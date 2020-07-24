@@ -1,3 +1,2 @@
 auto-reload yes
-macro m set browser "mpv %u"; open-in-browser ;
-macro o set browser "chromium %u"; open-in-browser ;
+browser "firefox"
