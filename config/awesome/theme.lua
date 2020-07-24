@@ -30,7 +30,7 @@ theme.fg_minimize   = theme.bg_normal
 
 theme.useless_gap   = dpi(6)
 theme.border_width  = dpi(1)
-theme.border_normal = xrdb.color0
+theme.border_normal = xrdb.color1
 theme.border_focus  = theme.bg_focus
 theme.border_marked = xrdb.color10
 
@@ -54,11 +54,6 @@ theme.tooltip_bg = theme.bg_normal
 theme.menu_submenu_icon = themes_path.."default/submenu.png"
 theme.menu_height = dpi(20)
 theme.menu_width  = dpi(100)
-
--- You can add as many variables as
--- you wish and access them by using
--- beautiful.variable in your rc.lua
--- theme.bg_widget = "#cc0000"
 
 -- Recolor Layout icons:
 theme = theme_assets.recolor_layout(theme, theme.fg_normal)

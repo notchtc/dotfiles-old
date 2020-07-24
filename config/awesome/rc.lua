@@ -7,6 +7,7 @@ local wibox = require("wibox")
 local vicious = require("vicious")
 -- Theme handling library
 local beautiful = require("beautiful")
+local xrdb = require("beautiful.xresources")
 -- Notification library
 local naughty = require("naughty")
 local menubar = require("menubar")
@@ -163,23 +164,23 @@ awful.screen.connect_for_each_screen(function(s)
 
     -- Volume widget
     myvolume = wibox.widget.textbox()
-    vicious.register(myvolume, vicious.widgets.volume, "<span fgcolor='crimson'> $2 $1%  </span>", 99, {"Master", "-D", "pulse"})
+    vicious.register(myvolume, vicious.widgets.volume, "$2 $1%  ", 99, {"Master", "-D", "pulse"})
 
     -- CPU Widget
     mycpu = wibox.widget.textbox()
-    vicious.register(mycpu, vicious.widgets.cpu, "<span fgcolor='lawngreen'> $1%  </span>", 50)
+    vicious.register(mycpu, vicious.widgets.cpu, " $1%  ", 50)
 
     -- RAM Widget
     mymem = wibox.widget.textbox()
-    vicious.register(mymem, vicious.widgets.mem, "<span fgcolor='lawngreen'> $1%  </span>", 50)
+    vicious.register(mymem, vicious.widgets.mem, " $1%  ", 50)
 
     -- Battery Widget
     mybattery = wibox.widget.textbox()
-    vicious.register(mybattery, vicious.widgets.bat, "<span fgcolor='yellow'> $2%  </span>", 50, "BAT1")
+    vicious.register(mybattery, vicious.widgets.bat, " $2%  ", 50, "BAT1")
 
     -- Date and Time Widget
     mydatetime = wibox.widget.textbox()
-    vicious.register(mydatetime, vicious.widgets.date, "<span fgcolor='gold'> %a %d.%m.%Y   %H:%M  </span>")
+    vicious.register(mydatetime, vicious.widgets.date, " %a %d.%m.%Y   %H:%M  ")
 
     -- Add widgets to the wibox
     s.mywibox:setup {
