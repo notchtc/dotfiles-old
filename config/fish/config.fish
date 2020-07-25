@@ -41,4 +41,4 @@ end
 # Other
 set -U fish_greeting
 # Stupid Rice Shit
-neofetch
+#neofetch
