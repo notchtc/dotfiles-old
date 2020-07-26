@@ -18,8 +18,8 @@ local theme = dofile(themes_path.."default/theme.lua")
 theme.font          = "monospace 8"
 
 theme.bg_normal     = xrdb.background
-theme.bg_focus      = xrdb.color9
-theme.bg_urgent     = theme.bg_focus
+theme.bg_focus      = xrdb.color1
+theme.bg_urgent     = xrdb.color9
 theme.bg_minimize   = xrdb.color8
 theme.bg_systray    = theme.bg_normal
 
@@ -47,6 +47,7 @@ theme.border_marked = xrdb.color10
 
 theme.tooltip_fg = theme.fg_normal
 theme.tooltip_bg = theme.bg_normal
+theme.tasklist_disable_icon = true
 
 -- Variables set for theming the menu:
 -- menu_[bg|fg]_[normal|focus]
@@ -55,8 +56,10 @@ theme.menu_submenu_icon = themes_path.."default/submenu.png"
 theme.menu_height = dpi(20)
 theme.menu_width  = dpi(100)
 
--- Recolor Layout icons:
-theme = theme_assets.recolor_layout(theme, theme.fg_normal)
+-- Misc
+theme.prompt_bg_cursor = theme.fg_normal
+theme.wibar_opacity = 0.875
+theme.wibar_height = 22
 
 -- Recolor titlebar icons:
 --
@@ -103,10 +106,7 @@ theme.taglist_squares_unsel = theme_assets.taglist_squares_unsel(
 
 theme.wallpaper = "~/.local/tmp/cwall.png"
 
--- Misc
-theme.tasklist_disable_icon = true
-theme.wibar_opacity = 0.875
-theme.wibar_height = 22
+
 
 return theme
 
