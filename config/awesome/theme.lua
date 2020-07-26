@@ -19,9 +19,9 @@ theme.font          = "monospace 8"
 
 theme.bg_normal     = xrdb.background
 theme.bg_focus      = xrdb.color9
-theme.bg_urgent     = xrdb.color9
+theme.bg_urgent     = theme.bg_focus
 theme.bg_minimize   = xrdb.color8
-theme.bg_systray    = theme.bg_normal 
+theme.bg_systray    = theme.bg_normal
 
 theme.fg_normal     = xrdb.foreground
 theme.fg_focus      = theme.bg_normal
@@ -90,9 +90,7 @@ theme = theme_assets.recolor_titlebar(
 )
 
 -- Generate Awesome icon:
-theme.awesome_icon = theme_assets.awesome_icon(
-    theme.menu_height, theme.bg_focus, theme.fg_focus
-)
+theme.awesome_icon = "~/.config/awesome/3dots.png" 
 
 -- Generate taglist squares:
 local taglist_square_size = dpi(4)
@@ -105,7 +103,10 @@ theme.taglist_squares_unsel = theme_assets.taglist_squares_unsel(
 
 theme.wallpaper = "~/.local/tmp/cwall.png"
 
+-- Misc
 theme.tasklist_disable_icon = true
+theme.wibar_opacity = 0.875
+theme.wibar_height = 22
 
 return theme
 

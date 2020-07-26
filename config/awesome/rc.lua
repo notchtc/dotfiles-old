@@ -16,6 +16,7 @@ local hotkeys_popup = require("awful.hotkeys_popup").widget
 -- when client with a matching name is opened:
 require("awful.hotkeys_popup.keys")
 
+-- Modkey
 modkey = "Mod4"
 
 -- Default terminal and editor
@@ -63,7 +64,7 @@ myawesomemenu = {
    { "quit", function() awesome.quit() end },
 }
 
-mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
+mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu },
                                     { "shutdown", function() awful.spawn.with_shell("shutdown -h now") end },
 				    { "reboot", function() awful.spawn.with_shell("reboot -f") end }
                                   }
@@ -73,7 +74,6 @@ mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon,
                                      menu = mymainmenu })
 -- Menubar configuration
 menubar.utils.terminal = terminal -- Set the terminal for applications that require it
--- }}}
 
 -- Create a wibox for each screen and add it
 local taglist_buttons = gears.table.join(

@@ -50,6 +50,7 @@ require("awful.hotkeys_popup.keys")
 * Variables
 Here you can change your modkey, terminal, theme file and order of layouts.
 #+BEGIN_SRC lua
+-- Modkey
 modkey = "Mod4"
 
 -- Default terminal and editor
@@ -72,7 +73,6 @@ awful.layout.layouts = {
     awful.layout.suit.fair.horizontal,
     awful.layout.suit.floating,
 }
-
 #+END_SRC
 
 * Autorun
@@ -96,7 +96,6 @@ local function client_menu_toggle_fn()
         end
     end
 end
-
 #+END_SRC
 ** Menu
 Create a launcher widget and a main menu.
@@ -109,7 +108,7 @@ myawesomemenu = {
    { "quit", function() awesome.quit() end },
 }
 
-mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
+mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu },
                                     { "shutdown", function() awful.spawn.with_shell("shutdown -h now") end },
 				    { "reboot", function() awful.spawn.with_shell("reboot -f") end }
                                   }
@@ -119,7 +118,6 @@ mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon,
                                      menu = mymainmenu })
 -- Menubar configuration
 menubar.utils.terminal = terminal -- Set the terminal for applications that require it
--- }}}
 #+END_SRC
 ** Wibar
 Everything related with the bar on the top of your screen.
