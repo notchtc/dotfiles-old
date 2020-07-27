@@ -110,7 +110,7 @@ myawesomemenu = {
 
 mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu },
                                     { "shutdown", function() awful.spawn.with_shell("shutdown -h now") end },
-				    { "reboot", function() awful.spawn.with_shell("reboot -f") end }
+				    { "reboot", function() awful.spawn.with_shell("reboot") end }
                                   }
                         })
 
