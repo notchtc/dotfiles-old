@@ -18,14 +18,14 @@ local theme = dofile(themes_path.."default/theme.lua")
 theme.font          = "monospace 8"
 
 theme.bg_normal     = xrdb.background
-theme.bg_focus      = xrdb.color1
-theme.bg_urgent     = xrdb.color9
+theme.bg_focus      = xrdb.color9
+theme.bg_urgent     = xrdb.color11
 theme.bg_minimize   = xrdb.color8
 theme.bg_systray    = theme.bg_normal
 
 theme.fg_normal     = xrdb.foreground
 theme.fg_focus      = theme.bg_normal
-theme.fg_urgent     = theme.bg_normal
+theme.fg_urgent     = theme.bg_focus
 theme.fg_minimize   = theme.bg_normal
 
 theme.useless_gap   = dpi(6)
@@ -42,24 +42,16 @@ theme.border_marked = xrdb.color10
 -- titlebar_[bg|fg]_[normal|focus]
 -- tooltip_[font|opacity|fg_color|bg_color|border_width|border_color]
 -- mouse_finder_[color|timeout|animate_timeout|radius|factor]
--- Example:
---theme.taglist_bg_focus = "#ff0000"
-
-theme.tooltip_fg = theme.fg_normal
-theme.tooltip_bg = theme.bg_normal
-theme.tasklist_disable_icon = true
-
--- Variables set for theming the menu:
 -- menu_[bg|fg]_[normal|focus]
 -- menu_[border_color|border_width]
 theme.menu_submenu_icon = themes_path.."default/submenu.png"
 theme.menu_height = dpi(20)
 theme.menu_width  = dpi(100)
 
--- Misc
 theme.prompt_bg_cursor = theme.fg_normal
 theme.wibar_opacity = 0.875
 theme.wibar_height = 22
+theme.tasklist_disable_icon = true
 
 -- Recolor titlebar icons:
 --
