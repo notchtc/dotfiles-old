@@ -16,10 +16,10 @@ set EDITOR "emacs"
 set BROWSER "firefox"
 
 # Other
-set SPICETIFY_INSTALL /home/cha0t1c/spicetify-cli
+set SPICETIFY_INSTALL $HOME/stuff/misc/spicetify-cli
 set QT_QPA_PLATFORMTHEME qt5ct
 
-set fish_user_paths $PATH $HOME/.local/bin $HOME/.emacs.d/bin $SPICETIFY_INSTALL
+set fish_user_paths $PATH $HOME/.local/bin $HOME/.emacs.d/bin $SPICETIFY_INSTALL $HOME/.cabal/bin
 
 # Variables for bobthefish theme
 source ~/.config/fish/bobthe.fish
