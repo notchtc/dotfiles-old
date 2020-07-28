@@ -76,7 +76,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 
     -- Must have
     , ((modm .|. shiftMask, xK_Return), spawn $ XMonad.terminal conf)                 -- launch a terminal
-    , ((modm,               xK_p     ), spawn "dmenu_path | dmenu -nb '#282a36' -nf '#f8f8f2' -sb '#ff5555' -sf '#f8f8f2'")    -- launch dmenu
+    , ((modm,               xK_p     ), spawn "exe=`dmenu_path | dmenu -nb '#282a36' -nf '#f8f8f2' -sb '#ff5555' -sf '#f8f8f2'` && eval $exe")    -- launch dmenu
 
     -- Other
     , ((modm .|. shiftMask, xK_n     ), spawn "newsboat")                             -- launch newsboat
