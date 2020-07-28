@@ -1,3 +1,24 @@
+#+TITLE: XMonad Config
+#+AUTHOR: Cha0t1c
+#+PROPERTY: header-args :tangle xmonad.hs
+
+* Table of contents :toc:
+- [[#dependencies][Dependencies]]
+- [[#imports][Imports]]
+- [[#keybindings][Keybindings]]
+- [[#layouts][Layouts]]
+- [[#window-rules][Window rules]]
+- [[#startup-hook][Startup hook]]
+- [[#bar][Bar]]
+- [[#main][Main]]
+
+* Dependencies
+- [[https://hackage.haskell.org/package/xmonad-contrib][xmonad-contrib]]
+- [[https://hackage.haskell.org/package/xmobar][xmobar]]
+
+* Imports
+Here we import libraries that we need.
+#+BEGIN_SRC haskell
 import XMonad
 import XMonad.Config.Desktop
 
@@ -13,7 +34,8 @@ import System.Exit
 
 import qualified XMonad.StackSet as W
 import qualified Data.Map        as M
-
+#+END_SRC
+#+BEGIN_SRC haskell
 -- The preferred terminal program, which is used in a binding below and by certain contrib modules.
 myTerminal      = "alacritty"
 
@@ -25,7 +47,10 @@ myModMask       = mod4Mask
 -- Border colors for unfocused and focused windows, respectively.
 myNormalBorderColor  = "#282a36"
 myFocusedBorderColor = "#ff5555"
-
+#+END_SRC
+* Keybindings
+Here you can add, remove and change keybindings.
+#+BEGIN_SRC haskell
 myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- XMonad
     [ ((modm .|. shiftMask, xK_q     ), io (exitWith ExitSuccess))    -- Quit xmonad
@@ -71,6 +96,16 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
         | (key, sc) <- zip [xK_w, xK_e, xK_r] [0..]
         , (f, m) <- [(W.view, 0), (W.shift, shiftMask)]]
 
+#+END_SRC
+* Layouts
+You can specify and transform your layouts by modifying these values.
+If you change layout bindings be sure to use 'mod-shift-space' after
+restarting (with 'mod-q') to reset your layout state to the new
+defaults, as xmonad preserves your old layout settings by default.
+
+The available layouts.  Note that each layout is separated by |||,
+which denotes layout choice.
+#+BEGIN_SRC haskell
 myLayout = spacingRaw True (Border 0 5 5 5) True (Border 5 5 5 5) True $ spiral (4/5) ||| tiled ||| Mirror tiled ||| Full
   where
     -- default tiling algorithm partitions the screen into two panes
@@ -84,7 +119,17 @@ myLayout = spacingRaw True (Border 0 5 5 5) True (Border 5 5 5 5) True $ spiral 
 
     -- Percent of screen to increment by when resizing panes
     delta   = 3/100
+#+END_SRC
+* Window rules
+Execute arbitrary actions and WindowSet manipulations when managing a new window.
+You can use this to, for example, always float a particular program, or have a client always appear on a particular workspace.
 
+To find the property name associated with a program, use
+> xprop | grep WM_CLASS
+and click on the client you're interested in.
+
+To match on the WM_NAME, you can use 'title' in the same way that 'className' and 'resource' are used below.
+#+BEGIN_SRC haskell
 myManageHook = composeAll
     [ className =? "Firefox"        --> doFloat
     , className =? "mpv"            --> doFloat
@@ -92,13 +137,26 @@ myManageHook = composeAll
     , className =? "discord"        --> doFloat
     , resource  =? "desktop_window" --> doIgnore
     , resource  =? "kdesktop"       --> doIgnore ]
+#+END_SRC
+* Startup hook
+Perform an arbitrary action each time xmonad starts or is restarted with mod-q.
+Used by, e.g., XMonad.Layout.PerWorkspace to initialize per-workspace layout choices.
 
+By default, do nothing.
+
+NOTE: EwmhDesktops users should use the 'ewmh' function from
+XMonad.Hooks.EwmhDesktops to modify their defaultConfig as a whole.
+It will add initialization of EWMH support to your custom startup
+hook by combining it with ewmhDesktopsStartup.
+#+BEGIN_SRC haskell
 myStartupHook = do
               spawnOnce "xsetroot -cursor_name left_ptr"
               spawnOnce "hsetroot -cover ~/.local/tmp/cwall.png"
               spawnOnce "trayer --edge top --align right --SetDockType true --SetPartialStrut true --width 4 --transparent true --alpha 0 --tint 0x282a36 --height 17"
               spawnOnce "compton"
-
+#+END_SRC
+* Bar
+#+BEGIN_SRC haskell
 -- Command used to run bar
 myBar = "xmobar ~/.config/xmobar/.xmobarrc"
 
@@ -107,7 +165,10 @@ myPP = xmobarPP { ppCurrent = wrap "|" "|" }
 
 -- Keybind to toggle bar
 toggleStrutsKey XConfig {XMonad.modMask = modMask} = (modMask, xK_b)
-
+#+END_SRC
+* Main
+This makes the settings actually be used
+#+BEGIN_SRC haskell
 main = xmonad =<< statusBar myBar myPP toggleStrutsKey myConfig
 
 myConfig = desktopConfig
@@ -120,3 +181,4 @@ myConfig = desktopConfig
          , manageHook         = myManageHook
          , startupHook        = myStartupHook
          }
+#+END_SRC
