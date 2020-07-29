@@ -1,0 +1,11 @@
+#!/bin/sh
+while read file
+do
+	case "$1" in
+	"C-d")
+		trash "$file" ;;
+	"C-w")
+		nitrogen --save --set-zoom-fill "$file" &&
+		notify-send "Wallpaper changed!" ;;
+	esac
+done
