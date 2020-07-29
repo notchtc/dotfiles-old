@@ -7,7 +7,9 @@ import XMonad.Hooks.DynamicLog
 
 import XMonad.Layout.Spacing
 import XMonad.Layout.Spiral
-
+import XMonad.Hooks.EwmhDesktops
+import XMonad.Hooks.ManageHelpers (isFullscreen, doFullFloat)
+  
 import Data.Monoid
 import System.Exit
 
@@ -51,11 +53,11 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 
     -- Must have
     , ((modm .|. shiftMask, xK_Return), spawn $ XMonad.terminal conf)                 -- launch a terminal
-    , ((modm,               xK_p     ), spawn "exe=`dmenu_path | dmenu -nb '#282a36' -nf '#f8f8f2' -sb '#ff5555' -sf '#f8f8f2'` && eval $exe")    -- launch dmenu
+    , ((modm,               xK_p     ), spawn "exe=`dmenu_path | dmenu -nb '#282a36' -nf '#f8f8f2' -sb '#ff5555' -sf '#f8f8f2'` && eval $exe") -- launch dmenu
 
     -- Other
-    , ((modm .|. shiftMask, xK_n     ), spawn "newsboat")                             -- launch newsboat
-    , ((modm .|. shiftMask, xK_p     ), spawn "sxiv -ft '~/stuff/images/wallpapers/'")-- launch sxiv in wallpaper folder
+    , ((modm .|. shiftMask, xK_n     ), spawn (myTerminal ++ " -e newsboat"))         -- launch newsboat
+    , ((modm .|. shiftMask, xK_p     ), spawn "sxiv -ft ~/stuff/images/wallpapers/")  -- launch sxiv in wallpaper folder
     ]
     ++
 
@@ -74,7 +76,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
         | (key, sc) <- zip [xK_w, xK_e, xK_r] [0..]
         , (f, m) <- [(W.view, 0), (W.shift, shiftMask)]]
 
-myLayout = spacingRaw True (Border 0 5 5 5) True (Border 5 5 5 5) True $ spiral (4/5) ||| tiled ||| Mirror tiled ||| Full
+myLayout = spacingRaw True (Border 0 5 5 5) True (Border 5 5 5 5) True $ spiral (4/5) ||| tiled ||| Full
   where
     -- default tiling algorithm partitions the screen into two panes
     tiled   = Tall nmaster delta ratio
@@ -88,17 +90,18 @@ myLayout = spacingRaw True (Border 0 5 5 5) True (Border 5 5 5 5) True $ spiral 
     -- Percent of screen to increment by when resizing panes
     delta   = 3/100
 
-myManageHook = composeAll
+myManageHook =  composeAll
     [ className =? "Firefox"        --> doFloat
     , className =? "mpv"            --> doFloat
     , className =? "Gimp"           --> doFloat
     , className =? "discord"        --> doFloat
+    , className =? "KeepassXC"      --> doFloat
     , resource  =? "desktop_window" --> doIgnore
     , resource  =? "kdesktop"       --> doIgnore ]
 
 myStartupHook = do
               spawnOnce "xsetroot -cursor_name left_ptr"
-              spawnOnce "hsetroot -cover ~/.local/tmp/cwall.png"
+              spawnOnce "nitrogen --restore"
               spawnOnce "trayer --edge top --align right --SetDockType true --SetPartialStrut true --width 4 --transparent true --alpha 0 --tint 0x282a36 --height 17"
               spawnOnce "compton"
 
@@ -106,7 +109,19 @@ myStartupHook = do
 myBar = "xmobar ~/.config/xmobar/.xmobarrc"
 
 -- Pretty printing
-myPP = xmobarPP { ppCurrent = wrap "|" "|" }
+myPP = xmobarPP
+  { ppSep =  " > "
+  , ppCurrent = wrap "[" "]" . xmobarColor "#50fa7b" ""
+  , ppUrgent = xmobarColor "#282a36" "#ff5555"
+  , ppHidden = xmobarColor "#ffb86c" ""
+  , ppLayout = (\x -> case x of
+                                    "Spacing Spiral"             ->      "@"
+                                    "Spacing Tall"               ->      "[]="
+                                    "Spacing Full"               ->      "[]"
+                                    _                            ->      x
+                                )
+  , ppTitle = (++ " ") . xmobarColor "#50fa7b" "" . shorten 50
+  }
 
 -- Keybind to toggle bar
 toggleStrutsKey XConfig {XMonad.modMask = modMask} = (modMask, xK_b)
@@ -120,6 +135,7 @@ myConfig = desktopConfig
          , focusedBorderColor = myFocusedBorderColor
          , keys               = myKeys
          , layoutHook         = myLayout
-         , manageHook         = myManageHook
+         , handleEventHook    = fullscreenEventHook
+         , manageHook         = ( isFullscreen --> doFullFloat ) <+> myManageHook
          , startupHook        = myStartupHook
          }
