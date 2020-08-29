@@ -42,6 +42,7 @@ awful.layout.layouts = {
 
 awful.spawn.with_shell("xrdb -merge .Xresources")
 awful.spawn.with_shell("compton")
+awful.spawn.with_shell("emacs --daemon")
 
 local function client_menu_toggle_fn()
     local instance = nil
@@ -126,7 +127,7 @@ local function set_wallpaper(s)
         if type(wallpaper) == "function" then
             wallpaper = wallpaper(s)
         end
-        gears.wallpaper.maximized(wallpaper, s, true)
+        gears.wallpaper.maximized(wallpaper, s, false)
     end
 end
 
@@ -307,17 +308,11 @@ globalkeys = gears.table.join(
 
     -- Screenshots
     awful.key({ }, "Print", function ()
-            awful.util.spawn("scrot -e 'mv $f ~/stuff/images/screenshots/ 2>/dev/null'", false)
-            naughty.notify{
-                title="Screenshot taken!"
-            }
+            awful.util.spawn("scrot -e 'mv $f ~/stuff/images/screenshots/ 2>/dev/null'", false) 
     end),
 
     awful.key({ "Shift" }, "Print", nil, function ()
             awful.util.spawn("scrot -s -e 'mv $f ~/stuff/images/screenshots/ 2>/dev/null'", false)
-            naughty.notify{
-                title="Screenshot taken!"
-            }
     end),
 
    -- Volume Keys

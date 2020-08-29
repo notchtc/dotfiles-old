@@ -7,4 +7,10 @@
 
 (setq org-directory "~/org/")
 
-(setq display-line-numbers-type 'relative)
+(setq display-line-numbers-type `t)
+
+;; Make tab always indent
+(setq tab-always-indent t)
+
+;; Set tab width
+(setq tab-width 2)
