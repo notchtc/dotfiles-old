@@ -476,7 +476,6 @@ awful.rules.rules = {
           "discord",
           "Sxiv",
           "mpv",
-          "Firefox",
         },
         name = {
           "Event Tester",  -- xev.

@@ -16,5 +16,5 @@ It uses [[https://github.com/thoughtbot/rcm][rcm]].
 + [[https://newsboat.org/][newsboat]]
 + [[https://neovim.io/][neovim]]
 + Other things
-  Things that are placed not in the home folder will be placed in .local/other.
+  Things that are placed not in the home folder will be placed in /other/.
   + /etc/issue

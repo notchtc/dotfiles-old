@@ -549,7 +549,6 @@ Clients mentioned in here will be floating.
           "discord",
           "Sxiv",
           "mpv",
-          "Firefox",
         },
         name = {
           "Event Tester",  -- xev.
