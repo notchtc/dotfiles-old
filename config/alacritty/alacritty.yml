@@ -53,9 +53,6 @@ colors:
     white:   '0xe6e6e6'
 
   # Dim colors
-  #
-  # If the dim colors are not set, they will be calculated automatically based
-  # on the `normal` colors.
   dim:
     black:   '0x14151b'
     red:     '0xff2222'
@@ -65,3 +62,11 @@ colors:
     magenta: '0xff46b0'
     cyan:    '0x59dffc'
     white:   '0xe6e6d1'
+
+window:
+
+  padding:
+    x: 3
+    y: 2
+
+  dynamic_padding: false

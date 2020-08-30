@@ -18,8 +18,8 @@ local theme = dofile(themes_path.."default/theme.lua")
 theme.font          = "monospace 8"
 
 theme.bg_normal     = xrdb.background
-theme.bg_focus      = xrdb.color9
-theme.bg_urgent     = xrdb.color11
+theme.bg_focus      = xrdb.color1
+theme.bg_urgent     = xrdb.color3
 theme.bg_minimize   = xrdb.color8
 theme.bg_systray    = theme.bg_normal
 
@@ -28,10 +28,10 @@ theme.fg_focus      = theme.bg_normal
 theme.fg_urgent     = theme.bg_focus
 theme.fg_minimize   = theme.bg_normal
 
-theme.useless_gap   = dpi(6)
-theme.border_width  = dpi(1)
-theme.border_normal = xrdb.color1
-theme.border_focus  = theme.bg_focus
+theme.useless_gap   = dpi(7)
+theme.border_width  = dpi(2)
+theme.border_normal = xrdb.color4
+theme.border_focus  = xrdb.color5
 theme.border_marked = xrdb.color10
 
 -- There are other variable sets
@@ -49,7 +49,7 @@ theme.menu_height = dpi(20)
 theme.menu_width  = dpi(100)
 
 theme.prompt_bg_cursor = theme.fg_normal
-theme.wibar_opacity = 0.875
+theme.wibar_opacity = 0.83
 theme.wibar_height = 22
 theme.tasklist_disable_icon = true
 
