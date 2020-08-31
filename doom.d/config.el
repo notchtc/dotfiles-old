@@ -1,9 +1,7 @@
 (setq doom-font (font-spec :family "monospace" :size 14)
        doom-variable-pitch-font (font-spec :family "monospace" :size 13))
 
-(setq doom-theme 'doom-dracula)
-
-(setq doom-gruvbox-dark-variant 'hard)
+(setq doom-theme 'doom-gruvbox)
 
 (setq org-directory "~/org/")
 
