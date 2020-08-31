@@ -24,12 +24,21 @@ set fish_user_paths $PATH $HOME/.local/bin $HOME/.emacs.d/bin $SPICETIFY_INSTALL
 # Variables for bobthefish theme
 source ~/.config/fish/bobthe.fish
 
-# Vi bindings baby
-fish_vi_key_bindings
-
 # Abbreviations
+# Launch editor
 abbr --add e "$EDITOR"
 abbr --add se "sudo $EDITOR"
+# Apt
+abbr --add ainstall "sudo apt-get install"
+abbr --add aupdate "sudo apt-get upgrade"
+abbr --add aremove "sudo apt-get remove"
+abbr --add apurge "sudo apt-get purge"
+abbr --add aclean "sudo apt-get autoremove"
+abbr --add pupdate "sudo apt-get update"
+abbr --add padd "sudo add-apt-repository"
+
+# Vi bindings baby
+fish_vi_key_bindings
 
 # Start X at login
 if status is-login
