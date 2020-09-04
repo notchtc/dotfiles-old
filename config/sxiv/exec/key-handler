@@ -5,7 +5,6 @@ do
 	"C-d")
 		trash "$file" ;;
 	"C-w")
-		nitrogen --save --set-zoom-fill "$file" &&
-		notify-send "Wallpaper changed!" ;;
+		nitrogen --save --set-zoom-fill "$file" ;;
 	esac
 done
