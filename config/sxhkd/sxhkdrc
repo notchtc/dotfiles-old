@@ -15,7 +15,6 @@ super + Escape
 	pkill -USR1 -x sxhkd
 
 # media keys
-
 XF86AudioRaiseVolume
 	amixer -D pulse sset Master 5%+
 XF86AudioLowerVolume
@@ -29,6 +28,12 @@ XF86AudioNext
 	playerctl next
 XF86AudioPrev
 	playerctl previous
+
+# screenshot
+Print
+	scrot -e 'mv $f ~/stuff/images/screenshots/ 2>/dev/null'
+shift + Print
+	sleep 0.1; scrot -s -e 'mv $f ~/stuff/images/screenshots/ 2>/dev/null'
 
 #
 # bspwm hotkeys
