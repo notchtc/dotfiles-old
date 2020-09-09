@@ -21,9 +21,6 @@ set QT_QPA_PLATFORMTHEME qt5ct
 
 set fish_user_paths $PATH $HOME/.local/bin $HOME/.emacs.d/bin $SPICETIFY_INSTALL $HOME/.cabal/bin
 
-# Variables for bobthefish theme
-source ~/.config/fish/bobthe.fish
-
 # Abbreviations
 # Launch editor
 abbr --add e "$EDITOR"

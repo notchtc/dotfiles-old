@@ -3,6 +3,7 @@ background = ${xrdb:background:#222}
 background-alt = ${xrdb:color8:#444}
 foreground = ${xrdb:foreground:#222}
 foreground-alt = ${xrdb:color15:#555}
+foreground-black = ${xrdb:color0}
 primary = ${xrdb:color1:#ffb52a}
 secondary = ${xrdb:color13:#e60053}
 alert = ${xrdb:color5:#bd2c40}
@@ -23,13 +24,7 @@ line-size = 3
 line-color = #f00
 
 border-size = 5
-border-color = #00000000
-
-padding-left = 0
-padding-right = 2
-
-module-margin-left = 2
-module-margin-right = 2
+border-color = #00
 
 font-0 = monospace:pixelsize=8;1
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
@@ -42,8 +37,6 @@ modules-right = pulseaudio memory cpu battery temperature date powermenu
 tray-position = right
 tray-padding = 2
 ;tray-background = #0063ff
-
-separator = |
 
 wm-restack = bspwm
 override-redirect = true
@@ -59,19 +52,20 @@ label = %title:0:35:...%
 type = internal/bspwm
 
 label-focused = %index%
-label-focused-background = ${colors.background-alt}
-label-focused-underline = ${colors.primary}
+label-focused-foreground = ${colors.foreground}
+label-focused-background = ${colors.primary}
 label-focused-padding = 2
 
 label-occupied = %index%
-label-occupied-underline = ${colors.primary}
+label-occupied-foreground = ${colors.foreground-alt}
 label-occupied-padding = 2
 
 label-urgent = %index%!
+label-urgent-foreground - ${colors.foreground}
 label-urgent-background = ${colors.alert}
 label-urgent-padding = 2
 
-label-empty = %index%
+label-empty =
 label-empty-foreground = ${colors.foreground-alt}
 label-empty-padding = 2
 
@@ -79,16 +73,14 @@ label-empty-padding = 2
 type = internal/cpu
 interval = 2
 format-prefix = " "
-format-prefix-foreground = ${colors.foreground-alt}
-format-underline = ${xrdb:color9:#f90000}
+format-background = ${xrdb:color9:#f90000}
 label = %percentage:2%%
 
 [module/memory]
 type = internal/memory
 interval = 2
 format-prefix = " "
-format-prefix-foreground = ${colors.foreground-alt}
-format-underline = ${xrdb:color14:#4bffdc}
+format-background = ${xrdb:color14:#4bffdc}
 label = %percentage_used%%
 
 [module/wlan]
@@ -97,12 +89,12 @@ interface = wlp3s0
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
-format-connected-underline = ${xrdb:color13:#9f78e1}
+format-connected-background = ${xrdb:color13:#9f78e1}
 label-connected = %essid%
 
 format-disconnected =
 ;format-disconnected = <label-disconnected>
-;format-disconnected-underline = ${self.format-connected-underline}
+;format-disconnected-background = ${self.format-connected-background}
 ;label-disconnected = %ifname% disconnected
 ;label-disconnected-foreground = ${colors.foreground-alt}
 
@@ -118,14 +110,13 @@ type = internal/network
 interface = enp2s0
 interval = 3.0
 
-format-connected-underline = ${xrdb:color2:#55aa55}
+format-connected-background= ${xrdb:color2:#55aa55}
 format-connected-prefix = " "
-format-connected-prefix-foreground = ${colors.foreground-alt}
 label-connected = %local_ip%
 
 format-disconnected =
 ;format-disconnected = <label-disconnected>
-;format-disconnected-underline = ${self.format-connected-underline}
+;format-disconnected-background = ${self.format-connected-background}
 ;label-disconnected = %ifname% disconnected
 ;label-disconnected-foreground = ${colors.foreground-alt}
 
@@ -140,8 +131,7 @@ time = %H:%M
 time-alt = %H:%M:%S
 
 format-prefix = 
-format-prefix-foreground = ${colors.foreground-alt}
-format-underline = ${xrdb:color4:#0a6cf5}
+format-background = ${xrdb:color4:#0a6cf5}
 
 label = %date% %time%
 
@@ -149,11 +139,10 @@ label = %date% %time%
 type = internal/pulseaudio
 
 format-volume = <label-volume>
-format-volume-underline = ${xrdb:color2:#55aa55}
+format-volume-background = ${xrdb:color2:#55aa55}
 label-volume =  %percentage%%
-label-volume-foreground = ${root.foreground}
 
-format-muted-underline = ${colors.primary}
+format-muted-background = ${colors.primary}
 label-muted =  %percentage%%
 label-muted-foreground = ${xrdb:color7:#666}
 
@@ -161,13 +150,13 @@ label-muted-foreground = ${xrdb:color7:#666}
 type = internal/alsa
 
 format-volume = <label-volume>
-format-volume-underline = ${xrdb:color2:#55aa55}
+format-volume-background = ${xrdb:color2:#55aa55}
 label-volume =  %percentage%%
 label-volume-foreground = ${root.foreground}
 
 format-muted-prefix = " "
 format-muted-foreground = ${colors.foreground-alt}
-format-muted-underline = ${colors.primary}
+format-muted-background = ${colors.primary}
 label-muted = %percentage%%
 
 [module/battery]
@@ -177,14 +166,13 @@ adapter = ACAD
 full-at = 98
 
 format-charging = <animation-charging> <label-charging>
-format-charging-underline = ${xrdb:color11:#ffb52a}
+format-charging-background = ${xrdb:color11:#ffb52a}
 
 format-discharging = <animation-discharging> <label-discharging>
-format-discharging-underline = ${self.format-charging-underline}
+format-discharging-background = ${self.format-charging-background}
 
 format-full-prefix = " "
-format-full-prefix-foreground = ${colors.foreground-alt}
-format-full-underline = ${self.format-charging-underline}
+format-full-background = ${self.format-charging-background}
 
 ramp-capacity-0 = 
 ramp-capacity-1 = 
@@ -209,9 +197,9 @@ thermal-zone = 0
 warn-temperature = 60
 
 format = <ramp> <label>
-format-underline = ${colors.primary}
+format-background = ${colors.primary}
 format-warn = <ramp> <label-warn>
-format-warn-underline = ${self.format-underline}
+format-warn-background = ${self.format-background}
 
 label = %temperature-c%
 label-warn = %temperature-c%
@@ -220,7 +208,6 @@ label-warn-foreground = ${colors.secondary}
 ramp-0 = 
 ramp-1 = 
 ramp-2 = 
-ramp-foreground = ${colors.foreground-alt}
 
 [module/powermenu]
 type = custom/menu
@@ -258,6 +245,10 @@ screenchange-reload = true
 ;compositing-foreground = source
 ;compositing-border = over
 ;pseudo-transparency = false
+
+format-foreground = ${colors.foreground-black}
+
+format-padding = 2 
 
 [global/wm]
 margin-top = 5
