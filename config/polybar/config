@@ -1,9 +1,10 @@
 [colors]
 background = ${xrdb:background:#222}
 background-alt = ${xrdb:color8:#444}
-foreground = ${xrdb:foreground:#222}
+;foreground = ${xrdb:foreground:#222}
+foreground = ${xrdb:color0:#222}
 foreground-alt = ${xrdb:color15:#555}
-foreground-black = ${xrdb:color0}
+
 primary = ${xrdb:color1:#ffb52a}
 secondary = ${xrdb:color13:#e60053}
 alert = ${xrdb:color5:#bd2c40}
@@ -44,9 +45,12 @@ cursor-scroll = ns-resize
 [module/xwindow]
 type = internal/xwindow
 label = %title:0:35:...% 
+format-background = ${colors.primary}
 
 [module/bspwm]
 type = internal/bspwm
+
+format-padding = 0
 
 label-focused = %index%
 label-focused-foreground = ${colors.foreground}
@@ -242,8 +246,6 @@ screenchange-reload = true
 ;compositing-foreground = source
 ;compositing-border = over
 ;pseudo-transparency = false
-
-format-foreground = ${colors.foreground-black}
 
 format-padding = 2 
 
