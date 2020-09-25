@@ -1,10 +1,10 @@
 #! /bin/sh
 
 sxhkd &
-xsetroot -cursor_name left_ptr &
 $HOME/.config/polybar/launch.sh &
 nitrogen --restore &
 compton &
+xsetroot -cursor_name left_ptr &
 emacs --daemon &
 
 bspc monitor -d I II III IV V VI VII VIII IX X
