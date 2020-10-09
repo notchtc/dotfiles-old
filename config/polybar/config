@@ -1,8 +1,7 @@
 [colors]
 background = ${xrdb:background:#222}
 background-alt = ${xrdb:color8:#444}
-;foreground = ${xrdb:foreground:#222}
-foreground = ${xrdb:color0:#222}
+foreground = ${xrdb:foreground:#222}
 foreground-alt = ${xrdb:color15:#555}
 
 primary = ${xrdb:color1:#ffb52a}
@@ -10,11 +9,8 @@ secondary = ${xrdb:color13:#e60053}
 alert = ${xrdb:color5:#bd2c40}
 
 [bar/bar]
-;monitor = ${env:MONITOR:HDMI-1}
 width = 100%
 height = 25
-;offset-x = 1%
-;offset-y = 1%
 radius = 10
 fixed-center = false
 
@@ -30,11 +26,10 @@ font-2 = siji:pixelsize=10;1
 
 modules-left = bspwm
 modules-center = xwindow
-modules-right = pulseaudio memory cpu battery temperature date powermenu
+modules-right = pulseaudio memory cpu temperature battery wlan eth date powermenu
 
 tray-position = right
 tray-padding = 2
-;tray-background = #0063ff
 
 wm-restack = bspwm
 override-redirect = true
@@ -67,8 +62,6 @@ label-urgent-background = ${colors.alert}
 label-urgent-padding = 2
 
 label-empty =
-label-empty-foreground = ${colors.foreground-alt}
-label-empty-padding = 2
 
 [module/cpu]
 type = internal/cpu
@@ -94,10 +87,6 @@ format-connected-background = ${xrdb:color13:#9f78e1}
 label-connected = %essid%
 
 format-disconnected =
-;format-disconnected = <label-disconnected>
-;format-disconnected-background = ${self.format-connected-background}
-;label-disconnected = %ifname% disconnected
-;label-disconnected-foreground = ${colors.foreground-alt}
 
 ramp-signal-0 = 
 ramp-signal-1 = 
@@ -116,10 +105,6 @@ format-connected-prefix = " "
 label-connected = %local_ip%
 
 format-disconnected =
-;format-disconnected = <label-disconnected>
-;format-disconnected-background = ${self.format-connected-background}
-;label-disconnected = %ifname% disconnected
-;label-disconnected-foreground = ${colors.foreground-alt}
 
 [module/date]
 type = internal/date
@@ -167,7 +152,7 @@ adapter = ACAD
 full-at = 98
 
 format-charging = <animation-charging> <label-charging>
-format-charging-background = ${xrdb:color11:#ffb52a}
+format-charging-background = ${xrdb:color3:#ffb52a}
 
 format-discharging = <animation-discharging> <label-discharging>
 format-discharging-background = ${self.format-charging-background}
@@ -241,11 +226,6 @@ menu-2-0-exec = systemctl poweroff
 
 [settings]
 screenchange-reload = true
-;compositing-background = xor
-;compositing-background = screen
-;compositing-foreground = source
-;compositing-border = over
-;pseudo-transparency = false
 
 format-padding = 2 
 
