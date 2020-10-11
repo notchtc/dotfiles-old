@@ -1,3 +1,7 @@
+-- https://github.com/vicious-widgets/vicious is required for widgets
+
+-- IMPORT REQUIRED LIBRARIES
+
 -- Standard awesome library
 local gears = require("gears")
 local awful = require("awful")
@@ -15,6 +19,8 @@ local hotkeys_popup = require("awful.hotkeys_popup").widget
 -- Enable hotkeys help widget for VIM and other apps
 -- when client with a matching name is opened:
 require("awful.hotkeys_popup.keys")
+
+-- VARIABLES
 
 -- Modkey
 modkey = "Mod4"
@@ -40,10 +46,15 @@ awful.layout.layouts = {
     awful.layout.suit.floating,
 }
 
+-- AUTORUN
+
 awful.spawn.with_shell("xrdb -merge .Xresources")
 awful.spawn.with_shell("compton")
 awful.spawn.with_shell("emacs --daemon")
 
+-- BAR
+
+---- Helper Function
 local function client_menu_toggle_fn()
     local instance = nil
 
@@ -57,6 +68,7 @@ local function client_menu_toggle_fn()
     end
 end
 
+---- Menu
 myawesomemenu = {
    { "hotkeys", function() hotkeys_popup.show_help(nil, awful.screen.focused()) end },
    { "manual", terminal .. " -e man awesome" },
@@ -76,6 +88,7 @@ mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon,
 -- Menubar configuration
 menubar.utils.terminal = terminal -- Set the terminal for applications that require it
 
+---- Wibar
 -- Create a wibox for each screen and add it
 local taglist_buttons = gears.table.join(
                     awful.button({ }, 1, function(t) t:view_only() end),
@@ -160,6 +173,7 @@ awful.screen.connect_for_each_screen(function(s)
     -- Create the wibox
     s.mywibox = awful.wibar({ position = "top", screen = s })
 
+    ------ Widgets
     -- Keyboard map indicator and switcher
     mykeyboardlayout = awful.widget.keyboardlayout()
 
@@ -206,12 +220,16 @@ awful.screen.connect_for_each_screen(function(s)
     }
 end)
 
+-- BINDINGS
+
+---- Mouse Bindings 
 root.buttons(gears.table.join(
     -- awful.button({ }, 3, function () mymainmenu:toggle() end),
     -- awful.button({ }, 4, awful.tag.viewnext),
     -- awful.button({ }, 5, awful.tag.viewprev)
 ))
 
+---- Keybindings
 globalkeys = gears.table.join(
     awful.key({ modkey,           }, "s",      hotkeys_popup.show_help,
               {description="show help", group="awesome"}),
@@ -452,6 +470,9 @@ clientbuttons = gears.table.join(
 -- Set keys
 root.keys(globalkeys)
 
+-- RULES
+
+---- Rules for Everything
 awful.rules.rules = {
     -- All clients will match this rule.
     { rule = { },
@@ -467,6 +488,7 @@ awful.rules.rules = {
      }
     },
 
+    ---- Floating Clients
     { rule_any = {
           "DTA",  -- Firefox addon DownThemAll.
         instance = {
@@ -485,6 +507,8 @@ awful.rules.rules = {
         }
       }, properties = { floating = true }},
 }
+
+-- ERROR HANDLING
 
 -- Check if awesome encountered an error during startup and fell back to
 -- another config (This code will only ever execute for the fallback config)
@@ -508,6 +532,8 @@ do
         in_error = false
     end)
 end
+
+-- SIGNALS
 
 -- Signal function to execute when a new client appears.
 client.connect_signal("manage", function (c)
