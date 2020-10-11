@@ -11,7 +11,6 @@ alert = ${xrdb:color5:#bd2c40}
 [bar/bar]
 width = 100%
 height = 25
-radius = 10
 fixed-center = false
 
 background = ${colors.background}
@@ -32,7 +31,7 @@ modules-center = xwindow
 modules-right = pulseaudio memory cpu temperature battery wlan eth date powermenu
 
 tray-position = right
-tray-padding = 2
+tray-padding = 1
 
 wm-restack = bspwm
 override-redirect = true
@@ -54,7 +53,7 @@ format-padding = 0
 
 label-focused = %index%
 label-focused-foreground = ${colors.foreground}
-label-focused-underline = ${colors.primary}
+label-focused-background = ${colors.primary}
 label-focused-padding = 2
 
 label-occupied = %index%
@@ -63,7 +62,7 @@ label-occupied-padding = 2
 
 label-urgent = %index%!
 label-urgent-foreground - ${colors.foreground}
-label-urgent-underline = ${colors.alert}
+label-urgent-background = ${colors.alert}
 label-urgent-padding = 2
 
 label-empty =
@@ -72,14 +71,14 @@ label-empty =
 type = internal/cpu
 interval = 2
 format-prefix = " "
-format-underline = ${xrdb:color9:#f90000}
+format-background = ${colors.primary}
 label = %percentage:2%%
 
 [module/memory]
 type = internal/memory
 interval = 2
 format-prefix = " "
-format-underline = ${xrdb:color14:#4bffdc}
+format-background = ${colors.primary}
 label = %percentage_used%%
 
 [module/wlan]
@@ -87,8 +86,10 @@ type = internal/network
 interface = wlp3s0
 interval = 3.0
 
+format-connected-margin = 1
+
 format-connected = <ramp-signal> <label-connected>
-format-connected-underline = ${xrdb:color13:#9f78e1}
+format-connected-background = ${xrdb:color9:#9f78e1}
 label-connected = %essid%
 
 format-disconnected =
@@ -98,14 +99,13 @@ ramp-signal-1 = 
 ramp-signal-2 = 
 ramp-signal-3 = 
 ramp-signal-4 = 
-ramp-signal-foreground = ${colors.foreground-alt}
 
 [module/eth]
 type = internal/network
 interface = enp2s0
 interval = 3.0
 
-format-connected-underline = ${xrdb:color2:#55aa55}
+format-connected-background = ${xrdb:color9:#55aa55}
 format-connected-prefix = " "
 label-connected = %local_ip%
 
@@ -122,32 +122,35 @@ time = %H:%M
 time-alt = %H:%M:%S
 
 format-prefix = 
-format-underline = ${xrdb:color4:#0a6cf5}
+format-background = ${xrdb:color6:#0a6cf5}
 
 label = %date% %time%
 
 [module/pulseaudio]
 type = internal/pulseaudio
 
+format-volume-margin = 1
 format-volume = <label-volume>
-format-volume-underline = ${xrdb:color2:#55aa55}
+format-volume-background = ${xrdb:color2:#55aa55}
 label-volume =  %percentage%%
 
-format-muted-underline = ${colors.primary}
+format-muted-margin = 1
+format-muted-background = ${colors.primary}
 label-muted =  %percentage%%
-label-muted-foreground = ${xrdb:color7:#666}
 
 [module/alsa]
 type = internal/alsa
 
+format-volume-margin = 1
 format-volume = <label-volume>
-format-volume-underline = ${xrdb:color2:#55aa55}
+format-volume-background = ${xrdb:color2:#55aa55}
 label-volume =  %percentage%%
 label-volume-foreground = ${root.foreground}
 
+format-muted-margin = 1
 format-muted-prefix = " "
 format-muted-foreground = ${colors.foreground-alt}
-format-muted-underline = ${colors.primary}
+format-muted-background = ${colors.primary}
 label-muted = %percentage%%
 
 [module/battery]
@@ -157,29 +160,26 @@ adapter = ACAD
 full-at = 98
 
 format-charging = <animation-charging> <label-charging>
-format-charging-underline = ${xrdb:color3:#ffb52a}
+format-charging-background = ${xrdb:color3:#ffb52a}
 
 format-discharging = <animation-discharging> <label-discharging>
-format-discharging-underline = ${self.format-charging-underline}
+format-discharging-background = ${colors.primary}
 
 format-full-prefix = " "
-format-full-underline = ${self.format-charging-underline}
+format-full-background = ${self.format-charging-background}
 
 ramp-capacity-0 = 
 ramp-capacity-1 = 
 ramp-capacity-2 = 
-ramp-capacity-foreground = ${colors.foreground}
 
 animation-charging-0 = 
 animation-charging-1 = 
 animation-charging-2 = 
-animation-charging-foreground = ${colors.foreground}
 animation-charging-framerate = 750
 
 animation-discharging-0 = 
 animation-discharging-1 = 
 animation-discharging-2 = 
-animation-discharging-foreground = ${colors.foreground}
 animation-discharging-framerate = 750
 
 [module/temperature]
@@ -188,9 +188,9 @@ thermal-zone = 0
 warn-temperature = 60
 
 format = <ramp> <label>
-format-underline = ${colors.primary}
+format-background = ${colors.primary}
 format-warn = <ramp> <label-warn>
-format-warn-underline = ${self.format-underline}
+format-warn-background = ${self.format-background}
 
 label = %temperature-c%
 label-warn = %temperature-c%
@@ -233,6 +233,7 @@ menu-2-0-exec = poweroff
 screenchange-reload = true
 
 format-padding = 2 
+format-foreground = ${colors.background}
 
 [global/wm]
 margin-top = 5
