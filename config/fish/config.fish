@@ -12,12 +12,13 @@ set XDG_CONFIG_HOME $HOME/.config
 set XDG_CACHE_HOME $HOME/.cache
 
 # Use these you filthy application
-set EDITOR "emacs"
+set EDITOR "nvim"
 set BROWSER "firefox"
 
 # Other
 set SPICETIFY_INSTALL $HOME/stuff/misc/spicetify-cli
 set QT_QPA_PLATFORMTHEME qt5ct
+set -U SXHKD_SHELL sh
 
 set fish_user_paths $PATH $HOME/.local/bin $HOME/.emacs.d/bin $SPICETIFY_INSTALL $HOME/.cabal/bin
 
@@ -25,14 +26,6 @@ set fish_user_paths $PATH $HOME/.local/bin $HOME/.emacs.d/bin $SPICETIFY_INSTALL
 # Launch editor
 abbr --add e "$EDITOR"
 abbr --add se "sudo $EDITOR"
-# Apt
-abbr --add ainstall "sudo apt-get install"
-abbr --add aupdate "sudo apt-get upgrade"
-abbr --add aremove "sudo apt-get remove"
-abbr --add apurge "sudo apt-get purge"
-abbr --add aclean "sudo apt-get autoremove"
-abbr --add pupdate "sudo apt-get update"
-abbr --add padd "sudo add-apt-repository"
 
 # Vi bindings baby
 fish_vi_key_bindings

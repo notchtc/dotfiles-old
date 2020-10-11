@@ -20,6 +20,9 @@ foreground = ${colors.foreground}
 border-size = 5
 border-color = #00
 
+line-size = 3
+lize-color = #f00
+
 font-0 = monospace:pixelsize=8;1
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = siji:pixelsize=10;1
@@ -37,6 +40,8 @@ override-redirect = true
 cursor-click = pointer
 cursor-scroll = ns-resize
 
+enable-ipc = true
+
 [module/xwindow]
 type = internal/xwindow
 label = %title:0:35:...% 
@@ -49,7 +54,7 @@ format-padding = 0
 
 label-focused = %index%
 label-focused-foreground = ${colors.foreground}
-label-focused-background = ${colors.primary}
+label-focused-underline = ${colors.primary}
 label-focused-padding = 2
 
 label-occupied = %index%
@@ -58,7 +63,7 @@ label-occupied-padding = 2
 
 label-urgent = %index%!
 label-urgent-foreground - ${colors.foreground}
-label-urgent-background = ${colors.alert}
+label-urgent-underline = ${colors.alert}
 label-urgent-padding = 2
 
 label-empty =
@@ -67,14 +72,14 @@ label-empty =
 type = internal/cpu
 interval = 2
 format-prefix = " "
-format-background = ${xrdb:color9:#f90000}
+format-underline = ${xrdb:color9:#f90000}
 label = %percentage:2%%
 
 [module/memory]
 type = internal/memory
 interval = 2
 format-prefix = " "
-format-background = ${xrdb:color14:#4bffdc}
+format-underline = ${xrdb:color14:#4bffdc}
 label = %percentage_used%%
 
 [module/wlan]
@@ -83,7 +88,7 @@ interface = wlp3s0
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
-format-connected-background = ${xrdb:color13:#9f78e1}
+format-connected-underline = ${xrdb:color13:#9f78e1}
 label-connected = %essid%
 
 format-disconnected =
@@ -100,7 +105,7 @@ type = internal/network
 interface = enp2s0
 interval = 3.0
 
-format-connected-background= ${xrdb:color2:#55aa55}
+format-connected-underline = ${xrdb:color2:#55aa55}
 format-connected-prefix = " "
 label-connected = %local_ip%
 
@@ -117,7 +122,7 @@ time = %H:%M
 time-alt = %H:%M:%S
 
 format-prefix = 
-format-background = ${xrdb:color4:#0a6cf5}
+format-underline = ${xrdb:color4:#0a6cf5}
 
 label = %date% %time%
 
@@ -125,10 +130,10 @@ label = %date% %time%
 type = internal/pulseaudio
 
 format-volume = <label-volume>
-format-volume-background = ${xrdb:color2:#55aa55}
+format-volume-underline = ${xrdb:color2:#55aa55}
 label-volume =  %percentage%%
 
-format-muted-background = ${colors.primary}
+format-muted-underline = ${colors.primary}
 label-muted =  %percentage%%
 label-muted-foreground = ${xrdb:color7:#666}
 
@@ -136,13 +141,13 @@ label-muted-foreground = ${xrdb:color7:#666}
 type = internal/alsa
 
 format-volume = <label-volume>
-format-volume-background = ${xrdb:color2:#55aa55}
+format-volume-underline = ${xrdb:color2:#55aa55}
 label-volume =  %percentage%%
 label-volume-foreground = ${root.foreground}
 
 format-muted-prefix = " "
 format-muted-foreground = ${colors.foreground-alt}
-format-muted-background = ${colors.primary}
+format-muted-underline = ${colors.primary}
 label-muted = %percentage%%
 
 [module/battery]
@@ -152,13 +157,13 @@ adapter = ACAD
 full-at = 98
 
 format-charging = <animation-charging> <label-charging>
-format-charging-background = ${xrdb:color3:#ffb52a}
+format-charging-underline = ${xrdb:color3:#ffb52a}
 
 format-discharging = <animation-discharging> <label-discharging>
-format-discharging-background = ${self.format-charging-background}
+format-discharging-underline = ${self.format-charging-underline}
 
 format-full-prefix = " "
-format-full-background = ${self.format-charging-background}
+format-full-underline = ${self.format-charging-underline}
 
 ramp-capacity-0 = 
 ramp-capacity-1 = 
@@ -183,9 +188,9 @@ thermal-zone = 0
 warn-temperature = 60
 
 format = <ramp> <label>
-format-background = ${colors.primary}
+format-underline = ${colors.primary}
 format-warn = <ramp> <label-warn>
-format-warn-background = ${self.format-background}
+format-warn-underline = ${self.format-underline}
 
 label = %temperature-c%
 label-warn = %temperature-c%
@@ -218,11 +223,11 @@ menu-0-1-exec = menu-open-2
 
 menu-1-0 = reboot
 menu-1-0-foreground = ${colors.foreground-alt}
-menu-1-0-exec = systemctl reboot
+menu-1-0-exec = reboot
 
 menu-2-0 = power off
 menu-2-0-foreground = ${colors.foreground-alt}
-menu-2-0-exec = systemctl poweroff
+menu-2-0-exec = poweroff
 
 [settings]
 screenchange-reload = true
