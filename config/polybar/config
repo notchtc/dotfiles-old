@@ -1,12 +1,18 @@
 [colors]
-background = ${xrdb:background:#222}
-background-alt = ${xrdb:color8:#444}
-foreground = ${xrdb:foreground:#222}
-foreground-alt = ${xrdb:color15:#555}
+background = ${xrdb:background}
+background-alt = ${xrdb:color8}
+foreground = ${xrdb:foreground}
+foreground-alt = ${xrdb:color15}
 
-primary = ${xrdb:color1:#ffb52a}
-secondary = ${xrdb:color13:#e60053}
-alert = ${xrdb:color5:#bd2c40}
+primary = ${xrdb:color5}
+secondary = ${xrdb:color13}
+alert = ${xrdb:color5}
+
+red = ${xrdb:color1}
+bred = ${xrdb:color9}
+green = ${xrdb:color2}
+yellow = ${xrdb:color3}
+cyan = ${xrdb:color6} 
 
 [bar/bar]
 width = 100%
@@ -16,8 +22,8 @@ fixed-center = false
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-border-size = 5
-border-color = #00
+border-size = 10
+border-color = #0
 
 line-size = 3
 lize-color = #f00
@@ -28,7 +34,7 @@ font-2 = siji:pixelsize=10;1
 
 modules-left = bspwm
 modules-center = xwindow
-modules-right = pulseaudio memory cpu temperature battery wlan eth date powermenu
+modules-right = pulseaudio space memory cpu temperature battery space wlan eth space date powermenu
 
 tray-position = right
 tray-padding = 1
@@ -52,7 +58,7 @@ type = internal/bspwm
 format-padding = 0
 
 label-focused = %index%
-label-focused-foreground = ${colors.foreground}
+label-focused-foreground = ${colors.background}
 label-focused-background = ${colors.primary}
 label-focused-padding = 2
 
@@ -61,7 +67,7 @@ label-occupied-foreground = ${colors.foreground-alt}
 label-occupied-padding = 2
 
 label-urgent = %index%!
-label-urgent-foreground - ${colors.foreground}
+label-urgent-foreground = ${colors.foreground}
 label-urgent-background = ${colors.alert}
 label-urgent-padding = 2
 
@@ -71,14 +77,14 @@ label-empty =
 type = internal/cpu
 interval = 2
 format-prefix = " "
-format-background = ${colors.primary}
+format-background = ${colors.red}
 label = %percentage:2%%
 
 [module/memory]
 type = internal/memory
 interval = 2
 format-prefix = " "
-format-background = ${colors.primary}
+format-background = ${colors.red}
 label = %percentage_used%%
 
 [module/wlan]
@@ -86,10 +92,8 @@ type = internal/network
 interface = wlp3s0
 interval = 3.0
 
-format-connected-margin = 1
-
 format-connected = <ramp-signal> <label-connected>
-format-connected-background = ${xrdb:color9:#9f78e1}
+format-connected-background = ${colors.bred}
 label-connected = %essid%
 
 format-disconnected =
@@ -105,7 +109,7 @@ type = internal/network
 interface = enp2s0
 interval = 3.0
 
-format-connected-background = ${xrdb:color9:#55aa55}
+format-connected-background = ${colors.bred}
 format-connected-prefix = " "
 label-connected = %local_ip%
 
@@ -122,35 +126,31 @@ time = %H:%M
 time-alt = %H:%M:%S
 
 format-prefix = 
-format-background = ${xrdb:color6:#0a6cf5}
+format-background = ${colors.cyan}
 
 label = %date% %time%
 
 [module/pulseaudio]
 type = internal/pulseaudio
 
-format-volume-margin = 1
 format-volume = <label-volume>
-format-volume-background = ${xrdb:color2:#55aa55}
+format-volume-background = ${colors.green}
 label-volume =  %percentage%%
 
-format-muted-margin = 1
-format-muted-background = ${colors.primary}
+format-muted-background = ${colors.red}
 label-muted =  %percentage%%
 
 [module/alsa]
 type = internal/alsa
 
-format-volume-margin = 1
 format-volume = <label-volume>
-format-volume-background = ${xrdb:color2:#55aa55}
+format-volume-background = ${colors.green}
 label-volume =  %percentage%%
 label-volume-foreground = ${root.foreground}
 
-format-muted-margin = 1
 format-muted-prefix = " "
 format-muted-foreground = ${colors.foreground-alt}
-format-muted-background = ${colors.primary}
+format-muted-background = ${colors.red}
 label-muted = %percentage%%
 
 [module/battery]
@@ -160,10 +160,10 @@ adapter = ACAD
 full-at = 98
 
 format-charging = <animation-charging> <label-charging>
-format-charging-background = ${xrdb:color3:#ffb52a}
+format-charging-background = ${colors.yellow}
 
 format-discharging = <animation-discharging> <label-discharging>
-format-discharging-background = ${colors.primary}
+format-discharging-background = ${colors.red}
 
 format-full-prefix = " "
 format-full-background = ${self.format-charging-background}
@@ -188,7 +188,7 @@ thermal-zone = 0
 warn-temperature = 60
 
 format = <ramp> <label>
-format-background = ${colors.primary}
+format-background = ${colors.red}
 format-warn = <ramp> <label-warn>
 format-warn-background = ${self.format-background}
 
@@ -223,17 +223,22 @@ menu-0-1-exec = menu-open-2
 
 menu-1-0 = reboot
 menu-1-0-foreground = ${colors.foreground-alt}
-menu-1-0-exec = reboot
+menu-1-0-exec = runit-init 6
 
 menu-2-0 = power off
 menu-2-0-foreground = ${colors.foreground-alt}
-menu-2-0-exec = poweroff
+menu-2-0-exec = runit-init 0 
 
 [settings]
 screenchange-reload = true
 
-format-padding = 2 
 format-foreground = ${colors.background}
+format-padding = 2 
+
+[module/space]
+type = custom/text
+content-padding = 0
+content = " "
 
 [global/wm]
 margin-top = 5
