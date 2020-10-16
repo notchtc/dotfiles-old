@@ -26,7 +26,7 @@
     # the top and down respectively.
     # The width can be negative.  In this case the actual width is the
     # screen width minus the width defined in within the geometry option.
-    geometry = "300x5-30+20"
+    geometry = "300x5-10+45"
 
     # Show how many messages are currently hidden (because of geometry).
     indicate_hidden = yes
@@ -38,7 +38,7 @@
     # The transparency of the window.  Range: [0; 100].
     # This option will only work if a compositing window manager is
     # present (e.g. xcompmgr, compiz, etc.).
-    transparency = 83
+    transparency = 17
 
     # The height of the entire notification.  If the height is smaller
     # than the font height and padding combined, it will be raised
@@ -61,7 +61,7 @@
     frame_width = 3
 
     # Defines color of the frame around the notification window.
-    frame_color = "#dedede"
+    frame_color = "#caa9fa"
 
     # Define a color for the separator.
     # possible values are:
@@ -82,7 +82,7 @@
 
     ### Text ###
 
-    font = Cozette 10
+    font = monospace 10
 
     # The spacing between lines.  If the height is smaller than the
     # font height, it will get raised to the font height.
@@ -179,10 +179,10 @@
     dmenu = /usr/bin/dmenu -p dunst:
 
     # Browser for opening urls in context menu.
-    browser = /usr/bin/chromium -new-tab
+    browser = /usr/bin/firefox
 
     # Discord
-    discord = /usr/bin/discord
+    discord = /opt/Discord/Discord
 
     # Always run rule-defined scripts, even if the notification is suppressed
     always_run_script = true
@@ -235,21 +235,21 @@
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
-    background = "#1d2021"
-    foreground = "#a89984"
-    frame_color = "#ebdbb2"
+    background = "#000000"
+    foreground = "#e6e6e6"
+    frame_color = "#bd93f9"
     timeout = 7
 
 [urgency_normal]
-    background = "#282828"
-    foreground = "#ebdbb2"
-    frame_color = "#ebdbb2"
+    background = "#282a36"
+    foreground = "#f8f8f2"
+    frame_color = "#caa9fa"
     timeout = 10
 
 [urgency_critical]
-    background = "#fb4934"
-    foreground = "#ebdbb2"
-    frame_color = "#ebdbb2"
+    background = "#50fa7b"
+    foreground = "#f8f8f2"
+    frame_color = "#caa9fa"
     timeout = 0
 
 # vim: ft=cfg

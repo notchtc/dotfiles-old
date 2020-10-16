@@ -4,15 +4,13 @@ background-alt = ${xrdb:color8}
 foreground = ${xrdb:foreground}
 foreground-alt = ${xrdb:color15}
 
-primary = ${xrdb:color5}
-secondary = ${xrdb:color13}
-alert = ${xrdb:color5}
-
 red = ${xrdb:color1}
 bred = ${xrdb:color9}
 green = ${xrdb:color2}
 yellow = ${xrdb:color3}
 cyan = ${xrdb:color6} 
+pink = ${xrdb:color5}
+bpink = ${xrdb:color13}
 
 [bar/bar]
 width = 100%
@@ -50,7 +48,7 @@ enable-ipc = true
 [module/xwindow]
 type = internal/xwindow
 label = %title:0:35:...% 
-format-background = ${colors.primary}
+format-background = ${colors.pink}
 
 [module/bspwm]
 type = internal/bspwm
@@ -59,7 +57,7 @@ format-padding = 0
 
 label-focused = %index%
 label-focused-foreground = ${colors.background}
-label-focused-background = ${colors.primary}
+label-focused-background = ${colors.pink}
 label-focused-padding = 2
 
 label-occupied = %index%
@@ -68,7 +66,7 @@ label-occupied-padding = 2
 
 label-urgent = %index%!
 label-urgent-foreground = ${colors.foreground}
-label-urgent-background = ${colors.alert}
+label-urgent-background = ${colors.red}
 label-urgent-padding = 2
 
 label-empty =
@@ -194,7 +192,7 @@ format-warn-background = ${self.format-background}
 
 label = %temperature-c%
 label-warn = %temperature-c%
-label-warn-foreground = ${colors.secondary}
+label-warn-foreground = ${colors.bred}
 
 ramp-0 = 
 ramp-1 = 
@@ -208,9 +206,9 @@ expand-right = true
 format-spacing = 1
 
 label-open = 
-label-open-foreground = ${colors.secondary}
+label-open-foreground = ${colors.bpink}
 label-close =  cancel
-label-close-foreground = ${colors.secondary}
+label-close-foreground = ${colors.bpink}
 label-separator = |
 label-separator-foreground = ${colors.foreground-alt}
 

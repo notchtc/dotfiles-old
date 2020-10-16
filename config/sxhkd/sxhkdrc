@@ -1,6 +1,10 @@
-#
-# wm independent hotkeys
-#
+## WM INDEPENDENT KEYBINDINGS ##
+
+# make sxhkd reload its configuration files:
+super + Escape
+	pkill -USR1 -x sxhkd
+
+# APPS #
 
 # terminal emulator
 super + Return
@@ -10,9 +14,7 @@ super + Return
 super + @space
 	rofi -show run
 
-# make sxhkd reload its configuration files:
-super + Escape
-	pkill -USR1 -x sxhkd
+# OTHER
 
 # media keys
 XF86AudioRaiseVolume
@@ -35,9 +37,8 @@ Print
 shift + Print
 	sleep 0.1; scrot -s -e 'mv $f ~/stuff/images/screenshots/ 2>/dev/null'
 
-#
-# bspwm hotkeys
-#
+
+## BSPWM HOTKEYS ##
 
 # quit/restart bspwm
 super + alt + {q,r}
@@ -59,9 +60,7 @@ super + y
 super + g
 	bspc node -s biggest
 
-#
-# state/flags
-#
+# STATE/FLAGS #
 
 # set the window state
 super + {t,shift + t,s,f}
@@ -71,9 +70,7 @@ super + {t,shift + t,s,f}
 super + ctrl + {x,y,z}
 	bspc node -g {locked,sticky,private}
 
-#
-# focus/swap
-#
+# FOCUS/SWAP #
 
 # focus the node in the given direction
 super + {_,shift + }{h,j,k,l}
@@ -93,9 +90,7 @@ super + {o,i}
 super + {_,shift + }{1-9,0}
 	bspc {desktop -f,node -d} '^{1-9,10}'
 
-#
-# move/resize
-#
+# MOVE/RESIZE #
 
 # expand a window by moving one of its side outward
 super + alt + {h,j,k,l}

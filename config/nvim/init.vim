@@ -11,7 +11,6 @@ Plug 'mattn/emmet-vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'dag/vim-fish'
 Plug 'frazrepo/vim-rainbow'
-Plug 'Chiel92/vim-autoformat'
 Plug 'itchyny/lightline.vim'
 Plug 'dracula/vim', { 'as': 'dracula' }
 call plug#end()
@@ -36,9 +35,10 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 " Remove trailing newlines
 autocmd BufWritePre * %s/\n\+\%$//e 
 " Keybindings
+let mapleader = " "
 " Save file and go to previous/next one.
-noremap ;p :wN<CR>
-noremap ;n :wn<CR>
+noremap <leader>p :wN<CR>
+noremap <leader>n :wn<CR>
 " Format file
 noremap <F3> :Autoformat<CR>:w<CR>
 
