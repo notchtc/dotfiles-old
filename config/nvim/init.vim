@@ -9,10 +9,9 @@ endif
 call plug#begin('~/.config/nvim/plugins')
 Plug 'mattn/emmet-vim'
 Plug 'airblade/vim-gitgutter'
-Plug 'dag/vim-fish'
 Plug 'frazrepo/vim-rainbow'
 Plug 'itchyny/lightline.vim'
-Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'morhetz/gruvbox' 
 call plug#end()
 
 " Some basic stuff
@@ -22,12 +21,16 @@ set clipboard+=unnamedplus
 
 " Looks
 set background=dark
-colorscheme dracula
-hi Normal ctermbg=NONE
+set termguicolors
+
+let g:gruvbox_italic=1
+colorscheme gruvbox
+hi Normal ctermbg=NONE guibg=NONE
+
 set noshowmode
 
 let g:lightline = {
-			\ 'colorscheme': 'dracula',
+			\ 'colorscheme': 'gruvbox',
 			\}
 
 " Don't place an comment when making an newline
@@ -39,10 +42,3 @@ let mapleader = " "
 " Save file and go to previous/next one.
 noremap <leader>p :wN<CR>
 noremap <leader>n :wn<CR>
-" Format file
-noremap <F3> :Autoformat<CR>:w<CR>
-
-" Fish
-if &shell =~# 'fish$'
-	set shell=sh
-endif

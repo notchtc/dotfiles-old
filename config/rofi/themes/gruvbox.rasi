@@ -1,11 +1,11 @@
-/*Dracula theme based on the Purple official rofi theme*/
+/* Dracula theme edited to gruvbox color */
 
 * {
-    font: "Jetbrains Mono 12";
-    foreground: #f8f8f2;
-    background-color: #282a36;
-    active-background: #6272a4;
-    urgent-background: #ff5555;
+    font: "Hack 10";
+    foreground: #ebdbb2;
+    background-color: #282828;
+    active-background: #cc241d;
+    urgent-background: #fb49d4;
     selected-background: @active-background;
     selected-urgent-background: @urgent-background;
     selected-active-background: @active-background;
@@ -15,10 +15,9 @@
 
 #window {
     background-color: @background;
-    border:           1;
-    border-radius: 6;
+    border:             1;
     border-color: @bordercolor;
-    padding:          5;
+    padding:           10;
 }
 #mainbox {
     border:  0;
@@ -34,8 +33,6 @@
 }
 #listview {
     fixed-height: 0;
-    border:       2px dash 0px 0px ;
-    border-color: @bordercolor;
     spacing:      2px ;
     scrollbar:    false;
     padding:      2px 0px 0px ;
@@ -116,7 +113,7 @@
 }
 #textbox-prompt-colon {
     expand:     false;
-    str:        ":";
+    str:        "";
     margin:     0px 0.3em 0em 0em ;
     text-color: @foreground;
 }
