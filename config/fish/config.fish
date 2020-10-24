@@ -22,17 +22,16 @@ set -U SXHKD_SHELL sh
 
 set fish_user_paths $PATH $HOME/.local/bin $HOME/.emacs.d/bin $SPICETIFY_INSTALL $HOME/.cabal/bin
 
-# Abbreviations
+# Aliases
 # XBPS
-abbr --add xi "sudo xbps-install -S"
-abbr --add xup "sudo xbps-install -Su"
-abbr --add xr "sudo xbps-remove -R"
-abbr --add xrs "xbps-query -Rs"
-
+alias xi="sudo xbps-install -S"
+alias xup="sudo xbps-install -Su"
+alias xr="sudo xbps-remove -R"
+alias xrs="xbps-query -Rs"
 
 # Launch editor
-abbr --add e "$EDITOR"
-abbr --add se "sudo $EDITOR"
+alias e="$EDITOR"
+alias se="sudo $EDITOR"
 
 # Vi bindings baby
 fish_vi_key_bindings

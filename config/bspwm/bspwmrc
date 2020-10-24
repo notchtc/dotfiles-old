@@ -12,12 +12,12 @@ xsetroot -cursor_name left_ptr &
 bspc monitor -d I II III IV V VI VII VIII IX X
 
 ## CONFIG STUFF ##
-bspc config border_width         2
+bspc config border_width         3
 bspc config window_gap          10
-bspc config bottom_padding      35
+bspc config bottom_padding      25
 bspc config top_padding          0
 
-bspc config split_ratio          0.52
+bspc config split_ratio          0.55
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 
