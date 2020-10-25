@@ -86,39 +86,44 @@ format-background = ${colors.primary}
 [module/pulseaudio]
 type = internal/pulseaudio
 
-format-volume = <ramp-volume> <label-volume>
+format-volume = <ramp-volume><label-volume>
 format-volume-background = ${colors.cyan}
 label-volume = %percentage%%
 
+format-muted-prefix = "%{T2}婢 %{T-}"
 format-muted-background = ${self.format-volume-background}
-label-muted = 婢 %percentage%% muted
+label-muted = %percentage%% muted
 
-ramp-volume-0 = 奄
-ramp-volume-1 = 奔
-ramp-volume-2 = 墳
+ramp-volume-0 = "%{T2}奄 %{T-}"
+ramp-volume-1 = "%{T2}奔 %{T-}"
+ramp-volume-2 = "%{T2}墳 %{T-}"
 
 [module/alsa]
 type = internal/alsa
 
-format-volume = <label-volume>
+format-volume = <ramp-volume><label-volume>
 format-volume-background = ${colors.cyan}
-label-volume =  %percentage%%
+label-volume = %percentage%%
 
-format-muted-prefix = " "
+format-muted-prefix = "%{T2}婢 %{T-}"
 format-muted-background = ${self.format-volume-background}
 label-muted = %percentage%% muted
+
+ramp-volume-0 = "%{T2}奄 %{T-}"
+ramp-volume-1 = "%{T2}奔 %{T-}"
+ramp-volume-2 = "%{T2}墳 %{T-}"
 
 [module/memory]
 type = internal/memory
 interval = 2
-format-prefix = " "
+format-prefix = "%{T2} %{T-}"
 format-background = ${colors.b_cyan}
 label = %percentage_used%%
 
 [module/cpu]
 type = internal/cpu
 interval = 2
-format-prefix = " "
+format-prefix = "%{T2} %{T-}"
 format-background = ${colors.b_blue}
 label = %percentage:2%%
 
@@ -128,24 +133,24 @@ battery = BAT1
 adapter = ACAD
 full-at = 98
 
-format-charging = <animation-charging> <label-charging>
+format-charging = <animation-charging><label-charging>
 format-charging-background = ${colors.b_yellow}
 
-format-discharging = <ramp-capacity> <label-discharging>
-format-discharging-background = ${colors.b_red}
+format-discharging = <ramp-capacity><label-discharging>
+format-discharging-background = ${self.format-charging-background}
 
-format-full-prefix = " "
+format-full-prefix = "%{T2} %{T-}"
 format-full-background = ${self.format-charging-background}
 
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
-ramp-capacity-3 = 
-ramp-capacity-4 = 
+ramp-capacity-0 = "%{T2} %{T-}"
+ramp-capacity-1 = "%{T2} %{T-}"
+ramp-capacity-2 = "%{T2} %{T-}"
+ramp-capacity-3 = "%{T2} %{T-}"
+ramp-capacity-4 = "%{T2} %{T-}"
 
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
+animation-charging-0 = "%{T2} %{T-}"
+animation-charging-1 = "%{T2} %{T-}"
+animation-charging-2 = "%{T2} %{T-} "
 animation-charging-framerate = 750
 
 [module/wlan]
@@ -155,7 +160,7 @@ interval = 3.0
 
 format-connected = <label-connected>
 format-connected-background = ${colors.b_red}
-format-connected-prefix = "直 "
+format-connected-prefix = "%{T2}直 %{T-}"
 label-connected = connected
 
 label-disconnected =
@@ -166,7 +171,7 @@ interface = enp2s0
 interval = 3.0
 
 format-connected-background = ${colors.b_red}
-format-connected-prefix = " "
+format-connected-prefix = "%{T2} %{T-}"
 label-connected = connected
 
 format-disconnected =
@@ -176,12 +181,12 @@ type = internal/date
 interval = 5
 
 date =
-date-alt = "  %d-%m-%Y"
+date-alt = " %{T2} %{T-}%d-%m-%Y"
 
 time = %H:%M
 time-alt = %H:%M:%S
 
-format-prefix = " "
+format-prefix = "%{T2} %{T-}"
 format-background = ${colors.b_red}
 
 label = %time% %date%
