@@ -1,5 +1,5 @@
 [colors]
-background = ${xrdb:background}
+background = #d4282828
 foreground = ${xrdb:foreground}
 
 black = ${xrdb:color0}
@@ -25,12 +25,15 @@ alert = ${self.b_yellow}
 [bar/bar]
 width = 100%
 height = 25
+radius = 10
+bottom = true
 fixed-center = false
 
-bottom = true
-
-background = ${colors.gray}
+background = ${colors.background}
 foreground = ${colors.foreground}
+
+border-size = 10
+border-color = #0
 
 line-size = 3
 lize-color = #f00
@@ -43,7 +46,8 @@ modules-left = bspwm
 modules-center = xwindow
 modules-right = div1 pulseaudio div2 memory div3 cpu div4 battery div5 wlan eth date
 
-tray-position = left
+tray-position = right
+tray-background = ${colors.b_red}
 tray-padding = 1
 
 wm-restack = bspwm
@@ -64,7 +68,6 @@ label-focused-background = ${colors.primary}
 label-focused-padding = 2
 
 label-occupied = %index%
-label-occupied-foreground = ${colors.white}
 label-occupied-padding = 2
 
 label-urgent = %index%!
@@ -100,7 +103,6 @@ type = internal/alsa
 format-volume = <label-volume>
 format-volume-background = ${colors.cyan}
 label-volume =  %percentage%%
-label-volume-foreground = ${root.foreground}
 
 format-muted-prefix = " "
 format-muted-background = ${self.format-volume-background}

@@ -4,8 +4,8 @@
     font: "Hack 10";
     foreground: #ebdbb2;
     background-color: #282828;
-    active-background: #fb4934;
-    urgent-background: #fabd2f;
+    active-background: #b8bb26;
+    urgent-background: #fb4934;
     selected-background: @active-background;
     selected-urgent-background: @urgent-background;
     selected-active-background: @active-background;
