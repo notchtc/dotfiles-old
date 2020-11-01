@@ -20,7 +20,7 @@ set SPICETIFY_INSTALL $HOME/stuff/misc/spicetify-cli
 set QT_QPA_PLATFORMTHEME qt5ct
 set -U SXHKD_SHELL sh
 
-set fish_user_paths $PATH $HOME/.local/bin $HOME/.emacs.d/bin $SPICETIFY_INSTALL $HOME/.cabal/bin
+set fish_user_paths $PATH $HOME/.local/bin
 
 # Aliases
 # XBPS
@@ -36,14 +36,5 @@ alias se="sudo $EDITOR"
 # Vi bindings baby
 fish_vi_key_bindings
 
-# Start X at login
-if status is-login
-	if test -z "$DISPLAY" -a "$XDG_VTNR" = 1
-		exec startx -- -keeptty
-	end
-end
-
 # Other
 set -U fish_greeting
-# Stupid Rice Shit
-#neofetch

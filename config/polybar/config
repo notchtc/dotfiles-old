@@ -1,23 +1,23 @@
 [colors]
 background = #d4282828
-foreground = ${xrdb:foreground}
+foreground = #ebdbb2
 
-black = ${xrdb:color0}
-gray = ${xrdb:color8}
-red = ${xrdb:color1}
-b_red = ${xrdb:color9}
-green = ${xrdb:color2}
-b_green = ${xrdb:color10}
-yellow = ${xrdb:color3}
-b_yellow = ${xrdb:color11}
-blue = ${xrdb:color4}
-b_blue = ${xrdb:color12}
-magenta = ${xrdb:color5}
-b_magenta = ${xrdb:color13}
-cyan = ${xrdb:color6}
-b_cyan = ${xrdb:color14}
-b_gray = ${xrdb:color7}
-white = ${xrdb:color15}
+black = #282828
+gray = #928374
+red = #cc241d
+b_red = #fb4934
+green = #98971a
+b_green = #b8bb26
+yellow = #d79921
+b_yellow = #fabd2f
+blue = #458588
+b_blue = #83a598
+magenta = #b16286
+b_magenta = #d3869b
+cyan = #689d6a
+b_cyan = #8ec07c
+b_gray = #a89984
+white = #ebdbb2
 
 primary = ${self.b_red}
 alert = ${self.b_yellow}
@@ -25,29 +25,18 @@ alert = ${self.b_yellow}
 [bar/bar]
 width = 100%
 height = 25
-radius = 10
-bottom = true
 fixed-center = false
 
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-border-size = 10
-border-color = #0
-
-line-size = 3
-lize-color = #f00
-
 font-0 = Hack:pixelsize=9:antialias=true;1
-font-1 = Hack Nerd Font:pixelsize=10:antialias=true;2
-font-2 = Hack Nerd Font:pixelsize=20;5
 
 modules-left = bspwm
 modules-center = xwindow
-modules-right = div1 pulseaudio div2 memory div3 cpu div4 battery div5 wlan eth date
+modules-right = pulseaudio memory cpu battery wlan eth date
 
 tray-position = right
-tray-background = ${colors.b_red}
 tray-padding = 1
 
 wm-restack = bspwm
@@ -61,18 +50,16 @@ enable-ipc = true
 [module/bspwm]
 type = internal/bspwm
 
-format-padding = 0
-
-label-focused = %index%
-label-focused-background = ${colors.primary}
-label-focused-padding = 2
+label-focused = "%{F#fb4934}[%{F-}%index%%{F#fb4934}]%{F-}"
+label-focused-foreground = ${colors.primary}
+label-focused-padding = 1
 
 label-occupied = %index%
-label-occupied-padding = 2
+label-occupied-padding = 1
 
 label-urgent = %index%!
-label-urgent-background = ${colors.alert}
-label-urgent-padding = 2
+label-urgent-foreground = ${colors.alert}
+label-urgent-padding = 1
 
 label-empty =
 
@@ -80,52 +67,46 @@ enable-scroll = false
 
 [module/xwindow]
 type = internal/xwindow
-label = %title:0:35:...% 
-format-background = ${colors.primary}
+label = %{F#fb4934}|%{F-}%title:0:35:...%%{F#fb4934}|%{F-} 
+format-foreground = ${colors.primary}
 
 [module/pulseaudio]
 type = internal/pulseaudio
 
-format-volume = <ramp-volume><label-volume>
-format-volume-background = ${colors.cyan}
+format-volume-prefix = "V:"
+format-volume = <label-volume>
+format-volume-foreground = ${colors.b_green}
 label-volume = %percentage%%
 
-format-muted-prefix = "%{T2}婢 %{T-}"
-format-muted-background = ${self.format-volume-background}
-label-muted = %percentage%% muted
-
-ramp-volume-0 = "%{T2}奄 %{T-}"
-ramp-volume-1 = "%{T2}奔 %{T-}"
-ramp-volume-2 = "%{T2}墳 %{T-}"
+format-muted-prefix = "V:"
+format-muted-foreground = ${colors.red}
+label-muted = %percentage%%
 
 [module/alsa]
 type = internal/alsa
 
-format-volume = <ramp-volume><label-volume>
-format-volume-background = ${colors.cyan}
+format-volume-prefix = "V:"
+format-volume = <label-volume>
+format-volume-foreground = ${colors.b_green}
 label-volume = %percentage%%
 
-format-muted-prefix = "%{T2}婢 %{T-}"
-format-muted-background = ${self.format-volume-background}
-label-muted = %percentage%% muted
-
-ramp-volume-0 = "%{T2}奄 %{T-}"
-ramp-volume-1 = "%{T2}奔 %{T-}"
-ramp-volume-2 = "%{T2}墳 %{T-}"
+format-muted-prefix = "V:"
+format-muted-foreground = ${colors.red}
+label-muted = %percentage%%
 
 [module/memory]
 type = internal/memory
 interval = 2
-format-prefix = "%{T2} %{T-}"
-format-background = ${colors.b_cyan}
+format-prefix = "M:"
+format-foreground = ${colors.green}
 label = %percentage_used%%
 
 [module/cpu]
 type = internal/cpu
 interval = 2
-format-prefix = "%{T2} %{T-}"
-format-background = ${colors.b_blue}
-label = %percentage:2%%
+format-prefix = "C:"
+format-foreground = ${colors.green}
+label = %percentage%%
 
 [module/battery]
 type = internal/battery
@@ -133,25 +114,16 @@ battery = BAT1
 adapter = ACAD
 full-at = 98
 
-format-charging = <animation-charging><label-charging>
-format-charging-background = ${colors.b_yellow}
+format-charging-prefix = "B:"
+format-charging = <label-charging>
+format-charging-foreground = ${colors.yellow}
 
-format-discharging = <ramp-capacity><label-discharging>
-format-discharging-background = ${self.format-charging-background}
+format-discharging-prefix = "B:"
+format-discharging = <label-discharging>
+format-discharging-foreground = ${colors.red}
 
-format-full-prefix = "%{T2} %{T-}"
-format-full-background = ${self.format-charging-background}
-
-ramp-capacity-0 = "%{T2} %{T-}"
-ramp-capacity-1 = "%{T2} %{T-}"
-ramp-capacity-2 = "%{T2} %{T-}"
-ramp-capacity-3 = "%{T2} %{T-}"
-ramp-capacity-4 = "%{T2} %{T-}"
-
-animation-charging-0 = "%{T2} %{T-}"
-animation-charging-1 = "%{T2} %{T-}"
-animation-charging-2 = "%{T2} %{T-} "
-animation-charging-framerate = 750
+format-full-prefix = "B:"
+format-full-foreground = ${self.format-charging-foreground}
 
 [module/wlan]
 type = internal/network
@@ -159,8 +131,8 @@ interface = wlp3s0
 interval = 3.0
 
 format-connected = <label-connected>
-format-connected-background = ${colors.b_red}
-format-connected-prefix = "%{T2}直 %{T-}"
+format-connected-foreground = ${colors.b_blue}
+format-connected-prefix = "W:"
 label-connected = connected
 
 label-disconnected =
@@ -170,8 +142,8 @@ type = internal/network
 interface = enp2s0
 interval = 3.0
 
-format-connected-background = ${colors.b_red}
-format-connected-prefix = "%{T2} %{T-}"
+format-connected-foreground = ${colors.b_blue}
+format-connected-prefix = "E:"
 label-connected = connected
 
 format-disconnected =
@@ -181,54 +153,16 @@ type = internal/date
 interval = 5
 
 date =
-date-alt = " %{T2} %{T-}%d-%m-%Y"
+date-alt = " %d-%m-%Y"
 
 time = %H:%M
 time-alt = %H:%M:%S
 
-format-prefix = "%{T2} %{T-}"
-format-background = ${colors.b_red}
-
 label = %time% %date%
-
-[module/div1]
-type = custom/text
-content-foreground = ${colors.cyan}
-content-padding = 0
-content = "%{T3}%{T-}"
-
-[module/div2]
-type = custom/text
-content-foreground = ${colors.b_cyan}
-content-background = ${colors.cyan}
-content-padding = 0
-content = "%{T3}%{T-}"
-
-[module/div3]
-type = custom/text
-content-foreground = ${colors.b_blue}
-content-background = ${colors.b_cyan}
-content-padding = 0
-content = "%{T3}%{T-}"
-
-[module/div4]
-type = custom/text
-content-foreground = ${colors.b_yellow}
-content-background = ${colors.b_blue}
-content-padding = 0
-content = "%{T3}%{T-}"
-
-[module/div5]
-type = custom/text
-content-foreground = ${colors.b_red}
-content-background = ${colors.b_yellow}
-content-padding = 0
-content = "%{T3}%{T-}"
 
 [settings]
 screenchange-reload = true
-
-format-padding = 2 
+format-padding = 1
 
 [global/wm]
 margin-top = 25

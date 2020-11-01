@@ -18,6 +18,3 @@ It uses [rcm](https://github.com/thoughtbot/rcm)
 - [sxhkd](https://github.com/baskerville/sxhkd)
 - [sxiv](https://github.com/muennich/sxiv)
 - [zsh](https://zsh.org)
-- Other things
-  Things that are placed not in the home folder will be placed in /.local/other/ feel free to place them where they are supposed to go or just delete them.
-	- /etc/issue
