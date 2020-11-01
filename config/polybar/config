@@ -1,5 +1,5 @@
 [colors]
-background = #d4282828
+background = #282828
 foreground = #ebdbb2
 
 black = #282828
@@ -37,7 +37,6 @@ modules-center = xwindow
 modules-right = pulseaudio memory cpu battery wlan eth date
 
 tray-position = right
-tray-padding = 1
 
 wm-restack = bspwm
 override-redirect = true
@@ -49,6 +48,8 @@ enable-ipc = true
 
 [module/bspwm]
 type = internal/bspwm
+
+format-padding = 0
 
 label-focused = "%{F#fb4934}[%{F-}%index%%{F#fb4934}]%{F-}"
 label-focused-foreground = ${colors.primary}
