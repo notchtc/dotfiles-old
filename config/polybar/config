@@ -19,8 +19,8 @@ b_cyan = #8ec07c
 b_gray = #a89984
 white = #ebdbb2
 
-primary = ${self.b_red}
-alert = ${self.b_yellow}
+primary = ${self.cyan}
+alert = ${self.b_green}
 
 [bar/bar]
 width = 100%
@@ -51,7 +51,7 @@ type = internal/bspwm
 
 format-padding = 0
 
-label-focused = "%{F#fb4934}[%{F-}%index%%{F#fb4934}]%{F-}"
+label-focused = "%{F#689d6a}[%{F-}%index%%{F#689d6a}]%{F-}"
 label-focused-foreground = ${colors.primary}
 label-focused-padding = 1
 
@@ -68,7 +68,7 @@ enable-scroll = false
 
 [module/xwindow]
 type = internal/xwindow
-label = %{F#fb4934}|%{F-}%title:0:35:...%%{F#fb4934}|%{F-} 
+label = %{F#689d6a}|%{F-}%title:0:35:...%%{F#689d6a}|%{F-} 
 format-foreground = ${colors.primary}
 
 [module/pulseaudio]

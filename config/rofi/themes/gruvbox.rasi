@@ -1,11 +1,11 @@
-/* Dracula theme edited to gruvbox color */
+/* Dracula theme edited to gruvbox colors */
 
 * {
     font: "Hack 10";
     foreground: #ebdbb2;
     background-color: #282828;
-    active-background: #fb4934;
-    urgent-background: #fabd2f;
+    active-background: #689d6a;
+    urgent-background: #b8bb26;
     selected-background: @active-background;
     selected-urgent-background: @urgent-background;
     selected-active-background: @active-background;
