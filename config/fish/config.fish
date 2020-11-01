@@ -16,10 +16,7 @@ set EDITOR "nvim"
 set BROWSER "firefox"
 
 # Other
-set SPICETIFY_INSTALL $HOME/stuff/misc/spicetify-cli
-set QT_QPA_PLATFORMTHEME qt5ct
 set -U SXHKD_SHELL sh
-
 set fish_user_paths $PATH $HOME/.local/bin
 
 # Aliases

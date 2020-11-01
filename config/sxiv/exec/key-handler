@@ -3,7 +3,7 @@ while read file
 do
 	case "$1" in
 	"C-d")
-		trash "$file" ;;
+		rm "$file" ;;
 	"C-w")
 		nitrogen --save --set-zoom-fill "$file" ;;
 	esac
