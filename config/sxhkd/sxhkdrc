@@ -33,9 +33,9 @@ XF86AudioPrev
 
 # screenshot
 Print
-	scrot -e 'mv $f ~/stuff/images/screenshots/ 2>/dev/null'
+	scrot -e 'xclip -selection clipboard -t image/png $f && mv $f ~/stuff/images/screenshots/ 2>/dev/null'
 shift + Print
-	sleep 0.1; scrot -s -e 'mv $f ~/stuff/images/screenshots/ 2>/dev/null'
+	sleep 0.1; scrot -s -e 'xclip -selection clipboard -t image/png $f && mv $f ~/stuff/images/screenshots/ 2>/dev/null'
 
 # yeet the pc/yeet and unyeet pc
 super + alt + {x,shift + x}
