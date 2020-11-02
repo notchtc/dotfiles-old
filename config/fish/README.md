@@ -1,7 +1,7 @@
 # [fish](https://fishshell.com)
 My personal fish config that doesn't look too crazy and doesn't have thousands of things.
 
-[_TOC_]
+[[_TOC_]]
 
 ## Screenshot
 ![fish shell](../../images/fish.png)

@@ -1,7 +1,7 @@
 # [Neovim](https://neovim.io/)
 My personal nvim config.
 
-[_TOC_]
+[[_TOC_]]
 
 ## Screenshot
 ![nvim](../../images/nvim.png)
