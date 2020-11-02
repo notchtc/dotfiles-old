@@ -17,7 +17,7 @@ call plug#end()
 " Some basic stuff
 set nocompatible
 set number relativenumber
-set clipboard+=unnamedplus
+set clipboard=unnamedplus
 
 " Looks
 set background=dark

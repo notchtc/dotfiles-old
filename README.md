@@ -18,7 +18,4 @@ It uses [rcm](https://github.com/thoughtbot/rcm)
 - [sxiv](./config/sxiv/exec/)
 
 # Dependencies
-- [firefox](https://www.mozilla.org/en-US/firefox/browsers/) ($BROWSER) ([fish](./config/fish/config.fish))
-- [nitrogen](https://github.com/l3ib/nitrogen/) (Setting wallpaper) ([bspwm](./config/bspwm/bspwmrc))
-- [pamixer](https://github.com/cdemoulins/pamixer) (Setting volume) ([sxhkd](./config/sxhkd/sxhkdrc))
-- [maim](https://github.com/naelstrof/maim) (Making screenshots) ([sxhkd](./config/sxhkd/sxhkdrc))
+If something requires something, it will be written in it's README.
