@@ -2,7 +2,7 @@
 
 My personal bspwm config, it isn't supposed to be the most productive thing in the world.
 
-[[_TOC]]
+[[_TOC_]]
 
 ## Screenshots
 ![bspwm busy](../../images/bspwm_busy.png)
