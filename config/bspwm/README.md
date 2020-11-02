@@ -1,5 +1,9 @@
 # [bspwm](https://github.com/baskerville/bspwm)
 
+My personal bspwm config, it isn't supposed to be the most productive thing in the world.
+
+[[_TOC]]
+
 ## Screenshots
 ![bspwm busy](../../images/bspwm_busy.png)
 ![bspwm idle](../../images/bspwm_idle.png)
