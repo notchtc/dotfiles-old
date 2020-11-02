@@ -1,5 +1,6 @@
 # [Neovim](https://neovim.io/)
 My personal nvim config.
+
 [_TOC_]
 
 ## Screenshot
