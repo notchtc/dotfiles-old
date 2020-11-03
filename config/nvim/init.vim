@@ -9,7 +9,7 @@ endif
 call plug#begin('~/.config/nvim/plugins')
 Plug 'mattn/emmet-vim'
 Plug 'airblade/vim-gitgutter'
-Plug 'frazrepo/vim-rainbow'
+Plug 'tpope/vim-fugitive'
 Plug 'itchyny/lightline.vim'
 Plug 'morhetz/gruvbox' 
 call plug#end()
@@ -30,8 +30,15 @@ hi Normal ctermbg=NONE guibg=NONE
 set noshowmode
 
 let g:lightline = {
-			\ 'colorscheme': 'gruvbox',
-			\}
+      \ 'colorscheme': 'gruvbox',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'FugitiveHead'
+      \ },
+      \ }
 
 " Don't place an comment when making an newline
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
