@@ -46,10 +46,8 @@ enable-ipc = true
 [module/bspwm]
 type = internal/bspwm
 
-format-padding = 0
-
 label-focused = "%{F#689d6a}[%{F-}%index%%{F#689d6a}]%{F-}"
-label-focused-padding = 1
+label-focused-padding = 0
 
 label-occupied = %index%
 label-occupied-padding = 1
@@ -58,7 +56,9 @@ label-urgent = %index%!
 label-urgent-foreground = ${colors.b_green}
 label-urgent-padding = 1
 
-label-empty =
+label-empty = %index%
+label-empty-foreground = ${colors.gray}
+label-empty-padding = 1
 
 enable-scroll = false
 
