@@ -19,3 +19,4 @@ It uses [rcm](https://github.com/thoughtbot/rcm)
 
 # Dependencies
 If something requires something, it will be written in it's README.
+- [Hack](https://github.com/source-foundry/Hack/releases/download/v3.003/Hack-v3.003-ttf.zip) ([Nerd Font](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/Hack))
