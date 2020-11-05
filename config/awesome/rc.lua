@@ -1,7 +1,4 @@
--- https://github.com/vicious-widgets/vicious is required for widgets
-
--- IMPORT REQUIRED LIBRARIES
-
+---- IMPORT REQUIRED LIBRARIES
 -- Standard awesome library
 local gears = require("gears")
 local awful = require("awful")
@@ -20,8 +17,7 @@ local hotkeys_popup = require("awful.hotkeys_popup").widget
 -- when client with a matching name is opened:
 require("awful.hotkeys_popup.keys")
 
--- VARIABLES
-
+---- VARIABLES
 -- Modkey
 modkey = "Mod4"
 
@@ -46,15 +42,14 @@ awful.layout.layouts = {
     awful.layout.suit.floating,
 }
 
--- AUTORUN
-
+---- AUTORUN
 awful.spawn.with_shell("xrdb -merge .Xresources")
 awful.spawn.with_shell("compton")
 awful.spawn.with_shell("emacs --daemon")
 
--- BAR
+---- BAR
 
----- Helper Function
+-- Helper Function
 local function client_menu_toggle_fn()
     local instance = nil
 
@@ -68,7 +63,7 @@ local function client_menu_toggle_fn()
     end
 end
 
----- Menu
+-- Menu
 myawesomemenu = {
    { "hotkeys", function() hotkeys_popup.show_help(nil, awful.screen.focused()) end },
    { "manual", terminal .. " -e man awesome" },
@@ -88,7 +83,7 @@ mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon,
 -- Menubar configuration
 menubar.utils.terminal = terminal -- Set the terminal for applications that require it
 
----- Wibar
+-- Wibar
 -- Create a wibox for each screen and add it
 local taglist_buttons = gears.table.join(
                     awful.button({ }, 1, function(t) t:view_only() end),
@@ -173,7 +168,7 @@ awful.screen.connect_for_each_screen(function(s)
     -- Create the wibox
     s.mywibox = awful.wibar({ position = "top", screen = s })
 
-    ------ Widgets
+    ---- WIDGETS
     -- Keyboard map indicator and switcher
     mykeyboardlayout = awful.widget.keyboardlayout()
 
@@ -220,16 +215,16 @@ awful.screen.connect_for_each_screen(function(s)
     }
 end)
 
--- BINDINGS
+---- BINDINGS
 
----- Mouse Bindings 
+-- Mouse Bindings 
 root.buttons(gears.table.join(
     -- awful.button({ }, 3, function () mymainmenu:toggle() end),
     -- awful.button({ }, 4, awful.tag.viewnext),
     -- awful.button({ }, 5, awful.tag.viewprev)
 ))
 
----- Keybindings
+-- Keybindings
 globalkeys = gears.table.join(
     awful.key({ modkey,           }, "s",      hotkeys_popup.show_help,
               {description="show help", group="awesome"}),
@@ -326,26 +321,26 @@ globalkeys = gears.table.join(
 
     -- Screenshots
     awful.key({ }, "Print", function ()
-            awful.util.spawn("scrot -e 'mv $f ~/stuff/images/screenshots/ 2>/dev/null'", false) 
+            awful.util.spawn("maim | xclip -selection clipboard -t image/png -i", false) 
     end),
 
     awful.key({ "Shift" }, "Print", nil, function ()
-            awful.util.spawn("scrot -s -e 'mv $f ~/stuff/images/screenshots/ 2>/dev/null'", false)
+            awful.util.spawn("maim -s | xclip -selection clipboard -t image/png -i", false)
     end),
 
    -- Volume Keys
    awful.key({}, "XF86AudioLowerVolume", function ()
-     awful.util.spawn("amixer -D pulse sset Master 5%-", false)
+     awful.util.spawn("pamixer -i 5", false)
      vicious.force({myvolume})
    end),
 
    awful.key({}, "XF86AudioRaiseVolume", function ()
-     awful.util.spawn("amixer -D pulse sset Master 5%+", false)
+     awful.util.spawn("pamixer -d 5", false)
      vicious.force({myvolume})
    end),
 
    awful.key({}, "XF86AudioMute", function ()
-     awful.util.spawn("amixer -D pulse sset Master toggle", false)
+     awful.util.spawn("pamixer -t", false)
      vicious.force({myvolume})
    end),
    -- Media Keys
