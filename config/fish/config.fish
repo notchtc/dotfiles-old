@@ -30,17 +30,6 @@ set BROWSER "firefox"
 set -U SXHKD_SHELL "sh"
 set fish_user_paths "$PATH" "$HOME/.local/bin"
 
-## ALIASES ##
-# XBPS
-alias xi="sudo xbps-install -S"
-alias xup="sudo xbps-install -Su"
-alias xr="sudo xbps-remove -R"
-alias xrs="xbps-query -Rs"
-
-# Launch editor
-alias e="$EDITOR"
-alias se="sudo $EDITOR"
-
 ## OTHER ##
 # Vi bindings baby
 fish_vi_key_bindings

@@ -10,27 +10,26 @@ call plug#begin('~/.config/nvim/plugins')
 Plug 'mattn/emmet-vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'itchyny/lightline.vim'
-Plug 'morhetz/gruvbox' 
+Plug 'ianchanning/vim-selenized'
 call plug#end()
 
 " Some basic stuff
+syntax enable
 set nocompatible
 set number relativenumber
 set clipboard=unnamedplus
 
 " Looks
-set background=dark
 set termguicolors
-
-let g:gruvbox_italic=1
-colorscheme gruvbox
+colorscheme selenized
+set background=dark
+set noshowmode
 hi Normal ctermbg=NONE guibg=NONE
 
-set noshowmode
-
 let g:lightline = {
-      \ 'colorscheme': 'gruvbox',
+      \ 'colorscheme': 'selenized_dark'
       \ }
+
 
 " Don't place an comment when making an newline
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o

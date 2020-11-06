@@ -6,15 +6,16 @@ My personal fish config that doesn't look too crazy and doesn't have thousands o
 ## Screenshot
 ![fish shell](../../images/fish.png)
 
-## Aliases
-|Alias|What it does                      |
-|-----|----------------------------------|
-|xi   |Install package with xbps         |
-|xup  |Update packages with xbps         |
-|xr   |Remove package with xbps          |
-|xrs  |Search the xbps repository        |
-|e    |Launch editor (nvim)[^1]          |
-|se   |Launch editor with sudo (nvim)[^1]|
+## Functions
+|Function|What it does                      |
+|--------|----------------------------------|
+|xi      |Install package with xbps         |
+|xup     |Update packages with xbps         |
+|xr      |Remove package with xbps          |
+|xrs     |Search the xbps repository        |
+|e       |Launch editor (nvim)[^1]          |
+|se      |Launch editor with sudo (nvim)[^1]|
+|setwal  |Sets wallpaper for awesomewm      |
 
 ## Other
 - Adds $HOME/.local/bin to PATH
