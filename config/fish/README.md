@@ -21,9 +21,13 @@ My personal fish config that doesn't look too crazy and doesn't have thousands o
 
 ## Other
 - Adds $HOME/.local/bin to PATH
-- Vi keybindings
-- Disable fish greeting
 - Cleaning up the home directory
+  - Applications
+    - Sets BROWSER to firefox[^1]
+    - Sets EDITOR to nvim[^1]
+    - Sets SXHKD\_SHELL to sh[^1]
+  - Makes lesshist not appear
+  - Moves inputrc to $XDG\_CONFIG\_HOME/readline/input
   - XDG
     - Sets XDG\_DATA\_HOME to $HOME/.local/share
     - Sets XDG\_CONFIG\_HOME to $HOME/.config
@@ -34,12 +38,10 @@ My personal fish config that doesn't look too crazy and doesn't have thousands o
     - Sets XDG\_DOCUMENTS\_DIR to $HOME/stuff/docs
     - Sets XDG\_MUSIC\_DIR to $HOME/stuff/music
     - Sets XDG\_PICTURES\_DIR to $HOME/stuff/images
-    - Sets XDG\_VIDEOS\_DIR to $HOME/stuff/videos
-  - Moves inputrc to $XDG\_CONFIG\_HOME/readline/input
-  - Makes lesshist not appear
-- Applications
-  - Sets BROWSER to firefox[^1]
-  - Sets EDITOR to nvim[^1]
-  - Sets SXHKD\_SHELL to sh[^1]
+    - Sets XDG\_VIDEOS\_DIR to $HOME/stuff/videos 
+- Disable fish greeting
+- Fish default colorscheme made to use terminal colors (.config/fish/conf.d/term.fish)[^2]
+- Vi keybindings
+
 [^1]: You can change this easily
 [^2]: Feel free to remove this
