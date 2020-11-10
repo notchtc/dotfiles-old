@@ -26,7 +26,7 @@
     # the top and down respectively.
     # The width can be negative.  In this case the actual width is the
     # screen width minus the width defined in within the geometry option.
-    geometry = "0x10-10+35"
+    geometry = "0x10-10+40"
 
     # Show how many messages are currently hidden (because of geometry).
     indicate_hidden = yes
@@ -58,10 +58,10 @@
 
     # Defines width in pixels of frame around the notification window.
     # Set to 0 to disable.
-    frame_width = 3
+    frame_width = 2
 
     # Defines color of the frame around the notification window.
-    frame_color = "#fb4934"
+    frame_color = "#ff84cd"
 
     # Define a color for the separator.
     # possible values are:
@@ -229,21 +229,21 @@
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
-    background = "#282828"
-    foreground = "#a89984"
-    frame_color = "#98971a"
+    background = "#103c48"
+    foreground = "#adbcbc"
+    frame_color = "#72898f"
     timeout = 7
 
 [urgency_normal]
-    background = "#282828"
-    foreground = "#ebdbb2"
-    frame_color = "#689d6a"
+    background = "#103c48"
+    foreground = "#cad8d9"
+    frame_color = "#ff84cd"
     timeout = 10
 
 [urgency_critical]
-    background = "#cc241d"
-    foreground = "#ebdbb2"
-    frame_color = "#fb4934"
+    background = "#103c48"
+    foreground = "#cad8d9"
+    frame_color = "#ff665c"
     timeout = 0
 
 # vim: ft=cfg

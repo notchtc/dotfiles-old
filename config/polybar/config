@@ -24,21 +24,20 @@ width = 100%
 height = 25
 fixed-center = false
 
-radius = 10
-border-size = 5
-border-color = #0
-
 background = ${colors.background}
-foreground = ${colors.foreground}
+foreground = ${colors.b_cyan}
 
 font-0 = Hack:pixelsize=9:antialias=true;1
-font-1 = Hack Nerd Font:pixelsize=10:antialias=true;2
+font-1 = Hack Nerd Font:pixelsize=11:antialias=true;1
 
 modules-left = bspwm
 modules-center = xwindow
 modules-right = pulseaudio memory cpu battery wlan eth date
 
-line-size = 3
+border-left-size = 7
+border-right-size = 7
+
+line-size = 2
 
 tray-position = right
 
@@ -52,71 +51,83 @@ enable-ipc = true
 
 [module/bspwm]
 type = internal/bspwm
+format-padding = 0
 
-format-margin = 0
+ws-icon-0 = I;
+ws-icon-1 = II;
+ws-icon-2 = III;
+ws-icon-3 = IV;契
+ws-icon-4 = V;5
+ws-icon-5 = VI;6
+ws-icon-6 = VII;7
+ws-icon-7 = VIII;8
+ws-icon-8 = IX;9
+ws-icon-9 = X;10
 
-label-focused = "[%index%]"
+label-focused = "%icon%"
 label-focused-foreground = ${colors.b_magenta} 
-label-focused-padding = 0
+label-focused-overline = ${colors.b_magenta}
+label-focused-padding = 1
 
-label-occupied = %index%
+label-occupied = %icon%
+label-occupied-overline = ${colors.b_cyan}
 label-occupied-padding = 1
 
-label-urgent = %index%!
+label-urgent = %icon%!
 label-urgent-foreground = ${colors.b_red}
 label-urgent-padding = 1
 
-label-empty =
+label-empty = %icon%
+label-empty-foreground = ${colors.b_blue}
+label-empty-padding = 1
 
 enable-scroll = false
 
 [module/xwindow]
 type = internal/xwindow
-label = [%title:0:35:...%]
-label-foreground = ${colors.b_magenta}
+label = %title:0:35:…%
+label-overline = ${colors.b_magenta}
+label-padding = 1
 
 [module/pulseaudio]
 type = internal/pulseaudio
-
-format-volume-prefix = "墳 "
+format-volume-prefix = "%{T2}墳 %{T-}"
 format-volume-prefix-foreground = ${colors.b_magenta}
 format-volume = <label-volume>
-format-volume-overline = ${colors.b_green}
+format-volume-overline = ${colors.b_cyan}
 label-volume = %percentage%%
 
-format-muted-prefix = "婢 "
+format-muted-prefix = "%{T2}婢 %{T-}"
 format-muted-prefix-foreground = ${colors.b_magenta}
-format-muted-overline = ${colors.red}
+format-muted-overline = ${colors.b_magenta}
 label-muted = %percentage%%
 
 [module/alsa]
 type = internal/alsa
-
-format-volume-prefix = "墳 "
+format-volume-prefix = "%{T2}墳 %{T-}"
 format-volume-prefix-foreground = ${colors.b_magenta}
 format-volume = <label-volume>
-format-volume-foreground = ${colors.b_green}
+format-volume-foreground = ${colors.b_cyan}
 label-volume = %percentage%%
-
-format-muted-prefix = "婢 "
+format-muted-prefix = "%{T2}婢 %{T-}"
 format-muted-prefix-foreground = ${colors.b_magenta}
-format-muted-overline = ${colors.red}
+format-muted-overline = ${colors.b_magenta}
 label-muted = %percentage%%
 
 [module/memory]
 type = internal/memory
 interval = 2
-format-prefix = " "
+format-prefix = "%{T2} %{T-}"
 format-prefix-foreground = ${colors.b_magenta}
-format-overline = ${colors.green}
+format-overline = ${colors.b_cyan}
 label = %percentage_used%%
 
 [module/cpu]
 type = internal/cpu
 interval = 2
-format-prefix = " "
+format-prefix = "%{T2} %{T-}"
 format-prefix-foreground = ${colors.b_magenta}
-format-overline = ${colors.green}
+format-overline = ${colors.b_cyan}
 label = %percentage%%
 
 [module/battery]
@@ -125,19 +136,19 @@ battery = BAT1
 adapter = ACAD
 full-at = 98
 
-format-charging-prefix = " "
+format-charging-prefix = "%{T2} %{T-}"
 format-charging-prefix-foreground = ${colors.b_magenta}
 format-charging = <label-charging>
-format-charging-overline = ${colors.yellow}
+format-charging-overline = ${colors.cyan}
 
-format-discharging-prefix = " "
+format-discharging-prefix = "%{T2} %{T-}"
 format-discharging-prefix-foreground = ${colors.b_magenta}
 format-discharging = <label-discharging>
-format-discharging-overline = ${colors.red}
+format-discharging-overline = ${colors.b_magenta}
 
-format-full-prefix = " "
+format-full-prefix = "%{T2} %{T-}"
 format-full-prefix-foreground = ${colors.b_magenta}
-format-full-overline = ${colors.b_yellow}
+format-full-overline = ${colors.b_cyan}
 
 [module/wlan]
 type = internal/network
@@ -146,9 +157,9 @@ interval = 3.0
 
 format-connected = <label-connected>
 format-connected-overline = ${colors.cyan}
-format-connected-prefix = "直 "
+format-connected-prefix = "%{T2}直 %{T-}"
 format-connected-prefix-foreground = ${colors.b_magenta}
-label-connected = connected
+label-connected = "connected "
 
 label-disconnected =
 
@@ -157,12 +168,10 @@ type = internal/network
 interface = enp2s0
 interval = 3.0
 
-
-
 format-connected-overline = ${colors.cyan}
-format-connected-prefix = " "
+format-connected-prefix = "%{T2} %{T-}"
 format-connected-prefix-foreground = ${colors.b_magenta}
-label-connected = connected
+label-connected = "connected "
 
 format-disconnected =
 
@@ -170,8 +179,10 @@ format-disconnected =
 type = internal/date
 interval = 5
 
+format-padding = 0
+
 format-overline = ${colors.cyan}
-format-prefix = " "
+format-prefix = "%{T2} %{T-}"
 format-prefix-foreground = ${colors.b_magenta}
 
 date =
@@ -185,7 +196,6 @@ label = %time% %date%
 [settings]
 screenchange-reload = true
 format-padding = 1
-#format-margin = 1
 
 [global/wm]
 margin-top = 25

@@ -33,9 +33,9 @@ XF86AudioPrev
 
 # screenshot
 Print
-	maim | xclip -selection clipboard -t image/png -i
+	maim | xclip -selection clipboard -t image/png -i && notify-send "Screenshot taken!"
 shift + Print
-	maim -s | xclip -selection clipboard -t image/png -i
+	maim -s | xclip -selection clipboard -t image/png -i && notify-send "Screenshot taken!"
 
 # yeet the pc/yeet and unyeet pc
 super + alt + {x,shift + x}

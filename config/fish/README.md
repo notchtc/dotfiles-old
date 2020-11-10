@@ -7,15 +7,17 @@ My personal fish config that doesn't look too crazy and doesn't have thousands o
 ![fish shell](../../images/fish.png)
 
 ## Functions
-|Function|What it does                      |
-|--------|----------------------------------|
-|xi      |Install package with xbps         |
-|xup     |Update packages with xbps         |
-|xr      |Remove package with xbps          |
-|xrs     |Search the xbps repository        |
-|e       |Launch editor (nvim)[^1]          |
-|se      |Launch editor with sudo (nvim)[^1]|
-|setwal  |Sets wallpaper for awesomewm      |
+|Function|What it does                                                    |
+|--------|----------------------------------------------------------------|
+|cat     |Use [bat](https://github.com/sharkdp/bat)[^1] instead of cat[^2]|
+|e       |Launch editor (nvim)[^1]                                        |
+|ls      |Use [lsd](https://github.com/Peltoche/lsd)[^1] instead of ls[^2]|
+|se      |Launch editor with sudo (nvim)[^1]                              |
+|setwal  |Sets wallpaper for awesomewm[^2]                                |
+|xi      |Install package with xbps                                       |
+|xup     |Update packages with xbps                                       |
+|xr      |Remove package with xbps                                        |
+|xrs     |Search the xbps repository                                      |
 
 ## Other
 - Adds $HOME/.local/bin to PATH
@@ -40,3 +42,4 @@ My personal fish config that doesn't look too crazy and doesn't have thousands o
   - Sets EDITOR to nvim[^1]
   - Sets SXHKD\_SHELL to sh[^1]
 [^1]: You can change this easily
+[^2]: Feel free to remove this
