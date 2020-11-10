@@ -12,7 +12,7 @@ My personal nvim config.
 |emmet-vim    |Makes making sites faster   |
 |vim-gitgutter|Shows git changes           |
 |lightline.vim|That fancy bar at the bottom|
-|gruvbox      |Adds the gruvbox theme      |
+|vim-selenized|Adds the selenized theme    |
 
 ## Features
 - A comment isn't placed when making an newline

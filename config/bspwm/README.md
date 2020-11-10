@@ -10,7 +10,7 @@ My personal bspwm config, it isn't supposed to be the most productive thing in t
 ## Keybindings
 |Keybind                                                |What it does                                                                          |
 |-------------------------------------------------------|--------------------------------------------------------------------------------------|
-|Super + Escape                                         |reloads sxhkd config                                                                  |
+|Super + Escape                                         |Reloads sxhkd config                                                                  |
 |Super + Enter                                          |Opens terminal (alacritty)[^1]                                                        |
 |Super + Space                                          |Open program launcher (rofi)[^1]                                                      |
 |XF86AudioRaiseVolume/XF86AudioLowerVolume/XF86AudioMute|Raise/lower/mute volume (pamixer)[^1]                                                 |
@@ -27,6 +27,17 @@ My personal bspwm config, it isn't supposed to be the most productive thing in t
 |Super + Alt + Shift + H/J/K/L                          |Contract a window by moving one of its side inward (Left/Down/Up/Right)               |
 |Super + Left/Down/Up/Right                             |Move a floating window                                                                |
 [^1]: You can easily change this to whatever you want.
+
+## Rules
+|Window   |It's rules                       |
+|---------|---------------------------------|
+|Alacritty|Spawns on workspace 2            |
+|Discord  |Is floating                      |
+|Firefox  |Spawns on workspace 1            |
+|Gimp     |Spawns on workspace 3/Is floating|
+|Kdenlive |Spawns on workspace 3/Is floating|
+|KeePassXC|Is floating                      |
+|mpv      |Spawns on workspace 4/Is floating|
 
 ## Dependencies
 |Dependency            |What it does     |

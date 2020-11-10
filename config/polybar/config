@@ -51,20 +51,21 @@ enable-ipc = true
 
 [module/bspwm]
 type = internal/bspwm
+format-margin = 0
 format-padding = 0
 
-ws-icon-0 = I;
-ws-icon-1 = II;
-ws-icon-2 = III;
-ws-icon-3 = IV;契
-ws-icon-4 = V;5
-ws-icon-5 = VI;6
-ws-icon-6 = VII;7
-ws-icon-7 = VIII;8
-ws-icon-8 = IX;9
-ws-icon-9 = X;10
+ws-icon-0 = "I;直"
+ws-icon-1 = "II;"
+ws-icon-2 = "III;"
+ws-icon-3 = "IV;"
+ws-icon-4 = "V;5"
+ws-icon-5 = "VI;6"
+ws-icon-6 = "VII;7"
+ws-icon-7 = "VIII;8"
+ws-icon-8 = "IX;9"
+ws-icon-9 = "X;10"
 
-label-focused = "%icon%"
+label-focused = %icon%
 label-focused-foreground = ${colors.b_magenta} 
 label-focused-overline = ${colors.b_magenta}
 label-focused-padding = 1
@@ -159,7 +160,7 @@ format-connected = <label-connected>
 format-connected-overline = ${colors.cyan}
 format-connected-prefix = "%{T2}直 %{T-}"
 format-connected-prefix-foreground = ${colors.b_magenta}
-label-connected = "connected "
+label-connected = connected
 
 label-disconnected =
 
@@ -171,15 +172,13 @@ interval = 3.0
 format-connected-overline = ${colors.cyan}
 format-connected-prefix = "%{T2} %{T-}"
 format-connected-prefix-foreground = ${colors.b_magenta}
-label-connected = "connected "
+label-connected = connected
 
 format-disconnected =
 
 [module/date]
 type = internal/date
 interval = 5
-
-format-padding = 0
 
 format-overline = ${colors.cyan}
 format-prefix = "%{T2} %{T-}"
