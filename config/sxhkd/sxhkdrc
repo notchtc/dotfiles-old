@@ -37,6 +37,12 @@ Print
 shift + Print
 	maim -s | xclip -selection clipboard -t image/png -i && notify-send "Screenshot taken!"
 
+# backlight
+XF86MonBrightnessUp
+	xbacklight -inc 10
+XF86MonBrightnessDown
+	xbacklight -dec 10
+
 # yeet the pc/yeet and unyeet pc
 super + alt + {x,shift + x}
 	sudo {poweroff,reboot}
