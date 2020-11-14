@@ -28,7 +28,7 @@ set BROWSER "firefox"
 
 # Other
 set -U SXHKD_SHELL "sh"
-set fish_user_paths "$PATH" "$HOME/.local/bin $HOME/.local/bin/bb"
+set fish_user_paths "$PATH" "$HOME/.local/bin $HOME/.local/bin/"
 
 ## OTHER ##
 # Vi bindings baby
