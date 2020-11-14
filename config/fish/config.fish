@@ -19,6 +19,7 @@ set XDG_MUSIC_DIR "$HOME/stuff/music"
 set XDG_PICTURES_DIR "$HOME/stuff/images"
 set XDG_VIDEOS_DIR "$HOME/stuff/videos"
 # Cleaning up the home directory
+set GTK2_RC_FILES "$XDG_CONFIG_HOME/gtk-2.0/gtkrc"
 set INPUTRC "$XDG_CONFIG_HOME/readline/inputrc"
 set LESSHISTFILE "$XDG_CACHE_HOME/.lesshist"
 
@@ -28,7 +29,7 @@ set BROWSER "firefox"
 
 # Other
 set -U SXHKD_SHELL "sh"
-set fish_user_paths "$PATH" "$HOME/.local/bin $HOME/.local/bin/"
+set fish_user_paths "$PATH" "$HOME/.local/bin"
 
 ## OTHER ##
 # Vi bindings baby

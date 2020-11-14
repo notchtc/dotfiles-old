@@ -26,7 +26,9 @@ My personal fish config that doesn't look too crazy and doesn't have thousands o
     - Sets BROWSER to firefox[^1]
     - Sets EDITOR to nvim[^1]
     - Sets SXHKD\_SHELL to sh[^1]
-  - Makes lesshist not appear
+  - Moves .gitconfig to $XDG\_CONFIG\_HOME/git/config
+  - Moves .gtkrc-2.0 to $XDG\_CONFIG\_HOME/gtk-2.0/gtkrc
+  - Moves .lesshist to $XDG\_CACHE\_HOME/.lesshist
   - Moves inputrc to $XDG\_CONFIG\_HOME/readline/input
   - XDG
     - Sets XDG\_DATA\_HOME to $HOME/.local/share
