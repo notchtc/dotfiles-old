@@ -17,6 +17,13 @@ It uses [rcm](https://github.com/thoughtbot/rcm)
 - [sxhkd](./config/sxhkd/)
 - [sxiv](./config/sxiv/exec/)
 
+# Install
+## Works on Void Linux only
+[You should read the script before running it](https://blog.dijit.sh/don-t-pipe-curl-to-bash)
+```sh
+curl -s "https://gitlab.com/cha0t1c/dotfiles/-/raw/master/install" | sh
+```
+
 # Dependencies
 If something requires something, it will be written in it's README.
 - [Hack](https://github.com/source-foundry/Hack/releases/download/v3.003/Hack-v3.003-ttf.zip) ([Nerd Font](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/Hack))
