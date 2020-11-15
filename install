@@ -1,77 +1,52 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
+bspwm="0"
+awesome="0"
+
 echo "Installing rcm"
 sudo xbps-install -y rcm >> /dev/null
-printf "\n"
 
 echo "Installing git"
 sudo xbps-install -y git >> /dev/null
-printf "\n"
 
 echo "Downloading dotfilkes"
 git clone "https://gitlab.com/cha0t1c/dotfiles.git" "$HOME/.dotfiles" >> /dev/null
 echo "Symlinking dotfiles"
 rcup
 rm -r "$HOME/.images" "$HOME/.LICENSE" "$HOME/.README.md"
-printf "\n"
 
 echo "Installing xorg"
 sudo xbps-install -y xorg
-printf "\n"
 
-awesome="awesome alacritty picom maim xclip pamixer playerctl sxiv"
-printf "Do you want to install awesome? [Y/N] "
-read -r answer
-
+awesomedep="awesome alacritty picom maim xclip pamixer playerctl sxiv"
+read -p "Do you want to install awesome? [Y/N] " -r answer
 if [ "$answer" != "${answer#[Yy]}" ]; then
-    for i in $awesome; do
+    awesome="1"
+    for i in $awesomedep; do
         echo "Installing $i"
         sudo xbps-install -y "$i" >> /dev/null
     done
 fi
-printf "\n"
 
-bspwm="bspwm sxhkd alacritty dunst maim nitrogen pamixer picom playerctl polybar rofi xbacklight xclip"
-printf "Do you want to install bspwm? [Y/N] "
-read -r answer
-
+bspwmdep="bspwm sxhkd alacritty dunst maim nitrogen pamixer picom playerctl polybar rofi xbacklight xclip"
+read -p "Do you want to install bspwm? [Y/N] " -r answer
 if [ "$answer" != "${answer#[Yy]}" ]; then
-    for i in $bspwm; do
+    bspwm="1"
+    for i in $bspwmdep; do
         echo "Installing $i"
         sudo xbps-install -y "$i" >> /dev/null
     done
 fi
-printf "\n"
-
-echo "Installing curl"
-sudo xbps-install -y curl >> /dev/null
-
-echo "Installing 7z"
-sudo xbps-install -y p7zip >> /dev/null
-
-echo "Installing Hack font"
-sudo xbps-install -y font-hack-ttf >> /dev/null
-echo "Installing Hack Nerd Font"
-curl -O "https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Hack.zip"
-7z x Hack.zip >> /dev/null
-rm Hack.zip
-mkdir "$HOME"/.local/share/fonts >> /dev/null
-mv Hack* "$HOME"/.local/share/fonts
-fc-cache -f
-printf "\n"
 
 other="firefox gimp mpv sxiv neovim keepassxc OTPClient lxappearance"
 for i in $other; do
-	printf "Do you want to install %s? [Y/N] " "$i"
-	read -r answer
+	read -p "Do you want to install $i? [Y/N] " -r answer
 	if [ "$answer" != "${answer#[Yy]}" ]; then
 		sudo xbps-install -y "$i" >> /dev/null
 	fi
 done
 
 fish="fish-shell bat lsd"
-printf "Do you want to install fish? [Y/N] "
-read -r answer
-
+read -p "Do you want to install fish? [Y/N] " -r answer
 if [ "$answer" != "${answer#Yy}" ]; then
     for i in $fish; do
 	printf "Installing %s?" "$i"
@@ -79,5 +54,57 @@ if [ "$answer" != "${answer#Yy}" ]; then
     done
 fi
 
+echo "Installing 7z"
+sudo xbps-install -y p7zip >> /dev/null
+
+echo "Installing Hack font"
+sudo xbps-install -y font-hack-ttf >> /dev/null
+echo "Installing Hack Nerd Font"
+curl -O -o $HOME/Hack.zip "https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Hack.zip"
+7z x $HOME/Hack.zip
+rm $HOME/Hack.zip
+if [ ! -d "$HOME/.local/share/fonts" ]; then
+	mkdir "$HOME/.local/share/fonts"
+fi
+mv Hack* "$HOME/.local/share/fonts"
+fc-cache -f
+
 echo "Updating packages"
 sudo xbps-install -Su
+
+if [ "$awesome" -eq 1 ] && [ "$bspwm" -eq 1 ]; then
+	read -p "Which wm do you want to use?\nnone - 0\nawesome - 1\nbspwm - 2\n" -r answer
+	if [ "$answer" -eq 0 ]; then
+		exit
+	elif [ "$answer" -eq 1 ]; then
+		if [ -s "$HOME/.xinitrc" ]; then
+			sed -i "s/exec.*/exec awesome/" "$HOME/.xinitrc"
+		else
+			touch "$HOME/.xinitrc"
+			echo "exec awesome" >> "$HOME/.xinitrc"
+		fi
+	elif [ "$answer" -eq 2 ]; then
+		if [ -s "$HOME/.xinitrc" ]; then
+			sed -i "s/exec.*/exec bspwm/" "$HOME/.xinitrc"
+		else
+			touch "$HOME/.xinitrc"
+			echo "exec bspwm" >> "$HOME/.xinitrc"
+		fi
+	fi
+elif [ "$awesome" -eq 1 ]; then
+	if [ -s "$HOME/.xinitrc" ]; then
+		sed -i "s/exec.*/exec awesome/" "$HOME/.xinitrc"
+	else
+		touch "$HOME/.xinitrc"
+		echo "exec awesome" >> "$HOME/.xinitrc"
+	fi
+elif [ "$bspwm" -eq 1 ]; then
+	if [ -s "$HOME/.xinitrc" ]; then
+		sed -i "s/exec.*/exec bspwm/" "$HOME/.xinitrc"
+	else
+		touch "$HOME/.xinitrc"
+		echo "exec bspwm" >> "$HOME/.xinitrc"
+	fi
+else
+	exit
+fi
