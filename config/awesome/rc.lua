@@ -44,8 +44,7 @@ awful.layout.layouts = {
 
 ---- AUTORUN
 awful.spawn.with_shell("xrdb -merge .Xresources")
-awful.spawn.with_shell("compton")
-awful.spawn.with_shell("emacs --daemon")
+awful.spawn.with_shell("picom")
 
 ---- BAR
 
