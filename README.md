@@ -21,7 +21,9 @@ It uses [rcm](https://github.com/thoughtbot/rcm)
 ## Works on Void Linux only
 [You should read the script before running it](https://blog.dijit.sh/don-t-pipe-curl-to-bash)
 ```sh
-curl -s "https://gitlab.com/cha0t1c/dotfiles/-/raw/master/install" | sh
+curl -Os "https://gitlab.com/cha0t1c/dotfiles/-/raw/master/install"
+chmod +x install
+./install
 ```
 
 # Dependencies

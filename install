@@ -1,4 +1,4 @@
-#!/usr/bin/sh
+#!/usr/bin/env sh
 echo "Installing rcm"
 sudo xbps-install -y rcm >> /dev/null
 printf "\n"
