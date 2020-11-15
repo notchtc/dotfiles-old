@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+
 bspwm="0"
 awesome="0"
 
@@ -20,21 +21,21 @@ sudo xbps-install -y xorg
 awesomedep="awesome alacritty picom maim xclip pamixer playerctl sxiv"
 read -p "Do you want to install awesome? [Y/N] " -r answer
 if [ "$answer" != "${answer#[Yy]}" ]; then
-    awesome="1"
-    for i in $awesomedep; do
-        echo "Installing $i"
-        sudo xbps-install -y "$i" >> /dev/null
-    done
+	awesome="1"
+	for i in $awesomedep; do
+		echo "Installing $i"
+		sudo xbps-install -y "$i" >> /dev/null
+	done
 fi
 
 bspwmdep="bspwm sxhkd alacritty dunst maim nitrogen pamixer picom playerctl polybar rofi xbacklight xclip"
 read -p "Do you want to install bspwm? [Y/N] " -r answer
 if [ "$answer" != "${answer#[Yy]}" ]; then
-    bspwm="1"
-    for i in $bspwmdep; do
-        echo "Installing $i"
-        sudo xbps-install -y "$i" >> /dev/null
-    done
+	bspwm="1"
+	for i in $bspwmdep; do
+		echo "Installing $i"
+		sudo xbps-install -y "$i" >> /dev/null
+	done
 fi
 
 other="firefox gimp mpv sxiv neovim keepassxc OTPClient lxappearance"
@@ -48,10 +49,10 @@ done
 fish="fish-shell bat lsd"
 read -p "Do you want to install fish? [Y/N] " -r answer
 if [ "$answer" != "${answer#Yy}" ]; then
-    for i in $fish; do
-	printf "Installing %s?" "$i"
-	sudo xbps-install -y "$i" >> /dev/null
-    done
+	for i in $fish; do
+		printf "Installing %s?" "$i"
+		sudo xbps-install -y "$i" >> /dev/null
+	done
 fi
 
 echo "Installing 7z"
@@ -60,9 +61,9 @@ sudo xbps-install -y p7zip >> /dev/null
 echo "Installing Hack font"
 sudo xbps-install -y font-hack-ttf >> /dev/null
 echo "Installing Hack Nerd Font"
-curl -O -o $HOME/Hack.zip "https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Hack.zip"
-7z x $HOME/Hack.zip
-rm $HOME/Hack.zip
+#curl -O -o "$HOME/Hack.zip" "https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Hack.zip"
+7z x "$HOME/Hack.zip"
+rm "$HOME/Hack.zip"
 if [ ! -d "$HOME/.local/share/fonts" ]; then
 	mkdir "$HOME/.local/share/fonts"
 fi
@@ -73,7 +74,11 @@ echo "Updating packages"
 sudo xbps-install -Su
 
 if [ "$awesome" -eq 1 ] && [ "$bspwm" -eq 1 ]; then
-	read -p "Which wm do you want to use?\nnone - 0\nawesome - 1\nbspwm - 2\n" -r answer
+	read -p "Which wm do you want to use?
+	none - 0
+	awesome - 1
+	bspwm - 2
+	" -r answer
 	if [ "$answer" -eq 0 ]; then
 		exit
 	elif [ "$answer" -eq 1 ]; then
