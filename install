@@ -94,6 +94,7 @@ echo "Updating packages"
 sudo xbps-install -Su
 
 div "THE END"
+printf "\n"
 # If the user has downloaded both it asks which wm to use
 if [ "$awesome" -eq 1 ] && [ "$bspwm" -eq 1 ]; then
 	read -p "Which window manager do you want to use?
