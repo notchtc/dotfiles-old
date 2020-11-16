@@ -61,7 +61,7 @@ sudo xbps-install -y p7zip >> /dev/null
 echo "Installing Hack font"
 sudo xbps-install -y font-hack-ttf >> /dev/null
 echo "Installing Hack Nerd Font"
-#curl -O -o "$HOME/Hack.zip" "https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Hack.zip"
+curl -O -o "$HOME/Hack.zip" "https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Hack.zip"
 7z x "$HOME/Hack.zip"
 rm "$HOME/Hack.zip"
 if [ ! -d "$HOME/.local/share/fonts" ]; then
