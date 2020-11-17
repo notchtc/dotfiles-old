@@ -10,6 +10,7 @@ div()
 	printf "\n\e[1;32m%s\n--------------------\e[0m\n" "$title"
 }
 
+# Asks the user to install something
 askinstall()
 {
 	thing=$1
@@ -17,6 +18,7 @@ askinstall()
 	read -r answer
 }
 
+# Says that it's installing something
 installing()
 {
 	thing=$1
