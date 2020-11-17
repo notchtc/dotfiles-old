@@ -2,113 +2,72 @@
 # Variables to determine what wm the user has installed
 bspwm="0"
 awesome="0"
-
+# FUNCTIONS
+# Install something
+install() {
+    thing="$1"
+    for i in $thing; do
+        printf "\nInstalling \e[1;32m%s\e[0m" "$i"
+        sudo xbps-install -y "$i" >> /dev/null
+    done
+}
+# Install something with asking
+installasking() {
+    name="$1"
+    dependencies="$2"
+    variable="${3:-default}"
+    printf "\nDo you want to install \e[1;32m%s\e[0m? [\e[1;32mY\e[0m/\e[31mN\e[0m] " "$name"
+read -r answer
+    if [ "$answer" != "${answer#[Yy]}" ]; then    
+        export "$variable"=1
+        install "$dependencies"
+    fi
+}
 # A nice thing to divide stuff into sections
 div()
-{
-	title=$1
-	printf "\n\e[1;32m%s\n--------------------\e[0m\n" "$title"
+{	
+	printf "\n\e[1;32m%s\n\e[0m%s\n------------------------------" "$1" "$2"
 }
-# Asks the user to install something
-askinstall()
-{
-	thing=$1
-	printf "\nDo you want to install \e[1;32m%s\e[0m? [\e[1;32mY\e[0m/\e[31mN\e[0m] " "$thing"
-	read -r answer
-}
-# Says that it's installing something
-installing()
-{
-	thing=$1
-	printf "\nInstalling \e[1;32m%s\e[0m" "$thing"
-}
+# THE REAL DEAL
+div "THINGS THAT ARE REQUIRED" "Everything requires this (the dotfiles/script)" 
+install "font-hack-ttf git rcm xorg"; printf "\n"
 
-div "DOTFILES"
-# Installing the thing that symlinks the dotfiles, git to get the dotfiles and xorg to have a gui
-installing "rcm & git & xorg"
-sudo xbps-install -y rcm git xorg >> /dev/null
-printf "\n"
-echo "Downloading dotfilkes"
-# Getting the dotfiles from the git repo
-git clone "https://gitlab.com/cha0t1c/dotfiles.git" "$HOME/.dotfiles" >> /dev/null
+div "DOTFILES" "Getting the thing"; printf "\n"
+echo "Downloading dotfiles"
+git clone "https://gitlab.com/cha0t1c/dotfiles.git" "$HOME/.dotfiles" >> /dev/null; printf "\n"
 echo "Symlinking dotfiles"
-# Symlinking the dotfiles using rcm
-rcup
-# Removing some useless stuff from the home directory
+rcup; printf "\n"
+echo "Removing useless stuff"
 rm -r "$HOME/.images" "$HOME/.LICENSE" "$HOME/.README.md" "$HOME/.install"
 
-div "WINDOW MANAGERS"
-# Things to install when choosing awesome
-awesomedep="awesome alacritty picom maim xclip pamixer playerctl sxiv"
-askinstall awesome
-if [ "$answer" != "${answer#[Yy]}" ]; then
-	# Set the awesome variable to 1 to indicate that it's installed
-	awesome="1"
-	for i in $awesomedep; do
-		installing "$i"
-		sudo xbps-install -y "$i" >> /dev/null
-	done
-fi
+div "WINDOW MANAGERS" "Without this you won't have a gui"
+# Ask to install awesome | Dependencies | Variable to check if it has been installed
+installasking awesome "awesome alacritty picom maim xclip pamixer playerctl sxiv" awesome
+# Ask to install bspwm | Dependencies | Variable to check if it has been installed
+installasking bspwm "bspwm sxhkd alacritty dunst maim nitrogen pamixer picom playerctl polybar rofi xbacklight xclip" bspwm; printf "\n"
 
-# Things to install when choosing bspwm
-bspwmdep="bspwm sxhkd alacritty dunst maim nitrogen pamixer picom playerctl polybar rofi xbacklight xclip"
-askinstall bspwm
-if [ "$answer" != "${answer#[Yy]}" ]; then
-	# Set the bspwm variable to 1 to indicate that it's installed
-	bspwm="1"
-	for i in $bspwmdep; do
-		installing "$i"
-		sudo xbps-install -y "$i" >> /dev/null
-	done
-fi
-printf "\n"
-
-div "ADDITIONAL PROGRAMS"
+div "ADDITIONAL PROGRAMS" "Things that I use"
 other="firefox gimp mpv sxiv neovim keepassxc OTPClient lxappearance"
 for i in $other; do
-	askinstall "$i"
-	if [ "$answer" != "${answer#[Yy]}" ]; then	
-		installing "$i"
-		sudo xbps-install -y "$i" >> /dev/null
-		printf "\n"
-	fi
+	installasking "$i" "$i"; printf "\n"
 done
-
 # Fish is seperate so it downloads bat and lsd only when fish is installed
-fishdep="fish-shell bat lsd"
-askinstall fish
-if [ "$answer" != "${answer#[Yy]}" ]; then
-	for i in $fishdep; do
-		installing "$i"
-		sudo xbps-install -y "$i" >> /dev/null
-	done
-fi
-printf "\n"
+installasking fish "fish-shell bat lsd"; printf "\n"
 
-div "FINISHING TOUCHES"
-# The rice uses Hack font so let's download it
-installing "Hack font"
-sudo xbps-install -y font-hack-ttf >> /dev/null
-printf "\n\n"
+div "THE END" "The installation is nearly complete"; printf "\n"
 echo "Updating packages"
-sudo xbps-install -Su
+sudo xbps-install -Su; printf "\n"
 
-div "THE END"
-printf "\n"
 # If the user has downloaded both it asks which wm to use
 if [ "$awesome" -eq 1 ] && [ "$bspwm" -eq 1 ]; then
-	read -p "Which window manager do you want to use?
-	none - 0
-	awesome - 1
-	bspwm - 2
-	" -r answer
+	read -p "Which window manager do you want to use? 0 - none 1 - awesome 2 - bspwm" -r answer
 	# If user chooses awesome
 	if [ "$answer" -eq 1 ]; then
 		# If file exists just replace exec line
 		if [ -s "$HOME/.xinitrc" ]; then
 			sed -i "s/exec.*/exec awesome/" "$HOME/.xinitrc"
 		else
-			# Add exec line to file if it doesn't exist
+		# Add exec line to file if it doesn't exist
 			echo "exec awesome" >> "$HOME/.xinitrc"
 		fi
 	# The same thing expect bspwm
@@ -135,7 +94,7 @@ elif [ "$bspwm" -eq 1 ]; then
 fi
 
 # Message about installing Hack Nerd Font
-printf "\e[1;31mYou also need to install the Hack Nerd Font!\e[0m
+printf "\n"; printf "\e[1;31mYou also need to install the Hack Nerd Font!\e[0m
 \e[1;33mcurl -O -o Hack.zip \"https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Hack.zip\"\e[0m
 To unpack it you maybe also want to use for example: p7zip.
 \e[1;33m7z x Hack.zip\e[0m
