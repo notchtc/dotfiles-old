@@ -9,7 +9,6 @@ div()
 	title=$1
 	printf "\n\e[1;32m%s\n--------------------\e[0m\n" "$title"
 }
-
 # Asks the user to install something
 askinstall()
 {
@@ -17,7 +16,6 @@ askinstall()
 	printf "\nDo you want to install \e[1;32m%s\e[0m? [\e[1;32mY\e[0m/\e[31mN\e[0m] " "$thing"
 	read -r answer
 }
-
 # Says that it's installing something
 installing()
 {
@@ -30,11 +28,11 @@ div "DOTFILES"
 installing "rcm & git & xorg"
 sudo xbps-install -y rcm git xorg >> /dev/null
 printf "\n"
-# Getting the dotfiles from the git repo
 echo "Downloading dotfilkes"
+# Getting the dotfiles from the git repo
 git clone "https://gitlab.com/cha0t1c/dotfiles.git" "$HOME/.dotfiles" >> /dev/null
-# Symlinking the dotfiles using rcm
 echo "Symlinking dotfiles"
+# Symlinking the dotfiles using rcm
 rcup
 # Removing some useless stuff from the home directory
 rm -r "$HOME/.images" "$HOME/.LICENSE" "$HOME/.README.md" "$HOME/.install"
@@ -113,6 +111,7 @@ if [ "$awesome" -eq 1 ] && [ "$bspwm" -eq 1 ]; then
 			# Add exec line to file if it doesn't exist
 			echo "exec awesome" >> "$HOME/.xinitrc"
 		fi
+	# The same thing expect bspwm
 	elif [ "$answer" -eq 2 ]; then
 		if [ -s "$HOME/.xinitrc" ]; then
 			sed -i "s/exec.*/exec bspwm/" "$HOME/.xinitrc"
@@ -120,6 +119,7 @@ if [ "$awesome" -eq 1 ] && [ "$bspwm" -eq 1 ]; then
 			echo "exec bspwm" >> "$HOME/.xinitrc"
 		fi
 	fi
+# The same thing as the previous 2, but it chooses the ONLY wm that you installed
 elif [ "$awesome" -eq 1 ]; then
 	if [ -s "$HOME/.xinitrc" ]; then
 		sed -i "s/exec.*/exec awesome/" "$HOME/.xinitrc"
