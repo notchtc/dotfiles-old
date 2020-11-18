@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-
 # Variables that are used to indicate if a wm was installed
 awesome=0; bspwm=0
 
@@ -44,18 +43,24 @@ whichwm() {
 }
 
 # THE REAL DEAL
-div "THINGS THAT ARE REQUIRED" "Everything requires this (the dotfiles/script)" 
-install "font-hack-ttf git rcm xorg"; printf "\n"
+distro=$(lsb_release -s -c)
+if [ "$distro" != "void" ]; then printf "\e[31mThis script only works with Void Linux!"; exit
+elif [ "$distro" == "void" ]; then
+	printf "\e[32mWelcome!\nThis is my dotfile install script, which I made for myself,\nBut I added somethings that will make it even useful for \e[33mYou\e[32m!\n"; fi
 
-div "DOTFILES" "Getting the thing"; printf "\n"
+div "THINGS THAT ARE REQUIRED" "Everything requires this (the dotfiles/script)" 
+install "font-hack-ttf git rcm xorg"
+printf "\n"
+
+div "DOTFILES" "Getting the thing"
+printf "\n"
+
 echo "Downloading dotfiles"
 git clone "https://gitlab.com/cha0t1c/dotfiles.git" "$HOME/.dotfiles" >> /dev/null
-
 printf "\n"
 
 echo "Symlinking dotfiles"
 rcup
-
 printf "\n"
 
 echo "Removing useless stuff"
@@ -66,7 +71,8 @@ div "WINDOW MANAGERS" "Without this you won't have a gui"
 installasking awesome "awesome alacritty picom maim xclip pamixer playerctl sxiv" awesome
 
 # Ask to install bspwm | Dependencies | Variable to check if it has been installed
-installasking bspwm "bspwm sxhkd alacritty dunst maim nitrogen pamixer picom playerctl polybar rofi xbacklight xclip" bspwm; printf "\n"
+installasking bspwm "bspwm sxhkd alacritty dunst maim nitrogen pamixer picom playerctl polybar rofi xbacklight xclip" bspwm
+printf "\n"
 
 div "ADDITIONAL PROGRAMS" "Things that I use"
 other="firefox gimp mpv sxiv neovim keepassxc OTPClient lxappearance"
@@ -74,7 +80,6 @@ for i in $other; do installasking "$i" "$i" printf "\n"; done
 
 # Fish is seperate so it downloads bat and lsd only when fish is installed
 installasking fish "fish-shell bat lsd"
-
 printf "\n"
 
 div "THE END" "The installation is nearly complete"
@@ -82,7 +87,6 @@ printf "\n"
 
 echo "Updating packages"
 sudo xbps-install -Su
-
 printf "\n"
 
 # If the user has downloaded both it asks which wm to use
