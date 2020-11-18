@@ -3,7 +3,6 @@
 awesome=0; bspwm=0
 
 # FUNCTIONS
-
 # Install something
 install() {	
 	for i in $1; do
@@ -76,16 +75,14 @@ printf "\n"
 
 div "ADDITIONAL PROGRAMS" "Things that I use"
 other="firefox gimp mpv sxiv neovim keepassxc OTPClient lxappearance"
-for i in $other; do installasking "$i" "$i" printf "\n"; done
+for i in $other; do installasking "$i" "$i"; printf "\n"; done
 
 # Fish is seperate so it downloads bat and lsd only when fish is installed
 installasking fish "fish-shell bat lsd"
 printf "\n"
 
 div "THE END" "The installation is nearly complete"
-printf "\n"
-
-echo "Updating packages"
+printf "\nUpdating packages"
 sudo xbps-install -Su
 printf "\n"
 
