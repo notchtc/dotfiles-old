@@ -1,97 +1,97 @@
 #!/usr/bin/env bash
-# Variables to determine what wm the user has installed
-bspwm="0"
-awesome="0"
+
+# Variables that are used to indicate if a wm was installed
+awesome=0; bspwm=0
+
 # FUNCTIONS
+
 # Install something
-install() {
-    thing="$1"
-    for i in $thing; do
-        printf "\nInstalling \e[1;32m%s\e[0m" "$i"
-        sudo xbps-install -y "$i" >> /dev/null
-    done
+install() {	
+	for i in $1; do
+		printf "\nInstalling \e[1;32m%s\e[0m" "$i"
+		sudo xbps-install -y "$i" >> /dev/null
+	done
 }
+
 # Install something with asking
 installasking() {
-    name="$1"
-    dependencies="$2"
-    variable="${3:-default}"
-    printf "\nDo you want to install \e[1;32m%s\e[0m? [\e[1;32mY\e[0m/\e[31mN\e[0m] " "$name"
-read -r answer
-    if [ "$answer" != "${answer#[Yy]}" ]; then    
-        export "$variable"=1
-        install "$dependencies"
-    fi
+	name="$1"
+	dependencies="$2"
+	variable="${3:-default}"
+	printf "\nDo you want to install \e[1;32m%s\e[0m? [\e[1;32mY\e[0m/\e[31mN\e[0m] " "$name"
+	read -r answer
+	if [ "$answer" != "${answer#[Yy]}" ]; then    
+		export "$variable"=1
+		install "$dependencies"
+	fi
 }
+
 # A nice thing to divide stuff into sections
-div()
-{	
-	printf "\n\e[1;32m%s\n\e[0m%s\n------------------------------" "$1" "$2"
+div() {	printf "\n\e[1;32m%s\n\e[0m%s\n------------------------------" "$1" "$2"; }
+
+# Sets the wm
+setwm() {
+	# If file exists just replace exec line
+	if [ -s "$HOME/.xinitrc" ]; then sed -i "s/exec.*/exec $1/" "$HOME/.xinitrc"
+	# If file doesn't exist create the file with the exec line
+	else echo "exec $1" >> "$HOME/.xinitrc"; fi
 }
+
+# Sets wm depending on variable
+whichwm() {	
+	if [ "$1" -eq "$2" ]; then setwm awesome
+	elif [ "$3" -eq "$4" ]; then setwm bspwm; fi
+}
+
 # THE REAL DEAL
 div "THINGS THAT ARE REQUIRED" "Everything requires this (the dotfiles/script)" 
 install "font-hack-ttf git rcm xorg"; printf "\n"
 
 div "DOTFILES" "Getting the thing"; printf "\n"
 echo "Downloading dotfiles"
-git clone "https://gitlab.com/cha0t1c/dotfiles.git" "$HOME/.dotfiles" >> /dev/null; printf "\n"
+git clone "https://gitlab.com/cha0t1c/dotfiles.git" "$HOME/.dotfiles" >> /dev/null
+
+printf "\n"
+
 echo "Symlinking dotfiles"
-rcup; printf "\n"
+rcup
+
+printf "\n"
+
 echo "Removing useless stuff"
 rm -r "$HOME/.images" "$HOME/.LICENSE" "$HOME/.README.md" "$HOME/.install"
 
 div "WINDOW MANAGERS" "Without this you won't have a gui"
 # Ask to install awesome | Dependencies | Variable to check if it has been installed
 installasking awesome "awesome alacritty picom maim xclip pamixer playerctl sxiv" awesome
+
 # Ask to install bspwm | Dependencies | Variable to check if it has been installed
 installasking bspwm "bspwm sxhkd alacritty dunst maim nitrogen pamixer picom playerctl polybar rofi xbacklight xclip" bspwm; printf "\n"
 
 div "ADDITIONAL PROGRAMS" "Things that I use"
 other="firefox gimp mpv sxiv neovim keepassxc OTPClient lxappearance"
-for i in $other; do
-	installasking "$i" "$i"; printf "\n"
-done
-# Fish is seperate so it downloads bat and lsd only when fish is installed
-installasking fish "fish-shell bat lsd"; printf "\n"
+for i in $other; do installasking "$i" "$i" printf "\n"; done
 
-div "THE END" "The installation is nearly complete"; printf "\n"
+# Fish is seperate so it downloads bat and lsd only when fish is installed
+installasking fish "fish-shell bat lsd"
+
+printf "\n"
+
+div "THE END" "The installation is nearly complete"
+printf "\n"
+
 echo "Updating packages"
-sudo xbps-install -Su; printf "\n"
+sudo xbps-install -Su
+
+printf "\n"
 
 # If the user has downloaded both it asks which wm to use
 if [ "$awesome" -eq 1 ] && [ "$bspwm" -eq 1 ]; then
-	read -p "Which window manager do you want to use? 0 - none 1 - awesome 2 - bspwm" -r answer
-	# If user chooses awesome
-	if [ "$answer" -eq 1 ]; then
-		# If file exists just replace exec line
-		if [ -s "$HOME/.xinitrc" ]; then
-			sed -i "s/exec.*/exec awesome/" "$HOME/.xinitrc"
-		else
-		# Add exec line to file if it doesn't exist
-			echo "exec awesome" >> "$HOME/.xinitrc"
-		fi
-	# The same thing expect bspwm
-	elif [ "$answer" -eq 2 ]; then
-		if [ -s "$HOME/.xinitrc" ]; then
-			sed -i "s/exec.*/exec bspwm/" "$HOME/.xinitrc"
-		else
-			echo "exec bspwm" >> "$HOME/.xinitrc"
-		fi
-	fi
-# The same thing as the previous 2, but it chooses the ONLY wm that you installed
-elif [ "$awesome" -eq 1 ]; then
-	if [ -s "$HOME/.xinitrc" ]; then
-		sed -i "s/exec.*/exec awesome/" "$HOME/.xinitrc"
-	else
-		echo "exec awesome" >> "$HOME/.xinitrc"
-	fi
-elif [ "$bspwm" -eq 1 ]; then
-	if [ -s "$HOME/.xinitrc" ]; then
-		sed -i "s/exec.*/exec bspwm/" "$HOME/.xinitrc"
-	else
-		echo "exec bspwm" >> "$HOME/.xinitrc"
-	fi
-fi
+	read -p "Which window manager do you want to use? 0 - none 1 - awesome 2 - bspwm " -r answer	
+	whichwm "$answer" 1 "$answer" 2
+else
+	whichwm "$awesome" 1 "$bspwm" 1
+fi	
 
 # Message about installing Hack Nerd Font
 printf "\n"; printf "\e[1;31mYou also need to install the Hack Nerd Font!\e[0m
