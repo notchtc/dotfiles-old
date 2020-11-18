@@ -1,5 +1,6 @@
 # [bspwm](https://github.com/baskerville/bspwm)
 My personal bspwm config, it isn't supposed to be the most productive thing in the world.
+[Wallpaper](https://unsplash.com/photos/1wXBJa9ibhQ)
 
 [[_TOC_]]
 
