@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 # Variables that are used to indicate if a wm was installed
 awesome=0; bspwm=0
 
@@ -6,7 +6,7 @@ awesome=0; bspwm=0
 # Install something
 install() {	
 	for i in $1; do
-		printf "\nInstalling \e[1;32m%s\e[0m" "$i"
+		printf "\nInstalling \033[32m%s\033[0m" "$i"
 		sudo xbps-install -y "$i" >> /dev/null
 	done
 }
@@ -16,7 +16,7 @@ installasking() {
 	name="$1"
 	dependencies="$2"
 	variable="${3:-default}"
-	printf "\nDo you want to install \e[1;32m%s\e[0m? [\e[1;32mY\e[0m/\e[31mN\e[0m] " "$name"
+	printf "\nDo you want to install \033[32m%s\033[0m? [\033[1;32mY\033[0m/\033[31mN\033[0m] " "$name"
 	read -r answer
 	if [ "$answer" != "${answer#[Yy]}" ]; then    
 		export "$variable"=1
@@ -25,7 +25,7 @@ installasking() {
 }
 
 # A nice thing to divide stuff into sections
-div() {	printf "\n\e[1;32m%s\n\e[0m%s\n------------------------------" "$1" "$2"; }
+div() {	printf "\n\033[1;32m%s\n\033[0m%s\n------------------------------" "$1" "$2"; }
 
 # Sets the wm
 setwm() {
@@ -42,22 +42,25 @@ whichwm() {
 }
 
 # THE REAL DEAL
+distro=$(lsb_release -s -c)
+if [ "$distro" = "void" ]; then
+	printf "\033[32mWelcome!\nThis script will download my dotfiles and programs related with it"
+else
+	printf "\033[31mYour distro isn't supported!"
+	exit
+fi
 div "THINGS THAT ARE REQUIRED" "Everything requires this (the dotfiles/script)" 
 install "font-hack-ttf git rcm xorg"
 printf "\n"
 
 div "DOTFILES" "Getting the thing"
-printf "\n"
-
 echo "Downloading dotfiles"
 git clone "https://gitlab.com/cha0t1c/dotfiles.git" "$HOME/.dotfiles" >> /dev/null
-printf "\n"
 
-echo "Symlinking dotfiles"
+printf "\nSymlinking dotfiles\n"
 rcup
-printf "\n"
 
-echo "Removing useless stuff"
+printf "\nRemoving useless stuff\n"
 rm -r "$HOME/.images" "$HOME/.LICENSE" "$HOME/.README.md" "$HOME/.install"
 
 div "WINDOW MANAGERS" "Without this you won't have a gui"
@@ -84,17 +87,18 @@ printf "\n"
 
 # If the user has downloaded both it asks which wm to use
 if [ "$awesome" -eq 1 ] && [ "$bspwm" -eq 1 ]; then
-	read -p "Which window manager do you want to use? 0 - none 1 - awesome 2 - bspwm " -r answer	
+	printf "Which \033[32mwindow manager do you want to use? \033[31m0 - none\033[0m \033[1;32m1 - awesome 2 - bspwm\033[0m "
+	read -r answer	
 	whichwm "$answer" 1 "$answer" 2
 else
 	whichwm "$awesome" 1 "$bspwm" 1
-fi	
+fi;	
 
 # Message about installing Hack Nerd Font
-printf "\n"; printf "\e[1;31mYou also need to install the Hack Nerd Font!\e[0m
-\e[1;33mcurl -O -o Hack.zip \"https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Hack.zip\"\e[0m
+printf "\n\033[1;31mYou also need to install the Hack Nerd Font!\033[0m
+\033[1;33mcurl -O -o Hack.zip \"https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Hack.zip\"\033[0m
 To unpack it you maybe also want to use for example: p7zip.
-\e[1;33m7z x Hack.zip\e[0m
+\033[1;33m7z x Hack.zip\033[0m
 And move the files of the font to \"\$HOME/.local/share/fonts\".
-Do \e[1;33mmkdir \$HOME/.local/share/fonts\e[0m if it doesn't exist.
-\e[1;33mmv Hack* \"\$HOME/.local/share/fonts\"\e[0m"
+Do \033[1;33mmkdir \$HOME/.local/share/fonts\033[0m if it doesn't exist.
+\033[1;33mmv Hack* \"\$HOME/.local/share/fonts\"\033[0m"

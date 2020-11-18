@@ -22,7 +22,7 @@ It uses [rcm](https://github.com/thoughtbot/rcm)
 [You should read the script before running it](https://blog.dijit.sh/don-t-pipe-curl-to-bash)
 ```sh
 curl -LO "https://gitlab.com/cha0t1c/dotfiles/-/raw/master/install"
-bash install
+sh install
 ```
 
 # Dependencies
