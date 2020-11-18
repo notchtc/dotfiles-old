@@ -7,7 +7,7 @@ awesome=0; bspwm=0
 install() {	
 	for i in $1; do
 		printf "\nInstalling \e[1;32m%s\e[0m" "$i"
-		cpm i "$i" >> /dev/null
+		sudo xbps-install -y "$i" >> /dev/null
 	done
 }
 
@@ -43,11 +43,6 @@ whichwm() {
 
 # THE REAL DEAL
 div "THINGS THAT ARE REQUIRED" "Everything requires this (the dotfiles/script)" 
-printf "\nDownloading cpm\n"
-git clone "https://github.com/willeccles/cpm.git" "$HOME/cpm" >> /dev/null
-sudo install -m755 "$HOME/cpm/cpm" "/bin/cpm"
-printf "\n"
-
 install "font-hack-ttf git rcm xorg"
 printf "\n"
 
@@ -78,12 +73,12 @@ other="firefox gimp mpv sxiv neovim keepassxc OTPClient lxappearance"
 for i in $other; do installasking "$i" "$i"; printf "\n"; done
 
 # Fish is seperate so it downloads bat and lsd only when fish is installed
-installasking fish "fish-shell fish bat lsd"
+installasking fish "fish-shell bat lsd"
 printf "\n"
 
 div "THE END" "The installation is nearly complete"
-printf "\nUpdating packages"
-cpm U
+printf "\nUpdating packages\n"
+sudo xbps-install -Su
 
 printf "\n"
 
