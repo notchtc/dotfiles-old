@@ -43,7 +43,7 @@ whichwm() {
 
 # THE REAL DEAL
 div "THINGS THAT ARE REQUIRED" "Everything requires this (the dotfiles/script)" 
-printf "\nDownloading cpm"
+printf "\nDownloading cpm\n"
 git clone "https://github.com/willeccles/cpm.git" "$HOME/cpm" >> /dev/null
 sudo install -m755 "$HOME/cpm/cpm" "/bin/cpm"
 printf "\n"
@@ -83,7 +83,8 @@ printf "\n"
 
 div "THE END" "The installation is nearly complete"
 printf "\nUpdating packages"
-sudo xbps-install -Su
+cpm U
+
 printf "\n"
 
 # If the user has downloaded both it asks which wm to use
