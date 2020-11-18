@@ -44,7 +44,7 @@ whichwm() {
 # THE REAL DEAL
 distro=$(lsb_release -s -c)
 if [ "$distro" != "void" ]; then printf "\e[31mThis script only works with Void Linux!"; exit
-elif [ "$distro" == "void" ]; then
+elif [ "$distro" = "void" ]; then
 	printf "\e[32mWelcome!\nThis is my dotfile install script, which I made for myself,\nBut I added somethings that will make it even useful for \e[33mYou\e[32m!\n"; fi
 
 div "THINGS THAT ARE REQUIRED" "Everything requires this (the dotfiles/script)" 
