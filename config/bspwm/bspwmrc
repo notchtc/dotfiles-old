@@ -3,7 +3,6 @@
 pgrep -x sxhkd > /dev/null || sxhkd &
 nitrogen --restore &
 $HOME/.config/polybar/launch.sh &
-dunst &
 picom &
 xsetroot -cursor_name left_ptr &
 
