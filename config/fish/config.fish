@@ -35,5 +35,38 @@ set fish_user_paths "$PATH" "$HOME/.local/bin"
 # Vi bindings baby
 fish_vi_key_bindings
 
+# Pure prompt
+set pure_color_success bryellow
+set pure_color_danger brmagenta
+set pure_color_primary brcyan
+set pure_color_mute grey
+
+# Colorscheme
+set -g fish_color_normal normal
+set -g fish_color_command bryellow
+set -g fish_color_quote blue
+set -g fish_color_redirection brblue
+set -g fish_color_end blue
+set -g fish_color_error brmagenta
+set -g fish_color_param cyan
+set -g fish_color_selection white --bold --background=brblack
+set -g fish_color_search_match bryellow --background=brblack
+set -g fish_color_history_current --bold
+set -g fish_color_operator brcyan
+set -g fish_color_escape brcyan
+set -g fish_color_cwd green
+set -g fish_color_cwd_root red
+set -g fish_color_valid_path --underline
+set -g fish_color_autosuggestion brblack
+set -g fish_color_user bryellow
+set -g fish_color_host normal
+set -g fish_color_cancel -r
+set -g fish_pager_color_completion normal
+set -g fish_pager_color_description yellow
+set -g fish_pager_color_prefix white --bold --underline
+set -g fish_pager_color_progress brwhite --background=cyan
+set -g fish_color_match --background=brblue
+set -g fish_color_comment grey
+
 # Disable fish greeting
 set -U fish_greeting

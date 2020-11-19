@@ -26,7 +26,7 @@
     # the top and down respectively.
     # The width can be negative.  In this case the actual width is the
     # screen width minus the width defined in within the geometry option.
-    geometry = "0x7-7+33"
+    geometry = "0x7-7+32"
 
     # Show how many messages are currently hidden (because of geometry).
     indicate_hidden = yes
@@ -38,7 +38,7 @@
     # The transparency of the window.  Range: [0; 100].
     # This option will only work if a compositing window manager is
     # present (e.g. xcompmgr, compiz, etc.).
-    transparency = 17
+    transparency = 25
 
     # The height of the entire notification.  If the height is smaller
     # than the font height and padding combined, it will be raised
@@ -48,20 +48,20 @@
     # Draw a line of "separator_height" pixel height between two
     # notifications.
     # Set to 0 to disable.
-    separator_height = 2
+    separator_height = 0
 
     # Padding between text and separator.
-    padding = 8
+    padding = 7
 
     # Horizontal padding.
-    horizontal_padding = 8
+    horizontal_padding = 7
 
     # Defines width in pixels of frame around the notification window.
     # Set to 0 to disable.
     frame_width = 2
 
     # Defines color of the frame around the notification window.
-    frame_color = "#ff84cd"
+    frame_color = "#53d6c7"
 
     # Define a color for the separator.
     # possible values are:
@@ -230,20 +230,20 @@
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
     background = "#103c48"
-    foreground = "#adbcbc"
-    frame_color = "#72898f"
+    foreground = "#58a3ff"
+    frame_color = "#58a3ff"
     timeout = 7
 
 [urgency_normal]
     background = "#103c48"
-    foreground = "#cad8d9"
-    frame_color = "#ff84cd"
+    foreground = "#53d6c7"
+    frame_color = "#53d6c7"
     timeout = 10
 
 [urgency_critical]
     background = "#103c48"
-    foreground = "#cad8d9"
-    frame_color = "#ff665c"
+    foreground = "#ebc13d"
+    frame_color = "#ebc13d"
     timeout = 0
 
 # vim: ft=cfg

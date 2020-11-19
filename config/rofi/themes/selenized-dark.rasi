@@ -4,8 +4,8 @@
  * https://github.com/davatorium/rofi/tree/next/themes
  ******************************************************************************/
 * {
-    selected-normal-foreground:  rgba ( 173, 188, 188, 100 % );
-    foreground:                  rgba ( 173, 188, 188, 100 % );
+    selected-normal-foreground:  rgba ( 235, 193, 61, 100 % );
+    foreground:                  rgba ( 83, 214, 199, 100 % );
     normal-foreground:           @foreground;
     alternate-normal-background: rgba ( 16, 60, 72, 100 % );
     red:                         rgba ( 250, 87, 80, 100 % );
@@ -22,9 +22,9 @@
     normal-background:           rgba ( 16, 60, 72, 100 % );
     lightfg:                     rgba ( 45, 91, 105, 100 % );
     selected-normal-background:  rgba ( 45, 91, 105, 100 % );
-    border-color:                rgba ( 255, 132, 205, 100 %);
     spacing:                     2;
-    separatorcolor:              rgba ( 255, 132, 205, 100 % );
+    separatorcolor:              rgba ( 235, 193, 61, 100 % );
+    border-color:                @separatorcolor;
     urgent-background:           rgba ( 16, 60, 72, 100 % );
     selected-urgent-background:  rgba ( 45, 91, 105, 100 % );
     alternate-urgent-foreground: @urgent-foreground;
@@ -52,11 +52,9 @@
 }
 #listview {
     fixed-height: 0;
-    border:       2px dash 0px 0px ;
-    border-color: @separatorcolor;
     spacing:      2px ;
     scrollbar:    true;
-    padding:      2px 0px 0px ;
+    padding:      7px 0px 0px ;
 }
 #element {
     border:  0;
@@ -134,7 +132,7 @@
 }
 #textbox-prompt-colon {
     expand:     false;
-    str:        ":";
-    margin:     0px 0.3em 0em 0em ;
+    str:        ">";
+    margin:     0px 0.3em 0em 3px ;
     text-color: @normal-foreground;
 }
