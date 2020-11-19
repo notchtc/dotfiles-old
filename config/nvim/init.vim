@@ -32,9 +32,3 @@ hi Normal ctermbg=NONE guibg=NONE
 let g:lightline = {
       \ 'colorscheme': 'selenized_dark'
       \ }
-
-"" KEYBINDINGS ""
-let mapleader = " "
-" Save file and go to previous/next one.
-noremap <leader>p :wN<CR>
-noremap <leader>n :wn<CR>
