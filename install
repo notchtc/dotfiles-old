@@ -1,7 +1,4 @@
 #!/usr/bin/env sh
-# Variables that are used to indicate if a wm was installed
-awesome=0; bspwm=0
-
 # FUNCTIONS
 # Install something
 install() {	
@@ -13,14 +10,10 @@ install() {
 
 # Install something with asking
 installasking() {
-	name="$1"
-	dependencies="$2"
-	variable="${3:-default}"
-	printf "\nDo you want to install \033[32m%s\033[0m? [\033[1;32mY\033[0m/\033[31mN\033[0m] " "$name"
+	printf "\nDo you want to install \033[32m%s\033[0m? [\033[1;32mY\033[0m/\033[31mN\033[0m] " "$1"
 	read -r answer
-	if [ "$answer" != "${answer#[Yy]}" ]; then    
-		export "$variable"=1
-		install "$dependencies"
+	if [ "$answer" != "${answer#[Yy]}" ]; then
+		install "$2"
 	fi
 }
 
@@ -31,7 +24,7 @@ div() {	printf "\n\033[1;32m%s\n\033[0m%s\n------------------------------" "$1" 
 setwm() {
 	# If file exists just replace exec line
 	if [ -s "$HOME/.xinitrc" ]; then sed -i "s/exec.*/exec $1/" "$HOME/.xinitrc"
-	# If file doesn't exist create the file with the exec line
+		# If file doesn't exist create the file with the exec line
 	else echo "exec $1" >> "$HOME/.xinitrc"; fi
 }
 
@@ -43,12 +36,13 @@ else
 	printf "\033[31mYour distro isn't supported!"
 	exit
 fi
+
 div "THINGS THAT ARE REQUIRED" "Everything requires this (the dotfiles/script)" 
 install "font-hack-ttf git rcm xorg"
 printf "\n"
 
 div "DOTFILES" "Getting the thing"
-echo "Downloading dotfiles"
+printf "\nDownloading dotfiles\n"
 git clone "https://gitlab.com/cha0t1c/dotfiles.git" "$HOME/.dotfiles" >> /dev/null
 
 printf "\nSymlinking dotfiles\n"
@@ -58,9 +52,8 @@ printf "\nRemoving useless stuff\n"
 rm -r "$HOME/.images" "$HOME/.LICENSE" "$HOME/.README.md" "$HOME/.install"
 
 div "WINDOW MANAGER(s)" "Without this you won't have a gui"
-
-# Ask to install bspwm | Dependencies | Variable to check if it has been installed
-install "bspwm sxhkd alacritty dunst maim nitrogen pamixer picom playerctl polybar rofi xbacklight xclip" bspwm
+# Install bspwm with dependencies
+install "bspwm sxhkd alacritty dunst maim nitrogen pamixer picom playerctl polybar rofi xbacklight xclip"
 printf "\n"
 
 div "ADDITIONAL PROGRAMS" "Things that I use"
@@ -74,8 +67,6 @@ printf "\n"
 div "THE END" "The installation is nearly complete"
 printf "\nUpdating packages\n"
 sudo xbps-install -Su
-
-printf "\n"
 
 setwm bspwm	
 
