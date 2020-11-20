@@ -3,7 +3,7 @@
 pgrep -x sxhkd > /dev/null || sxhkd &
 nitrogen --restore &
 $HOME/.config/polybar/launch.sh &
-pgrep -x picom || picom -b &
+pgrep -x picom || picom -b --experimental-backends &
 xsetroot -cursor_name left_ptr &
 
 ## MONITOR ##

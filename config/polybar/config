@@ -11,7 +11,7 @@ blue = ${xrdb:color4}
 magenta = ${xrdb:color5}
 cyan = ${xrdb:color6}
 gray = ${xrdb:color7}
-b_gray = ${xrdb:color8}
+b_black = ${xrdb:color8}
 b_red = ${xrdb:color9}
 b_green = ${xrdb:color10}
 b_yellow = ${xrdb:color11}
@@ -23,22 +23,15 @@ white = ${xrdb:color15}
 [bar/bar]
 width = 100%
 height = 25
-fixed-center = false
 
 background = ${colors.background}
 foreground = ${colors.b_cyan}
 
-font-0 = Hack:pixelsize=9:antialias=true;1
-font-1 = Hack Nerd Font:pixelsize=11:antialias=true;1
+font-0 = Hack:pixelsize=9:antialias=true;0
+font-1 = Hack Nerd Font:pixelsize=10:antialias=true;1
 
 modules-left = bspwm
-modules-center = xwindow
 modules-right = pulseaudio memory cpu battery wlan eth date
-
-border-left-size = 7
-border-right-size = 7
-
-line-size = 2
 
 tray-position = right
 
@@ -55,7 +48,7 @@ type = internal/bspwm
 format-margin = 0
 format-padding = 0
 
-ws-icon-0 = "I;直"
+ws-icon-0 = "I;"
 ws-icon-1 = "II;"
 ws-icon-2 = "III;"
 ws-icon-3 = "IV;"
@@ -68,11 +61,9 @@ ws-icon-9 = "X;10"
 
 label-focused = %icon%
 label-focused-foreground = ${colors.b_yellow} 
-label-focused-overline = ${colors.b_yellow}
 label-focused-padding = 1
 
 label-occupied = %icon%
-label-occupied-overline = ${colors.b_cyan}
 label-occupied-padding = 1
 
 label-urgent = %icon%!
@@ -80,7 +71,7 @@ label-urgent-foreground = ${colors.b_red}
 label-urgent-padding = 1
 
 label-empty = %icon%
-label-empty-foreground = ${colors.b_blue}
+label-empty-foreground = ${colors.b_black}
 label-empty-padding = 1
 
 enable-scroll = false
@@ -88,7 +79,6 @@ enable-scroll = false
 [module/xwindow]
 type = internal/xwindow
 label = %title:0:50:…%
-label-overline = ${colors.b_yellow}
 label-foreground = ${colors.b_yellow}
 label-padding = 1
 
@@ -97,12 +87,10 @@ type = internal/pulseaudio
 format-volume-prefix = "%{T2}墳 %{T-}"
 format-volume-prefix-foreground = ${colors.b_yellow}
 format-volume = <label-volume>
-format-volume-overline = ${colors.b_cyan}
 label-volume = %percentage%%
 
 format-muted-prefix = "%{T2}婢 %{T-}"
 format-muted-prefix-foreground = ${colors.b_yellow}
-format-muted-overline = ${colors.b_yellow}
 format-muted-foreground = ${colors.b_yellow}
 label-muted = %percentage%%
 
@@ -115,7 +103,6 @@ format-volume-foreground = ${colors.b_cyan}
 label-volume = %percentage%%
 format-muted-prefix = "%{T2}婢 %{T-}"
 format-muted-prefix-foreground = ${colors.b_yellow}
-format-muted-overline = ${colors.b_yellow}
 format-muted-foreground = ${colors.b_yellow}
 label-muted = %percentage%%
 
@@ -124,7 +111,6 @@ type = internal/memory
 interval = 2
 format-prefix = "%{T2} %{T-}"
 format-prefix-foreground = ${colors.b_yellow}
-format-overline = ${colors.b_cyan}
 label = %percentage_used%%
 
 [module/cpu]
@@ -132,7 +118,6 @@ type = internal/cpu
 interval = 2
 format-prefix = "%{T2} %{T-}"
 format-prefix-foreground = ${colors.b_yellow}
-format-overline = ${colors.b_cyan}
 label = %percentage%%
 
 [module/battery]
@@ -144,17 +129,13 @@ full-at = 98
 format-charging-prefix = "%{T2} %{T-}"
 format-charging-prefix-foreground = ${colors.b_yellow}
 format-charging = <label-charging>
-format-charging-overline = ${colors.b_blue}
-
 format-discharging-prefix = "%{T2} %{T-}"
 format-discharging-prefix-foreground = ${colors.b_yellow}
-format-discharging-overline = ${colors.b_yellow}
 format-discharging-foreground = ${colors.b_yellow}
 format-discharging = <label-discharging>
 
 format-full-prefix = "%{T2} %{T-}"
 format-full-prefix-foreground = ${colors.b_yellow}
-format-full-overline = ${colors.b_cyan}
 
 [module/wlan]
 type = internal/network
@@ -162,7 +143,6 @@ interface = wlp3s0
 interval = 3.0
 
 format-connected = <label-connected>
-format-connected-overline = ${colors.cyan}
 format-connected-prefix = "%{T2}直 %{T-}"
 format-connected-prefix-foreground = ${colors.b_yellow}
 label-connected = connected
@@ -174,7 +154,6 @@ type = internal/network
 interface = enp2s0
 interval = 3.0
 
-format-connected-overline = ${colors.cyan}
 format-connected-prefix = "%{T2} %{T-}"
 format-connected-prefix-foreground = ${colors.b_yellow}
 label-connected = connected
@@ -185,17 +164,15 @@ format-disconnected =
 type = internal/date
 interval = 5
 
-format-overline = ${colors.cyan}
-format-prefix = "%{T2} %{T-}"
-format-prefix-foreground = ${colors.b_yellow}
-
-date =
+date = %d-%m-%Y
 date-alt = %d-%m-%Y
 
 time = %H:%M
 time-alt = %H:%M:%S
 
-label = %time% %date%
+format-prefix = "%{T2} %{T-}"
+format-prefix-foreground = ${colors.b_yellow}
+label = %date% %time%
 
 [settings]
 screenchange-reload = true

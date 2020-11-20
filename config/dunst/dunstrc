@@ -236,13 +236,13 @@
 
 [urgency_normal]
     background = "#103c48"
-    foreground = "#ebc31d"
+    foreground = "#53d6c7"
     frame_color = "#ebc13d"
     timeout = 10
 
 [urgency_critical]
-    background = "#ebc13d"
-    foreground = "#53d6c7"
+    background = "#103c48"
+    foreground = "#ebc13d"
     frame_color = "#ebc13d"
     timeout = 0
 
