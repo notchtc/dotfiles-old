@@ -5,7 +5,7 @@ My personal bspwm config, it isn't supposed to be the most productive thing in t
 
 https://simonstalenhag.se/bilderbig/by_upload2_2560.jpg[Wallpaper]
 
-file:../../images/wallpaper1.png[Modified Wallpaper]
+link:../../images/wallpaper1.png[Modified Wallpaper]
 
 :toc:
 
@@ -99,19 +99,19 @@ image::../../images/bspwm_idle.png[Screenshot of idle bspwm]
 |===
 |Dependency|What it does
 
-|../sxhkd/[sxhkd]
+|link:../sxhkd/[sxhkd]
 |Keybinds
 
 |nitrogen
 |Setting wallpaper
 
-|../polybar/[polybar]
+|link:../polybar/[polybar]
 |Bar with info
 
-|../dunst/[dunst]
+|link:../dunst/[dunst]
 |Notifications
 
-|../picom/[picom]
+|link:../picom/[picom]
 |Compositor
 |===
 footnote:change[]
