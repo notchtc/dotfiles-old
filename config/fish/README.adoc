@@ -39,6 +39,7 @@ image::../../images/fish.png[Screenshot of fish shell]
 
 == Features??
 Things that it does.footnote:change[]
+
 * Adds $HOME/.local/bin to PATH
 * Applications
 ** Sets BROWSER to firefox
