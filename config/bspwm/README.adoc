@@ -18,40 +18,54 @@ image::../../images/bspwm_idle.png[Screenshot of idle bspwm]
 |Keybind|What it does
 
 |bspwm
+|
+
 |Super + Escape
-|Super + Alt + 	Q/R
-|Super + (Shift +) C
-|Super + T/Shift + T/S/F
-|Super + (Shift +) H/J/K/L
-|Super + (Shift +) 1-9/0
-|Super + Alt + H/J/K/L
-|Super + Alt + Shift + H/J/K/L
-|Super + Left/Down/Up/Right
-|Other
-|Super + Enter
-|Super + Space
-|XF86AudioRaiseVolume/AudioLowerVolume/Mute
-|XF86AudioPlay/AudioNext/Prev
-|(Shift +) PrintScreen
-|Super + Alt + (Shift +) X
-
-
-|
 |Reloads sxhkd config
+
+|Super + Alt + 	Q/R
 |Quit/Restart bspwm
+
+|Super + (Shift +) C
 |Close/Kill window
+
+|Super + T/Shift + T/S/F
 |Set window state (Tiled/Pseudo Tiled/Floating/Fullscreen)
+
+|Super + (Shift +) H/J/K/L
 |Focus/move window in the given direction (Left/Down/Up/Right)
+
+|Super + (Shift +) 1-9/0
 |Focus/send to the given desktop (1-10)
+
+|Super + Alt + H/J/K/L
 |Expand a window by moving one of its side outward (Left/Down/Up/Right)
+
+|Super + Alt + Shift + H/J/K/L
 |Contract a window by moving one of its side inward (Left/Down/Up/Right)
+
+|Super + Left/Down/Up/Right
 |Move a floting window in the given direction (Left/Down/Up/Right)
+
+|Other
 |
+
+|Super + Enter
 |Open terminal (alacritty)footnote:change[You can easily change this to whatever you want.]
+
+|Super + Space
 |Open program launcher (rofi)footnote:change[]
+
+|XF86AudioRaiseVolume/AudioLowerVolume/Mute
 |Raise/lower/mute volume (pamixer)footnote:change[]
+
+|XF86AudioPlay/AudioNext/Prev
 |Play/Pause/Go to next/previous thing in media player (playerctl)footnote:change[]
+
+|(Shift +) PrintScreen
 |Screenshot (selection or) screen and copy to clipboard (maim)footnote:change[] (xclip)footnote:change[]
+
+|Super + Alt + (Shift +) X
 |(Reboot or) Poweroff your computer
 |===
 
@@ -60,35 +74,44 @@ image::../../images/bspwm_idle.png[Screenshot of idle bspwm]
 |Window|It's rules
 
 |Alacritty
-|Discord
-|Firefox
-|Gimp
-|Kdenlive
-|KeePassXC
-|mpv
-
 |Spawns on workspace 2
+
+|Discord
 |Is floating
+
+|Firefox
 |Spawns on workspace 1
+
+|Gimp
 |Spawns on workspace 3 & Is floating
+
+|Kdenlive
 |Spawns on workspace 3 & Is floating
+
+|KeePassXC
 |Is floating
+
+|mpv
 |Spawns on workspace 4 & Is floating
 |===
 
 == Dependencies
 |===
 |Dependency|What it does
-|../sxhkd/[sxhkd]
-|nitrogen
-|../polybar/[polybar]
-|../dunst/[dunst]
-|../picom/[picom]
 
+|../sxhkd/[sxhkd]
 |Keybinds
+
+|nitrogen
 |Setting wallpaper
+
+|../polybar/[polybar]
 |Bar with info
+
+|../dunst/[dunst]
 |Notifications
+
+|../picom/[picom]
 |Compositor
 |===
 footnote:change[]
