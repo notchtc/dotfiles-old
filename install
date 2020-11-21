@@ -53,16 +53,20 @@ rm -r "$HOME/.images" "$HOME/.LICENSE" "$HOME/.README.md" "$HOME/.install"
 
 div "WINDOW MANAGER(s)" "Without this you won't have a gui"
 # Install bspwm with dependencies
-install "bspwm sxhkd alacritty dunst maim nitrogen pamixer picom playerctl polybar rofi xbacklight xclip"
+installasking bspwm "bspwm sxhkd alacritty dunst maim nitrogen pamixer picom playerctl polybar rofi xbacklight xclip"
 printf "\n"
 
-div "ADDITIONAL PROGRAMS" "Things that I use"
-other="firefox gimp mpv sxiv neovim keepassxc OTPClient lxappearance"
-for i in $other; do installasking "$i" "$i"; printf "\n"; done
+div "PROGRAMS" "Programs that are in the dotfiles (you probably got most of these if you installed bspwm)"
+programs="alacritty dunst neovim picom polybar rofi sxiv"
+for i in $programs; do installasking "$i" "$i"; printf "\n"; done
 
 # Fish is seperate so it downloads bat and lsd only when fish is installed
-installasking fish "fish-shell bat lsd"
+installasking fish "fish-shell bat lsd" 
 printf "\n"
+
+div "ADDITIONAL PROGRAMS" "These aren't in the dotfiles"
+other="firefox gimp mpv keepassxc OTPClient lxappearance"
+for i in $other; do installasking "$i" "$i"; printf "\n"; done
 
 div "THE END" "The installation is nearly complete"
 printf "\nUpdating packages\n"

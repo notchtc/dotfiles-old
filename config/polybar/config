@@ -1,6 +1,6 @@
 [colors]
 #background = ${xrdb:background}
-background = #bf103c48
+background = #b3103c48
 foreground = ${xrdb:foreground}
 
 black = ${xrdb:color0}
@@ -23,15 +23,17 @@ white = ${xrdb:color15}
 [bar/bar]
 width = 100%
 height = 25
+bottom = true
 
 background = ${colors.background}
 foreground = ${colors.b_cyan}
 
-font-0 = Hack:pixelsize=9:antialias=true;0
-font-1 = Hack Nerd Font:pixelsize=10:antialias=true;1
+font-0 = Hack:pixelsize=9:antialias=true;1
+font-1 = Hack Nerd Font:pixelsize=10:antialias=true;2
 
 modules-left = bspwm
-modules-right = pulseaudio memory cpu battery wlan eth date
+modules-center = date
+modules-right = pulseaudio memory cpu battery wlan eth
 
 tray-position = right
 
@@ -99,7 +101,7 @@ type = internal/alsa
 format-volume-prefix = "%{T2}墳 %{T-}"
 format-volume-prefix-foreground = ${colors.b_yellow}
 format-volume = <label-volume>
-format-volume-foreground = ${colors.b_cyan}
+format-volume-foreground = ${colors.b_yellow}
 label-volume = %percentage%%
 format-muted-prefix = "%{T2}婢 %{T-}"
 format-muted-prefix-foreground = ${colors.b_yellow}
@@ -164,14 +166,12 @@ format-disconnected =
 type = internal/date
 interval = 5
 
-date = %d-%m-%Y
-date-alt = %d-%m-%Y
+date = %d.%m.%Y
+date-alt = %d.%m.%Y
 
 time = %H:%M
 time-alt = %H:%M:%S
 
-format-prefix = "%{T2} %{T-}"
-format-prefix-foreground = ${colors.b_yellow}
 label = %date% %time%
 
 [settings]

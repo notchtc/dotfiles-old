@@ -1,3 +1,3 @@
 function cat
-	bat $argv
+	bat --theme ansi-dark $argv
 end

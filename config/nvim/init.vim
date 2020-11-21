@@ -7,10 +7,10 @@ if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.config/nvim/plugins')
-Plug 'mattn/emmet-vim'
 Plug 'airblade/vim-gitgutter'
-Plug 'itchyny/lightline.vim'
+Plug 'baskerville/vim-sxhkdrc'
 Plug 'ianchanning/vim-selenized'
+Plug 'itchyny/lightline.vim'
 call plug#end()
 
 "" MAKE YOUR LIFE BETTER ""
@@ -19,8 +19,10 @@ set clipboard=unnamedplus
 
 " Don't place an comment when making an newline
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
-" Remove trailing newlines
-autocmd BufWritePre * %s/\n\+\%$//e 
+" Reload some configs after editing them
+autocmd BufWritePost bspwmrc,sxhkdrc,$XDG_CONFIG_HOME/polybar/config !bspc wm -r
+autocmd BufWritePost init.vim source %
+autocmd BufWritePost Xresources !xrdb -merge %
 
 "" LOOKS ""
 set termguicolors

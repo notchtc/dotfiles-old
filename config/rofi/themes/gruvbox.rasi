@@ -1,7 +1,7 @@
 /* Dracula theme edited to gruvbox colors */
 
 * {
-    font: "Hack 10";
+    font: "monospace 10";
     foreground: #ebdbb2;
     background-color: #282828;
     active-background: #689d6a;
