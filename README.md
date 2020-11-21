@@ -6,7 +6,6 @@ It uses [rcm](https://github.com/thoughtbot/rcm)
 # Contains
 - [.Xresources](./Xresources)
 - [alacritty](./config/alacritty/)
-- [awesome](./config/awesome/)
 - [bspwm](./config/bspwm/)
 - [dunst](./config/dunst/)
 - [fish](./config/fish/)
