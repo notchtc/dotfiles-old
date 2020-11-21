@@ -1,0 +1,35 @@
+= Dotfiles
+Cha0t1c <notnotcha0t1c@protonmail.com>
+:toc:
+
+This repo contains my dotfiles.
+
+It uses https://github.com/thoughtbot/rcm[rcm].
+
+= Contains
+
+* link:config/alacritty/[alacritty]
+* link:config/bspwm/[bspwm]
+* link:config/dunst/[dunst]
+* link:config/fish/[fish]
+* link:config/nvim/[nvim]
+* link:config/picom/[picom]
+* link:config/polybar/[polybar]
+* link:config/rofi/[rofi]
+* link:config/sxhkd/[sxhkd]
+* link:config/sxiv/exec/[sxiv]
+* link:Xresources[xresources]
+
+= Install
+WARNING: Works on Void Linux only
+WARNING: https://blog.dijit.sh/don-t-pipe-curl-to-bash[You should read the script before running it]
+[source,sh]
+----
+curl -LO "https://gitlab.com/cha0t1c/dotfiles/-/raw/master/install"
+sh install
+----
+
+= Dependencies
+If something requires something, it will be written in it's README
+* https://github.com/source-foundry/Hack/releases/download/v3.003/Hack-v3.003-ttf.zip[Hack] (or download it from your package manager)
+* https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/Hack[Hack Nerd Font] 
