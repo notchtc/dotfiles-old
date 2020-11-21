@@ -1,13 +1,12 @@
 = https://github.cm/bakerville/bspwm[bspwm]
 Cha0t1c <notnotcha0t1c@protonmail.com>
+:toc:
 
 My personal bspwm config, it isn't supposed to be the most productive thing in the world.
 
 https://simonstalenhag.se/bilderbig/by_upload2_2560.jpg[Wallpaper]
 
 link:../../images/wallpaper1.png[Modified Wallpaper]
-
-:toc:
 
 == Screenshots
 image::../../images/bspwm_busy.png[Screenshot of busy bspwm]
@@ -96,6 +95,7 @@ image::../../images/bspwm_idle.png[Screenshot of idle bspwm]
 |===
 
 == Dependencies
+Things that it requires.footnote:change[]
 |===
 |Dependency|What it does
 
@@ -114,4 +114,3 @@ image::../../images/bspwm_idle.png[Screenshot of idle bspwm]
 |link:../picom/[picom]
 |Compositor
 |===
-footnote:change[]

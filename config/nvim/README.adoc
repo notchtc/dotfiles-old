@@ -1,0 +1,34 @@
+= https://neovim.io[Neovim]
+Cha0t1c <notnotcha0t1c@protonmail.com>
+:toc:
+
+== Screenshot
+image:../../images/nvim.png[Screenshot of neovim]
+
+== Plugins
+|===
+|Plugin|What it does
+
+|vim-gitgutter
+|Shows git changes
+
+|vim-sxhkd
+|Syntax highlighting for sxhkd
+
+|vim-selenized
+|Selenized colorscheme
+
+|lightline.vim
+|Fancy bar at the bottom
+|===
+
+== Features
+* A comment isn't placed when making an newline
+* Clipboard that works between different applications
+* Removing trailing newlines
+* Reload config after editing
+** bspwm
+** neovim
+** polybar
+** sxhkd
+** Xresources
