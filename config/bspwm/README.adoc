@@ -4,6 +4,7 @@ Cha0t1c <notnotcha0t1c@protonmail.com>
 My personal bspwm config, it isn't supposed to be the most productive thing in the world.
 
 https://simonstalenhag.se/bilderbig/by_upload2_2560.jpg[Wallpaper]
+
 file:../../images/wallpaper1.png[Modified Wallpaper]
 
 :toc:
@@ -27,7 +28,6 @@ image::../../images/bspwm_idle.png[Screenshot of idle bspwm]
 |Super + Alt + Shift + H/J/K/L
 |Super + Left/Down/Up/Right
 |Other
-
 |Super + Enter
 |Super + Space
 |XF86AudioRaiseVolume/AudioLowerVolume/Mute
@@ -36,6 +36,7 @@ image::../../images/bspwm_idle.png[Screenshot of idle bspwm]
 |Super + Alt + (Shift +) X
 
 
+|
 |Reloads sxhkd config
 |Quit/Restart bspwm
 |Close/Kill window
