@@ -1,0 +1,93 @@
+= https://github.cm/bakerville/bspwm[bspwm]
+Cha0t1c <notnotcha0t1c@protonmail.com>
+
+My personal bspwm config, it isn't supposed to be the most productive thing in the world.
+
+https://simonstalenhag.se/bilderbig/by_upload2_2560.jpg[Wallpaper]
+file:../../images/wallpaper1.png[Modified Wallpaper]
+
+:toc:
+
+== Screenshots
+image::../../images/bspwm_busy.png[Screenshot of busy bspwm]
+image::../../images/bspwm_idle.png[Screenshot of idle bspwm]
+
+== Keybindings
+|===
+|Keybind|What it does
+
+|bspwm
+|Super + Escape
+|Super + Alt + 	Q/R
+|Super + (Shift +) C
+|Super + T/Shift + T/S/F
+|Super + (Shift +) H/J/K/L
+|Super + (Shift +) 1-9/0
+|Super + Alt + H/J/K/L
+|Super + Alt + Shift + H/J/K/L
+|Super + Left/Down/Up/Right
+|Other
+
+|Super + Enter
+|Super + Space
+|XF86AudioRaiseVolume/AudioLowerVolume/Mute
+|XF86AudioPlay/AudioNext/Prev
+|(Shift +) PrintScreen
+|Super + Alt + (Shift +) X
+
+
+|Reloads sxhkd config
+|Quit/Restart bspwm
+|Close/Kill window
+|Set window state (Tiled/Pseudo Tiled/Floating/Fullscreen)
+|Focus/move window in the given direction (Left/Down/Up/Right)
+|Focus/send to the given desktop (1-10)
+|Expand a window by moving one of its side outward (Left/Down/Up/Right)
+|Contract a window by moving one of its side inward (Left/Down/Up/Right)
+|Move a floting window in the given direction (Left/Down/Up/Right)
+|
+|Open terminal (alacritty)footnote:change[You can easily change this to whatever you want.]
+|Open program launcher (rofi)footnote:change[]
+|Raise/lower/mute volume (pamixer)footnote:change[]
+|Play/Pause/Go to next/previous thing in media player (playerctl)footnote:change[]
+|Screenshot (selection or) screen and copy to clipboard (maim)footnote:change[] (xclip)footnote:change[]
+|(Reboot or) Poweroff your computer
+|===
+
+== Rules
+|===
+|Window|It's rules
+
+|Alacritty
+|Discord
+|Firefox
+|Gimp
+|Kdenlive
+|KeePassXC
+|mpv
+
+|Spawns on workspace 2
+|Is floating
+|Spawns on workspace 1
+|Spawns on workspace 3 & Is floating
+|Spawns on workspace 3 & Is floating
+|Is floating
+|Spawns on workspace 4 & Is floating
+|===
+
+== Dependencies
+|===
+|Dependency|What it does
+|../sxhkd/[sxhkd]
+|nitrogen
+|../polybar/[polybar]
+|../dunst/[dunst]
+|../picom/[picom]
+
+|Keybinds
+|Setting wallpaper
+|Bar with info
+|Notifications
+|Compositor
+|===
+footnote:change[]
