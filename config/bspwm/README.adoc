@@ -64,8 +64,11 @@ image::../../images/bspwm_idle.png[Screenshot of idle bspwm]
 |(Shift +) PrintScreen
 |Screenshot (selection or) screen and copy to clipboard (maim)footnote:change[] (xclip)footnote:change[]
 
+|XF86MonBrightnessUp/Down
+|Increases/decreases brightness of screen by 10 (xbacklight)footnote:change[]
+
 |Super + Alt + (Shift +) X
-|(Reboot or) Poweroff your computer
+|(Reboot or) Poweroff your computerfootnote:snippet[link:https://gitlab.com/-/snippets/2042640[snippet]]
 |===
 
 == Rules

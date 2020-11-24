@@ -1,6 +1,5 @@
 [colors]
-#background = ${xrdb:background}
-background = #b3103c48
+background = ${xrdb:background}
 foreground = ${xrdb:foreground}
 
 black = ${xrdb:color0}
@@ -23,7 +22,7 @@ white = ${xrdb:color15}
 [bar/bar]
 width = 100%
 height = 25
-bottom = true
+forced-center = true
 
 background = ${colors.background}
 foreground = ${colors.b_cyan}
