@@ -6,7 +6,7 @@ This repo contains my dotfiles.
 
 It uses https://github.com/thoughtbot/rcm[rcm].
 
-IMPORTANT: You will probably get a longer response on Gitlab than GitHub
+IMPORTANT: You will probably get a quicker response on Gitlab than GitHub
 
 == Contains
 
