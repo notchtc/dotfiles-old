@@ -68,7 +68,7 @@ image::../../images/bspwm_idle.png[Screenshot of idle bspwm]
 |Increases/decreases brightness of screen by 10 (xbacklight)footnote:change[]
 
 |Super + Alt + (Shift +) X
-|(Reboot or) Poweroff your computerfootnote:snippet[link:https://gitlab.com/-/snippets/2042640[snippet]]
+|(Reboot or) Poweroff your computerfootnote:snippet[link:https://gitlab.com/-/snippets/2042640[If it doesn't work you may need to do this]]
 |===
 
 == Rules
