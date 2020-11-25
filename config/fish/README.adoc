@@ -17,11 +17,20 @@ image::../../images/fish.png[Screenshot of fish shell]
 |e
 |Launch editor (nvim)footnote:change[]
 
+|se
+|Launch editor (nvim)footnote:change[] with sudo
+
 |ls
 |Use https://github.com/Peltoche/lsd[lsd]footnote:change[] instead of ls
 
-|se
-|Launch editor with sudo (nvim)footnote:change[]
+|lsa
+|Ls (exa)footnote:change[] with hidden files
+
+|lsl
+|Ls (exa)footnote:change[] with extended info
+
+|lsla
+|Ls (exa)footnote:change[] with extended info and hidden files
 
 |xi
 |Install package with xbps
