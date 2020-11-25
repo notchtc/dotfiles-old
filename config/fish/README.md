@@ -11,7 +11,7 @@ My personal fish config that doesn't look too crazy and doesn't have thousands o
 |--------|----------------------------------------------------------------|
 |cat     |Use [bat](https://github.com/sharkdp/bat)[^1] instead of cat[^2]|
 |e       |Launch editor (nvim)[^1]                                        |
-|ls      |Use [lsd](https://github.com/Peltoche/lsd)[^1] instead of ls[^2]|
+|ls      |Use [exa](https://github.com/Peltoche/lsd)[^1] instead of ls[^2]|
 |se      |Launch editor with sudo (nvim)[^1]                              |
 |setwal  |Sets wallpaper for awesomewm[^2]                                |
 |xi      |Install package with xbps                                       |

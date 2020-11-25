@@ -1,3 +1,3 @@
 function ls
-	lsd $argv
+	exa $argv
 end

@@ -60,8 +60,8 @@ div "PROGRAMS" "Programs that are in the dotfiles (you probably got most of thes
 programs="alacritty dunst neovim picom polybar rofi sxiv"
 for i in $programs; do installasking "$i" "$i"; printf "\n"; done
 
-# Fish is seperate so it downloads bat and lsd only when fish is installed
-installasking fish "fish-shell bat lsd" 
+# Fish is seperate so it downloads bat and exa only when fish is installed
+installasking fish "fish-shell bat exa" 
 printf "\n"
 
 div "ADDITIONAL PROGRAMS" "These aren't in the dotfiles"
