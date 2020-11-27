@@ -118,3 +118,9 @@ image::../../images/bspwm_idle.png[Screenshot of idle bspwm]
 |link:../picom/[picom]
 |Compositor
 |===
+
+link:../sxhkd/[sxhkd]:: Keybinds
+nitrogen:: Setting wallpaper
+link:../polybar/[polybar]:: Bar with info
+link:../dunst/[dunst]:: Notifications
+link:../picom/[picom]:: Compositor
