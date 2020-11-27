@@ -11,11 +11,11 @@ image::../../images/fish.png[Screenshot of fish shell]
 |===
 |Function|What it does
 
-|bat
-|Run https://github.com/sharkdp/bat[bat] with ansi-dark theme
+|cat
+|Run https://github.com/sharkdp/bat[bat]footnote:change[You can change this easily] instead of cat
 
 |e
-|Launch editor (nvim)footnote:change[You can change this easily]
+|Launch editor (nvim)footnote:change[]
 
 |se
 |Launch editor (nvim)footnote:change[] with sudo
