@@ -8,48 +8,19 @@ My personal fish config that doesn't look too crazy and doesn't have thousands o
 image::../../images/fish.png[Screenshot of fish shell]
 
 == Functions
-|===
-|Function|What it does
-
-|bat
-|Run https://github.com/sharkdp/bat[bat] with ansi-dark theme
-
-|e
-|Launch editor (nvim)footnote:change[You can change this easily]
-
-|se
-|Launch editor (nvim)footnote:change[] with sudo
-
-|ls
-|Use https://github.com/Peltoche/lsd[lsd]footnote:change[] instead of ls
-
-|lsa
-|Ls (exa)footnote:change[] with hidden files
-
-|lsl
-|Ls (exa)footnote:change[] with extended info
-
-|lsla
-|Ls (exa)footnote:change[] with extended info and hidden files
-
-|xi
-|Install package (xbps)
-
-|xup
-|Update packages (xbps)
-
-|xr
-|Remove package (xbps)
-
-|xqi
-|Show installed packages (xbps)
-
-|xqsi
-|Search installed packages (xbps)
-
-|xqsr
-|Search repository (xbps)
-|===
+bat:: Run https://github.com/sharkdp/bat[bat] with ansi-dark theme
+e:: Launch editor (nvim)footnote:change[You can change this easily]
+se:: Launch editor (nvim)footnote:change[] with sudo
+ls:: Use https://github.com/Peltoche/lsd[lsd]footnote:change[] instead of ls
+lsa:: Ls (exa)footnote:change[] with hidden files
+lsl:: Ls (exa)footnote:change[] with extended info
+lsla:: Ls (exa)footnote:change[] with extended info and hidden files
+xi:: Install package (xbps)
+xup:: Update packages (xbps)
+xr:: Remove package (xbps)
+xqi:: Show installed packages (xbps)
+xqsi:: Search installed packages (xbps)
+xqsr:: Search repository (xbps)
 
 == Features??
 Things that it does.footnote:change[]

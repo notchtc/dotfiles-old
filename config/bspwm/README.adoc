@@ -18,8 +18,8 @@ image::../../images/bspwm_idle.png[Screenshot of idle bspwm]
 |===
 |Keybind|What it does
 
-|bspwm
-|
+|*bspwm*
+|Keybindings related with the window manager
 
 |kbd:[Super+Escape]
 |Reloads sxhkd config
@@ -48,8 +48,8 @@ image::../../images/bspwm_idle.png[Screenshot of idle bspwm]
 |kbd:[Super+Left/Down/Up/Right]
 |Move a floting window in the given direction (Left/Down/Up/Right)
 
-|Other
-|
+|*Other*
+|Keybindings not related with the window manager
 
 |kbd:[Super+Enter]
 |Open terminal (alacritty)footnote:change[You can easily change this to whatever you want.]
@@ -73,7 +73,7 @@ image::../../images/bspwm_idle.png[Screenshot of idle bspwm]
 |Poweroff (or reboot) your computerfootnote:snippet[link:https://gitlab.com/-/snippets/2042640[If it doesn't work you may need to do this]]
 |===
 
-== Rules
+== Window Rules
 |===
 |Window|It's rules
 
@@ -100,9 +100,8 @@ image::../../images/bspwm_idle.png[Screenshot of idle bspwm]
 |===
 
 == Dependencies
-Things that it requires.footnote:change[]
 |===
-|Dependency|What it does
+|Dependencyfootnote:change[]|What it does
 
 |link:../sxhkd/[sxhkd]
 |Keybinds
