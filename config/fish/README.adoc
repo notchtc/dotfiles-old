@@ -1,5 +1,6 @@
 = https://fishshell.com[fish]
 Cha0t1c <notnotcha0t1c@protonmail.com>
+v1.0, {docdate}
 :toc:
 
 My personal fish config that doesn't look too crazy and doesn't have thousands of things.
