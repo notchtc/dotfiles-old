@@ -1,5 +1,6 @@
 = Dotfiles
 Cha0t1c <notnotcha0t1c@protonmail.com>
+{docdate}
 :toc:
 
 This repo contains my dotfiles.
