@@ -4,23 +4,24 @@
  * https://github.com/davatorium/rofi/tree/next/themes
  ******************************************************************************/
 * {
+    maincolor:                   rgba ( 132, 199, 71, 100 %);
     font:                        "Monospace 10";
     foreground:                  rgba ( 83, 214, 199, 100 % );
     normal-foreground:           @foreground;
     active-foreground:           rgba ( 88, 163, 255, 100 % );
     urgent-foreground:           rgba ( 219, 179, 45, 100 % );
-    selected-normal-foreground:  rgba ( 235, 193, 61, 100 % );
+    selected-normal-foreground:  @maincolor;
     selected-active-foreground:  rgba ( 88, 163, 255, 100 % );
     selected-urgent-foreground:  rgba ( 219, 179, 45, 100 % );
-    background:                  rgba ( 16, 60, 72, 100 % );
+    background:                  rgba ( 16, 60, 72, 70 % );
     background-color:            rgba ( 0, 0, 0, 0 % );
     active-background:           rgba ( 16, 60, 72, 100 % );
     urgent-background:           rgba ( 16, 60, 72, 100 % );
-    selected-normal-background:  rgba ( 45, 91, 105, 100 % );
+    selected-normal-background:  rgba ( 45, 91, 105, 70 % );
     selected-active-background:  rgba ( 45, 91, 105, 100 % );
     selected-urgent-background:  rgba ( 45, 91, 105, 100 % );
-    separatorcolor:              rgba ( 83, 214, 199, 100 % );
-    border-color:                @separatorcolor;
+    separatorcolor:              @maincolor;
+    border-color:                @maincolor;
     spacing:                     2;
 }
 #window {
