@@ -19,56 +19,56 @@ image::../../images/bspwm_idle.png[Screenshot of idle bspwm]
 |bspwm
 |
 
-|Super + Escape
+|kbd:[Super+Escape]
 |Reloads sxhkd config
 
-|Super + Alt + 	Q/R
+|kbd:[Super+Alt+Q/R]
 |Quit/Restart bspwm
 
-|Super + (Shift +) C
+|kbd:[Super+C] or kbd:[Super+Shift+C]
 |Close/Kill window
 
-|Super + T/Shift + T/S/F
-|Set window state (Tiled/Pseudo Tiled/Floating/Fullscreen)
+|kbd:[Super+T/S/F] or kbd:[Super+Shift+T] 
+|Set window state (Tiled/Floating/Fullscreen/Pseudo Tiled)
 
-|Super + (Shift +) H/J/K/L
+|kbd:[Super+H/J/K/L] or kbd:[Super+Shift+H/J/K/L] 
 |Focus/move window in the given direction (Left/Down/Up/Right)
 
-|Super + (Shift +) 1-9/0
+|kbd:[Super+1-9/0] or kbd:[Super+Shift+1-9/0]
 |Focus/send to the given desktop (1-10)
 
-|Super + Alt + H/J/K/L
+|kbd:[Super+Alt+H/J/K/L]
 |Expand a window by moving one of its side outward (Left/Down/Up/Right)
 
-|Super + Alt + Shift + H/J/K/L
+|kbd:[Super+Alt+Shift+H/J/K/L]
 |Contract a window by moving one of its side inward (Left/Down/Up/Right)
 
-|Super + Left/Down/Up/Right
+|kbd:[Super+Left/Down/Up/Right]
 |Move a floting window in the given direction (Left/Down/Up/Right)
 
 |Other
 |
 
-|Super + Enter
+|kbd:[Super+Enter]
 |Open terminal (alacritty)footnote:change[You can easily change this to whatever you want.]
 
-|Super + Space
+|kbd:[Super+Space]
 |Open program launcher (rofi)footnote:change[]
 
-|XF86AudioRaiseVolume/AudioLowerVolume/Mute
+|kbd:[XF86AudioRaiseVolume/AudioLowerVolume/Mute]
 |Raise/lower/mute volume (pamixer)footnote:change[]
 
-|XF86AudioPlay/AudioNext/Prev
+|kbd:[XF86AudioPlay/AudioNext/Prev]
 |Play/Pause/Go to next/previous thing in media player (playerctl)footnote:change[]
 
-|(Shift +) PrintScreen
-|Screenshot (selection or) screen and copy to clipboard (maim)footnote:change[] (xclip)footnote:change[]
+|kbd:[PrintScreen] or kbd:[Shift+PrintScreen]
+|Screenshot screen (or selection) and copy to clipboard (maim)footnote:change[] (xclip)footnote:change[]
 
-|XF86MonBrightnessUp/Down
+|kbd:[XF86MonBrightnessUp/Down]
 |Increases/decreases brightness of screen by 10 (xbacklight)footnote:change[]
 
-|Super + Alt + (Shift +) X
-|(Reboot or) Poweroff your computerfootnote:snippet[link:https://gitlab.com/-/snippets/2042640[If it doesn't work you may need to do this]]
+|kbd:[Super+Alt+X] or kbd:[Super+Alt+Shift+X]
+|Poweroff (or reboot) your computerfootnote:snippet[link:https://gitlab.com/-/snippets/2042640[If it doesn't work you may need to do this]]
 |===
 
 == Rules

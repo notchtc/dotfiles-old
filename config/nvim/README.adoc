@@ -6,21 +6,10 @@ Cha0t1c <notnotcha0t1c@protonmail.com>
 image:../../images/nvim.png[Screenshot of neovim]
 
 == Plugins
-|===
-|Plugin|What it does
-
-|vim-gitgutter
-|Shows git changes
-
-|vim-sxhkd
-|Syntax highlighting for sxhkd
-
-|vim-selenized
-|Selenized colorscheme
-
-|lightline.vim
-|Fancy bar at the bottom
-|===
+vim-gitgutter:: Shows git changes
+vim-sxhkd:: Syntax highlighting for sxhkd
+vim-selenized:: Selenized colorscheme
+lightline.vim:: Fancy bar at bottom
 
 == Features
 * A comment isn't placed when making an newline

@@ -33,8 +33,10 @@ WARNING: Works on Void Linux only
 
 WARNING: https://blog.dijit.sh/don-t-pipe-curl-to-bash[You should read the script before running it]
 
-[source,shell]
+[source,sh]
 ----
+
 curl -LO "https://gitlab.com/cha0t1c/dotfiles/-/raw/master/install"
 sh install
+
 ----
