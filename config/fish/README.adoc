@@ -15,7 +15,7 @@ image::../../images/fish.png[Screenshot of fish shell]
 |Run https://github.com/sharkdp/bat[bat] with ansi-dark theme
 
 |e
-|Launch editor (nvim)footnote:change[]
+|Launch editor (nvim)footnote:change[You can change this easily]
 
 |se
 |Launch editor (nvim)footnote:change[] with sudo
