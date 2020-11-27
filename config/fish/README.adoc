@@ -11,8 +11,8 @@ image::../../images/fish.png[Screenshot of fish shell]
 |===
 |Function|What it does
 
-|cat
-|Use https://github.com/sharkdp/bat[bat]footnote:change[You can change this easily] instead of cat
+|bat
+|Run https://github.com/sharkdp/bat[bat] with ansi-dark theme
 
 |e
 |Launch editor (nvim)footnote:change[]
@@ -33,16 +33,22 @@ image::../../images/fish.png[Screenshot of fish shell]
 |Ls (exa)footnote:change[] with extended info and hidden files
 
 |xi
-|Install package with xbps
+|Install package (xbps)
 
 |xup
-|Update packages with xbps
+|Update packages (xbps)
 
 |xr
-|Remove package with xbps
+|Remove package (xbps)
 
-|xrs
-|Search the xbps repository
+|xqi
+|Show installed packages (xbps)
+
+|xqsi
+|Search installed packages (xbps)
+
+|xqsr
+|Search repository (xbps)
 |===
 
 == Features??
