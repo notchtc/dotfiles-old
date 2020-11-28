@@ -1,6 +1,5 @@
 [colors]
-#background = ${xrdb:background}
-background = #b3103c48
+background = ${xrdb:background}
 foreground = ${xrdb:foreground}
 
 black = ${xrdb:color0}
@@ -27,9 +26,6 @@ forced-center = true
 
 background = ${colors.background}
 foreground = ${colors.b_cyan}
-
-border-size = 7
-border-color = #0
 
 font-0 = Hack:pixelsize=9:antialias=true;1
 font-1 = Hack Nerd Font:pixelsize=10:antialias=true;2
@@ -64,7 +60,7 @@ ws-icon-8 = "IX;9"
 ws-icon-9 = "X;10"
 
 label-focused = %icon%
-label-focused-foreground = ${colors.b_green} 
+label-focused-foreground = ${colors.b_yellow} 
 label-focused-padding = 1
 
 label-occupied = %icon%
@@ -83,45 +79,45 @@ enable-scroll = false
 [module/xwindow]
 type = internal/xwindow
 label = %title:0:50:…%
-label-foreground = ${colors.b_green}
+label-foreground = ${colors.b_yellow}
 label-padding = 1
 
 [module/pulseaudio]
 type = internal/pulseaudio
 format-volume-prefix = "%{T2}墳 %{T-}"
-format-volume-prefix-foreground = ${colors.b_green}
+format-volume-prefix-foreground = ${colors.b_yellow}
 format-volume = <label-volume>
 label-volume = %percentage%%
 
 format-muted-prefix = "%{T2}婢 %{T-}"
-format-muted-prefix-foreground = ${colors.b_green}
-format-muted-foreground = ${colors.b_green}
+format-muted-prefix-foreground = ${colors.b_yellow}
+format-muted-foreground = ${colors.b_yellow}
 label-muted = %percentage%%
 
 [module/alsa]
 type = internal/alsa
 format-volume-prefix = "%{T2}墳 %{T-}"
-format-volume-prefix-foreground = ${colors.b_green}
+format-volume-prefix-foreground = ${colors.b_yellow}
 format-volume = <label-volume>
-format-volume-foreground = ${colors.b_green}
+format-volume-foreground = ${colors.b_yellow}
 label-volume = %percentage%%
 format-muted-prefix = "%{T2}婢 %{T-}"
-format-muted-prefix-foreground = ${colors.b_green}
-format-muted-foreground = ${colors.b_green}
+format-muted-prefix-foreground = ${colors.b_yellow}
+format-muted-foreground = ${colors.b_yellow}
 label-muted = %percentage%%
 
 [module/memory]
 type = internal/memory
 interval = 2
 format-prefix = "%{T2} %{T-}"
-format-prefix-foreground = ${colors.b_green}
+format-prefix-foreground = ${colors.b_yellow}
 label = %percentage_used%%
 
 [module/cpu]
 type = internal/cpu
 interval = 2
 format-prefix = "%{T2} %{T-}"
-format-prefix-foreground = ${colors.b_green}
+format-prefix-foreground = ${colors.b_yellow}
 label = %percentage%%
 
 [module/battery]
@@ -131,15 +127,15 @@ adapter = ACAD
 full-at = 98
 
 format-charging-prefix = "%{T2} %{T-}"
-format-charging-prefix-foreground = ${colors.b_green}
+format-charging-prefix-foreground = ${colors.b_yellow}
 format-charging = <label-charging>
 format-discharging-prefix = "%{T2} %{T-}"
-format-discharging-prefix-foreground = ${colors.b_green}
-format-discharging-foreground = ${colors.b_green}
+format-discharging-prefix-foreground = ${colors.b_yellow}
+format-discharging-foreground = ${colors.b_yellow}
 format-discharging = <label-discharging>
 
 format-full-prefix = "%{T2} %{T-}"
-format-full-prefix-foreground = ${colors.b_green}
+format-full-prefix-foreground = ${colors.b_yellow}
 
 [module/wlan]
 type = internal/network
@@ -148,7 +144,7 @@ interval = 3.0
 
 format-connected = <label-connected>
 format-connected-prefix = "%{T2}直 %{T-}"
-format-connected-prefix-foreground = ${colors.b_green}
+format-connected-prefix-foreground = ${colors.b_yellow}
 label-connected = connected
 
 label-disconnected =
@@ -159,7 +155,7 @@ interface = enp2s0
 interval = 3.0
 
 format-connected-prefix = "%{T2} %{T-}"
-format-connected-prefix-foreground = ${colors.b_green}
+format-connected-prefix-foreground = ${colors.b_yellow}
 label-connected = connected
 
 format-disconnected =

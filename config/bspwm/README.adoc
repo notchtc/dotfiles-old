@@ -6,7 +6,7 @@ v1.0, {docdate}
 
 My personal bspwm config, it isn't supposed to be the most productive thing in the world.
 
-https://simonstalenhag.se/bilderbig/by_upload1_2560.jpg[Wallpaper]
+file://../../images/wallpaper.png[Wallpaper]
 
 == Screenshots
 image::../../images/bspwm_busy.png[Screenshot of busy bspwm]
