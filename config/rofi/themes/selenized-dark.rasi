@@ -13,7 +13,7 @@
     selected-normal-foreground:  @maincolor;
     selected-active-foreground:  rgba ( 88, 163, 255, 100 % );
     selected-urgent-foreground:  rgba ( 219, 179, 45, 100 % );
-    background:                  rgba ( 16, 60, 72, 100 % );
+    background:                  rgba ( 16, 60, 72, 80 % );
     background-color:            rgba ( 0, 0, 0, 0 % );
     active-background:           rgba ( 16, 60, 72, 100 % );
     urgent-background:           rgba ( 16, 60, 72, 100 % );

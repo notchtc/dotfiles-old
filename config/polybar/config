@@ -24,7 +24,7 @@ width = 100%
 height = 25
 forced-center = true
 
-background = ${colors.background}
+background = ${colors.black}
 foreground = ${colors.b_cyan}
 
 font-0 = Hack:pixelsize=9:antialias=true;1
@@ -33,6 +33,10 @@ font-1 = Hack Nerd Font:pixelsize=10:antialias=true;2
 modules-left = bspwm
 modules-center = date
 modules-right = pulseaudio memory cpu battery wlan eth
+
+border-left-size = 7
+border-right-size = 7
+border-color = #0
 
 tray-position = right
 
