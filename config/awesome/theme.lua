@@ -50,7 +50,7 @@ theme.taglist_fg_occupied = theme.bg_normal
 
 theme.tasklist_disable_icon = true
 
-theme.notification_icon_size = 48
+theme.notification_icon_size = dpi(48)
 
 -- Variables set for theming the menu:
 -- menu_[bg|fg]_[normal|focus]
