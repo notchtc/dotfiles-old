@@ -5,6 +5,6 @@ do
 	"C-d")
 		rm "$file" ;;
 	"C-w")
-		nitrogen --save --set-zoom-fill "$file" ;;
+		cp "$file" "$HOME/.cache/wall.png" ;;
 	esac
 done

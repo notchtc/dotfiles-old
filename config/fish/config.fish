@@ -37,44 +37,45 @@ set -Ux TERM alacritty
 
 # Other
 set -Ux SXHKD_SHELL sh
-set -Ux fish_user_paths "$PATH" "$HOME/.local/bin" "$HOME/.cabal/bin"
+set -Ux fish_user_paths "$PATH" "$HOME/.local/bin"
 
 ## OTHER ##
 # Vi bindings baby
 fish_vi_key_bindings
 
 # Pure prompt
-set -g pure_color_success bryellow
-set -g pure_color_danger brred
-set -g pure_color_primary brcyan
-set -g pure_color_mute grey
+set -g pure_color_danger "#fb4934"
+set -g pure_color_mute "#8ec07c"
+set -g pure_color_primary "#83a598"
+set -g pure_color_success "#d3869b"
+set -g pure_color_warning "#8ec07c"
 
 # Colorscheme
-set -g fish_color_normal normal
-set -g fish_color_command bryellow
-set -g fish_color_quote blue
-set -g fish_color_redirection brblue
-set -g fish_color_end blue
-set -g fish_color_error brred
-set -g fish_color_param cyan
-set -g fish_color_selection white --bold --background=brblack
-set -g fish_color_search_match bryellow --background=brblack
+set -g fish_color_normal "#ebdbb2"
+set -g fish_color_command "#d3869b"
+set -g fish_color_quote "#b16286"
+set -g fish_color_redirection "#83a598"
+set -g fish_color_end "#458588"
+set -g fish_color_error "#fb4934"
+set -g fish_color_param "#83a598"
+set -g fish_color_selection "#a89984" --bold --background="#928374"
+set -g fish_color_search_match "#83a598" --background="#928374"
 set -g fish_color_history_current --bold
-set -g fish_color_operator brcyan
-set -g fish_color_escape brcyan
-set -g fish_color_cwd green
-set -g fish_color_cwd_root red
+set -g fish_color_operator "#8ec07c"
+set -g fish_color_escape "#8ec07c"
+set -g fish_color_cwd "#b16286"
+set -g fish_color_cwd_root "#cc241d"
 set -g fish_color_valid_path --underline
-set -g fish_color_autosuggestion brblack
-set -g fish_color_user bryellow
-set -g fish_color_host normal
+set -g fish_color_autosuggestion "#928374"
+set -g fish_color_user "#d3869b"
+set -g fish_color_host "#ebdbb2"
 set -g fish_color_cancel -r
-set -g fish_pager_color_completion normal
-set -g fish_pager_color_description green
-set -g fish_pager_color_prefix white --bold --underline
-set -g fish_pager_color_progress brwhite --background=cyan
-set -g fish_color_match --background=brblue
-set -g fish_color_comment grey
+set -g fish_pager_color_completion "#ebdbb2"
+set -g fish_pager_color_description "#b16286"
+set -g fish_pager_color_prefix "#a89984" --bold --underline
+set -g fish_pager_color_progress "#ebdbb2" --background="#689d6a"
+set -g fish_color_match --background="#83a598"
+set -g fish_color_comment "#928374"
 
 # Disable fish greeting
 set -U fish_greeting

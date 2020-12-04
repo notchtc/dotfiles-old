@@ -9,7 +9,7 @@ endif
 call plug#begin('~/.config/nvim/plugins')
 Plug 'airblade/vim-gitgutter'
 Plug 'baskerville/vim-sxhkdrc'
-Plug 'ianchanning/vim-selenized'
+Plug 'morhetz/gruvbox'
 Plug 'itchyny/lightline.vim'
 call plug#end()
 
@@ -26,11 +26,13 @@ autocmd BufWritePost Xresources !xrdb -merge %
 
 "" LOOKS ""
 set termguicolors
-colorscheme selenized
+colorscheme gruvbox
 set background=dark
 set noshowmode
 hi Normal ctermbg=NONE guibg=NONE
+hi! link SignColumn LineNr
+let g:gitgutter_set_sign_backgrounds = 1
 
 let g:lightline = {
-      \ 'colorscheme': 'selenized_dark'
+      \ 'colorscheme': 'gruvbox'
       \ }

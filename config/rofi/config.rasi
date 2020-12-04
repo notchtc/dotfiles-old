@@ -1,3 +1,0 @@
-configuration {
-	theme: "~/.config/rofi/themes/selenized-dark.rasi";
-}
