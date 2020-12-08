@@ -65,7 +65,7 @@ theme.menu_width  = dpi(100)
 --theme.bg_widget = "#cc0000"
 
 -- Recolor Layout icons:
-theme = theme_assets.recolor_layout(theme, theme.fg_normal)
+theme = theme_assets.recolor_layout(theme, theme.bg_focus)
 
 -- Recolor titlebar icons:
 --

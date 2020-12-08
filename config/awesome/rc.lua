@@ -164,6 +164,15 @@ awful.screen.connect_for_each_screen(function(s)
     -- Each screen has its own tag table.
     awful.tag({ "", "", "", "", "5", "6", "7", "8", "9" }, s, awful.layout.layouts[1])
 
+    -- Create an imagebox widget which will contain an icon indicating which layout we're using.
+    -- We need one layoutbox per screen.
+    s.mylayoutbox = awful.widget.layoutbox(s)
+    s.mylayoutbox:buttons(gears.table.join(
+                           awful.button({ }, 1, function () awful.layout.inc( 1) end),
+                           awful.button({ }, 3, function () awful.layout.inc(-1) end),
+                           awful.button({ }, 4, function () awful.layout.inc( 1) end),
+                           awful.button({ }, 5, function () awful.layout.inc(-1) end)))
+
     -- Create a taglist widget
     s.taglist_widget = awful.widget.taglist {
         screen  = s,
@@ -186,26 +195,26 @@ awful.screen.connect_for_each_screen(function(s)
                 widget = wibox.container.margin
             },
             layout  = wibox.layout.flex.horizontal
-    },
-    -- Notice that there is *NO* wibox.wibox prefix, it is a template,
-    -- not a widget instance.
-    widget_template = {
-        {
-            { 
-                {
-                    id     = "text_role",
-                    widget = wibox.widget.textbox,
-                },
-                layout = wibox.layout.fixed.horizontal,
-            },
-            left  = 5,
-            right = 5,
-            widget = wibox.container.margin
         },
-	id     = "background_role",
-        widget = wibox.container.background,
-    },
-}
+        -- Notice that there is *NO* wibox.wibox prefix, it is a template,
+        -- not a widget instance.
+        widget_template = {
+            {
+                { 
+                    {
+                        id     = "text_role",
+                        widget = wibox.widget.textbox,
+                    },
+                    layout = wibox.layout.fixed.horizontal,
+                },
+                left  = 5,
+                right = 5,
+                widget = wibox.container.margin
+            },
+	    id     = "background_role",
+            widget = wibox.container.background,
+        },
+    }
 
 
     -- Create a promptbox for each screen
@@ -229,7 +238,8 @@ awful.screen.connect_for_each_screen(function(s)
 	    separator,
 	    clock_widget,
 	    separator,
-	    wibox.widget.systray(), 
+	    wibox.widget.systray(),
+	    s.mylayoutbox,
 	    mylauncher
         }
     } 
@@ -514,7 +524,7 @@ awful.rules.rules = {
     properties = { tag = "", maximized = true, titlebars_enabled = false}},
 
     { rule = { class = "Alacritty" },
-    properties = { tag = ""}},
+    properties = { tag = "", tiling = true}},
 
     { rule = { class = "Gimp" },
     properties = { tag = ""}},
@@ -523,7 +533,7 @@ awful.rules.rules = {
     properties = { tag = "", switchtotag = true }},
 
     { rule = { class = "OpenTTD" },
-    properties = { fullscreen = true }}
+    properties = { tag = "5", fullscreen = true }}
 }
 -- }}}
 
