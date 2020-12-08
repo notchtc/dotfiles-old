@@ -202,7 +202,7 @@ awful.screen.connect_for_each_screen(function(s)
             right = 5,
             widget = wibox.container.margin
         },
-        id     = "background_role",
+	id     = "background_role",
         widget = wibox.container.background,
     },
 }
@@ -490,7 +490,10 @@ awful.rules.rules = {
         instance = { 
         },
         class = {
-          "Sxiv"
+          "Sxiv",
+	  "KeePassXC",
+	  "OTPClient",
+	  "Steam"
   	},
         -- Note that the name property shown in xprop might be set slightly after creation of the client
         -- and the name shown there might not match defined rules here.
@@ -507,7 +510,6 @@ awful.rules.rules = {
       }, properties = { titlebars_enabled = true }
     },
 
-    -- Set Firefox to always map on the tag named "1".
     { rule = { class = "Firefox" },
     properties = { tag = "", maximized = true, titlebars_enabled = false}},
 
@@ -518,7 +520,10 @@ awful.rules.rules = {
     properties = { tag = ""}},
 
     { rule = { class = "mpv" },
-    properties = { tag = "", switchtotag = true }}
+    properties = { tag = "", switchtotag = true }},
+
+    { rule = { class = "OpenTTD" },
+    properties = { fullscreen = true }}
 }
 -- }}}
 
