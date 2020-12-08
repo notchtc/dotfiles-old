@@ -22,7 +22,7 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 " Reload some configs after editing them
 autocmd BufWritePost bspwmrc,sxhkdrc,$XDG_CONFIG_HOME/polybar/config !bspc wm -r
 autocmd BufWritePost init.vim source %
-autocmd BufWritePost Xresources !xrdb -merge %
+autocmd BufWritePost Xresources !xrdb -merge % 
 
 "" LOOKS ""
 set termguicolors
@@ -30,9 +30,14 @@ colorscheme gruvbox
 set background=dark
 set noshowmode
 hi Normal ctermbg=NONE guibg=NONE
+
+"" PLUGIN CONFIG ""
+" gitgutter
+set updatetime=100
 hi! link SignColumn LineNr
 let g:gitgutter_set_sign_backgrounds = 1
 
+" lightline
 let g:lightline = {
       \ 'colorscheme': 'gruvbox'
       \ }
