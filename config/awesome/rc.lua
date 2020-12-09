@@ -521,7 +521,7 @@ awful.rules.rules = {
     },
 
     { rule = { class = "Firefox" },
-    properties = { tag = "", maximized = true, titlebars_enabled = false}},
+    properties = { tag = "", titlebars_enabled = false}},
 
     { rule = { class = "Alacritty" },
     properties = { tag = "", tiling = true}},

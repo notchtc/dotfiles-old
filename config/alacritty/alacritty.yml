@@ -17,7 +17,7 @@ cursor:
         #   - ▇ Block
         #   - _ Underline
         #   - | Beam
-        style: Beam
+        style: Block
 
 
 # Colors (Gruvbox dark)
