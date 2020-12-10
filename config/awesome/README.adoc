@@ -4,11 +4,11 @@ v1.0, {docdate}
 :toc:
 :experimental:
 
-CAUTION: This README and config is WIP
+CAUTION: This README and config is WIP.
 
-My awesomewm config
+My awesomewm config.
 
-file:../../images/gruv-staircase.jpg[Wallpaper]
+link:../../images/gruv-staircase.jpg[Wallpaper]
 
 == Screenshots
 image:../../images/awesome_idle.png[Idle screenshot of awesome]
@@ -39,4 +39,4 @@ When using awesomewm, you can just do kbd:[Super+S].
 image:../../images/awesome_keybindings.png[Awesome keybindings]
 
 = Other
-If poweroff and reboot isn't working, do https://gitlab.com/-/snippets/2042640[this]
+If poweroff and reboot isn't working, do https://gitlab.com/-/snippets/2042640[this].
