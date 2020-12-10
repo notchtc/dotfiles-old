@@ -4,11 +4,14 @@ v1.0, {docdate}
 :toc:
 :experimental:
 
+CAUTION: This README and config is WIP
+
 My awesomewm config
 
-CAUTION: This README and config is WIP  
+file:../../images/gruv-staircase.jpg[Wallpaper]
 
 == Screenshots
+image:../../images/awesome_idle.png[Idle screenshot of awesome]
 image:../../images/awesome_busy.png[Busy screenshot of awesome]
 
 == Dependencies
