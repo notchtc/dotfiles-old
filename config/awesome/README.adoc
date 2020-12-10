@@ -34,3 +34,6 @@ You can easily change these things by editing the appropiate things in the confi
 == Keybindings
 When using awesomewm, you can just do kbd:[Super+S].
 image:../../images/awesome_keybindings.png[Awesome keybindings]
+
+= Other
+If poweroff and reboot isn't working, do https://gitlab.com/-/snippets/2042640[this]
