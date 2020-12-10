@@ -45,36 +45,36 @@ fish_vi_key_bindings
 
 # Pure prompt
 set -g pure_color_danger "#fb4934"
-set -g pure_color_mute "#8ec07c"
-set -g pure_color_primary "#83a598"
-set -g pure_color_success "#d3869b"
+set -g pure_color_mute "#689d6a"
+set -g pure_color_primary "#8ec07c"
+set -g pure_color_success "#b8bb26"
 set -g pure_color_warning "#8ec07c"
 
 # Colorscheme
 set -g fish_color_normal "#ebdbb2"
-set -g fish_color_command "#d3869b"
-set -g fish_color_quote "#b16286"
-set -g fish_color_redirection "#83a598"
-set -g fish_color_end "#458588"
+set -g fish_color_command "#b8bb26"
+set -g fish_color_quote "#689d6a"
+set -g fish_color_redirection "#8ec07c"
+set -g fish_color_end "#98971a"
 set -g fish_color_error "#fb4934"
-set -g fish_color_param "#83a598"
+set -g fish_color_param "#8ec07c"
 set -g fish_color_selection "#a89984" --bold --background="#928374"
-set -g fish_color_search_match "#83a598" --background="#928374"
+set -g fish_color_search_match "#b8bb26" --background="#928374"
 set -g fish_color_history_current --bold
 set -g fish_color_operator "#8ec07c"
 set -g fish_color_escape "#8ec07c"
-set -g fish_color_cwd "#b16286"
+set -g fish_color_cwd "#b8bb26"
 set -g fish_color_cwd_root "#cc241d"
 set -g fish_color_valid_path --underline
 set -g fish_color_autosuggestion "#928374"
-set -g fish_color_user "#d3869b"
+set -g fish_color_user "#b8bb26"
 set -g fish_color_host "#ebdbb2"
 set -g fish_color_cancel -r
 set -g fish_pager_color_completion "#ebdbb2"
-set -g fish_pager_color_description "#b16286"
+set -g fish_pager_color_description "#98971a"
 set -g fish_pager_color_prefix "#a89984" --bold --underline
 set -g fish_pager_color_progress "#ebdbb2" --background="#689d6a"
-set -g fish_color_match --background="#83a598"
+set -g fish_color_match --background="#b8bb26"
 set -g fish_color_comment "#928374"
 
 # Disable fish greeting

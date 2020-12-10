@@ -14,9 +14,9 @@ local theme = dofile(themes_path.."default/theme.lua")
 theme.font          = "monospace 10"
 
 theme.bg_normal     = "#282828"
-theme.bg_focus      = "#d3869b"
+theme.bg_focus      = "#8ec07c"
 theme.bg_urgent     = "#fb4934"
-theme.bg_minimize   = "#b16286"
+theme.bg_minimize   = "#689d6a"
 theme.bg_systray    = theme.bg_normal
 
 theme.fg_normal     = "#ebdbb2"
@@ -51,6 +51,7 @@ theme.taglist_fg_occupied = theme.bg_normal
 theme.tasklist_disable_icon = true
 
 theme.notification_icon_size = dpi(48)
+theme.notification_margin = 100
 
 -- Variables set for theming the menu:
 -- menu_[bg|fg]_[normal|focus]
@@ -83,19 +84,19 @@ theme = theme_assets.recolor_titlebar(
     theme, theme.fg_normal, "normal"
 )
 theme = theme_assets.recolor_titlebar(
-    theme, darker(theme.fg_normal, -60), "normal", "hover"
+    theme, darker(theme.fg_normal, -50), "normal", "hover"
 )
 theme = theme_assets.recolor_titlebar(
-    theme, darker(theme.bg_focus, -60), "normal", "press"
+    theme, darker(theme.bg_focus, -50), "normal", "press"
 )
 theme = theme_assets.recolor_titlebar(
     theme, theme.fg_focus, "focus"
 )
 theme = theme_assets.recolor_titlebar(
-    theme, darker(theme.fg_focus, 60), "focus", "hover"
+    theme, darker(theme.fg_focus, 50), "focus", "hover"
 )
 theme = theme_assets.recolor_titlebar(
-    theme, darker(theme.bg_focus, 60), "focus", "press"
+    theme, darker(theme.bg_focus, 50), "focus", "press"
 )
 
 -- Define the icon theme for application icons. If not set then the icons

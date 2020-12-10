@@ -17,6 +17,9 @@ local hotkeys_popup = require("awful.hotkeys_popup")
 -- when client with a matching name is opened:
 require("awful.hotkeys_popup.keys")
 
+-- Widgets
+local vicious = require("vicious")
+
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
 -- another config (This code will only ever execute for the fallback config)
@@ -59,9 +62,9 @@ editor_cmd = terminal .. " -e " .. editor
 modkey = "Mod4"
 
 -- Table of layouts to cover with awful.layout.inc, order matters.
-awful.layout.layouts = { 
+awful.layout.layouts = {
     awful.layout.suit.spiral,
-    awful.layout.suit.floating, 
+    awful.layout.suit.floating,
     awful.layout.suit.max.fullscreen,
     awful.layout.suit.max
 }
@@ -83,8 +86,8 @@ mysystemmenu = {
 }
 
 mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
-				    { "system", mysystemmenu },
-				    { "open terminal", terminal }
+                                    { "system", mysystemmenu },
+                                    { "open terminal", terminal }
                                   }
                         })
 
@@ -149,12 +152,11 @@ end
 screen.connect_signal("property::geometry", set_wallpaper)
 
 -- Create a textclock widget
-clock_widget = wibox.widget.textclock("%d.%m.%C %H:%M")
+mytextclock = wibox.widget.textclock("%d.%m.%C %H:%M")
 
 separator = wibox.widget {
     widget = wibox.container.margin,
-    left = 5,
-    right = 5
+    margins = 5
 }
 
 awful.screen.connect_for_each_screen(function(s)
@@ -174,24 +176,24 @@ awful.screen.connect_for_each_screen(function(s)
                            awful.button({ }, 5, function () awful.layout.inc(-1) end)))
 
     -- Create a taglist widget
-    s.taglist_widget = awful.widget.taglist {
+    s.mytaglist = awful.widget.taglist {
         screen  = s,
         filter  = awful.widget.taglist.filter.all,
-	buttons = taglist_buttons
+        buttons = taglist_buttons
     }
-    
-    s.tasklist_widget = awful.widget.tasklist {
+
+    s.mytasklist = awful.widget.tasklist {
         screen   = s,
         filter   = awful.widget.tasklist.filter.currenttags,
         buttons  = tasklist_buttons,
         style    = {
             shape_border_width = 2,
             shape_border_color = beautiful.bg_minimized,
-            shape  = gears.shape.rectangle,
+            shape = gears.shape.rectangle
         },
         layout   = {
             spacing = 10,
-            spacing_widget = {  
+            spacing_widget = {
                 widget = wibox.container.margin
             },
             layout  = wibox.layout.flex.horizontal
@@ -203,46 +205,44 @@ awful.screen.connect_for_each_screen(function(s)
                 { 
                     {
                         id     = "text_role",
-                        widget = wibox.widget.textbox,
+                        widget = wibox.widget.textbox
                     },
-                    layout = wibox.layout.fixed.horizontal,
+                    layout = wibox.layout.fixed.horizontal
                 },
-                left  = 5,
-                right = 5,
+                margins = 5,
                 widget = wibox.container.margin
             },
-	    id     = "background_role",
-            widget = wibox.container.background,
+            id     = "background_role",
+            widget = wibox.container.background
         },
     }
 
-
     -- Create a promptbox for each screen
-    s.prompt_widget = awful.widget.prompt() 
+    s.mypromptbox = awful.widget.prompt()
 
     -- Create the wibox
     s.mywibox = awful.wibar({ position = "bottom", screen = s, height = "20"})
 
     -- Add widgets to the wibox
-    s.mywibox:setup {	 
-	layout = wibox.layout.align.horizontal,
+    s.mywibox:setup {
+        layout = wibox.layout.align.horizontal,
         { -- Left widgets
             layout = wibox.layout.fixed.horizontal,
-	    s.taglist_widget,
-	    s.prompt_widget,
-	    separator,
+            s.mytaglist,
+            s.mypromptbox,
+            separator,
         },
-	s.tasklist_widget,
+        s.mytasklist,
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
-	    separator,
-	    clock_widget,
-	    separator,
-	    wibox.widget.systray(),
-	    s.mylayoutbox,
-	    mylauncher
+            separator,
+            mytextclock,
+            separator,
+            wibox.widget.systray(),
+            s.mylayoutbox,
+            mylauncher
         }
-    } 
+    }
 end)
 -- }}}
 
@@ -330,7 +330,7 @@ globalkeys = gears.table.join(
               {description = "restore minimized", group = "client"}),
 
     -- Prompt
-    awful.key({ modkey },            "r",     function () awful.screen.focused().prompt_widget:run() end,
+    awful.key({ modkey },            "r",     function () awful.screen.focused().mypromptbox:run() end,
               {description = "run prompt", group = "launcher"}),
 
     -- CUSTOM KEYBINDINGS
@@ -449,7 +449,7 @@ for i = 1, 9 do
                       end
                   end,
                   {description = "toggle focused client on tag #" .. i, group = "tag"})
-		  )
+                  )
 end
 
 clientbuttons = gears.table.join(
@@ -483,26 +483,26 @@ awful.rules.rules = {
                      buttons = clientbuttons,
                      screen = awful.screen.preferred,
                      placement = awful.placement.no_overlap+awful.placement.no_offscreen,
-		     size_hints_honor = false
+                     size_hints_honor = false
      }
     },
 
     -- Floating clients.
     { rule_any = {
-        instance = { 
+        instance = {
         },
         class = {
           "Sxiv",
-	  "KeePassXC",
-	  "OTPClient",
-	  "Steam"
-  	},
+          "KeePassXC",
+          "OTPClient",
+          "Steam"
+        },
         -- Note that the name property shown in xprop might be set slightly after creation of the client
         -- and the name shown there might not match defined rules here.
         name = {
           "Event Tester",  -- xev.
         },
-        role = { 
+        role = {
           "pop-up",       -- e.g. Google Chrome's (detached) Developer Tools.
         }
       }, properties = { floating = true }},
@@ -522,7 +522,7 @@ awful.rules.rules = {
     properties = { tag = ""}},
 
     { rule = { class = "mpv" },
-    properties = { tag = "", switchtotag = true }} 
+    properties = { tag = "", switchtotag = true }}
 }
 -- }}}
 
@@ -556,28 +556,28 @@ client.connect_signal("request::titlebars", function(c)
     )
 
     local titlebar = awful.titlebar(c, {
-	size = 20,
-	position = "top",
+        size = 20,
+        position = "bottom",
     })
 
     titlebar : setup {
-	{ -- Left 
-	awful.titlebar.widget.titlewidget(c),
-	buttons = buttons,
-        layout  = wibox.layout.fixed.horizontal
+        { -- Left
+            awful.titlebar.widget.closebutton    (c),
+            awful.titlebar.widget.maximizedbutton(c),
+            awful.titlebar.widget.minimizebutton (c),
+            layout = wibox.layout.fixed.horizontal()
         },
         { -- Middle
             buttons = buttons,
             layout  = wibox.layout.flex.horizontal
         },
         { -- Right
-	    awful.titlebar.widget.minimizebutton (c),
-            awful.titlebar.widget.maximizedbutton(c),
-            awful.titlebar.widget.closebutton    (c),
-            layout = wibox.layout.fixed.horizontal()
+            buttons = buttons,
+            awful.titlebar.widget.titlewidget(c),
+            layout  = wibox.layout.fixed.horizontal
         },
         layout = wibox.layout.align.horizontal
-	} 
+        }
 end)
 
 -- Enable sloppy focus, so that focus follows mouse.
