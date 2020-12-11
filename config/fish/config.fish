@@ -43,6 +43,14 @@ set -Ux fish_user_paths "$PATH" "$HOME/.local/bin"
 # Vi bindings baby
 fish_vi_key_bindings
 
+# Disable fish greeting
+set -U fish_greeting
+
+# Abbreviations
+abbr --add e "$EDITOR"
+abbr --add se "$EDITOR"
+
+## COLORS ##
 # Pure prompt
 set -g pure_color_danger "#fb4934"
 set -g pure_color_mute "#689d6a"
@@ -76,6 +84,3 @@ set -g fish_pager_color_prefix "#a89984" --bold --underline
 set -g fish_pager_color_progress "#ebdbb2" --background="#689d6a"
 set -g fish_color_match --background="#b8bb26"
 set -g fish_color_comment "#928374"
-
-# Disable fish greeting
-set -U fish_greeting

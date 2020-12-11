@@ -10,7 +10,7 @@ image::../../images/fish.png[Screenshot of fish shell]
 
 == Functions
 |===
-|Function|What it does
+|Functions|What it does
 
 |cat
 |Run https://github.com/sharkdp/bat[bat]footnote:change[You can change this easily] instead of cat
