@@ -5,6 +5,8 @@ v1.0, {docdate}
 
 My personal fish config that doesn't look too crazy and doesn't have thousands of things.
 
+NOTE: Feel free to change/remove things.
+
 == Screenshot
 image::../../images/fish.png[Screenshot of fish shell]
 
@@ -13,28 +15,34 @@ image::../../images/fish.png[Screenshot of fish shell]
 |Functions|What it does
 
 |cat
-|Run https://github.com/sharkdp/bat[bat]footnote:change[You can change this easily] instead of cat
+|Run https://github.com/sharkdp/bat[bat] instead of cat
 
 |e
-|Launch editor (nvim)footnote:change[]
+|Launch editor (nvim)
 
 |se
-|Launch editor (nvim)footnote:change[] with sudo
+|Launch editor (nvim) with sudo
 
 |ls
-|Use https://github.com/Peltoche/lsd[lsd]footnote:change[] instead of ls
+|Use https://github.com/Peltoche/lsd[lsd] instead of ls
 
 |lsa
-|Ls (exa)footnote:change[] with hidden files
+|Ls (exa) with hidden files
 
 |lsl
-|Ls (exa)footnote:change[] with extended info
+|Ls (exa) with extended info
 
 |lsla
-|Ls (exa)footnote:change[] with extended info and hidden files
+|Ls (exa) with extended info and hidden files
+
+|fzf
+|Show fzf with sharp border
 
 |xi
 |Install package (xbps)
+
+|xif
+|Show repository with fzf and allow to install packages (xbps)
 
 |xup
 |Update packages (xbps)
@@ -42,19 +50,13 @@ image::../../images/fish.png[Screenshot of fish shell]
 |xr
 |Remove package (xbps)
 
-|xqi
-|Show installed packages (xbps)
+|xrf
+|Show installed packages with fzf and allow to remove them (xbps)
 
-|xqsi
-|Search installed packages (xbps)
-
-|xqsr
-|Search repository (xbps)
 |===
 
 == Features??
-Things that it does.footnote:change[]
-
+Things that it does.
 * Adds $HOME/.local/bin to PATH
 * Applications
 ** Sets BROWSER to firefox
