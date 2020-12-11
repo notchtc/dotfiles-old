@@ -1,3 +1,3 @@
 function fzf
-	command fzf --border sharp $argv
+	command fzf -m --reverse --border sharp $argv
 end
