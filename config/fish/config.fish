@@ -46,10 +46,6 @@ fish_vi_key_bindings
 # Disable fish greeting
 set -U fish_greeting
 
-# Abbreviations
-abbr --add e "$EDITOR"
-abbr --add se "$EDITOR"
-
 ## COLORS ##
 # Pure prompt
 set -g pure_color_danger "#fb4934"
