@@ -206,7 +206,8 @@ awful.screen.connect_for_each_screen(function(s)
                     },
                     layout = wibox.layout.fixed.horizontal
                 },
-                margins = 5,
+                left = 5,
+		right = 5,
                 widget = wibox.container.margin
             },
             id     = "background_role",
@@ -218,7 +219,7 @@ awful.screen.connect_for_each_screen(function(s)
     s.mypromptbox = awful.widget.prompt()
 
     -- Create the wibox
-    s.mywibox = awful.wibar({ position = "bottom", screen = s, height = "20"})
+    s.mywibox = awful.wibar({ position = "bottom", screen = s, height = "20" })
 
     -- Add widgets to the wibox
     s.mywibox:setup {
