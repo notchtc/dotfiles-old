@@ -21,19 +21,22 @@ image::../../.images/fish.png[Screenshot of fish shell]
 |Launch editor (nvim)
 
 |se
-|Launch editor (nvim) with sudo
+|Launch editor with sudo (nvim)
+
+|edots
+|View and edit files in the dotfiles folder (bat, fd, fzf)
 
 |ls
 |Use https://github.com/Peltoche/lsd[lsd] instead of ls
 
 |lsa
-|Ls (exa) with hidden files
+|Ls with hidden files (exa)
 
 |lsl
-|Ls (exa) with extended info
+|Ls with extended info (exa)
 
 |lsla
-|Ls (exa) with extended info and hidden files
+|Ls with extended info and hidden files (exa)
 
 |fzf
 |Show fzf with sharp border and top-down layout
@@ -42,7 +45,7 @@ image::../../.images/fish.png[Screenshot of fish shell]
 |Install package (xbps)
 
 |xif
-|Show repository with fzf and allow to install packages (xbps)
+|View and install packages in repository (fzf, xbps)
 
 |xup
 |Update packages (xbps)
@@ -51,7 +54,7 @@ image::../../.images/fish.png[Screenshot of fish shell]
 |Remove package (xbps)
 
 |xrf
-|Show installed packages with fzf and allow to remove them (xbps)
+|View and remove installed packages (fzf, xbps)
 
 |===
 
