@@ -1,3 +1,3 @@
 function setwal
-         cp $argv ~/.cache/wall.png
+        cp $argv ~/.cache/wall.png
 end

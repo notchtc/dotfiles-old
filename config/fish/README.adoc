@@ -26,6 +26,9 @@ image::../../.images/fish.png[Screenshot of fish shell]
 |edots
 |View and edit files in the dotfiles folder (bat, fd, fzf)
 
+|gitf
+|View changes in git repository and view changes in file (bat, git (duh), fzf)
+
 |ls
 |Use https://github.com/Peltoche/lsd[lsd] instead of ls
 

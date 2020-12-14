@@ -13,6 +13,7 @@ endif
 
 call plug#begin('~/.config/nvim/plugins')
 Plug 'dag/vim-fish'
+Plug 'Yggdroot/indentLine'
 Plug 'airblade/vim-gitgutter'
 Plug 'morhetz/gruvbox'
 Plug 'itchyny/lightline.vim'
@@ -38,14 +39,18 @@ set noshowmode
 hi Normal ctermbg=NONE guibg=NONE
 
 "" PLUGIN CONFIG ""
+" fish
+autocmd FileType fish compiler fish
+
 " gitgutter
 hi! link SignColumn LineNr
 let g:gitgutter_set_sign_backgrounds = 1
+
+" indentline
+let g:indentLine_setColors = 0
+let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 
 " lightline
 let g:lightline = {
       \ 'colorscheme': 'gruvbox'
       \ }
-
-" fish
-autocmd FileType fish compiler fish
