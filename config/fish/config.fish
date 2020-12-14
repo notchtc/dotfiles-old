@@ -35,9 +35,8 @@ set -Ux BROWSER firefox
 set -Ux EDITOR nvim
 set -Ux TERM alacritty
 
-# Other
-set -Ux SXHKD_SHELL sh
-set -Ux fish_user_paths "$PATH" "$HOME/.local/bin"
+# Set path
+contains $HOME/.local/bin $fish_user_paths; or set -Ua fish_user_paths $HOME/.local/bin
 
 ## OTHER ##
 # Vi bindings baby
