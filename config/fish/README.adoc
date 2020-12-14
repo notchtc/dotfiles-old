@@ -44,6 +44,9 @@ image::../../.images/fish.png[Screenshot of fish shell]
 |fzf
 |Show fzf with sharp border and top-down layout
 
+|sman
+|Search man pages (fzf)
+
 |xi
 |Install package (xbps)
 
