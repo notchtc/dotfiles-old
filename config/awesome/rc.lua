@@ -149,7 +149,7 @@ end
 screen.connect_signal("property::geometry", set_wallpaper)
 
 -- Create a textclock widget
-mytextclock = wibox.widget.textclock("%d.%m.%C %H:%M")
+mytextclock = wibox.widget.textclock("%d.%m.%C %H:%M", 15)
 
 separator = wibox.widget {
     widget = wibox.container.margin,

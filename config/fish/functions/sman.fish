@@ -1,4 +1,4 @@
 function sman
-	apropos . | fzf | sed "s/(.*//g" | xargs -ro man
+	apropos . | fzf -q "$argv" | cut -d "(" -f 1 | xargs -ro man
 end
 
