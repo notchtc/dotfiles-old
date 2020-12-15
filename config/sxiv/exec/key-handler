@@ -1,10 +1,10 @@
 #!/bin/sh
 while read file
 do
-	case "$1" in
-	"C-d")
-		rm "$file" ;;
-	"C-w")
-		cp "$file" "$HOME/.cache/wall.png" ;;
-	esac
+    case "$1" in
+    "C-d")
+        rm "$file" ;;
+    "C-w")
+        cp "$file" "$HOME/.cache/wall.png" ;;
+    esac
 done

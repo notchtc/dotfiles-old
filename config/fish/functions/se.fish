@@ -1,4 +1,4 @@
 function se -d "Launch editor with sudo"
-	sudo $EDITOR $argv
+    sudo $EDITOR $argv
 end
 

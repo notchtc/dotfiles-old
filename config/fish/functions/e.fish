@@ -1,3 +1,3 @@
 function e -d "Launch editor"
-	$EDITOR $argv
+    $EDITOR $argv
 end

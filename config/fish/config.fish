@@ -1,16 +1,16 @@
 #!/usr/bin/env fish
 # Install fisher, if it's not available
 if not functions -q fisher
-	set -q XDG_CONFIG_HOME; or set XDG_CONFIG_HOME ~/.config
-	curl https://git.io/fisher --create-dirs -sLo $XDG_CONFIG_HOME/fish/functions/fisher.fish
-	fish -c fisher
+    set -q XDG_CONFIG_HOME; or set XDG_CONFIG_HOME ~/.config
+    curl https://git.io/fisher --create-dirs -sLo $XDG_CONFIG_HOME/fish/functions/fisher.fish
+    fish -c fisher
 end
 
 set dirs "$HOME/.cache" "$HOME/.config" "$HOME/.local/share" "$HOME/stuff/desktop" "$HOME/stuff/docs" "$HOME/stuff/downloads" "$HOME/stuff/images" "$HOME/stuff/misc" "$HOME/stuff/music" "$HOME/stuff/videos"
 for i in $dirs
-	if not test -d $i
-		mkdir $i
-	end
+    if not test -d $i
+        mkdir $i
+    end
 end
 
 ## EXPORTS ##

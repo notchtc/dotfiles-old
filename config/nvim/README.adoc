@@ -10,6 +10,12 @@ image:../../.images/nvim.png[Screenshot of neovim]
 |===
 |Plugin|What it does
 
+|vim-fish
+|Vim support for fish
+
+|indentLine
+|Display indentation levels
+
 |vim-gitgutter
 |Shows git changes
 
@@ -18,6 +24,10 @@ image:../../.images/nvim.png[Screenshot of neovim]
 
 |lightline.vim
 |Fancy bar at bottom
+
+|vim-css-color
+|Highlight colors
+
 |===
 
 == Features

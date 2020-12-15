@@ -207,7 +207,7 @@ awful.screen.connect_for_each_screen(function(s)
                     layout = wibox.layout.fixed.horizontal
                 },
                 left = 5,
-		right = 5,
+                right = 5,
                 widget = wibox.container.margin
             },
             id     = "background_role",
