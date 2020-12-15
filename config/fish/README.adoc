@@ -23,37 +23,37 @@ image::../../.images/fish.png[Screenshot of fish shell]
 |se
 |Launch editor with sudo (nvim)
 
-|edots
+|eds
 |View and edit files in the dotfiles folder (bat, fd, fzf)
 
-|gitf
+|gsf
 |View changes in git repository and view changes in file (bat, git (duh), fzf)
 
 |ls
 |Use https://github.com/ogham/exa[exa] instead of ls
 
 |lsa
-|Ls with hidden files (exa)
+|Show hidden files (exa)
 
 |lsl
-|Ls with extended info (exa)
+|Show files with extended info (exa)
 
 |lsla
-|Ls with extended info and hidden files (exa)
+|Show extended info and hidden files (exa)
 
 |fzf
 |Show fzf with sharp border, top-down layout, inline info and terminal colorscheme
 
-|sman
+|smn
 |Search man pages (fzf)
 
 |xi
 |Install package (xbps)
 
 |xif
-|View and install packages in repository (fzf, xbps)
+|View and install packages (fzf, xbps)
 
-|xup
+|xu
 |Update packages (xbps)
 
 |xr
