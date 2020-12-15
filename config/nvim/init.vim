@@ -24,16 +24,36 @@ call plug#end()
 set relativenumber number
 set clipboard=unnamedplus
 
-" Don't place an comment when making an newline
+" Disable commenting on newline
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 " Reload some configs after editing them
 autocmd BufWritePost init.vim source %
 autocmd BufWritePost Xresources !xrdb -merge % 
 
-" Spaces
+" Spaces > tabs
 set expandtab
 set tabstop=4 softtabstop=4
 set shiftwidth=4
+
+" Keybindings
+" Set the leader key
+let mapleader = " "
+
+" Make navigating through splits easier
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
+
+" Make splits easier
+map <leader>sv :split<CR>
+map <leader>sh :vsplit<CR>
+
+" Go to next file
+nnoremap <leader>n :wn<CR>
+
+" Go to previous file
+nnoremap <leader>p :wN<CR>
 
 set updatetime=100
 
