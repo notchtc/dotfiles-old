@@ -86,4 +86,5 @@ Things that it does.
 * Disable fish greeting
 * Fish colorscheme made to use terminal colors that fits with the rice
 * Fzf keybindings (with https://github.com/PatrickF1[fzf.fish])
+* https://github.com/Ch40t1c/lucid.fish[Modified] https://github.com/mattgreen/lucid.fish[lucid] prompt
 * Vi keybindings
