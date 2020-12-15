@@ -1,3 +1,3 @@
-function lsa --description "Show hidden files"
+function lsa -d "Show hidden files"
 	exa -a $argv
 end

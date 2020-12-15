@@ -1,3 +1,3 @@
-function xu --description "Update packages with xbps"
+function xu -d "Update packages with xbps"
 	sudo xbps-install -Su
 end

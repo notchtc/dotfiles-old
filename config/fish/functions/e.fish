@@ -1,3 +1,3 @@
-function e --description "Launch editor"
+function e -d "Launch editor"
 	$EDITOR $argv
 end
