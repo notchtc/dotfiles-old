@@ -39,7 +39,7 @@ set -Ux TERM alacritty
 contains $HOME/.local/bin $fish_user_paths; or set -Ua fish_user_paths $HOME/.local/bin
 
 # Fzf default options
-set -Ux FZF_DEFAULT_OPS "--height 50% --color 16 --border sharp --preview-window sharp:wrap --layout=reverse-list --info inline"
+set -Ux FZF_DEFAULT_OPTS -m --color "16,border:#928374" --border sharp --preview-window sharp:wrap --layout=reverse-list --info inline
 
 ## OTHER ##
 # Vi bindings baby
