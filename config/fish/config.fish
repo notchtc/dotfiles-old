@@ -38,6 +38,9 @@ set -Ux TERM alacritty
 # Set path
 contains $HOME/.local/bin $fish_user_paths; or set -Ua fish_user_paths $HOME/.local/bin
 
+# Fzf default options
+set -Ux FZF_DEFAULT_OPS "--height 50% --color 16 --border sharp --preview-window sharp:wrap --layout=reverse-list --info inline"
+
 ## OTHER ##
 # Vi bindings baby
 fish_vi_key_bindings
@@ -46,12 +49,9 @@ fish_vi_key_bindings
 set -U fish_greeting
 
 ## COLORS ##
-# Pure prompt
-set -g pure_color_danger "#fb4934"
-set -g pure_color_mute "#689d6a"
-set -g pure_color_primary "#8ec07c"
-set -g pure_color_success "#b8bb26"
-set -g pure_color_warning "#8ec07c"
+# Lucid prompt
+set -g lucid_cwd_color "#8ec07c"
+set -g lucid_git_color "#689d6a"
 
 # Colorscheme
 set -g fish_color_normal "#ebdbb2"

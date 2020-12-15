@@ -516,7 +516,7 @@ awful.rules.rules = {
     { rule = { class = "Alacritty" },
     properties = { tag = "", tiling = true}},
 
-    { rule = { class = "Gimp", "kdenlive" },
+    { rule = { class = "Gimp" },
     properties = { tag = ""}},
 
     { rule = { class = "mpv" },

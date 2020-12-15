@@ -26,9 +26,6 @@ image::../../.images/fish.png[Screenshot of fish shell]
 |eds
 |View and edit files in the dotfiles folder (bat, fd, fzf)
 
-|gsf
-|View changes in git repository and view changes in file (bat, git (duh), fzf)
-
 |ls
 |Use https://github.com/ogham/exa[exa] instead of ls
 
@@ -88,4 +85,5 @@ Things that it does.
 *** Sets XDG_VIDEOS_DIR to $HOME/stuff/videos
 * Disable fish greeting
 * Fish colorscheme made to use terminal colors that fits with the rice
+* Fzf keybindings (with https://github.com/PatrickF1[fzf.fish])
 * Vi keybindings
