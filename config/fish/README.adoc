@@ -30,7 +30,7 @@ image::../../.images/fish.png[Screenshot of fish shell]
 |View changes in git repository and view changes in file (bat, git (duh), fzf)
 
 |ls
-|Use https://github.com/Peltoche/lsd[lsd] instead of ls
+|Use https://github.com/ogham/exa[exa] instead of ls
 
 |lsa
 |Ls with hidden files (exa)
@@ -42,7 +42,7 @@ image::../../.images/fish.png[Screenshot of fish shell]
 |Ls with extended info and hidden files (exa)
 
 |fzf
-|Show fzf with sharp border and top-down layout
+|Show fzf with sharp border, top-down layout, inline info and terminal colorscheme
 
 |sman
 |Search man pages (fzf)
