@@ -23,9 +23,6 @@ image::../../.images/fish.png[Screenshot of fish shell]
 |se
 |Launch editor with sudo (nvim)
 
-|eds
-|View and edit files in the dotfiles folder (bat, fd, fzf)
-
 |ls
 |Use https://github.com/ogham/exa[exa] instead of ls
 

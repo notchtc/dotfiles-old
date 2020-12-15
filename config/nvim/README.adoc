@@ -11,23 +11,26 @@ image:../../.images/nvim.png[Screenshot of neovim]
 |===
 |Plugin|What it does
 
-|vim-fish
-|Vim support for fish
+|https://github.com/morhetz/gruvbox[gruvbox]
+|Gruvbox colorscheme
 
-|indentLine
+|https://github.com/Yggdroot/indentLine[indentLine]
 |Display indentation levels
 
-|vim-gitgutter
+|https://github.com/airblade/vim-gitgutter[vim-gitgutter]
 |Shows git changes
 
-|gruvbox
-|gruvbox colorscheme
-
-|lightline.vim
+|https://github.com/itchyny/lightline.vim[lightline.vim]
 |Fancy bar at bottom
 
-|vim-css-color
+|https://github.com/ap/vim-css-color[vim-css-color]
 |Highlight colors
+
+|https://github.com/junegunn/fzf[fzf]
+|Fuzzy find files
+
+|https://github.com/dag/vim-fish[vim-fish]
+|Vim support for fish
 
 |===
 

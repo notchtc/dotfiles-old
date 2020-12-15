@@ -12,12 +12,13 @@ if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.config/nvim/plugins')
-Plug 'dag/vim-fish'
+Plug 'morhetz/gruvbox'
 Plug 'Yggdroot/indentLine'
 Plug 'airblade/vim-gitgutter'
-Plug 'morhetz/gruvbox'
 Plug 'itchyny/lightline.vim'
 Plug 'ap/vim-css-color'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'dag/vim-fish'
 call plug#end()
 
 "" MAKE YOUR LIFE BETTER ""
