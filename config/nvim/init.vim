@@ -30,11 +30,8 @@ set relativenumber number
 set clipboard=unnamedplus
 
 set nocompatible
-filetype plugin indent on
-syntax enable
 set ignorecase
 set smartcase
-set encoding=utf-8
 
 " Spaces > tabs
 set expandtab
