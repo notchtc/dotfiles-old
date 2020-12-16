@@ -6,26 +6,14 @@ if not functions -q fisher
     fish -c fisher
 end
 
-set dirs "$HOME/.cache" "$HOME/.config" "$HOME/.local/share" "$HOME/stuff/desktop" "$HOME/stuff/docs" "$HOME/stuff/downloads" "$HOME/stuff/images" "$HOME/stuff/misc" "$HOME/stuff/music" "$HOME/stuff/videos"
-for i in $dirs
-    if not test -d $i
-        mkdir $i
-    end
-end
-
 ## EXPORTS ##
 # XDG
+set -Ux XDG_DATA_HOME "$HOME/.local/share"
 set -Ux XDG_CACHE_HOME "$HOME/.cache"
 set -Ux XDG_CONFIG_HOME "$HOME/.config"
-set -Ux XDG_DATA_HOME "$HOME/.local/share"
-set -Ux XDG_DESKTOP_DIR "$HOME/stuff/desktop"
-set -Ux XDG_DOCUMENTS_DIR "$HOME/stuff/docs"
-set -Ux XDG_DOWNLOAD_DIR "$HOME/stuff/downloads"
-set -Ux XDG_MUSIC_DIR "$HOME/stuff/music"
-set -Ux XDG_PICTURES_DIR "$HOME/stuff/images"
-set -Ux XDG_TEMPLATES_DIR "$HOME/stuff/misc"
-set -Ux XDG_VIDEOS_DIR "$HOME/stuff/videos"
+
 # Cleaning up the home directory
+set -Ux XINITRC "$XDG_CONFIG_HOME/x11/xinitrc"
 set -Ux GTK2_RC_FILES "$XDG_CONFIG_HOME/gtk-2.0/gtkrc"
 set -Ux INPUTRC "$XDG_CONFIG_HOME/readline/inputrc"
 set -Ux LESSHISTFILE -

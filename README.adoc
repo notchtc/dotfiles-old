@@ -16,8 +16,8 @@ IMPORTANT: You will probably get a quicker response on Gitlab than GitHub
 * link:config/fish/[fish]
 * link:config/nvim/[nvim]
 * link:config/sxiv/exec/[sxiv]
-* link:Xresources[xresources]
-* link:xinitrc[xinitrc]
+* link:config/x11/Xresources[xresources]
+* link:config/x11/xinitrc[xinitrc]
 
 == Dependencies
 If something requires something, it will be written in it's README
