@@ -13,7 +13,6 @@ set -Ux XDG_CACHE_HOME "$HOME/.cache"
 set -Ux XDG_CONFIG_HOME "$HOME/.config"
 
 # Cleaning up the home directory
-set -Ux XINITRC "$XDG_CONFIG_HOME/x11/xinitrc"
 set -Ux GTK2_RC_FILES "$XDG_CONFIG_HOME/gtk-2.0/gtkrc"
 set -Ux INPUTRC "$XDG_CONFIG_HOME/readline/inputrc"
 set -Ux LESSHISTFILE -
