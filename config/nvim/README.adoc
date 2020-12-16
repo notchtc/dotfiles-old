@@ -1,11 +1,13 @@
 = https://neovim.io[Neovim]
-v1.1, Cha0t1c <notnotcha0t1c@protonmail.com>
+v2, Cha0t1c <notnotcha0t1c@protonmail.com>
 {docdate}
 :experimental:
 :toc:
 
 == Screenshot
-image:../../.images/nvim.png[Screenshot of neovim]
+image:../../.images/nvim.png[Neovim with netrw and the neovim config open]
+image:../../.images/nvim2.png[Neovim with multiple files open and color preview]
+image:../../.images/nvim3.png[Neovim with fzf open]
 
 == Plugins
 |===
@@ -13,6 +15,9 @@ image:../../.images/nvim.png[Screenshot of neovim]
 
 |https://github.com/morhetz/gruvbox[gruvbox]
 |Gruvbox colorscheme
+
+|https://github.com/luochen1990/rainbow[rainbow]
+|Rainbow parentheses
 
 |https://github.com/Yggdroot/indentLine[indentLine]
 |Display indentation levels
@@ -23,25 +28,16 @@ image:../../.images/nvim.png[Screenshot of neovim]
 |https://github.com/itchyny/lightline.vim[lightline.vim]
 |Fancy bar at bottom
 
-|https://github.com/ap/vim-css-color[vim-css-color]
+|https://github.com/rrethy/vim-hexokinase[vim-hexokinase]
 |Highlight colors
 
 |https://github.com/junegunn/fzf[fzf]
-|Fuzzy find files
+|Fuzzy find things
 
 |https://github.com/dag/vim-fish[vim-fish]
 |Vim support for fish
 
 |===
-
-== Features
-* A comment isn't placed when making an newline
-* Clipboard that works between different applications
-* Removing trailing newlines
-* Reload config after editing
-** neovim
-** Xresources
-* Spaces!
 
 == Keybindings
 Leader key is Space.
@@ -72,4 +68,28 @@ Leader key is Space.
 |kbd:[Leader+p]
 |Go to previous file
 
+|kbd:[Leader+f+l]
+|Fuzzy find lines in open buffers
+
+|kbd:[Leader+f+n]
+|Fuzzy find neighbouring files
+
+|kbd:[Leader+n]
+|Open netrw (directory browser)
+
 |===
+
+== Features
+Stuff that wasn't mentioned in the other sections
+
+* A comment isn't placed when making an newline
+* Clipboard that works between different applications
+* Cursor line
+* Not case sensitive in patterns
+* Reload config after editing
+** neovim
+** Xresources
+* Removing trailing newlines
+* Open splits below/on the right
+* Show trailing whitespace
+* Spaces! (over tabs)
