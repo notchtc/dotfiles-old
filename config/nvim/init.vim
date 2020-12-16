@@ -56,6 +56,9 @@ nnoremap <leader>n :wn<CR>
 " Go to previous file
 nnoremap <leader>p :wN<CR>
 
+" Open fzf
+nnoremap <leader>ff :FZF<CR>
+
 set updatetime=100
 
 "" LOOKS ""
