@@ -119,11 +119,11 @@ let g:gitgutter_set_sign_backgrounds = 1
 let g:Hexokinase_highlighters = ['virtual']
 
 " indentline
-" Don't set colors
-let g:indentLine_setColors = 0
+" Set color to tab indent color
+let g:indentLine_defaultGroup = 'SpecialKey'
 
 " Set characters
-let g:indentLine_char_list = ['|', '¦', '┆', '┊']
+let g:indentLine_char_list = ['│', '┆', '┊', '╵']
 
 " lightline
 " Set colorscheme
