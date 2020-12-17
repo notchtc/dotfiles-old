@@ -53,10 +53,6 @@ set updatetime=100
 " Disable commenting on newline
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
-" Reload some configs after editing them
-autocmd BufWritePost init.vim source %
-autocmd BufWritePost Xresources !xrdb -merge %
-
 "" LOOKS ""
 colorscheme gruvbox
 set termguicolors
@@ -160,6 +156,10 @@ map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
+
+" Go through wrapped lines
+map j gj
+map k gk
 
 " Make splits easier
 map <leader>sv :split<CR>

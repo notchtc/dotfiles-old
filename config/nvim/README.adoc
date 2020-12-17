@@ -85,11 +85,9 @@ Stuff that wasn't mentioned in the other sections
 * A comment isn't placed when making an newline
 * Clipboard that works between different applications
 * Cursor line
+* Go through wrapped lines
 * Not case sensitive in patterns
-* Reload config after editing
-** neovim
-** Xresources
-* Removing trailing newlines
 * Open splits below/on the right
+* Removing trailing newlines
 * Show trailing whitespace
 * Spaces! (over tabs)
