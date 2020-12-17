@@ -188,18 +188,11 @@ awful.screen.connect_for_each_screen(function(s)
             shape_border_color = beautiful.bg_minimized,
             shape = gears.shape.rectangle
         },
-        layout   = {
-            spacing = 10,
-            spacing_widget = {
-                widget = wibox.container.margin
-            },
-            layout  = wibox.layout.flex.horizontal
-        },
         -- Notice that there is *NO* wibox.wibox prefix, it is a template,
         -- not a widget instance.
         widget_template = {
             {
-                { 
+                {
                     {
                         id     = "text_role",
                         widget = wibox.widget.textbox
@@ -219,7 +212,7 @@ awful.screen.connect_for_each_screen(function(s)
     s.mypromptbox = awful.widget.prompt()
 
     -- Create the wibox
-    s.mywibox = awful.wibar({ position = "bottom", screen = s, height = "20" })
+    s.mywibox = awful.wibar({ position = "top", screen = s, height = "20" })
 
     -- Add widgets to the wibox
     s.mywibox:setup {
@@ -338,7 +331,7 @@ globalkeys = gears.table.join(
               {description = "take screenshot", group = "misc"}),
     awful.key({ "Shift" }, "Print", function () awful.util.spawn_with_shell("maim -s -u | xclip -selection clipboard -t image/png", false) end,
               {description = "take screenshot with selection", group = "misc"}),
- 
+
     -- Volume Keys
    awful.key({}, "XF86AudioLowerVolume", function () awful.util.spawn("pamixer -d 5", false) end,
              {description = "lower volume", group = "misc"}),
@@ -346,7 +339,7 @@ globalkeys = gears.table.join(
              {description = "raise volume", group = "misc"}),
    awful.key({}, "XF86AudioMute", function () awful.util.spawn("pamixer -t", false) end,
              {description = "toggle mute", group = "misc"}),
-   
+
    -- Media Keys
    awful.key({}, "XF86AudioPlay", function() awful.util.spawn("playerctl play-pause", false) end,
              {description = "play/pause", group = "misc"}),

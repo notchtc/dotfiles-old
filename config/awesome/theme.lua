@@ -14,9 +14,9 @@ local theme = dofile(themes_path.."default/theme.lua")
 theme.font          = "monospace 10"
 
 theme.bg_normal     = "#282828"
-theme.bg_focus      = "#8ec07c"
+theme.bg_focus      = "#b8bb26"
 theme.bg_urgent     = "#fb4934"
-theme.bg_minimize   = "#689d6a"
+theme.bg_minimize   = "#98971a"
 theme.bg_systray    = theme.bg_normal
 
 theme.fg_normal     = "#ebdbb2"
@@ -24,11 +24,11 @@ theme.fg_focus      = theme.bg_normal
 theme.fg_urgent     = theme.bg_normal
 theme.fg_minimize   = theme.bg_normal
 
-theme.useless_gap   = dpi(4)
-theme.border_width  = dpi(2)
+theme.useless_gap   = dpi(7)
+theme.border_width  = dpi(1)
 theme.border_normal = theme.bg_normal
 theme.border_focus  = theme.bg_focus
-theme.border_marked = "#b8bb26"
+theme.border_marked = "#8ec07c"
 
 -- There are other variable sets
 -- overriding the default one when

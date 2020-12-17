@@ -6,7 +6,7 @@ if not functions -q fisher
     fish -c fisher
 end
 
-## EXPORTS ##
+# EXPORTS{{{
 # XDG
 set -Ux XDG_DATA_HOME "$HOME/.local/share"
 set -Ux XDG_CACHE_HOME "$HOME/.cache"
@@ -27,23 +27,26 @@ contains $HOME/.local/bin $fish_user_paths; or set -Ua fish_user_paths $HOME/.lo
 
 # Fzf default options
 set -Ux FZF_DEFAULT_OPTS -m --color "16,border:#928374" --border sharp --preview-window sharp:wrap --layout=reverse-list --info inline
+#}}}
 
-## OTHER ##
+# OTHER{{{
 # Vi bindings baby
 fish_vi_key_bindings
 
 # Disable fish greeting
 set -U fish_greeting
+#}}}
 
-## COLORS ##
-# Lucid prompt
+# COLORS{{{
+# Lucid prompt{{{
 set -g lucid_vi_insert_color "#b8bb26"
 set -g lucid_vi_default_color "#fb4934"
 set -g lucid_vi_visual_color "#fabd2f"
 set -g lucid_cwd_color "#8ec07c"
 set -g lucid_git_color "#689d6a"
+#}}}
 
-# Colorscheme
+# Colorscheme{{{
 set -g fish_color_normal "#ebdbb2"
 set -g fish_color_command "#b8bb26"
 set -g fish_color_quote "#689d6a"
@@ -69,3 +72,6 @@ set -g fish_pager_color_prefix "#a89984" --bold --underline
 set -g fish_pager_color_progress "#ebdbb2" --background="#689d6a"
 set -g fish_color_match --background="#b8bb26"
 set -g fish_color_comment "#928374"
+#}}}
+#}}}
+# vim: set foldmethod=marker:

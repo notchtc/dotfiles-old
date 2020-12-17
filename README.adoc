@@ -13,6 +13,7 @@ IMPORTANT: You will probably get a quicker response on Gitlab than GitHub
 
 * link:config/alacritty/[alacritty]
 * link:config/awesome/[awesome]
+* link:config/cmus/[cmus]
 * link:config/fish/[fish]
 * link:config/nvim/[nvim]
 * link:config/sxiv/exec/[sxiv]
