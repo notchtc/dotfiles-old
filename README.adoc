@@ -21,7 +21,8 @@ IMPORTANT: You will probably get a quicker response on Gitlab than GitHub
 * link:xinitrc[xinitrc]
 
 == Dependencies
-If something requires something, it will be written in it's README
+If something requires something, it will be written in it's README or here.
 
 * https://github.com/source-foundry/Hack/releases/download/v3.003/Hack-v3.003-ttf.zip[Hack] (or download it from your package manager)
 * https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/Hack[Hack Nerd Font]
+* mpd and mpDris2 (in .xinitrc)
