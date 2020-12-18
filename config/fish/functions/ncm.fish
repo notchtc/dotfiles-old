@@ -1,0 +1,3 @@
+function ncm
+    ncmpcpp
+end

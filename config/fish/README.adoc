@@ -23,6 +23,9 @@ image::../../.images/fish.png[Screenshot of fish shell]
 |se
 |Launch editor with sudo (nvim)
 
+|fzf
+|Show fzf with sharp border, top-down layout, inline info and terminal colorscheme
+
 |ls
 |Use https://github.com/ogham/exa[exa] instead of ls
 
@@ -35,8 +38,8 @@ image::../../.images/fish.png[Screenshot of fish shell]
 |lsla
 |Show extended info and hidden files (exa)
 
-|fzf
-|Show fzf with sharp border, top-down layout, inline info and terminal colorscheme
+|ncm
+|Launch ncmpccpp
 
 |smn
 |Search man pages (fzf)

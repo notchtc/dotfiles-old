@@ -16,6 +16,7 @@ set -Ux XDG_CONFIG_HOME "$HOME/.config"
 set -Ux GTK2_RC_FILES "$XDG_CONFIG_HOME/gtk-2.0/gtkrc"
 set -Ux INPUTRC "$XDG_CONFIG_HOME/readline/inputrc"
 set -Ux LESSHISTFILE -
+set -Ux ncmpcpp_directory "$XDG_CONFIG_HOME/ncmpcpp"
 
 # Use these you filthy application
 set -Ux BROWSER firefox
