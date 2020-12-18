@@ -13,12 +13,29 @@ IMPORTANT: You will probably get a quicker response on Gitlab than GitHub
 
 * link:config/alacritty/[alacritty]
 * link:config/awesome/[awesome]
-* link:config/cmus/[cmus]
 * link:config/fish/[fish]
+* link:config/mpd/[mpd]
+* link:config/ncmpcpp[ncmpcpp]
 * link:config/nvim/[nvim]
 * link:config/sxiv/exec/[sxiv]
-* link:Xresources[xresources]
+* link:config/user-dirs.dirs[xdg dirs]
 * link:xinitrc[xinitrc]
+* link:Xresources[xresources]
+
+== Install
+Clone the repository
+[source,sh]
+----
+git clone https://github.com/thoughtbot/dotfiles.git $HOME/.dotfiles
+----
+
+Install https://github.com/thoughtbot/rcm[rcm]
+
+Install the dotfiles
+[source,sh]
+----
+RCRC=$HOME/.dotfiles/rcrc rcup
+----
 
 == Dependencies
 If something requires something, it will be written in it's README or here.

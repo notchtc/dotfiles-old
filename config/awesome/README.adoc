@@ -8,11 +8,11 @@ CAUTION: This README and config is WIP.
 
 My awesomewm config.
 
-link:../../images/gruv-staircase.jpg[Wallpaper]
+link:../../images/wallpaper.png[Wallpaper]
 
 == Screenshots
-image:../../.images/awesome_idle.png[Idle screenshot of awesome]
-image:../../.images/awesome_busy.png[Busy screenshot of awesome]
+image:../../images/awesome_idle.png[Idle screenshot of awesome]
+image:../../images/awesome_busy.png[Busy screenshot of awesome]
 
 == Dependencies
 You can easily change these things by editing the appropiate things in the config.
@@ -36,7 +36,7 @@ You can easily change these things by editing the appropiate things in the confi
 
 == Keybindings
 When using awesomewm, you can just do kbd:[Super+S].
-image:../../.images/awesome_keybindings.png[Awesome keybindings]
+image:../../images/awesome_keybindings.png[Awesome keybindings]
 
 = Other
 If poweroff and reboot isn't working, do https://gitlab.com/-/snippets/2042640[this].
