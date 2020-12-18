@@ -68,9 +68,11 @@ Leader key is Space.
 |kbd:[Leader+p]
 |Go to previous file
 
-
 |kbd:[Leader+n]
 |Open netrw (directory browser)
+
+|kbd:[Leader+s+p]
+|Toggle spell checking (en_US)
 
 |kbd:[F5]
 |Opens todo list

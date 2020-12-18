@@ -149,5 +149,7 @@ nnoremap <leader>n :Vexplore<CR>
 
 " Open todo window
 map <F5> :TODOToggle<CR>
-"}}}
+
+" Spell check
+map <leader>sp :setlocal spell! spelllang=en_us<CR>"}}}
 " vim: set foldmethod=marker:
