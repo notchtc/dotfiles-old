@@ -272,8 +272,6 @@ globalkeys = gears.table.join(
         end,
         {description = "focus previous by index", group = "client"}
     ),
-    awful.key({ modkey,           }, "w", function () mymainmenu:show() end,
-              {description = "show main menu", group = "awesome"}),
 
     -- Layout manipulation
     awful.key({ modkey, "Shift"   }, "j", function () awful.client.swap.byidx(  1)    end,
@@ -307,14 +305,6 @@ globalkeys = gears.table.join(
               {description = "increase master width factor", group = "layout"}),
     awful.key({ modkey,           }, "h",     function () awful.tag.incmwfact(-0.05)          end,
               {description = "decrease master width factor", group = "layout"}),
-    awful.key({ modkey, "Shift"   }, "h",     function () awful.tag.incnmaster( 1, nil, true) end,
-              {description = "increase the number of master clients", group = "layout"}),
-    awful.key({ modkey, "Shift"   }, "l",     function () awful.tag.incnmaster(-1, nil, true) end,
-              {description = "decrease the number of master clients", group = "layout"}),
-    awful.key({ modkey, "Control" }, "h",     function () awful.tag.incncol( 1, nil, true)    end,
-              {description = "increase the number of columns", group = "layout"}),
-    awful.key({ modkey, "Control" }, "l",     function () awful.tag.incncol(-1, nil, true)    end,
-              {description = "decrease the number of columns", group = "layout"}),
     awful.key({ modkey,           }, "space", function () awful.layout.inc( 1)                end,
               {description = "select next", group = "layout"}),
     awful.key({ modkey, "Shift"   }, "space", function () awful.layout.inc(-1)                end,
@@ -345,20 +335,27 @@ globalkeys = gears.table.join(
               {description = "take screenshot with selection", group = "misc"}),
 
     -- Volume Keys
-   awful.key({}, "XF86AudioLowerVolume", function () awful.util.spawn("pamixer -d 5", false) end,
-             {description = "lower volume", group = "misc"}),
-   awful.key({}, "XF86AudioRaiseVolume", function () awful.util.spawn("pamixer -i 5", false) end,
-             {description = "raise volume", group = "misc"}),
-   awful.key({}, "XF86AudioMute", function () awful.util.spawn("pamixer -t", false) end,
-             {description = "toggle mute", group = "misc"}),
+    awful.key({}, "XF86AudioLowerVolume", function () awful.util.spawn("pamixer -d 5", false) end,
+              {description = "lower volume", group = "misc"}),
+    awful.key({}, "XF86AudioRaiseVolume", function () awful.util.spawn("pamixer -i 5", false) end,
+              {description = "raise volume", group = "misc"}),
+    awful.key({}, "XF86AudioMute", function () awful.util.spawn("pamixer -t", false) end,
+              {description = "toggle mute", group = "misc"}),
 
-   -- Media Keys
-   awful.key({}, "XF86AudioPlay", function() awful.util.spawn("mpc toggle", false) end,
-             {description = "play/pause", group = "misc"}),
-   awful.key({}, "XF86AudioNext", function() awful.util.spawn("mpc next", false) end,
-             {description = "go to next track", group = "misc"}),
-   awful.key({}, "XF86AudioPrev", function() awful.util.spawn("mpc prev", false) end,
-             {description = "go to previous track", group = "misc"})
+    -- Media Keys
+    awful.key({}, "XF86AudioPlay", function() awful.util.spawn("mpc toggle", false) end,
+              {description = "play/pause", group = "misc"}),
+    awful.key({}, "XF86AudioNext", function() awful.util.spawn("mpc next", false) end,
+              {description = "go to next track", group = "misc"}),
+    awful.key({}, "XF86AudioPrev", function() awful.util.spawn("mpc prev", false) end,
+              {description = "go to previous track", group = "misc"}),
+
+    -- Launch apps
+    awful.key({ modkey, "Shift" }, "m", function() awful.util.spawn(terminal .. " -t music -e ncmpcpp", false) end,
+              {description = "open music player", group = "misc"}),
+
+    awful.key({ modkey, "Shift" }, "b", function() awful.util.spawn_with_shell("$BROWSER", false) end,
+              {description = "open web browser", group = "misc"})
 )
 
 clientkeys = gears.table.join(
@@ -503,10 +500,10 @@ awful.rules.rules = {
         -- Note that the name property shown in xprop might be set slightly after creation of the client
         -- and the name shown there might not match defined rules here.
         name = {
-          "Event Tester",  -- xev.
+          "Event Tester"  -- xev.
         },
         role = {
-          "pop-up",       -- e.g. Google Chrome's (detached) Developer Tools.
+          "pop-up"       -- e.g. Google Chrome's (detached) Developer Tools
         }
       }, properties = { floating = true }},
 
@@ -522,10 +519,13 @@ awful.rules.rules = {
     properties = { tag = "", tiling = true}},
 
     { rule = { class = "Gimp" },
-    properties = { tag = ""}},
+    properties = { tag = "" }},
 
-    { rule = { class = "mpv" },
-    properties = { tag = "", switchtotag = true }}
+    { rule = { class = "mpv"  },
+    properties = { tag = "", switchtotag = true }},
+
+    { rule = { name = "music" },
+    properties = { tag = "" }}
 }
 -- }}}
 

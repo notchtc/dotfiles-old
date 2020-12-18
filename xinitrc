@@ -1,5 +1,4 @@
-pulseaudio &
 [ ! -s ~/.config/mpd/pid ] && mpd &
 xrdb -merge ~/.Xresources &
-xmodmap ~/.config/.xmodmaprc &
+setxkbmap -option caps:swapescape &
 exec awesome
