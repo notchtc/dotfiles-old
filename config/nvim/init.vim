@@ -18,6 +18,7 @@ Plug 'Yggdroot/indentLine'
 Plug 'airblade/vim-gitgutter'
 Plug 'itchyny/lightline.vim'
 Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' } " You need to install go
+Plug 'Dimercel/todo-vim'
 Plug 'dag/vim-fish'
 call plug#end()"}}}
 
@@ -145,5 +146,8 @@ nnoremap <leader>p :wN<CR>
 
 " Open netrw
 nnoremap <leader>n :Vexplore<CR>
+
+" Open todo window
+map <F5> :TODOToggle<CR>
 "}}}
 " vim: set foldmethod=marker:

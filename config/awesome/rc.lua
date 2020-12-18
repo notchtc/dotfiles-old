@@ -148,6 +148,8 @@ end
 -- Re-set wallpaper when a screen's geometry changes (e.g. different resolution)
 screen.connect_signal("property::geometry", set_wallpaper)
 
+-- TODO: Add more widgets
+
 -- Create a textclock widget
 mytextclock = wibox.widget.textclock("%d.%m.%C %H:%M", 5)
 
