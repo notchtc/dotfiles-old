@@ -1,4 +1,4 @@
 pulseaudio &
 xrdb -merge ~/.Xresources &
-xmodmap .xmodmaprc &
+xmodmap ~/.config/.xmodmaprc &
 exec awesome
