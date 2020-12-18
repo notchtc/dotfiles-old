@@ -188,6 +188,18 @@ awful.screen.connect_for_each_screen(function(s)
             shape_border_color = beautiful.bg_minimized,
             shape = gears.shape.rectangle
         },
+        layout   = {
+        spacing = 10,
+        spacing_widget = {
+            {
+                widget       = wibox.container.margin
+            },
+            valign = 'center',
+            halign = 'center',
+            widget = wibox.container.place,
+        },
+        layout  = wibox.layout.flex.horizontal
+    },
         -- Notice that there is *NO* wibox.wibox prefix, it is a template,
         -- not a widget instance.
         widget_template = {
