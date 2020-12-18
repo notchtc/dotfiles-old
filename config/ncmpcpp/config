@@ -170,8 +170,7 @@ use_console_editor = yes
 ## In addition, for terminals that support 256 colors it is possible to set one
 ## of them by using a number in range [1, 256] instead of color name,
 ## e.g. numerical value corresponding to red_black is 2_1. To find out if the
-## terminal supports 256 colors, run ncmpcpp and check out the bottom of the
-## help screen for list of available colors and their numerical values.
+## terminal supports 256 colors, run ncmpcpp and check out the bottom of the # help screen for list of available colors and their numerical values.
 ##
 ## What is more, there are two special values for the background color:
 ## "transparent" and "current". The first one explicitly sets the background to
@@ -200,3 +199,5 @@ color1 = white
 color2 = cyan
 
 statusbar_time_color = magenta:b
+
+execute_on_song_change = notify-send "Now Playing" "$(mpc --format '%title%\n%artist% - %album%' current)"

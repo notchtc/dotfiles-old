@@ -25,4 +25,4 @@ If something requires something, it will be written in it's README or here.
 
 * https://github.com/source-foundry/Hack/releases/download/v3.003/Hack-v3.003-ttf.zip[Hack] (or download it from your package manager)
 * https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/Hack[Hack Nerd Font]
-* mpd and mpDris2 (in .xinitrc)
+* mpd (for ncmpcpp, remove/comment out mpd in .xinitrc, if you don't use anyhthing that needs mpd)

@@ -1,3 +1,3 @@
-function ncm
+function nc
     ncmpcpp
 end
