@@ -39,7 +39,7 @@ image::../../.images/fish.png[Screenshot of fish shell]
 |Show extended info and hidden files (exa)
 
 |ncm
-|Launch ncmpccpp
+|Launch ncmpcpp
 
 |smn
 |Search man pages (fzf)
