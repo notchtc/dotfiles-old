@@ -4,18 +4,13 @@
 ## want to store everything somewhere else and provide command line setting for
 ## alternative location to config file which defines that while launching
 ## ncmpcpp.
-##
-#
 ncmpcpp_directory = ~/.config/ncmpcpp
 
-##
 ## Directory for storing downloaded lyrics. It defaults to ~/.lyrics since other
 ## MPD clients (eg. ncmpc) also use that location.
-##
 lyrics_directory = ~/music/lyrics
 
 ##### connection settings #####
-
 mpd_host = localhost
 
 mpd_port = 6600
@@ -23,7 +18,6 @@ mpd_port = 6600
 mpd_connection_timeout = 5
 
 ## Needed for tag editor and file operations to work.
-##
 mpd_music_dir = ~/music
 
 mpd_crossfade_time = 5
@@ -93,10 +87,9 @@ mpd_crossfade_time = 5
 ## with attributes listed above.
 ##
 ## Note: colors can be nested.
+song_status_format = {{$3%a$9$7{ "%b"{ $4(%y)$9 }}$9 - }{%t}}|{%f}
 
-song_status_format = {{$3%a$9$7{ "%b"{ (%y)}}$9 - }{%t}}|{%f}
-
-song_library_format = {%n - }$7{%t}|{%f}$9
+song_library_format = {$4%n $9- }$7{%t}|{%f}$9
 
 ##### columns settings #####
 ##
@@ -131,34 +124,26 @@ song_library_format = {%n - }$7{%t}|{%f}$9
 ##   character, e.g. {a|c|p:Owner} creates column named "Owner" that tries to
 ##   display artist tag and then composer and performer if previous ones are not
 ##   available.
-##
-#
-song_columns_list_format = (20)[]{a} (6f)[yellow]{NE} (50)[white]{t|f:Title} (20)[cyan]{b} (7f)[magenta]{l}
-#
-##### various settings #####
-playlist_separate_albums = yes
+song_columns_list_format = (15)[]{a} (25)[cyan]{b} (50)[white]{t|f:Title} (6f)[yellow]{NEr} (8f)[magenta]{lr}
 
-##
+##### various settings #####
+
 ## Note: Possible display modes: classic, columns.
-##
 browser_display_mode = columns
 
 search_engine_display_mode = columns
 
 playlist_editor_display_mode = columns
 
-##
 ## Note: You can specify third character which will be used to build 'empty'
 ## part of progressbar.
-##
 progressbar_look = ━╾
 
 clock_display_seconds = yes
 
 external_editor = nvim
-#
+
 ## Note: set to yes if external editor is a console application.
-##
 use_console_editor = yes
 
 ##### colors definitions #####
@@ -189,15 +174,24 @@ use_console_editor = yes
 ## Note: due to technical limitations of older ncurses version, if 256 colors
 ## are used there is a possibility that you'll be able to use only colors with
 ## transparent background.
-
 empty_tag_color = blue
 
 main_window_color = green
+
+volume_color = magenta
+
+state_flags_color = cyan
 
 color1 = white
 
 color2 = cyan
 
 statusbar_time_color = magenta:b
+
+progressbar_color = white:b
+
+player_state_color = white:b
+
+alternative_ui_separator_color = white:b
 
 execute_on_song_change = notify-send "Now Playing" "$(mpc --format '%title%\n%artist% - %album%' current)"
