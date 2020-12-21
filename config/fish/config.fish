@@ -39,9 +39,9 @@ set -U fish_greeting
 
 # COLORS{{{
 # Lucid prompt{{{
-set -g lucid_vi_insert_color "#b8bb26"
-set -g lucid_vi_default_color "#fb4934"
-set -g lucid_vi_visual_color "#fabd2f"
+set -g lucid_vi_insert_color "#83a598"
+set -g lucid_vi_default_color "#928374"
+set -g lucid_vi_visual_color "#fe8019"
 set -g lucid_cwd_color "#8ec07c"
 set -g lucid_git_color "#689d6a"
 #}}}

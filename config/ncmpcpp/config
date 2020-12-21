@@ -1,5 +1,6 @@
+message_delay_time = 3
+
 ##### directories ######
-##
 ## Directory for storing ncmpcpp related files.  Changing it is useful if you
 ## want to store everything somewhere else and provide command line setting for
 ## alternative location to config file which defines that while launching
@@ -87,7 +88,7 @@ mpd_crossfade_time = 5
 ## with attributes listed above.
 ##
 ## Note: colors can be nested.
-song_status_format = {{$3%a$9$7{ "%b"{ $4(%y)$9 }}$9 - }{%t}}|{%f}
+song_status_format = {{%t}|{%f} by {{$3%a$9 from $7{%b{ $4(%y)$9 }}$9}}}
 
 song_library_format = {$4%n $9- }$7{%t}|{%f}$9
 
@@ -124,7 +125,7 @@ song_library_format = {$4%n $9- }$7{%t}|{%f}$9
 ##   character, e.g. {a|c|p:Owner} creates column named "Owner" that tries to
 ##   display artist tag and then composer and performer if previous ones are not
 ##   available.
-song_columns_list_format = (15)[]{a} (25)[cyan]{b} (50)[white]{t|f:Title} (6f)[yellow]{NEr} (8f)[magenta]{lr}
+song_columns_list_format = (13)[]{a} (50)[cyan]{t|f:Title} (6f)[yellow]{NEr} (8f)[magenta]{lr}
 
 ##### various settings #####
 
