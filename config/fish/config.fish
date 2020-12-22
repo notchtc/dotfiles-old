@@ -29,14 +29,6 @@ contains $HOME/.local/bin $fish_user_paths; or set -Ua fish_user_paths $HOME/.lo
 set -Ux FZF_DEFAULT_OPTS -m --color "16,border:#928374" --border sharp --preview-window sharp:wrap --layout=reverse-list --info inline
 #}}}
 
-# OTHER{{{
-# Vi bindings baby
-fish_vi_key_bindings
-
-# Disable fish greeting
-set -U fish_greeting
-#}}}
-
 # COLORS{{{
 # Lucid prompt{{{
 set -g lucid_vi_insert_color "#83a598"
@@ -74,4 +66,20 @@ set -g fish_color_match --background="#b8bb26"
 set -g fish_color_comment "#928374"
 #}}}
 #}}}
+
+# OTHER{{{
+# Vi bindings baby
+fish_vi_key_bindings
+
+# Disable fish greeting
+set -U fish_greeting
+
+# Start X at login
+if status is-login
+    if test -z "$DISPLAY" -a "$XDG_VTNR" = 1
+        exec startx -- -keeptty
+    end
+end
+#}}}
+
 # vim: set foldmethod=marker:

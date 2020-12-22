@@ -78,8 +78,8 @@ myawesomemenu = {
 }
 
 mysystemmenu = {
-   { "poweroff", function () awful.spawn.with_shell("sudo poweroff") end },
-   { "reboot", function () awful.spawn.with_shell("sudo reboot") end }
+   { "poweroff", function () awful.spawn.with_shell("sudo systemctl poweroff") end },
+   { "reboot", function () awful.spawn.with_shell("sudo systemctl reboot") end }
 }
 
 mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
