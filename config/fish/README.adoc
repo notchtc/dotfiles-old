@@ -59,6 +59,12 @@ image::../../images/fish.png[Screenshot of fish shell]
 |xrf
 |View and remove installed packages (fzf, xbps)
 
+|yi
+|View and install packages (fzf, yay)
+
+|yr
+|View and remove installed packages (fzf, yay)
+
 |===
 
 == Features??
