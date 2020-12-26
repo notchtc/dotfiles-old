@@ -1,136 +1,52 @@
-message_delay_time = 3
 
-##### directories ######
-## Directory for storing ncmpcpp related files.  Changing it is useful if you
-## want to store everything somewhere else and provide command line setting for
-## alternative location to config file which defines that while launching
-## ncmpcpp.
+
+# DIRECTORIES
 ncmpcpp_directory = ~/.config/ncmpcpp
-
-## Directory for storing downloaded lyrics. It defaults to ~/.lyrics since other
-## MPD clients (eg. ncmpc) also use that location.
 lyrics_directory = ~/music/lyrics
 
-##### connection settings #####
+# CONNECTION SETTINGS
 mpd_host = localhost
-
 mpd_port = 6600
-
 mpd_connection_timeout = 5
 
-## Needed for tag editor and file operations to work.
 mpd_music_dir = ~/music
 
 mpd_crossfade_time = 5
 
-##### song format #####
-##
-## For a song format you can use:
-##
-## %l - length
-## %f - filename
-## %D - directory
-## %a - artist
-## %A - album artist
-## %t - title
-## %b - album
-## %y - date
-## %n - track number (01/12 -> 01)
-## %N - full track info (01/12 -> 01/12)
-## %g - genre
-## %c - composer
-## %p - performer
-## %d - disc
-## %C - comment
-## %P - priority
-## $R - begin right alignment
-##
-## If you want to make sure that a part of the format is displayed only when
-## certain tags are present, you can archieve it by grouping them with brackets,
-## e.g. '{%a - %t}' will be evaluated to 'ARTIST - TITLE' if both tags are
-## present or '' otherwise.  It is also possible to define a list of
-## alternatives by providing several groups and separating them with '|',
-## e.g. '{%t}|{%f}' will be evaluated to 'TITLE' or 'FILENAME' if the former is
-## not present.
-##
-## Note: If you want to set limit on maximal length of a tag, just put the
-## appropriate number between % and character that defines tag type, e.g. to
-## make album take max. 20 terminal cells, use '%20b'.
-##
-## In addition, formats support markers used for text attributes.  They are
-## followed by character '$'. After that you can put:
-##
-## - 0 - default window color (discards all other colors)
-## - 1 - black
-## - 2 - red
-## - 3 - green
-## - 4 - yellow
-## - 5 - blue
-## - 6 - magenta
-## - 7 - cyan
-## - 8 - white
-## - 9 - end of current color
-## - b - bold text
-## - u - underline text
-## - r - reverse colors
-## - a - use alternative character set
-##
-## If you don't want to use a non-color attribute anymore, just put it again,
-## but this time insert character '/' between '$' and attribute character,
-## e.g. {$b%t$/b}|{$r%f$/r} will display bolded title tag or filename with
-## reversed colors.
-##
-## If you want to use 256 colors and/or background colors in formats (the naming
-## scheme is described below in section about color definitions), it can be done
-## with the syntax $(COLOR), e.g. to set the artist tag to one of the
-## non-standard colors and make it have yellow background, you need to write
-## $(197_yellow)%a$(end). Note that for standard colors this is interchangable
-## with attributes listed above.
-##
-## Note: colors can be nested.
+# SONG FORMAT
 song_status_format = {{%t}|{%f} by {{$3%a$9 from $7{%b{ $4(%y)$9 }}$9}}}
+song_list_format = {%a} {$7%b$9} $8{%t}|{%f}$9
+song_library_format = {$4%n$9 $8-$9} $7{%t}|{%f}$9
 
-song_library_format = {$4%n $9- }$7{%t}|{%f}$9
-
-##### columns settings #####
-##
-## syntax of song columns list format is "column column etc."
-##
-## - syntax for each column is:
-##
-## (width of the column)[color of the column]{displayed tag}
-##
-## Note: Width is by default in %, if you want a column to have fixed size, add
-## 'f' after the value, e.g. (10)[white]{a} will be the column that take 10% of
-## screen (so the real width will depend on actual screen size), whereas
-## (10f)[white]{a} will take 10 terminal cells, no matter how wide the screen
-## is.
-##
-## - color is optional (if you want the default one, leave the field empty).
-##
-## Note: You can give a column additional attributes by putting appropriate
-## character after displayed tag character. Available attributes are:
-##
-## - r - column will be right aligned
-## - E - if tag is empty, empty tag marker won't be displayed
-##
-## You can also:
-##
-## - give a column custom name by putting it after attributes, separated with
-##   character ':', e.g. {lr:Length} gives you right aligned column of lengths
-##   named "Length".
-##
-## - define sequence of tags, that have to be displayed in case predecessor is
-##   empty in a way similar to the one in classic song format, i.e. using '|'
-##   character, e.g. {a|c|p:Owner} creates column named "Owner" that tries to
-##   display artist tag and then composer and performer if previous ones are not
-##   available.
+# COLUMMNS
 song_columns_list_format = (13)[]{a} (50)[cyan]{t|f:Title} (6f)[yellow]{NEr} (8f)[magenta]{lr}
 
-##### various settings #####
+# COLORS
+colors_enabled = yes
 
+empty_tag_color = 13
+
+main_window_color = 11
+
+volume_color = 14
+
+state_flags_color = 15
+
+color1 = 16
+
+color2 = 15
+
+statusbar_time_color = 14
+
+progressbar_color = 1
+
+player_state_color = 16
+
+# OTHER
 ## Note: Possible display modes: classic, columns.
 browser_display_mode = columns
+
+playlist_display_mode = classic
 
 search_engine_display_mode = columns
 
@@ -138,7 +54,7 @@ playlist_editor_display_mode = columns
 
 ## Note: You can specify third character which will be used to build 'empty'
 ## part of progressbar.
-progressbar_look = ━╾
+progressbar_look = ▂▂▂
 
 clock_display_seconds = yes
 
@@ -147,52 +63,8 @@ external_editor = nvim
 ## Note: set to yes if external editor is a console application.
 use_console_editor = yes
 
-##### colors definitions #####
-##
-## It is possible to set a background color by setting a color value
-## "<foreground>_<background>", e.g. red_black will set foregound color to red
-## and background color to black.
-##
-## In addition, for terminals that support 256 colors it is possible to set one
-## of them by using a number in range [1, 256] instead of color name,
-## e.g. numerical value corresponding to red_black is 2_1. To find out if the
-## terminal supports 256 colors, run ncmpcpp and check out the bottom of the # help screen for list of available colors and their numerical values.
-##
-## What is more, there are two special values for the background color:
-## "transparent" and "current". The first one explicitly sets the background to
-## be transparent, while the second one allows you to preserve current
-## background color and change only the foreground one. It's used implicitly
-## when background color is not specified.
-##
-## Moreover, it is possible to attach format information to selected color
-## variables by appending to their end a colon followed by one or more format
-## flags, e.g. black:b or red:ur. The following variables support this syntax:
-## visualizer_color, color1, color2, empty_tag_color, volume_color,
-## state_line_color, state_flags_color, progressbar_color,
-## progressbar_elapsed_color, player_state_color, statusbar_time_color,
-## alternative_ui_separator_color.
-##
-## Note: due to technical limitations of older ncurses version, if 256 colors
-## are used there is a possibility that you'll be able to use only colors with
-## transparent background.
-empty_tag_color = blue
-
-main_window_color = green
-
-volume_color = magenta
-
-state_flags_color = cyan
-
-color1 = white
-
-color2 = cyan
-
-statusbar_time_color = magenta:b
-
-progressbar_color = white:b
-
-player_state_color = white:b
-
-alternative_ui_separator_color = white:b
+message_delay_time = 1
 
 execute_on_song_change = notify-send "Now Playing" "$(mpc --format '%title%\n%artist% - %album%' current)"
+
+header_visibility = no
