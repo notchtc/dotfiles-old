@@ -1,5 +1,3 @@
-
-
 # DIRECTORIES
 ncmpcpp_directory = ~/.config/ncmpcpp
 lyrics_directory = ~/music/lyrics
@@ -19,7 +17,7 @@ song_list_format = {%a} {$7%b$9} $8{%t}|{%f}$9
 song_library_format = {$4%n$9 $8-$9} $7{%t}|{%f}$9
 
 # COLUMMNS
-song_columns_list_format = (13)[]{a} (50)[cyan]{t|f:Title} (6f)[yellow]{NEr} (8f)[magenta]{lr}
+song_columns_list_format = (15f)[]{a} (4f)[yellow]{NE} (90)[cyan]{t|f} (7f)[magenta]{lr}
 
 # COLORS
 colors_enabled = yes
@@ -28,33 +26,26 @@ empty_tag_color = 13
 
 main_window_color = 11
 
-volume_color = 14
-
-state_flags_color = 15
-
 color1 = 16
 
 color2 = 15
 
 statusbar_time_color = 14
 
-progressbar_color = 1
+progressbar_color = 8
 
 player_state_color = 16
 
 # OTHER
 ## Note: Possible display modes: classic, columns.
 browser_display_mode = columns
-
-playlist_display_mode = classic
-
+playlist_display_mode = columns
 search_engine_display_mode = columns
-
 playlist_editor_display_mode = columns
 
 ## Note: You can specify third character which will be used to build 'empty'
 ## part of progressbar.
-progressbar_look = ▂▂▂
+progressbar_look = ━━─
 
 clock_display_seconds = yes
 
@@ -68,3 +59,10 @@ message_delay_time = 1
 execute_on_song_change = notify-send "Now Playing" "$(mpc --format '%title%\n%artist% - %album%' current)"
 
 header_visibility = no
+titles_visibility = no
+
+current_item_prefix = $(11)$r
+current_item_suffix = $/r$(end)
+
+now_playing_prefix = $(11)$b
+now_playing_suffix = $9$/b
