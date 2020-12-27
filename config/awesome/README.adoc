@@ -23,14 +23,20 @@ You can easily change these things by editing the appropiate things in the confi
 |Alacritty
 |Terminal
 
-|Pamixer
-|Change volume
-
-|Playerctl
-|Control media players
+|Amixer
+|Volume widget
 
 |Maim
 |Take screenshots
+
+|Mpc
+|Control mpd
+
+|Pamixer
+|Change volume
+
+|Xbacklight
+|Control screen brightness
 
 |===
 
