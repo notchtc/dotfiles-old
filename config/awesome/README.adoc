@@ -24,16 +24,13 @@ You can easily change these things by editing the appropiate things in the confi
 |Terminal
 
 |Amixer
-|Volume widget
+|Change volume
 
 |Maim
 |Take screenshots
 
 |Mpc
 |Control mpd
-
-|Pamixer
-|Change volume
 
 |Xbacklight
 |Control screen brightness
