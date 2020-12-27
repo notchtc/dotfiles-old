@@ -140,9 +140,11 @@ function! LightlineFiletype()
 endfunction"}}}
 
 " lightline-bufferline{{{
-let g:lightline#bufferline#show_number  = 1
+let g:lightline#bufferline#show_number = 1
 let g:lightline#bufferline#shorten_path = 1
-let g:lightline#bufferline#unnamed      = '[No Name]'
+let g:lightline#bufferline#unnamed = '[No Name]'
+let g:lightline#bufferline#auto_hide = 5000
+let g:lightline#bufferline#min_buffer_count = 2
 "}}}
 
 " netrw{{{

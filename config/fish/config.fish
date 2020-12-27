@@ -20,6 +20,7 @@ set -Ux LESSHISTFILE -
 # Use these you filthy application
 set -Ux BROWSER firefox
 set -Ux EDITOR nvim
+set -Ux PAGER less
 set -Ux TERM alacritty
 
 # Set path
