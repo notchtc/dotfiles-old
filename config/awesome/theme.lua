@@ -11,15 +11,34 @@ local themes_path = gfs.get_themes_dir()
 local theme = dofile(themes_path.."default/theme.lua")
 -- load vector assets' generators for this theme
 
-theme.font          = "monospace 10"
+theme.font          = "Hack 10"
+theme.icon_font     = "Hack Nerd Font 11"
+theme.taglist_font  = "Hack Nerd Font Mono 10"
 
-theme.bg_normal     = "#282828"
-theme.bg_focus      = "#b8bb26"
-theme.bg_urgent     = "#fb4934"
-theme.bg_minimize   = "#98971a"
+theme.color0  = "#282828"
+theme.color1  = "#cc241d"
+theme.color2  = "#98971a"
+theme.color3  = "#d79921"
+theme.color4  = "#458588"
+theme.color5  = "#b16286"
+theme.color6  = "#689d6a"
+theme.color7  = "#a89984"
+theme.color8  = "#928374"
+theme.color9  = "#fb4934"
+theme.color10 = "#b8bb26"
+theme.color11 = "#fabd2f"
+theme.color12 = "#83a598"
+theme.color13 = "#d3869b"
+theme.color14 = "#8ec07c"
+theme.color15 = "#ebdbb2"
+
+theme.bg_normal     = theme.color0
+theme.bg_focus      = theme.color10
+theme.bg_urgent     = theme.color9
+theme.bg_minimize   = theme.color2
 theme.bg_systray    = theme.bg_normal
 
-theme.fg_normal     = "#ebdbb2"
+theme.fg_normal     = theme.color15
 theme.fg_focus      = theme.bg_normal
 theme.fg_urgent     = theme.bg_normal
 theme.fg_minimize   = theme.bg_normal
@@ -28,7 +47,7 @@ theme.useless_gap   = dpi(5)
 theme.border_width  = dpi(2)
 theme.border_normal = theme.bg_normal
 theme.border_focus  = theme.bg_focus
-theme.border_marked = "#8ec07c"
+theme.border_marked = theme.color14
 
 -- There are other variable sets
 -- overriding the default one when
@@ -53,6 +72,8 @@ theme.tasklist_disable_icon = true
 theme.notification_icon_size = dpi(48)
 theme.notification_margin = 100
 
+theme.systray_icon_spacing = 2
+
 -- Variables set for theming the menu:
 -- menu_[bg|fg]_[normal|focus]
 -- menu_[border_color|border_width]
@@ -60,16 +81,11 @@ theme.menu_submenu_icon = themes_path.."default/submenu.png"
 theme.menu_height = dpi(16)
 theme.menu_width  = dpi(100)
 
--- You can add as many variables as
--- you wish and access them by using
--- beautiful.variable in your rc.lua
---theme.bg_widget = "#cc0000"
-
 -- Recolor Layout icons:
 theme = theme_assets.recolor_layout(theme, theme.bg_focus)
 
 -- Recolor titlebar icons:
---
+
 local function darker(color_value, darker_n)
     local result = "#"
     for s in color_value:gmatch("[a-fA-F0-9][a-fA-F0-9]") do
@@ -105,7 +121,7 @@ theme.icon_theme = nil
 
 -- Generate Awesome icon:
 theme.awesome_icon = theme_assets.awesome_icon(
-    theme.menu_height, theme.bg_focus, theme.fg_focus
+    theme.menu_height, theme.bg_focus, theme.bg_normal
 )
 
 -- Generate taglist squares:

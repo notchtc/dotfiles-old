@@ -17,6 +17,9 @@ local hotkeys_popup = require("awful.hotkeys_popup")
 -- when client with a matching name is opened:
 require("awful.hotkeys_popup.keys")
 
+-- Widgets
+local vicious = require("vicious")
+
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
 -- another config (This code will only ever execute for the fallback config)
@@ -141,22 +144,48 @@ local function set_wallpaper(s)
         if type(wallpaper) == "function" then
             wallpaper = wallpaper(s)
         end
-        gears.wallpaper.centered(wallpaper, s, "#282828", 0.8)
+        gears.wallpaper.maximized(wallpaper, s)
     end
 end
 
 -- Re-set wallpaper when a screen's geometry changes (e.g. different resolution)
 screen.connect_signal("property::geometry", set_wallpaper)
 
--- TODO: Add more widgets
-
 -- Create a textclock widget
-mytextclock = wibox.widget.textclock("%d.%m.%C %H:%M", 5)
+mytextclock = wibox.widget.textclock("<span font=\"" .. beautiful.icon_font .. "\" color=\"" .. beautiful.fg_focus .. "\"> %d.%m.%C %H:%M </span>", 5)
 
-separator = wibox.widget {
+-- Create battery widget
+mybat = wibox.widget.textbox()
+vicious.register(mybat, vicious.widgets.bat, "<span font=\"" .. beautiful.icon_font .. "\" color=\"" .. beautiful.fg_focus .. "\">$1 $2% </span>", 30, "BAT1")
+
+-- Create volume widget
+myvol = wibox.widget.textbox()
+vicious.register(myvol, vicious.widgets.volume,
+    function (widget, args)
+        local label = { ["🔉"] = "墳", ["🔈"] = "奄" }
+        return ("<span font=\"" .. beautiful.icon_font .. "\" color=\"" .. beautiful.fg_focus .. "\"> %s %d%% </span>"):format(
+            label[args[2]], args[1])
+    end, 1, "Master")
+
+-- Function to wrap margins around widgets
+function wrap_margin(widget)
+  return wibox.widget {
+    widget,
+    left = 3,
+    right = 3,
     widget = wibox.container.margin,
-    margins = 5
-}
+  }
+end
+
+-- Function to add backgrounds to widgets
+function wrap_bg(widget, bg_color)
+  return wibox.widget {
+    widget,
+    bg = bg_color,
+    shape = gears.shape.rectangle,
+    widget = wibox.container.background
+  }
+end
 
 awful.screen.connect_for_each_screen(function(s)
     -- Wallpaper
@@ -221,7 +250,7 @@ awful.screen.connect_for_each_screen(function(s)
     s.mypromptbox = awful.widget.prompt()
 
     -- Create the wibox
-    s.mywibox = awful.wibar({ position = "top", screen = s, height = "20" })
+    s.mywibox = awful.wibar({ position = "bottom", screen = s, height = "20" })
 
     -- Add widgets to the wibox
     s.mywibox:setup {
@@ -229,17 +258,16 @@ awful.screen.connect_for_each_screen(function(s)
         { -- Left widgets
             layout = wibox.layout.fixed.horizontal,
             s.mytaglist,
-            s.mypromptbox,
-            separator,
+            wrap_margin(s.mypromptbox),
         },
-        s.mytasklist,
+        wrap_margin(s.mytasklist),
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
-            separator,
-            mytextclock,
-            separator,
-            wibox.widget.systray(),
-            s.mylayoutbox,
+            wrap_bg(myvol, beautiful.color6),
+            wrap_bg(mybat, beautiful.color6),
+            wrap_bg(mytextclock, beautiful.color6),
+            wrap_bg(wibox.widget.systray(), beautiful.color6),
+            wrap_margin(s.mylayoutbox),
             mylauncher
         }
     }
@@ -332,11 +360,11 @@ globalkeys = gears.table.join(
               {description = "take screenshot with selection", group = "misc"}),
 
     -- Volume Keys
-    awful.key({}, "XF86AudioLowerVolume", function () awful.util.spawn("pamixer -d 5", false) end,
+    awful.key({}, "XF86AudioLowerVolume", function () awful.util.spawn("amixer sset Master 5%-", false) end,
               {description = "lower volume", group = "misc"}),
-    awful.key({}, "XF86AudioRaiseVolume", function () awful.util.spawn("pamixer -i 5", false) end,
+    awful.key({}, "XF86AudioRaiseVolume", function () awful.util.spawn("amixer sset Master 5%+", false) end,
               {description = "raise volume", group = "misc"}),
-    awful.key({}, "XF86AudioMute", function () awful.util.spawn("pamixer -t", false) end,
+    awful.key({}, "XF86AudioMute", function () awful.util.spawn("amixer sset Master toggle", false) end,
               {description = "toggle mute", group = "misc"}),
 
     -- Media Keys

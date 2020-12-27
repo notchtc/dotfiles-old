@@ -26,7 +26,7 @@ IMPORTANT: You will probably get a quicker response on Gitlab than GitHub
 Clone the repository
 [source,sh]
 ----
-git clone https://github.com/thoughtbot/dotfiles.git $HOME/.dotfiles
+git clone --recurse-submodules https://gitlab.com/cha0t1c/dotfiles.git $HOME/.dotfiles
 ----
 
 Install https://github.com/thoughtbot/rcm[rcm]
