@@ -375,6 +375,12 @@ globalkeys = gears.table.join(
     awful.key({}, "XF86AudioPrev", function() awful.util.spawn("mpc prev", false) end,
               {description = "go to previous track", group = "misc"}),
 
+    -- Brightness control
+    awful.key({}, "XF86MonBrightnessDown", function () awful.util.spawn("xbacklight -dec 5", false) end,
+              {description = "lower brightness", group = "misc"}),
+    awful.key({}, "XF86MonBrightnessUp", function () awful.util.spawn("xbacklight -inc 5", false) end,
+              {description = "raise brightness", group = "misc"}),
+
     -- Launch apps
     awful.key({ modkey, "Shift" }, "m", function() awful.util.spawn(terminal .. " -t music -e ncmpcpp", false) end,
               {description = "open music player", group = "misc"}),
