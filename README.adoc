@@ -21,6 +21,7 @@ IMPORTANT: You will probably get a quicker response on Gitlab than GitHub
 * link:config/user-dirs.dirs[xdg dirs]
 * link:xinitrc[xinitrc]
 * link:Xresources[xresources]
+* https://gitlab.com/-/snippets/2054705[/etc/issue]
 
 == Install
 Clone the repository
