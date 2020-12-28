@@ -35,6 +35,7 @@ set -Ux FZF_DEFAULT_OPTS -m --color "16,border:#928374" --border sharp --preview
 set -g lucid_vi_insert_color "#b8bb26"
 set -g lucid_vi_default_color "#928374"
 set -g lucid_vi_visual_color "#fe8019"
+set -g lucid_vi_replace_color "#8ec07c"
 set -g lucid_cwd_color "#8ec07c"
 set -g lucid_git_color "#689d6a"
 #}}}
