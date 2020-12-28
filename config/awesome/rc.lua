@@ -267,8 +267,8 @@ awful.screen.connect_for_each_screen(function(s)
             wrap_bg(myvol, beautiful.color6),
             wrap_bg(mybat, beautiful.color6),
             wrap_bg(mytextclock, beautiful.color6),
-            wrap_margin(wibox.widget.systray()),
-            s.mylayoutbox,
+            wibox.widget.systray(),
+            wrap_margin(s.mylayoutbox),
             mylauncher
         }
     }

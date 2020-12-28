@@ -72,6 +72,7 @@ theme.tasklist_disable_icon = true
 theme.notification_icon_size = dpi(48)
 theme.notification_margin = 100
 
+theme.bg_systray = theme.color6
 theme.systray_icon_spacing = 2
 
 -- Variables set for theming the menu:
