@@ -17,7 +17,7 @@ song_list_format = {%a} {$7%b$9} $8{%t}|{%f}$9
 song_library_format = {$4%n$9 $8-$9} $7{%t}|{%f}$9
 
 # COLUMMNS
-song_columns_list_format = (15f)[]{a} (4f)[yellow]{NE} (90)[cyan]{t|f} (7f)[magenta]{lr}
+song_columns_list_format = (20f)[]{a} (4f)[yellow]{NE} (90)[cyan]{t|f} (7f)[magenta]{lr}
 
 # COLORS
 colors_enabled = yes
