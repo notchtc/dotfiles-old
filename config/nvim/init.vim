@@ -12,15 +12,17 @@ if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.config/nvim/plugins')
-Plug 'morhetz/gruvbox'
-Plug 'luochen1990/rainbow'
+Plug 'Dimercel/todo-vim'
 Plug 'Yggdroot/indentLine'
 Plug 'airblade/vim-gitgutter'
-Plug 'itchyny/lightline.vim'
-Plug 'mengelbrecht/lightline-bufferline'
-Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' } " You need to install go
-Plug 'Dimercel/todo-vim'
 Plug 'dag/vim-fish'
+Plug 'glepnir/dashboard-nvim'
+Plug 'itchyny/lightline.vim'
+Plug 'junegunn/fzf.vim'
+Plug 'luochen1990/rainbow'
+Plug 'mengelbrecht/lightline-bufferline'
+Plug 'morhetz/gruvbox'
+Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' } " You need to install go
 call plug#end()"}}}
 
 " SETTINGS{{{1
@@ -97,7 +99,10 @@ let g:Hexokinase_highlighters = ['virtual']"}}}
 let g:indentLine_defaultGroup = 'SpecialKey'
 
 " Set characters
-let g:indentLine_char_list = ['│', '┆', '┊', '╵']"}}}
+let g:indentLine_char_list = ['│', '┆', '┊', '╵']
+
+" Hide indentLine in dashboard
+let g:indentLine_fileTypeExclude = ['dashboard']"}}}
 
 " lightline{{{
 let g:lightline = {
@@ -160,11 +165,39 @@ let g:netrw_winsize = 25"}}}
 " rainbow{{{
 " Enable rainbow parentheses
 let g:rainbow_active = 1"}}}
+
+" dashboard-nvim{{{
+" Set execute tool to fzf
+let g:dashboard_default_executive='fzf'
+
+" Dashboard shortcuts
+let g:dashboard_custom_shortcut={
+      \ 'last_session'       : 'SPC s l',
+      \ 'find_history'       : 'SPC f h',
+      \ 'find_file'          : 'SPC f f',
+      \ 'new_file'           : 'SPC c n',
+      \ 'change_colorscheme' : 'SPC t c',
+      \ 'find_word'          : 'SPC f a',
+      \ 'book_marks'         : 'SPC f b',
+      \ }
+
+" Set custom header
+let g:dashboard_custom_header = [
+            \ '  ▄███████▄',
+            \ ' ▄█████████▀▀',
+            \ ' ███████▀    ▄▄  ▄▄  ▄▄  ▄▄  ▄▄  ▄▄  ▄▄',
+            \ ' ███████▄    ▀▀  ▀▀  ▀▀  ▀▀  ▀▀  ▀▀  ▀▀',
+            \ ' ▀█████████▄▄',
+            \ '   ▀███████▀',
+            \ ]
+
+" Hide tabline in dashboard
+autocmd FileType dashboard set showtabline=0 | autocmd WinLeave <buffer> set showtabline=2"}}}
 "}}}
 
 " KEYBINDINGS{{{1
 " Set the leader key
-let mapleader = " "
+let mapleader = "\<Space>"
 
 " Force myself to use hjkl
 map <up> <nop>
@@ -223,6 +256,16 @@ nmap <Leader>c7 <Plug>lightline#bufferline#delete(7)
 nmap <Leader>c8 <Plug>lightline#bufferline#delete(8)
 nmap <Leader>c9 <Plug>lightline#bufferline#delete(9)
 nmap <Leader>c0 <Plug>lightline#bufferline#delete(10)
+
+" Dashboard keybindings
+nmap <Leader>ss :<C-u>SessionSave<CR>
+nmap <Leader>sl :<C-u>SessionLoad<CR>
+nnoremap <silent> <Leader>fh :DashboardFindHistory<CR>
+nnoremap <silent> <Leader>ff :DashboardFindFile<CR>
+nnoremap <silent> <Leader>tc :DashboardChangeColorscheme<CR>
+nnoremap <silent> <Leader>fa :DashboardFindWord<CR>
+nnoremap <silent> <Leader>fb :DashboardJumpMark<CR>
+nnoremap <silent> <Leader>cn :DashboardNewFile<CR>
 
 "}}}
 " vim: set foldmethod=marker:
