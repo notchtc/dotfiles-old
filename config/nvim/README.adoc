@@ -8,6 +8,7 @@ v2, Cha0t1c <notnotcha0t1c@protonmail.com>
 image:../../images/nvim.png[Neovim with netrw and the neovim config open]
 image:../../images/nvim2.png[Neovim with multiple files open and todo list]
 image:../../images/nvim3.png[Neovim with fish config open (with color preview)]
+image:../../images/nvim4.png[Neovim dashboard]
 
 == Plugins
 |===
