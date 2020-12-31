@@ -152,7 +152,7 @@ end
 screen.connect_signal("property::geometry", set_wallpaper)
 
 -- Create a textclock widget
-mytextclock = wibox.widget.textclock("<span font=\"" .. beautiful.icon_font .. "\" color=\"" .. beautiful.fg_focus .. "\"> %d.%m.%C %H:%M </span>", 5)
+mytextclock = wibox.widget.textclock("<span font=\"" .. beautiful.icon_font .. "\" color=\"" .. beautiful.fg_focus .. "\"> %d.%m.%Y %H:%M </span>", 5)
 
 -- Create battery widget
 mybat = wibox.widget.textbox()
