@@ -73,7 +73,8 @@ colorscheme gruvbox
 set termguicolors
 set background=dark
 set noshowmode
-hi Normal ctermbg=NONE guibg=NONE"}}}
+hi Normal ctermbg=NONE guibg=NONE
+let &fcs='eob: '"}}}
 
 " PLUGIN CONFIG{{{1
 " fish{{{
@@ -131,17 +132,17 @@ let g:lightline = {
 set showtabline=2
 
 function! LightlineFilename()
-  let filename = expand('%:t') !=# '' ? expand('%:t') : '[No Name]'
-  let modified = &modified ? ' +' : ''
-  return filename . modified
+    let filename = expand('%:t') !=# '' ? expand('%:t') : '[No Name]'
+    let modified = &modified ? ' +' : ''
+    return filename . modified
 endfunction
 
 function! LightlineFileformat()
-  return winwidth(0) > 70 ? &fileformat : ''
+    return winwidth(0) > 70 ? &fileformat : ''
 endfunction
 
 function! LightlineFiletype()
-  return winwidth(0) > 70 ? (&filetype !=# '' ? &filetype : 'no ft') : ''
+    return winwidth(0) > 70 ? (&filetype !=# '' ? &filetype : 'no ft') : ''
 endfunction"}}}
 
 " lightline-bufferline{{{
@@ -171,25 +172,39 @@ let g:rainbow_active = 1"}}}
 let g:dashboard_default_executive='fzf'
 
 " Dashboard shortcuts
-let g:dashboard_custom_shortcut={
-      \ 'last_session'       : 'SPC s l',
-      \ 'find_history'       : 'SPC f h',
-      \ 'find_file'          : 'SPC f f',
-      \ 'new_file'           : 'SPC c n',
-      \ 'change_colorscheme' : 'SPC t c',
-      \ 'find_word'          : 'SPC f a',
-      \ 'book_marks'         : 'SPC f b',
-      \ }
+let g:dashboard_custom_section={
+    \ 'last_session': {
+        \ 'description': ['  Reload last session       SPC s l'],
+        \ 'command': 'SessionLoad' },
+    \ 'find_history': {
+        \ 'description': ['  Recently opened files     SPC f h'],
+        \ 'command': 'DashboardFindHistory' },
+    \ 'find_file': {
+        \ 'description': ['  Find  File                SPC f f'],
+        \ 'command': 'DashboardFindFile' },
+    \ 'new_file': {
+        \ 'description': ['  New File                  SPC c n'],
+        \ 'command': 'DashboardNewFile' },
+    \ }
 
 " Set custom header
 let g:dashboard_custom_header = [
-            \ '  ▄███████▄',
-            \ ' ▄█████████▀▀',
-            \ ' ███████▀    ▄▄  ▄▄  ▄▄  ▄▄  ▄▄  ▄▄  ▄▄',
-            \ ' ███████▄    ▀▀  ▀▀  ▀▀  ▀▀  ▀▀  ▀▀  ▀▀',
-            \ ' ▀█████████▄▄',
-            \ '   ▀███████▀',
-            \ ]
+    \ '',
+    \ '  ▄███████▄',
+    \ ' ▄█████████▀▀',
+    \ ' ███████▀    ▄▄  ▄▄  ▄▄  ▄▄  ▄▄  ▄▄  ▄▄',
+    \ ' ███████▄    ▀▀  ▀▀  ▀▀  ▀▀  ▀▀  ▀▀  ▀▀',
+    \ ' ▀█████████▄▄',
+    \ '   ▀███████▀',
+    \ '',
+    \ ]
+
+let text = system('echo "100%"')
+
+" Set custom footer
+let g:dashboard_custom_footer = [
+    \ '(っ◕‿◕)っ luke sniff xyz',
+    \ ]
 
 " Hide tabline in dashboard
 autocmd FileType dashboard set showtabline=0 | autocmd WinLeave <buffer> set showtabline=2"}}}
@@ -199,41 +214,37 @@ autocmd FileType dashboard set showtabline=0 | autocmd WinLeave <buffer> set sho
 " Set the leader key
 let mapleader = "\<Space>"
 
-" Force myself to use hjkl
+" Force myself to use hjkl{{{
 map <up> <nop>
 map <down> <nop>
 map <left> <nop>
-map <right> <nop>
+map <right> <nop>"}}}
 
-" Make navigating through splits easier
+" Make navigating through splits easier{{{
 map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
-map <C-l> <C-w>l
+map <C-l> <C-w>l"}}}
 
-" Make splits easier
+" Make splits easier{{{
 map <leader>sv :split<CR>
-map <leader>sh :vsplit<CR>
+map <leader>sh :vsplit<CR>"}}}
 
-" Go through wrapped lines
+" Go through wrapped lines{{{
 map j gj
-map k gk
+map k gk"}}}
 
-" Go to next file
+" Go to next/previous file{{{
 nnoremap <leader>n :wn<CR>
-" Go to previous file
-nnoremap <leader>p :wN<CR>
+nnoremap <leader>p :wN<CR>"}}}
 
-" Open netrw
+" Open{{{
+" netrw
 nnoremap <leader>n :Vexplore<CR>
+" todo window
+map <F5> :TODOToggle<CR>"}}}
 
-" Open todo window
-map <F5> :TODOToggle<CR>
-
-" Spell check
-map <leader>sp :setlocal spell! spelllang=en_us<CR>
-
-" Switch buffers
+" Switch buffers{{{
 nmap <Leader>1 <Plug>lightline#bufferline#go(1)
 nmap <Leader>2 <Plug>lightline#bufferline#go(2)
 nmap <Leader>3 <Plug>lightline#bufferline#go(3)
@@ -243,9 +254,9 @@ nmap <Leader>6 <Plug>lightline#bufferline#go(6)
 nmap <Leader>7 <Plug>lightline#bufferline#go(7)
 nmap <Leader>8 <Plug>lightline#bufferline#go(8)
 nmap <Leader>9 <Plug>lightline#bufferline#go(9)
-nmap <Leader>0 <Plug>lightline#bufferline#go(10)
+nmap <Leader>0 <Plug>lightline#bufferline#go(10)"}}}
 
-" Delete buffers
+" Delete buffers{{{
 nmap <Leader>c1 <Plug>lightline#bufferline#delete(1)
 nmap <Leader>c2 <Plug>lightline#bufferline#delete(2)
 nmap <Leader>c3 <Plug>lightline#bufferline#delete(3)
@@ -255,17 +266,17 @@ nmap <Leader>c6 <Plug>lightline#bufferline#delete(6)
 nmap <Leader>c7 <Plug>lightline#bufferline#delete(7)
 nmap <Leader>c8 <Plug>lightline#bufferline#delete(8)
 nmap <Leader>c9 <Plug>lightline#bufferline#delete(9)
-nmap <Leader>c0 <Plug>lightline#bufferline#delete(10)
+nmap <Leader>c0 <Plug>lightline#bufferline#delete(10)"}}}
 
-" Dashboard keybindings
+" Dashboard keybindings{{{
 nmap <Leader>ss :<C-u>SessionSave<CR>
 nmap <Leader>sl :<C-u>SessionLoad<CR>
 nnoremap <silent> <Leader>fh :DashboardFindHistory<CR>
 nnoremap <silent> <Leader>ff :DashboardFindFile<CR>
-nnoremap <silent> <Leader>tc :DashboardChangeColorscheme<CR>
-nnoremap <silent> <Leader>fa :DashboardFindWord<CR>
-nnoremap <silent> <Leader>fb :DashboardJumpMark<CR>
-nnoremap <silent> <Leader>cn :DashboardNewFile<CR>
+nnoremap <silent> <Leader>cn :DashboardNewFile<CR>"}}}
+
+" Spell check
+map <leader>sp :setlocal spell! spelllang=en_us<CR>
 
 "}}}
 " vim: set foldmethod=marker:
