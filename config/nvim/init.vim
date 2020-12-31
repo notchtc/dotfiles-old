@@ -199,11 +199,9 @@ let g:dashboard_custom_header = [
     \ '',
     \ ]
 
-let text = system('echo "100%"')
-
 " Set custom footer
 let g:dashboard_custom_footer = [
-    \ '(っ◕‿◕)っ luke sniff xyz',
+    \ '© 2077 luke sniff industries',
     \ ]
 
 " Hide tabline in dashboard
