@@ -200,8 +200,10 @@ let g:dashboard_custom_header = [
     \ ]
 
 " Set custom footer
+let luke = system('sh $XDG_CONFIG_HOME/nvim/luke.shmith')
+
 let g:dashboard_custom_footer = [
-    \ '© 2077 luke sniff industries',
+    \ luke,
     \ ]
 
 " Hide tabline in dashboard

@@ -1,0 +1,5 @@
+#!/bin/sh
+
+luke=("okay this is epic" "mom! cancel all my meetings, arch linux broke again" "soystemd" "MSNBC can't into memespeak lmao" ">tfw 2 intelligent too make own colorschemes" "don't be a brash brainlet" "tfw 2 intelligent to configure arch linux (larbs)" "zoomer shell" "layin' downs pipes like a unix chad" "unix chad just won't stop piping" "memalism" "schooling a beta gnutard on linux" "one easy trick to feel superior to arch users" "dude, i'm gonna get snipped" "unaboomer" "consoomer" "zoomer consoomer gets red-pilled on technology" "i am too dumb to use ubuntu" "imagine using a web browser for this... lol" "does your window manager swallow?" "vim diesel" "le i3 cuck" "roads should be abolished" "help! linux nerds keep bullying me!!!" "unaboomer's cabin" "gnu/cribs" "bugman" "suckless" "dwm" "arch linux" "artix linux" "muh minimalism" "brainlet luke" "torx" "yogurt stains" "word cucks")
+
+echo ${luke[$RANDOM % ${#luke[@]}]}
