@@ -240,7 +240,7 @@ nnoremap <leader>p :wN<CR>"}}}
 
 " Open{{{
 " netrw
-nnoremap <leader>n :Vexplore<CR>
+nnoremap <leader>N :Vexplore<CR>
 " todo window
 map <F5> :TODOToggle<CR>"}}}
 

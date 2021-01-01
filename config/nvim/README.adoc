@@ -14,11 +14,8 @@ image:../../images/nvim4.png[Neovim dashboard]
 |===
 |Plugin|What it does
 
-|https://github.com/morhetz/gruvbox[gruvbox]
-|Gruvbox colorscheme
-
-|https://github.com/luochen1990/rainbow[rainbow]
-|Rainbow parentheses
+|https://github.com/Dimercel/todo-vim[todo-vim]
+|Shows a todo list
 
 |https://github.com/Yggdroot/indentLine[indentLine]
 |Display indentation levels
@@ -26,17 +23,29 @@ image:../../images/nvim4.png[Neovim dashboard]
 |https://github.com/airblade/vim-gitgutter[vim-gitgutter]
 |Shows git changes
 
+|https://github.com/dag/vim-fish[vim-fish]
+|Vim support for fish
+
+|https://github.com/glepnir/dashboard-nvim[dashboard-nvim]
+|Dashboard
+
 |https://github.com/itchyny/lightline.vim[lightline.vim]
 |Fancy bar at bottom
 
+|https://github.com/junegunn/fzf.vim[fzf.vim]
+|Fuzzy finding in vim
+
+|https://github.com/luochen1990/rainbow[rainbow]
+|Rainbow parentheses
+
+|https://github.com/mengelbrecht/lightline-bufferline[lightline-bufferline]
+|Bufferline for lightline
+
+|https://github.com/morhetz/gruvbox[gruvbox]
+|Gruvbox colorscheme
+
 |https://github.com/rrethy/vim-hexokinase[vim-hexokinase]
 |Highlight colors
-
-|https://github.com/Dimercel/todo-vim[todo-vim]
-|Shows a todo list
-
-|https://github.com/dag/vim-fish[vim-fish]
-|Vim support for fish
 
 |===
 
@@ -69,7 +78,7 @@ Leader key is Space.
 |kbd:[Leader+p]
 |Go to previous file
 
-|kbd:[Leader+n]
+|kbd:[Leader+N]
 |Open netrw (directory browser)
 
 |kbd:[Leader+s+p]
@@ -86,9 +95,10 @@ Stuff that wasn't mentioned in the other sections
 * A comment isn't placed when making an newline
 * Clipboard that works between different applications
 * Cursor line
+* Don't show that tilde at the end of buffer
 * Go through wrapped lines
 * Not case sensitive in patterns
 * Open splits below/on the right
-* Removing trailing newlines
+* Removing trailing newlines and trailing whitespaces
 * Show trailing whitespace
 * Spaces! (over tabs)
