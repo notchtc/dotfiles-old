@@ -2,7 +2,6 @@
 # The lines the script is gonna output
 echo "okay this is epic|
 mom! cancel all my meetings, arch linux broke again|
-soystemd|
 MSNBC cant into memespeak lmao|
 >tfw 2 intelligent too make own colorschemes|
 dont be a brash brainlet|
@@ -10,12 +9,10 @@ tfw 2 intelligent to configure arch linux (larbs)|
 zoomer shell|
 layin downs pipes like a unix chad|
 unix chad just wont stop piping|
-memalism|
 schooling a beta gnutard on linux|
 one easy trick to feel superior to arch users|
 dude, im gonna get snipped|
 unaboomer|
-consoomer|
 zoomer consoomer gets red-pilled on technology|
 i am too dumb to use ubuntu|
 imagine using a web browser for this... lol|
@@ -27,15 +24,12 @@ help! linux nerds keep bullying me!!!|
 unaboomers cabin|
 gnu/cribs|
 bugman|
-suckless|
-dwm|
-arch linux|
-artix linux|
 muh minimalism|
 brainlet luke|
-torx|
 yogurt stains|
-word cucks|" > /tmp/luke
+word cucks|
+cuck licenses|
+luke smith? more like luke shit|" > /tmp/luke
 
 # Shuffle the lines
 ARRAY=$(shuf /tmp/luke)
