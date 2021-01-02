@@ -1,0 +1,47 @@
+#!/bin/sh
+# The lines the script is gonna output
+echo "monke installs gentoo any%% WR|
+delete luke sniff, return to monke|
+monkevim|
+reject vs code, embrace vim|
+this is a posix sh script btw|
+peepee poopoo|
+piss poop©™|
+noided vim|
+is trup a corpse?|
+pogk champ|
+emacs wacky widgets|
+use kiwmi|
+give your soul to kiwmi|
+shrek 5 leaked footage|
+eluwina|
+start using giph or your family will be kidnapped|
+suckmore|
+awesomewm moment|
+bling bling|
+what is a git?|
+why isn't there unix on porn sites?|
+rust moment|
+i use linux btw|
+manjarNO|
+neil patel SEO|
+hello this is tom from microsoft support|
+is emac an electronic macdonald?|
+thonkpad T420|
+guntube|
+xmonad moment|
+filthy n'wah|
+minecraft rtx 69k ultra hd|
+muh minimalism|" > /tmp/vimfooter
+
+# Shuffle the lines
+ARRAY=$(shuf /tmp/vimfooter)
+
+# The | acts as an delimeter
+IFS="|"
+
+# Make ARRAY an ""array""
+set -- $ARRAY
+
+# Output first item from ""array""
+printf "$1"

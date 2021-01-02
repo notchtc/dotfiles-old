@@ -200,7 +200,7 @@ let g:dashboard_custom_header = [
     \ ]
 
 " Set custom footer
-let luke = system('sh $XDG_CONFIG_HOME/nvim/luke.shmith')
+let luke = system('sh $XDG_CONFIG_HOME/nvim/vimfooter')
 
 let g:dashboard_custom_footer = [
     \ luke,
