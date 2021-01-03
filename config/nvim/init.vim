@@ -23,6 +23,7 @@ Plug 'luochen1990/rainbow'
 Plug 'mengelbrecht/lightline-bufferline'
 Plug 'morhetz/gruvbox'
 Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' } " You need to install go
+Plug 'ryanoasis/vim-devicons'
 call plug#end()"}}}
 
 " SETTINGS{{{1
@@ -138,11 +139,11 @@ function! LightlineFilename()
 endfunction
 
 function! LightlineFileformat()
-    return winwidth(0) > 70 ? &fileformat : ''
+    return winwidth(0) > 70 ? (WebDevIconsGetFileFormatSymbol() . ' ' . &fileformat) : ''
 endfunction
 
 function! LightlineFiletype()
-    return winwidth(0) > 70 ? (&filetype !=# '' ? &filetype : 'no ft') : ''
+    return winwidth(0) > 70 ? (&filetype !=# '' ? WebDevIconsGetFileTypeSymbol() . ' ' . &filetype : 'no ft') : ''
 endfunction"}}}
 
 " lightline-bufferline{{{
@@ -151,6 +152,7 @@ let g:lightline#bufferline#shorten_path = 1
 let g:lightline#bufferline#unnamed = '[No Name]'
 let g:lightline#bufferline#auto_hide = 5000
 let g:lightline#bufferline#min_buffer_count = 2
+let g:lightline#bufferline#enable_devicons = 1
 "}}}
 
 " netrw{{{
