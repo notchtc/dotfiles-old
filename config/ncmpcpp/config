@@ -11,12 +11,17 @@ mpd_music_dir = ~/music
 
 mpd_crossfade_time = 5
 
-# SONG FORMAT
+# FORMATTING
 song_status_format = {{%t}|{%f} by {{$3%a$9 from $7{%b{ $4(%y)$9 }}$9}}}
 song_list_format = {%a} {$7%b$9} $8{%t}|{%f}$9
 song_library_format = {$4%n$9 $8-$9} $7{%t}|{%f}$9
 
-# COLUMMNS
+current_item_prefix = $(11)$r
+current_item_suffix = $/r$(end)
+
+now_playing_prefix = $(11)$b
+now_playing_suffix = $9$/b
+
 song_columns_list_format = (20f)[]{a} (4f)[yellow]{NE} (90)[cyan]{t|f} (7f)[magenta]{lr}
 
 # COLORS
@@ -61,8 +66,5 @@ execute_on_song_change = notify-send "Now Playing" "$(mpc --format '%title%\n%ar
 header_visibility = no
 titles_visibility = no
 
-current_item_prefix = $(11)$r
-current_item_suffix = $/r$(end)
-
-now_playing_prefix = $(11)$b
-now_playing_suffix = $9$/b
+autocenter_mode = "yes"
+centered_cursor = "yes"
