@@ -152,11 +152,11 @@ end
 screen.connect_signal("property::geometry", set_wallpaper)
 
 -- Create a textclock widget
-mytextclock = wibox.widget.textclock("<span font=\"" .. beautiful.icon_font .. "\" color=\"" .. beautiful.fg_focus .. "\"> %d.%m.%Y %H:%M </span>", 5)
+mytextclock = wibox.widget.textclock("<span font=\"" .. beautiful.icon_font .. "\" color=\"" .. beautiful.fg_focus .. "\">  %d.%m.%Y %H:%M </span>", 5)
 
 -- Create battery widget
 mybat = wibox.widget.textbox()
-vicious.register(mybat, vicious.widgets.bat, "<span font=\"" .. beautiful.icon_font .. "\" color=\"" .. beautiful.fg_focus .. "\">$1 $2% </span>", 30, "BAT1")
+vicious.register(mybat, vicious.widgets.bat, "<span font=\"" .. beautiful.icon_font .. "\" color=\"" .. beautiful.fg_focus .. "\"> $1 $2% </span>", 30, "BAT1")
 
 -- Create volume widget
 myvol = wibox.widget.textbox()
@@ -168,11 +168,11 @@ vicious.register(myvol, vicious.widgets.volume,
     end, 1, "Master")
 
 -- Function to wrap margins around widgets
-function wrap_margin(widget)
+function wrap_margin(widget, l, r)
   return wibox.widget {
     widget,
-    left = 3,
-    right = 3,
+    left = l,
+    right = r,
     widget = wibox.container.margin,
   }
 end
@@ -259,16 +259,16 @@ awful.screen.connect_for_each_screen(function(s)
         { -- Left widgets
             layout = wibox.layout.fixed.horizontal,
             s.mytaglist,
-            wrap_margin(s.mypromptbox),
+            s.mypromptbox,
         },
-        wrap_margin(s.mytasklist),
+        wrap_margin(s.mytasklist, 5, 5),
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
             wrap_bg(myvol, beautiful.color6),
             wrap_bg(mybat, beautiful.color6),
             wrap_bg(mytextclock, beautiful.color6),
             wibox.widget.systray(),
-            wrap_margin(s.mylayoutbox),
+            wrap_margin(s.mylayoutbox, 5, 0),
             mylauncher
         }
     }

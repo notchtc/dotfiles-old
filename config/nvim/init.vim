@@ -19,11 +19,15 @@ Plug 'dag/vim-fish'
 Plug 'glepnir/dashboard-nvim'
 Plug 'itchyny/lightline.vim'
 Plug 'junegunn/fzf.vim'
+Plug 'lambdalisue/fern.vim'
+Plug 'lambdalisue/fern-hijack.vim'
+Plug 'lambdalisue/fern-git-status.vim'
+Plug 'lambdalisue/fern-renderer-nerdfont.vim'
+Plug 'lambdalisue/nerdfont.vim'
 Plug 'luochen1990/rainbow'
 Plug 'mengelbrecht/lightline-bufferline'
 Plug 'morhetz/gruvbox'
 Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' } " You need to install go
-Plug 'ryanoasis/vim-devicons'
 call plug#end()"}}}
 
 " SETTINGS{{{1
@@ -139,11 +143,11 @@ function! LightlineFilename()
 endfunction
 
 function! LightlineFileformat()
-    return winwidth(0) > 70 ? (WebDevIconsGetFileFormatSymbol() . ' ' . &fileformat) : ''
+    return winwidth(0) > 70 ? (nerdfont#fileformat#find() . ' ' . &fileformat) : ''
 endfunction
 
 function! LightlineFiletype()
-    return winwidth(0) > 70 ? (&filetype !=# '' ? WebDevIconsGetFileTypeSymbol() . ' ' . &filetype : 'no ft') : ''
+    return winwidth(0) > 70 ? (&filetype !=# '' ? nerdfont#find(expand('%:p')) . ' ' . &filetype : 'no ft') : ''
 endfunction"}}}
 
 " lightline-bufferline{{{
@@ -152,18 +156,8 @@ let g:lightline#bufferline#shorten_path = 1
 let g:lightline#bufferline#unnamed = '[No Name]'
 let g:lightline#bufferline#auto_hide = 5000
 let g:lightline#bufferline#min_buffer_count = 2
-let g:lightline#bufferline#enable_devicons = 1
+let g:lightline#bufferline#enable_nerdfont = 1
 "}}}
-
-" netrw{{{
-" Remove the useless banner
-let g:netrw_banner = 0
-
-" Set it to a nice view style
-let g:netrw_liststyle = 3
-
-" Make netrw smaller
-let g:netrw_winsize = 25"}}}
 
 " rainbow{{{
 " Enable rainbow parentheses
@@ -202,14 +196,15 @@ let g:dashboard_custom_header = [
     \ ]
 
 " Set custom footer
-let luke = system('sh $XDG_CONFIG_HOME/nvim/vimfooter')
-
 let g:dashboard_custom_footer = [
-    \ luke,
+    \ ":(){:|:&};:",
     \ ]
 
 " Hide tabline in dashboard
 autocmd FileType dashboard set showtabline=0 | autocmd WinLeave <buffer> set showtabline=2"}}}
+
+" fern{{{
+let g:fern#renderer = "nerdfont""}}}
 "}}}
 
 " KEYBINDINGS{{{1
@@ -241,8 +236,8 @@ nnoremap <leader>n :wn<CR>
 nnoremap <leader>p :wN<CR>"}}}
 
 " Open{{{
-" netrw
-nnoremap <leader>N :Vexplore<CR>
+" fern
+nnoremap <leader>N :Fern -drawer -toggle %:h<CR>
 " todo window
 map <F5> :TODOToggle<CR>"}}}
 
@@ -278,7 +273,5 @@ nnoremap <silent> <Leader>ff :DashboardFindFile<CR>
 nnoremap <silent> <Leader>cn :DashboardNewFile<CR>"}}}
 
 " Spell check
-map <leader>sp :setlocal spell! spelllang=en_us<CR>
-
-"}}}
+map <leader>sp :setlocal spell! spelllang=en_us<CR>"}}}
 " vim: set foldmethod=marker:
