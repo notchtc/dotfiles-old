@@ -5,7 +5,7 @@ v2, Cha0t1c <notnotcha0t1c@protonmail.com>
 :toc:
 
 == Screenshot
-image:../../images/nvim.png[Neovim with netrw and the neovim config open]
+image:../../images/nvim.png[Neovim with fern and the neovim config open]
 image:../../images/nvim2.png[Neovim with multiple files open and todo list]
 image:../../images/nvim3.png[Neovim with fish config open (with color preview)]
 image:../../images/nvim4.png[Neovim dashboard]
@@ -34,6 +34,21 @@ image:../../images/nvim4.png[Neovim dashboard]
 
 |https://github.com/junegunn/fzf.vim[fzf.vim]
 |Fuzzy finding in vim
+
+|https://github.com/lambdalisue/fern.vim[fern.vim]
+|Tree viewer
+
+|https://github.com/lambdalisue/fern-hijack.vim[fern-hijack.vim]
+|Use fern instead of netrw
+
+|https://github.com/lambdalisue/fern-git-status.vim[fern-git-status.vim]
+|Git integration for fern
+
+|https://github.com/lambdalisue/fern-renderer-nerdfont.vim[fern-renderer-nerdfont.vim]
+|Icons in fern
+
+|https://github.com/lambdalisue/nerdfont.vim[nerdfont.vim]
+|Icons and stuff
 
 |https://github.com/luochen1990/rainbow[rainbow]
 |Rainbow parentheses
@@ -79,10 +94,16 @@ Leader key is Space.
 |Go to previous file
 
 |kbd:[Leader+N]
-|Open netrw (directory browser)
+|Open fern
 
 |kbd:[Leader+s+p]
 |Toggle spell checking (en_US)
+
+|kbd:[Leader+0-9]
+|Switch buffers
+
+|kbd:[Leader+0-9]
+|Delete buffers
 
 |kbd:[F5]
 |Opens todo list
