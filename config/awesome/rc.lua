@@ -318,7 +318,7 @@ globalkeys = gears.table.join(
               {description = "swap with client at the top", group = "client"}),
     awful.key({ modkey, "Shift"   }, "k", function () awful.client.swap.bydirection("up")    end,
               {description = "swap with client at the bottom", group = "client"}),
-    awful.key({ modkey, "Shift"   }, "h", function () awful.client.swap.bydirection("right")    end,
+    awful.key({ modkey, "Shift"   }, "l", function () awful.client.swap.bydirection("right")    end,
               {description = "swap with client on the right", group = "client"}),
     awful.key({ modkey, "Control" }, "j", function () awful.screen.focus_relative( 1) end,
               {description = "focus the next screen", group = "screen"}),
