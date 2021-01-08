@@ -20,17 +20,23 @@ You can easily change these things by editing the appropiate things in the confi
 |===
 |Dependency|Why?
 
-|Alacritty
+|Alacrittyfootnote:change:["You probably want to change this."]
 |Terminal
 
 |Amixer
 |Change volume
+
+|Firefoxfootnote:change[]
+|Browser to open
 
 |Maim
 |Take screenshots
 
 |Mpc
 |Control mpd
+
+|Ncmpcppfootnote:change[]
+|Music player to open
 
 |Xbacklight
 |Control screen brightness

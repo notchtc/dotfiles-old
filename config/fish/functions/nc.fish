@@ -1,3 +1,3 @@
 function nc
-    ncmpcpp
+    ncmpcpp $argv
 end
