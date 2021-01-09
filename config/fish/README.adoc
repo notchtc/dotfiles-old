@@ -9,11 +9,11 @@ NOTE: Feel free to change/remove things.
 
 == Screenshot
 image::../../images/fish.png[Screenshot of fish shell]
+image::../../images/fish2.png[Second screenshot of fish shell]
 
 == Functions
 |===
 |Functions|What it does
-
 |cat
 |Run https://github.com/sharkdp/bat[bat] instead of cat
 
@@ -69,6 +69,7 @@ image::../../images/fish.png[Screenshot of fish shell]
 
 == Features??
 Things that it does.
+
 * Adds $HOME/.local/bin to PATH
 * Applications
 ** Sets BROWSER to firefox
