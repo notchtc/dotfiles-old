@@ -1,3 +1,3 @@
 function setwal -d "Set wallpaper in awesomewm"
-    cp $argv ~/.cache/wall.png
+    ln -s $argv ~/.cache/wall.png
 end
