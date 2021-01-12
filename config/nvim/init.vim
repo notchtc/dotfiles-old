@@ -107,8 +107,9 @@ let g:indentLine_defaultGroup = 'SpecialKey'
 " Set characters
 let g:indentLine_char_list = ['│', '┆', '┊', '╵']
 
-" Hide indentLine in dashboard
-let g:indentLine_fileTypeExclude = ['dashboard']"}}}
+" Hide indentLine in specific things
+let g:indentLine_fileTypeExclude = ['dashboard', 'fern']
+let g:indentLine_bufTypeExclude = ['help']"}}}
 
 " lightline{{{
 let g:lightline = {
