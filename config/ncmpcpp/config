@@ -12,17 +12,17 @@ mpd_music_dir = ~/music
 mpd_crossfade_time = 5
 
 # FORMATTING
-song_status_format = {{%t}|{%f} from {{$7{%b}$9 by $3%a$9}}}
+song_status_format = {$3{%t}|{%f}$9 from {{$7{%b}$9 by $(11)%a$9}}}
 song_list_format = {%a} {$7%b$9} $8{%t}|{%f}$9
 song_library_format = {$4%n$9 $8-$9} $7{%t}|{%f}$9
 
-current_item_prefix = $(11)$r
-current_item_suffix = $/r$(end)
+current_item_prefix = $(11)$b
+current_item_suffix = $/b$(end)
 
-now_playing_prefix = $(11)$b
-now_playing_suffix = $9$/b
+now_playing_prefix = $(11)$r
+now_playing_suffix = $/r$9
 
-song_columns_list_format = (20f)[]{a} (4f)[yellow]{NE} (90)[cyan]{t|f} (7f)[magenta]{lr}
+song_columns_list_format = (7f)[13]{l} (80)[3]{t|f} (20)[11]{ar}
 
 # COLORS
 colors_enabled = yes
@@ -35,7 +35,7 @@ color1 = 16
 
 color2 = 15
 
-statusbar_time_color = 14
+statusbar_time_color = 13
 
 progressbar_color = 8
 
