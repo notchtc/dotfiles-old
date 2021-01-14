@@ -5,6 +5,6 @@ do
     "C-d")
         rm "$file" ;;
     "C-w")
-        cp "$file" "$HOME/.cache/wall.png" ;;
+        cp "$file" "$XDG_CACHE_HOME/wall.png" ;;
     esac
 done
