@@ -205,6 +205,10 @@ let g:dashboard_custom_footer = [
 autocmd FileType dashboard set showtabline=0 | autocmd WinLeave <buffer> set showtabline=2"}}}
 
 " fern{{{
+" Disable line numbers in fern
+autocmd FileType fern set nonumber norelativenumber
+
+" Icons
 let g:fern#renderer = "nerdfont""}}}
 "}}}
 
