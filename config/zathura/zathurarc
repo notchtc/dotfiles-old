@@ -18,8 +18,6 @@ set completion-fg \#ebdbb2
 set completion-highlight-bg \#b8bb26
 set completion-highlight-fg \#282828
 
-set highlight-active \#ffffff
-
 set recolor
 set recolor-darkcolor \#ebdbb2
 set recolor-lightcolor \#282828
