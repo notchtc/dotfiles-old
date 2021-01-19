@@ -16,8 +16,8 @@ song_status_format = {$3{%t}|{%f}$9 from {{$(13){%b}$9 by $(11)%a$9}}}
 song_list_format = {%a} {$(13)%b$9} $8{%t}|{%f}$9
 song_library_format = {$4%n$9 $8-$9} $(13){%t}|{%f}$9
 
-current_item_prefix = $(11)
-current_item_suffix = $(end)
+current_item_prefix = $(3)$b
+current_item_suffix = $/b$(end)
 
 now_playing_prefix = $(11)$b
 now_playing_suffix = $/b$(end)
