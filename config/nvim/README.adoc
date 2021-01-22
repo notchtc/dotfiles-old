@@ -4,11 +4,10 @@ Cha0t1c <notnotcha0t1c@protonmail.com>
 :experimental:
 :toc:
 
+:warning: Requires neovim nightly and https://github.com/wbthomason/packer.nvim[packer.nvim]
+
 == Screenshot
-image:../../images/nvim.png[Neovim with fern and the neovim config open]
-image:../../images/nvim2.png[Neovim with multiple files open and todo list]
-image:../../images/nvim3.png[Neovim with fish config open (with color preview)]
-image:../../images/nvim4.png[Neovim dashboard]
+Too lazy to make new screenshots
 
 == Plugins
 |===
@@ -26,40 +25,25 @@ image:../../images/nvim4.png[Neovim dashboard]
 |https://github.com/dag/vim-fish[vim-fish]
 |Vim support for fish
 
-|https://github.com/glepnir/dashboard-nvim[dashboard-nvim]
-|Dashboard
-
-|https://github.com/itchyny/lightline.vim[lightline.vim]
+|https://github.com/hoob3rt/lualine.nvim[lualine.nvim]
 |Fancy bar at bottom
 
-|https://github.com/junegunn/fzf.vim[fzf.vim]
+|https://github.com/romgrk/barbar.nvim[barbar.nvim]
+|Fancy buffer bar
+
+|https://github.com/junegunn/fzf.vim[telescope.nvim]
 |Fuzzy finding in vim
 
-|https://github.com/lambdalisue/fern.vim[fern.vim]
-|Tree viewer
-
-|https://github.com/lambdalisue/fern-hijack.vim[fern-hijack.vim]
-|Use fern instead of netrw
-
-|https://github.com/lambdalisue/fern-git-status.vim[fern-git-status.vim]
-|Git integration for fern
-
-|https://github.com/lambdalisue/fern-renderer-nerdfont.vim[fern-renderer-nerdfont.vim]
-|Icons in fern
-
-|https://github.com/lambdalisue/nerdfont.vim[nerdfont.vim]
+|https://github.com/kyazdani42/nvim-web-devicons[nvim-web-devicons]
 |Icons and stuff
 
 |https://github.com/luochen1990/rainbow[rainbow]
 |Rainbow parentheses
 
-|https://github.com/mengelbrecht/lightline-bufferline[lightline-bufferline]
-|Bufferline for lightline
-
 |https://github.com/morhetz/gruvbox[gruvbox]
 |Gruvbox colorscheme
 
-|https://github.com/rrethy/vim-hexokinase[vim-hexokinase]
+|https://github.com/norcalli/nvim-colorizer.lua[nvim-colorizer.lua]
 |Highlight colors
 
 |===
@@ -113,7 +97,6 @@ Leader key is Space.
 == Features
 Stuff that wasn't mentioned in the other sections
 
-* A comment isn't placed when making an newline
 * Clipboard that works between different applications
 * Cursor line
 * Don't show that tilde at the end of buffer
