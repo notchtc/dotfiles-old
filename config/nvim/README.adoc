@@ -77,17 +77,29 @@ Leader key is Space.
 |kbd:[Leader+p]
 |Go to previous file
 
-|kbd:[Leader+N]
-|Open fern
-
 |kbd:[Leader+s+p]
 |Toggle spell checking (en_US)
 
-|kbd:[Leader+0-9]
+|kbd:[Ctrl+s]
+|Magic buffer-picking mode
+
+|kbd:[Alt+,]
+|Move to previous buffer
+
+|kbd:[Alt+.]
+|Move to next buffer
+
+|kbd:[Alt+<]
+|Re-order buffer to previous
+
+|kbd:[Alt+>]
+|Re-order buffer to next
+
+|kbd:[Alt+1-9]
 |Switch buffers
 
-|kbd:[Leader+0-9]
-|Delete buffers
+|kbd:[Alt+c]
+|Close buffer
 
 |kbd:[F5]
 |Opens todo list

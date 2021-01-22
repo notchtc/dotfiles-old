@@ -30,14 +30,6 @@ vim.api.nvim_set_keymap('n', '<leader>n', ':wn<cr>', {})
 vim.api.nvim_set_keymap('n', '<leader>p', ':wN<cr>', {})
 -- }}}
 
--- Dashboard keybindings{{{
-vim.api.nvim_set_keymap('n', '<Leader>ss', ':<C-u>SessionSave<cr>', {})
-vim.api.nvim_set_keymap('n', '<Leader>sl', ':<C-u>SessionLoad<cr>', {})
-vim.api.nvim_set_keymap('n', '<silent> <Leader>fh', ':DashboardFindHistory<cr>', {})
-vim.api.nvim_set_keymap('n', '<silent> <leader>ff', ':DashboardFindFile<cr>', {})
-vim.api.nvim_set_keymap('n', '<silent> <Leader>cn', ':DashboardNewFile<cr>', {})
--- }}}
-
 -- barbar{{{
 -- Magic buffer-picking mode
 vim.api.nvim_set_keymap('n', '<C-s>', ':BufferPick<CR>', {noremap = true, silent = true})
