@@ -46,4 +46,3 @@ If something requires something, it will be written in it's README or here.
 ** https://github.com/source-foundry/Hack/releases/download/v3.003/Hack-v3.003-ttf.zip[Hack]
 ** https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/Hack[Hack Nerd Font]
 * mpd (for ncmpcpp)
-** mpd-discord-rpc (I launch it from xinitrc, remove it if you don't need that)
