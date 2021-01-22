@@ -4,7 +4,7 @@ Cha0t1c <notnotcha0t1c@protonmail.com>
 :experimental:
 :toc:
 
-:warning: Requires neovim nightly
+:warning: Requires neovim nightly and https://github.com/wbthomason/packer.nvim[packer.nvim]
 
 == Screenshot
 Too lazy to make new screenshots
@@ -12,9 +12,6 @@ Too lazy to make new screenshots
 == Plugins
 |===
 |Plugin|What it does
-
-|https://github.com/wbthomason/packer.nvim[packer.nvim]
-|Plugin manager
 
 |https://github.com/Dimercel/todo-vim[todo-vim]
 |Shows a todo list
