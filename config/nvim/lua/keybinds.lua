@@ -53,6 +53,9 @@ vim.api.nvim_set_keymap('n', '<A-9>', ':BufferLast<CR>', {noremap = true, silent
 vim.api.nvim_set_keymap('n', '<A-c>', ':BufferClose<CR>', {noremap = true, silent = true})
 -- }}}
 
+-- Open fern
+vim.api.nvim_set_keymap('n', '<leader>N', ':Fern -drawer -toggle %:h<cr>', {})
+
 -- Spell check
 vim.api.nvim_set_keymap('n', '<leader>sp', ':setlocal spell! spelllang=en_us<cr>', {})
 

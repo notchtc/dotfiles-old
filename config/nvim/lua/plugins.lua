@@ -24,6 +24,7 @@ return require('packer').startup(function()
             -- Set indentLine characters
             vim.api.nvim_set_var('indentLine_char_list', {'│', '┆', '┊', ''})
             -- Don't show indentLine in specific things
+            vim.api.nvim_set_var('indentLine_fileTypeExclude', {'fern'})
             vim.api.nvim_set_var('indentLine_bufTypeExclude', {'help'})
         end
     }
@@ -92,6 +93,13 @@ return require('packer').startup(function()
         config = function()
             require 'colorizer'.setup()
         end}
+    -- }}}
+
+    -- fern{{{
+    use {
+        'lambdalisue/fern.vim',
+        requires = {{'lambdalisue/fern-hijack.vim'}, {'lambdalisue/fern-git-status.vim'}, opt = true}
+    }
     -- }}}
 
     use 'lifepillar/vim-gruvbox8'
