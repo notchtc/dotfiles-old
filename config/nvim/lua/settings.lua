@@ -40,7 +40,7 @@ vim.api.nvim_win_set_option(0, 'foldnestmax', 1)
 vim.api.nvim_set_option('title', true)
 
 -- Set colorscheme
-vim.cmd("colorscheme gruvbox")
+vim.cmd("colorscheme gruvbox8")
 
 -- More colors
 vim.api.nvim_set_option('termguicolors', true)

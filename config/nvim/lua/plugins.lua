@@ -14,8 +14,6 @@ return require('packer').startup(function()
     -- Packer can manage itself as an optional plugin
     use {'wbthomason/packer.nvim', opt = true}
 
-    use 'Dimercel/todo-vim'
-
     -- indentLine{{{
     use {
         'Yggdroot/indentLine',
@@ -26,7 +24,6 @@ return require('packer').startup(function()
             -- Set indentLine characters
             vim.api.nvim_set_var('indentLine_char_list', {'│', '┆', '┊', ''})
             -- Don't show indentLine in specific things
-            vim.api.nvim_set_var('indentLine_fileTypeExclude', {'dashboard', 'fern'})
             vim.api.nvim_set_var('indentLine_bufTypeExclude', {'help'})
         end
     }
@@ -97,12 +94,7 @@ return require('packer').startup(function()
         end}
     -- }}}
 
-    use {
-        'nvim-telescope/telescope.nvim',
-        requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}}
-    }
-
-    use 'morhetz/gruvbox'
+    use 'lifepillar/vim-gruvbox8'
 end)
 
 -- vim: set foldmethod=marker:

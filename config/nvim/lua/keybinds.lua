@@ -53,16 +53,7 @@ vim.api.nvim_set_keymap('n', '<A-9>', ':BufferLast<CR>', {noremap = true, silent
 vim.api.nvim_set_keymap('n', '<A-c>', ':BufferClose<CR>', {noremap = true, silent = true})
 -- }}}
 
--- telescope{{{
--- Find files using Telescope command-line sugar.
-vim.api.nvim_set_keymap('n', '<leader>ff', '<cmd>Telescope find_files<cr>', {noremap = true})
-vim.api.nvim_set_keymap('n', '<leader>fh', '<cmd>Telescope help_tags<cr>', {noremap = true})
--- }}}
-
 -- Spell check
 vim.api.nvim_set_keymap('n', '<leader>sp', ':setlocal spell! spelllang=en_us<cr>', {})
-
--- Open todo window
-vim.api.nvim_set_keymap('n', '<F5>', ':TODOToggle<cr>', {})
 
 -- vim: set foldmethod=marker:

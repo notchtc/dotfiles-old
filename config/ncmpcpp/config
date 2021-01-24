@@ -70,5 +70,4 @@ autocenter_mode = "yes"
 centered_cursor = "yes"
 
 follow_now_playing_lyrics = yes
-fetch_lyrics_for_current_song_in_background = yes
 lyrics_fetchers = genius, musixmatch, sing365, metrolyrics, justsomelyrics, jahlyrics, plyrics, zeneszoveg, internet
