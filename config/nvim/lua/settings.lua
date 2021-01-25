@@ -36,9 +36,6 @@ vim.api.nvim_win_set_option(0, 'foldmethod', 'syntax')
 -- Set maximum fold nesting
 vim.api.nvim_win_set_option(0, 'foldnestmax', 1)
 
--- Be able to see vim keybindings in awesome when using an alias
-vim.api.nvim_set_option('title', true)
-
 -- Set dark background
 vim.api.nvim_set_option('background', 'dark')
 
