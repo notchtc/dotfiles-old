@@ -102,7 +102,13 @@ return require('packer').startup(function()
     }
     -- }}}
 
-    use 'lifepillar/vim-gruvbox8'
+    use {
+        'lifepillar/vim-gruvbox8',
+        config = function()
+            vim.api.nvim_set_var('gruvbox_filetype_hi_groups', 1)
+            vim.api.nvim_set_var('gruvbox_plugin_hi_groups', 1)
+        end
+    }
 end)
 
 -- vim: set foldmethod=marker:

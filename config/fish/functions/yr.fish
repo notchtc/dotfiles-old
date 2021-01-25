@@ -1,3 +1,3 @@
-function yr --description="View and remove installed packages with yay"
-    yay -Qq | fzf -q "$argv" -m --preview 'yay -Qi {1}' | xargs -ro yay -Rns
+function yr --description="View and remove installed packages with paru"
+    paru -Qq | fzf -q "$argv" -m --preview 'paru -Qi {1}' | xargs -ro paru -Rns
 end

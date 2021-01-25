@@ -39,20 +39,17 @@ vim.api.nvim_win_set_option(0, 'foldnestmax', 1)
 -- Be able to see vim keybindings in awesome when using an alias
 vim.api.nvim_set_option('title', true)
 
+-- Set dark background
+vim.api.nvim_set_option('background', 'dark')
+
 -- Set colorscheme
 vim.cmd("colorscheme gruvbox8")
 
 -- More colors
 vim.api.nvim_set_option('termguicolors', true)
 
--- Set dark background
-vim.api.nvim_set_option('background', 'dark')
-
 -- Don't show that --INSERT-- etc.
 vim.api.nvim_set_option('showmode', false)
 
 -- Remove those ~'s at the end of buffers
 vim.api.nvim_set_option('fcs', "eob: ")
-
--- Make background the same as terminal (useful when adding transparency)
-vim.cmd("hi Normal ctermbg=NONE guibg=NONE")
