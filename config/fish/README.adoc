@@ -75,7 +75,7 @@ Things that it does.
 
 * Adds $HOME/.local/bin to PATH
 * Applications
-** Sets BROWSER to firefox
+** Sets BROWSER to librewolf
 ** Sets EDITOR to nvim
 ** Sets VISUAL to EDITOR
 ** Sets SXHKD_SHELL to sh
