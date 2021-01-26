@@ -13,12 +13,15 @@ set -Ux XDG_CACHE_HOME "$HOME/.cache"
 set -Ux XDG_CONFIG_HOME "$HOME/.config"
 
 # Cleaning up the home directory
+set -Ux GEM_HOME "$XDG_DATA_HOME/gem"
+set -Ux GEM_SPEC_CACHE "$XDG_CACHE_HOME/gem"
+set -Ux GNUPGHOME "$XDG_DATA_HOME/gnupg"
 set -Ux GTK2_RC_FILES "$XDG_CONFIG_HOME/gtk-2.0/gtkrc"
 set -Ux INPUTRC "$XDG_CONFIG_HOME/readline/inputrc"
 set -Ux LESSHISTFILE -
 
 # Use these you filthy application
-set -Ux BROWSER firefox
+set -Ux BROWSER librewolf
 set -Ux EDITOR nvim
 set -Ux VISUAL $EDITOR
 set -Ux PAGER less

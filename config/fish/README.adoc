@@ -82,6 +82,8 @@ Things that it does.
 ** Sets TERM to alacritty
 * Cleaning up the home directory
 ** Disables .lesshst
+** Moves .gem to $XDG_DATA_HOME/gem and $XDG_CACHE_HOME/gem
+** Moves .gnupg to $XDG_DATA_HOME/gnupg
 ** Moves .gitconfig to $XDG_CONFIG_HOME/git/config
 ** Moves .gtkrc-2.0 to $XDG_CONFIG_HOME/gtk-2.0/gtkrc
 ** Moves inputrc to $XDG_CONFIG_HOME/readline/input
