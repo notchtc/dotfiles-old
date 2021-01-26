@@ -49,6 +49,7 @@ beautiful.init(gears.filesystem.get_configuration_dir() .. "theme.lua")
 -- Change colors of critical notifications
 naughty.config.presets.critical.border_color = beautiful.bg_urgent
 naughty.config.presets.critical.bg = beautiful.bg_normal
+naughty.config.presets.critical.timeout = 60
 -- Make notifications appear in the bottom right
 naughty.config.defaults.position = "bottom_right"
 
