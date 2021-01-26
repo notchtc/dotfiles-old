@@ -8,8 +8,7 @@ My personal fish config that doesn't look too crazy and doesn't have thousands o
 NOTE: Feel free to change/remove things.
 
 == Screenshots
-image::../../images/fish.png[Screenshot of fish shell]
-image::../../images/fish2.png[Second screenshot of fish shell]
+image::../../images/fish.png[Screenshot of fish prompt]
 
 == Functions
 |===
