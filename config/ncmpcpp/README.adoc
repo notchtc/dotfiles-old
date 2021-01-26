@@ -1,0 +1,5 @@
+= https://rybczak.net/ncmpcpp/[ncmpcpp]
+cha0t1c <notnotcha0t1c@protonmail.com>
+1.0, {docdate}
+
+image::../../images/ncmpcpp.png[ncmpcpp]
