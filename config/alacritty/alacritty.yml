@@ -1,7 +1,7 @@
 # Font configuration
 font:
         normal:
-                family: Hack Nerd Font Mono
+                family: Hack
 
         # Point size
         size: 10
