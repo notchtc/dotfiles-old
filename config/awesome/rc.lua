@@ -560,7 +560,7 @@ awful.rules.rules = {
         }
       }, properties = { floating = true }},
 
-    { rule = { class = "firefox" },
+    { rule = { class = "LibreWolf" },
     properties = { tag = ""}},
 
     { rule = { class = "Alacritty" },
