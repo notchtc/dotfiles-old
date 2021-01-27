@@ -561,13 +561,13 @@ awful.rules.rules = {
       }, properties = { floating = true }},
 
     { rule = { class = "LibreWolf" },
-    properties = { tag = ""}},
+    properties = { tag = "" }},
 
     { rule = { class = "Alacritty" },
-    properties = { tag = "", tiling = true}},
+    properties = { tag = "" }},
 
-    { rule = { class = "Gimp" },
-    properties = { tag = "" }},
+    { rule_any = { class = {"Gimp","kdenlive" } },
+    properties = { tag = "", maximized = true }},
 
     { rule = { class = "mpv"  },
     properties = { tag = "", switchtotag = true }},
