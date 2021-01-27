@@ -21,9 +21,9 @@ set -Ux INPUTRC "$XDG_CONFIG_HOME/readline/inputrc"
 set -Ux LESSHISTFILE -
 
 # Use these you filthy application
-if type firefox &> /dev/null
+if command -v firefox > /dev/null
     set -Ux BROWSER firefox
-else if type librewolf &> /dev/null
+else if command -v librewolf > /dev/null
     set -Ux BROWSER librewolf
 end
 set -Ux EDITOR nvim
