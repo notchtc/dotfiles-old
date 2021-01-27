@@ -108,6 +108,9 @@ return require('packer').startup(function()
     }
     -- }}}
 
+    use 'jiangmiao/auto-pairs'
+
+    -- gruvbox8{{{
     use {
         'lifepillar/vim-gruvbox8',
         config = function()
@@ -115,6 +118,7 @@ return require('packer').startup(function()
             vim.api.nvim_set_var('gruvbox_plugin_hi_groups', 1)
         end
     }
+    -- }}}
 end)
 
 -- vim: set foldmethod=marker:
