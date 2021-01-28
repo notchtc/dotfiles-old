@@ -560,13 +560,13 @@ awful.rules.rules = {
         }
       }, properties = { floating = true }},
 
-    { rule = { class = "LibreWolf" },
+    { rule_any = { class = { "LibreWolf", "Firefox" }},
     properties = { tag = "" }},
 
     { rule = { class = "Alacritty" },
     properties = { tag = "" }},
 
-    { rule_any = { class = {"Gimp","kdenlive" } },
+    { rule_any = { class = { "Gimp", "kdenlive" } },
     properties = { tag = "", maximized = true }},
 
     { rule = { class = "mpv"  },

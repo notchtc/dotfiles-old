@@ -91,7 +91,11 @@ return require('packer').startup(function()
     use {
         'norcalli/nvim-colorizer.lua',
         config = function()
-            require 'colorizer'.setup()
+            require 'colorizer'.setup {
+                '*';
+                '!fern';
+                '!packer';
+            }
         end}
     -- }}}
 
@@ -107,8 +111,6 @@ return require('packer').startup(function()
         end
     }
     -- }}}
-
-    use 'jiangmiao/auto-pairs'
 
     -- gruvbox8{{{
     use {
