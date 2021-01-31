@@ -36,6 +36,9 @@ vim.api.nvim_win_set_option(0, 'foldmethod', 'syntax')
 -- Set maximum fold nesting
 vim.api.nvim_win_set_option(0, 'foldnestmax', 1)
 
+-- Enable lazy redrawing
+vim.api.nvim_set_option('lazyredraw', true)
+
 -- Set dark background
 vim.api.nvim_set_option('background', 'dark')
 
