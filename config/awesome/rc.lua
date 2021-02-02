@@ -261,9 +261,9 @@ awful.screen.connect_for_each_screen(function(s)
         { -- Left widgets
             layout = wibox.layout.fixed.horizontal,
             s.mytaglist,
-            s.mypromptbox,
+            wrap_margin(s.mypromptbox, 1, 4),
         },
-        wrap_margin(s.mytasklist, 5, 5),
+        wrap_margin(s.mytasklist, 0, 5),
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
             wrap_bg(myvol, beautiful.color6),
