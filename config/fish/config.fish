@@ -1,5 +1,4 @@
-#!/usr/bin/env fish
-# Install fisher, if it's not available
+# Install fisher, if it isn't
 if not functions -q fisher
     set -q XDG_CONFIG_HOME; or set XDG_CONFIG_HOME ~/.config
     curl https://git.io/fisher --create-dirs -sLo $XDG_CONFIG_HOME/fish/functions/fisher.fish
@@ -8,76 +7,72 @@ end
 
 # EXPORTS{{{
 # XDG
-set -Ux XDG_DATA_HOME "$HOME/.local/share"
-set -Ux XDG_CACHE_HOME "$HOME/.cache"
-set -Ux XDG_CONFIG_HOME "$HOME/.config"
+set -x XDG_DATA_HOME "$HOME/.local/share"
+set -x XDG_CACHE_HOME "$HOME/.cache"
+set -x XDG_CONFIG_HOME "$HOME/.config"
 
-# Cleaning up the home directory
-set -Ux GEM_HOME "$XDG_DATA_HOME/gem"
-set -Ux GEM_SPEC_CACHE "$XDG_CACHE_HOME/gem"
-set -Ux GNUPGHOME "$XDG_DATA_HOME/gnupg"
-set -Ux GTK2_RC_FILES "$XDG_CONFIG_HOME/gtk-2.0/gtkrc"
-set -Ux INPUTRC "$XDG_CONFIG_HOME/readline/inputrc"
-set -Ux LESSHISTFILE -
+# Clean ~/
+set -x GEM_HOME "$XDG_DATA_HOME/gem"
+set -x GEM_SPEC_CACHE "$XDG_CACHE_HOME/gem"
+set -x GNUPGHOME "$XDG_DATA_HOME/gnupg"
+set -x GTK2_RC_FILES "$XDG_CONFIG_HOME/gtk-2.0/gtkrc"
+set -x INPUTRC "$XDG_CONFIG_HOME/readline/inputrc"
+set -x LESSHISTFILE -
 
-# Use these you filthy application
-if command -v firefox > /dev/null
-    set -Ux BROWSER firefox
-else if command -v librewolf > /dev/null
-    set -Ux BROWSER librewolf
-end
-set -Ux EDITOR nvim
-set -Ux VISUAL $EDITOR
-set -Ux PAGER less
-set -Ux TERM alacritty
+# Use these
+set -x BROWSER librewolf
+set -x EDITOR nvim
+set -x VISUAL $EDITOR
+set -x PAGER less
+set -x TERM alacritty
 
 # Set path
 contains $HOME/.local/bin $fish_user_paths; or set -Ua fish_user_paths $HOME/.local/bin
 
-# Fzf default options
-set -Ux FZF_DEFAULT_OPTS -m --color "16,border:#928374" --border sharp --preview-window sharp:wrap --layout=reverse-list --info inline
+# Set fzf default options
+set -x FZF_DEFAULT_OPTS -m --color "16" --border sharp --preview-window sharp:wrap --layout=reverse-list --info inline
 #}}}
 
 # COLORS{{{
 # Lucid prompt{{{
-set -g lucid_cwd_color "#8ec07c"
-set -g lucid_git_color "#689d6a"
+set -g lucid_cwd_color brcyan
+set -g lucid_git_color cyan
 #}}}
 
 # Colorscheme{{{
-set -g fish_color_normal "#ebdbb2"
-set -g fish_color_command "#b8bb26"
-set -g fish_color_quote "#689d6a"
-set -g fish_color_redirection "#8ec07c"
-set -g fish_color_end "#98971a"
-set -g fish_color_error "#fb4934"
-set -g fish_color_param "#8ec07c"
-set -g fish_color_selection "#a89984" --bold --background="#928374"
-set -g fish_color_search_match "#b8bb26" --background="#928374"
+set -g fish_color_normal white
+set -g fish_color_command brgreen
+set -g fish_color_quote cyan
+set -g fish_color_redirection brcyan
+set -g fish_color_end green
+set -g fish_color_error brred
+set -g fish_color_param brcyan
+set -g fish_color_selection brgray --bold --background=grey
+set -g fish_color_search_match brgreen --background=grey
 set -g fish_color_history_current --bold
-set -g fish_color_operator "#8ec07c"
-set -g fish_color_escape "#8ec07c"
-set -g fish_color_cwd "#b8bb26"
-set -g fish_color_cwd_root "#cc241d"
+set -g fish_color_operator brcyan
+set -g fish_color_escape brcyan
+set -g fish_color_cwd brgreen
+set -g fish_color_cwd_root red
 set -g fish_color_valid_path --underline
-set -g fish_color_autosuggestion "#928374"
-set -g fish_color_user "#b8bb26"
-set -g fish_color_host "#ebdbb2"
+set -g fish_color_autosuggestion grey
+set -g fish_color_user brgreen
+set -g fish_color_host white
 set -g fish_color_cancel -r
-set -g fish_pager_color_completion "#ebdbb2"
-set -g fish_pager_color_description "#98971a"
-set -g fish_pager_color_prefix "#a89984" --bold --underline
-set -g fish_pager_color_progress "#ebdbb2" --background="#689d6a"
-set -g fish_color_match --background="#b8bb26"
-set -g fish_color_comment "#928374"
+set -g fish_pager_color_completion white
+set -g fish_pager_color_description green
+set -g fish_pager_color_prefix brgray --bold --underline
+set -g fish_pager_color_progress white --background=cyan
+set -g fish_color_match --background=brgreen
+set -g fish_color_comment grey
 #}}}
 #}}}
 
 # OTHER{{{
-# Vi bindings baby
+# Vi keybindings
 fish_vi_key_bindings
 
-# Disable fish greeting
+# Disable greeting
 set -U fish_greeting
 
 # Start X at login

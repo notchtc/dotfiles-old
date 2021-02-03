@@ -60,7 +60,6 @@ return require('packer').startup(function()
     -- lualine{{{
     use {
         'hoob3rt/lualine.nvim',
-        requires = {'kyazdani42/nvim-web-devicons', opt = true},
         config = function()
             local lualine = require('lualine')
             lualine.status()
@@ -73,7 +72,14 @@ return require('packer').startup(function()
     -- barbar{{{
     use {
         'romgrk/barbar.nvim',
-        requires = {'kyazdani42/nvim-web-devicons', opt = true}
+        config = function()
+            vim.cmd("hi! link BufferTabpageFill Normal")
+            vim.cmd("let bufferline = get(g:, 'bufferline', {})")
+            vim.cmd("let bufferline.auto_hide = v:true")
+            vim.cmd("let bufferline.icons = v:false")
+            vim.cmd("let bufferline.animation = v:false")
+            vim.cmd("let bufferline.maximum_padding = 2")
+        end
     }
     -- }}}
 
@@ -104,10 +110,10 @@ return require('packer').startup(function()
         'lambdalisue/fern.vim',
         requires = {{'lambdalisue/fern-hijack.vim'}, {'lambdalisue/fern-git-status.vim'}, opt = true},
         config = function()
-            vim.cmd('highlight FernRootText ctermfg=green guifg=#b8bb26')
-            vim.cmd('highlight FernBranchText ctermfg=darkgreen guifg=#98971a')
-            vim.cmd('highlight FernBranchSymbol ctermfg=green guifg=#b8bb26')
-            vim.cmd('highlight FernLeafSymbol ctermfg=green guifg=#b8bb26')
+            vim.cmd('hi FernRootText ctermfg=green guifg=#b8bb26')
+            vim.cmd('hi FernBranchText ctermfg=darkgreen guifg=#98971a')
+            vim.cmd('hi FernBranchSymbol ctermfg=green guifg=#b8bb26')
+            vim.cmd('hi FernLeafSymbol ctermfg=green guifg=#b8bb26')
         end
     }
     -- }}}
