@@ -34,6 +34,9 @@ contains $GEM_HOME/ruby/2.7.0/bin $fish_user_paths; or set -Ua fish_user_paths $
 
 # Set fzf default options
 set -x FZF_DEFAULT_OPTS -m --color "16" --border sharp --preview-window sharp:wrap --layout=reverse-list --info inline
+
+# Don't show notification for specific apps (done plugin)
+set -U __done_exclude 'nvim|sxiv|mpv|ncmpcpp'
 #}}}
 
 # COLORS{{{
