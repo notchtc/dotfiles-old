@@ -18,6 +18,7 @@ set -x GNUPGHOME "$XDG_DATA_HOME/gnupg"
 set -x GTK2_RC_FILES "$XDG_CONFIG_HOME/gtk-2.0/gtkrc"
 set -x INPUTRC "$XDG_CONFIG_HOME/readline/inputrc"
 set -x LESSHISTFILE -
+set -x XAUTHORITY "$XDG_RUNTIME_DIR/Xauthority"
 
 # Use these
 set -x BROWSER librewolf

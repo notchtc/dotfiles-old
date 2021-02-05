@@ -86,13 +86,14 @@ Things that it does.
 ** Moves .gitconfig to $XDG_CONFIG_HOME/git/config
 ** Moves .gtkrc-2.0 to $XDG_CONFIG_HOME/gtk-2.0/gtkrc
 ** Moves inputrc to $XDG_CONFIG_HOME/readline/input
+** Moves .Xauthority to $XDG_RUNTIME_DIR
 ** XDG
 *** Sets XDG_CACHE_HOME to $HOME/.cache
 *** Sets XDG_CONFIG_HOME to $HOME/.config
 *** Sets XDG_DATA_HOME to $HOME/.local/share
 * Disable fish greeting
 * Fish colorscheme made to use terminal colors that fits with the rice
-* Fzf keybindings (with https://github.com/PatrickF1[fzf.fish])
 * https://github.com/Ch40t1c/lucid.fish[Modified] https://github.com/mattgreen/lucid.fish[lucid] prompt
 * Vi keybindings
 * Start X at login
+* Nice notification when something is https://github.com/franciscolourenco/done[done]
