@@ -21,7 +21,7 @@ set -x LESSHISTFILE -
 set -x XAUTHORITY "$XDG_RUNTIME_DIR/Xauthority"
 
 # Use these
-set -x BROWSER librewolf
+set -x BROWSER firefox 
 set -x EDITOR nvim
 set -x VISUAL $EDITOR
 set -x PAGER less

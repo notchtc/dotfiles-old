@@ -1,3 +1,3 @@
-xrdb -merge $XDG_CONFIG_HOME/X11/xresources &
+xrdb -merge ~/.Xresources &
 setxkbmap -option caps:swapescape &
 exec awesome
