@@ -19,8 +19,8 @@ IMPORTANT: You will probably get a quicker response on Gitlab than GitHub
 * link:config/nvim/[nvim]
 * link:config/sxiv/exec/[sxiv]
 * link:config/user-dirs.dirs[xdg dirs]
-* link:config/X11/xinitrc[xinitrc]
-* link:config/X11/xresources[xresources]
+* link:xinitrc[xinitrc]
+* link:Xresources[xresources]
 * link:config/zathura/[zathura]
 * https://gitlab.com/-/snippets/2054705[/etc/issue]
 
