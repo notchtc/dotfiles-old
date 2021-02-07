@@ -83,8 +83,8 @@ myawesomemenu = {
 }
 
 mysystemmenu = {
-   { "poweroff", function () awful.spawn.with_shell("systemctl poweroff") end },
-   { "reboot", function () awful.spawn.with_shell("systemctl reboot") end }
+   { "poweroff", function () awful.spawn.with_shell("sudo poweroff") end },
+   { "reboot", function () awful.spawn.with_shell("sudo reboot") end }
 }
 
 mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
@@ -553,7 +553,8 @@ awful.rules.rules = {
         -- Note that the name property shown in xprop might be set slightly after creation of the client
         -- and the name shown there might not match defined rules here.
         name = {
-          "Event Tester"  -- xev.
+          "Event Tester",  -- xev.
+	  "OTPClient"
         },
         role = {
           "pop-up"       -- e.g. Google Chrome's (detached) Developer Tools

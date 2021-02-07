@@ -46,9 +46,6 @@ image::../../images/fish.png[Screenshot of fish prompt]
 |smn
 |Search man pages (fzf)
 
-|sudo
-|Runs doas
-
 |xi
 |Install package (xbps)
 
@@ -60,6 +57,9 @@ image::../../images/fish.png[Screenshot of fish prompt]
 
 |xr
 |Remove package (xbps)
+
+|xc
+|Remove orphans, clean cache (xbps)
 
 |xrf
 |View and remove installed packages (fzf, xbps)

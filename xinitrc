@@ -1,3 +1,3 @@
-xrdb -merge ~/.Xresources &
-setxkbmap -option caps:swapescape &
+xrdb -merge $HOME/.Xresources &
+setxkbmap pl -option caps:swapescape &
 exec awesome

@@ -18,7 +18,6 @@ set -x GNUPGHOME "$XDG_DATA_HOME/gnupg"
 set -x GTK2_RC_FILES "$XDG_CONFIG_HOME/gtk-2.0/gtkrc"
 set -x INPUTRC "$XDG_CONFIG_HOME/readline/inputrc"
 set -x LESSHISTFILE -
-set -x XAUTHORITY "$XDG_RUNTIME_DIR/Xauthority"
 
 # Use these
 set -x BROWSER firefox 
@@ -79,13 +78,6 @@ fish_vi_key_bindings
 
 # Disable greeting
 set -U fish_greeting
-
-# Start X at login
-if status is-login
-    if test -z "$DISPLAY" -a "$XDG_VTNR" = 1
-        exec startx -- -keeptty
-    end
-end
 #}}}
 
 # vim: set foldmethod=marker:
