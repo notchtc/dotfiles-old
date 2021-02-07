@@ -2,4 +2,8 @@
 cha0t1c <notnotcha0t1c@protonmail.com>
 1.0, {docdate}
 
+== Screnshot
 image::../../images/ncmpcpp.png[ncmpcpp]
+
+== Dependencies
+* mpd (so ncmpcpp works)
