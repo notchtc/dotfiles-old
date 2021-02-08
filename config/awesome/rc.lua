@@ -404,11 +404,14 @@ globalkeys = gears.table.join(
               {description = "raise brightness", group = "misc"}),
 
     -- Launch apps
-    awful.key({ modkey, "Shift" }, "m", function() awful.util.spawn(terminal .. " -t music -e ncmpcpp", false) end,
+    awful.key({ modkey, "Mod1" }, "m", function() awful.util.spawn(terminal .. " -t music -e ncmpcpp", false) end,
               {description = "open music player", group = "misc"}),
 
-    awful.key({ modkey, "Shift" }, "b", function() awful.util.spawn_with_shell("apulse firefox", false) end,
-              {description = "open web browser", group = "misc"})
+    awful.key({ modkey, "Mod1" }, "b", function() awful.util.spawn_with_shell("apulse firefox", false) end,
+              {description = "open web browser", group = "misc"}),
+
+    awful.key({ modkey, "Mod1" }, "r", function() awful.util.spawn_with_shell(terminal .. " -t rss -e newsboat", false) end,
+              {description = "open rss reader", group = "misc"})
 )
 
 clientkeys = gears.table.join(
@@ -554,7 +557,8 @@ awful.rules.rules = {
         -- and the name shown there might not match defined rules here.
         name = {
           "Event Tester",  -- xev.
-	  "OTPClient"
+          "GIMP Startup",
+          "OTPClient"
         },
         role = {
           "pop-up"       -- e.g. Google Chrome's (detached) Developer Tools
@@ -570,11 +574,8 @@ awful.rules.rules = {
     { rule_any = { class = { "Gimp", "kdenlive" } },
     properties = { tag = "", maximized = true }},
 
-    { rule = { class = "mpv"  },
+    { rule_any = { class = "mpv", name = { "music", "rss" }  },
     properties = { tag = "", switchtotag = true }},
-
-    { rule = { name = "music" },
-    properties = { tag = "" }},
 
     { rule = { class = "discord" },
     properties = { tag = "" }}
