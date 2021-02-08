@@ -407,7 +407,7 @@ globalkeys = gears.table.join(
     awful.key({ modkey, "Shift" }, "m", function() awful.util.spawn(terminal .. " -t music -e ncmpcpp", false) end,
               {description = "open music player", group = "misc"}),
 
-    awful.key({ modkey, "Shift" }, "b", function() awful.util.spawn_with_shell("$BROWSER", false) end,
+    awful.key({ modkey, "Shift" }, "b", function() awful.util.spawn_with_shell("apulse firefox", false) end,
               {description = "open web browser", group = "misc"})
 )
 

@@ -20,7 +20,7 @@ set -x INPUTRC "$XDG_CONFIG_HOME/readline/inputrc"
 set -x LESSHISTFILE -
 
 # Use these
-set -x BROWSER firefox
+set -x BROWSER "apulse firefox"
 set -x EDITOR nvim
 set -x VISUAL $EDITOR
 set -x PAGER less
