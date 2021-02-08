@@ -26,6 +26,9 @@ set -x VISUAL $EDITOR
 set -x PAGER less
 set -x TERM alacritty
 
+# Make gpg work
+set -x GPG_TTY (tty)
+
 # Set path
 contains $HOME/.local/bin $fish_user_paths; or set -Ua fish_user_paths $HOME/.local/bin
 contains $GEM_HOME/ruby/2.7.0/bin $fish_user_paths; or set -Ua fish_user_paths $GEM_HOME/ruby/2.7.0/bin
