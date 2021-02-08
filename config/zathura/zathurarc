@@ -1,4 +1,4 @@
-set default-bg \#282828
+set default-bg \#1d2021
 set default-fg \#ebdbb2
 
 set font "hack normal 9"

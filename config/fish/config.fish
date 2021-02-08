@@ -20,7 +20,7 @@ set -x INPUTRC "$XDG_CONFIG_HOME/readline/inputrc"
 set -x LESSHISTFILE -
 
 # Use these
-set -x BROWSER firefox 
+set -x BROWSER firefox
 set -x EDITOR nvim
 set -x VISUAL $EDITOR
 set -x PAGER less
@@ -34,7 +34,7 @@ contains $GEM_HOME/ruby/2.7.0/bin $fish_user_paths; or set -Ua fish_user_paths $
 set -x FZF_DEFAULT_OPTS -m --color "16" --border sharp --preview-window sharp:wrap --layout=reverse-list --info inline
 
 # Don't show notification for specific apps (done plugin)
-set -U __done_exclude 'nvim|sxiv|mpv|ncmpcpp'
+set -U __done_exclude 'nvim|sxiv|mpv|ncmpcpp|zathura'
 #}}}
 
 # COLORS{{{
