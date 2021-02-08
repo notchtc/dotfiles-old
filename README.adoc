@@ -43,6 +43,7 @@ RCRC=$HOME/.dotfiles/rcrc rcup
 
 == Dependencies
 If something requires something, it will be written in it's README or here.
+
 * Hack (if you didn't install the dotfiles with rcm)
 ** https://github.com/source-foundry/Hack/releases/download/v3.003/Hack-v3.003-ttf.zip[Hack]
 ** https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/Hack[Hack Nerd Font]
