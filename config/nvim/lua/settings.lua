@@ -1,3 +1,12 @@
+-- If shell is fish set shell to sh
+local shell = vim.api.nvim_exec([[
+if &shell =~# 'fish$'
+    echo 'sh'
+endif
+]], true)
+
+vim.api.nvim_set_option('shell', shell)
+
 -- Use system clipboard
 vim.api.nvim_set_option('clipboard', 'unnamedplus')
 
