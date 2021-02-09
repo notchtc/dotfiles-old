@@ -95,6 +95,8 @@ myvol:buttons(gears.table.join(
 local myvol_t = awful.tooltip {
     objects        = { myvol },
     delay_show     = 2,
+    mode = "outside",
+    preferred_positions = "top",
     timer_function = function()
         return "<span color=\"" .. beautiful.bg_focus .. "\">LMB</span> to toggle mute\n<span color=\"" .. beautiful.bg_focus .. "\">RMB</span> to open mixer\n<span color=\"" .. beautiful.bg_focus .. "\">Scroll up</span> to raise volume\n<span color=\"" .. beautiful.bg_focus .. "\">Scroll down</span> to lower volume"
     end,
