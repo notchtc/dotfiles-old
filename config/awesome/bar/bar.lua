@@ -145,8 +145,15 @@ awful.screen.connect_for_each_screen(function(s)
         buttons = taglist_buttons
     }
 
-    -- Create a taglist widget
+    -- Create a tasklist widget
     s.mytasklist = awful.widget.tasklist {
+        screen  = s,
+        filter  = awful.widget.tasklist.filter.focused,
+        buttons = tasklist_buttons
+    }
+
+    -- Create a tasklist widget
+    s.myminimizedlist = awful.widget.tasklist {
         screen   = s,
         filter   = awful.widget.tasklist.filter.minimizedcurrenttags,
         buttons  = tasklist_buttons,
@@ -196,9 +203,10 @@ awful.screen.connect_for_each_screen(function(s)
             s.mytaglist,
             wrap_margin(s.mypromptbox, 5, 0),
         },
-        wrap_margin(s.mytasklist, 5, 5),
+        wrap_margin(s.mytasklist, 5, 2.5),
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
+            wrap_margin(s.myminimizedlist, 2.5, 5),
             wrap_bg(myvol, beautiful.color6),
             wrap_bg(mybat, beautiful.color6),
             wrap_bg(mytextclock, beautiful.color6),
