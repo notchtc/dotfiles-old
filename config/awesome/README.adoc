@@ -13,7 +13,7 @@ image:../../images/awesome_idle.png[Idle screenshot of awesome]
 image:../../images/awesome_busy.png[Busy screenshot of awesome]
 
 == Dependencies
-You can easily change these things by editing the appropiate things in the config.
+You can change these things by editing the appropiate things in the config.
 
 |===
 |Dependency|Why?
@@ -41,6 +41,9 @@ You can easily change these things by editing the appropiate things in the confi
 
 |Newsboatfootnote:change[]
 |RSS reader to open
+
+|Viciousfootnote:["Will be installed when cloning repo with --recurse-submodules"]
+|More widgets! (I'm too stupid and lazy to make my own)
 
 |Xbacklight
 |Control screen brightness
