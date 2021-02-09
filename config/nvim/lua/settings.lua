@@ -39,6 +39,9 @@ vim.api.nvim_win_set_option(0, 'foldnestmax', 1)
 -- Enable lazy redrawing
 vim.api.nvim_set_option('lazyredraw', true)
 
+-- Disable swap files
+vim.api.nvim_set_option('swapfile', false)
+
 -- Set dark background
 vim.api.nvim_set_option('background', 'dark')
 
