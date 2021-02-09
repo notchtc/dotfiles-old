@@ -1,5 +1,6 @@
 local awful = require("awful")
 local beautiful = require("beautiful")
+require("bar")
 
 -- Rules to apply to new clients (through the "manage" signal).
 awful.rules.rules = {
