@@ -55,8 +55,12 @@ naughty.config.defaults.position = "bottom_right"
 
 -- This is used later as the default terminal and editor to run.
 terminal = "alacritty"
+
 editor = os.getenv("EDITOR") or "nvim"
 editor_cmd = terminal .. " -e " .. editor
+browser = os.getenv("BROWSER") or "firefox"
+rss = "newsboat"
+music = "ncmpcpp"
 
 -- Default modkey.
 -- Usually, Mod4 is the key with a logo between Control and Alt.
@@ -167,7 +171,31 @@ vicious.register(myvol, vicious.widgets.volume,
         local label = { ["🔉"] = "墳", ["🔈"] = "奄" }
         return ("<span font=\"" .. beautiful.icon_font .. "\" color=\"" .. beautiful.fg_focus .. "\"> %s %d%% </span>"):format(
             label[args[2]], args[1])
-    end, 1, "Master")
+    end, 0.5, "Master")
+
+myvol:buttons(gears.table.join(
+    myvol:buttons(),
+    awful.button({}, 3, nil, function ()
+        awful.spawn.with_shell(terminal .. " -e alsamixer")
+    end),
+    awful.button({}, 1, nil, function ()
+        awful.spawn.with_shell("amixer sset Master toggle")
+    end),
+    awful.button({}, 4, nil, function ()
+        awful.spawn.with_shell("amixer sset Master 5%+")
+    end),
+    awful.button({}, 5, nil, function ()
+        awful.spawn.with_shell("amixer sset Master 5%-")
+    end)
+))
+
+local myvol_t = awful.tooltip {
+    objects        = { myvol },
+    delay_show     = 2,
+    timer_function = function()
+        return "<span color=\"" .. beautiful.bg_focus .. "\">LMB</span> to toggle mute\n<span color=\"" .. beautiful.bg_focus .. "\">RMB</span> to open mixer\n<span color=\"" .. beautiful.bg_focus .. "\">Scroll up</span> to raise volume\n<span color=\"" .. beautiful.bg_focus .. "\">Scroll down</span> to lower volume"
+    end,
+}
 
 -- Function to wrap margins around widgets
 function wrap_margin(widget, l, r)
@@ -218,8 +246,8 @@ awful.screen.connect_for_each_screen(function(s)
         filter   = awful.widget.tasklist.filter.currenttags,
         buttons  = tasklist_buttons,
         style    = {
-            shape_border_width = 2,
-            shape_border_color = beautiful.bg_minimized,
+            shape_border_width = 1,
+            shape_border_color = beautiful.fg_normal,
             shape = gears.shape.rectangle
         },
         layout   = {
@@ -261,9 +289,9 @@ awful.screen.connect_for_each_screen(function(s)
         { -- Left widgets
             layout = wibox.layout.fixed.horizontal,
             s.mytaglist,
-            wrap_margin(s.mypromptbox, 1, 4),
+            wrap_margin(s.mypromptbox, 5, 0),
         },
-        wrap_margin(s.mytasklist, 0, 5),
+        wrap_margin(s.mytasklist, 5, 5),
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
             wrap_bg(myvol, beautiful.color6),
@@ -404,13 +432,13 @@ globalkeys = gears.table.join(
               {description = "raise brightness", group = "misc"}),
 
     -- Launch apps
-    awful.key({ modkey, "Mod1" }, "m", function() awful.util.spawn(terminal .. " -t music -e ncmpcpp", false) end,
+    awful.key({ modkey, "Mod1" }, "m", function() awful.util.spawn(terminal .. " -t music -e " .. music, false) end,
               {description = "open music player", group = "misc"}),
 
-    awful.key({ modkey, "Mod1" }, "b", function() awful.util.spawn_with_shell("apulse firefox", false) end,
+    awful.key({ modkey, "Mod1" }, "b", function() awful.util.spawn_with_shell(browser, false) end,
               {description = "open web browser", group = "misc"}),
 
-    awful.key({ modkey, "Mod1" }, "r", function() awful.util.spawn_with_shell(terminal .. " -t rss -e newsboat", false) end,
+    awful.key({ modkey, "Mod1" }, "r", function() awful.util.spawn_with_shell(terminal .. " -t rss -e " .. rss, false) end,
               {description = "open rss reader", group = "misc"})
 )
 
@@ -566,19 +594,19 @@ awful.rules.rules = {
       }, properties = { floating = true }},
 
     { rule_any = { class = { "LibreWolf", "Firefox" }},
-    properties = { tag = "" }},
+    properties = { tag = awful.screen.focused().tags[1] }},
 
     { rule = { class = "Alacritty" },
-    properties = { tag = "" }},
+    properties = { tag = awful.screen.focused().tags[2] }},
 
     { rule_any = { class = { "Gimp", "kdenlive" } },
-    properties = { tag = "", maximized = true }},
+    properties = { tag = awful.screen.focused().tags[3], maximized = true }},
 
     { rule_any = { class = "mpv", name = { "music", "rss" }  },
-    properties = { tag = "", switchtotag = true }},
+    properties = { tag = awful.screen.focused().tags[4], switchtotag = true }},
 
     { rule = { class = "discord" },
-    properties = { tag = "" }}
+    properties = { tag = awful.screen.focused().tags[5] }}
 }
 -- }}}
 

@@ -21,6 +21,9 @@ You can easily change these things by editing the appropiate things in the confi
 |Alacrittyfootnote:change["You probably want to change this."]
 |Terminal
 
+|Alsamixerfootnote:change[]
+|Mixer to open
+
 |Amixer
 |Change volume
 
@@ -36,6 +39,9 @@ You can easily change these things by editing the appropiate things in the confi
 |Ncmpcppfootnote:change[]
 |Music player to open
 
+|Newsboatfootnote:change[]
+|RSS reader to open
+
 |Xbacklight
 |Control screen brightness
 
@@ -44,6 +50,12 @@ You can easily change these things by editing the appropiate things in the confi
 == Keybindings
 When using awesomewm, you can just do kbd:[Super+S].
 image:../../images/awesome_keybindings.png[Awesome keybindings]
+
+* Volume widget
+** LMB to toggle mute
+** RMB to open mixer
+** Scroll up to raise volume
+** Scroll down to lower volume
 
 = Other
 If poweroff and reboot isn't working, do https://gitlab.com/-/snippets/2042640[this].
