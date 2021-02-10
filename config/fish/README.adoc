@@ -43,6 +43,18 @@ image::../../images/fish.png[Screenshot of fish prompt]
 |ncm
 |Launch ncmpcpp
 
+|rm
+|Move file to trashcan (trash-cli)
+
+|rme
+|Empty trashcan (trash-cli)
+
+|rml
+|List files in trashcan (trash-cli)
+
+|rmr
+|Restore file from trashcan (trash-cli)
+
 |smn
 |Search man pages (fzf)
 
