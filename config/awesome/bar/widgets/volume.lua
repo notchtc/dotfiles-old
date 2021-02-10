@@ -30,7 +30,7 @@ myvol:buttons(gears.table.join(
 
 local myvol_t = awful.tooltip {
     objects             = { myvol },
-    delay_show          = 2,
+    delay_show          = 1,
     mode                = "outside",
     preferred_positions = "top",
     timer_function = function()
