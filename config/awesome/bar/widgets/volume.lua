@@ -9,7 +9,7 @@ myvol = wibox.widget.textbox()
 vicious.register(myvol, vicious.widgets.volume,
     function (widget, args)
         local label = { ["🔉"] = "墳", ["🔈"] = "奄" }
-        return ("<span font=\"" .. beautiful.icon_font .. "\" color=\"" .. beautiful.bg_normal .. "\"> %s %d%% </span>"):format(
+        return ("<span font=\"" .. beautiful.icon_font .. "\" color=\"" .. beautiful.bg_normal .. "\">%s %d%%</span>"):format(
             label[args[2]], args[1])
     end, 1, "Master")
 
