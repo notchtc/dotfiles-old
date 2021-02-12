@@ -117,13 +117,13 @@ globalkeys = gears.table.join(
               {description = "toggle mute", group = "misc"}),
 
     -- Media Keys
-    awful.key({}, "XF86AudioPlay", function() awful.util.spawn("mpc toggle", false) end,
+    awful.key({}, "XF86AudioPlay", function() awful.util.spawn("playerctl play-pause", false) end,
               {description = "play/pause", group = "misc"}),
 
-    awful.key({}, "XF86AudioNext", function() awful.util.spawn("mpc next", false) end,
+    awful.key({}, "XF86AudioNext", function() awful.util.spawn("playerctl next", false) end,
               {description = "go to next track", group = "misc"}),
 
-    awful.key({}, "XF86AudioPrev", function() awful.util.spawn("mpc prev", false) end,
+    awful.key({}, "XF86AudioPrev", function() awful.util.spawn("playerctl previous", false) end,
               {description = "go to previous track", group = "misc"}),
 
 

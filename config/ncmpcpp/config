@@ -61,8 +61,6 @@ use_console_editor = yes
 
 message_delay_time = 1
 
-execute_on_song_change = notify-send "Now Playing" "$(mpc --format '%title%\n%artist% - %album%' current)"
-
 header_visibility = no
 titles_visibility = no
 

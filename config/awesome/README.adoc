@@ -33,8 +33,8 @@ You can change these things by editing the appropiate things in the config.
 |Maim
 |Take screenshots
 
-|Mpc
-|Control mpd
+|Playerctl
+|Control media players
 
 |Ncmpcppfootnote:change[]
 |Music player to open
