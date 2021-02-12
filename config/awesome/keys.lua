@@ -138,10 +138,10 @@ globalkeys = gears.table.join(
     awful.key({ modkey, "Mod1" }, "m", function() awful.util.spawn(terminal .. " -t music -e " .. music, false) end,
               {description = "open music player", group = "misc"}),
 
-    awful.key({ modkey, "Mod1" }, "b", function() awful.util.spawn_with_shell(browser, false) end,
+    awful.key({ modkey, "Mod1" }, "b", function() awful.util.spawn(browser, false) end,
               {description = "open web browser", group = "misc"}),
 
-    awful.key({ modkey, "Mod1" }, "r", function() awful.util.spawn_with_shell(terminal .. " -t rss -e " .. rss, false) end,
+    awful.key({ modkey, "Mod1" }, "r", function() awful.util.spawn(terminal .. " -t rss -e " .. rss, false) end,
               {description = "open rss reader", group = "misc"})
 )
 
