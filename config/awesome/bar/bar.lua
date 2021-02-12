@@ -56,17 +56,17 @@ awful.screen.connect_for_each_screen(function(s)
         { -- Left widgets
             layout = wibox.layout.fixed.horizontal,
             s.mytaglist,
-            wrap_margin(s.mypromptbox, 2, 3),
+            wrap_margin(s.mypromptbox, 3, 3),
         },
         s.mytasklist,
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
-            wrap_margin(s.myminimizedlist, 2, 3),
-            wrap_bg(wrap_margin(myvol, 5, 10), beautiful.color6),
-            wrap_bg(wrap_margin(mybat, 10, 10), beautiful.color6),
-            wrap_bg(wrap_margin(mytextclock, 10, 5), beautiful.color6),
+            wrap_margin(s.myminimizedlist, 3, 3),
+            wrap_bg(wrap_margin(myvol, 6, 6), beautiful.color6),
+            wrap_bg(wrap_margin(mybat, 6, 6), beautiful.color6),
+            wrap_bg(wrap_margin(mytextclock, 6, 6), beautiful.color6),
             wibox.widget.systray(),
-            wrap_margin(s.mylayoutbox, 5, 0),
+            wrap_margin(s.mylayoutbox, 6, 0),
             mylauncher
         }
     }
