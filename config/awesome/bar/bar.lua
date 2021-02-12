@@ -61,7 +61,7 @@ awful.screen.connect_for_each_screen(function(s)
         s.mytasklist,
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
-            wrap_margin(s.myminimizedlist, 3, 3),
+            wrap_margin(s.myminimizedlist, 2, 3),
             wrap_bg(wrap_margin(myvol, 5, 10), beautiful.color6),
             wrap_bg(wrap_margin(mybat, 10, 10), beautiful.color6),
             wrap_bg(wrap_margin(mytextclock, 10, 5), beautiful.color6),
