@@ -1,11 +1,4 @@
-# Install fisher, if it isn't
-if not functions -q fisher
-    set -q XDG_CONFIG_HOME; or set XDG_CONFIG_HOME ~/.config
-    curl https://git.io/fisher --create-dirs -sLo $XDG_CONFIG_HOME/fish/functions/fisher.fish
-    fish -c fisher
-end
-
-# EXPORTS{{{
+# EXPORTS
 # XDG
 set -x XDG_DATA_HOME "$HOME/.local/share"
 set -x XDG_CACHE_HOME "$HOME/.cache"
@@ -36,51 +29,36 @@ contains $GEM_HOME/ruby/2.7.0/bin $fish_user_paths; or set -Ua fish_user_paths $
 # Set fzf default options
 set -x FZF_DEFAULT_OPTS -m --color "16" --border sharp --preview-window sharp:wrap --layout=reverse-list --info inline
 
-# Don't show notification for specific apps (done plugin)
-set -U __done_exclude 'nvim|sxiv|mpv|ncmpcpp|zathura'
-#}}}
-
-# COLORS{{{
-# Lucid prompt{{{
-set -g lucid_cwd_color brcyan
-set -g lucid_git_color cyan
-#}}}
-
-# Colorscheme{{{
-set -g fish_color_normal white
-set -g fish_color_command brgreen
-set -g fish_color_quote cyan
-set -g fish_color_redirection brcyan
-set -g fish_color_end green
-set -g fish_color_error brred
-set -g fish_color_param brcyan
-set -g fish_color_selection brgray --bold --background=grey
-set -g fish_color_search_match brgreen --background=grey
-set -g fish_color_history_current --bold
-set -g fish_color_operator brcyan
-set -g fish_color_escape brcyan
-set -g fish_color_cwd brgreen
-set -g fish_color_cwd_root red
-set -g fish_color_valid_path --underline
-set -g fish_color_autosuggestion grey
-set -g fish_color_user brgreen
-set -g fish_color_host white
-set -g fish_color_cancel -r
-set -g fish_pager_color_completion white
-set -g fish_pager_color_description green
-set -g fish_pager_color_prefix brgray --bold --underline
-set -g fish_pager_color_progress white --background=cyan
-set -g fish_color_match --background=brgreen
-set -g fish_color_comment grey
-#}}}
-#}}}
-
-# OTHER{{{
-# Vi keybindings
-fish_vi_key_bindings
-
 # Disable greeting
 set -U fish_greeting
-#}}}
 
-# vim: set foldmethod=marker:
+# OTHER
+# Colorscheme
+set fish_color_normal white
+set fish_color_command brgreen
+set fish_color_quote cyan
+set fish_color_redirection brcyan
+set fish_color_end green
+set fish_color_error brred
+set fish_color_param brcyan
+set fish_color_selection brgray --bold --background=grey
+set fish_color_search_match brgreen --background=grey
+set fish_color_history_current --bold
+set fish_color_operator brcyan
+set fish_color_escape brcyan
+set fish_color_cwd brgreen
+set fish_color_cwd_root red
+set fish_color_valid_path --underline
+set fish_color_autosuggestion grey
+set fish_color_user brgreen
+set fish_color_host white
+set fish_color_cancel -r
+set fish_pager_color_completion white
+set fish_pager_color_description green
+set fish_pager_color_prefix brgray --bold --underline
+set fish_pager_color_progress white --background=cyan
+set fish_color_match --background=brgreen
+set fish_color_comment grey
+
+# Vi mode
+fish_vi_key_bindings

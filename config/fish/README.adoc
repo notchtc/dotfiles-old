@@ -25,9 +25,6 @@ image::../../images/fish.png[Screenshot of fish prompt]
 |se
 |Launch editor with sudo (nvim)
 
-|fzf
-|Show fzf with sharp border, top-down layout, inline info and terminal colorscheme
-
 |ls
 |Use https://github.com/ogham/exa[exa] instead of ls
 
@@ -76,23 +73,17 @@ image::../../images/fish.png[Screenshot of fish prompt]
 |xrf
 |View and remove installed packages (fzf, xbps)
 
-|yi
-|View and install packages (fzf, paru)
-
-|yr
-|View and remove installed packages (fzf, paru)
-
 |===
 
 == Features??
 Things that it does.
 
-* Adds $HOME/.local/bin to PATH
+* Adds $HOME/.local/bin and $GEM_HOME/ruby/2.7.0/bin to PATH
 * Applications
-** Sets BROWSER to firefox or librewolf
+** Sets BROWSER to firefox
 ** Sets EDITOR to nvim
 ** Sets VISUAL to EDITOR
-** Sets SXHKD_SHELL to sh
+** Sets PAGER to less
 ** Sets TERM to alacritty
 * Cleaning up the home directory
 ** Disables .lesshst
@@ -101,14 +92,12 @@ Things that it does.
 ** Moves .gitconfig to $XDG_CONFIG_HOME/git/config
 ** Moves .gtkrc-2.0 to $XDG_CONFIG_HOME/gtk-2.0/gtkrc
 ** Moves inputrc to $XDG_CONFIG_HOME/readline/input
-** Moves .Xauthority to $XDG_RUNTIME_DIR
 ** XDG
 *** Sets XDG_CACHE_HOME to $HOME/.cache
 *** Sets XDG_CONFIG_HOME to $HOME/.config
 *** Sets XDG_DATA_HOME to $HOME/.local/share
+* Sets some fzf settings
 * Disable fish greeting
 * Fish colorscheme made to use terminal colors that fits with the rice
-* https://github.com/Ch40t1c/lucid.fish[Modified] https://github.com/mattgreen/lucid.fish[lucid] prompt
 * Vi keybindings
 * Start X at login
-* Nice notification when something is https://github.com/franciscolourenco/done[done]
