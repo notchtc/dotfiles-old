@@ -13,21 +13,21 @@ image:../../images/awesome_idle.png[Idle screenshot of awesome]
 image:../../images/awesome_busy.png[Busy screenshot of awesome]
 
 == Dependencies
-You can change these things by editing the appropiate things in the config.
+You probably want to change these.
 
 |===
 |Dependency|Why?
 
-|Alacrittyfootnote:change["You probably want to change this."]
+|Alacritty
 |Terminal
 
-|Alsamixerfootnote:change[]
+|Pavucontrol
 |Mixer to open
 
-|Amixer
-|Change volume
+|Alsa-utils
+|Change volume/make volume widget work
 
-|Firefoxfootnote:change[]
+|Firefox
 |Browser to open
 
 |Maim
@@ -36,10 +36,10 @@ You can change these things by editing the appropiate things in the config.
 |Playerctl
 |Control media players
 
-|Ncmpcppfootnote:change[]
+|Ncmpcpp
 |Music player to open
 
-|Newsboatfootnote:change[]
+|Newsboat
 |RSS reader to open
 
 |Viciousfootnote:["Will be installed when cloning repo with --recurse-submodules"]

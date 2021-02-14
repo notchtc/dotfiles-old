@@ -15,7 +15,7 @@ vicious.register(myvol, vicious.widgets.volume,
 
 myvol:buttons(gears.table.join(
     awful.button({}, 3, nil, function ()
-        awful.spawn.with_shell(terminal .. " -e alsamixer")
+        awful.spawn("pavucontrol")
     end),
     awful.button({}, 1, nil, function ()
         awful.spawn.with_shell("amixer sset Master toggle")
