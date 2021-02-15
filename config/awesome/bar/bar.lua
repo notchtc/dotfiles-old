@@ -58,7 +58,7 @@ awful.screen.connect_for_each_screen(function(s)
             s.mytaglist,
             wrap_margin(s.mypromptbox, 3, 3),
         },
-        s.mytasklist,
+        s.myfocusedwindow,
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
             wrap_margin(s.myminimizedlist, 3, 3),

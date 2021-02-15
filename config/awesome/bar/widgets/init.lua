@@ -1,6 +1,5 @@
 require("bar/widgets/taglist")
 require("bar/widgets/tasklist")
-require("bar/widgets/minimizedlist")
 require("bar/widgets/promptbox")
 require("bar/widgets/volume")
 require("bar/widgets/battery")

@@ -34,7 +34,7 @@ You probably want to change these.
 |Take screenshots
 
 |Playerctl
-|Control media players
+|Control media playersfootnote:["If you use mpd you either want to install mpDris2 or replace this with mpc"]
 
 |Ncmpcpp
 |Music player to open
