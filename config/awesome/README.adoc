@@ -11,6 +11,7 @@ link:../../images/wallpaper.png[Wallpaper]
 == Screenshots
 image:../../images/awesome_idle.png[Idle screenshot of awesome]
 image:../../images/awesome_busy.png[Busy screenshot of awesome]
+image:../../images/awesome_minimized.png[Busy screenshot of awesome with one window minimized]
 
 == Dependencies
 You probably want to change these.
