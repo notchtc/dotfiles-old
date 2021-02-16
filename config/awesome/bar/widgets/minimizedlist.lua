@@ -25,11 +25,6 @@ local tasklist_buttons = gears.table.join(
                                           end))
 
 awful.screen.connect_for_each_screen(function(s)
-    s.myfocusedwindow = awful.widget.tasklist {
-        screen  = s,
-        filter  = awful.widget.tasklist.filter.focused,
-        buttons = tasklist_buttons
-    }
 
    s.myminimizedlist = awful.widget.tasklist {
         screen   = s,
