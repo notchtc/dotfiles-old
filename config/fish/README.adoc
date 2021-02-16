@@ -1,6 +1,6 @@
 = https://fishshell.com[fish]
 cha0t1c <notnotcha0t1c@protonmail.com>
-1.0, {docdate}
+{docdate}
 :toc:
 
 My personal fish config that doesn't look too crazy and doesn't have thousands of things.
@@ -100,4 +100,3 @@ Things that it does.
 * Disable fish greeting
 * Fish colorscheme made to use terminal colors that fits with the rice
 * Vi keybindings
-* Start X at login

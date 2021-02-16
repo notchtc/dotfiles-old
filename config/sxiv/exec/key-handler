@@ -3,7 +3,7 @@ while read file
 do
     case "$1" in
     "C-d")
-        rm "$file" ;;
+        trash-put "$file" ;;
     "C-w")
         cp "$file" "$XDG_CACHE_HOME/wall.png" ;;
     esac

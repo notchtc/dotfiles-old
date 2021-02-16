@@ -1,6 +1,6 @@
 = link:awesomewm.org[awesome]
 cha0t1c <notnotcha0t1c@protonmail.com>
-1.0, {docdate}
+{docdate}
 :toc:
 :experimental:
 
@@ -60,5 +60,5 @@ image:../../images/awesome_keybindings.png[Awesome keybindings]
 ** Scroll up to raise volume
 ** Scroll down to lower volume
 
-= Other
+== Other
 If poweroff and reboot isn't working, do https://gitlab.com/-/snippets/2042640[this].
