@@ -16,6 +16,8 @@ function fish_prompt
             case "visual"
                 set_color yellow
             case "replace"
+                set_color brblue
+            case "replace_one"
                 set_color blue
         end
     end
