@@ -14,7 +14,7 @@ image::../../images/fish.png[Screenshot of fish prompt]
 |===
 |Functions|What it does
 |adoc-pdf
-|Turns adoc file into a pdf and reads it with zathura
+|View an asciidoc file as a pdf (asciidoctor-pdf, zathura)
 
 |cat
 |Run https://github.com/sharkdp/bat[bat] instead of cat
