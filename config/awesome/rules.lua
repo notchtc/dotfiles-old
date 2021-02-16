@@ -24,34 +24,34 @@ awful.rules.rules = {
         },
         class = {
           "Sxiv",
-          "KeePassXC",
-          "OTPClient",
           "Steam"
         },
         -- Note that the name property shown in xprop might be set slightly after creation of the client
         -- and the name shown there might not match defined rules here.
         name = {
           "Event Tester",  -- xev.
-          "GIMP Startup",
-          "OTPClient"
+          "GIMP Startup"
         },
         role = {
           "pop-up"       -- e.g. Google Chrome's (detached) Developer Tools
         }
-      }, properties = { floating = true }},
+      }, properties = { floating = true } },
 
-    { rule_any = { class = { "LibreWolf", "Firefox" }},
-    properties = { tag = awful.screen.focused().tags[1] }},
+    { rule_any = { class = { "KeePassXC", "OTPClient"} },
+    properties = { floating = true, ontop = true } },
+
+    { rule_any = { class = { "LibreWolf", "Firefox" } },
+    properties = { tag = awful.screen.focused().tags[1] } },
 
     { rule = { class = "Alacritty" },
-    properties = { tag = awful.screen.focused().tags[2] }},
+    properties = { tag = awful.screen.focused().tags[2] } },
 
     { rule_any = { class = { "Gimp", "kdenlive" } },
-    properties = { tag = awful.screen.focused().tags[3], maximized = true }},
+    properties = { tag = awful.screen.focused().tags[3], maximized = true } },
 
     { rule_any = { class = "mpv", name = { "music", "rss" }  },
-    properties = { tag = awful.screen.focused().tags[4], switchtotag = true }},
+    properties = { tag = awful.screen.focused().tags[4], switchtotag = true } },
 
     { rule = { class = "discord" },
-    properties = { tag = awful.screen.focused().tags[5] }}
+    properties = { tag = awful.screen.focused().tags[5] } }
 }
