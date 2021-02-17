@@ -29,8 +29,7 @@ awful.rules.rules = {
         -- Note that the name property shown in xprop might be set slightly after creation of the client
         -- and the name shown there might not match defined rules here.
         name = {
-          "Event Tester",  -- xev.
-          "GIMP Startup"
+          "Event Tester"  -- xev.
         },
         role = {
           "pop-up"       -- e.g. Google Chrome's (detached) Developer Tools
@@ -40,7 +39,7 @@ awful.rules.rules = {
     { rule_any = { class = { "KeePassXC", "OTPClient", "Pavucontrol" } },
     properties = { floating = true, ontop = true } },
 
-    { rule_any = { class = { "LibreWolf", "Firefox" } },
+    { rule = { class = "Firefox" },
     properties = { tag = awful.screen.focused().tags[1] } },
 
     { rule = { class = "Alacritty" },
