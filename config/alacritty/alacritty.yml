@@ -2,6 +2,7 @@
 font:
         normal:
                 family: Hack
+                style: Regular
 
         # Point size
         size: 10

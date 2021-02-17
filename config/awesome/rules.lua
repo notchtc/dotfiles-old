@@ -37,7 +37,7 @@ awful.rules.rules = {
         }
       }, properties = { floating = true } },
 
-    { rule_any = { class = { "KeePassXC", "OTPClient"} },
+    { rule_any = { class = { "KeePassXC", "OTPClient", "Pavucontrol" } },
     properties = { floating = true, ontop = true } },
 
     { rule_any = { class = { "LibreWolf", "Firefox" } },
