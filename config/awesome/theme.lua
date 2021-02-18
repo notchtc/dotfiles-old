@@ -12,7 +12,7 @@ local theme = dofile(themes_path.."default/theme.lua")
 -- load vector assets' generators for this theme
 
 theme.font          = "Hack 10"
-theme.icon_font     = "Hack Nerd Font 11"
+theme.icon_font     = "Hack Nerd Font 10"
 theme.taglist_font  = "Hack Nerd Font Mono 10"
 
 theme.color0  = xrdb.color0  or "#282828"
