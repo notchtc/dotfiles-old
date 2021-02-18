@@ -39,6 +39,14 @@ function wrap_bg(widget, bg_color)
   }
 end
 
+function wrap_constraint(widget, w)
+  return wibox.widget {
+    widget,
+    width = w,
+    widget = wibox.container.constraint
+  }
+end
+
 awful.screen.connect_for_each_screen(function(s)
     -- Wallpaper
     set_wallpaper(s)
@@ -77,14 +85,15 @@ awful.screen.connect_for_each_screen(function(s)
         },
         {
             layout = wibox.layout.fixed.horizontal,
-            wrap_margin(s.myfocusedwindow, 3, 3)
+            wrap_constraint(wrap_margin(s.myfocusedwindow, 3, 3), 400)
         },
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
-            wrap_margin(s.myminimizedlist, 3, 6),
-            wrap_bg(wrap_margin(myvol, 6, 6), beautiful.color6),
-            wrap_bg(wrap_margin(mybat, 6, 6), beautiful.color6),
-            wrap_bg(wrap_margin(mytextclock, 6, 6), beautiful.color6),
+            wrap_constraint(wrap_margin(s.myminimizedlist, 3, 6), 100),
+            wrap_constraint(wrap_margin(wrap_bg(wrap_margin(mympd, 6, 6), beautiful.color6), 0, 6), 500),
+            wrap_bg(wrap_margin(myvol, 6, 6), beautiful.color14),
+            wrap_bg(wrap_margin(mybat, 6, 6), beautiful.color14),
+            wrap_bg(wrap_margin(mytextclock, 6, 6), beautiful.color14),
             wibox.widget.systray(),
             wrap_margin(s.mylayoutbox, 6, 0),
             mylauncher

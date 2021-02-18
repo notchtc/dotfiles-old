@@ -33,15 +33,11 @@ awful.screen.connect_for_each_screen(function(s)
        buttons = tasklist_buttons,
        widget_template = {
             {
-                {
-                    {id = 'text_role', widget = wibox.widget.textbox},
-                    layout = wibox.layout.flex.horizontal
-                },
-                id = 'background_role',
-                widget = wibox.container.background
+                {id = 'text_role', widget = wibox.widget.textbox},
+                layout = wibox.layout.flex.horizontal
             },
-            widget = wibox.container.constraint,
-            width = beautiful.xresources.apply_dpi(350)
+            id = 'background_role',
+            widget = wibox.container.background
        }
    }
 
@@ -62,21 +58,17 @@ awful.screen.connect_for_each_screen(function(s)
             {
                 {
                     {
-                        {
-                            id     = "text_role",
-                            widget = wibox.widget.textbox
-                        },
-                        layout = wibox.layout.fixed.horizontal
+                        id     = "text_role",
+                        widget = wibox.widget.textbox
                     },
-                    left = 3,
-                    right = 3,
-                    widget = wibox.container.margin
+                    layout = wibox.layout.fixed.horizontal
                 },
-                id     = "background_role",
-                widget = wibox.container.background
+                left = 3,
+                right = 3,
+                widget = wibox.container.margin
             },
-            widget = wibox.container.constraint,
-            width = beautiful.xresources.apply_dpi(100)
+            id     = "background_role",
+            widget = wibox.container.background
         },
     }
 end)

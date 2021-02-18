@@ -36,7 +36,7 @@ theme.bg_normal     = theme.color0
 theme.bg_focus      = theme.color10
 theme.bg_urgent     = theme.color9
 theme.bg_minimize   = theme.color2
-theme.bg_systray    = theme.bg_normal
+theme.bg_systray    = theme.color15
 
 theme.fg_normal     = theme.color15
 theme.fg_focus      = theme.bg_normal
@@ -75,7 +75,6 @@ theme.tasklist_fg_focus = theme.fg_normal
 
 theme.notification_icon_size = dpi(50)
 
-theme.bg_systray = theme.color6
 theme.systray_icon_spacing = 2
 
 theme.wibar_height = dpi(20)
