@@ -21,7 +21,7 @@ end
 screen.connect_signal("property::geometry", set_wallpaper)
 
 -- Function to wrap margins around widgets
-function wrap_margin(widget, l, r)
+function widget_margin(widget, l, r)
   return wibox.widget {
     widget,
     left = l,
@@ -31,7 +31,7 @@ function wrap_margin(widget, l, r)
 end
 
 -- Function to add backgrounds to widgets
-function wrap_bg(widget, bg_color)
+function widget_bg(widget, bg_color)
   return wibox.widget {
     widget,
     bg = bg_color,
@@ -40,7 +40,8 @@ function wrap_bg(widget, bg_color)
   }
 end
 
-function wrap_constraint(widget, w)
+-- Function to make some widget have a forced size
+function widget_constraint(widget, w)
   return wibox.widget {
     widget,
     width = w,
@@ -82,21 +83,21 @@ awful.screen.connect_for_each_screen(function(s)
         { -- Left widgets
             layout = wibox.layout.fixed.horizontal,
             s.mytaglist,
-            wrap_margin(s.mypromptbox, 3, 0),
+            widget_margin(s.mypromptbox, 3, 0),
         },
         {
             layout = wibox.layout.fixed.horizontal,
-            wrap_margin(wrap_constraint(s.myfocusedwindow, dpi(300)), 3, 3),
-            wrap_margin(wrap_constraint(s.myminimizedlist, dpi(500)), 3, 6)
+            widget_margin(widget_constraint(s.myfocusedwindow, dpi(300)), 3, 3),
+            widget_margin(widget_constraint(s.myminimizedlist, dpi(500)), 0, 0)
         },
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
-            wrap_margin(wrap_constraint(mympd, dpi(350)), 0, 6),
-            wrap_bg(wrap_margin(myvol, 6, 6), beautiful.color6),
-            wrap_bg(wrap_margin(mybat, 6, 6), beautiful.color6),
-            wrap_bg(wrap_margin(mytextclock, 6, 6), beautiful.color6),
+            widget_margin(mympd, 6, 2),
+            widget_bg(widget_margin(myvol, 6, 6), beautiful.color6),
+            widget_bg(widget_margin(mybat, 6, 6), beautiful.color6),
+            widget_bg(widget_margin(mytextclock, 6, 6), beautiful.color6),
             wibox.widget.systray(),
-            wrap_margin(s.mylayoutbox, 6, 0),
+            widget_margin(s.mylayoutbox, 6, 0),
             mylauncher
         }
     }

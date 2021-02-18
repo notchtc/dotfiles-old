@@ -85,7 +85,7 @@ theme.wibar_height = dpi(20)
 -- menu_[bg|fg]_[normal|focus]
 -- menu_[border_color|border_width]
 theme.menu_submenu_icon = themes_path.."default/submenu.png"
-theme.menu_height = dpi(16)
+theme.menu_height = dpi(15)
 theme.menu_width  = dpi(100)
 
 -- Recolor Layout icons:
@@ -97,7 +97,7 @@ theme.icon_theme = nil
 
 -- Generate Awesome icon:
 theme.awesome_icon = theme_assets.awesome_icon(
-    20, theme.bg_focus, theme.bg_normal
+    theme.wibar_height, theme.bg_focus, theme.bg_normal
 )
 
 local taglist_square_size = dpi(0)
