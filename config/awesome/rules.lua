@@ -26,7 +26,6 @@ awful.rules.rules = {
           "Sxiv",
           "Steam",
           "KeePassXC",
-          "OTPClient",
           "Pavucontrol"
         },
         -- Note that the name property shown in xprop might be set slightly after creation of the client
@@ -39,7 +38,7 @@ awful.rules.rules = {
         }
       }, properties = { floating = true } },
 
-    { rule_any = { class = { "KeePassXC", "OTPClient", "Pavucontrol" } },
+    { rule_any = { class = { "KeePassXC", "Pavucontrol" } },
     properties = { ontop = true } },
 
     { rule = { class = "Firefox" },
