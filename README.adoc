@@ -5,8 +5,6 @@ Cha0t1c <notnotcha0t1c@protonmail.com>
 
 WARNING: You probably _will_ and *must* change something in my dotfiles, I recommend looking through these dotfiles and changing things to fit your setup, if you want to use this.
 
-IMPORTANT: You will probably get a quicker response on GitLab than GitHub.
-
 These are my horrible dotfiles.
 
 == Contains
