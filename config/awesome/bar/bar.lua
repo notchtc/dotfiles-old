@@ -87,8 +87,8 @@ awful.screen.connect_for_each_screen(function(s)
         },
         {
             layout = wibox.layout.fixed.horizontal,
-            widget_margin(widget_constraint(s.myfocusedwindow, dpi(300)), 3, 3),
-            widget_margin(widget_constraint(s.myminimizedlist, dpi(500)), 0, 0)
+            widget_margin(widget_constraint(s.myfocusedwindow, dpi(500)), 3, 3),
+            widget_margin(widget_constraint(s.myminimizedlist, dpi(450)), 0, 0)
         },
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
