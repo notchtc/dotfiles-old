@@ -41,7 +41,7 @@ awful.screen.connect_for_each_screen(function(s)
        }
    }
 
-   s.myminimizedlist = awful.widget.tasklist {
+    s.myminimizedlist = awful.widget.tasklist {
         screen   = s,
         filter   = awful.widget.tasklist.filter.minimizedcurrenttags,
         buttons  = tasklist_buttons,
@@ -71,4 +71,5 @@ awful.screen.connect_for_each_screen(function(s)
             widget = wibox.container.background
         },
     }
+
 end)

@@ -2,6 +2,7 @@ local gears = require("gears")
 local awful = require("awful")
 local wibox = require("wibox")
 local beautiful = require("beautiful")
+local dpi = beautiful.xresources.apply_dpi
 require("bar/widgets")
 
 local function set_wallpaper(s)
@@ -85,12 +86,12 @@ awful.screen.connect_for_each_screen(function(s)
         },
         {
             layout = wibox.layout.fixed.horizontal,
-            wrap_constraint(wrap_margin(s.myfocusedwindow, 3, 3), 400)
+            wrap_margin(wrap_constraint(s.myfocusedwindow, dpi(300)), 3, 3),
+            wrap_margin(wrap_constraint(s.myminimizedlist, dpi(500)), 3, 6)
         },
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
-            wrap_margin(wrap_constraint(s.myminimizedlist, 300), 3, 6),
-            wrap_margin(wrap_constraint(mympd, 350), 0, 6),
+            wrap_margin(wrap_constraint(mympd, dpi(350)), 0, 6),
             wrap_bg(wrap_margin(myvol, 6, 6), beautiful.color6),
             wrap_bg(wrap_margin(mybat, 6, 6), beautiful.color6),
             wrap_bg(wrap_margin(mytextclock, 6, 6), beautiful.color6),

@@ -72,6 +72,8 @@ theme.taglist_fg_occupied = theme.bg_normal
 theme.tasklist_disable_icon = true
 theme.tasklist_bg_focus = theme.bg_normal
 theme.tasklist_fg_focus = theme.fg_normal
+theme.tasklist_bg_minimize = theme.bg_normal
+theme.tasklist_fg_minimize = theme.color8
 
 theme.notification_icon_size = dpi(50)
 
