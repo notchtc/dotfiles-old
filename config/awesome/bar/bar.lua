@@ -92,7 +92,6 @@ awful.screen.connect_for_each_screen(function(s)
         },
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
-            widget_margin(mympd, 6, 2),
             widget_bg(widget_margin(myvol, 6, 6), beautiful.color6),
             widget_bg(widget_margin(mybat, 6, 6), beautiful.color6),
             widget_bg(widget_margin(mytextclock, 6, 6), beautiful.color6),
