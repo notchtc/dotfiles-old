@@ -71,8 +71,22 @@ awful.screen.connect_for_each_screen(function(s)
         screen = s
     })
 
-    -- Each screen has its own tag table.
-    awful.tag({ "", "", "6", "7", "8", "9" }, s, awful.layout.layouts[1])
+    awful.tag.add("", {
+        layout            = awful.layout.suit.tile.right,
+        gap_single_client = false,
+        screen            = s
+    })
+
+    awful.tag.add("5", {
+        layout            = awful.layout.suit.tile.right,
+        gap_sincle_client = false,
+        screen            = s
+    })
+
+    awful.tag.add("6", {
+        layout = awful.layout.floating,
+        screen = s
+    })
 
     -- Create the wibox
     s.mywibox = awful.wibar({ position = "bottom", screen = s })
