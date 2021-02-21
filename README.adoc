@@ -7,6 +7,8 @@ WARNING: You probably _will_ and *must* change something in my dotfiles, I recom
 
 These are my horrible dotfiles.
 
+IMPORTANT: Screenshots may noy always be up to date, but still very close to how things look.
+
 == Contains
 
 * link:config/alacritty/[alacritty] (terminal)
