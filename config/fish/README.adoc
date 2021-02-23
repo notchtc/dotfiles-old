@@ -16,9 +16,6 @@ image::../../images/fish.png[Screenshot of fish prompt]
 |adoc-pdf
 |View an asciidoc file as a pdf (asciidoctor-pdf, zathura)
 
-|cat
-|Run https://github.com/sharkdp/bat[bat] instead of cat
-
 |e
 |Launch editor (nvim)
 
