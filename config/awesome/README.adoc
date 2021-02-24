@@ -15,6 +15,7 @@ image:../../images/awesome_minimized.png[Busy screenshot of awesome with one win
 
 == Dependencies
 You probably want to change these.
+There are also somethings launched in autostart.lua so you may want to remove some of them or remove the file completelyfootnote:["If you are removing the file remember to also remove the require in rc.lua"] or change something.
 
 |===
 |Dependency|Why?
