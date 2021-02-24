@@ -19,6 +19,8 @@ require("vars")
 require("rules")
 -- Wibar
 require("bar")
+-- Autostart
+require("autostart")
 
 -- ERROR HANDLING --
 -- Check if awesome encountered an error during startup and fell back to
