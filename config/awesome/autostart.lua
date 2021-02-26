@@ -1,5 +1,6 @@
 local awful = require("awful")
 local gears = require("gears")
+local naughty = require("naughty")
 
 local function run_once(cmd)
     local findme = cmd
@@ -7,7 +8,7 @@ local function run_once(cmd)
     if firstspace then findme = cmd:sub(0, firstspace - 1) end
     awful.spawn.easy_async_with_shell(string.format(
                                           'sh -c "pgrep -u $USER -x %s > /dev/null || (%s)"',
-                                          findme, cmd))
+                                          findme, cmd), function() end)
 end
 
 run_once("xrdb -merge $HOME/.Xresources")
