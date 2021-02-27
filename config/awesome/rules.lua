@@ -53,6 +53,6 @@ awful.rules.rules = {
     { rule_any = { class = "mpv", name = { "music", "rss" }  },
     properties = { tag = awful.screen.focused().tags[4] } },
 
-    { rule = { class = "discord" },
+    { rule = { class = "TelegramDesktop" },
     properties = { tag = awful.screen.focused().tags[5] } }
 }
