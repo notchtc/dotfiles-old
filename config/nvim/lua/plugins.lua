@@ -62,9 +62,13 @@ return require('packer').startup(function()
         'hoob3rt/lualine.nvim',
         config = function()
             local lualine = require('lualine')
+            lualine.options = {
+                theme = 'gruvbox',
+                section_separators = nil,
+                component_separators = '|',
+                icons_enabled = false
+            }
             lualine.status()
-            lualine.theme = 'gruvbox'
-            lualine.separator = '|'
     end
     }
     -- }}}

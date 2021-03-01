@@ -1,9 +1,7 @@
 -- Theme based on the xresources theme
 
 local theme_assets = require("beautiful.theme_assets")
-local xresources = require("beautiful.xresources")
-local dpi = xresources.apply_dpi
-local xrdb = xresources.get_current_theme()
+local xresources = require("beautiful.xresources") local dpi = xresources.apply_dpi local xrdb = xresources.get_current_theme()
 local gfs = require("gears.filesystem")
 local themes_path = gfs.get_themes_dir()
 
@@ -78,6 +76,9 @@ theme.tasklist_fg_minimize = theme.color8
 theme.notification_icon_size = dpi(50)
 
 theme.systray_icon_spacing = 2
+
+theme.hotkeys_border_color = theme.color8
+theme.hotkeys_group_margin = dpi(10)
 
 theme.wibar_height = dpi(20)
 
