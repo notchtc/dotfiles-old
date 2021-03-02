@@ -54,5 +54,8 @@ awful.rules.rules = {
     properties = { tag = awful.screen.focused().tags[4] } },
 
     { rule = { class = "TelegramDesktop" },
-    properties = { tag = awful.screen.focused().tags[5] } }
+    properties = { tag = awful.screen.focused().tags[5] } },
+
+    { rule_any = { class = { "hl2_linux", "openmw" } },
+    properties = { fullscreen = true } }
 }
