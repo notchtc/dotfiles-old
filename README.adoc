@@ -17,11 +17,13 @@ IMPORTANT: Screenshots may noy always be up to date, but still very close to how
 * link:config/mpd/[mpd] (music daemon)
 * link:config/ncmpcpp[ncmpcpp] (music player)
 * link:config/nvim/[nvim] (text editor)
+* link:config/rofi/[rofi] (window switcher, application launcher, dmenu replacement)
 * link:config/sxiv/exec/[sxiv] (image viewer)
 * link:config/user-dirs.dirs[xdg dirs] (some directory thingy)
 * link:xinitrc[xinitrc] (launch the window manager and some programs)
 * link:Xresources[xresources] (i only set colors in this)
 * link:config/zathura/[zathura] (pdf reader)
+* link:local/bin/[scripts]
 
 == Install
 Want to use everything? This is how you install this.

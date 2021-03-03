@@ -1,0 +1,6 @@
+= https://github.com/davatorium/rofi[rofi]
+cha0t1c <notnotcha0t1c@protonmail.com>
+{docdate}
+
+== Screenshot
+image:../../images/rofi.png[Screenshot of rofi]

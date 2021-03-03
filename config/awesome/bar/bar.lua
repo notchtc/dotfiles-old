@@ -96,8 +96,7 @@ awful.screen.connect_for_each_screen(function(s)
         layout = wibox.layout.align.horizontal,
         { -- Left widgets
             layout = wibox.layout.fixed.horizontal,
-            s.mytaglist,
-            widget_margin(s.mypromptbox, 3, 0),
+            widget_margin(s.mytaglist, 0, 3)
         },
         {
             layout = wibox.layout.fixed.horizontal,

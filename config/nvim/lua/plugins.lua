@@ -131,6 +131,8 @@ return require('packer').startup(function()
         end
     }
     -- }}}
+
+    use 'dgraham/vim-eslint'
 end)
 
 -- vim: set foldmethod=marker:
