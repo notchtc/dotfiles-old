@@ -23,8 +23,8 @@ set -x TERM alacritty
 set -x GPG_TTY (tty)
 
 # Set path
-contains $HOME/.local/bin $fish_user_paths; or set -Ua fish_user_paths $HOME/.local/bin
-contains $GEM_HOME/bin $fish_user_paths; or set -Ua fish_user_paths $GEM_HOME/bin
+fish_add_path $HOME/.local/bin
+fish_add_path $GEM_HOME/bin
 
 # Set fzf default options
 set -x FZF_DEFAULT_OPTS -m --color "16" --border sharp --preview-window sharp:wrap --layout=reverse-list --info inline

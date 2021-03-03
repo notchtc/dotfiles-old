@@ -1,7 +1,4 @@
 # Suppress default mode prompt
-function fish_mode_prompt
-end
-
 function fish_prompt
     set_color brcyan
     echo -n (prompt_pwd)
