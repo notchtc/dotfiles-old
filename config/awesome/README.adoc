@@ -20,6 +20,9 @@ There are also somethings launched in autostart.lua so you may want to remove so
 |===
 |Dependency|Why?
 
+|link:../../local/bin/ask[Ask]
+|Asking if you want to shutdown/reboot
+
 |Alacritty
 |Terminal
 
@@ -43,6 +46,9 @@ There are also somethings launched in autostart.lua so you may want to remove so
 
 |Newsboat
 |RSS reader to open
+
+|Rofi
+|Application launcher (and also a dmenu replacement and window switcher)
 
 |Viciousfootnote:["Will be installed when cloning repo with --recurse-submodules"]
 |More widgets! (I'm too stupid and lazy to make my own)
