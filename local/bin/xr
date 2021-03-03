@@ -1,0 +1,4 @@
+#!/bin/sh
+# Remove packages
+
+sudo xbps-remove -R $@

@@ -10,11 +10,9 @@ NOTE: Feel free to change/remove things.
 == Screenshots
 image::../../images/fish.png[Screenshot of fish prompt]
 
-== Functions
+== Aliases
 |===
-|Functions|What it does
-|adoc-pdf
-|View an asciidoc file as a pdf (asciidoctor-pdf, zathura)
+|Name|What it does
 
 |e
 |Launch editor (nvim)
@@ -34,9 +32,6 @@ image::../../images/fish.png[Screenshot of fish prompt]
 |lsla
 |Show extended info and hidden files (exa)
 
-|ncm
-|Launch ncmpcpp
-
 |rm
 |Move file to trashcan (trash-cli)
 
@@ -48,27 +43,6 @@ image::../../images/fish.png[Screenshot of fish prompt]
 
 |rmr
 |Restore file from trashcan (trash-cli)
-
-|smn
-|Search man pages (fzf)
-
-|xi
-|Install package (xbps)
-
-|xif
-|View and install packages (fzf, xbps)
-
-|xu
-|Update packages (xbps)
-
-|xr
-|Remove package (xbps)
-
-|xc
-|Remove orphans, clean cache (xbps)
-
-|xrf
-|View and remove installed packages (fzf, xbps)
 
 |===
 

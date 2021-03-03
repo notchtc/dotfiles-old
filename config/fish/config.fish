@@ -60,5 +60,18 @@ set fish_pager_color_progress white --background=cyan
 set fish_color_match --background=brgreen
 set fish_color_comment grey
 
+# Aliases
+alias bat="bat --theme gruvbox-dark $argv"
+alias e="$EDITOR $argv"
+alias se="sudo $EDITOR $argv"
+alias ls="exa --icons $argv"
+alias lsa="exa -a --icons $argv"
+alias lsl="exa -l --git --icons $argv"
+alias lsla="exa -a -l --git --icons $argv"
+alias rm="trash-put $argv"
+alias rme="trash-empty $argv"
+alias rml="trash-list $argv"
+alias rmr="trash-restore $argv"
+
 # Vi mode
 fish_vi_key_bindings

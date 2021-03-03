@@ -1,0 +1,4 @@
+#!/bin/sh
+# Set wallpaper in awesomewm (my config)
+
+cp $1 $XDG_CACHE_HOME/wall.png

@@ -1,0 +1,4 @@
+#!/bin/sh
+# Clean cache and remove orphans
+
+sudo xbps-remove -Oo
