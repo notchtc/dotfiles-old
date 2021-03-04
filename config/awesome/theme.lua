@@ -80,7 +80,7 @@ theme.notification_icon_size = dpi(50)
 
 theme.systray_icon_spacing = 2
 
-theme.hotkeys_border_color = theme.color8
+theme.hotkeys_border_color = theme.color0s
 theme.hotkeys_group_margin = dpi(10)
 
 theme.wibar_height = dpi(20)
@@ -93,7 +93,7 @@ theme.menu_height = dpi(15)
 theme.menu_width  = dpi(100)
 
 -- Recolor Layout icons:
-theme = theme_assets.recolor_layout(theme, theme.bg_focus)
+theme = theme_assets.recolor_layout(theme, theme.color14)
 
 -- Define the icon theme for application icons. If not set then the icons
 -- from /usr/share/icons and /usr/share/icons/hicolor will be used.
