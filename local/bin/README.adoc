@@ -2,7 +2,6 @@
 cha0t1c <notnotcha0t1c@protonmail.com>
 {docdate}
 
-== Scripts
 |===
 
 |Name|What it does
