@@ -63,7 +63,7 @@ theme.border_marked = theme.color14
 
 theme.tooltip_fg = theme.fg_normal
 theme.tooltip_bg = theme.bg_normal
-theme.tooltip_border_color = theme.color8
+theme.tooltip_border_color = theme.color0s
 theme.tooltip_border_width = theme.border_width
 
 theme.taglist_bg_focus = theme.bg_focus
@@ -99,7 +99,7 @@ theme = theme_assets.recolor_layout(theme, theme.color14)
 -- from /usr/share/icons and /usr/share/icons/hicolor will be used.
 theme.icon_theme = nil
 
--- Generate Awesome icon:
+-- Set Awesome Icon
 theme.awesome_icon = config_path.."icon.png"
 
 local taglist_square_size = dpi(0)
