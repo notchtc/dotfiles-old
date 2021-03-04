@@ -1,4 +1,3 @@
-# Suppress default mode prompt
 function fish_prompt
     set_color brcyan
     echo -n (prompt_pwd)
