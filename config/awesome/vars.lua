@@ -11,8 +11,8 @@ naughty.config.presets.critical.border_color = beautiful.bg_urgent
 naughty.config.presets.critical.bg = beautiful.bg_normal
 naughty.config.presets.critical.timeout = 60
 
--- Make notifications appear in the bottom right
-naughty.config.defaults.position = "bottom_right"
+-- Make notifications appear in the bottom left
+naughty.config.defaults.position = "bottom_left"
 
 -- This is used later as the default terminal, editor, browser, rss reader and music player to run
 terminal = "alacritty"

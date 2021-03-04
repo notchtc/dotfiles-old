@@ -18,7 +18,7 @@ mysystemmenu = {
    { "reboot", function () awful.spawn.with_shell("ask 'Do you want to reboot?' 'sudo reboot'") end }
 }
 
-mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
+mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu },
                                     { "system", mysystemmenu },
                                     { "open terminal", terminal }
                                   }

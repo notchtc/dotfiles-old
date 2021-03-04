@@ -2,8 +2,9 @@
 
 local theme_assets = require("beautiful.theme_assets")
 local xresources = require("beautiful.xresources") local dpi = xresources.apply_dpi local xrdb = xresources.get_current_theme()
-local gfs = require("gears.filesystem")
-local themes_path = gfs.get_themes_dir()
+local gears = require("gears")
+local themes_path = gears.filesystem.get_themes_dir()
+local config_path = gears.filesystem.get_configuration_dir()
 
 -- inherit default theme
 local theme = dofile(themes_path.."default/theme.lua")
@@ -13,6 +14,8 @@ theme.font          = "Hack 10"
 theme.icon_font     = "Hack Nerd Font 10"
 theme.taglist_font  = "Hack Nerd Font Mono 10"
 
+theme.color0h = "#1d2021"
+theme.color0s = "#32302f"
 theme.color0  = xrdb.color0  or "#282828"
 theme.color1  = xrdb.color1  or "#cc241d"
 theme.color2  = xrdb.color2  or "#98971a"
@@ -43,7 +46,7 @@ theme.fg_minimize   = theme.bg_normal
 
 theme.useless_gap   = dpi(4)
 theme.border_width  = dpi(2)
-theme.border_normal = theme.bg_normal
+theme.border_normal = theme.color0s
 theme.border_focus  = theme.bg_focus
 theme.border_marked = theme.color14
 
@@ -85,7 +88,7 @@ theme.wibar_height = dpi(20)
 -- Variables set for theming the menu:
 -- menu_[bg|fg]_[normal|focus]
 -- menu_[border_color|border_width]
-theme.menu_submenu_icon = themes_path.."default/submenu.png"
+theme.menu_submenu_icon = config_path.."submenu.png"
 theme.menu_height = dpi(15)
 theme.menu_width  = dpi(100)
 
@@ -97,9 +100,7 @@ theme = theme_assets.recolor_layout(theme, theme.bg_focus)
 theme.icon_theme = nil
 
 -- Generate Awesome icon:
-theme.awesome_icon = theme_assets.awesome_icon(
-    theme.wibar_height, theme.bg_focus, theme.bg_normal
-)
+theme.awesome_icon = config_path.."icon.png"
 
 local taglist_square_size = dpi(0)
 theme.taglist_squares_sel = theme_assets.taglist_squares_sel(
@@ -113,5 +114,3 @@ theme.taglist_squares_unsel = theme_assets.taglist_squares_unsel(
 theme.wallpaper = "~/.cache/wall.png"
 
 return theme
-
--- vim: filetype=lua:expandtab:shiftwidth=4:tabstop=8:softtabstop=4:textwidth=80

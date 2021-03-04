@@ -21,11 +21,13 @@ end
 screen.connect_signal("property::geometry", set_wallpaper)
 
 -- Function to wrap margins around widgets
-function widget_margin(widget, l, r)
+function widget_margin(widget, l, r, t, b)
   return wibox.widget {
     widget,
     left = l,
     right = r,
+    top = t,
+    bottom = b,
     widget = wibox.container.margin,
   }
 end
@@ -96,12 +98,12 @@ awful.screen.connect_for_each_screen(function(s)
         layout = wibox.layout.align.horizontal,
         { -- Left widgets
             layout = wibox.layout.fixed.horizontal,
-            widget_margin(s.mytaglist, 0, 3)
+            s.mytaglist
         },
         {
             layout = wibox.layout.fixed.horizontal,
-            widget_margin(widget_constraint(s.myfocusedwindow, dpi(500)), 3, 3),
-            widget_margin(widget_constraint(s.myminimizedlist, dpi(450)), 0, 0)
+            widget_margin(widget_constraint(s.myfocusedwindow, dpi(500)), dpi(6), dpi(3)),
+            widget_margin(widget_constraint(s.myminimizedlist, dpi(450)), 3, 6)
         },
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
@@ -109,7 +111,7 @@ awful.screen.connect_for_each_screen(function(s)
             widget_bg(widget_margin(mybat, 6, 6), beautiful.color6),
             widget_bg(widget_margin(mytextclock, 6, 6), beautiful.color6),
             wibox.widget.systray(),
-            widget_margin(s.mylayoutbox, 6, 0),
+            widget_margin(s.mylayoutbox, 6, 0, 1, 1),
             mylauncher
         }
     }
