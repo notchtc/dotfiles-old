@@ -100,10 +100,10 @@ globalkeys = gears.table.join(
     -- CUSTOM KEYBINDINGS
 
     -- Screenshot
-    awful.key({ }, "Print", function () awful.util.spawn_with_shell("maim -u | xclip -selection clipboard -t image/png", false) end,
+    awful.key({ }, "Print", function () awful.util.spawn_with_shell(screenshot .. " -u | xclip -selection clipboard -t image/png", false) end,
               {description = "take screenshot", group = "misc"}),
 
-    awful.key({ "Shift" }, "Print", function () awful.util.spawn_with_shell("maim -s -u | xclip -selection clipboard -t image/png", false) end,
+    awful.key({ "Shift" }, "Print", function () awful.util.spawn_with_shell(screenshot .. " -s -u | xclip -selection clipboard -t image/png", false) end,
               {description = "take screenshot with selection", group = "misc"}),
 
     -- Volume Keys
