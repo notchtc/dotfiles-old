@@ -114,10 +114,10 @@ return require('packer').startup(function()
         'lambdalisue/fern.vim',
         requires = {{'lambdalisue/fern-hijack.vim'}, {'lambdalisue/fern-git-status.vim'}, opt = true},
         config = function()
-            vim.cmd('hi FernRootText ctermfg=green guifg=#c3e88D')
-            vim.cmd('hi FernBranchText ctermfg=darkgreen guifg=#98971a')
-            vim.cmd('hi FernBranchSymbol ctermfg=green guifg=#b8bb26')
-            vim.cmd('hi FernLeafSymbol ctermfg=green guifg=#b8bb26')
+            vim.cmd('hi FernRootText ctermfg=green guifg=#c3e88d')
+            vim.cmd('hi FernBranchText ctermfg=darkgreen guifg=#a7c080')
+            vim.cmd('hi FernBranchSymbol ctermfg=green guifg=#c3e88d')
+            vim.cmd('hi FernLeafSymbol ctermfg=green guifg=#c3e88d')
         end
     }
     -- }}}
