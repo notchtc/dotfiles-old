@@ -1,10 +1,10 @@
-function fish_prompt
-    set_color brcyan
-    echo -n (prompt_pwd)
-    set_color normal
+ function fish_prompt
+         set_color brcyan
+         echo -n (prompt_pwd)
+         set_color normal
 
-    if [ $fish_key_bindings = "fish_vi_key_bindings" ]
-        switch $fish_bind_mode
+         if [ $fish_key_bindings = "fish_vi_key_bindings" ]
+             switch $fish_bind_mode
             case "insert"
                 set_color green
             case "default"
@@ -16,7 +16,7 @@ function fish_prompt
             case "replace_one"
                 set_color blue
         end
-    end
-    echo -n " ❯ "
-    set_color normal
+     end
+     echo -n " ❯ "
+     set_color normal
 end

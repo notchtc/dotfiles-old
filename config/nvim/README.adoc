@@ -35,17 +35,11 @@ image::../../images/nvim2.png[Neovim with color highlighting]
 |https://github.com/romgrk/barbar.nvim[barbar.nvim]
 |Fancy buffer bar
 
-|https://github.com/junegunn/fzf.vim[telescope.nvim]
-|Fuzzy finding in vim
-
-|https://github.com/kyazdani42/nvim-web-devicons[nvim-web-devicons]
-|Icons and stuff
-
 |https://github.com/luochen1990/rainbow[rainbow]
 |Rainbow parentheses
 
-|https://github.com/morhetz/gruvbox[gruvbox]
-|Gruvbox colorscheme
+|https://github.com/sainnhe/forest-night[forest-night]
+|Colorscheme
 
 |https://github.com/norcalli/nvim-colorizer.lua[nvim-colorizer.lua]
 |Highlight colors

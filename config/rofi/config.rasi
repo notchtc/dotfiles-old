@@ -1,22 +1,17 @@
 configuration {
     font: "Hack 11";
+    modi: "window,run";
     lines: 20;
     columns: 2;
     padding: 6;
-    bw: 0;
-    location: 3;
+    bw: 1;
     sidebar-mode: true;
     line-margin: 3;
     line-padding: 3;
     separator-style: "none";
     scrollbar-width: 5;
-    color-window: "#282828, #32302f";
-    color-normal: "#32302f, #a89984, #32302f, #b8bb26, #282828";
-    color-urgent: "#32302f, #ebdbb2, #32302f, #fb4934, #282828";
-    color-active: "#32302f, #ebdbb2, #32302f, #98971a, #32302f";
-}
-
-* {
-    height: 100%;
-    width: 23%;
+    color-window: "#323d43, #87c095";
+    color-normal: "#323d43, #d8caac, #323d43, #a7c080, #323d43";
+    color-urgent: "#323d43, #d8caac, #323d43, #e68183, #323d43";
+    color-active: "#323d43, #d8caac, #323d43, #87c095, #868d80";
 }

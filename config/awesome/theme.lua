@@ -14,39 +14,39 @@ theme.font          = "Hack 10"
 theme.icon_font     = "Hack Nerd Font 10"
 theme.taglist_font  = "Hack Nerd Font Mono 10"
 
-theme.color0h = "#1d2021"
-theme.color0s = "#32302f"
-theme.color0  = xrdb.color0  or "#282828"
-theme.color1  = xrdb.color1  or "#cc241d"
-theme.color2  = xrdb.color2  or "#98971a"
-theme.color3  = xrdb.color3  or "#d79921"
-theme.color4  = xrdb.color4  or "#458588"
-theme.color5  = xrdb.color5  or "#b16286"
-theme.color6  = xrdb.color6  or "#689d6a"
-theme.color7  = xrdb.color7  or "#a89984"
-theme.color8  = xrdb.color8  or "#928374"
-theme.color9  = xrdb.color9  or "#fb4934"
-theme.color10 = xrdb.color10 or "#b8bb26"
-theme.color11 = xrdb.color11 or "#fabd2f"
-theme.color12 = xrdb.color12 or "#83a598"
-theme.color13 = xrdb.color13 or "#d3869b"
-theme.color14 = xrdb.color14 or "#8ec07c"
-theme.color15 = xrdb.color15 or "#ebdbb2"
+theme.background = xrdb.background or "#323d43"
+theme.foreground = xrdb.foreground or "#d8caac"
+theme.color0  = xrdb.color0  or "#868d80"
+theme.color1  = xrdb.color1  or "#e68183"
+theme.color2  = xrdb.color2  or "#a7c080"
+theme.color3  = xrdb.color3  or "#d9bb80"
+theme.color4  = xrdb.color4  or "#89beba"
+theme.color5  = xrdb.color5  or "#d3a0bc"
+theme.color6  = xrdb.color6  or "#87c095"
+theme.color7  = xrdb.color7  or "#d8caac"
+theme.color8  = xrdb.color8  or "#868d80"
+theme.color9  = xrdb.color9  or "#e68183"
+theme.color10 = xrdb.color10 or "#a7c080"
+theme.color11 = xrdb.color11 or "#d9bb80"
+theme.color12 = xrdb.color12 or "#89beba"
+theme.color13 = xrdb.color13 or "#d3a0bc"
+theme.color14 = xrdb.color14 or "#87c095"
+theme.color15 = xrdb.color15 or "#d8caac"
 
-theme.bg_normal     = theme.color0
-theme.bg_focus      = theme.color10
-theme.bg_urgent     = theme.color9
-theme.bg_minimize   = theme.color2
+theme.bg_normal     = theme.background
+theme.bg_focus      = theme.color2
+theme.bg_urgent     = theme.color1
+theme.bg_minimize   = theme.color0
 theme.bg_systray    = theme.color6
 
-theme.fg_normal     = theme.color15
+theme.fg_normal     = theme.foreground
 theme.fg_focus      = theme.bg_normal
 theme.fg_urgent     = theme.bg_normal
 theme.fg_minimize   = theme.bg_normal
 
 theme.useless_gap   = dpi(4)
 theme.border_width  = dpi(2)
-theme.border_normal = theme.color0s
+theme.border_normal = theme.color0
 theme.border_focus  = theme.bg_focus
 theme.border_marked = theme.color14
 
@@ -63,8 +63,8 @@ theme.border_marked = theme.color14
 
 theme.tooltip_fg = theme.fg_normal
 theme.tooltip_bg = theme.bg_normal
-theme.tooltip_border_color = theme.color0s
-theme.tooltip_border_width = theme.border_width
+theme.tooltip_border_color = theme.color6
+theme.tooltip_border_width = dpi(1)
 
 theme.taglist_bg_focus = theme.bg_focus
 theme.taglist_bg_occupied = theme.bg_minimize
@@ -74,13 +74,14 @@ theme.tasklist_disable_icon = true
 theme.tasklist_bg_focus = theme.bg_normal
 theme.tasklist_fg_focus = theme.fg_normal
 theme.tasklist_bg_minimize = theme.bg_normal
-theme.tasklist_fg_minimize = theme.color8
+theme.tasklist_fg_minimize = theme.color0
 
 theme.notification_icon_size = dpi(50)
+theme.notification_margin = 0
 
 theme.systray_icon_spacing = 2
 
-theme.hotkeys_border_color = theme.color0s
+theme.hotkeys_border_color = theme.color6
 theme.hotkeys_group_margin = dpi(10)
 
 theme.wibar_height = dpi(20)
@@ -93,7 +94,7 @@ theme.menu_height = dpi(15)
 theme.menu_width  = dpi(100)
 
 -- Recolor Layout icons:
-theme = theme_assets.recolor_layout(theme, theme.color14)
+theme = theme_assets.recolor_layout(theme, theme.bg_focus)
 
 -- Define the icon theme for application icons. If not set then the icons
 -- from /usr/share/icons and /usr/share/icons/hicolor will be used.

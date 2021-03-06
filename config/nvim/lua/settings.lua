@@ -49,7 +49,7 @@ vim.api.nvim_set_option('swapfile', false)
 vim.api.nvim_set_option('background', 'dark')
 
 -- Set colorscheme
-vim.cmd("colorscheme gruvbox8")
+vim.cmd("colorscheme forest-night")
 
 -- More colors
 vim.api.nvim_set_option('termguicolors', true)

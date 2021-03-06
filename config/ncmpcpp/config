@@ -12,17 +12,17 @@ mpd_music_dir = ~/music
 mpd_crossfade_time = 5
 
 # FORMATTING
-song_status_format = {$3{%t}|{%f}$9 from {{$(13){%b}$9 by $(11)%a$9}}}
-song_list_format = {%a} {$(13)%b$9} $8{%t}|{%f}$9
-song_library_format = {$4%n$9 $8-$9} $(13){%t}|{%f}$9
+song_status_format = {$7{%t}|{%f}$9 from {{$5{%b}$9 by $3%a$9}}}
+song_list_format = {%a} {$5%b$9} $7{%t}|{%f}$9
+song_library_format = {$7%n$9 $8-$9} {%t}|{%f}
 
-current_item_prefix = $(3)$b
-current_item_suffix = $/b$(end)
+current_item_prefix = $7
+current_item_suffix = $(end)
 
-now_playing_prefix = $(11)$b
+now_playing_prefix = $3$b
 now_playing_suffix = $/b$(end)
 
-song_columns_list_format = (7f)[7]{l} (80)[]{t|f} (20)[11]{ar}
+song_columns_list_format = (7f)[5]{l} (80)[]{t|f} (20)[3]{ar}
 
 # COLORS
 colors_enabled = yes
@@ -37,9 +37,9 @@ color2 = 15
 
 statusbar_time_color = 7
 
-progressbar_color = 8
+progressbar_color = 1
 
-player_state_color = 16
+player_state_color = 8
 
 # OTHER
 ## Note: Possible display modes: classic, columns.
@@ -50,7 +50,7 @@ playlist_editor_display_mode = columns
 
 ## Note: You can specify third character which will be used to build 'empty'
 ## part of progressbar.
-progressbar_look = ━━─
+progressbar_look = ─╼┈
 
 clock_display_seconds = yes
 

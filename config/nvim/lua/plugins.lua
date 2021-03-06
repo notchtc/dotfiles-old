@@ -63,7 +63,7 @@ return require('packer').startup(function()
         config = function()
             local lualine = require('lualine')
             lualine.options = {
-                theme = 'gruvbox',
+                theme = 'forest_night',
                 section_separators = nil,
                 component_separators = '|',
                 icons_enabled = false
@@ -114,7 +114,7 @@ return require('packer').startup(function()
         'lambdalisue/fern.vim',
         requires = {{'lambdalisue/fern-hijack.vim'}, {'lambdalisue/fern-git-status.vim'}, opt = true},
         config = function()
-            vim.cmd('hi FernRootText ctermfg=green guifg=#b8bb26')
+            vim.cmd('hi FernRootText ctermfg=green guifg=#c3e88D')
             vim.cmd('hi FernBranchText ctermfg=darkgreen guifg=#98971a')
             vim.cmd('hi FernBranchSymbol ctermfg=green guifg=#b8bb26')
             vim.cmd('hi FernLeafSymbol ctermfg=green guifg=#b8bb26')
@@ -122,15 +122,7 @@ return require('packer').startup(function()
     }
     -- }}}
 
-    -- gruvbox8{{{
-    use {
-        'lifepillar/vim-gruvbox8',
-        config = function()
-            vim.api.nvim_set_var('gruvbox_filetype_hi_groups', 1)
-            vim.api.nvim_set_var('gruvbox_plugin_hi_groups', 1)
-        end
-    }
-    -- }}}
+    use 'sainnhe/forest-night'
 end)
 
 -- vim: set foldmethod=marker:

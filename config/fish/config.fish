@@ -27,7 +27,7 @@ fish_add_path $HOME/.local/bin
 fish_add_path $GEM_HOME/bin
 
 # Set fzf default options
-set -x FZF_DEFAULT_OPTS -m --color "16" --border sharp --preview-window sharp:wrap --layout=reverse-list --info inline
+set -x FZF_DEFAULT_OPTS -m --color "16,bg+:-1" --border sharp --preview-window sharp:wrap --layout=reverse-list --info inline
 
 # Disable greeting
 set -U fish_greeting
@@ -35,22 +35,22 @@ set -U fish_greeting
 # OTHER
 # Colorscheme
 set fish_color_normal white
-set fish_color_command brgreen
+set fish_color_command green
 set fish_color_quote cyan
-set fish_color_redirection brcyan
+set fish_color_redirection blue
 set fish_color_end green
-set fish_color_error brred
-set fish_color_param brcyan
+set fish_color_error red
+set fish_color_param cyan
 set fish_color_selection brgray --bold --background=grey
-set fish_color_search_match brgreen --background=grey
+set fish_color_search_match green --background=grey
 set fish_color_history_current --bold
-set fish_color_operator brcyan
-set fish_color_escape brcyan
-set fish_color_cwd brgreen
+set fish_color_operator cyan
+set fish_color_escape cyan
+set fish_color_cwd green
 set fish_color_cwd_root red
 set fish_color_valid_path --underline
 set fish_color_autosuggestion grey
-set fish_color_user brgreen
+set fish_color_user green
 set fish_color_host white
 set fish_color_cancel -r
 set fish_pager_color_completion white
