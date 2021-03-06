@@ -1,2 +1,2 @@
 #!/bin/sh
-[ "$(printf "No\nYes" | rofi -dmenu -p "$1")" = "Yes" ] && $2
+[ "$(printf "No\nYes" | rofi -config "$HOME/.config/rofi/ask.rasi" -dmenu -p "$1")" = "Yes" ] && $2
