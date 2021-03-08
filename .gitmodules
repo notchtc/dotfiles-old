@@ -1,3 +1,6 @@
 [submodule "config/awesome/vicious"]
 	path = config/awesome/vicious
 	url = https://github.com/vicious-widgets/vicious
+[submodule "config/zsh/fsh"]
+	path = config/zsh/fsh
+	url = https://github.com/zdharma/fast-syntax-highlighting
