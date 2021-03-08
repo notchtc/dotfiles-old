@@ -37,8 +37,6 @@ export GPG_TTY=$(tty)
 # Prompt
 export PS1="%F{cyan}%~ %F{green}>%F{normal} "
 
-fpath+=( "~/.config/zsh/fsh" )
-
 # Set path
 path+="$HOME/.local/bin:$GEM_HOME/bin"
 typeset -U path
@@ -66,18 +64,28 @@ alias rmr="trash-restore"
 
 # xbps {{{
 alias xi="sudo xbps-install -S"
-alias xif="xbps-query -Rs \[0-9] --regex | cut -d ' ' -f 2 | fzf -q '$1' --preview "xbps-query -RS {1}" | xargs -ro sudo xbps-install -S"
+xif() {
+    xbps-query -Rs \[0-9] --regex | cut -d " " -f 2 | fzf -q "$1" --preview "xbps-query -RS {1}" | xargs -ro sudo xbps-install -S
+}
 alias xr="sudo xbps-remove -R"
-alias xrf="xbps-query -l | cut -d ' ' -f 1,2 | fzf -q '$1' --preview 'xbps-query -RS {2}' | cut -d ' ' -f 2 | xargs -ro sudo xbps-remove -R"
+xrf() {
+    xbps-query -l | cut -d " " -f 1,2 | fzf -q "$1" --preview "xbps-query -RS {2}" | cut -d " " -f 2 | xargs -ro sudo xbps-remove -R
+}
 alias xu="sudo xbps-install -Su"
 alias xc="sudo xbps-remove -Oo"
 # }}}
 
 # other {{{
-alias adf="asciidoctor-pdf -o - $1 | zathura -"
+adf() {
+    asciidoctor-pdf -o - $1 | zathura -
+}
 alias bat="bat --theme ansi"
-alias setwal="cp $1 $XDG_CACHE_HOME/wall.png"
-alias smn="apropos . | cut -d '(' -f 1 | cut -d ',' -f 1 | fzf --multi -q '$1' --preview 'man {1}' | xargs -ro man"
+setwal() {
+    cp $1 "$XDG_CACHE_HOME/wall.png"
+}
+smn() {
+    apropos . | cut -d "(" -f 1 | cut -d "," -f 1 | fzf --multi -q "$1" --preview "man {1}" | xargs -ro man
+}
 # }}}
 # }}}
 
