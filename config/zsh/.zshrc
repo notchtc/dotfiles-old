@@ -1,6 +1,11 @@
 autoload -Uz compinit
 
 # EXPORTS {{{
+HISTFILE="$XDG_CONFIG_HOME/zsh/history"
+HISTSIZE=10000
+SAVEHIST=10000
+setopt INC_APPEND_HISTORY_TIME
+
 # XDG {{{
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CACHE_HOME="$HOME/.cache"
@@ -14,7 +19,6 @@ export GNUPGHOME="$XDG_DATA_HOME/gnupg"
 export GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/gtkrc"
 export INPUTRC="$XDG_CONFIG_HOME/readline/inputrc"
 export LESSHISTFILE=-
-export HISTFILE="$XDG_DATA_HOME/zsh/history"
 compinit -d $XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION
 # }}}
 
@@ -99,10 +103,10 @@ bindkey -v '^?' backward-delete-char
 
 # PLUGINS {{{
 # Autosuggestions
-source ~/.config/zsh/asg/zsh-autosuggestions.zsh
+source "$XDG_CONFIG_HOME/zsh/asg/zsh-autosuggestions.zsh"
 
 # Syntax highlighting
-source ~/.config/zsh/fsh/fast-syntax-highlighting.plugin.zsh
+source "$XDG_CONFIG_HOME/zsh/fsh/fast-syntax-highlighting.plugin.zsh"
 # }}}
 
 # vim: set foldmethod=marker:
