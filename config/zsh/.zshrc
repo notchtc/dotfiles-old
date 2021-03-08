@@ -95,6 +95,11 @@ bindkey -M menuselect 'l' vi-forward-char
 bindkey -M menuselect 'j' vi-down-line-or-history
 bindkey -v '^?' backward-delete-char
 # }}}
+# }}}
+
+# PLUGINS {{{
+# Autosuggestions
+source ~/.config/zsh/asg/zsh-autosuggestions.zsh
 
 # Syntax highlighting
 source ~/.config/zsh/fsh/fast-syntax-highlighting.plugin.zsh

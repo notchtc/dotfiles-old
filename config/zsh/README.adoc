@@ -90,4 +90,5 @@ My simple personal zsh config
 *** Adds \~/.local/bin and GEM_HOME/bin
 * Minimal prompt
 * Completion
-* https://github.com/zdharma/fast-syntax-highlighting[Syntax highlighting] (must be in ~/.config/zsh/fsh, if you are installing it manually (not git cloning the whole repo with --recurse-submodules) unless you change that)
+* https://github.com/zdharma/fast-syntax-highlighting[Syntax highlighting] (must be in \~/.config/zsh/fsh unless you change that)
+* https://github.com/zsh-users/zsh-autosuggestions[Autosuggestions] (must be in \~/.config/zsh/asg unless you change that)
