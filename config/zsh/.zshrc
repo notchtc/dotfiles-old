@@ -33,6 +33,8 @@ export GPG_TTY=$(tty)
 # Prompt
 export PS1="%F{cyan}%~ %F{green}>%F{normal} "
 
+fpath+=( "~/.config/zsh/fsh" )
+
 # Set path
 path+="$HOME/.local/bin:$GEM_HOME/bin"
 typeset -U path
