@@ -44,19 +44,6 @@ return require('packer').startup(function()
     }
     -- }}}
 
-    -- fish{{{
-    use {
-        'dag/vim-fish',
-        config = function()
-            -- Set up :make to use fish for syntax checking
-            vim.cmd('autocmd FileType fish compiler fish')
-
-            -- Enable folding of block structures in fish
-            vim.cmd('autocmd FileType fish set foldmethod=expr')
-        end
-    }
-    -- }}}
-
     -- lualine{{{
     use {
         'hoob3rt/lualine.nvim',
