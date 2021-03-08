@@ -1,0 +1,93 @@
+= https://zsh.org[zsh]
+cha0t1c <notnotcha0t1c@protonmail.com>
+{docdate}
+:toc:
+
+My simple personal zsh config
+
+== Aliases
+|===
+|Alias|What id does
+
+|e
+|Launch editor (nvim)
+
+|se
+|Launch editor with sudo (nvim)
+
+|ls
+|Use https://github.com/ogham/exa[exa] instead of ls
+
+|lsa
+|Show hidden files (exa)
+
+|lsl
+|Show files with extended info (exa)
+
+|lsla
+|Show extended info and hidden files (exa)
+
+|rm
+|Move file to trashcan (trash-cli)
+
+|rme
+|Empty trashcan (trash-cli)
+
+|rml
+|List files in trashcan (trash-cli)
+
+|rmr
+|Restore file from trashcan (trash-cli)
+
+|xi
+|Install package(s) (xbps)
+
+|xif
+|View and install packages (xbps, fzf)
+
+|xr
+|Remove package(s) (xbps)
+
+|xrf
+|View and remove packages (xbps)
+
+|xu
+|Update packages
+
+|xc
+|Clean cache and remove orphans (xbps)
+
+|adf
+|View adoc document as a pdf (asciidoctor-pdf, zathura)
+
+|setwal
+|Set wallpaper in awesomewm (my config)
+
+|===
+
+== What it does
+* Sets some variables
+** BROWSER to firefox
+** EDITOR to nvim
+** VISUAL to EDITOR
+** PAGER to less
+** TERM to alacritty
+** Some fzf options
+** Cleaning up home directory
+*** XDG
+**** XDG_CACHE_HOME to \~/.cache
+**** XDG_CONFIG_HOME to \~/.config
+**** XDG_DATA_HOME to \~/.local/share
+*** GEM_HOME to XDG_DATA_HOME/gem
+*** GEM_SPEC_CACHE to XDG_CACHE_HOME/gem
+*** GNUPGHOME to XDG_DATA_HOME/gnupg
+*** GTK2_RC_FILES to XDG_CONFIG_HOME/gtk-2.0/gtkrc
+*** INPUTRC to XDG_CONFIG_HOME/readline/inputrc
+*** Disables less history file
+*** HISTFILE to XDG_DATA_HOME/zsh/history
+*** zcompdumps are placed in XDG_CACHE_HOME/zsh (directory must exist)
+** PATH
+*** Adds \~/.local/bin and GEM_HOME/bin
+* Minimal prompt
+* Completion
+* https://github.com/zdharma/fast-syntax-highlighting[Syntax highlighting] (must be in ~/.config/zsh/fsh unless you change that)

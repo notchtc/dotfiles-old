@@ -13,7 +13,6 @@ IMPORTANT: Screenshots may noy always be up to date, but still very close to how
 
 * link:config/alacritty/[alacritty] (terminal)
 * link:config/awesome/[awesome] (window manager)
-* link:config/fish/[fish] (shell)
 * link:config/mpd/[mpd] (music daemon)
 * link:config/ncmpcpp[ncmpcpp] (music player)
 * link:config/nvim/[nvim] (text editor)
@@ -23,6 +22,7 @@ IMPORTANT: Screenshots may noy always be up to date, but still very close to how
 * link:xinitrc[xinitrc] (launch the window manager and some programs)
 * link:Xresources[xresources] (i only set colors in this)
 * link:config/zathura/[zathura] (pdf reader)
+* link:config/zsh/[zsh] (shell)
 * link:local/bin/[scripts]
 
 == Install

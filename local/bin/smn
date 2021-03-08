@@ -1,4 +1,0 @@
-#!/bin/sh
-# Search man pages
-
-apropos . | cut -d "(" -f 1 | cut -d "," -f 1 | fzf --multi -q "$1" --preview "man {1}" | xargs -ro man

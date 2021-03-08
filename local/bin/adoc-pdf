@@ -1,4 +1,0 @@
-#!/bin/sh
-# View adoc file in zathura
-
-asciidoctor-pdf -o - $1 | zathura -

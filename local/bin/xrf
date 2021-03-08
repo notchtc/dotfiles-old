@@ -1,4 +1,0 @@
-#!/bin/sh
-# View and remove installed packages
-
-xbps-query -l | cut -d " " -f 1,2 | fzf -q "$1" --prompt "remove: " --preview "xbps-query -RS {2}" | cut -d " " -f 2 | xargs -ro sudo xbps-remove -R

@@ -1,4 +1,0 @@
-#!/bin/sh
-# Update packages
-
-sudo xbps-install -Su

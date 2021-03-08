@@ -3,36 +3,9 @@ cha0t1c <notnotcha0t1c@protonmail.com>
 {docdate}
 
 |===
-
 |Name|What it does
-|adoc-pdf
-|View adoc file in zathura as pdf (asciidoctor-pdf, zathura)
 
 |ask
 |Yes or No prompt using rofi
-
-|setwal
-|Set wallpaper in awesomewm
-
-|smn
-|View man pages (fzf)
-
-|xc
-|Clear cache and remove orphans (xbps)
-
-|xi
-|Install package(s) (xbps)
-
-|xif
-|View and install packages (fzf, xbps)
-
-|xr
-|Remove package(s) (xbps)
-
-|xrf
-|View and remove packages (fzf, xbps)
-
-|xu
-|Update packages (xbps)
 
 |===
