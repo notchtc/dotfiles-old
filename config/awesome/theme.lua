@@ -92,6 +92,8 @@ theme.wibar_height = dpi(20)
 theme.menu_submenu_icon = config_path.."submenu.png"
 theme.menu_height = dpi(15)
 theme.menu_width  = dpi(100)
+theme.menu_border_width = dpi(1)
+theme.menu_border_color = theme.color6
 
 -- Recolor Layout icons:
 theme = theme_assets.recolor_layout(theme, theme.bg_focus)
