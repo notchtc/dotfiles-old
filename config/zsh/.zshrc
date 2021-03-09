@@ -35,7 +35,7 @@ export FZF_DEFAULT_OPTS="-m --color '16,bg+:-1' --border sharp --preview-window 
 export GPG_TTY=$(tty)
 
 # Prompt
-export PS1="%F{cyan}%~ %F{green}>%F{normal} "
+PS1="%F{cyan}%~ %F{green}>%F{normal} "
 
 # Set path
 path+="$HOME/.local/bin:$GEM_HOME/bin"
@@ -107,6 +107,9 @@ bindkey -M menuselect 'l' vi-forward-char
 bindkey -M menuselect 'j' vi-down-line-or-history
 bindkey -v '^?' backward-delete-char
 # }}}
+
+# Cd into directory just by typing the name
+setopt autocd
 # }}}
 
 # PLUGINS {{{
