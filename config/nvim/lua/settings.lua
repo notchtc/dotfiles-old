@@ -1,6 +1,3 @@
--- Set shell to sh
-vim.api.nvim_set_option('shell', 'sh')
-
 -- Use system clipboard
 vim.api.nvim_set_option('clipboard', 'unnamedplus')
 
