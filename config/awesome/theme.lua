@@ -96,7 +96,7 @@ theme.menu_border_width = dpi(1)
 theme.menu_border_color = theme.color6
 
 -- Recolor Layout icons:
-theme = theme_assets.recolor_layout(theme, theme.bg_focus)
+theme = theme_assets.recolor_layout(theme, theme.color6)
 
 -- Define the icon theme for application icons. If not set then the icons
 -- from /usr/share/icons and /usr/share/icons/hicolor will be used.
