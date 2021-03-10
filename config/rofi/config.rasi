@@ -1,17 +1,10 @@
 configuration {
     font: "Hack 11";
+    theme: "~/.config/rofi/theme.rasi";
     modi: "window,run";
+    location: 3;
     lines: 20;
     columns: 2;
-    padding: 6;
-    bw: 1;
+    bw: 0;
     sidebar-mode: true;
-    line-margin: 3;
-    line-padding: 3;
-    separator-style: "none";
-    scrollbar-width: 5;
-    color-window: "#323d43, #87c095";
-    color-normal: "#323d43, #d8caac, #323d43, #a7c080, #323d43";
-    color-urgent: "#323d43, #d8caac, #323d43, #e68183, #323d43";
-    color-active: "#323d43, #d8caac, #323d43, #87c095, #868d80";
 }
