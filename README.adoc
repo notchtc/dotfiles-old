@@ -24,6 +24,7 @@ IMPORTANT: Screenshots may noy always be up to date, but still very close to how
 * link:config/zathura/[zathura] (pdf reader)
 * link:config/zsh/[zsh] (shell)
 * link:local/bin/[scripts]
+* https://github.com/sainnhe/forest-night[colorscheme]
 
 == Install
 Want to use everything? This is how you install this.
