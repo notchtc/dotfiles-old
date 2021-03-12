@@ -29,6 +29,7 @@ entry {
 }
 
 element {
+    margin: 3px;
     padding: 12px;
 }
 
@@ -74,5 +75,9 @@ button.selected {
 scrollbar {
     width: 3px;
     handle-color: @fg;
+    padding: 3px;
+}
+
+case-indicator {
     padding: 3px;
 }

@@ -3,7 +3,6 @@ configuration {
     theme: "~/.config/rofi/theme.rasi";
     modi: "window,run";
     location: 3;
-    lines: 20;
     columns: 2;
     bw: 0;
     sidebar-mode: true;
