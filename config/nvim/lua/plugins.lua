@@ -1,14 +1,11 @@
-local execute = vim.api.nvim_command
-local fn = vim.fn
+local install_path = vim.fn.stdpath('data')..'/site/pack/packer/opt/packer.nvim'
 
-local install_path = fn.stdpath('data')..'/site/pack/packer/opt/packer.nvim'
-
-if fn.empty(fn.glob(install_path)) > 0 then
-  execute('!git clone https://github.com/wbthomason/packer.nvim '..install_path)
-  execute 'packadd packer.nvim'
+if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
+  vim.cmd('!git clone https://github.com/wbthomason/packer.nvim '..install_path)
+  vim.cmd'packadd packer.nvim'
 end
 
-vim.cmd [[packadd packer.nvim]]
+vim.cmd('packadd packer.nvim')
 
 return require('packer').startup(function()
     -- Packer can manage itself as an optional plugin
@@ -19,13 +16,13 @@ return require('packer').startup(function()
         'Yggdroot/indentLine',
         config = function()
             -- Set indentLine color
-            vim.api.nvim_set_var('indentLine_defaultGroup', 'SpecialKey')
+            vim.g.indentLine_defaultGroup = 'SpecialKey'
 
             -- Set indentLine characters
-            vim.api.nvim_set_var('indentLine_char_list', {'│', '┆', '┊', ''})
+            vim.g.indentLine_char_list = {'│', '┆', '┊', ''}
             -- Don't show indentLine in specific things
-            vim.api.nvim_set_var('indentLine_fileTypeExclude', {'fern'})
-            vim.api.nvim_set_var('indentLine_bufTypeExclude', {'help'})
+            vim.g.indentLine_fileTypeExclude = {'fern'}
+            vim.g.indentLine_bufTypeExclude = {'help'}
         end
     }
     -- }}}
@@ -36,27 +33,11 @@ return require('packer').startup(function()
         config = function()
             -- Make gitgutter fit in
             vim.cmd("hi! link SignColumn LineNr")
-            vim.api.nvim_set_var('gitgutter_set_sign_backgrounds', 1)
+            vim.g.gitgutter_set_sign_backgrounds = 1
 
             -- Make gitgutter update faster
-            vim.api.nvim_set_option('updatetime', 100)
+            vim.o.updatetime = 100
         end
-    }
-    -- }}}
-
-    -- lualine{{{
-    use {
-        'hoob3rt/lualine.nvim',
-        config = function()
-            local lualine = require('lualine')
-            lualine.options = {
-                theme = 'forest_night',
-                section_separators = nil,
-                component_separators = '|',
-                icons_enabled = false
-            }
-            lualine.status()
-    end
     }
     -- }}}
 
@@ -79,7 +60,7 @@ return require('packer').startup(function()
         'luochen1990/rainbow',
         config = function()
             -- Enable rainbow parentheses
-            vim.api.nvim_set_var('rainbow_active', 1)
+            vim.g.rainbow_active = 1
         end
     }
     -- }}}
@@ -101,10 +82,10 @@ return require('packer').startup(function()
         'lambdalisue/fern.vim',
         requires = {{'lambdalisue/fern-hijack.vim'}, {'lambdalisue/fern-git-status.vim'}, opt = true},
         config = function()
-            vim.cmd('hi FernRootText ctermfg=green guifg=#c3e88d')
-            vim.cmd('hi FernBranchText ctermfg=darkgreen guifg=#a7c080')
-            vim.cmd('hi FernBranchSymbol ctermfg=green guifg=#c3e88d')
-            vim.cmd('hi FernLeafSymbol ctermfg=green guifg=#c3e88d')
+            vim.cmd('hi! link Green FernRootText')
+            vim.cmd('hi! link GreenItalic FernBranchText')
+            vim.cmd('hi! link Green FernBranchSymbol')
+            vim.cmd('hi! link Green FernLeafSymbol')
         end
     }
     -- }}}

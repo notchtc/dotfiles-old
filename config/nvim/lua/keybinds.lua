@@ -2,10 +2,10 @@
 vim.g.mapleader = ' '
 
 -- Force myself to use hjkl{{{
-vim.api.nvim_set_keymap('', '<up>', '<nop>', {})
-vim.api.nvim_set_keymap('', '<down>', '<nop>', {})
-vim.api.nvim_set_keymap('', '<left>', '<nop>', {})
-vim.api.nvim_set_keymap('', '<right>', '<nop>', {})
+vim.api.nvim_set_keymap('', '<up>', '', {})
+vim.api.nvim_set_keymap('', '<down>', '', {})
+vim.api.nvim_set_keymap('', '<left>', '', {})
+vim.api.nvim_set_keymap('', '<right>', '', {})
 -- }}}
 
 -- Make navigating through splits easier{{{
