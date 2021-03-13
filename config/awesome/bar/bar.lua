@@ -22,33 +22,33 @@ screen.connect_signal("property::geometry", set_wallpaper)
 
 -- Function to wrap margins around widgets
 function widget_margin(widget, l, r, t, b)
-  return wibox.widget {
-    widget,
-    left = l,
-    right = r,
-    top = t,
-    bottom = b,
-    widget = wibox.container.margin,
-  }
+    return wibox.widget {
+        widget,
+        left = l,
+        right = r,
+        top = t,
+        bottom = b,
+        widget = wibox.container.margin,
+    }
 end
 
 -- Function to add backgrounds to widgets
 function widget_bg(widget, bg_color)
-  return wibox.widget {
-    widget,
-    bg = bg_color,
-    shape = gears.shape.rectangle,
-    widget = wibox.container.background
-  }
+    return wibox.widget {
+        widget,
+        bg = bg_color,
+        shape = gears.shape.rectangle,
+        widget = wibox.container.background
+    }
 end
 
 -- Function to make some widget have a forced size
 function widget_constraint(widget, w)
-  return wibox.widget {
-    widget,
-    width = w,
-    widget = wibox.container.constraint
-  }
+    return wibox.widget {
+        widget,
+        width = w,
+        widget = wibox.container.constraint
+    }
 end
 
 awful.screen.connect_for_each_screen(function(s)

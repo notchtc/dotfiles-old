@@ -18,6 +18,10 @@ vim.o.splitbelow = true
 vim.wo.cursorline = true
 
 -- Spaces > tabs
+vim.o.expandtab = true
+vim.o.tabstop = 4
+vim.o.softtabstop = 4
+vim.o.shiftwidth = 4
 vim.bo.expandtab = true
 vim.bo.tabstop = 4
 vim.bo.softtabstop = 4

@@ -51,7 +51,7 @@ alias se="sudo $EDITOR"
 # ls {{{
 alias ls="exa --icons"
 alias lsa="exa -a --icons"
-alias lsl="exa -a-l --git --icons"
+alias lsl="exa -a -l --git --icons"
 alias lsla="exa -a -l --git --icons"
 # }}}
 

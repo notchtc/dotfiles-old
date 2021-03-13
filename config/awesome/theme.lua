@@ -106,12 +106,8 @@ theme.icon_theme = nil
 theme.awesome_icon = config_path.."icon.png"
 
 local taglist_square_size = dpi(0)
-theme.taglist_squares_sel = theme_assets.taglist_squares_sel(
-    taglist_square_size, theme.fg_normal
-)
-theme.taglist_squares_unsel = theme_assets.taglist_squares_unsel(
-    taglist_square_size, theme.fg_normal
-)
+theme.taglist_squares_sel = theme_assets.taglist_squares_sel(taglist_square_size, theme.fg_normal)
+theme.taglist_squares_unsel = theme_assets.taglist_squares_unsel(taglist_square_size, theme.fg_normal)
 
 -- Copy the wallpaper you want to ~/.cache/ as wall.png
 theme.wallpaper = "~/.cache/wall.png"
