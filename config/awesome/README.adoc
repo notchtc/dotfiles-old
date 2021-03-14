@@ -7,42 +7,15 @@ cha0t1c <notnotcha0t1c@protonmail.com>
 My awesomewm config.
 
 link:../../images/wallpaper.png[Wallpaper]
-https://unsplash.com/photos/AULwJzIhDRQ[Original wallpaper]
+https://unsplash.com/photos/AULwJzIhDRQ[Original wallpaper] (Made using https://github.com/ngynLk/ImageColorizer[ImageColorizer])
 
 == Screenshots
 image:../../images/awesome_idle.png[Idle screenshot of awesome]
 image:../../images/awesome_busy.png[Busy screenshot of awesome]
 image:../../images/awesome_minimized.png[Busy screenshot of awesome with one window minimized]
 
-== Autostart
-There are some things launched at start (link:./autostart.lua[autostart.lua]), you probably want to remove some of these (or even remove them all)
-
-|===
-|Thing launched|Why?
-
-|xrdb
-|Load xresources at startup
-
-|setxkbmap
-|Replace caps lock with escape
-
-|pulseaudio
-|Audio
-
-|mpd
-|So ncmpcpp works
-
-|mpDris2
-|Playerctl support for mpd
-
-|redshift-gtk
-|Saving my eyes
-
-|===
-
 == Dependencies
 You probably want to change these.
-There are also somethings launched in autostart.lua so you may want to remove some of them or remove the file completelyfootnote:["If you are removing the file remember to also remove the require in rc.lua"] or change something.
 
 |===
 |Dependency|Why?
@@ -82,6 +55,32 @@ There are also somethings launched in autostart.lua so you may want to remove so
 
 |Xbacklight
 |Control screen brightness
+
+|===
+
+=== Autostart
+There are some things launched at start (link:./autostart.lua[autostart.lua]), you probably want to add/remove/change some stuff here.footnote:["If you want to remove the autostart completely, just remove/comment out the require line in rc.lua."]
+
+|===
+|Thing launched|Why?
+
+|xrdb
+|Load xresources at startup
+
+|setxkbmap
+|Replace caps lock with escape
+
+|pulseaudio
+|Audio
+
+|mpd
+|So ncmpcpp works
+
+|mpDris2
+|Playerctl support for mpd
+
+|redshift-gtk
+|Saving my eyes
 
 |===
 

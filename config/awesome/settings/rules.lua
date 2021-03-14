@@ -1,5 +1,6 @@
 local awful = require("awful")
 local beautiful = require("beautiful")
+require("settings.keys")
 require("decorations.bar")
 
 -- Rules to apply to new clients (through the "manage" signal).

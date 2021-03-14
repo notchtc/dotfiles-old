@@ -3,11 +3,13 @@ cha0t1c <notnotcha0t1c@protonmail.com>
 {docdate}
 :toc:
 
-My simple personal zsh config
+IMPORTANT: Read through this to see dependencies and other stuff.
+
+My simple personal zsh config.
 
 == Aliases
 |===
-|Alias|What id does
+|Alias|What it does
 
 |e
 |Launch editor (nvim)

@@ -1,6 +1,6 @@
 = https://rybczak.net/ncmpcpp/[ncmpcpp]
 cha0t1c <notnotcha0t1c@protonmail.com>
-1.0, {docdate}
+{docdate}
 
 == Screnshot
 image::../../images/ncmpcpp.png[ncmpcpp]
