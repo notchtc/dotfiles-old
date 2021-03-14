@@ -5,7 +5,7 @@
 
 ! black
 *.color0:       #4b565c
-*.color8:       #4b595c
+*.color8:       #4b565c
 
 ! red
 *.color1:       #e67e80
