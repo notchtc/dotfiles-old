@@ -20,6 +20,7 @@ return require('packer').startup(function()
 
             -- Set indentLine characters
             vim.g.indentLine_char_list = {'│', '┆', '┊', ''}
+
             -- Don't show indentLine in specific things
             vim.g.indentLine_fileTypeExclude = {'fern'}
             vim.g.indentLine_bufTypeExclude = {'help'}
@@ -83,10 +84,8 @@ return require('packer').startup(function()
         'lambdalisue/fern.vim',
         requires = {{'lambdalisue/fern-hijack.vim'}, {'lambdalisue/fern-git-status.vim'}, opt = true},
         config = function()
-            vim.cmd('hi! link Green FernRootText')
-            vim.cmd('hi! link GreenItalic FernBranchText')
-            vim.cmd('hi! link Green FernBranchSymbol')
-            vim.cmd('hi! link Green FernLeafSymbol')
+            -- Disable line numbers in fern
+            vim.cmd('autocmd FileType fern set nonu nornu')
         end
     }
     -- }}}
