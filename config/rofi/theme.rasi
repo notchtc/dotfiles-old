@@ -1,10 +1,10 @@
 * {
-    bg: #323d43;
-    fg: #d8caac;
+    bg: #2f393f;
+    fg: #d3c6aa;
     selected: #a7c080;
-    urgent: #e68183;
-    alternate-bg: #868d80;
-    alternate-selected: #87c095;
+    urgent: #e67e89;
+    alternate-bg: #4b595c;
+    alternate-selected: #83c092;
     background-color: @bg;
     text-color: @fg;
     width: 25%;

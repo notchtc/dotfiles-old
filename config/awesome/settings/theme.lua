@@ -14,24 +14,24 @@ theme.font          = "Hack 10"
 theme.icon_font     = "Hack Nerd Font 10"
 theme.taglist_font  = "Hack Nerd Font Mono 10"
 
-theme.background = xrdb.background or "#323d43"
-theme.foreground = xrdb.foreground or "#d8caac"
-theme.color0  = xrdb.color0  or "#868d80"
-theme.color1  = xrdb.color1  or "#e68183"
+theme.background = xrdb.background or "#2f393f"
+theme.foreground = xrdb.foreground or "#d3c6aa"
+theme.color0  = xrdb.color0  or "#4b565c"
+theme.color1  = xrdb.color1  or "#e67e80"
 theme.color2  = xrdb.color2  or "#a7c080"
-theme.color3  = xrdb.color3  or "#d9bb80"
-theme.color4  = xrdb.color4  or "#89beba"
+theme.color3  = xrdb.color3  or "#dbbc7f"
+theme.color4  = xrdb.color4  or "#7fbbb3"
 theme.color5  = xrdb.color5  or "#d3a0bc"
-theme.color6  = xrdb.color6  or "#87c095"
+theme.color6  = xrdb.color6  or "#83c092"
 theme.color7  = xrdb.color7  or "#d8caac"
-theme.color8  = xrdb.color8  or "#868d80"
-theme.color9  = xrdb.color9  or "#e68183"
+theme.color8  = xrdb.color8  or "#4b565c"
+theme.color9  = xrdb.color9  or "#e67e80"
 theme.color10 = xrdb.color10 or "#a7c080"
-theme.color11 = xrdb.color11 or "#d9bb80"
-theme.color12 = xrdb.color12 or "#89beba"
+theme.color11 = xrdb.color11 or "#dbbc7f"
+theme.color12 = xrdb.color12 or "#7fbbb3"
 theme.color13 = xrdb.color13 or "#d3a0bc"
-theme.color14 = xrdb.color14 or "#87c095"
-theme.color15 = xrdb.color15 or "#d8caac"
+theme.color14 = xrdb.color14 or "#83c092"
+theme.color15 = xrdb.color15 or "#d3c6aa"
 
 theme.bg_normal     = theme.background
 theme.bg_focus      = theme.color2
@@ -63,12 +63,12 @@ theme.border_marked = theme.color14
 
 theme.tooltip_fg = theme.fg_normal
 theme.tooltip_bg = theme.bg_normal
-theme.tooltip_border_color = theme.color6
+theme.tooltip_border_color = theme.bg_minimize
 theme.tooltip_border_width = dpi(1)
 
 theme.taglist_bg_focus = theme.bg_focus
-theme.taglist_bg_occupied = theme.bg_minimize
-theme.taglist_fg_occupied = theme.bg_normal
+theme.taglist_bg_occupied = theme.bg_normal
+theme.taglist_fg_occupied = theme.bg_minimize
 
 theme.tasklist_disable_icon = true
 theme.tasklist_bg_focus = theme.bg_normal
@@ -82,7 +82,7 @@ theme.notification_margin = 0
 theme.systray_icon_spacing = 2
 
 theme.hotkeys_modifiers_fg = theme.bg_focus
-theme.hotkeys_border_color = theme.color6
+theme.hotkeys_border_color = theme.bg_minimize
 theme.hotkeys_group_margin = dpi(10)
 theme.hotkeys_border_width = dpi(1)
 
@@ -95,7 +95,7 @@ theme.menu_submenu_icon = config_path.."submenu.png"
 theme.menu_height = dpi(15)
 theme.menu_width  = dpi(100)
 theme.menu_border_width = dpi(1)
-theme.menu_border_color = theme.color6
+theme.menu_border_color = theme.bg_minimize
 
 -- Recolor Layout icons:
 theme = theme_assets.recolor_layout(theme, theme.color6)

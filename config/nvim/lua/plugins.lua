@@ -91,7 +91,14 @@ return require('packer').startup(function()
     }
     -- }}}
 
-    use 'sainnhe/forest-night'
+    use {
+        'sainnhe/forest-night',
+        config = function()
+            vim.g.forest_night_background = 'medium'
+            vim.g.forest_night_sign_column_background = 'none'
+            vim.cmd("colorscheme forest-night")
+        end
+    }
 end)
 
 -- vim: set foldmethod=marker:

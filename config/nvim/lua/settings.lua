@@ -45,9 +45,6 @@ vim.o.swapfile = false
 -- Set dark background
 vim.o.background = 'dark'
 
--- Set colorscheme
-vim.cmd('colorscheme forest-night')
-
 -- More colors
 vim.o.termguicolors = true
 
