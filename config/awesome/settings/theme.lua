@@ -81,8 +81,10 @@ theme.notification_margin = 0
 
 theme.systray_icon_spacing = 2
 
+theme.hotkeys_modifiers_fg = theme.bg_focus
 theme.hotkeys_border_color = theme.color6
 theme.hotkeys_group_margin = dpi(10)
+theme.hotkeys_border_width = dpi(1)
 
 theme.wibar_height = dpi(20)
 

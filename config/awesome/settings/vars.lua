@@ -4,7 +4,7 @@ local beautiful = require("beautiful")
 local naughty = require("naughty")
 
 -- Themes define colours, icons, font and wallpapers.
-beautiful.init(gears.filesystem.get_configuration_dir() .. "theme.lua")
+beautiful.init(gears.filesystem.get_configuration_dir() .. "settings/theme.lua")
 
 -- Change colors of critical notifications
 naughty.config.presets.critical.border_color = beautiful.bg_urgent

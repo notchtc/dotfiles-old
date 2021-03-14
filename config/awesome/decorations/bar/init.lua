@@ -3,7 +3,7 @@ local awful = require("awful")
 local wibox = require("wibox")
 local beautiful = require("beautiful")
 local dpi = beautiful.xresources.apply_dpi
-require("bar/widgets")
+require("decorations.bar.widgets")
 
 local function set_wallpaper(s)
     -- Wallpaper

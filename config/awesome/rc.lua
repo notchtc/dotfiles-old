@@ -11,15 +11,8 @@ local beautiful = require("beautiful")
 -- Notification library
 local naughty = require("naughty")
 
--- Keybindings
-require("keys")
--- Variables
-require("vars")
--- Window Rules
-require("rules")
--- Wibar
-require("bar")
--- Autostart
+require("settings")
+require("decorations")
 require("autostart")
 
 -- ERROR HANDLING --

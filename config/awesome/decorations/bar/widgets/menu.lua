@@ -1,8 +1,7 @@
 local awful = require("awful")
 local beautiful = require("beautiful")
 local hotkeys_popup = require("awful.hotkeys_popup")
-
-require("vars")
+require("settings.vars")
 
 -- Create a main menu
 myawesomemenu = {
