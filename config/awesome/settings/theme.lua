@@ -8,7 +8,6 @@ local config_path = gears.filesystem.get_configuration_dir()
 
 -- inherit default theme
 local theme = dofile(themes_path.."default/theme.lua")
--- load vector assets' generators for this theme
 
 theme.font          = "Hack 10"
 theme.icon_font     = "Hack Nerd Font 10"
@@ -50,17 +49,6 @@ theme.border_normal = theme.color0
 theme.border_focus  = theme.bg_focus
 theme.border_marked = theme.color14
 
--- There are other variable sets
--- overriding the default one when
--- defined, the sets are:
--- taglist_[bg|fg]_[focus|urgent|occupied|empty|volatile]
--- tasklist_[bg|fg]_[focus|urgent]
--- titlebar_[bg|fg]_[normal|focus]
--- tooltip_[font|opacity|fg_color|bg_color|border_width|border_color]
--- mouse_finder_[color|timeout|animate_timeout|radius|factor]
--- Example:
---theme.taglist_bg_focus = "#ff0000"
-
 theme.tooltip_fg = theme.fg_normal
 theme.tooltip_bg = theme.bg_normal
 theme.tooltip_border_color = theme.bg_minimize
@@ -88,9 +76,6 @@ theme.hotkeys_border_width = dpi(1)
 
 theme.wibar_height = dpi(20)
 
--- Variables set for theming the menu:
--- menu_[bg|fg]_[normal|focus]
--- menu_[border_color|border_width]
 theme.menu_submenu_icon = config_path.."submenu.png"
 theme.menu_height = dpi(15)
 theme.menu_width  = dpi(100)

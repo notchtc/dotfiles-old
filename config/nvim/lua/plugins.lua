@@ -91,6 +91,7 @@ return require('packer').startup(function()
     }
     -- }}}
 
+    -- forest-night{{{
     use {
         'sainnhe/forest-night',
         config = function()
@@ -99,6 +100,7 @@ return require('packer').startup(function()
             vim.cmd("colorscheme forest-night")
         end
     }
+    -- }}}
 end)
 
 -- vim: set foldmethod=marker:
