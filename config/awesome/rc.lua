@@ -55,3 +55,8 @@ end)
 
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
+
+-- GARBAGE COLLECTION
+collectgarbage("step", 1024)
+collectgarbage("setpause", 110)
+collectgarbage("setstepmul", 1000)

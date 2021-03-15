@@ -50,3 +50,9 @@ vim.o.termguicolors = true
 
 -- Remove those ~'s at the end of buffers
 vim.o.fcs = 'eob: '
+
+-- Always show statusline
+vim.o.laststatus = 2
+
+-- Don't show mode
+vim.o.showmode = false
