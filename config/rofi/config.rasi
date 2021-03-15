@@ -6,4 +6,8 @@ configuration {
     columns: 2;
     bw: 0;
     sidebar-mode: true;
+    kb-row-up: "Alt+k";
+    kb-row-down: "Alt+j";
+    kb-row-left: "Alt+h";
+    kb-row-right: "Alt+l";
 }

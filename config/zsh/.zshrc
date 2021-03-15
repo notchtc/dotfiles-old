@@ -65,7 +65,7 @@ alias rmr="trash-restore"
 # xbps {{{
 alias xi="sudo xbps-install -S"
 xif() {
-    xbps-query -Rs \[0-9] --regex | cut -d " " -f 2 | fzf -q "$1" --preview "xbps-query -RS {1}" | xargs -ro sudo xbps-install -S
+    xbps-query -Rs . --regex | cut -d " " -f 2 | fzf -q "$1" --preview "xbps-query -RS {1}" | xargs -ro sudo xbps-install -S
 }
 alias xr="sudo xbps-remove -R"
 xrf() {
