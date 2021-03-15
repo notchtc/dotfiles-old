@@ -100,6 +100,23 @@ return require('packer').startup(function()
         end
     }
     -- }}}
+
+    -- treesitter{{{
+    use {
+        'nvim-treesitter/nvim-treesitter',
+        run = ':TSUpdate',
+        config = function()
+            require'nvim-treesitter.configs'.setup {
+                ensure_installed = {'lua', 'css', 'html'},
+                highlight = {
+                    enable = true
+                }
+            }
+        end
+    }
+    -- }}}
+
+    use 'tpope/vim-fugitive'
 end)
 
 -- vim: set foldmethod=marker:

@@ -31,8 +31,9 @@ vim.bo.shiftwidth = 4
 vim.wo.list = true
 vim.o.listchars = 'trail:·'
 
--- Folding based on syntax
-vim.wo.foldmethod = 'syntax'
+-- Folding based on expression
+vim.wo.foldmethod = 'expr'
+vim.wo.foldexpr= 'nvim_treesitter#foldexpr()'
 -- Set maximum fold nesting
 vim.wo.foldnestmax = 1
 

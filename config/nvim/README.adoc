@@ -17,9 +17,6 @@ image::../../images/nvim2.png[Neovim with color highlighting, a split and tab ba
 |https://github.com/wbthomason/packer.nvim[packer.nvim]
 |Plugin manager
 
-|https://github.com/Dimercel/todo-vim[todo-vim]
-|Shows a todo list
-
 |https://github.com/Yggdroot/indentLine[indentLine]
 |Display indentation levels
 
@@ -38,6 +35,8 @@ image::../../images/nvim2.png[Neovim with color highlighting, a split and tab ba
 |https://github.com/norcalli/nvim-colorizer.lua[nvim-colorizer.lua]
 |Highlight colors
 
+|https://github.coom/nvim-treesitter/nvim-treesitter[nvim-treesitter]
+|Highlighting and folding based on treesitter
 |===
 
 == Keybindings
