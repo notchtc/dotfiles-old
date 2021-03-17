@@ -5,21 +5,6 @@ local beautiful = require("beautiful")
 local dpi = beautiful.xresources.apply_dpi
 require("decorations.bar.widgets")
 
-local function set_wallpaper(s)
-    -- Wallpaper
-    if beautiful.wallpaper then
-        local wallpaper = beautiful.wallpaper
-        -- If wallpaper is a function, call it with the screen
-        if type(wallpaper) == "function" then
-            wallpaper = wallpaper(s)
-        end
-        gears.wallpaper.maximized(wallpaper, s)
-    end
-end
-
--- Re-set wallpaper when a screen's geometry changes (e.g. different resolution)
-screen.connect_signal("property::geometry", set_wallpaper)
-
 -- Function to wrap margins around widgets
 function widget_margin(widget, l, r, t, b)
     return wibox.widget {
@@ -51,9 +36,7 @@ function widget_constraint(widget, w)
     }
 end
 
-awful.screen.connect_for_each_screen(function(s)
-    -- Wallpaper
-    set_wallpaper(s)
+screen.connect_signal("request::desktop_decoration", function(s)
 
     awful.tag.add("", {
         layout   = awful.layout.suit.tile.right,
@@ -94,16 +77,16 @@ awful.screen.connect_for_each_screen(function(s)
     s.mywibox = awful.wibar({ position = "bottom", screen = s })
 
     -- Add widgets to the wibox
-    s.mywibox:setup {
+    s.mywibox.widget = {
         layout = wibox.layout.align.horizontal,
         { -- Left widgets
             layout = wibox.layout.fixed.horizontal,
-            s.mytaglist
+            s.mytaglist,
         },
-        {
+        { -- Middle widgets
             layout = wibox.layout.fixed.horizontal,
             widget_margin(widget_constraint(s.myfocusedwindow, dpi(500)), dpi(6), dpi(3)),
-            widget_margin(widget_constraint(s.myminimizedlist, dpi(450)), 3, 6)
+            widget_margin(widget_constraint(s.myminimizedlist, dpi(450)), dpi(3), dpi(6)),
         },
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
@@ -113,6 +96,6 @@ awful.screen.connect_for_each_screen(function(s)
             wibox.widget.systray(),
             widget_margin(s.mylayoutbox, 6, 0, 1, 1),
             mylauncher
-        }
+        },
     }
 end)
