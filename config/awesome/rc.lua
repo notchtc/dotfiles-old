@@ -21,7 +21,6 @@ naughty.connect_signal("request::display_error", function(message, startup)
         message = "An error happened"..(startup and " during startup: " or ": ") .. message
     }
 end)
--- }}}
 
 -- SIGNALS
 -- Enable sloppy focus, so that focus follows mouse.
