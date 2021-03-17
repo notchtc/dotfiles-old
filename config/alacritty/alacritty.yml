@@ -18,7 +18,7 @@ cursor:
         #   - ▇ Block
         #   - _ Underline
         #   - | Beam
-        style: Block
+        style: Beam
 
 # Colors
 colors:
