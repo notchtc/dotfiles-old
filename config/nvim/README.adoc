@@ -17,26 +17,39 @@ image::../../images/nvim2.png[Neovim with color highlighting, a split and tab ba
 |https://github.com/wbthomason/packer.nvim[packer.nvim]
 |Plugin manager
 
-|https://github.com/Yggdroot/indentLine[indentLine]
-|Display indentation levels
-
-|https://github.com/airblade/vim-gitgutter[vim-gitgutter]
-|Shows git changes
-
 |https://github.com/romgrk/barbar.nvim[barbar.nvim]
 |Fancy buffer bar
 
-|https://github.com/luochen1990/rainbow[rainbow]
-|Rainbow parentheses
+|https://github.com/lambdalisue/fern.vim[fern.vim]
+|Tree viewer
 
 |https://github.com/sainnhe/forest-night[forest-night]
 |Colorscheme
 
+|https://github.com/junegunn/goyo.vim
+|Distraction-free writing
+
+|https://github.com/Yggdroot/indentLine[indentLine]
+|Display indentation levels
+
 |https://github.com/norcalli/nvim-colorizer.lua[nvim-colorizer.lua]
 |Highlight colors
 
-|https://github.coom/nvim-treesitter/nvim-treesitter[nvim-treesitter]
+|https://github.com/nvim-treesitter/nvim-treesitter[nvim-treesitter]
 |Highlighting and folding based on treesitter
+
+|https://github.com/junegunn/limelight.vim[limelight.vim]
+|Hyperfocus-writing
+
+|https://github.com/luochen1990/rainbow[rainbow]
+|Rainbow parentheses
+
+|https://github.com/tpope/vim-fugitive[vim-fugitive]
+|Git wrapper
+
+|https://github.com/airblade/vim-gitgutter[vim-gitgutter]
+|Shows git changes
+
 |===
 
 == Keybindings
@@ -72,6 +85,12 @@ kbd:[Space] is set to the kbd:[Leader] key in this config, so if you want to use
 |kbd:[Space+s+p]
 |Toggle spell checking (en_US)
 
+|kbd:[Space+N]
+|Open fern
+
+|kbd:[Space+g]
+|Toggle goyo
+
 |kbd:[Ctrl+s]
 |Magic buffer-picking mode
 
@@ -92,9 +111,6 @@ kbd:[Space] is set to the kbd:[Leader] key in this config, so if you want to use
 
 |kbd:[Alt+c]
 |Close buffer
-
-|kbd:[F5]
-|Opens todo list
 
 |===
 

@@ -56,6 +56,9 @@ vim.api.nvim_set_keymap('n', '<A-c>', ':BufferClose<CR>', {noremap = true, silen
 -- Open fern
 vim.api.nvim_set_keymap('n', '<leader>N', ':Fern -drawer -toggle %:h<cr>', {})
 
+-- Open goyo
+vim.api.nvim_set_keymap('n', '<leader>g', ':Goyo<cr>', {})
+
 -- Spell check
 vim.api.nvim_set_keymap('n', '<leader>sp', ':setlocal spell! spelllang=en_us<cr>', {})
 

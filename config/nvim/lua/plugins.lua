@@ -11,38 +11,7 @@ return require('packer').startup(function()
     -- Packer can manage itself as an optional plugin
     use {'wbthomason/packer.nvim', opt = true}
 
-    -- indentLine{{{
-    use {
-        'Yggdroot/indentLine',
-        config = function()
-            -- Set indentLine color
-            vim.g.indentLine_defaultGroup = 'SpecialKey'
-
-            -- Set indentLine characters
-            vim.g.indentLine_char_list = {'│', '┆', '┊', ''}
-
-            -- Don't show indentLine in specific things
-            vim.g.indentLine_fileTypeExclude = {'fern'}
-            vim.g.indentLine_bufTypeExclude = {'help'}
-        end
-    }
-    -- }}}
-
-    -- gitgutter{{{
-    use {
-        'airblade/vim-gitgutter',
-        config = function()
-            -- Make gitgutter fit in
-            vim.cmd("hi! link SignColumn LineNr")
-            vim.g.gitgutter_set_sign_backgrounds = 1
-
-            -- Make gitgutter update faster
-            vim.o.updatetime = 100
-        end
-    }
-    -- }}}
-
-    -- barbar{{{
+    -- barbar.nvim{{{
     use {
         'romgrk/barbar.nvim',
         config = function()
@@ -56,30 +25,7 @@ return require('packer').startup(function()
     }
     -- }}}
 
-    -- rainbow {{{
-    use {
-        'luochen1990/rainbow',
-        config = function()
-            -- Enable rainbow parentheses
-            vim.g.rainbow_active = 1
-        end
-    }
-    -- }}}
-
-    -- colorizer {{{
-    use {
-        'norcalli/nvim-colorizer.lua',
-        config = function()
-            require 'colorizer'.setup {
-                '*';
-                '!fern';
-                '!packer';
-            }
-        end
-    }
-    -- }}}
-
-    -- fern{{{
+    -- fern.vim{{{
     use {
         'lambdalisue/fern.vim',
         requires = {{'lambdalisue/fern-hijack.vim'}, {'lambdalisue/fern-git-status.vim'}, opt = true},
@@ -101,7 +47,61 @@ return require('packer').startup(function()
     }
     -- }}}
 
-    -- treesitter{{{
+    -- goyo.vim{{{
+    use {
+        'junegunn/goyo.vim',
+        config = function()
+            vim.g.goyo_width = 100
+            vim.cmd[[
+            function! s:goyo_enter()
+                BarbarDisable
+                set showtabline=0
+                Limelight
+            endfunction
+
+            function! s:goyo_leave()
+                set showtabline=2
+                BarbarEnable
+                Limelight!
+            endfunction
+            ]]
+            vim.cmd('autocmd! User GoyoEnter nested call <SID>goyo_enter()')
+            vim.cmd('autocmd! User GoyoLeave nested call <SID>goyo_leave()')
+        end
+    }
+    -- }}}
+
+    -- indentLine{{{
+    use {
+        'Yggdroot/indentLine',
+        config = function()
+            -- Set indentLine color
+            vim.g.indentLine_defaultGroup = 'SpecialKey'
+
+            -- Set indentLine characters
+            vim.g.indentLine_char_list = {'│', '┆', '┊', ''}
+
+            -- Don't show indentLine in specific things
+            vim.g.indentLine_fileTypeExclude = {'fern'}
+            vim.g.indentLine_bufTypeExclude = {'help'}
+        end
+    }
+    -- }}}
+
+    -- nvim-colorizer.lua {{{
+    use {
+        'norcalli/nvim-colorizer.lua',
+        config = function()
+            require 'colorizer'.setup {
+                '*';
+                '!fern';
+                '!packer';
+            }
+        end
+    }
+    -- }}}
+
+    -- nvim-treesitter{{{
     use {
         'nvim-treesitter/nvim-treesitter',
         run = ':TSUpdate',
@@ -116,7 +116,40 @@ return require('packer').startup(function()
     }
     -- }}}
 
+    -- limelight.vim{{{
+    use {
+        'junegunn/limelight.vim',
+        config = function()
+            vim.g.limelight_priority = -1
+        end
+    }
+    -- }}}
+
+    -- rainbow {{{
+    use {
+        'luochen1990/rainbow',
+        config = function()
+            -- Enable rainbow parentheses
+            vim.g.rainbow_active = 1
+        end
+    }
+    -- }}}
+
     use 'tpope/vim-fugitive'
+
+    -- vim-gitgutter{{{
+    use {
+        'airblade/vim-gitgutter',
+        config = function()
+            -- Make gitgutter fit in
+            vim.cmd("hi! link SignColumn LineNr")
+            vim.g.gitgutter_set_sign_backgrounds = 1
+
+            -- Make gitgutter update faster
+            vim.o.updatetime = 100
+        end
+    }
+    -- }}}
 end)
 
 -- vim: set foldmethod=marker:
