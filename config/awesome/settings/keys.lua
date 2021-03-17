@@ -168,18 +168,18 @@ awful.keyboard.append_global_keybindings({
                     c:activate { raise = true, context = "key.unminimize" }
                   end
               end
-    }
-})
-
--- Layout related keybindings
-awful.keyboard.append_global_keybindings({
+    },
     awful.key {
         modifiers = { modkey },
         key = "u",
         group = "client",
         description = "jump to urgent client",
         on_press = function () awful.client.urgent.jumpto() end
-    },
+    }
+})
+
+-- Layout related keybindings
+awful.keyboard.append_global_keybindings({
     awful.key {
         modifiers = { modkey, "Mod1" },
         key = "l",
