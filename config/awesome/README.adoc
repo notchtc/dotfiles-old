@@ -8,8 +8,9 @@ IMPORTANT: You need to compile awesome as this config uses things that are only 
 
 My awesomewm config.
 
-link:../../images/wallpaper.png[Wallpaper]
-https://unsplash.com/photos/AULwJzIhDRQ[Original wallpaper] (Made using https://github.com/ngynLk/ImageColorizer[ImageColorizer])
+link:../../images/wallpaper.png[Wallpaper] (Made using https://github.com/ngynLk/ImageColorizer[ImageColorizer])
+
+https://unsplash.com/photos/AULwJzIhDRQ[Original wallpaper]
 
 == Screenshots
 image:../../images/awesome_idle.png[Idle screenshot of awesome]
