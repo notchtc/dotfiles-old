@@ -368,7 +368,7 @@ awful.keyboard.append_global_keybindings({
         description = "take screenshot",
         group       = "misc",
         on_press    = function()
-            awful.spawn.with_shell(screenshot .. " -u | xclip -selection clipboard -t image/png && notify-send 'Screenshot taken!'")
+            awful.spawn.with_shell(screenshot .. " -u | xclip -selection clipboard -t image/png")
         end
     },
     awful.key {
@@ -377,7 +377,7 @@ awful.keyboard.append_global_keybindings({
         description = "take screenshot with selection",
         group       = "misc",
         on_press    = function()
-            awful.spawn.with_shell(screenshot .. " -s -u | xclip -selection clipboard -t image/png && notify-send 'Screenshot taken!'")
+            awful.spawn.with_shell(screenshot .. " -s -u | xclip -selection clipboard -t image/png")
         end
     },
     awful.key {
