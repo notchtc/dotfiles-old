@@ -1,17 +1,13 @@
 local gears = require("gears")
 local awful = require("awful")
-local wibox = require("wibox")
 local beautiful = require("beautiful")
-local vicious = require("vicious")
 
 -- Create volume widget
-myvol = wibox.widget.textbox()
-vicious.register(myvol, vicious.widgets.volume,
-    function (widget, args)
-        local label = { ["🔉"] = "墳", ["🔈"] = "奄" }
-        return ("<span font=\"" .. beautiful.icon_font .. "\" color=\"" .. beautiful.bg_normal .. "\">%s %d%%</span>"):format(
-            label[args[2]], args[1])
-    end, 1, "Master")
+myvol = awful.widget.watch('sh -c "pamixer --get-volume-human"', 2, function(widget, stdout)
+    widget:set_markup("<span font=\"" .. beautiful.icon_font .. "\" color=\"" .. beautiful.bg_normal .. "\">墳 " .. stdout .. "</span>")
+    collectgarbage("collect")
+end)
+
 
 myvol:buttons(gears.table.join(
     awful.button({}, 3, nil, function ()

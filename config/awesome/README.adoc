@@ -23,6 +23,9 @@ You probably want to change these.
 |===
 |Dependency|Why?
 
+|Acpi
+|Battery widget
+
 |link:../../local/bin/ask[Ask]
 |Asking if you want to shutdown/reboot
 
@@ -32,8 +35,8 @@ You probably want to change these.
 |Pavucontrol
 |Mixer to open
 
-|Alsa-utils
-|Change volume/make volume widget work
+|Pamixer
+|Change volume/volume widget
 
 |Firefox
 |Browser to open
@@ -52,9 +55,6 @@ You probably want to change these.
 
 |Rofi
 |Application launcher (and also a dmenu replacement and window switcher)
-
-|Viciousfootnote:["Will be installed when cloning repo with --recurse-submodules"]
-|More widgets! (I'm too stupid and lazy to make my own)
 
 |Xbacklight
 |Control screen brightness

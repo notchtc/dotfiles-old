@@ -1,7 +1,8 @@
-local wibox = require("wibox")
+local awful = require("awful")
 local beautiful = require("beautiful")
-local vicious = require("vicious")
 
 -- Create battery widget
-mybat = wibox.widget.textbox()
-vicious.register(mybat, vicious.widgets.bat, "<span font=\"" .. beautiful.icon_font .. "\" color=\"" .. beautiful.bg_normal .. "\">$1 $2%</span>", 36, "BAT1")
+mybat = awful.widget.watch('sh -c \'acpi | cut -d " " -f 3,4 | cut -d "," -f 1,2\'', 23, function(widget, stdout)
+    widget:set_markup("<span font=\"" .. beautiful.icon_font .. "\" color=\"" .. beautiful.bg_normal .. "\"> " .. stdout .. "</span>")
+    collectgarbage("collect")
+end)

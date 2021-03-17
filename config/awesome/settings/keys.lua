@@ -314,7 +314,7 @@ awful.keyboard.append_global_keybindings({
         description = "raise volume",
         group       = "misc",
         on_press    = function()
-            awful.spawn("amixer sset Master 5%+")
+            awful.spawn("pamixer -i 5")
         end
     },
     awful.key {
@@ -323,7 +323,7 @@ awful.keyboard.append_global_keybindings({
         description = "lower volume",
         group       = "misc",
         on_press    = function()
-            awful.spawn("amixer sset Master 5%-")
+            awful.spawn("pamixer -d 5")
         end
     },
     awful.key {
@@ -332,7 +332,7 @@ awful.keyboard.append_global_keybindings({
         description = "toggle mute",
         group       = "misc",
         on_press    = function()
-            awful.spawn("amixer sset Master toggle")
+            awful.spawn("pamixer -t")
         end
     },
     awful.key {
