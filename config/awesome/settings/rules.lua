@@ -83,6 +83,10 @@ ruled.notification.connect_signal('request::rules', function()
         properties = { screen = awful.screen.preferred, height = beautiful.xresources.apply_dpi(65), width = beautiful.xresources.apply_dpi(325) }
     }
     ruled.notification.append_rule {
+        rule       = { title = 'Oops!' },
+        properties = { width = beautiful.xresources.apply_dpi(600) }
+    }
+    ruled.notification.append_rule {
         rule       = { urgency = 'low' },
         properties = { border_color = beautiful.color6, timeout = 5 }
     }
@@ -92,7 +96,7 @@ ruled.notification.connect_signal('request::rules', function()
     }
     ruled.notification.append_rule {
         rule       = { urgency = 'critical' },
-        properties = { border_color = beautiful.bg_urgent, timeout = 60 }
+        properties = { bg = beautiful.bg_normal, border_color = beautiful.bg_urgent, timeout = 60 }
     }
 end)
 
