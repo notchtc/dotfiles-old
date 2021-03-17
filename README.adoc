@@ -3,12 +3,12 @@ Cha0t1c <notnotcha0t1c@protonmail.com>
 {docdate}
 :toc:
 
-WARNING: You probably _will_ and *must* change something in my dotfiles.
+CAUTION: You probably _will_ and *must* change something in my dotfiles.
 I recommend looking through these dotfiles and changing things to fit your setup if you want to use this.
 
-These are my horrible dotfiles.
+These are my [.line-through]#horrible# *awesome*footnote:[Yes I needed to do this, because uhhhhhh, awesomewm.] dotfiles.
 
-IMPORTANT: Screenshots may noy always be up to date, but still very close to how things look.
+NOTE: Screenshots may noy always be up to date, but still very close to how things look.
 
 Screenshots are located in the link:image[image] folder and shown in README's.
 
@@ -32,20 +32,22 @@ RCRC=$HOME/.dotfiles/rcrc rcup
 
 == Contains
 
-* link:config/alacritty/[alacritty] - terminal
-* link:config/awesome/[awesome] - window manager
-* link:config/mpd/[mpd] - music daemon
-* link:config/ncmpcpp[ncmpcpp] - music player
-* link:config/nvim/[nvim] - text editor
-* link:config/rofi/[rofi] - window switcher/application launcher/dmenu replacement
-* link:config/sxiv/exec/[sxiv] - image viewer
-* link:config/user-dirs.dirs[xdg dirs]  - some directory thingy
-* link:xinitrc[xinitrc] - launch the window manager and some programs
-* link:Xresources[xresources] - i only set colors in this
-* link:config/zathura/[zathura] - pdf reader
-* link:config/zsh/[zsh] - shell
-* link:local/bin/[scripts]
-* https://github.com/sainnhe/forest-night[colorscheme]
+link:config/alacritty/[alacritty]:: terminal
+link:config/awesome/[awesome]:: window manager
+link:config/mpd/[mpd]:: music daemon
+link:config/ncmpcpp[ncmpcpp]:: music player
+link:config/nvim/[nvim]:: text editor
+link:config/rofi/[rofi]:: window switcher/application launcher/dmenu replacement
+link:config/sxiv/exec/[sxiv]:: image viewer
+link:config/user-dirs.dirs[xdg dirs]:: some directory thingy
+link:xinitrc[xinitrc]:: launch the window manager and some programs
+link:Xresources[xresources]:: i only set colors in this
+link:config/zathura/[zathura]:: pdf reader
+link:config/zsh/[zsh]:: shell
+
+link:local/bin/[scripts]
+
+https://github.com/sainnhe/forest-night[colorscheme]
 
 == Dependencies
 If something requires something, it will be written in it's README or here.

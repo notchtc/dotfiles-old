@@ -4,9 +4,9 @@ cha0t1c <notnotcha0t1c@protonmail.com>
 :toc:
 :experimental:
 
-IMPORTANT: You need to compile awesome as this config uses things that are only in the git version.
+IMPORTANT: Requires awesome git.
 
-My awesomewm config.
+My amazing awesomewm config.
 
 link:../../images/wallpaper.png[Wallpaper] (Made using https://github.com/ngynLk/ImageColorizer[ImageColorizer])
 
