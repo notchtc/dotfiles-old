@@ -1,3 +1,4 @@
+autoload colors && colors
 autoload -Uz compinit
 
 # EXPORTS {{{
@@ -35,7 +36,7 @@ export FZF_DEFAULT_OPTS="-m --color '16,bg+:-1' --border sharp --preview-window 
 export GPG_TTY=$(tty)
 
 # Prompt
-PS1="%F{cyan}%~ %F{green}>%F{normal} "
+PS1="%{$fg[cyan]%~%} %{$fg[green]>%}%{$fg[reset_color]%} "
 
 # Set path
 path+="$HOME/.local/bin:$GEM_HOME/bin"
@@ -106,6 +107,23 @@ bindkey -M menuselect 'k' vi-up-line-or-history
 bindkey -M menuselect 'l' vi-forward-char
 bindkey -M menuselect 'j' vi-down-line-or-history
 bindkey -v '^?' backward-delete-char
+# }}}
+
+# Vi cursor {{{
+# Change cursor shape for different vi modes.
+function zle-keymap-select () {
+    case $KEYMAP in
+        vicmd) echo -ne '\e[1 q';;      # block
+        viins|main) echo -ne '\e[5 q';; # beam
+    esac
+}
+zle -N zle-keymap-select
+zle-line-init() {
+    echo -ne "\e[5 q"
+}
+zle -N zle-line-init
+echo -ne '\e[5 q'                # Use beam shape cursor on startup.
+preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 # }}}
 
 # Cd into directory just by typing the name
