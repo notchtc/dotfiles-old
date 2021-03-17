@@ -1,5 +1,6 @@
 local awful = require("awful")
 local hotkeys_popup = require("awful.hotkeys_popup")
+require("decorations.bar.widgets.volume")
 
 -- Mouse bindings
 awful.mouse.append_global_mousebindings({
@@ -315,6 +316,7 @@ awful.keyboard.append_global_keybindings({
         group       = "misc",
         on_press    = function()
             awful.spawn("pamixer -i 5")
+            myvolTimer:emit_signal("timeout")
         end
     },
     awful.key {
@@ -324,6 +326,7 @@ awful.keyboard.append_global_keybindings({
         group       = "misc",
         on_press    = function()
             awful.spawn("pamixer -d 5")
+            myvolTimer:emit_signal("timeout")
         end
     },
     awful.key {
@@ -333,6 +336,7 @@ awful.keyboard.append_global_keybindings({
         group       = "misc",
         on_press    = function()
             awful.spawn("pamixer -t")
+            myvolTimer:emit_signal("timeout")
         end
     },
     awful.key {

@@ -91,11 +91,5 @@ There are some things launched at start (link:./autostart.lua[autostart.lua]), y
 When using awesomewm, you can just do kbd:[Super+S].
 image:../../images/awesome_keybindings.png[Awesome keybindings]
 
-* Volume widget
-** LMB to toggle mute
-** RMB to open mixer
-** Scroll up to raise volume
-** Scroll down to lower volume
-
 == Other
 If poweroff and reboot isn't working, do https://gitlab.com/-/snippets/2042640[this].
