@@ -103,6 +103,7 @@ Stuff that wasn't mentioned in the other sections
 
 * Clipboard that works between different applications
 * Cursor line
+* Custom statusline
 * Don't show that tilde at the end of buffer
 * Go through wrapped lines
 * Not case sensitive in patterns
