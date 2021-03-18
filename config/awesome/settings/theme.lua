@@ -14,7 +14,7 @@ theme.font         = "Hack 10"
 theme.icon_font    = "Hack Nerd Font 10"
 theme.taglist_font = "Hack Nerd Font Mono 10"
 
-theme.background = xrdb.background or "#2f393f"
+theme.background = xrdb.background or "#2f383e"
 theme.foreground = xrdb.foreground or "#d3c6aa"
 theme.color0  = xrdb.color0  or "#4b565c"
 theme.color1  = xrdb.color1  or "#e67e80"

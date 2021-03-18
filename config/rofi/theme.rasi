@@ -2,12 +2,12 @@
     bg: #2f393f;
     fg: #d3c6aa;
     selected: #a7c080;
-    urgent: #e67e89;
+    urgent: #e67e80;
     alternate-bg: #4b595c;
     alternate-selected: #83c092;
     background-color: @bg;
     text-color: @fg;
-    width: 25%;
+    width: 28%;
     height: 100%;
 }
 
