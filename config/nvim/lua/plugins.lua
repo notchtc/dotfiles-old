@@ -63,6 +63,7 @@ return require('packer').startup(function()
                 BarbarDisable
                 set showtabline=0
                 Limelight
+                set linebreak
             endfunction
 
             function! s:goyo_leave()
@@ -77,6 +78,7 @@ return require('packer').startup(function()
                 set showtabline=2
                 BarbarEnable
                 Limelight!
+                set nolinebreak
             endfunction
             ]]
             vim.cmd('autocmd! User GoyoEnter nested call <SID>goyo_enter()')
@@ -134,7 +136,6 @@ return require('packer').startup(function()
     use {
         'junegunn/limelight.vim',
         config = function()
-            vim.g.limelight_paragraph_span = 1
             vim.g.limelight_priority = -1
         end
     }
