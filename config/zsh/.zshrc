@@ -36,7 +36,7 @@ export FZF_DEFAULT_OPTS="-m --color '16,bg+:-1' --border sharp --preview-window 
 export GPG_TTY=$(tty)
 
 # Prompt
-PS1="%{$fg[cyan]%~%} %{$fg[green]>%}%{$fg[reset_color]%} "
+export PS1="%{$fg[cyan]%~%} %{%(#~$fg[red]~$fg[green])%}>%{$fg[default]%} "
 
 # Set path
 path+="$HOME/.local/bin:$GEM_HOME/bin"
