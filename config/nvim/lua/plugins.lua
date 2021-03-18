@@ -51,15 +51,29 @@ return require('packer').startup(function()
     use {
         'junegunn/goyo.vim',
         config = function()
-            vim.g.goyo_width = 100
+            vim.g.goyo_width = 110
+            vim.g.goyo_height = '90%'
             vim.cmd[[
             function! s:goyo_enter()
+                let b:quitting = 0
+                let b:quitting_bang = 0
+                autocmd QuitPre <buffer> let b:quitting = 1
+                cabbrev <buffer> q! let b:quitting_bang = 1 <bar> q!
+
                 BarbarDisable
                 set showtabline=0
                 Limelight
             endfunction
 
             function! s:goyo_leave()
+                " Quit Vim if this is the only remaining buffer
+                if b:quitting && len(filter(range(1, bufnr('$')), 'buflisted(v:val)')) == 1
+                    if b:quitting_bang
+                        qa!
+                    else
+                        qa
+                    endif
+                endif
                 set showtabline=2
                 BarbarEnable
                 Limelight!
@@ -82,7 +96,7 @@ return require('packer').startup(function()
             vim.g.indentLine_char_list = {'│', '┆', '┊', ''}
 
             -- Don't show indentLine in specific things
-            vim.g.indentLine_fileTypeExclude = {'fern'}
+            vim.g.indentLine_fileTypeExclude = {'fern', 'txt', 'packer'}
             vim.g.indentLine_bufTypeExclude = {'help'}
         end
     }
@@ -120,6 +134,7 @@ return require('packer').startup(function()
     use {
         'junegunn/limelight.vim',
         config = function()
+            vim.g.limelight_paragraph_span = 1
             vim.g.limelight_priority = -1
         end
     }
