@@ -157,10 +157,6 @@ return require('packer').startup(function()
     use {
         'airblade/vim-gitgutter',
         config = function()
-            -- Make gitgutter fit in
-            vim.cmd("hi! link SignColumn LineNr")
-            vim.g.gitgutter_set_sign_backgrounds = 1
-
             -- Make gitgutter update faster
             vim.o.updatetime = 100
         end
