@@ -23,7 +23,7 @@ echo "$icon $percent%"
 ]]
 
 -- Create volume widget
-myvol, myvolTimer = awful.widget.watch(command, 17, function(widget, stdout)
+myvol, myvolTimer = awful.widget.watch(command, 20, function(widget, stdout)
     widget:set_markup("<span font=\"" .. beautiful.icon_font .. "\" color=\"" .. beautiful.bg_normal .. "\">" .. stdout .. "</span>")
     collectgarbage("collect")
 end)
