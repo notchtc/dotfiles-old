@@ -2,7 +2,7 @@ local awful = require("awful")
 local beautiful = require("beautiful")
 local naughty = require("naughty")
 local ruled = require("ruled")
-local wibox = require("wibox")
+local dpi = beautiful.xresources.apply_dpi
 
 -- Rules to apply to new clients.
 ruled.client.connect_signal("request::rules", function()
@@ -80,11 +80,11 @@ ruled.notification.connect_signal('request::rules', function()
     -- All notifications will match this rule.
     ruled.notification.append_rule {
         rule       = { },
-        properties = { screen = awful.screen.preferred, height = beautiful.xresources.apply_dpi(65), width = beautiful.xresources.apply_dpi(325) }
+        properties = { screen = awful.screen.preferred, height = dpi(70), width = dpi(350) }
     }
     ruled.notification.append_rule {
         rule       = { title = 'Oops!' },
-        properties = { width = beautiful.xresources.apply_dpi(600) }
+        properties = { width = dpi(600) }
     }
     ruled.notification.append_rule {
         rule       = { urgency = 'low' },
