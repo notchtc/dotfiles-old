@@ -13,10 +13,8 @@ else
         icon=墳
     elif [ "$percent" -gt 40 ]; then
         icon=奔
-    elif [ "$percent" -gt 0 ]; then
+    elif [ "$percent" -ge 0 ]; then
         icon=奄
-    elif [ "$percent" -eq 0 ]; then
-        icon=ﱝ
     fi
 fi
 
