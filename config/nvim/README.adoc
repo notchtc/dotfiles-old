@@ -23,6 +23,12 @@ image::../../images/nvim2.png[Neovim with color highlighting, a split and tab ba
 |https://github.com/lambdalisue/fern.vim[fern.vim]
 |Tree viewer
 
+|https://github.com/lambdalisue/fern-git-status.vim[fern-git-status.vim]
+|Git status for fern
+
+|https://github.com/lambdalisue/fern-hijack.vim[fern-hijack.vim]
+|Replace netrw with fern
+
 |https://github.com/sainnhe/forest-night[forest-night]
 |Colorscheme
 
