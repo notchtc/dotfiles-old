@@ -6,7 +6,7 @@ local dpi = beautiful.xresources.apply_dpi
 require("decorations.bar.widgets")
 
 -- Function to wrap margins around widgets
-function widget_margin(widget, l, r, t, b)
+local function wrap_margin(widget, l, r, t, b)
     return wibox.widget {
         widget,
         left = l,
@@ -18,7 +18,7 @@ function widget_margin(widget, l, r, t, b)
 end
 
 -- Function to add backgrounds to widgets
-function widget_bg(widget, bg_color)
+local function wrap_bg(widget, bg_color)
     return wibox.widget {
         widget,
         bg = bg_color,
@@ -28,7 +28,7 @@ function widget_bg(widget, bg_color)
 end
 
 -- Function to make some widget have a forced size
-function widget_constraint(widget, w)
+function wrap_constraint(widget, w)
     return wibox.widget {
         widget,
         width = w,
@@ -50,16 +50,16 @@ screen.connect_signal("request::desktop_decoration", function(s)
         },
         { -- Middle widgets
             layout = wibox.layout.fixed.horizontal,
-            widget_margin(widget_constraint(s.myfocusedwindow, dpi(500)), dpi(6), dpi(3)),
-            widget_margin(widget_constraint(s.myminimizedlist, dpi(450)), dpi(3), dpi(6)),
+            wrap_margin(wrap_constraint(s.myfocusedwindow, dpi(500)), dpi(6), dpi(3)),
+            wrap_margin(wrap_constraint(s.myminimizedlist, dpi(450)), dpi(3), dpi(6)),
         },
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
-            widget_bg(widget_margin(myvol, 6, 6), beautiful.color6),
-            widget_bg(widget_margin(mybat, 6, 6), beautiful.color6),
-            widget_bg(widget_margin(mytextclock, 6, 6), beautiful.color6),
+            wrap_bg(wrap_margin(myvol, dpi(6), dpi(6)), beautiful.color6),
+            wrap_bg(wrap_margin(mybat, dpi(6), dpi(6)), beautiful.color6),
+            wrap_bg(wrap_margin(mytextclock, dpi(6), dpi(6)), beautiful.color6),
             wibox.widget.systray(),
-            widget_margin(s.mylayoutbox, 6, 0, 1, 1),
+            wrap_margin(s.mylayoutbox, dpi(6), 0, dpi(1), dpi(1)),
             mylauncher
         },
     }

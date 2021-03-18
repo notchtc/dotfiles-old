@@ -7,7 +7,7 @@
     alternate-selected: #83c092;
     background-color: @bg;
     text-color: @fg;
-    width: 28%;
+    width: 25%;
     height: 100%;
 }
 
