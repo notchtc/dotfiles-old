@@ -81,7 +81,7 @@ adf() {
 }
 alias bat="bat --theme ansi"
 setwal() {
-    cp $1 "$XDG_CACHE_HOME/wall.png"
+    cp $1 "$XDG_CONFIG_HOME/awesome/wall.png"
 }
 smn() {
     apropos . | cut -d "(" -f 1 | cut -d "," -f 1 | fzf --multi -q "$1" --preview "man {1}" | xargs -ro man

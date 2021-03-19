@@ -46,7 +46,7 @@ theme.fg_minimize   = theme.bg_normal
 
 theme.useless_gap   = dpi(4)
 theme.border_width  = dpi(2)
-theme.border_color_normal = theme.color0
+theme.border_color_normal = theme.bg_normal
 theme.border_color_active = theme.bg_focus
 theme.border_color_marked = theme.color14
 
@@ -98,7 +98,7 @@ theme.awesome_icon = config_path.."icon.png"
 theme.taglist_squares_sel = nil
 theme.taglist_squares_unsel = nil
 
-theme.wallpaper = gfs.get_xdg_cache_home().."wall.png"
+theme.wallpaper = gfs.get_configuration_dir().."wall.png"
 
 return theme
 -- vim: filetype=lua:expandtab:shiftwidth=4:tabstop=8:softtabstop=4:textwidth=80

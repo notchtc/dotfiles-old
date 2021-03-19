@@ -8,7 +8,7 @@ IMPORTANT: Requires awesome git.
 
 My amazing awesomewm config.
 
-link:../../images/wallpaper.png[Wallpaper] (Made using https://github.com/ngynLk/ImageColorizer[ImageColorizer])
+link:wall.png[Wallpaper] (Made using https://github.com/ngynLk/ImageColorizer[ImageColorizer])
 
 https://unsplash.com/photos/AULwJzIhDRQ[Original wallpaper]
 
