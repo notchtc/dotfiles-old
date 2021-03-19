@@ -8,7 +8,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
         screen   = s
     })
 
-    awful.tag.add("", {
+    awful.tag.add("", {
         layout            = awful.layout.suit.tile.right,
         gap_single_client = false,
         screen            = s
@@ -25,13 +25,13 @@ screen.connect_signal("request::desktop_decoration", function(s)
         screen            = s
     })
 
-    awful.tag.add("5", {
+    awful.tag.add("", {
         layout            = awful.layout.suit.tile.right,
         gap_sincle_client = false,
         screen            = s
     })
 
-    awful.tag.add("6", {
+    awful.tag.add("", {
         layout = awful.layout.floating,
         screen = s
     })

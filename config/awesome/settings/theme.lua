@@ -12,7 +12,7 @@ local theme = dofile(themes_path.."default/theme.lua")
 
 theme.font         = "Hack 10"
 theme.icon_font    = "Hack Nerd Font 10"
-theme.taglist_font = "Hack Nerd Font Mono 10"
+theme.taglist_font = "Hack Nerd Font Mono 11"
 
 theme.background = xrdb.background or "#2f383e"
 theme.foreground = xrdb.foreground or "#d3c6aa"
@@ -57,11 +57,8 @@ theme.tooltip_border_width = dpi(1)
 
 theme.taglist_bg_focus = theme.bg_focus
 theme.taglist_bg_occupied = theme.bg_normal
-theme.taglist_fg_occupied = theme.bg_minimize
-
-theme.taglist_bg_focus = theme.bg_focus
-theme.taglist_bg_occupied = theme.bg_normal
-theme.taglist_fg_occupied = theme.bg_minimize
+theme.taglist_fg_occupied = theme.fg_normal
+theme.taglist_fg_empty = theme.bg_minimize
 
 theme.tasklist_disable_icon = true
 theme.tasklist_bg_focus = theme.bg_normal
