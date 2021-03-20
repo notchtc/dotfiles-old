@@ -57,3 +57,6 @@ vim.o.laststatus = 2
 
 -- Don't show mode
 vim.o.showmode = false
+
+-- Mouse support
+vim.o.mouse = 'a'
