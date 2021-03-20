@@ -1,5 +1,5 @@
 -- Use system clipboard
-vim.o.clipboard = 'unnamedplus'
+vim.o.clipboard = vim.o.clipboard .. 'unnamedplus'
 
 -- Fancy line numbers
 vim.wo.number = true
@@ -59,4 +59,4 @@ vim.o.laststatus = 2
 vim.o.showmode = false
 
 -- Mouse support
-vim.o.mouse = 'a'
+vim.o.mouse = vim.o.mouse .. 'a'

@@ -69,7 +69,7 @@ ruled.client.connect_signal("request::rules", function()
     }
 
     ruled.client.append_rule {
-        rule_any = { class = { "hl2_linux", "openmw" } },
+        rule_any = { class = { "hl2_linux", "openmw", "openttd" } },
         properties = { fullscreen = true }
     }
 end)
