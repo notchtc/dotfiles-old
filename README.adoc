@@ -47,7 +47,7 @@ link:config/zsh/[zsh]:: shell
 
 link:local/bin/[*scripts*]
 
-https://github.com/sainnhe/forest-night[*colorscheme*]
+https://github.com/sainnhe/everforest[*colorscheme*]
 
 == Dependencies
 If something requires something, it will be written in it's README or here.

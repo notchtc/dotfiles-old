@@ -36,13 +36,13 @@ return require('packer').startup(function()
     }
     -- }}}
 
-    -- forest-night{{{
+    -- everforest{{{
     use {
-        'sainnhe/forest-night',
+        'sainnhe/everforest',
         config = function()
-            vim.g.forest_night_background = 'medium'
-            vim.g.forest_night_sign_column_background = 'none'
-            vim.cmd("colorscheme forest-night")
+            vim.g.everforest_background = 'medium'
+            vim.g.everforest_sign_column_background = 'none'
+            vim.cmd("colorscheme everforest")
         end
     }
     -- }}}
