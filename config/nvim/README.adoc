@@ -20,16 +20,7 @@ image::../../images/nvim2.png[Neovim with color highlighting, a split and tab ba
 |https://github.com/romgrk/barbar.nvim[barbar.nvim]
 |Fancy buffer bar
 
-|https://github.com/lambdalisue/fern.vim[fern.vim]
-|Tree viewer
-
-|https://github.com/lambdalisue/fern-git-status.vim[fern-git-status.vim]
-|Git status for fern
-
-|https://github.com/lambdalisue/fern-hijack.vim[fern-hijack.vim]
-|Replace netrw with fern
-
-|https://github.com/sainnhe/forest-night[forest-night]
+|https://github.com/sainnhe/everforest[everforest]
 |Colorscheme
 
 |https://github.com/junegunn/goyo.vim
@@ -43,6 +34,9 @@ image::../../images/nvim2.png[Neovim with color highlighting, a split and tab ba
 
 |https://github.com/nvim-treesitter/nvim-treesitter[nvim-treesitter]
 |Highlighting and folding based on treesitter
+
+|https://github.com/kyazdani42/nvim-tree.lua[nvim-tree.lua]
+|File explorer tree
 
 |https://github.com/junegunn/limelight.vim[limelight.vim]
 |Hyperfocus-writing
@@ -82,17 +76,23 @@ kbd:[Space] is set to the kbd:[Leader] key in this config, so if you want to use
 |kbd:[Space+s+h]
 |Create horizontal split
 
-|kbd:[Space+n]
+|kbd:[Space+l]
 |Go to next file
 
-|kbd:[Space+p]
+|kbd:[Space+h]
 |Go to previous file
 
 |kbd:[Space+s+p]
 |Toggle spell checking (en_US)
 
+|kbd:[Space+n]
+|Open nvim-tree
+
 |kbd:[Space+N]
-|Open fern
+|Find file in nvim-tree
+
+|kbd:[Space+r]
+|Refresh nvim-tree
 
 |kbd:[Space+g]
 |Toggle goyo

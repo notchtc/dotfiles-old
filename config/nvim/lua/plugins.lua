@@ -25,17 +25,6 @@ return require('packer').startup(function()
     }
     -- }}}
 
-    -- fern.vim{{{
-    use {
-        'lambdalisue/fern.vim',
-        requires = {{'lambdalisue/fern-hijack.vim'}, {'lambdalisue/fern-git-status.vim'}, opt = true},
-        config = function()
-            -- Disable line numbers in fern
-            vim.cmd('autocmd FileType fern set nonu nornu')
-        end
-    }
-    -- }}}
-
     -- everforest{{{
     use {
         'sainnhe/everforest',
@@ -117,6 +106,23 @@ return require('packer').startup(function()
     }
     -- }}}
 
+    -- nvim-tree.lua{{{
+    use {
+        'kyazdani42/nvim-tree.lua',
+        config = function()
+            vim.g.nvim_tree_git_hl = 1
+            vim.g.nvim_tree_auto_open = 1
+            vim.g.nvim_tree_auto_close = 1
+            vim.g.nvim_tree_hijack_netrw = 1
+            vim.g.nvim_tree_show_icons = {
+                git = 0,
+                folders = 0,
+                files = 0,
+            }
+        end
+    }
+    -- }}}
+
     -- nvim-treesitter{{{
     use {
         'nvim-treesitter/nvim-treesitter',
@@ -162,6 +168,8 @@ return require('packer').startup(function()
         end
     }
     -- }}}
+
+
 end)
 
 -- vim: set foldmethod=marker:

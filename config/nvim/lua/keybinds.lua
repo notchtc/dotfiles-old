@@ -26,8 +26,8 @@ vim.api.nvim_set_keymap('', 'k', 'gk', {})
 -- }}}
 
 -- Go to next/previous file{{{
-vim.api.nvim_set_keymap('n', '<leader>n', ':wn<cr>', {})
-vim.api.nvim_set_keymap('n', '<leader>p', ':wN<cr>', {})
+vim.api.nvim_set_keymap('n', '<leader>l', ':wn<cr>', {})
+vim.api.nvim_set_keymap('n', '<leader>h', ':wN<cr>', {})
 -- }}}
 
 -- barbar{{{
@@ -53,8 +53,11 @@ vim.api.nvim_set_keymap('n', '<A-9>', ':BufferLast<CR>', {noremap = true, silent
 vim.api.nvim_set_keymap('n', '<A-c>', ':BufferClose<CR>', {noremap = true, silent = true})
 -- }}}
 
--- Open fern
-vim.api.nvim_set_keymap('n', '<leader>N', ':Fern -drawer -toggle %:h<cr>', {})
+-- nvim-tree{{{
+vim.api.nvim_set_keymap('n', '<leader>n', ':NvimTreeToggle<cr>', {})
+vim.api.nvim_set_keymap('n', '<leader>N', ':NvimTreeFindFile<cr>', {})
+vim.api.nvim_set_keymap('n', '<leader>r', ':NvimTreeRefresh<cr>', {})
+-- }}}
 
 -- Open goyo
 vim.api.nvim_set_keymap('n', '<leader>g', ':Goyo<cr>', {})
