@@ -78,7 +78,7 @@ theme.hotkeys_border_width = dpi(1)
 
 theme.wibar_height = dpi(20)
 
-theme.menu_submenu_icon = config_path.."submenu.png"
+theme.menu_submenu_icon = config_path.."images/submenu.png"
 theme.menu_height = dpi(15)
 theme.menu_width  = dpi(100)
 theme.menu_border_width = dpi(1)
