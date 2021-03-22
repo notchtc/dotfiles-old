@@ -3,7 +3,7 @@ cha0t1c <notnotcha0t1c@protonmail.com>
 {docdate}
 
 == Screnshot
-image::../../images/ncmpcpp.png[ncmpcpp]
+image::../../imgs/ncmpcpp.png[ncmpcpp]
 
 == Dependencies
 * mpd (so ncmpcpp works)

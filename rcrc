@@ -1,1 +1,1 @@
-EXCLUDES="*.adoc images LICENSE"
+EXCLUDES="*.adoc imgs LICENSE"

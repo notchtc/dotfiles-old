@@ -91,14 +91,14 @@ theme = theme_assets.recolor_layout(theme, theme.color6)
 -- from /usr/share/icons and /usr/share/icons/hicolor will be used.
 theme.icon_theme = nil
 
--- Generate Awesome icon:
-theme.awesome_icon = config_path.."icon.png"
+-- Set Awesome icon
+theme.awesome_icon = config_path.."images/icon.png"
 
 -- Generate taglist squares:
 theme.taglist_squares_sel = nil
 theme.taglist_squares_unsel = nil
 
-theme.wallpaper = gfs.get_configuration_dir().."wall.png"
+theme.wallpaper = config_path.."images/wall.png"
 
 return theme
 -- vim: filetype=lua:expandtab:shiftwidth=4:tabstop=8:softtabstop=4:textwidth=80

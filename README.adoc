@@ -10,7 +10,7 @@ These are my [.line-through]#horrible# *awesomefootnote:[Yes I needed to do this
 
 NOTE: Screenshots may noy always be up to date, but still very close to how things look.
 
-Screenshots are located in the link:image[image] folder and shown in README's.
+Screenshots are located in the link:imgs[imgs] folder and shown in README's.
 
 == Install
 Want to use everything?
