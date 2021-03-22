@@ -2,12 +2,6 @@ local awful = require("awful")
 local hotkeys_popup = require("awful.hotkeys_popup")
 require("decorations.bar.widgets.volume")
 
--- Mouse bindings
-awful.mouse.append_global_mousebindings({
-    awful.button({ }, 4, awful.tag.viewprev),
-    awful.button({ }, 5, awful.tag.viewnext),
-})
-
 -- General Awesome keys
 awful.keyboard.append_global_keybindings({
     awful.key {
