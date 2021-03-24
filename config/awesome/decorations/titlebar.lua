@@ -1,6 +1,7 @@
 local awful = require("awful")
 local wibox = require("wibox")
 local beautiful = require("beautiful")
+local gears = require("gears")
 
 -- Add a titlebar if titlebars_enabled is set to true in the rules.
 client.connect_signal("request::titlebars", function(c)
@@ -38,16 +39,20 @@ client.connect_signal("request::titlebars", function(c)
         end
         if c.floating or b then
             awful.titlebar.show(c)
+            c.shape = gears.shape.rounded_rect
         else
             awful.titlebar.hide(c)
+            c.shape = gears.shape.rectangle
         end
     end)
 
     client.connect_signal("manage", function(c)
         if c.floating or c.first_tag.layout.name == "floating" then
             awful.titlebar.show(c)
+            c.shape = gears.shape.rounded_rect
         else
             awful.titlebar.hide(c)
+            c.shape = gears.shape.rectangle
         end
     end)
 
@@ -56,8 +61,10 @@ client.connect_signal("request::titlebars", function(c)
         for k,c in pairs(clients) do
             if c.floating or c.first_tag.layout.name == "floating" then
                 awful.titlebar.show(c)
+                c.shape = gears.shape.rounded_rect
             else
                 awful.titlebar.hide(c)
+                c.shape = gears.shape.rectangle
             end
         end
     end)
