@@ -168,8 +168,6 @@ return require('packer').startup(function()
         end
     }
     -- }}}
-
-
 end)
 
 -- vim: set foldmethod=marker:
