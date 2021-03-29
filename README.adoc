@@ -24,7 +24,9 @@ git clone --recurse-submodules https://gitlab.com/cha0t1c/dotfiles.git $HOME/.do
 
 Step 2:: Install https://github.com/thoughtbot/rcm[rcm].
 
-Step 3:: Install the dotfiles with rcm.
+Step 3:: Install dependenciesfootnote:[Look at readme's]footnote:[Install command(s) for everything coming soon]
+
+Step 4:: Install the dotfiles with rcm.
 [source,sh]
 ----
 RCRC=$HOME/.dotfiles/rcrc rcup
