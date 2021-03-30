@@ -76,6 +76,8 @@ return require('packer').startup(function()
     }
     -- }}}
 
+    use 'lukas-reineke/indent-blankline.nvim'
+
     -- indentLine{{{
     use {
         'Yggdroot/indentLine',

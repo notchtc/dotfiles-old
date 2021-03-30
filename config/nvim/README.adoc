@@ -26,6 +26,9 @@ image::../../imgs/nvim2.png[Neovim with color highlighting, a split and tab bar]
 |https://github.com/junegunn/goyo.vim
 |Distraction-free writing
 
+|https://github.com/lukas-reineke/indent-blankline.nvim[indent-blankline.nvim]
+|Display indentation levels on blank lines
+
 |https://github.com/Yggdroot/indentLine[indentLine]
 |Display indentation levels
 
