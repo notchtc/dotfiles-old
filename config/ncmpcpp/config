@@ -71,3 +71,6 @@ follow_now_playing_lyrics = yes
 lyrics_fetchers = genius, musixmatch, sing365, metrolyrics, justsomelyrics, jahlyrics, plyrics, zeneszoveg, internet
 
 enable_window_title = no
+
+## Sort library by album artist
+media_library_primary_tag = album_artist
