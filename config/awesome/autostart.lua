@@ -10,7 +10,6 @@ local function run_once(cmd)
 end
 
 run_once("xrdb -merge $HOME/.Xresources")
-run_once("setxkbmap -option caps:swapescape")
 run_once("pulseaudio --start")
 run_once("[ ! -s " .. gears.filesystem.get_xdg_config_home() .. "mpd/pid ] && mpd")
 run_once("mpDris2")
