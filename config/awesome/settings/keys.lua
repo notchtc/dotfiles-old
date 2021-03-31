@@ -361,21 +361,39 @@ awful.keyboard.append_global_keybindings({
         end
     },
     awful.key {
-        modifiers   = { },
+        modifiers   = { "Ctrl" },
         key         = "Print",
-        description = "take screenshot",
+        description = "take screenshot and copy to clipboard",
         group       = "misc",
         on_press    = function()
             awful.spawn.with_shell(screenshot .. " -u | xclip -selection clipboard -t image/png")
         end
     },
     awful.key {
-        modifiers   = { "Shift" },
+        modifiers   = { "Ctrl", "Shift" },
         key         = "Print",
-        description = "take screenshot with selection",
+        description = "take screenshot with selection and copy to clipboard",
         group       = "misc",
         on_press    = function()
             awful.spawn.with_shell(screenshot .. " -s -u | xclip -selection clipboard -t image/png")
+        end
+    },
+    awful.key {
+        modifiers   = { },
+        key         = "Print",
+        description = "take screenshot and upload to 0x0.st and copy link",
+        group       = "misc",
+        on_press    = function()
+            awful.spawn.with_shell(screenshot .. " -u | curl -F'file=@-' https://0x0.st | xclip -selection clipboard")
+        end
+    },
+    awful.key {
+        modifiers   = { "Shift" },
+        key         = "Print",
+        description = "take screenshot with selection and upload to 0x0.st and copy link",
+        group       = "misc",
+        on_press    = function()
+            awful.spawn.with_shell(screenshot .. " -s -u | curl -F'file=@-' https://0x0.st | xclip -selection clipboard")
         end
     },
     awful.key {
