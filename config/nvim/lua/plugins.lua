@@ -132,6 +132,7 @@ return require('packer').startup(function()
         config = function()
             require'nvim-treesitter.configs'.setup {
                 ensure_installed = {'lua', 'css', 'html'},
+                ignore_install = {'c'},
                 highlight = {
                     enable = true
                 }
