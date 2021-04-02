@@ -73,8 +73,10 @@ theme.systray_icon_spacing = 2
 
 theme.hotkeys_modifiers_fg = theme.bg_focus
 theme.hotkeys_border_color = theme.bg_minimize
-theme.hotkeys_group_margin = dpi(10)
+theme.hotkeys_group_margin = dpi(6)
 theme.hotkeys_border_width = dpi(1)
+theme.hotkeys_font = theme.font
+theme.hotkeys_description_font = "Hack 9"
 
 theme.wibar_height = dpi(20)
 
