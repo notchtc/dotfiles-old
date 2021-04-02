@@ -74,3 +74,10 @@ enable_window_title = no
 
 ## Sort library by album artist
 media_library_primary_tag = album_artist
+
+# VISUALIZER
+visualizer_data_source = "/tmp/mpd.fifo"
+visualizer_output_name = "my_fifo"
+visualizer_in_stereo = "yes"
+visualizer_type = "ellipse"
+visualizer_look = "░▋"
