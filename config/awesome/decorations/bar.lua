@@ -50,8 +50,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
         },
         { -- Middle widgets
             layout = wibox.layout.fixed.horizontal,
-            wrap_margin(wrap_constraint(s.myfocusedwindow, dpi(500)), dpi(6), dpi(3)),
-            wrap_margin(wrap_constraint(s.myminimizedlist, dpi(450)), dpi(3), dpi(6)),
+            wrap_margin(wrap_constraint(s.myminimizedlist, dpi(650)), dpi(6), dpi(6)),
         },
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,

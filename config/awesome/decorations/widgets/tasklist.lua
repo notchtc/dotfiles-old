@@ -20,20 +20,6 @@ local tasklist_buttons = gears.table.join(
 
 awful.screen.connect_for_each_screen(function(s)
 
-    s.myfocusedwindow = awful.widget.tasklist {
-        screen  = s,
-        filter  = awful.widget.tasklist.filter.focused,
-        buttons = tasklist_buttons,
-        widget_template = {
-            {
-                {id = 'text_role', widget = wibox.widget.textbox},
-                layout = wibox.layout.flex.horizontal
-            },
-            id = 'background_role',
-            widget = wibox.container.background
-        }
-    }
-
     s.myminimizedlist = awful.widget.tasklist {
         screen   = s,
         filter   = awful.widget.tasklist.filter.minimizedcurrenttags,
@@ -50,18 +36,14 @@ awful.screen.connect_for_each_screen(function(s)
         widget_template = {
             {
                 {
-                    {
-                        id     = "text_role",
-                        widget = wibox.widget.textbox
-                    },
-                    layout = wibox.layout.fixed.horizontal
+                    id     = "text_role",
+                    widget = wibox.widget.textbox
                 },
-                left = 3,
-                right = 3,
-                widget = wibox.container.margin
+                layout = wibox.layout.fixed.horizontal
             },
-            id     = "background_role",
-            widget = wibox.container.background
+            left = 3,
+            right = 3,
+            widget = wibox.container.margin
         },
     }
 end)
