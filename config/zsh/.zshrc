@@ -49,10 +49,10 @@ alias se="sudo $EDITOR"
 #}}}
 
 # ls {{{
-alias ls="exa --icons"
-alias lsa="exa -a --icons"
-alias lsl="exa -a -l --git --icons"
-alias lsla="exa -a -l --git --icons"
+alias ls="exa --icons --group-directories-first"
+alias lsa="exa -a --icons --group-directories-first"
+alias lsl="exa -a -l --git --icons --group-directories-first"
+alias lsla="exa -a -l --git --icons --group-directories-first"
 # }}}
 
 # trash {{{
