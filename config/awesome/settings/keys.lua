@@ -520,7 +520,7 @@ client.connect_signal("request::default_keybindings", function()
             key = "m",
             group = "client",
             description = "(un)maximize",
-            function (c)
+            on_press = function (c)
                 c.maximized = not c.maximized
                 c:raise()
             end
