@@ -27,15 +27,6 @@ local function wrap_bg(widget, bg_color)
     }
 end
 
--- Function to make some widget have a forced size
-function wrap_constraint(widget, w)
-    return wibox.widget {
-        widget,
-        width = w,
-        widget = wibox.container.constraint
-    }
-end
-
 screen.connect_signal("request::desktop_decoration", function(s)
 
     -- Create the wibox
@@ -50,8 +41,8 @@ screen.connect_signal("request::desktop_decoration", function(s)
         },
         { -- Middle widgets
             layout = wibox.layout.fixed.horizontal,
-            wrap_margin(wrap_constraint(s.myfocusedwindow, dpi(500)), dpi(6), dpi(3)),
-            wrap_margin(wrap_constraint(s.myminimizedlist, dpi(450)), dpi(3), dpi(6)),
+            wrap_margin(s.myfocusedwindow, dpi(6), dpi(3)),
+            wrap_margin(s.myminimizedlist, dpi(3), dpi(6)),
         },
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
