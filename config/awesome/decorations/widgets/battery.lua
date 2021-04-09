@@ -3,14 +3,14 @@ local beautiful = require("beautiful")
 
 local command = [[
 sh -c '
-state=$(acpi | cut -d " " -f 3 | cut -d "," -f 1)
+state=$(acpi | cut -d " " -f 3 | cut -d "," -f 1 | tr "[:upper:]" "[:lower:]")
 percent=$(acpi | cut -d " " -f 4 | cut -d "," -f 1)
 
-if [ "$state" = "Full" ]; then
+if [ "$state" = "full" ]; then
     icon=
-elif [ "$state" = "Charging" ]; then
+elif [ "$state" = "charging" ]; then
     icon=
-elif [ "$state" = "Discharging" ]; then
+elif [ "$state" = "discharging" ]; then
     icon=
 fi
 

@@ -4,9 +4,9 @@ local beautiful = require("beautiful")
 local command = [[
 sh -c '
 percent=$(pamixer --get-volume)
-muted=$(pamixer --get-volume-human)
+muted=$(pamixer --get-mute)
 
-if [ "$muted" = "muted" ]; then
+if [ "$muted" = "true" ]; then
     icon=婢
 else
     if [ "$percent" -ge 55 ]; then
