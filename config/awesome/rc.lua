@@ -7,9 +7,9 @@ require("awful.autofocus")
 local beautiful = require("beautiful")
 local naughty = require("naughty")
 
+require("autostart")
 require("settings")
 require("decorations")
-require("autostart")
 
 --  ERROR HANDLING
 -- Check if awesome encountered an error during startup and fell back to

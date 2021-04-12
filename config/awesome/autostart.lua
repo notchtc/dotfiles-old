@@ -1,5 +1,5 @@
 local awful = require("awful")
-local gears = require("gears")
+local gfs = require("gears.filesystem")
 
 local function run_once(cmd)
     local findme = cmd
@@ -11,5 +11,5 @@ end
 run_once("xrdb -merge $HOME/.Xresources")
 run_once("pulseaudio --start")
 run_once("mpd")
-run_once("mpDris2")
+run_once("mpdnotify -m $HOME/music")
 run_once("redshift-gtk")

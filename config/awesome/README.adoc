@@ -21,40 +21,37 @@ image:../../imgs/awesome_minimized.png[Busy screenshot of awesome with one windo
 |===
 |Dependency|Why?
 
-|Acpi
-|Battery widget
+|acpi
+|Make battery widget work
 
-|link:../../local/bin/ask[Ask]
+|link:../../local/bin/ask[ask]
 |Asking if you want to shutdown/reboot
 
-|Alacritty
+|alacritty
 |Terminalfootnote:change[You can change this in settings/vars.lua]
 
-|Pavucontrol
-|Mixerfootnote:change[]
+|pamixer
+|Change volumefootnote:change2[You can change this in settings/keys.lua] & make volume widget work
 
-|Pamixer
-|Change volumefootnote:change2[You can change this in settings/keys.lua]/volume widget
-
-|Firefox
+|firefox
 |Browserfootnote:change[]
 
-|Maim
+|maim
 |Screenshot toolfootnote:change[]
 
-|Playerctl
-|Control media playersfootnote:[If you use mpd you either want to install mpDris2 or replace this with mpc].
+|mpc
+|Control mpd
 
-|Ncmpcpp
+|ncmpcpp
 |Music playerfootnote:change[]
 
-|Newsboat
+|newsboat
 |RSS readerfootnote:change[]
 
-|Rofi
+|rofi
 |Application launcher (and also a dmenu replacement and window switcher)footnote:change[]
 
-|Xbacklight
+|xbacklight
 |Control screen brightnessfootnote:change2[]
 
 |===
@@ -75,8 +72,8 @@ You probably want to add/remove/change some stuff here.footnote:[If you want to 
 |mpd
 |It plays audio and ncmpcpp requires it
 
-|mpDris2
-|Playerctl support for mpd
+|mpdnotify
+|Notifications for mpd
 
 |redshift-gtk
 |Saving my eyes
