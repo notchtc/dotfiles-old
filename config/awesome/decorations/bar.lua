@@ -46,9 +46,9 @@ screen.connect_signal("request::desktop_decoration", function(s)
         },
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
-            wrap_bg(wrap_margin(myvol, dpi(6), dpi(6)), beautiful.color6),
-            wrap_bg(wrap_margin(mybat, dpi(6), dpi(6)), beautiful.color6),
-            wrap_bg(wrap_margin(mytextclock, dpi(6), dpi(6)), beautiful.color6),
+            wrap_bg(myvol, beautiful.color6),
+            wrap_bg(mybat, beautiful.color6),
+            wrap_bg(mytextclock, beautiful.color6),
             wibox.widget.systray(),
             wrap_margin(s.mylayoutbox, dpi(6), 0, dpi(1), dpi(1)),
             mylauncher
