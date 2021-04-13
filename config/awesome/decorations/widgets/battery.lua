@@ -19,7 +19,7 @@ echo "$icon $percent"
 ]]
 
 -- Create battery widget
-mybat = awful.widget.watch(command, 27, function(widget, stdout)
+mybat = awful.widget.watch(command, 25, function(widget, stdout)
     widget:set_markup("  <span font=\"" .. beautiful.icon_font .. "\" color=\"" .. beautiful.bg_normal .. "\">" .. stdout .. "</span> ")
     collectgarbage("collect")
 end)
