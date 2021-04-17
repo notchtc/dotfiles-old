@@ -85,7 +85,7 @@ ruled.notification.connect_signal('request::rules', function()
     -- All notifications will match this rule.
     ruled.notification.append_rule {
         rule       = { },
-        properties = { screen = awful.screen.preferred }
+        properties = { screen = awful.screen.preferred, icon_size = beautiful.notification_icon_size }
     }
     ruled.notification.append_rule {
         rule       = { urgency = 'low' },
