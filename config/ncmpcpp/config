@@ -1,13 +1,13 @@
 # DIRECTORIES
-ncmpcpp_directory = ~/.config/ncmpcpp
-lyrics_directory = ~/music/lyrics
+ncmpcpp_directory = "~/.config/ncmpcpp"
+lyrics_directory = "~/music/lyrics"
 
 # CONNECTION SETTINGS
 mpd_host = localhost
 mpd_port = 6600
 mpd_connection_timeout = 5
 
-mpd_music_dir = ~/music
+mpd_music_dir = "~/music"
 
 mpd_crossfade_time = 5
 
@@ -22,10 +22,10 @@ current_item_suffix = $/b$(end)
 now_playing_prefix = $3$b
 now_playing_suffix = $/b$(end)
 
-song_columns_list_format = (7f)[5]{l} (70)[]{t|f} (30)[3]{ar}
+song_columns_list_format = (7f)[5]{l} (65)[]{t|f} (35)[3]{ar}
 
 # COLORS
-colors_enabled = yes
+colors_enabled = "yes"
 
 empty_tag_color = 13
 
@@ -41,39 +41,42 @@ progressbar_color = 1
 
 player_state_color = 8
 
+header_window_color = 3
+
 # OTHER
 ## Note: Possible display modes: classic, columns.
-browser_display_mode = columns
-playlist_display_mode = columns
-search_engine_display_mode = columns
-playlist_editor_display_mode = columns
+browser_display_mode = "columns"
+playlist_display_mode = "columns"
+search_engine_display_mode = "columns"
+playlist_editor_display_mode = "columns"
 
 ## Note: You can specify third character which will be used to build 'empty'
 ## part of progressbar.
-progressbar_look = ─╼┈
+progressbar_look = "─╼┈"
 
-clock_display_seconds = yes
+clock_display_seconds = "yes"
 
-external_editor = nvim
+external_editor = "nvim"
 
 ## Note: set to yes if external editor is a console application.
-use_console_editor = yes
+use_console_editor = "yes"
 
 message_delay_time = 1
 
-header_visibility = no
-titles_visibility = no
+titles_visibility = "no"
 
 autocenter_mode = "yes"
 centered_cursor = "yes"
 
-follow_now_playing_lyrics = yes
+follow_now_playing_lyrics = "yes"
 lyrics_fetchers = genius, musixmatch, sing365, metrolyrics, justsomelyrics, jahlyrics, plyrics, zeneszoveg, internet
 
-enable_window_title = no
+enable_window_title = "no"
 
 ## Sort library by album artist
-media_library_primary_tag = album_artist
+media_library_primary_tag = "album_artist"
+
+store_lyrics_in_song_dir = no
 
 # VISUALIZER
 visualizer_data_source = "/tmp/mpd.fifo"
