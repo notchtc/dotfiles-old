@@ -22,7 +22,7 @@ current_item_suffix = $/b$(end)
 now_playing_prefix = $3$b
 now_playing_suffix = $/b$(end)
 
-song_columns_list_format = (7f)[5]{l} (65)[]{t|f} (35)[3]{ar}
+song_columns_list_format = (7f)[5]{l} (100)[]{t|f} (15f)[3]{ar}
 
 # COLORS
 colors_enabled = "yes"
