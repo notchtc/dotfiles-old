@@ -96,9 +96,11 @@ theme.icon_theme = nil
 -- Set Awesome icon
 theme.awesome_icon = config_path.."images/icon.png"
 
--- Generate taglist squares:
+-- Yeet taglist squares:
 theme.taglist_squares_sel = nil
 theme.taglist_squares_unsel = nil
+theme.taglist_squares_sel_empty = nil
+theme.taglist_squares_unsel_empty = nil
 
 theme.wallpaper = config_path.."images/wall.png"
 
