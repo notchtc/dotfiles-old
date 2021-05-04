@@ -45,7 +45,7 @@ typeset -U path
 # ALIASES {{{
 # editor {{{
 alias e="$EDITOR"
-alias se="sudo $EDITOR"
+alias se="sudo -E $EDITOR"
 #}}}
 
 # ls {{{
