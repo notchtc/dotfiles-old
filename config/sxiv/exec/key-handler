@@ -5,6 +5,6 @@ do
         "C-d")
             trash-put "$file" ;;
         "C-w")
-            cp "$file" "$XDG_CACHE_HOME/wall.png" ;;
+            cp "$file" "$XDG_CONFIG_HOME/awesome/images/wall.png" ;;
     esac
 done
