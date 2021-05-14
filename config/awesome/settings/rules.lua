@@ -60,7 +60,7 @@ ruled.client.connect_signal("request::rules", function()
     }
 
     ruled.client.append_rule {
-        rule_any = { class = { "Gimp", "kdenlive" } },
+        rule_any = { class = { "Gimp", "kdenlive", "lmms" } },
         properties = { tag = awful.screen.focused().tags[3] }
     }
 
