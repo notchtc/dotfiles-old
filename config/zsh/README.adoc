@@ -1,5 +1,5 @@
 = https://zsh.org[zsh]
-cha0t1c <notnotcha0t1c@protonmail.com>
+chtc <notnotcha0t1c@protonmail.com>
 {docdate}
 :toc:
 

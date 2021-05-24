@@ -1,5 +1,5 @@
 = link:awesomewm.org[awesome]
-cha0t1c <notnotcha0t1c@protonmail.com>
+chtc <notnotcha0t1c@protonmail.com>
 {docdate}
 :toc:
 :experimental:
