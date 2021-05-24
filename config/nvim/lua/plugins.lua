@@ -36,46 +36,6 @@ return require('packer').startup(function()
     }
     -- }}}
 
-    -- goyo.vim{{{
-    use {
-        'junegunn/goyo.vim',
-        config = function()
-            vim.g.goyo_width = 110
-            vim.g.goyo_height = '90%'
-            vim.cmd[[
-            function! s:goyo_enter()
-                let b:quitting = 0
-                let b:quitting_bang = 0
-                autocmd QuitPre <buffer> let b:quitting = 1
-                cabbrev <buffer> q! let b:quitting_bang = 1 <bar> q!
-
-                BarbarDisable
-                set showtabline=0
-                Limelight
-                set linebreak
-            endfunction
-
-            function! s:goyo_leave()
-                " Quit Vim if this is the only remaining buffer
-                if b:quitting && len(filter(range(1, bufnr('$')), 'buflisted(v:val)')) == 1
-                    if b:quitting_bang
-                        qa!
-                    else
-                        qa
-                    endif
-                endif
-                set showtabline=2
-                BarbarEnable
-                Limelight!
-                set nolinebreak
-            endfunction
-            ]]
-            vim.cmd('autocmd! User GoyoEnter nested call <SID>goyo_enter()')
-            vim.cmd('autocmd! User GoyoLeave nested call <SID>goyo_leave()')
-        end
-    }
-    -- }}}
-
     use 'lukas-reineke/indent-blankline.nvim'
 
     -- indentLine{{{
@@ -137,15 +97,6 @@ return require('packer').startup(function()
                     enable = true
                 }
             }
-        end
-    }
-    -- }}}
-
-    -- limelight.vim{{{
-    use {
-        'junegunn/limelight.vim',
-        config = function()
-            vim.g.limelight_priority = -1
         end
     }
     -- }}}

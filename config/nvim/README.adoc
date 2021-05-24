@@ -23,9 +23,6 @@ image::../../imgs/nvim2.png[Neovim with color highlighting, a split and tab bar]
 |https://github.com/sainnhe/everforest[everforest]
 |Colorscheme
 
-|https://github.com/junegunn/goyo.vim
-|Distraction-free writing
-
 |https://github.com/lukas-reineke/indent-blankline.nvim[indent-blankline.nvim]
 |Display indentation levels on blank lines
 
@@ -40,9 +37,6 @@ image::../../imgs/nvim2.png[Neovim with color highlighting, a split and tab bar]
 
 |https://github.com/kyazdani42/nvim-tree.lua[nvim-tree.lua]
 |File explorer tree
-
-|https://github.com/junegunn/limelight.vim[limelight.vim]
-|Hyperfocus-writing
 
 |https://github.com/luochen1990/rainbow[rainbow]
 |Rainbow parentheses
