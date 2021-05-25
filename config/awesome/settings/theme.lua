@@ -66,7 +66,7 @@ theme.tasklist_fg_focus = theme.fg_normal
 theme.tasklist_bg_minimize = theme.bg_normal
 theme.tasklist_fg_minimize = theme.color0
 
-theme.notification_icon_size = dpi(65)
+theme.notification_icon_size = dpi(75)
 theme.notification_margin = dpi(6)
 
 theme.systray_icon_spacing = 2

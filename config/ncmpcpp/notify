@@ -7,4 +7,4 @@ ARTIST=$(mpc current -f '%artist%')
 TITLE=$(mpc current -f '%title%')
 ALBUM=$(mpc current -f '%album%')
 
-notify-send -u low "$TITLE" "$ARTIST ($ALBUM)" --icon "$ART"
+notify-send -u low "$TITLE" "$ARTIST ($ALBUM)" -i "$ART"
