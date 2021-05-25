@@ -72,9 +72,6 @@ You probably want to add/remove/change some stuff here.footnote:[If you want to 
 |mpd
 |It plays audio and ncmpcpp requires it
 
-|mpdnotify
-|Notifications for mpd
-
 |redshift-gtk
 |Saving my eyes
 
