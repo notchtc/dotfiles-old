@@ -11,5 +11,4 @@ end
 run_once("xrdb -merge $HOME/.Xresources")
 run_once("pulseaudio --start")
 run_once("mpd")
-run_once("mpdnotify -m $HOME/music")
 run_once("redshift-gtk")

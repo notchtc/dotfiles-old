@@ -6,4 +6,11 @@ chtc <notnotcha0t1c@protonmail.com>
 image::../../imgs/ncmpcpp.png[ncmpcpp]
 
 == Dependencies
-* mpd (so ncmpcpp works)
+|===
+|Dependency|Why?
+
+|mpd
+|ncmpcpp needs it to work
+
+|bash & mpc & notify-send
+|Used by notify script

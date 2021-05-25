@@ -73,6 +73,8 @@ lyrics_fetchers = genius, musixmatch, sing365, metrolyrics, justsomelyrics, jahl
 
 enable_window_title = "no"
 
+execute_on_song_change = "~/.config/ncmpcpp/notify"
+
 ## Sort library by album artist
 media_library_primary_tag = "album_artist"
 
