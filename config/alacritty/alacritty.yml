@@ -50,4 +50,4 @@ window:
                 y: 6
 
         # Spread additional padding evenly around the terminal content.
-        dynamic_padding: false
+        dynamic_padding: true
