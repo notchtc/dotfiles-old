@@ -13,19 +13,21 @@ NOTE: Screenshots may noy always be up to date, but still very close to how thin
 Screenshots are located in the link:imgs[imgs] folder and shown in README's.
 
 == Contains
-* *link:config/alacritty/[alacritty]* - terminal
-* *link:config/awesome/[awesome]* - window manager
-* *link:config/mpd/[mpd]* - music daemon
-* *link:config/ncmpcpp[ncmpcpp]* - music player
-* *link:config/nvim/[nvim]* - text editor
-* *link:config/rofi/[rofi]* -  window switcher/application launcher/dmenu replacement
-* *link:config/sxiv/exec/[sxiv]* - image viewer
-* *link:config/user-dirs.dirs[xdg dirs]* - some directory thingy
-* *link:xinitrc[xinitrc]* - launch the window manager and some programs
-* *link:Xresources[xresources]* - i only set colors in this
-* *link:config/zathura/[zathura]* - pdf reader
-* *link:config/zsh/[zsh]* - shell
-* *link:local/bin/[scripts]*
+[horizontal]
+link:config/alacritty/[alacritty]:: terminal
+link:config/awesome/[awesome]:: window manager
+link:config/mpd/[mpd]:: music daemon
+link:config/ncmpcpp[ncmpcpp]:: music player
+link:config/nvim/[nvim]:: text editor
+link:config/rofi/[rofi]::  window switcher/application launcher/dmenu replacement
+link:config/sxiv/exec/[sxiv]:: image viewer
+link:config/user-dirs.dirs[xdg dirs]:: some directory thingy
+link:xinitrc[xinitrc]:: launch the window manager and some programs
+link:Xresources[xresources]:: i only set colors in this
+link:config/zathura/[zathura]:: pdf reader
+link:config/zsh/[zsh]:: shell
+link:local/bin/[scripts]:: scripts used by stuff
+link:local/share/fonts[fonts]:: used by everything that has a font setting in here
 
 https://github.com/sainnhe/everforest[*colorscheme*]
 
