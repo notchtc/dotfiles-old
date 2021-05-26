@@ -1,16 +1,41 @@
 = Dotfiles
 chtc <notnotcha0t1c@protonmail.com>
 {docdate}
-:toc:
+:toc: preamble
 
 CAUTION: You probably _will_ and *must* change something in my dotfiles.
 I recommend looking through these dotfiles and changing things to fit your setup if you want to use this.
 
-These are my [.line-through]#horrible# *awesomefootnote:[Yes I needed to do this, because uhhhhhh, awesomewm.]* dotfiles.
+These are my [.line-through]#horrible# *awesome* dotfiles.
+
+Screenshots are located in the link:imgs[imgs] folder and shown in README's.
 
 NOTE: Screenshots may noy always be up to date, but still very close to how things look.
 
-Screenshots are located in the link:imgs[imgs] folder and shown in README's.
+== Contains
+[horizontal]
+link:config/alacritty/[alacritty]:: terminal
+link:config/awesome/[awesome]:: window manager
+link:config/mpd/[mpd]:: music daemon
+link:config/ncmpcpp[ncmpcpp]:: music player
+link:config/nvim/[nvim]:: text editor
+link:config/rofi/[rofi]::  window switcher/application launcher/dmenu replacement
+link:config/sxiv/exec/[sxiv]:: image viewer
+link:config/user-dirs.dirs[xdg dirs]:: some directory thingy
+link:xinitrc[xinitrc]:: launch the window manager and some programs
+link:Xresources[xresources]:: i only set colors in this
+link:config/zathura/[zathura]:: pdf reader
+link:config/zsh/[zsh]:: shell
+link:local/bin/[scripts]:: scripts used by stuff
+link:local/share/fonts[fonts]:: used by everything that has a font setting in here
+
+https://github.com/sainnhe/everforest[*colorscheme*]
+
+== Dependencies
+If something requires something, it will be written in it's README or here.
+
+* https://github.com/source-foundry/Hack/releases/download/v3.003/Hack-v3.003-ttf.zip[Hack]footnote:font[You only need to download this manually, if you didn't clone the whole repo]
+* https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/Hack[Hack Nerd Font]footnote:font[]
 
 == Install
 Want to use everything?
@@ -31,29 +56,3 @@ Step 4:: Install the dotfiles with rcm.
 ----
 RCRC=$HOME/.dotfiles/rcrc rcup
 ----
-
-== Contains
-
-link:config/alacritty/[alacritty]:: terminal
-link:config/awesome/[awesome]:: window manager
-link:config/mpd/[mpd]:: music daemon
-link:config/ncmpcpp[ncmpcpp]:: music player
-link:config/nvim/[nvim]:: text editor
-link:config/rofi/[rofi]:: window switcher/application launcher/dmenu replacement
-link:config/sxiv/exec/[sxiv]:: image viewer
-link:config/user-dirs.dirs[xdg dirs]:: some directory thingy
-link:xinitrc[xinitrc]:: launch the window manager and some programs
-link:Xresources[xresources]:: i only set colors in this
-link:config/zathura/[zathura]:: pdf reader
-link:config/zsh/[zsh]:: shell
-
-link:local/bin/[*scripts*]
-
-https://github.com/sainnhe/everforest[*colorscheme*]
-
-== Dependencies
-If something requires something, it will be written in it's README or here.
-
-* Hack (if you didn't install the dotfiles with rcm/didn't manually move or copy or symlink)
-** https://github.com/source-foundry/Hack/releases/download/v3.003/Hack-v3.003-ttf.zip[Hack]
-** https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/Hack[Hack Nerd Font]
