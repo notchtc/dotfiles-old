@@ -1,6 +1,6 @@
 local awful = require("awful")
 local hotkeys_popup = require("awful.hotkeys_popup")
-require("decorations.widgets.volume")
+require("decorations.bar.widgets.volume")
 
 -- General Awesome keys
 awful.keyboard.append_global_keybindings({

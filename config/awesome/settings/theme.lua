@@ -33,56 +33,56 @@ theme.color13 = xrdb.color13 or "#d3a0bc"
 theme.color14 = xrdb.color14 or "#83c092"
 theme.color15 = xrdb.color15 or "#d3c6aa"
 
-theme.bg_normal     = theme.background
-theme.bg_focus      = theme.color2
-theme.bg_urgent     = theme.color1
-theme.bg_minimize   = theme.color0
-theme.bg_systray    = theme.color6
+theme.bg_normal    = theme.background
+theme.bg_focus     = theme.color2
+theme.bg_urgent    = theme.color1
+theme.bg_minimize  = theme.color0
+theme.bg_systray   = theme.color6
 
-theme.fg_normal     = xrdb.foreground
-theme.fg_focus      = theme.bg_normal
-theme.fg_urgent     = theme.bg_normal
-theme.fg_minimize   = theme.bg_normal
+theme.fg_normal    = theme.foreground
+theme.fg_focus     = theme.bg_normal
+theme.fg_urgent    = theme.bg_normal
+theme.fg_minimize  = theme.bg_normal
 
-theme.useless_gap   = nil
-theme.border_width  = dpi(2)
+theme.useless_gap  = nil
+theme.border_width = dpi(2)
 theme.border_color_normal = theme.bg_normal
 theme.border_color_active = theme.bg_focus
 theme.border_color_marked = theme.color14
 
-theme.tooltip_fg = theme.fg_normal
-theme.tooltip_bg = theme.bg_normal
+theme.tooltip_fg           = theme.fg_normal
+theme.tooltip_bg           = theme.bg_normal
 theme.tooltip_border_color = theme.bg_minimize
 theme.tooltip_border_width = dpi(1)
 
-theme.taglist_bg_focus = theme.bg_focus
+theme.taglist_bg_focus    = theme.bg_focus
 theme.taglist_bg_occupied = theme.bg_normal
 theme.taglist_fg_occupied = theme.fg_normal
-theme.taglist_fg_empty = theme.bg_minimize
+theme.taglist_fg_empty    = theme.bg_minimize
 
 theme.tasklist_disable_icon = true
-theme.tasklist_bg_focus = theme.bg_normal
-theme.tasklist_fg_focus = theme.fg_normal
-theme.tasklist_bg_minimize = theme.bg_normal
-theme.tasklist_fg_minimize = theme.color0
+theme.tasklist_bg_focus     = theme.bg_normal
+theme.tasklist_fg_focus     = theme.fg_normal
+theme.tasklist_bg_minimize  = theme.bg_normal
+theme.tasklist_fg_minimize  = theme.color0
 
 theme.notification_icon_size = dpi(75)
-theme.notification_margin = dpi(6)
+theme.notification_margin    = dpi(6)
 
 theme.systray_icon_spacing = 2
 
-theme.hotkeys_modifiers_fg = theme.bg_focus
-theme.hotkeys_border_color = theme.bg_minimize
-theme.hotkeys_group_margin = dpi(6)
-theme.hotkeys_border_width = dpi(1)
-theme.hotkeys_font = theme.font
+theme.hotkeys_modifiers_fg     = theme.bg_focus
+theme.hotkeys_border_color     = theme.bg_minimize
+theme.hotkeys_group_margin     = dpi(6)
+theme.hotkeys_border_width     = dpi(1)
+theme.hotkeys_font             = theme.font
 theme.hotkeys_description_font = "Hack 9"
 
 theme.wibar_height = dpi(20)
 
 theme.menu_submenu_icon = config_path.."images/submenu.png"
-theme.menu_height = dpi(15)
-theme.menu_width  = dpi(100)
+theme.menu_height       = dpi(15)
+theme.menu_width        = dpi(100)
 theme.menu_border_width = dpi(1)
 theme.menu_border_color = theme.bg_minimize
 
@@ -94,12 +94,12 @@ theme = theme_assets.recolor_layout(theme, theme.color6)
 theme.icon_theme = nil
 
 -- Set Awesome icon
-theme.awesome_icon = config_path.."images/icon.png"
+theme.awesome_icon = theme_assets.awesome_icon(theme.wibar_height, theme.color6, theme.background)
 
 -- Yeet taglist squares:
-theme.taglist_squares_sel = nil
-theme.taglist_squares_unsel = nil
-theme.taglist_squares_sel_empty = nil
+theme.taglist_squares_sel         = nil
+theme.taglist_squares_unsel       = nil
+theme.taglist_squares_sel_empty   = nil
 theme.taglist_squares_unsel_empty = nil
 
 theme.wallpaper = config_path.."images/wall.png"

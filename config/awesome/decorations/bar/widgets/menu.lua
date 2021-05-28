@@ -4,7 +4,7 @@ local hotkeys_popup = require("awful.hotkeys_popup")
 require("settings.vars")
 
 -- Create a main menu
-myawesomemenu = {
+local myawesomemenu = {
     { "hotkeys", function() hotkeys_popup.show_help(nil, awful.screen.focused()) end },
     { "manual", terminal .. " -e man awesome" },
     { "edit config", editor_cmd .. " " .. awesome.conffile },
@@ -12,12 +12,12 @@ myawesomemenu = {
     { "quit", function() awesome.quit() end },
 }
 
-mysystemmenu = {
+local mysystemmenu = {
     { "poweroff", function () awful.spawn.with_shell("ask 'Do you want to shutdown?' 'sudo poweroff'") end },
     { "reboot", function () awful.spawn.with_shell("ask 'Do you want to reboot?' 'sudo reboot'") end }
 }
 
-mymainmenu = awful.menu({
+local mymainmenu = awful.menu({
     items = {
         { "awesome", myawesomemenu },
         { "system", mysystemmenu },

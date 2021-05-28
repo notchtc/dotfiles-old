@@ -3,7 +3,7 @@ local awful = require("awful")
 local wibox = require("wibox")
 local beautiful = require("beautiful")
 local dpi = beautiful.xresources.apply_dpi
-require("decorations.widgets")
+require("decorations.bar.widgets")
 
 -- Function to wrap margins around widgets
 local function wrap_margin(widget, l, r, t, b)
@@ -38,6 +38,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
         { -- Left widgets
             layout = wibox.layout.fixed.horizontal,
             s.mytaglist,
+            s.mypromptbox
         },
         { -- Middle widgets
             layout = wibox.layout.fixed.horizontal,
@@ -50,8 +51,8 @@ screen.connect_signal("request::desktop_decoration", function(s)
             wrap_bg(mybat, beautiful.color6),
             wrap_bg(mytextclock, beautiful.color6),
             wibox.widget.systray(),
-            wrap_margin(s.mylayoutbox, dpi(6), 0, dpi(1), dpi(1)),
-            mylauncher
+            wrap_margin(s.mylayoutbox, dpi(6), dpi(3), dpi(1), dpi(1)),
+            wrap_margin(mylauncher, nil, dpi(3), dpi(2), dpi(2))
         },
     }
 end)
