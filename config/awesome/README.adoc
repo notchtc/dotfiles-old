@@ -1,16 +1,22 @@
 = link:awesomewm.org[awesome]
 chtc <notnotcha0t1c@protonmail.com>
 {docdate}
-:toc:
+:toc: macro
+:toc-title:
 :experimental:
 
+[.text-center]
 IMPORTANT: Requires awesome git.
 
-My amazing awesomewm config.
+[.text-center]
+My epic gamer awesome config.
 
-link:wall.png[Wallpaper] (Made using https://github.com/ngynLk/ImageColorizer[ImageColorizer])
-
-https://unsplash.com/photos/AULwJzIhDRQ[Original wallpaper]
+[.text-center]
+.*Table Of Contents*
+[%collapsible]
+====
+toc::[]
+====
 
 == Screenshots
 image:../../imgs/awesome_idle.png[Idle screenshot of awesome]
@@ -83,3 +89,7 @@ image:../../imgs/awesome_keybindings.png[Awesome keybindings]
 
 == Other
 If poweroff and reboot isn't working do https://gitlab.com/-/snippets/2042640[this].
+
+=== Wallpaper
+* https://unsplash.com/photos/AULwJzIhDRQ[Original wallpaper]
+** link:wall.png[Wallpaper] (Made using https://github.com/ngynLk/ImageColorizer[ImageColorizer])

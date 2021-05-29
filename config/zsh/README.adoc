@@ -1,11 +1,21 @@
 = https://zsh.org[zsh]
 chtc <notnotcha0t1c@protonmail.com>
 {docdate}
-:toc:
+:toc: macro
+:toc-title:
 
+[.text-center]
 IMPORTANT: Read through this to see dependencies and other stuff.
 
+[.text-center]
 My simple personal zsh config.
+
+[.text-center]
+.*Table Of Contents*
+[%collapsible]
+====
+toc::[]
+====
 
 == Aliases
 |===

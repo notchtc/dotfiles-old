@@ -1,10 +1,22 @@
 = https://neovim.io[Neovim]
 chtc <notnotcha0t1c@protonmail.com>
 {docdate}
+:toc: macro
+:toc-title:
 :experimental:
-:toc:
 
+[.text-center]
 :IMPORTANT: Requires neovim nightly!
+
+[.text-center]
+This config has only *one* purpose: editing the neovim config
+
+[.text-center]
+.*Table Of Contents
+[%collapsible]
+====
+toc::[]
+====
 
 == Screenshots
 image::../../imgs/nvim.png[Neovim with fern open]

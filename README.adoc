@@ -7,12 +7,6 @@ chtc <notnotcha0t1c@protonmail.com>
 
 image:./imgs/rice.png[Screenshots of rice]
 
-.Table Of Contents
-[%collapsible]
-====
-toc::[]
-====
-
 [.text-center]
 These are my [.line-through]#horrible# *awesome* dotfiles.
 
@@ -25,6 +19,13 @@ Screenshots are located in the link:imgs[imgs] folder and shown in README's.
 You probably _will_ and *must* change something in my dotfiles.
 
 I recommend looking through these dotfiles and changing things to fit your setup if you want to use this.
+====
+
+[.text-center]
+.*Table Of Contents*
+[%collapsible]
+====
+toc::[]
 ====
 
 == Contains
