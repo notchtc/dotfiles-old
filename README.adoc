@@ -37,7 +37,7 @@ link:config/user-dirs.dirs[xdg dirs]:: some directory thingy
 link:xinitrc[xinitrc]:: launch the window manager and some programs
 link:Xresources[xresources]:: i only set colors in this
 link:config/zathura/[zathura]:: pdf reader
-link:config/zsh/[zsh]:: shell
+link:config/zsh/[zsh] (link:zshenv/[zshenv]):: shell
 link:local/bin/[scripts]:: scripts used by stuff
 link:local/share/fonts[fonts]:: used by everything that has a font setting in here
 
