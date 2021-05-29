@@ -9,7 +9,7 @@ chtc <notnotcha0t1c@protonmail.com>
 
 This config has only *one* purpose: editing the neovim config
 
-.*Table Of Contents
+.*Table Of Contents*
 [%collapsible]
 ====
 toc::[]
