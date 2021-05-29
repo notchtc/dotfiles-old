@@ -7,13 +7,10 @@ chtc <notnotcha0t1c@protonmail.com>
 
 image:./imgs/rice.png[Screenshots of rice]
 
-[.text-center]
 These are my [.line-through]#horrible# *awesome* dotfiles.
 
-[.text-center]
 Screenshots are located in the link:imgs[imgs] folder and shown in README's.
 
-[.text-center]
 [CAUTION]
 ====
 You probably _will_ and *must* change something in my dotfiles.
@@ -21,7 +18,6 @@ You probably _will_ and *must* change something in my dotfiles.
 I recommend looking through these dotfiles and changing things to fit your setup if you want to use this.
 ====
 
-[.text-center]
 .*Table Of Contents*
 [%collapsible]
 ====

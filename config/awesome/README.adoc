@@ -5,13 +5,10 @@ chtc <notnotcha0t1c@protonmail.com>
 :toc-title:
 :experimental:
 
-[.text-center]
 IMPORTANT: Requires awesome git.
 
-[.text-center]
 My epic gamer awesome config.
 
-[.text-center]
 .*Table Of Contents*
 [%collapsible]
 ====
