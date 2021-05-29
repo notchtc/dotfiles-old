@@ -1,1 +1,1 @@
-require('decorations.bar.wibar')
+require("decorations.bar.wibar")

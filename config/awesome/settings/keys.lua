@@ -384,7 +384,7 @@ awful.keyboard.append_global_keybindings({
         description = "take screenshot and upload to 0x0.st and copy link",
         group       = "misc",
         on_press    = function()
-            awful.spawn.with_shell(screenshot .. " -u | curl -F'file=@-' https://0x0.st | xclip -selection clipboard")
+            awful.spawn.with_shell(screenshot .. " -u | curl -F 'file=@-' https://0x0.st | xclip -selection clipboard")
         end
     },
     awful.key {
@@ -393,7 +393,7 @@ awful.keyboard.append_global_keybindings({
         description = "take screenshot with selection and upload to 0x0.st and copy link",
         group       = "misc",
         on_press    = function()
-            awful.spawn.with_shell(screenshot .. " -s -u | curl -F'file=@-' https://0x0.st | xclip -selection clipboard")
+            awful.spawn.with_shell(screenshot .. " -s -u | curl -F 'file=@-' https://0x0.st | xclip -selection clipboard")
         end
     },
     awful.key {
@@ -511,7 +511,7 @@ client.connect_signal("request::default_keybindings", function()
             description = "minimize",
             on_press = function (c)
                 -- The client currently has the input focus, so it cannot be
-                -- minimized, since minimized clients can't have the focus.
+                -- minimized, since minimized clients can"t have the focus.
                 c.minimized = true
             end ,
         },

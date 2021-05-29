@@ -32,7 +32,7 @@ ruled.client.connect_signal("request::rules", function()
                 "Event Tester",  -- xev.
             },
             role    = {
-                "pop-up",         -- e.g. Google Chrome's (detached) Developer Tools.
+                "pop-up",         -- e.g. Google Chrome"s (detached) Developer Tools.
             }
         },
         properties = { floating = true }
@@ -81,22 +81,22 @@ ruled.client.connect_signal("request::rules", function()
 end)
 
 -- Notifications
-ruled.notification.connect_signal('request::rules', function()
+ruled.notification.connect_signal("request::rules", function()
     -- All notifications will match this rule.
     ruled.notification.append_rule {
         rule       = { },
         properties = { screen = awful.screen.preferred }
     }
     ruled.notification.append_rule {
-        rule       = { urgency = 'low' },
+        rule       = { urgency = "low" },
         properties = { border_color = beautiful.color6, timeout = 5 }
     }
     ruled.notification.append_rule {
-        rule       = { urgency = 'normal' },
+        rule       = { urgency = "normal" },
         properties = { border_color = beautiful.bg_focus, timeout = 20 }
     }
     ruled.notification.append_rule {
-        rule       = { urgency = 'critical' },
+        rule       = { urgency = "critical" },
         properties = { bg = beautiful.bg_normal, border_color = beautiful.bg_urgent, timeout = 60 }
     }
 end)

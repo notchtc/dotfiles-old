@@ -8,7 +8,7 @@ local config_path = gfs.get_configuration_dir()
 
 -- inherit default theme
 local theme = dofile(themes_path.."default/theme.lua")
--- load vector assets' generators for this theme
+-- load vector assets" generators for this theme
 
 theme.font         = "Hack 10"
 theme.icon_font    = "Hack Nerd Font 10"

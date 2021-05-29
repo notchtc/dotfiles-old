@@ -26,10 +26,10 @@ awful.screen.connect_for_each_screen(function(s)
         buttons = tasklist_buttons,
         widget_template = {
             {
-                {id = 'text_role', widget = wibox.widget.textbox},
+                {id = "text_role", widget = wibox.widget.textbox},
                 layout = wibox.layout.flex.horizontal
             },
-            id = 'background_role',
+            id = "background_role",
             widget = wibox.container.background
         }
     }
