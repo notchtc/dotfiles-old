@@ -1,10 +1,15 @@
-= Dotfiles
+= Welcome to my dotfiles!
 chtc <notnotcha0t1c@protonmail.com>
 {docdate}
-:toc: preamble
 :icons: font
 
 image:./imgs/rice.png[Screenshots of rice]
+
+[.text-center]
+These are my [.line-through]#horrible# *awesome* dotfiles.
+
+[.text-center]
+Screenshots are located in the link:imgs[imgs] folder and shown in README's.
 
 [.text-center]
 [CAUTION]
@@ -14,15 +19,10 @@ You probably _will_ and *must* change something in my dotfiles.
 I recommend looking through these dotfiles and changing things to fit your setup if you want to use this.
 ====
 
-[.text-center]
-Welcome!
-These are my [.line-through]#horrible# *awesome* dotfiles.
-
-[.text-center]
-Screenshots are located in the link:imgs[imgs] folder and shown in README's.
-
-[.text-center]
-NOTE: Screenshots may not always be up to date, but still very close to how things look.
+[%collapsible]
+====
+test
+====
 
 == Contains
 [horizontal]
