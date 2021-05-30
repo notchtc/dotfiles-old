@@ -1,23 +1,23 @@
 local mode_map = {
-    ['n'] = 'normal',
+    ['n']  = 'normal',
     ['no'] = 'n-operator pending',
-    ['v'] = 'visual',
-    ['V'] = 'v-line',
+    ['v']  = 'visual',
+    ['V']  = 'v-line',
     [''] = 'v-block',
-    ['s'] = 'select',
-    ['S'] = 's-line',
+    ['s']  = 'select',
+    ['S']  = 's-line',
     [''] = 's-block',
-    ['i'] = 'insert',
-    ['R'] = 'replace',
+    ['i']  = 'insert',
+    ['R']  = 'replace',
     ['Rv'] = 'v-replace',
-    ['c'] = 'command',
+    ['c']  = 'command',
     ['cv'] = 'vim ex',
     ['ce'] = 'ex',
-    ['r'] = 'prompt',
+    ['r']  = 'prompt',
     ['rm'] = 'more',
     ['r?'] = 'confirm',
-    ['!'] = 'shell',
-    ['t'] = 'terminal'
+    ['!']  = 'shell',
+    ['t']  = 'terminal'
 }
 
 local function mode()
@@ -30,7 +30,7 @@ function statusline()
     local status = ''
     status = status .. '%#Search#'
     status = status .. ' ' .. mode() .. ' '
-    status = status .. '%#Conceal#'
+    status = status .. '%#StatusLine#'
     status = status .. ' %-0.25t'
     status = status .. '%( %M%)'
     status = status .. '%( %R%)'
