@@ -2,7 +2,7 @@
 MUSIC_PATH="$HOME/music"
 ART_PATH=$(dirname "$(mpc current -f '%file%' | head -n1)")
 
-ART=("$MUSIC_PATH"/"$ART_PATH"/cover.*)
+ART=("$MUSIC_PATH"/"$ART_PATH"/[C-c][O-o][V-v][E-e][R-r].*)
 ARTIST=$(mpc current -f '%artist%')
 TITLE=$(mpc current -f '%title%')
 ALBUM=$(mpc current -f '%album%')
