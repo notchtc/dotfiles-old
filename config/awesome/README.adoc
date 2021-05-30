@@ -2,10 +2,10 @@
 chtc <notnotcha0t1c@protonmail.com>
 {docdate}
 :toc: macro
-:toc-title:
+:toc-title!:
 :experimental:
 
-IMPORTANT: Requires awesome git.
+IMPORTANT: Requires awesome git!
 
 My epic gamer awesome config.
 
@@ -16,9 +16,9 @@ toc::[]
 ====
 
 == Screenshots
-image:../../imgs/awesome_idle.png[Idle screenshot of awesome]
-image:../../imgs/awesome_busy.png[Busy screenshot of awesome]
-image:../../imgs/awesome_minimized.png[Busy screenshot of awesome with one window minimized]
+image::../../imgs/awesome_idle.png[Idle screenshot of awesome]
+image::../../imgs/awesome_busy.png[Busy screenshot of awesome]
+image::../../imgs/awesome_minimized.png[Busy screenshot of awesome with one window minimized]
 
 == Dependencies
 |===
@@ -82,7 +82,8 @@ You probably want to add/remove/change some stuff here.footnote:[If you want to 
 
 == Keybindings
 When using awesomewm you can just do kbd:[Super+S].
-image:../../imgs/awesome_keybindings.png[Awesome keybindings]
+
+image::../../imgs/awesome_keybindings.png[Awesome keybindings]
 
 == Other
 If poweroff and reboot isn't working do https://gitlab.com/-/snippets/2042640[this].

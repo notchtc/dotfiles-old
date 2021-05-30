@@ -2,20 +2,21 @@
 chtc <notnotcha0t1c@protonmail.com>
 {docdate}
 :toc: macro
-:toc-title:
+:toc-title!:
 :icons: font
 
-image:./imgs/rice.png[Screenshots of rice]
+image::./imgs/rice.png[Screenshots of rice]
 
 These are my [.line-through]#horrible# *awesome* dotfiles.
 
 Screenshots are located in the link:imgs[imgs] folder and shown in README's.
 
+.Changing stuff to make it work/fit your needs
 [CAUTION]
 ====
 You probably _will_ and *must* change something in my dotfiles.
 
-I recommend looking through these dotfiles and changing things to fit your setup if you want to use this.
+I recommend looking through these dotfiles and changing things to fit your setup and/or needs if you want to use this.
 ====
 
 .*Table Of Contents*
@@ -24,22 +25,22 @@ I recommend looking through these dotfiles and changing things to fit your setup
 toc::[]
 ====
 
-== Contains
+== Things used
 [horizontal]
-link:config/alacritty/[alacritty]:: terminal
-link:config/awesome/[awesome]:: window manager
-link:config/mpd/[mpd]:: music daemon
-link:config/ncmpcpp[ncmpcpp]:: music player
-link:config/nvim/[nvim]:: text editor
-link:config/rofi/[rofi]::  window switcher/application launcher/dmenu replacement
-link:config/sxiv/exec/[sxiv]:: image viewer
-link:config/user-dirs.dirs[xdg dirs]:: some directory thingy
-link:xinitrc[xinitrc]:: launch the window manager and some programs
-link:Xresources[xresources]:: i only set colors in this
-link:config/zathura/[zathura]:: pdf reader
-link:config/zsh/[zsh] (link:zshenv/[zshenv]):: shell
-link:local/bin/[scripts]:: scripts used by stuff
-link:local/share/fonts[fonts]:: used by everything that has a font setting in here
+link:config/alacritty/[alacritty]:: Terminal
+link:config/awesome/[awesome]:: Window manager
+link:config/mpd/[mpd]:: Music daemon
+link:config/ncmpcpp[ncmpcpp]:: Music player
+link:config/nvim/[nvim]:: Text editor
+link:config/rofi/[rofi]::  Window switcher/Application launcher/Dmenu replacement
+link:config/sxiv/exec/[sxiv]:: Image viewer
+link:config/user-dirs.dirs[xdg dirs]:: Some directory thingy
+link:xinitrc[xinitrc]:: Launch the window manager and some programs
+link:Xresources[xresources]:: I only set colors in this
+link:config/zathura/[zathura]:: Pdf reader
+link:config/zsh/[zsh] (link:zshenv/[zshenv]):: Shell
+link:local/bin/[scripts]:: Scripts used by stuff
+link:local/share/fonts[fonts]:: Used by everything that has a font setting in here
 
 https://github.com/sainnhe/everforest[*colorscheme*]
 
@@ -56,7 +57,7 @@ This is how you install this.
 Step 1:: Clone the repository.
 [source,sh]
 ----
-git clone --recurse-submodules https://gitlab.com/cha0t1c/dotfiles.git $HOME/.dotfiles
+git clone --recurse-submodules https://gitlab.com/chtc/dotfiles.git $HOME/.dotfiles
 ----
 
 Step 2:: Install https://github.com/thoughtbot/rcm[rcm].

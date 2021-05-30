@@ -3,4 +3,4 @@ chtc <notnotcha0t1c@protonmail.com>
 {docdate}
 
 == Screenshot
-image:../../imgs/rofi.png[Screenshot of rofi]
+image::../../imgs/rofi.png[Screenshot of rofi]

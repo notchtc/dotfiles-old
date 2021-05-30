@@ -2,7 +2,7 @@
 chtc <notnotcha0t1c@protonmail.com>
 {docdate}
 :toc: macro
-:toc-title:
+:toc-title!:
 
 IMPORTANT: Read through this to see dependencies and other stuff.
 
@@ -76,29 +76,29 @@ toc::[]
 
 == What it does
 * Sets some variables
-** BROWSER to firefox
-** EDITOR to nvim
-** VISUAL to EDITOR
-** PAGER to less
-** TERM to alacritty
+** BROWSER to `firefox`
+** EDITOR to `nvim`
+** VISUAL to `$EDITOR`
+** PAGER to `less`
+** TERM to `alacritty`
 ** Some fzf options
 ** Cleaning up home directory
 *** XDG
-**** XDG_CACHE_HOME to ~/.cache
-**** XDG_CONFIG_HOME to ~/.config
-**** XDG_DATA_HOME to ~/.local/share
-*** GEM_HOME to XDG_DATA_HOME/gem
-*** GEM_SPEC_CACHE to XDG_CACHE_HOME/gem
-*** GNUPGHOME to XDG_DATA_HOME/gnupg
-*** GTK2_RC_FILES to XDG_CONFIG_HOME/gtk-2.0/gtkrc
-*** INPUTRC to XDG_CONFIG_HOME/readline/inputrc
+**** XDG_CACHE_HOME to `~/.cache`
+**** XDG_CONFIG_HOME to `~/.config`
+**** XDG_DATA_HOME to `~/.local/share`
+*** GEM_HOME to `$XDG_DATA_HOME/gem`
+*** GEM_SPEC_CACHE to `$XDG_CACHE_HOME/gem`
+*** GNUPGHOME to `$XDG_DATA_HOME/gnupg`
+*** GTK2_RC_FILES to `$XDG_CONFIG_HOME/gtk-2.0/gtkrc`
+*** INPUTRC to `$XDG_CONFIG_HOME/readline/inputrc`
 *** Disables less history file
-*** HISTFILE to XDG_DATA_HOME/zsh/history
-*** zcompdumps are placed in XDG_CACHE_HOME/zsh (directory must exist)
+*** HISTFILE to `$XDG_DATA_HOME/zsh/history`
+*** zcompdumps are placed in `$XDG_CACHE_HOME/zsh` (directory must exist)
 ** PATH
-*** Adds ~/.local/bin and GEM_HOME/bin
+*** Adds `~/.local/bin` and `$GEM_HOME/bin`
 * Minimal prompt
 * Completion
-* https://github.com/zdharma/fast-syntax-highlighting[Syntax highlighting] (must be in ~/.config/zsh/fsh unless you change that)
-* https://github.com/zsh-users/zsh-autosuggestions[Autosuggestions] (must be in ~/.config/zsh/asg unless you change that)
+* https://github.com/zdharma/fast-syntax-highlighting[Syntax highlighting] (must be in `~/.config/zsh/fsh` unless you change that)
+* https://github.com/zsh-users/zsh-autosuggestions[Autosuggestions] (must be in `~/.config/zsh/asg` unless you change that)
 * Vi keybindings

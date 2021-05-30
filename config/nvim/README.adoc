@@ -2,7 +2,7 @@
 chtc <notnotcha0t1c@protonmail.com>
 {docdate}
 :toc: macro
-:toc-title:
+:toc-title!:
 :experimental:
 
 :IMPORTANT: Requires neovim nightly!

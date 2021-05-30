@@ -10,7 +10,7 @@ image::../../imgs/ncmpcpp.png[ncmpcpp]
 |Dependency|Why?
 
 |mpd
-|ncmpcpp needs it to work
+|Ncmpcpp needs it to work
 
 |bash & mpc & notify-send
 |Used by notify script
