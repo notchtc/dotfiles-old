@@ -9,11 +9,7 @@ local function run_once(cmd)
     awful.spawn.easy_async_with_shell(string.format("pgrep -u $USER -x %s > /dev/null || (%s)", findme, cmd), function() end)
 end
 
-apps = {
-    "xrdb -merge $HOME/.Xresources",
-    "pulseaudio --start",
-    "mpd",
-    "redshift-gtk"
-}
-
-for app = 1, #apps do run_once(apps[app]) end
+run_once("xrdb -merge $HOME/.Xresources")
+run_once("pulseaudio --start")
+run_once("mpd")
+run_once("redshift-gtk")
