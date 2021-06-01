@@ -28,7 +28,6 @@ export BROWSER=firefox
 export EDITOR=nvim
 export VISUAL=$EDITOR
 export PAGER=less
-export TERM=alacritty
 export FZF_DEFAULT_OPTS="-m --color '16,bg+:-1' --border sharp --preview-window sharp:wrap --layout=reverse-list --info inline"
 # }}}
 
