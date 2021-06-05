@@ -10,7 +10,7 @@ if [ "$state" = "full" ]; then
     icon=
 elif [ "$state" = "charging" ]; then
     icon=
-elif [ "state" = "discharging" ]; then
+elif [ "$state" = "discharging" ]; then
     icon=
 fi
 

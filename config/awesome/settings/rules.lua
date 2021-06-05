@@ -10,11 +10,12 @@ ruled.client.connect_signal("request::rules", function()
         id         = "global",
         rule       = { },
         properties = {
-            focus        = awful.client.focus.filter,
-            raise        = true,
-            border_color = beautiful.border_color_normal,
-            screen       = awful.screen.preferred,
-            placement    = awful.placement.no_overlap+awful.placement.no_offscreen
+            focus            = awful.client.focus.filter,
+            raise            = true,
+            border_color     = beautiful.border_color_normal,
+            size_hints_honor = false,
+            screen           = awful.screen.preferred,
+            placement        = awful.placement.no_overlap+awful.placement.no_offscreen
         }
     }
 
