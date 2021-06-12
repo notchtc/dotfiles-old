@@ -1,5 +1,4 @@
 local awful = require("awful")
-local gfs = require("gears.filesystem")
 
 local function run_once(cmd)
     local findme = cmd
@@ -12,7 +11,6 @@ end
 autostart_apps = {
     "xrdb -merge $HOME/.Xresources",
     "pulseaudio --start",
-    "mpd",
     "redshift-gtk"
 }
 

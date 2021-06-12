@@ -42,14 +42,14 @@ image::../../imgs/awesome_minimized.png[Busy screenshot of awesome with one wind
 |maim
 |Screenshot toolfootnote:change[]
 
-|mpc
-|Control mpd
-
-|ncmpcpp
+|lollypop
 |Music playerfootnote:change[]
 
 |newsboat
 |RSS readerfootnote:change[]
+
+|playerctl
+|Control media players
 
 |rofi
 |Application launcher (and also a dmenu replacement and window switcher)footnote:change[]
@@ -71,9 +71,6 @@ You probably want to add/remove/change some stuff here.footnote:[If you want to 
 
 |pulseaudio
 |I don't trust pulseaudio being launched when needed
-
-|mpd
-|It plays audio and ncmpcpp requires it
 
 |redshift-gtk
 |Saving my eyes

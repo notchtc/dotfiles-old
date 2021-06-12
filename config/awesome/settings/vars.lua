@@ -10,7 +10,7 @@ editor = os.getenv("EDITOR") or "nvim"
 editor_cmd = terminal .. " -e " .. editor
 browser = os.getenv("BROWSER") or "firefox"
 rss = "newsboat"
-music = "ncmpcpp"
+music = "lollypop"
 screenshot = "maim"
 launcher = "rofi -show run"
 

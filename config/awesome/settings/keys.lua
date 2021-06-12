@@ -336,28 +336,28 @@ awful.keyboard.append_global_keybindings({
     awful.key {
         modifiers   = { },
         key         = "XF86AudioPlay",
-        description = "play/pause mpd",
+        description = "play/pause",
         group       = "misc",
         on_press    = function()
-            awful.spawn("mpc toggle")
+            awful.spawn("playerctl play-pause")
         end
     },
     awful.key {
         modifiers   = { },
         key         = "XF86AudioNext",
-        description = "go to next track in mpd",
+        description = "go to next track",
         group       = "misc",
         on_press    = function()
-            awful.spawn("mpc next")
+            awful.spawn("playerctl next")
         end
     },
     awful.key {
         modifiers   = { },
         key         = "XF86AudioPrev",
-        description = "go to previous track in mpd",
+        description = "go to previous track",
         group       = "misc",
         on_press    = function()
-            awful.spawn("mpc prev")
+            awful.spawn("playerctl previous")
         end
     },
     awful.key {
@@ -420,7 +420,7 @@ awful.keyboard.append_global_keybindings({
         description = "open music player",
         group       = "launch",
         on_press    = function()
-            awful.spawn(terminal .. " -t music -e " .. music)
+            awful.spawn(music)
         end
     },
     awful.key {
