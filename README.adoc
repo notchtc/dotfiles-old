@@ -29,8 +29,7 @@ toc::[]
 [horizontal]
 link:config/alacritty/[alacritty]:: Terminal
 link:config/awesome/[awesome]:: Window manager
-link:config/mpd/[mpd]:: Music daemon
-link:config/ncmpcpp[ncmpcpp]:: Music player
+lollypop:: Music player
 link:config/nvim/[nvim]:: Text editor
 link:config/rofi/[rofi]::  Window switcher/Application launcher/Dmenu replacement
 link:config/sxiv/exec/[sxiv]:: Image viewer
@@ -43,6 +42,11 @@ link:local/bin/[scripts]:: Scripts used by stuff
 link:local/share/fonts[fonts]:: Used by everything that has a font setting in here
 
 https://github.com/sainnhe/everforest[*colorscheme*]
+
+== Things not used
+[horizontal]
+link:config/mpd/[mpd]:: Music daemon
+link:config/ncmpcpp/[ncmpcpp]:: Music player
 
 == Dependencies
 If something requires something, it will be written in it's README or here.
