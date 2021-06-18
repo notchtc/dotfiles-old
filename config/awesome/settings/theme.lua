@@ -46,7 +46,7 @@ theme.fg_minimize  = theme.bg_normal
 
 theme.useless_gap  = nil
 theme.border_width = dpi(2)
-theme.border_color_normal = theme.bg_minimize
+theme.border_color_normal = theme.bg_normal
 theme.border_color_active = theme.bg_focus
 theme.border_color_marked = theme.color14
 
