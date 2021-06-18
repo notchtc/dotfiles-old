@@ -27,10 +27,19 @@ local function wrap_bg(widget, bg_color)
     }
 end
 
+-- Function to limit the size of widgets
+local function wrap_constraint(widget, w)
+    return wibox.widget {
+        widget,
+        width = w,
+        widget = wibox.container.constraint
+    }
+end
+
 screen.connect_signal("request::desktop_decoration", function(s)
 
     -- Create the wibox
-    s.mywibox = awful.wibar({ position = "bottom", screen = s })
+    s.mywibox = awful.wibar({ position = "top", screen = s })
 
     -- Add widgets to the wibox
     s.mywibox.widget = {
@@ -42,16 +51,16 @@ screen.connect_signal("request::desktop_decoration", function(s)
         },
         { -- Middle widgets
             layout = wibox.layout.fixed.horizontal,
-            wrap_margin(s.myfocusedwindow, dpi(6), dpi(3)),
+            wrap_margin(wrap_constraint(s.myfocusedwindow, dpi(435)), dpi(6), dpi(3)),
             wrap_margin(s.myminimizedlist, dpi(3), dpi(6)),
         },
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
-            wrap_bg(myvol, beautiful.color6),
-            wrap_bg(mybat, beautiful.color6),
-            wrap_bg(mytextclock, beautiful.color6),
-            wibox.widget.systray(),
-            wrap_margin(s.mylayoutbox, dpi(6), dpi(3), dpi(1), dpi(1)),
+            myvol,
+            mybat,
+            mytextclock,
+            wrap_margin(wibox.widget.systray(), dpi(6)),
+            wrap_margin(s.mylayoutbox, dpi(3), dpi(3), dpi(1), dpi(1)),
             wrap_margin(mylauncher, nil, dpi(3), dpi(2), dpi(2))
         },
     }

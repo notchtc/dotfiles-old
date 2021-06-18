@@ -1,4 +1,5 @@
-require("settings.tags")
 require("settings.vars")
+require("settings.tags")
 require("settings.rules")
+require("settings.signals")
 require("settings.keys")

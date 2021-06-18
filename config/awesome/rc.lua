@@ -3,12 +3,11 @@
 -- found (e.g. lgi). If LuaRocks is not installed, do nothing.
 pcall(require, "luarocks.loader")
 
-require("awful.autofocus")
 local beautiful = require("beautiful")
 local naughty = require("naughty")
 
-require("autostart")
 require("settings")
+require("autostart")
 require("decorations")
 
 -- ERROR HANDLING
@@ -21,15 +20,6 @@ naughty.connect_signal("request::display_error", function(message, startup)
         message = "An error happened"..(startup and " during startup: " or ": ") .. message
     }
 end)
-
--- SIGNALS
--- Enable sloppy focus, so that focus follows mouse.
-client.connect_signal("mouse::enter", function(c)
-    c:activate { context = "mouse_enter", raise = false }
-end)
-
-client.connect_signal("focus", function(c) c.border_color = beautiful.border_color_active end)
-client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_color_normal end)
 
 -- GARBAGE COLLECTION
 collectgarbage("setpause", 110)
