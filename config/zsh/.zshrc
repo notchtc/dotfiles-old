@@ -26,10 +26,12 @@ compinit -d $XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION
 # Use these {{{
 export BROWSER=firefox
 export EDITOR=nvim
-export VISUAL=$EDITOR
+export VISUAL="$EDITOR"
 export PAGER=less
 export FZF_DEFAULT_OPTS="-m --color '16,bg+:-1' --border sharp --preview-window sharp:wrap --layout=reverse-list --info inline"
 # }}}
+
+export LIBERICA_DIR="$HOME/misc/jdk8u292-full"
 
 # Make gpg work
 export GPG_TTY=$(tty)
