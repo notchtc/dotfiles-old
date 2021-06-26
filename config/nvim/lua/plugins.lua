@@ -36,6 +36,24 @@ return require('packer').startup(function()
     }
     -- }}}
 
+    -- gitsigns.nvim{{{
+    use {
+        'lewis6991/gitsigns.nvim',
+        requires = { 'nvim-lua/plenary.nvim' },
+        config = function()
+            require('gitsigns').setup {
+                signs = {
+                    add          = { text = '│' },
+                    change       = { text = '│' },
+                    delete       = { text = '╵' },
+                    topdelete    = { text = '╷' },
+                    changedelete = { text = '╰' }
+                }
+            }
+        end
+    }
+    -- }}}
+
     use 'lukas-reineke/indent-blankline.nvim'
 
     -- indentLine{{{
@@ -112,16 +130,5 @@ return require('packer').startup(function()
     -- }}}
 
     use 'tpope/vim-fugitive'
-
-    -- vim-gitgutter{{{
-    use {
-        'airblade/vim-gitgutter',
-        config = function()
-            -- Make gitgutter update faster
-            vim.o.updatetime = 100
-        end
-    }
-    -- }}}
 end)
-
 -- vim: set foldmethod=marker:

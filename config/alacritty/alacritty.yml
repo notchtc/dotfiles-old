@@ -7,12 +7,14 @@ font:
         # Point size
         size: 10
 
+        offset:
+          y: -1
+
 cursor:
         # Cursor style
         # Values for `style`:
         #   - ▇ Block
-        #   - _ Underline
-        #   - | Beam
+        #   - _ Underline - | Beam
         style: Beam
         blinking: on
         blink_interval: 500
