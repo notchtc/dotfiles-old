@@ -59,9 +59,6 @@ vim.api.nvim_set_keymap('n', '<leader>N', ':NvimTreeFindFile<cr>', {})
 vim.api.nvim_set_keymap('n', '<leader>r', ':NvimTreeRefresh<cr>', {})
 -- }}}
 
--- Open goyo
-vim.api.nvim_set_keymap('n', '<leader>g', ':Goyo<cr>', {})
-
 -- Spell check
 vim.api.nvim_set_keymap('n', '<leader>sp', ':setlocal spell! spelllang=en_us<cr>', {})
 
