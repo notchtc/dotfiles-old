@@ -32,6 +32,9 @@ image::../../imgs/nvim2.png[Neovim with color highlighting, a split and tab bar]
 |https://github.com/sainnhe/everforest[everforest]
 |Colorscheme
 
+|https://github.com/lewis6991/gitsigns.nvim[gitsigns.nvim]
+|Shows git changes
+
 |https://github.com/lukas-reineke/indent-blankline.nvim[indent-blankline.nvim]
 |Display indentation levels on blank lines
 
@@ -52,9 +55,6 @@ image::../../imgs/nvim2.png[Neovim with color highlighting, a split and tab bar]
 
 |https://github.com/tpope/vim-fugitive[vim-fugitive]
 |Git wrapper
-
-|https://github.com/airblade/vim-gitgutter[vim-gitgutter]
-|Shows git changes
 
 |===
 

@@ -14,16 +14,17 @@ return require('packer').startup(function()
     -- barbar.nvim{{{
     use {
         'romgrk/barbar.nvim',
-        config = function()
+        requires = 'kyazdani42/nvim-web-devicons',
+        config   = function()
             vim.cmd("hi! link BufferTabpageFill Normal")
             vim.cmd("let bufferline = get(g:, 'bufferline', {})")
             vim.cmd("let bufferline.auto_hide = v:true")
-            vim.cmd("let bufferline.icons = v:false")
+            vim.cmd("let bufferline.icons = v:true")
             vim.cmd("let bufferline.animation = v:false")
             vim.cmd("let bufferline.maximum_padding = 2")
         end
     }
-    -- }}}
+    --}}}
 
     -- everforest{{{
     use {
@@ -39,8 +40,8 @@ return require('packer').startup(function()
     -- gitsigns.nvim{{{
     use {
         'lewis6991/gitsigns.nvim',
-        requires = { 'nvim-lua/plenary.nvim' },
-        config = function()
+        requires = 'nvim-lua/plenary.nvim',
+        config   = function()
             require('gitsigns').setup {
                 signs = {
                     add          = { text = '│' },
@@ -89,15 +90,16 @@ return require('packer').startup(function()
     -- nvim-tree.lua{{{
     use {
         'kyazdani42/nvim-tree.lua',
-        config = function()
+        requires = 'kyazdani42/nvim-web-devicons',
+        config   = function()
             vim.g.nvim_tree_git_hl = 1
             vim.g.nvim_tree_auto_open = 1
             vim.g.nvim_tree_auto_close = 1
             vim.g.nvim_tree_hijack_netrw = 1
             vim.g.nvim_tree_show_icons = {
-                git = 0,
-                folders = 0,
-                files = 0,
+                git = 1,
+                folders = 1,
+                files = 1,
             }
         end
     }
@@ -106,7 +108,7 @@ return require('packer').startup(function()
     -- nvim-treesitter{{{
     use {
         'nvim-treesitter/nvim-treesitter',
-        run = ':TSUpdate',
+        run    = ':TSUpdate',
         config = function()
             require'nvim-treesitter.configs'.setup {
                 ensure_installed = {'lua', 'css', 'html'},
