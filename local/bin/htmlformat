@@ -6,7 +6,8 @@ if [ "$1" = "a" ]; then # Run on all files
     case "$answer" in
         y|Y )
             for i in $(find . -name '*.html' -type f); do
-                tidy -q -i --tidy-mark 0 --show-errors 0 --indent-spaces 4 --force-output 1 --wrap 0 -m "$i" && html-beautify -r "$i"
+                tidy -qi --tidy-mark 0 --show-errors 0 --indent-spaces 4 --force-output 1 --wrap 0 -m "$i"
+                html-beautify -r "$i"
             done
             ;;
         n|N )
