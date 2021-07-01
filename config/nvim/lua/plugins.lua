@@ -101,6 +101,17 @@ return require('packer').startup(function()
                 folders = 1,
                 files = 1,
             }
+
+            vim.g.nvim_tree_icons = {
+                git = {
+                    unstaged = '',
+                    staged = '',
+                    renamed = '',
+                    untracked = '',
+                    deleted = '',
+                    ignored = '',
+                }
+            }
         end
     }
     -- }}}
