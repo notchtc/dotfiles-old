@@ -55,21 +55,14 @@ return require('packer').startup(function()
     }
     -- }}}
 
-    use 'lukas-reineke/indent-blankline.nvim'
-
-    -- indentLine{{{
+    -- indent-blankline.nvim{{{
     use {
-        'Yggdroot/indentLine',
+        'lukas-reineke/indent-blankline.nvim',
         config = function()
-            -- Set indentLine color
-            vim.g.indentLine_defaultGroup = 'SpecialKey'
-
-            -- Set indentLine characters
-            vim.g.indentLine_char_list = {'│', '┆', '┊', ''}
-
-            -- Don't show indentLine in specific things
-            vim.g.indentLine_fileTypeExclude = {'fern', 'txt', 'packer'}
-            vim.g.indentLine_bufTypeExclude = {'help'}
+            vim.g.indent_blankline_char_list = {'│', '┆', '┊', ''}
+            vim.g.indent_blankline_show_first_indent_level = false
+            vim.g.indent_blankline_show_foldtext = false
+            vim.g.indent_blankline_filetype_exclude = {'fern', 'txt', 'packer', 'help'}
         end
     }
     -- }}}
@@ -136,7 +129,6 @@ return require('packer').startup(function()
     use {
         'luochen1990/rainbow',
         config = function()
-            -- Enable rainbow parentheses
             vim.g.rainbow_active = 1
         end
     }

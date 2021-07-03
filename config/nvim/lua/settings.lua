@@ -10,7 +10,7 @@ vim.o.ignorecase = true
 -- Be case sensitive when pattern is uppercase
 vim.o.smartcase = true
 
--- Better splittino
+-- Better splitting
 vim.o.splitright = true
 vim.o.splitbelow = true
 
@@ -41,7 +41,7 @@ vim.wo.foldnestmax = 1
 vim.o.lazyredraw = true
 
 -- Disable swap files
-vim.o.swapfile = false
+vim.bo.swapfile = false
 
 -- Set dark background
 vim.o.background = 'dark'
@@ -60,3 +60,6 @@ vim.o.showmode = false
 
 -- Mouse support
 vim.o.mouse = vim.o.mouse .. 'a'
+
+-- Hack to remove cursorline staying on blank lines
+vim.wo.colorcolumn = '9999'
