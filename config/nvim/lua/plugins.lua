@@ -125,11 +125,18 @@ return require('packer').startup(function()
     }
     -- }}}
 
-    -- rainbow {{{
+    -- nvim-ts-rainbow {{{
     use {
-        'luochen1990/rainbow',
+        'p00f/nvim-ts-rainbow',
+        requires = 'nvim-treesitter/nvim-treesitter',
         config = function()
-            vim.g.rainbow_active = 1
+            require'nvim-treesitter.configs'.setup {
+                rainbow = {
+                    enable = true,
+                    extended_mode = true,
+                    max_file_lines = 5000
+                }
+            }
         end
     }
     -- }}}

@@ -5,7 +5,7 @@ chtc <notnotcha0t1c@protonmail.com>
 :toc-title!:
 :experimental:
 
-:IMPORTANT: Requires neovim nightly!
+:IMPORTANT: Requires Neovim 0.5!
 
 This config has only *one* purpose: editing the neovim config
 
@@ -36,21 +36,18 @@ image::../../imgs/nvim2.png[Neovim with color highlighting, a split and tab bar]
 |Shows git changes
 
 |https://github.com/lukas-reineke/indent-blankline.nvim[indent-blankline.nvim]
-|Display indentation levels on blank lines
-
-|https://github.com/Yggdroot/indentLine[indentLine]
 |Display indentation levels
 
 |https://github.com/norcalli/nvim-colorizer.lua[nvim-colorizer.lua]
 |Highlight colors
 
-|https://github.com/nvim-treesitter/nvim-treesitter[nvim-treesitter]
-|Highlighting and folding based on treesitter
-
 |https://github.com/kyazdani42/nvim-tree.lua[nvim-tree.lua]
 |File explorer tree
 
-|https://github.com/luochen1990/rainbow[rainbow]
+|https://github.com/nvim-treesitter/nvim-treesitter[nvim-treesitter]
+|Highlighting and folding based on treesitter
+
+|https://github.com/p00f/nvim-ts-rainbow[nvim-ts-rainbow]
 |Rainbow parentheses
 
 |https://github.com/tpope/vim-fugitive[vim-fugitive]
@@ -99,9 +96,6 @@ kbd:[Space] is set to the kbd:[Leader] key in this config, so if you want to use
 
 |kbd:[Space+r]
 |Refresh nvim-tree
-
-|kbd:[Space+g]
-|Toggle goyo
 
 |kbd:[Ctrl+s]
 |Magic buffer-picking mode
