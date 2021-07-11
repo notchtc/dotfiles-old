@@ -127,7 +127,6 @@ Stuff that wasn't mentioned in the other sections
 * Cursor line
 * Custom statusline
 * Don't show that tilde at the end of buffer
-* Go through wrapped lines
 * Not case sensitive in patterns
 * Open splits below/on the right
 * Removing trailing newlines and trailing whitespaces

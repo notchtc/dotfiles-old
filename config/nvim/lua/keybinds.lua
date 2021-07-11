@@ -54,9 +54,9 @@ vim.api.nvim_set_keymap('n', '<A-c>', ':BufferClose<CR>', {noremap = true, silen
 -- }}}
 
 -- nvim-tree{{{
-vim.api.nvim_set_keymap('n', '<leader>n', ':NvimTreeToggle<cr>', {})
-vim.api.nvim_set_keymap('n', '<leader>N', ':NvimTreeFindFile<cr>', {})
-vim.api.nvim_set_keymap('n', '<leader>r', ':NvimTreeRefresh<cr>', {})
+vim.api.nvim_set_keymap('n', '<leader>n', ':NvimTreeToggle<cr>',   {silent = true})
+vim.api.nvim_set_keymap('n', '<leader>N', ':NvimTreeFindFile<cr>', {silent = true})
+vim.api.nvim_set_keymap('n', '<leader>r', ':NvimTreeRefresh<cr>',  {silent = true})
 -- }}}
 
 -- Spell check
