@@ -51,6 +51,7 @@ link:config/ncmpcpp/[ncmpcpp]:: Music player
 == Dependencies
 If something requires something, it will be written in it's README or here.
 
+* doas
 * https://github.com/source-foundry/Hack/releases/download/v3.003/Hack-v3.003-ttf.zip[Hack]footnote:font[You only need to download this manually, if you didn't clone the whole repo]
 * https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/Hack[Hack Nerd Font]footnote:font[]
 

@@ -46,7 +46,7 @@ typeset -U path
 # ALIASES {{{
 # editor {{{
 alias e="$EDITOR"
-alias se="sudo -E $EDITOR"
+alias se="doas -E $EDITOR"
 #}}}
 
 # ls {{{
@@ -64,16 +64,16 @@ alias rmr="trash-restore"
 # }}}
 
 # xbps {{{
-alias xi="sudo xbps-install -S"
+alias xi="doas xbps-install -S"
 xif() {
-    xbps-query -Rs . --regex | cut -d " " -f 2 | fzf -q "$1" --preview "xbps-query -RS {1}" | xargs -ro sudo xbps-install -S
+    xbps-query -Rs . --regex | cut -d " " -f 2 | fzf -q "$1" --preview "xbps-query -RS {1}" | xargs -ro doas xbps-install -S
 }
-alias xr="sudo xbps-remove -R"
+alias xr="doas xbps-remove -R"
 xrf() {
-    xbps-query -l | cut -d " " -f 1,2 | fzf -q "$1" --preview "xbps-query -RS {2}" | cut -d " " -f 2 | xargs -ro sudo xbps-remove -R
+    xbps-query -l | cut -d " " -f 1,2 | fzf -q "$1" --preview "xbps-query -RS {2}" | cut -d " " -f 2 | xargs -ro doas xbps-remove -R
 }
-alias xu="sudo xbps-install -Su"
-alias xc="sudo xbps-remove -Oo"
+alias xu="doas xbps-install -Su"
+alias xc="doas xbps-remove -Oo"
 # }}}
 
 # other {{{

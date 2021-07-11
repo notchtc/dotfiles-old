@@ -13,8 +13,8 @@ local myawesomemenu = {
 }
 
 local mysystemmenu = {
-    { "poweroff", function () awful.spawn.with_shell("ask 'Do you want to shutdown?' 'sudo poweroff'") end },
-    { "reboot", function () awful.spawn.with_shell("ask 'Do you want to reboot?' 'sudo reboot'") end }
+    { "poweroff", function () awful.spawn.with_shell("ask 'Do you want to shutdown?' 'doas /sbin/poweroff'") end },
+    { "reboot", function () awful.spawn.with_shell("ask 'Do you want to reboot?' 'doas /sbin/reboot'") end }
 }
 
 local mymainmenu = awful.menu({
