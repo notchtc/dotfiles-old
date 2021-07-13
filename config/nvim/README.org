@@ -23,11 +23,11 @@ This config has only *one* purpose: editing the neovim config.
 * Screenshots
 #+ATTR_HTML: :width 725
 #+ATTR_ORG: :width 725
-[[~/.dotfiles/imgs/nvim.png]]
+[[../../imgs/nvim.png]]
 
 #+ATTR_HTML: :width 725
 #+ATTR_ORG: :width 725
-[[~/.dotfiles/imgs/nvim.png]]
+[[../../imgs/nvim2.png]]
 
 * Plugin List
 | Plugin                | What it does?                                |

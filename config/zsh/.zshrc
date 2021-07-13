@@ -38,8 +38,9 @@ export GPG_TTY=$(tty)
 
 # Prompt
 PS1="%F{cyan}%~ %(?.%F{green}.%F{red})>%F{normal} "
+
 # Set path
-path+="$HOME/.local/bin:$GEM_HOME/bin"
+path+="$HOME/.local/bin:$GEM_HOME/bin:$HOME/.emacs.d/bin"
 typeset -U path
 # }}}
 
