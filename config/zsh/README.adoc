@@ -22,7 +22,7 @@ toc::[]
 |Launch editor (nvim)
 
 |se
-|Launch editor with sudo (nvim)
+|Launch editor with doas (nvim)
 
 |ls
 |Use https://github.com/ogham/exa[exa] instead of ls
