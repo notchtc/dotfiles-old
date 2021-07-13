@@ -21,13 +21,13 @@ This config has only *one* purpose: editing the neovim config.
   - [[#statusline][Statusline]]
 
 * Screenshots
-#+ATTR_HTML: :width 725
-#+ATTR_ORG: :width 725
-[[../../imgs/nvim.png]]
+#+ATTR_HTML: :width 775
+#+ATTR_ORG: :width 775
+[[../../imgs/nvim_thumb.png]]
 
-#+ATTR_HTML: :width 725
-#+ATTR_ORG: :width 725
-[[../../imgs/nvim2.png]]
+#+ATTR_HTML: :width 775
+#+ATTR_ORG: :width 775
+[[../../imgs/nvim2_thumb.png]]
 
 * Plugin List
 | Plugin                | What it does?                                |
