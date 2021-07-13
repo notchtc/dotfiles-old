@@ -1,0 +1,509 @@
+#+TITLE: [[https://neovim.io][neovim]]
+#+AUTHOR: chtc
+
+#+BEGIN_IMPORTANT
+Requires Neovim 0.5!
+#+END_IMPORTANT
+
+This config has only *one* purpose: editing the neovim config.
+
+* Table Of Contents :toc:noexport:
+- [[#screenshots][Screenshots]]
+- [[#plugin-list][Plugin List]]
+- [[#keybindings][Keybindings]]
+- [[#features][Features]]
+- [[#config][Config]]
+  - [[#init-file][Init File]]
+  - [[#plugins][Plugins]]
+  - [[#settings][Settings]]
+  - [[#autocmds][Autocmds]]
+  - [[#keybindings-1][Keybindings]]
+  - [[#statusline][Statusline]]
+
+* Screenshots
+#+ATTR_HTML: :width 725
+#+ATTR_ORG: :width 725
+[[~/.dotfiles/imgs/nvim.png]]
+
+#+ATTR_HTML: :width 725
+#+ATTR_ORG: :width 725
+[[~/.dotfiles/imgs/nvim.png]]
+
+* Plugin List
+| Plugin                | What it does?                                |
+|-----------------------+----------------------------------------------|
+| [[https://github.com/wbthomason/packer.nvim][packer.nvim]]           | Plugin manager                               |
+| [[https://github.com/romgrk/barbar.nvim][barbar.nvim]]           | Fancy buffer bar                             |
+| [[https://github.com/sainnhe/everforest][everforest]]            | Colorscheme                                  |
+| [[https://github.com/lewis6991/gitsigns.nvim][gitsigns.nvim]]         | Shows git changes                            |
+| [[https://github.com/lukas-reineke/indent-blankline.nvim][indent-blankline.nvim]] | Display indentation levels                   |
+| [[https://github.com/norcalli/nvim-colorizer.lua][nvim-colorizer.lua]]    | Highlight colors                             |
+| [[https://github.com/kyazdani42/nvim-tree.lua][nvim-tree.lua]]         | File explorer tree                           |
+| [[https://github.com/nvim-treesitter/nvim-treesitter][nvim-treesitter]]       | Highlighting and folding based on treesitter |
+| [[https://github.com/p00f/nvim-ts-rainbow][nvim-ts-rainbow]]       | Rainbow parentheses                          |
+| [[https://github.com/tpope/vim-fugitive][vim-fugitive]]          | Git wrapper                                  |
+
+* Keybindings
+| Keybinding | What it does                  |
+|------------+-------------------------------|
+| Ctrl+h     | Move to split on the left     |
+| Ctrl+j     | Move to split on the bottom   |
+| Ctrl+k     | Move to split on the top      |
+| Ctrl+l     | Move to split on the right    |
+| Space+s+v  | Create vertical split         |
+| Space+s+h  | Create horizontal split       |
+| Space+l    | Go to next file               |
+| Space+h    | Go to previous file           |
+| Space+s+p  | Toggle spell checking (en_US) |
+| Space+n    | Open nvim-tree                |
+| Space+N    | Find file in nvim-tree        |
+| Space+r    | Refresh nvim-tree             |
+| Ctrl+s     | Magic buffer-picking mode     |
+| Alt+,      | Move to previous buffer       |
+| Alt+.      | Move to next buffer           |
+| Alt+<      | Re-order buffer to previous   |
+| Alt+>      | Re-order buffer to next       |
+| Alt+1-9    | Switch buffers                |
+| Alt+c      | Close buffer                  |
+
+* Features
+Stuff that wasn't mentioned in the other sections
+- Clipboard that works between different applications
+- Cursor line
+- Custom statusline
+- Don't show that tilde at the end of the buffer
+- Not case sensitive in patterns
+- Open splits below/on the right
+- Removing trailing newlines and trailing whitespaces
+- Show trailing whitespace
+- Spaces! (over tabs)
+
+* Config
+** Init File
+#+BEGIN_SRC lua :tangle ~/.dotfiles/config/nvim/init.lua
+require('plugins')
+require('settings')
+require('autocmd')
+require('keybinds')
+require('statusline')
+#+END_SRC
+
+** Plugins
+*** Bootstrapping
+Ensuring that packer is installed.
+#+BEGIN_SRC lua :tangle ~/.dotfiles/config/nvim/lua/plugins.lua
+local install_path = vim.fn.stdpath('data')..'/site/pack/packer/opt/packer.nvim'
+
+if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
+    vim.cmd('!git clone https://github.com/wbthomason/packer.nvim '..install_path)
+    vim.cmd('packadd packer.nvim')
+end
+#+END_SRC
+
+*** packer.nvim
+Setting up the plugin manager.
+#+BEGIN_SRC lua :tangle ~/.dotfiles/config/nvim/lua/plugins.lua
+-- Only required if you have packer configued as `opt`
+vim.cmd('packadd packer.nvim')
+
+return require('packer').startup(function()
+    -- Packer can manage itself as an optional plugin
+    use {'wbthomason/packer.nvim', opt = true}
+#+END_SRC
+
+*** barbar.nvim
+A neovim tabline plugin.
+#+BEGIN_SRC lua :tangle ~/.dotfiles/config/nvim/lua/plugins.lua
+    use {
+        'romgrk/barbar.nvim',
+        requires = 'kyazdani42/nvim-web-devicons',
+        config   = function()
+            -- Setting the color of the filler after the buffer section
+            vim.cmd("hi! link BufferTabpageFill Normal")
+            -- NOTE: If barbar's option dict isn't created yet, create it
+            vim.cmd("let bufferline = get(g:, 'bufferline', {})")
+            -- Enable auto-hiding the bar when there is a single buffer
+            vim.cmd("let bufferline.auto_hide = v:true")
+            -- Disable icons
+            vim.cmd("let bufferline.icons = v:true")
+            -- Disable animations
+            vim.cmd("let bufferline.animation = v:false")
+            -- Sets the maximum padding width with which to surround each tab
+            vim.cmd("let bufferline.maximum_padding = 2")
+        end
+    }
+#+END_SRC
+
+*** everforest
+Colorscheme.
+#+BEGIN_SRC lua :tangle ~/.dotfiles/config/nvim/lua/plugins.lua
+    use {
+        'sainnhe/everforest',
+        config = function()
+            -- Set medium contrast
+            vim.g.everforest_background = 'medium'
+            -- Set the background color of the sign column to be the same as normal text
+            vim.g.everforest_sign_column_background = 'none'
+            -- Set the colorscheme
+            vim.cmd("colorscheme everforest")
+        end
+    }
+#+END_SRC
+
+*** gitsigns.nvim
+Git decorations.
+#+BEGIN_SRC lua :tangle ~/.dotfiles/config/nvim/lua/plugins.lua
+    use {
+        'lewis6991/gitsigns.nvim',
+        requires = 'nvim-lua/plenary.nvim',
+        config   = function()
+            require('gitsigns').setup {
+                -- Set characters used by gitsigns.nvim
+                signs = {
+                    add          = { text = '│' },
+                    change       = { text = '│' },
+                    delete       = { text = '╵' },
+                    topdelete    = { text = '╷' },
+                    changedelete = { text = '╰' }
+                }
+            }
+        end
+    }
+#+END_SRC
+
+*** indent-blankline.nvim
+Indent guides.
+#+BEGIN_SRC lua :tangle ~/.dotfiles/config/nvim/lua/plugins.lua
+    use {
+        'lukas-reineke/indent-blankline.nvim',
+        config = function()
+            -- List of characters to be used as an indent line for each indentation level
+            vim.g.indent_blankline_char_list = {'│', '┆', '┊', ''}
+            -- Don't display indentation in the first column
+            vim.g.indent_blankline_show_first_indent_level = false
+            -- Don't display the full fold text
+            vim.g.indent_blankline_show_foldtext = false
+            vim.g.indent_blankline_filetype_exclude = {'fern', 'txt', 'packer', 'help'}
+        end
+    }
+#+END_SRC
+
+*** nvim-colorizer.lua
+Color highlighter.
+#+BEGIN_SRC lua :tangle ~/.dotfiles/config/nvim/lua/plugins.lua
+    use {
+        'norcalli/nvim-colorizer.lua',
+        config = function()
+            require 'colorizer'.setup {
+                -- Attach to all filetypes
+                '*';
+                -- Exclude fern from highlighting
+                '!fern';
+                -- Exclude packer from highlighting
+                '!packer';
+            }
+        end
+    }
+#+END_SRC
+
+*** nvim-tree.lua
+File explorer tree.
+#+BEGIN_SRC lua :tangle ~/.dotfiles/config/nvim/lua/plugins.lua
+    use {
+        'kyazdani42/nvim-tree.lua',
+        requires = 'kyazdani42/nvim-web-devicons',
+        config   = function()
+            -- Enable file highlight for git attributes
+            vim.g.nvim_tree_git_hl = 1
+            -- Open the tree by default when opening (n)vim or (n)vim $DIR
+            vim.g.nvim_tree_auto_open = 1
+            -- Close the tree when it's the last window
+            vim.g.nvim_tree_auto_close = 1
+            -- Prevent netrw from automatically opening when opening directories
+            vim.g.nvim_tree_hijack_netrw = 1
+            -- Show git, folder and file icons
+            vim.g.nvim_tree_show_icons = {
+                git = 1,
+                folders = 1,
+                files = 1,
+            }
+
+            -- Set git icons
+            vim.g.nvim_tree_icons = {
+                git = {
+                    unstaged = '',
+                    staged = '',
+                    renamed = '',
+                    untracked = '',
+                    deleted = '',
+                    ignored = '',
+                }
+            }
+        end
+    }
+#+END_SRC
+
+*** nvim-treesitter
+Highlighting and folding based on treesitter.
+#+BEGIN_SRC lua :tangle ~/.dotfiles/config/nvim/lua/plugins.lua
+    use {
+        'nvim-treesitter/nvim-treesitter',
+        run    = ':TSUpdate',
+        config = function()
+            require'nvim-treesitter.configs'.setup {
+                -- Ensure parsers are installed for these languages
+                ensure_installed = {'lua', 'css', 'html'},
+                -- Don't install the parser for C
+                ignore_install = {'c'},
+                -- Enable highlighting
+                highlight = {
+                    enable = true
+                },
+                -- Enable indentation
+                indent = {
+                    enable = true
+                }
+            }
+        end
+    }
+#+END_SRC
+
+*** nvim-ts-rainbow
+Rainbow parentheses.
+#+BEGIN_SRC lua :tangle ~/.dotfiles/config/nvim/lua/plugins.lua
+    use {
+        'p00f/nvim-ts-rainbow',
+        requires = 'nvim-treesitter/nvim-treesitter',
+        config = function()
+            require'nvim-treesitter.configs'.setup {
+                rainbow = {
+                    -- Enable rainbow parentheses
+                    enable = true,
+                    -- Highlight also non-parentheses delimiters
+                    extended_mode = true,
+                    -- Do not enable for files with more than 5000 lines
+                    max_file_lines = 5000
+                }
+            }
+        end
+    }
+#+END_SRC
+
+*** vim-figitive
+Git wrapper.
+#+BEGIN_SRC lua :tangle ~/.dotfiles/config/nvim/lua/plugins.lua
+    use 'tpope/vim-fugitive'
+end)
+#+END_SRC
+
+** Settings
+#+BEGIN_SRC lua :tangle ~/.dotfiles/config/nvim/lua/settings.lua
+-- Use system clipboard
+vim.o.clipboard = vim.o.clipboard .. 'unnamedplus'
+
+-- Fancy line numbers
+vim.wo.number = true
+vim.wo.relativenumber = true
+
+-- Imaoine being case sensitive
+vim.o.ignorecase = true
+-- Be case sensitive when pattern is uppercase
+vim.o.smartcase = true
+
+-- Better splitting
+vim.o.splitright = true
+vim.o.splitbelow = true
+
+-- Add a cursor line
+vim.wo.cursorline = true
+
+-- Spaces > tabs
+vim.o.expandtab = true
+vim.o.tabstop = 4
+vim.o.softtabstop = 4
+vim.o.shiftwidth = 4
+vim.bo.expandtab = true
+vim.bo.tabstop = 4
+vim.bo.softtabstop = 4
+vim.bo.shiftwidth = 4
+
+-- Show trailing spaces
+vim.wo.list = true
+vim.o.listchars = 'trail:·'
+
+-- Folding based on expression
+vim.wo.foldmethod = 'expr'
+vim.wo.foldexpr= 'nvim_treesitter#foldexpr()'
+-- Set maximum fold nesting
+vim.wo.foldnestmax = 1
+
+-- Enable lazy redrawing
+vim.o.lazyredraw = true
+
+-- Disable swap files
+vim.bo.swapfile = false
+
+-- Set dark background
+vim.o.background = 'dark'
+
+-- More colors
+vim.o.termguicolors = true
+
+-- Remove those ~'s at the end of buffers
+vim.o.fcs = 'eob: '
+
+-- Always show statusline
+vim.o.laststatus = 2
+
+-- Don't show mode
+vim.o.showmode = false
+
+-- Mouse support
+vim.o.mouse = vim.o.mouse .. 'a'
+
+-- Hack to remove cursorline staying on blank lines
+vim.wo.colorcolumn = '9999'
+#+END_SRC
+
+** Autocmds
+*** Remove trailing whitespaces and newlines when saving
+#+BEGIN_SRC lua :tangle ~/.dotfiles/config/nvim/lua/autocmd.lua
+vim.cmd([[autocmd BufWritePre * %s/\s\+$//e]])
+vim.cmd([[autocmd BufWritePre * %s/\n\+\%$//e]])
+#+END_SRC
+
+
+** Keybindings
+*** Set the leader key
+#+BEGIN_SRC lua :tangle ~/.dotfiles/config/nvim/lua/keybinds.lua
+vim.g.mapleader = ' '
+#+END_SRC
+
+*** Disable arrow keys for moving in normal mode
+#+BEGIN_SRC lua :tangle ~/.dotfiles/config/nvim/lua/keybinds.lua
+vim.api.nvim_set_keymap('', '<up>', '', {})
+vim.api.nvim_set_keymap('', '<down>', '', {})
+vim.api.nvim_set_keymap('', '<left>', '', {})
+vim.api.nvim_set_keymap('', '<right>', '', {})
+#+END_SRC
+
+*** Make navigating through splits easier
+#+BEGIN_SRC lua :tangle ~/.dotfiles/config/nvim/lua/keybinds.lua
+vim.api.nvim_set_keymap('', '<C-h>', '<C-w>h', {})
+vim.api.nvim_set_keymap('', '<C-j>', '<C-w>j', {})
+vim.api.nvim_set_keymap('', '<C-k>', '<C-w>k', {})
+vim.api.nvim_set_keymap('', '<C-l>', '<C-w>l', {})
+#+END_SRC
+
+*** Make creating splits easier
+#+BEGIN_SRC lua :tangle ~/.dotfiles/config/nvim/lua/keybinds.lua
+vim.api.nvim_set_keymap('', '<leader>sv', ':split<cr>', {})
+vim.api.nvim_set_keymap('', '<leader>sh', ':vsplit<cr>', {})
+#+END_SRC
+
+*** Go through wrapped lines
+#+BEGIN_SRC lua :tangle ~/.dotfiles/config/nvim/lua/keybinds.lua
+vim.api.nvim_set_keymap('', 'j', 'gj', {})
+vim.api.nvim_set_keymap('', 'k', 'gk', {})
+#+END_SRC
+
+*** Go to next/previous file
+#+BEGIN_SRC lua :tangle ~/.dotfiles/config/nvim/lua/keybinds.lua
+vim.api.nvim_set_keymap('n', '<leader>l', ':wn<cr>', {})
+vim.api.nvim_set_keymap('n', '<leader>h', ':wN<cr>', {})
+#+END_SRC
+
+*** barbar
+#+BEGIN_SRC lua :tangle ~/.dotfiles/config/nvim/lua/keybinds.lua
+-- Magic buffer-picking mode
+vim.api.nvim_set_keymap('n', '<C-s>', ':BufferPick<CR>', {noremap = true, silent = true})
+-- Move to previous/next
+vim.api.nvim_set_keymap('n', '<A-,>', ':BufferPrevious<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<A-.>', ':BufferNext<CR>', {noremap = true, silent = true})
+-- Re-order to previous/next
+vim.api.nvim_set_keymap('n', '<A-<>', ':BufferMovePrevious<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<A->>', ':BufferMoveNext<CR>', {noremap = true, silent = true})
+-- Goto buffer in position...
+vim.api.nvim_set_keymap('n', '<A-1>', ':BufferGoto 1<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<A-2>', ':BufferGoto 2<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<A-3>', ':BufferGoto 3<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<A-4>', ':BufferGoto 4<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<A-5>', ':BufferGoto 5<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<A-6>', ':BufferGoto 6<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<A-7>', ':BufferGoto 7<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<A-8>', ':BufferGoto 8<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<A-9>', ':BufferLast<CR>', {noremap = true, silent = true})
+-- Close buffer
+vim.api.nvim_set_keymap('n', '<A-c>', ':BufferClose<CR>', {noremap = true, silent = true})
+#+END_SRC
+
+*** nvim-tree
+#+BEGIN_SRC lua :tangle ~/.dotfiles/config/nvim/lua/keybinds.lua
+-- Toggle visibility of nvim-tree
+vim.api.nvim_set_keymap('n', '<leader>n', ':NvimTreeToggle<cr>',   {silent = true})
+-- Go to the current file in nvim-tree
+vim.api.nvim_set_keymap('n', '<leader>N', ':NvimTreeFindFile<cr>', {silent = true})
+-- Refresh nvim-tree
+vim.api.nvim_set_keymap('n', '<leader>r', ':NvimTreeRefresh<cr>',  {silent = true})
+#+END_SRC
+
+*** Spell Check
+#+BEGIN_SRC lua :tangle ~/.dotfiles/config/nvim/lua/keybinds.lua
+vim.api.nvim_set_keymap('n', '<leader>sp', ':setlocal spell! spelllang=en_us<cr>', {})
+#+END_SRC
+
+** Statusline
+#+BEGIN_SRC lua :tangle ~/.dotfiles/config/nvim/lua/statusline.lua
+-- List of mode names
+local mode_map = {
+    ['n']  = 'normal',
+    ['no'] = 'n-operator pending',
+    ['v']  = 'visual',
+    ['V']  = 'v-line',
+    [''] = 'v-block',
+    ['s']  = 'select',
+    ['S']  = 's-line',
+    [''] = 's-block',
+    ['i']  = 'insert',
+    ['R']  = 'replace',
+    ['Rv'] = 'v-replace',
+    ['c']  = 'command',
+    ['cv'] = 'vim ex',
+    ['ce'] = 'ex',
+    ['r']  = 'prompt',
+    ['rm'] = 'more',
+    ['r?'] = 'confirm',
+    ['!']  = 'shell',
+    ['t']  = 'terminal'
+}
+
+-- Get the current mode name
+local function mode()
+    local m = vim.api.nvim_get_mode().mode
+    if mode_map[m] == nil then return m end
+    return mode_map[m]
+end
+
+-- Creating the statusline
+function statusline()
+    local status = ''
+    status = status .. '%#Search#'
+    status = status .. ' ' .. mode() .. ' '
+    status = status .. '%#StatusLine#'
+    status = status .. ' %-0.25t'
+    status = status .. '%( %M%)'
+    status = status .. '%( %R%)'
+    status = status .. '%( %W%)'
+    status = status .. '%='
+    status = status .. ' %([%{&fileencoding?&fileencoding:&encoding}] %)'
+    status = status .. '%([%{&fileformat}] %)'
+    status = status .. '%(%y %)'
+    status = status .. '%#Search#'
+    status = status .. ' %l:%c'
+    status = status .. ' %p%% '
+    return status
+end
+
+-- Set the statusline
+vim.o.statusline = '%!luaeval("statusline()")'
+#+END_SRC

@@ -1,36 +1,24 @@
--- Set the leader key
 vim.g.mapleader = ' '
 
--- Force myself to use hjkl{{{
 vim.api.nvim_set_keymap('', '<up>', '', {})
 vim.api.nvim_set_keymap('', '<down>', '', {})
 vim.api.nvim_set_keymap('', '<left>', '', {})
 vim.api.nvim_set_keymap('', '<right>', '', {})
--- }}}
 
--- Make navigating through splits easier{{{
 vim.api.nvim_set_keymap('', '<C-h>', '<C-w>h', {})
 vim.api.nvim_set_keymap('', '<C-j>', '<C-w>j', {})
 vim.api.nvim_set_keymap('', '<C-k>', '<C-w>k', {})
 vim.api.nvim_set_keymap('', '<C-l>', '<C-w>l', {})
--- }}}
 
--- Make splits easier{{{
 vim.api.nvim_set_keymap('', '<leader>sv', ':split<cr>', {})
 vim.api.nvim_set_keymap('', '<leader>sh', ':vsplit<cr>', {})
--- }}}
 
--- Go through wrapped lines{{{
 vim.api.nvim_set_keymap('', 'j', 'gj', {})
 vim.api.nvim_set_keymap('', 'k', 'gk', {})
--- }}}
 
--- Go to next/previous file{{{
 vim.api.nvim_set_keymap('n', '<leader>l', ':wn<cr>', {})
 vim.api.nvim_set_keymap('n', '<leader>h', ':wN<cr>', {})
--- }}}
 
--- barbar{{{
 -- Magic buffer-picking mode
 vim.api.nvim_set_keymap('n', '<C-s>', ':BufferPick<CR>', {noremap = true, silent = true})
 -- Move to previous/next
@@ -51,15 +39,12 @@ vim.api.nvim_set_keymap('n', '<A-8>', ':BufferGoto 8<CR>', {noremap = true, sile
 vim.api.nvim_set_keymap('n', '<A-9>', ':BufferLast<CR>', {noremap = true, silent = true})
 -- Close buffer
 vim.api.nvim_set_keymap('n', '<A-c>', ':BufferClose<CR>', {noremap = true, silent = true})
--- }}}
 
--- nvim-tree{{{
+-- Toggle visibility of nvim-tree
 vim.api.nvim_set_keymap('n', '<leader>n', ':NvimTreeToggle<cr>',   {silent = true})
+-- Go to the current file in nvim-tree
 vim.api.nvim_set_keymap('n', '<leader>N', ':NvimTreeFindFile<cr>', {silent = true})
+-- Refresh nvim-tree
 vim.api.nvim_set_keymap('n', '<leader>r', ':NvimTreeRefresh<cr>',  {silent = true})
--- }}}
 
--- Spell check
 vim.api.nvim_set_keymap('n', '<leader>sp', ':setlocal spell! spelllang=en_us<cr>', {})
-
--- vim: set foldmethod=marker:

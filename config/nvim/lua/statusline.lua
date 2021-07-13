@@ -1,3 +1,4 @@
+-- List of mode names
 local mode_map = {
     ['n']  = 'normal',
     ['no'] = 'n-operator pending',
@@ -20,12 +21,14 @@ local mode_map = {
     ['t']  = 'terminal'
 }
 
+-- Get the current mode name
 local function mode()
     local m = vim.api.nvim_get_mode().mode
     if mode_map[m] == nil then return m end
     return mode_map[m]
 end
 
+-- Creating the statusline
 function statusline()
     local status = ''
     status = status .. '%#Search#'
@@ -45,4 +48,5 @@ function statusline()
     return status
 end
 
+-- Set the statusline
 vim.o.statusline = '%!luaeval("statusline()")'
