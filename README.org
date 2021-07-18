@@ -12,12 +12,13 @@ These are my +horrible+ *awesome* dotfiles.
 
 Screenshots are located in the [[./screenshots]] folder and shown in README's.
 
-CAUTION: Changing stuff to make it work/fit your needs
+* CAUTION: Changing stuff to make it work/fit your needs
 You probably /will/ and *must* change something in my dotfiles.
 
 I recommend looking through these dotfiles and changing things to fit your setup and/or needs if you want to use this.
 
 * Table Of Contents :toc:
+- [[#caution-changing-stuff-to-make-it-workfit-your-needs][CAUTION: Changing stuff to make it work/fit your needs]]
 - [[#things-used][Things used]]
 - [[#things-not-used][Things not used]]
 - [[#dependencies][Dependencies]]
@@ -56,14 +57,12 @@ You only need to download the fonts manually, if you didn't clone the whole repo
 #+BEGIN_SRC shell
 git clone --recurse-submodules https://gitlab.com/chtc/dotfiles.git "$HOME"/.dotfiles
 #+END_SRC
-
 2. Install [[https://www.gnu.org/software/stow/][GNU stow]].
 3. Install dependencies.
 4. Enter the dotfiles directory.
 #+BEGIN_SRC shell
 cd "$HOME"/.dotfiles
 #+END_SRC
-
 5. Install the dotfiles with GNU stow.
 - If you want to install everything do this:
 #+BEGIN_SRC shell
