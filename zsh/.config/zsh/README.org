@@ -126,7 +126,7 @@ path+="$HOME/.local/bin:$GEM_HOME/bin:$XDG_CONFIG_HOME/emacs/bin"
 I use this file to launch X11, it is read at login before .zshrc.
 #+BEGIN_SRC shell :tangle ~/.dotfiles/zsh/.config/zsh/.zprofile
 if [[ "$(tty)" = "/dev/tty1" ]]; then
-	pgrep "$WM" || startx ${XINITRC:="$HOME/.xinitrc"}
+    pgrep "$WM" || startx ${XINITRC:="$HOME/.xinitrc"}
 fi
 #+END_SRC
 

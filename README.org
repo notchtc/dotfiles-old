@@ -1,10 +1,12 @@
 #+TITLE: Welcome to my dotfiles!
 #+AUTHOR: chtc
 
+#+BEGIN_CENTER
 #+CAPTION: Screenshots of Awesome
-#+ATTR_HTML: :alt Screenshots of Awesome :title Screenshots of Awesome :align center :width 825
+#+ATTR_HTML: :alt Screenshots of Awesome :title Screenshots of Awesome :width 825
 #+ATTR_ORG: :width 825
 [[./screenshots/rice_thumb.png]]
+#+END_CENTER
 
 These are my +horrible+ *awesome* dotfiles.
 

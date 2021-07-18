@@ -20,15 +20,17 @@ This config has only *one* purpose: editing the neovim config.
   - [[#statusline][Statusline]]
 
 * Screenshots
+#+BEGIN_CENTER
 #+CAPTION: Screenshot of neovim with nvim-tree open and git decorations
-#+ATTR_HTML: :alt Screenshot of neovim with nvim-tree open and git decorations :title Screenshot of neovim with nvim-tree open and git decorations :align center :width 775
+#+ATTR_HTML: :alt Screenshot of neovim with nvim-tree open and git decorations :title Screenshot of neovim with nvim-tree open and git decorations :width 775
 #+ATTR_ORG: :width 775
 [[../../../screenshots/nvim_thumb.png]]
 
 #+CAPTION: Screenshot of neovim with highlighted colors, git decorations and a buffer bar shown
-#+ATTR_HTML: :alt Screenshot of neovim with highlighted colors, git decorations and a buffer bar shown :title Screenshot of neovim with highlighted colors, git decorations and a buffer bar shown :align center :width 775
+#+ATTR_HTML: :alt Screenshot of neovim with highlighted colors, git decorations and a buffer bar shown :title Screenshot of neovim with highlighted colors, git decorations and a buffer bar shown :width 775
 #+ATTR_ORG: :width 775
 [[../../../screenshots/nvim2_thumb.png]]
+#+END_CENTER
 
 * Plugin List
 | Plugin                | What it does?                                |

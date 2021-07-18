@@ -19,20 +19,22 @@ My epic gamer Awesome config.
   - [[#decorations][Decorations]]
 
 * Screenshots
+#+BEGIN_CENTER
 #+CAPTION: Screenshot of Awesome with no windows open
-#+ATTR_HTML: :alt Screenshot of Awesome with no windows open :title Screenshot of Awesome with no windows open :align center :width 825
+#+ATTR_HTML: :alt Screenshot of Awesome with no windows open :title Screenshot of Awesome with no windows open :width 825
 #+ATTR_ORG: :width 825
 [[../../../screenshots/awesome_idle_thumb.png]]
 
 #+CAPTION: Screenshot of Awesome with emacs, nvim and a terminal open
-#+ATTR_HTML: :alt Screenshot of Awesome with emacs, nvim and a terminal open :title Screenshot of Awesome with emacs, nvim and a terminal open :align center :width 825
+#+ATTR_HTML: :alt Screenshot of Awesome with emacs, nvim and a terminal open :title Screenshot of Awesome with emacs, nvim and a terminal open :width 825
 #+ATTR_ORG: :width 825
 [[../../../screenshots/awesome_busy_thumb.png]]
 
 #+CAPTION: Screenshot of Awesome with every window minimized except emacs
-#+ATTR_HTML: :alt Screenshot of Awesome with every window minimized except emacs :title Screenshot of Awesome with every window minimized except emacs :align center :width 825
+#+ATTR_HTML: :alt Screenshot of Awesome with every window minimized except emacs :title Screenshot of Awesome with every window minimized except emacs :width 825
 #+ATTR_ORG: :width 825
 [[../../../screenshots/awesome_minimized_thumb.png]]
+#+END_CENTER
 
 * Dependencies
 | Dependency | Why?                                                                    |
@@ -65,10 +67,12 @@ If you want to remove the autostart completely, just remove/comment out the requ
 * Keybindings
 When using Awesome you can just do Super+S.
 
+#+BEGIN_CENTER
 #+CAPTION: Screenshot of Awesome keybindings
-#+ATTR_HTML: :alt Screenshot of Awesome keybindings :title Screenshot of Awesome keybindings :align center :width 825
+#+ATTR_HTML: :alt Screenshot of Awesome keybindings :title Screenshot of Awesome keybindings :width 825
 #+ATTR_ORG: :width 825
 [[../../../screenshots/awesome_keybindings_thumb.png]]
+#+END_CENTER
 
 * Other
 If poweroff and reboot isn't working do [[https://gitlab.com/-/snippets/2042640][this]].
