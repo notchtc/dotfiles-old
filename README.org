@@ -1,8 +1,8 @@
 #+TITLE: Welcome to my dotfiles!
 #+AUTHOR: chtc
 
-#+CAPTION: Screenshots of AwesomeWM
-#+ATTR_HTML: :alt Screenshots of AwesomeWM :title Screenshots of AwesomeWM :align center :width 825
+#+CAPTION: Screenshots of Awesome
+#+ATTR_HTML: :alt Screenshots of Awesome :title Screenshots of Awesome :align center :width 825
 #+ATTR_ORG: :width 825
 [[./screenshots/rice_thumb.png]]
 
@@ -13,7 +13,7 @@ Screenshots are located in the [[./screenshots]] folder and shown in README's.
 * CAUTION: Changing stuff to make it work/fit your needs
 You probably /will/ and *must* change something in my dotfiles.
 
-I recommend looking thruogh these dotfiles and changing things to fit your setup and/or needs if you want to use this.
+I recommend looking through these dotfiles and changing things to fit your setup and/or needs if you want to use this.
 
 * Table Of Contents :toc:
 - [[#caution-changing-stuff-to-make-it-workfit-your-needs][CAUTION: Changing stuff to make it work/fit your needs]]
@@ -44,11 +44,11 @@ I recommend looking thruogh these dotfiles and changing things to fit your setup
 
 * Dependencies
 If something requires something, it will be written in it's README or here.
-- doas
-- [[https://github.com/source-foundry/Hack/releases/download/v3.003/Hack-v3.003-ttf.zip][Hack]][fn:1]
-- [[https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Hack.zip][Hack Nerd Font]][fn:1]
 
-[fn:1] You only need to download this manually, if you didn't clone the whole repo
+You only need to download the fonts manually, if you didn't clone the whole repo.
+- doas
+- [[https://github.com/source-foundry/Hack/releases/download/v3.003/Hack-v3.003-ttf.zip][Hack]]
+- [[https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Hack.zip][Hack Nerd Font]]
 
 * How To Install
 - Step 1 :: Clone the repository
@@ -57,7 +57,7 @@ git clone --recurse-submodules https://gitlab.com/chtc/dotfiles.git "$HOME"/.dot
 #+END_SRC
 
 - Step 2 :: Install [[https://www.gnu.org/software/stow/][GNU stow]].
-- Step 3 :: Install dependencies.[fn:2]
+- Step 3 :: Install dependencies.
 - Step 4 :: Enter the dotfiles directory.
 #+BEGIN_SRC shell
 cd "$HOME"/.dotfiles
@@ -73,5 +73,3 @@ cd "$HOME"/.dotfiles
     #+BEGIN_SRC shell
     stow alacritty zsh
     #+END_SRC
-
-[fn:2] Look at readme's and [[#dependencies][dependencies]]
