@@ -1,0 +1,7 @@
+#+TITLE: [[https://github.com/davatorium/rofi][rofi]]
+#+AUTHOR: chtc
+
+#+CAPTION: Screenshot of rofi
+#+ATTR_HTML: :alt Screenshot of rofi :title Screenshot of rofi :align center :width 469
+#+ATTR_ORG: :width 469
+[[../../../screenshots/rofi.png]]

@@ -1,0 +1,2 @@
+xrdb -load "$XDG_CONFIG_HOME/X11/Xresources" &
+exec awesome

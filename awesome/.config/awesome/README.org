@@ -1,0 +1,1286 @@
+#+TITLE: [[https://Awesome.org][awesome]]
+#+AUTHOR: chtc
+
+My epic gamer Awesome config.
+
+* IMPORTANT: Requires Awesome git!
+
+* Table Of Contents :toc:
+- [[#important-requires-awesome-git][IMPORTANT: Requires Awesome git!]]
+- [[#screenshots][Screenshots]]
+- [[#dependencies][Dependencies]]
+  - [[#autostart][Autostart]]
+- [[#keybindings][Keybindings]]
+- [[#other][Other]]
+- [[#config][Config]]
+  - [[#rclua][rc.lua]]
+  - [[#autostart-1][Autostart]]
+  - [[#settings][Settings]]
+  - [[#decorations][Decorations]]
+
+* Screenshots
+#+CAPTION: Screenshot of Awesome with no windows open
+#+ATTR_HTML: :alt Screenshot of Awesome with no windows open :title Screenshot of Awesome with no windows open :align center :width 825
+#+ATTR_ORG: :width 825
+[[../../../screenshots/Awesome_idle_thumb.png]]
+
+#+CAPTION: Screenshot of Awesome with emacs, nvim and a terminal open
+#+ATTR_HTML: :alt Screenshot of Awesome with emacs, nvim and a terminal open :title Screenshot of Awesome with emacs, nvim and a terminal open :align center :width 825
+#+ATTR_ORG: :width 825
+[[../../../screenshots/Awesome_busy_thumb.png]]
+
+#+CAPTION: Screenshot of Awesome with every window minimized except emacs
+#+ATTR_HTML: :alt Screenshot of Awesome with every window minimized except emacs :title Screenshot of Awesome with every window minimized except emacs :align center :width 825
+#+ATTR_ORG: :width 825
+[[../../../screenshots/Awesome_minimized_thumb.png]]
+
+* Dependencies
+| Dependency | Why?                                                                          |
+|------------+-------------------------------------------------------------------------------|
+| acpi       | Make battery widget work                                                      |
+| [[../../../scripts/.local/bin/ask][ask]]        | Asking if you want to shutdown/reboot                                         |
+| alacritty  | Terminal[fn:1]                                                                |
+| pamixer    | Change volume[fn:2]                                                           |
+| firefox    | Browser[fn:1]                                                                 |
+| maim       | Screenshot tool[fn:1]                                                         |
+| lollypop   | Music player[fn:1]                                                            |
+| newsboat   | RSS reader[fn:1]                                                              |
+| playerctl  | Control media players                                                         |
+| rofi       | Application launcher (and also a dmenu replacement and window switcher)[fn:1] |
+| xbacklight | Control screen brightness[fn:2]                                               |
+
+[fn:1] You can change this in [[./settings/vars.lua][settings/vars.lua]].
+[fn:2] You can change this in [[./settings/keys.lua][settings/keys.lua]].
+
+** Autostart
+There are some things launched at start in [[./autostart.lua][autostart.lua]].
+
+You probably want to add/remove/change some stuff here.[fn:3] If you want to remove the autostart completely, just remove/comment out the require line in rc.lua and delete the file if you want.
+
+| Thing launched | Why?                                                |
+|----------------+-----------------------------------------------------|
+| xrdb           | Load xresources at startup                          |
+| pulseaudio     | I don't trust pulseaudio being launched when needed |
+| redshift-gtk   | Saving my eyes                                      |
+
+[fn:3] If you want to remove the autostart completely, just remove/comment out the require line in [[./rc.lua][rc.lua]] and delete the file if you want.
+
+* Keybindings
+When using Awesome you can just do Super+S.
+
+#+CAPTION: Screenshot of Awesome keybindings
+#+ATTR_HTML: :alt Screenshot of Awesome keybindings :title Screenshot of Awesome keybindings :align center :width 825
+#+ATTR_ORG: :width 825
+[[../../../screenshots/awesome_keybindings_thumb.png]]
+
+* Other
+If poweroff and reboot isn't working do [[https://gitlab.com/-/snippets/2042640][this]].
+
+[[https://unsplash.com/photos/AULwJzIhDRQ][Wallpaper]]
+
+* Config
+** rc.lua
+#+BEGIN_SRC lua :tangle ~/.dotfiles/awesome/.config/awesome/rc.lua
+-- awesome_mode: api-level=4:screen=on
+-- If LuaRocks is installed, make sure that packages installed through it are
+-- found (e.g. lgi). If LuaRocks is not installed, do nothing.
+pcall(require, "luarocks.loader")
+
+local beautiful = require("beautiful")
+local naughty = require("naughty")
+
+require("settings")
+require("autostart")
+require("decorations")
+#+END_SRC
+
+*** Error Handling
+Check if awesome encountered an error during startup and fell back to another config (This code will only ever execute for the fallback config)
+#+BEGIN_SRC lua :tangle ~/.dotfiles/awesome/.config/awesome/rc.lua
+naughty.connect_signal("request::display_error", function(message, startup)
+    naughty.notification {
+        urgency = "critical",
+        title   = "Oops!",
+        message = "An error happened"..(startup and " during startup: " or ": ") .. message
+    }
+end)
+#+END_SRC
+
+*** Garbage Collection
+Run garbage collection once in a while.
+#+BEGIN_SRC lua :tangle ~/.dotfiles/awesome/.config/awesome/rc.lua
+collectgarbage("setpause", 110)
+collectgarbage("setstepmul", 1000)
+collectgarbage("step", 1024)
+#+END_SRC
+
+** Autostart
+Starting some stuff here at launch.
+#+BEGIN_SRC lua :tangle ~/.dotfiles/awesome/.config/awesome/autostart.lua
+local awful = require("awful")
+
+local function run_once(cmd)
+    local findme = cmd
+    local firstspace = cmd:find(" ")
+    if firstspace then findme = cmd:sub(0, firstspace - 1) end
+    -- that function at the end is needed so it doesn't throw a stupid error message
+    awful.spawn.easy_async_with_shell(string.format("pgrep -u $USER -x %s > /dev/null || (%s)", findme, cmd), function() end)
+end
+
+autostart_apps = {
+    "pulseaudio --start",
+    "redshift-gtk",
+    "emacs --daemon"
+}
+
+for app = 1, #autostart_apps do run_once(autostart_apps[app]) end
+#+END_SRC
+
+** Settings
+*** init.lua
+Load lua files from this folder.
+#+BEGIN_SRC lua :tangle ~/.dotfiles/awesome/.config/awesome/settings/init.lua
+require("settings.vars")
+require("settings.tags")
+require("settings.rules")
+require("settings.signals")
+require("settings.keys")
+#+END_SRC
+
+*** vars.lua
+Setting variables that are used in other places.
+#+BEGIN_SRC lua :tangle ~/.dotfiles/awesome/.config/awesome/settings/vars.lua
+local gears = require("gears")
+local beautiful = require("beautiful")
+
+-- Themes define colours, icons, font and wallpapers.
+beautiful.init(gears.filesystem.get_configuration_dir() .. "settings/theme.lua")
+
+-- This is used later as the default terminal, editor, browser, rss reader and music player to run
+terminal = "alacritty"
+editor = os.getenv("EDITOR") or "nvim"
+editor_cmd = terminal .. " -e " .. editor
+browser = os.getenv("BROWSER") or "firefox"
+rss = "newsboat"
+music = "lollypop"
+screenshot = "maim"
+launcher = "rofi -show run"
+#+END_SRC
+
+**** Default modkey
+Usually, Mod4 is the key with a logo between Control and Alt.
+If you do not like this or do not have such a key, I suggest you to remap Mod4 to another key using xmodmap or other tools.
+However, you can use another modifier like Mod1, but it may interact with others.
+#+BEGIN_SRC lua :tangle ~/.dotfiles/awesome/.config/awesome/settings/vars.lua
+modkey = "Mod4"
+#+END_SRC
+
+*** tags.lua
+In this file tags with different properties are made.
+#+BEGIN_SRC lua :tangle ~/.dotfiles/awesome/.config/awesome/settings/tags.lua
+local awful = require("awful")
+
+screen.connect_signal("request::desktop_decoration", function(s)
+    awful.tag.add("", {
+        layout   = awful.layout.suit.tile.right,
+        gap      = 0,
+        selected = true,
+        screen   = s
+    })
+
+    awful.tag.add("", {
+        layout            = awful.layout.suit.tile.right,
+        gap_single_client = false,
+        screen            = s
+    })
+
+    awful.tag.add("", {
+        layout            = awful.layout.floating,
+        gap_single_client = false,
+        screen            = s
+    })
+
+    awful.tag.add("", {
+        layout            = awful.layout.suit.tile.right,
+        gap_single_client = false,
+        screen            = s
+    })
+
+    awful.tag.add("5", {
+        layout            = awful.layout.suit.tile.right,
+        gap_sincle_client = false,
+        screen            = s
+    })
+
+    awful.tag.add("6", {
+        layout = awful.layout.floating,
+        screen = s
+    })
+end)
+#+END_SRC
+
+*** rules.lua
+#+BEGIN_SRC lua :tangle ~/.dotfiles/awesome/.config/awesome/settings/rules.lua
+local awful = require("awful")
+local beautiful = require("beautiful")
+local naughty = require("naughty")
+local ruled = require("ruled")
+#+END_SRC
+
+**** Clients
+Rules to apply to new clients.
+#+BEGIN_SRC lua :tangle ~/.dotfiles/awesome/.config/awesome/settings/rules.lua
+ruled.client.connect_signal("request::rules", function()
+    -- All clients will match this rule.
+    ruled.client.append_rule {
+        id         = "global",
+        rule       = { },
+        properties = {
+            focus            = awful.client.focus.filter,
+            raise            = true,
+            border_color     = beautiful.border_color_normal,
+            size_hints_honor = false,
+            screen           = awful.screen.preferred,
+            placement        = awful.placement.no_overlap+awful.placement.no_offscreen
+        }
+    }
+
+    -- Floating clients.
+    ruled.client.append_rule {
+        id       = "floating",
+        rule_any = {
+            instance = { "pinentry" },
+            class    = {
+                "Sxiv", "Steam", "KeePassXC", "Pavucontrol"
+            },
+            -- Note that the name property shown in xprop might be set slightly after creation of the client
+            -- and the name shown there might not match defined rules here.
+            name    = {
+                "Event Tester",  -- xev.
+            },
+            role    = {
+                "pop-up",         -- e.g. Google Chrome"s (detached) Developer Tools.
+            }
+        },
+        properties = { floating = true }
+    }
+
+    ruled.client.append_rule {
+        id         = "titlebars",
+        rule_any   = { type = { "normal", "dialog" } },
+        properties = { titlebars_enabled = true      }
+    }
+
+    ruled.client.append_rule {
+        rule_any = { class = { "KeePassXC", "Pavucontrol" } },
+        properties = { ontop = true }
+    }
+
+    ruled.client.append_rule {
+        rule = { class = "Firefox" },
+        properties = { tag = awful.screen.focused().tags[1] }
+    }
+
+    ruled.client.append_rule {
+        rule = { class = "Alacritty" },
+        properties = { tag = awful.screen.focused().tags[2] }
+    }
+
+    ruled.client.append_rule {
+        rule_any = { class = { "Gimp", "kdenlive", "lmms" } },
+        properties = { tag = awful.screen.focused().tags[3] }
+    }
+
+    ruled.client.append_rule {
+        rule_any = { class = { "mpv", "Lollypop" }, name = { "rss" }  },
+        properties = { tag = awful.screen.focused().tags[4] }
+    }
+
+    ruled.client.append_rule {
+        rule = { class = "TelegramDesktop" },
+        properties = { tag = awful.screen.focused().tags[5] }
+    }
+
+    ruled.client.append_rule {
+        rule_any = { class = { "hl2_linux", "openmw", "openttd" } },
+        properties = { fullscreen = true }
+    }
+end)
+#+END_SRC
+
+**** Notifications
+#+BEGIN_SRC lua :tangle ~/.dotfiles/awesome/.config/awesome/settings/rules.lua
+ruled.notification.connect_signal("request::rules", function()
+    -- All notifications will match this rule.
+    ruled.notification.append_rule {
+        rule       = { },
+        properties = { screen = awful.screen.preferred }
+    }
+    ruled.notification.append_rule {
+        rule       = { urgency = "low" },
+        properties = { border_color = beautiful.color6, timeout = 5 }
+    }
+    ruled.notification.append_rule {
+        rule       = { urgency = "normal" },
+        properties = { border_color = beautiful.bg_focus, timeout = 20 }
+    }
+    ruled.notification.append_rule {
+        rule       = { urgency = "critical" },
+        properties = { bg = beautiful.bg_normal, border_color = beautiful.bg_urgent, timeout = 60 }
+    }
+end)
+
+naughty.connect_signal("request::display", function(n) naughty.layout.box { notification = n } end)
+#+END_SRC
+
+*** signals.lua
+#+BEGIN_SRC lua :tangle ~/.dotfiles/awesome/.config/awesome/settings/signals.lua
+local beautiful = require("beautiful")
+require("awful.autofocus")
+
+-- Enable sloppy focus, so that focus follows mouse.
+client.connect_signal("mouse::enter", function(c)
+    c:activate { context = "mouse_enter", raise = false }
+end)
+
+-- Set border colors depending on focus state
+client.connect_signal("focus", function(c) c.border_color = beautiful.border_color_active end)
+client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_color_normal end)
+
+-- No borders if only one tiled client
+screen.connect_signal("arrange", function(s)
+    for _, c in pairs(s.clients) do
+        if #s.tiled_clients == 1 and c.floating == false and c.first_tag.layout.name ~= "floating" then
+            c.border_width = 0
+        elseif #s.tiled_clients > 1 or c.first_tag.layout.name == "floating" then
+            c.border_width = beautiful.border_width
+        end
+    end
+end)
+#+END_SRC
+
+*** keys.lua
+Keybindings and mousebindings.
+#+BEGIN_SRC lua :tangle ~/.dotfiles/awesome/.config/awesome/settings/keys.lua
+local awful = require("awful")
+local hotkeys_popup = require("awful.hotkeys_popup")
+require("decorations.bar.widgets.volume")
+#+END_SRC
+
+**** General Awesome Keys
+#+BEGIN_SRC lua :tangle ~/.dotfiles/awesome/.config/awesome/settings/keys.lua
+awful.keyboard.append_global_keybindings({
+    awful.key {
+        modifiers   = { modkey },
+        key         = "s",
+        group       = "awesome",
+        description = "show help",
+        on_press    = function() hotkeys_popup.show_help() end
+    },
+    awful.key {
+        modifiers   = { modkey, "Control" },
+        key         = "r",
+        group       = "awesome",
+        description = "reload awesome",
+        on_press    = function() awesome.restart() end
+    },
+    awful.key {
+        modifiers   = { modkey, "Shift" },
+        key         = "q",
+        group       = "awesome",
+        description = "quit awesome",
+        on_press    = function() awesome.quit() end
+    },
+    awful.key {
+        modifiers   = { modkey },
+        key         = "Return",
+        group       = "launch",
+        description = "open a terminal",
+        on_press    = function() awful.spawn(terminal) end
+    },
+    awful.key {
+        modifiers   = { modkey },
+        key         = "r",
+        group       = "launch",
+        description = "run launcher",
+        on_press    = function() awful.spawn(launcher) end
+    }
+})
+#+END_SRC
+
+**** Tag Related Keybindings
+#+BEGIN_SRC lua :tangle ~/.dotfiles/awesome/.config/awesome/settings/keys.lua
+awful.keyboard.append_global_keybindings({
+    awful.key {
+        modifiers = { modkey },
+        key = "Left",
+        group = "tag",
+        description = "view previous",
+        on_press = function() awful.tag.viewprev() end
+    },
+    awful.key {
+        modifiers = { modkey },
+        key = "Right",
+        group = "tag",
+        description = "view next",
+        on_press = function() awful.tag.viewnext() end
+    },
+    awful.key {
+        modifiers = { modkey },
+        key = "Escape",
+        group = "tag",
+        description = "go back",
+        on_press = function() awful.tag.history.restore() end
+    }
+})
+#+END_SRC
+
+**** Focus Related Keybindings
+#+BEGIN_SRC lua :tangle ~/.dotfiles/awesome/.config/awesome/settings/keys.lua
+awful.keyboard.append_global_keybindings({
+    awful.key {
+        modifiers = { modkey },
+        key = "h",
+        group = "client",
+        description = "focus client on the left",
+        on_press = function () awful.client.focus.bydirection("left") end
+    },
+    awful.key {
+        modifiers = { modkey },
+        key = "j",
+        group = "client",
+        description = "focus client at the bottom",
+        on_press = function () awful.client.focus.bydirection("down") end
+    },
+    awful.key {
+        modifiers = { modkey },
+        key = "k",
+        group = "client",
+        description = "focus client at the top",
+        on_press = function () awful.client.focus.bydirection("up") end
+    },
+    awful.key {
+        modifiers = { modkey },
+        key = "l",
+        group = "client",
+        description = "focus client on the right",
+        on_press = function () awful.client.focus.bydirection("right") end
+    },
+    awful.key {
+        modifiers = { modkey, "Shift" },
+        key = "h",
+        group = "client",
+        description = "swap with client on the left",
+        on_press = function() awful.client.swap.bydirection("left") end
+    },
+    awful.key {
+        modifiers = { modkey, "Shift" },
+        key = "j",
+        group = "client",
+        description = "swap with client on the bottom",
+        on_press = function() awful.client.swap.bydirection("down") end
+    },
+    awful.key {
+        modifiers = { modkey, "Shift" },
+        key = "k",
+        group = "client",
+        description = "swap with client on the top",
+        on_press = function() awful.client.swap.bydirection("up") end
+    },
+    awful.key {
+        modifiers = { modkey, "Shift" },
+        key = "l",
+        group = "client",
+        description = "swap with client on the right",
+        on_press = function() awful.client.swap.bydirection("right") end
+    },
+    awful.key {
+        modifiers = { modkey },
+        key = "Tab",
+        group = "client",
+        description = "go back",
+        on_press = function()
+            awful.client.focus.history.previous()
+            if client.focus then
+                client.focus:raise()
+            end
+        end
+    },
+    awful.key {
+        modifiers = { modkey, "Control" },
+        key = "j",
+        group = "screen",
+        description = "focus the next screen",
+        on_press = function () awful.screen.focus_relative( 1) end
+    },
+    awful.key {
+        modifiers = { modkey, "Control" },
+        key = "k",
+        group = "screen",
+        description = "focus the previous screen",
+        on_press = function () awful.screen.focus_relative(-1) end
+    },
+    awful.key {
+        modifiers = { modkey, "Control" },
+        key = "n",
+        group = "client",
+        description = "restore minimized",
+        on_press = function ()
+                  local c = awful.client.restore()
+                  -- Focus restored client
+                  if c then
+                    c:activate { raise = true, context = "key.unminimize" }
+                  end
+              end
+    },
+    awful.key {
+        modifiers = { modkey },
+        key = "u",
+        group = "client",
+        description = "jump to urgent client",
+        on_press = function () awful.client.urgent.jumpto() end
+    }
+})
+#+END_SRC
+
+**** Layout Related Keybindings
+#+BEGIN_SRC lua :tangle ~/.dotfiles/awesome/.config/awesome/settings/keys.lua
+awful.keyboard.append_global_keybindings({
+    awful.key {
+        modifiers = { modkey, "Mod1" },
+        key = "l",
+        group = "layout",
+        description = "increase master width factor",
+        on_press = function () awful.tag.incmwfact( 0.05) end
+    },
+    awful.key {
+        modifiers = { modkey, "Mod1"},
+        key = "h",
+        group = "layout",
+        description = "decrease master width factor",
+        on_press = function () awful.tag.incmwfact(-0.05) end
+    },
+    awful.key {
+        modifiers = { modkey, "Control" },
+        key = "h",
+        group = "layout",
+        description = "increase the number of master clients",
+        on_press = function () awful.tag.incnmaster( 1, nil, true) end
+    },
+    awful.key {
+        modifiers = { modkey, "Control" },
+        key = "l",
+        group = "layout",
+        description = "decrease the number of master clients",
+        on_press = function () awful.tag.incnmaster(-1, nil, true) end
+    },
+    awful.key {
+        modifiers = { modkey, "Control", "Shift" },
+        key = "h",
+        group = "layout",
+        description = "increase the number of columns",
+        on_press = function () awful.tag.incncol( 1, nil, true) end
+    },
+    awful.key {
+        modifiers = { modkey, "Control", "Shift" },
+        key = "l",
+        group = "layout",
+        description = "decrease the number of columns",
+        on_press = function () awful.tag.incncol(-1, nil, true) end
+    },
+    awful.key {
+        modifiers = { modkey },
+        key = "space",
+        group = "layout",
+        description = "select next",
+        on_press = function () awful.layout.inc( 1) end
+    },
+    awful.key {
+        modifiers = { modkey, "Shift" },
+        key = "space",
+        group = "layout",
+        description = "select previous",
+        on_press = function () awful.layout.inc(-1) end
+    }
+})
+#+END_SRC
+
+**** Some Tag Related Keybindings
+#+BEGIN_SRC lua :tangle ~/.dotfiles/awesome/.config/awesome/settings/keys.lua
+awful.keyboard.append_global_keybindings({
+    awful.key {
+        modifiers   = { modkey },
+        keygroup    = "numrow",
+        description = "only view tag",
+        group       = "tag",
+        on_press    = function (index)
+            local screen = awful.screen.focused()
+            local tag = screen.tags[index]
+            if tag then
+                tag:view_only()
+            end
+        end
+    },
+    awful.key {
+        modifiers   = { modkey, "Control" },
+        keygroup    = "numrow",
+        description = "toggle tag",
+        group       = "tag",
+        on_press    = function (index)
+            local screen = awful.screen.focused()
+            local tag = screen.tags[index]
+            if tag then
+                awful.tag.viewtoggle(tag)
+            end
+        end
+    },
+    awful.key {
+        modifiers = { modkey, "Shift" },
+        keygroup    = "numrow",
+        description = "move focused client to tag",
+        group       = "tag",
+        on_press    = function (index)
+            if client.focus then
+                local tag = client.focus.screen.tags[index]
+                if tag then
+                    client.focus:move_to_tag(tag)
+                end
+            end
+        end
+    },
+    awful.key {
+        modifiers   = { modkey, "Control", "Shift" },
+        keygroup    = "numrow",
+        description = "toggle focused client on tag",
+        group       = "tag",
+        on_press    = function (index)
+            if client.focus then
+                local tag = client.focus.screen.tags[index]
+                if tag then
+                    client.focus:toggle_tag(tag)
+                end
+            end
+        end
+    },
+    awful.key {
+        modifiers   = { modkey },
+        keygroup    = "numpad",
+        description = "select layout directly",
+        group       = "layout",
+        on_press    = function (index)
+            local t = awful.screen.focused().selected_tag
+            if t then
+                t.layout = t.layouts[index] or t.layout
+            end
+        end
+    }
+})
+#+END_SRC
+
+**** Misc Keybindings
+#+BEGIN_SRC lua :tangle ~/.dotfiles/awesome/.config/awesome/settings/keys.lua
+awful.keyboard.append_global_keybindings({
+    awful.key {
+        modifiers  = { },
+        key         = "XF86AudioRaiseVolume",
+        description = "raise volume",
+        group       = "misc",
+        on_press    = function()
+            awful.spawn("pamixer -i 5")
+            myvolTimer:emit_signal("timeout")
+        end
+    },
+    awful.key {
+        modifiers   = { },
+        key         = "XF86AudioLowerVolume",
+        description = "lower volume",
+        group       = "misc",
+        on_press    = function()
+            awful.spawn("pamixer -d 5")
+            myvolTimer:emit_signal("timeout")
+        end
+    },
+    awful.key {
+        modifiers   = { },
+        key         = "XF86AudioMute",
+        description = "toggle mute",
+        group       = "misc",
+        on_press    = function()
+            awful.spawn("pamixer -t")
+            myvolTimer:emit_signal("timeout")
+        end
+    },
+    awful.key {
+        modifiers   = { },
+        key         = "XF86AudioPlay",
+        description = "play/pause",
+        group       = "misc",
+        on_press    = function()
+            awful.spawn("playerctl play-pause")
+        end
+    },
+    awful.key {
+        modifiers   = { },
+        key         = "XF86AudioNext",
+        description = "go to next track",
+        group       = "misc",
+        on_press    = function()
+            awful.spawn("playerctl next")
+        end
+    },
+    awful.key {
+        modifiers   = { },
+        key         = "XF86AudioPrev",
+        description = "go to previous track",
+        group       = "misc",
+        on_press    = function()
+            awful.spawn("playerctl previous")
+        end
+    },
+    awful.key {
+        modifiers   = { "Ctrl" },
+        key         = "Print",
+        description = "take screenshot and copy to clipboard",
+        group       = "misc",
+        on_press    = function()
+            awful.spawn.with_shell(screenshot .. " -u | xclip -selection clipboard -t image/png")
+        end
+    },
+    awful.key {
+        modifiers   = { "Ctrl", "Shift" },
+        key         = "Print",
+        description = "take screenshot with selection and copy to clipboard",
+        group       = "misc",
+        on_press    = function()
+            awful.spawn.with_shell(screenshot .. " -s -u | xclip -selection clipboard -t image/png")
+        end
+    },
+    awful.key {
+        modifiers   = { },
+        key         = "Print",
+        description = "take screenshot and upload to 0x0.st and copy link",
+        group       = "misc",
+        on_press    = function()
+            awful.spawn.with_shell(screenshot .. " -u | curl -F 'file=@-' https://0x0.st | xclip -selection clipboard")
+        end
+    },
+    awful.key {
+        modifiers   = { "Shift" },
+        key         = "Print",
+        description = "take screenshot with selection and upload to 0x0.st and copy link",
+        group       = "misc",
+        on_press    = function()
+            awful.spawn.with_shell(screenshot .. " -s -u | curl -F 'file=@-' https://0x0.st | xclip -selection clipboard")
+        end
+    },
+    awful.key {
+        modifiers   = { },
+        key         = "XF86MonBrightnessDown",
+        description = "lower brightness",
+        group       = "misc",
+        on_press    = function()
+            awful.spawn("xbacklight -dec 5")
+        end
+    },
+    awful.key {
+        modifiers   = { },
+        key         = "XF86MonBrightnessUp",
+        description = "raise brightness",
+        group       = "misc",
+        on_press    = function()
+            awful.spawn("xbacklight -inc 5")
+        end
+    },
+    awful.key {
+        modifiers   = { modkey, "Mod1" },
+        key         = "m",
+        description = "open music player",
+        group       = "launch",
+        on_press    = function()
+            awful.spawn(music)
+        end
+    },
+    awful.key {
+        modifiers   = { modkey, "Mod1" },
+        key         = "b",
+        description = "open browser",
+        group       = "launch",
+        on_press    = function()
+            awful.spawn(browser)
+        end
+    },
+    awful.key {
+        modifiers   = { modkey, "Mod1" },
+        key         = "r",
+        description = "open rss reader",
+        group       = "launch",
+        on_press    = function()
+            awful.spawn(terminal .. " -t rss -e " .. rss)
+        end
+    }
+})
+#+END_SRC
+
+**** Mousebindings
+#+BEGIN_SRC lua :tangle ~/.dotfiles/awesome/.config/awesome/settings/keys.lua
+client.connect_signal("request::default_mousebindings", function()
+    awful.mouse.append_client_mousebindings({
+        awful.button({ }, 1, function (c)
+            c:activate { context = "mouse_click" }
+        end),
+        awful.button({ modkey }, 1, function (c)
+            c:activate { context = "mouse_click", action = "mouse_move"  }
+        end),
+        awful.button({ modkey }, 3, function (c)
+            c:activate { context = "mouse_click", action = "mouse_resize" }
+        end),
+    })
+end)
+#+END_SRC
+
+**** Some Client Keybindings
+#+BEGIN_SRC lua :tangle ~/.dotfiles/awesome/.config/awesome/settings/keys.lua
+client.connect_signal("request::default_keybindings", function()
+    awful.keyboard.append_client_keybindings({
+        awful.key {
+            modifiers = { modkey },
+            key = "f",
+            group = "client",
+            description = "toggle fullscreen",
+            on_press = function (c)
+                c.fullscreen = not c.fullscreen
+                c:raise()
+            end
+        },
+        awful.key {
+            modifiers = { modkey, "Shift" },
+            key = "c",
+            group = "client",
+            description = "close",
+            on_press = function (c) c:kill() end
+        },
+        awful.key {
+            modifiers = { modkey, "Control" },
+            key = "space",
+            group = "client",
+            description = "toggle floating",
+            on_press = function () awful.client.floating.toggle() end
+        },
+        awful.key {
+            modifiers = { modkey, "Control" },
+            key = "Return",
+            group = "client",
+            description = "move to master",
+            on_press = function (c) c:swap(awful.client.getmaster()) end
+        },
+        awful.key {
+            modifiers = { modkey },
+            key = "o",
+            group = "client",
+            description = "move to screen",
+            on_press = function (c) c:move_to_screen() end
+        },
+        awful.key {
+            modifiers = { modkey },
+            key = "t",
+            group = "client",
+            description = "toggle keep on top",
+            on_press = function (c) c.ontop = not c.ontop end
+        },
+        awful.key {
+            modifiers = { modkey },
+            key = "n",
+            group = "client",
+            description = "minimize",
+            on_press = function (c)
+                -- The client currently has the input focus, so it cannot be
+                -- minimized, since minimized clients can"t have the focus.
+                c.minimized = true
+            end ,
+        },
+        awful.key {
+            modifiers = { modkey },
+            key = "m",
+            group = "client",
+            description = "(un)maximize",
+            on_press = function (c)
+                c.maximized = not c.maximized
+                c:raise()
+            end
+        },
+        awful.key {
+            modifiers = { modkey, "Control" },
+            key = "m",
+            group = "client",
+            description = "(un)maximize vertically",
+            on_press = function (c)
+                c.maximized_vertical = not c.maximized_vertical
+                c:raise()
+            end
+        },
+        awful.key {
+            modifiers = { modkey, "Shift" },
+            key = "m",
+            group = "client",
+            description = "(un)maximize horizontally",
+            on_press = function (c)
+                c.maximized_horizontal = not c.maximized_horizontal
+                c:raise()
+            end
+        }
+    })
+end)
+#+END_SRC
+
+** Decorations
+*** init.lua
+#+BEGIN_SRC lua :tangle ~/.dotfiles/awesome/.config/awesome/decorations/init.lua
+require("decorations.wallpaper")
+require("decorations.bar")
+#+END_SRc
+
+*** wallpaper.lua
+Setting the wallpaper.
+#+BEGIN_SRC lua :tangle ~/.dotfiles/awesome/.config/awesome/decorations/init.lua
+local gears = require("gears")
+local beautiful = require("beautiful")
+
+screen.connect_signal("request::wallpaper", function(s)
+    -- Wallpaper
+    if beautiful.wallpaper then
+        local wallpaper = beautiful.wallpaper
+        -- If wallpaper is a function, call it with the screen
+        if type(wallpaper) == "function" then
+            wallpaper = wallpaper(s)
+        end
+        gears.wallpaper.maximized(wallpaper, s, false)
+    end
+end)
+#+END_SRC
+
+*** wibar
+**** Bar
+#+BEGIN_SRC lua :tangle ~/.dotfiles/awesome/.config/awesome/decorations/bar/init.lua
+local gears = require("gears")
+local awful = require("awful")
+local wibox = require("wibox")
+local beautiful = require("beautiful")
+local dpi = beautiful.xresources.apply_dpi
+require("decorations.bar.widgets")
+
+-- Function to wrap margins around widgets
+local function wrap_margin(widget, l, r, t, b)
+    return wibox.widget {
+        widget,
+        left = l,
+        right = r,
+        top = t,
+        bottom = b,
+        widget = wibox.container.margin,
+    }
+end
+
+-- Function to add backgrounds to widgets
+local function wrap_bg(widget, bg_color)
+    return wibox.widget {
+        widget,
+        bg = bg_color,
+        shape = gears.shape.rectangle,
+        widget = wibox.container.background
+    }
+end
+
+-- Function to limit the size of widgets
+local function wrap_constraint(widget, w)
+    return wibox.widget {
+        widget,
+        width = w,
+        widget = wibox.container.constraint
+    }
+end
+
+screen.connect_signal("request::desktop_decoration", function(s)
+
+    -- Create the wibox
+    s.mywibox = awful.wibar({ position = "top", screen = s })
+
+    -- Add widgets to the wibox
+    s.mywibox.widget = {
+        layout = wibox.layout.align.horizontal,
+        { -- Left widgets
+            layout = wibox.layout.fixed.horizontal,
+            s.mytaglist,
+            s.mypromptbox
+        },
+        { -- Middle widgets
+            layout = wibox.layout.fixed.horizontal,
+            wrap_margin(wrap_constraint(s.myfocusedwindow, dpi(435)), dpi(6), dpi(3)),
+            wrap_margin(s.myminimizedlist, dpi(3), dpi(6)),
+        },
+        { -- Right widgets
+            layout = wibox.layout.fixed.horizontal,
+            myvol,
+            mybat,
+            mytextclock,
+            wrap_margin(wibox.widget.systray(), dpi(6)),
+            wrap_margin(s.mylayoutbox, dpi(3), dpi(3), dpi(1), dpi(1)),
+            wrap_margin(mylauncher, nil, dpi(3), dpi(2), dpi(2))
+        },
+    }
+end)
+#+END_SRC
+
+**** Widgets
+***** init.lua
+#+BEGIN_SRC lua :tangle ~/.dotfiles/awesome/.config/awesome/decorations/bar/widgets/init.lua
+require("decorations.bar.widgets.taglist")
+require("decorations.bar.widgets.tasklist")
+require("decorations.bar.widgets.promptbox")
+require("decorations.bar.widgets.volume")
+require("decorations.bar.widgets.battery")
+require("decorations.bar.widgets.clock")
+require("decorations.bar.widgets.layoutbox")
+require("decorations.bar.widgets.menu")
+#+END_SRC
+
+***** taglist.lua
+#+BEGIN_SRC lua :tangle ~/.dotfiles/awesome/.config/awesome/decorations/bar/widgets/taglist.lua
+local gears = require("gears")
+local awful = require("awful")
+
+local taglist_buttons = gears.table.join(
+    awful.button({ }, 1, function(t) t:view_only() end),
+    awful.button({ modkey }, 1, function(t)
+        if client.focus then
+            client.focus:move_to_tag(t)
+        end
+    end),
+    awful.button({ }, 3, awful.tag.viewtoggle),
+    awful.button({ modkey }, 3, function(t)
+        if client.focus then
+            client.focus:toggle_tag(t)
+        end
+    end),
+    awful.button({ }, 4, function(t) awful.tag.viewnext(t.screen) end),
+    awful.button({ }, 5, function(t) awful.tag.viewprev(t.screen) end)
+)
+
+awful.screen.connect_for_each_screen(function(s)
+    -- Create a taglist widget
+    s.mytaglist = awful.widget.taglist {
+        screen  = s,
+        filter  = awful.widget.taglist.filter.all,
+        buttons = taglist_buttons
+    }
+end)
+#+END_SRC
+
+***** tasklist.lua
+#+BEGIN_SRC lua :tangle ~/.dotfiles/awesome/.config/awesome/decorations/bar/widgets/tasklist.lua
+local gears = require("gears")
+local awful = require("awful")
+local wibox = require("wibox")
+local beautiful = require("beautiful")
+
+local tasklist_buttons = gears.table.join(
+    awful.button({ }, 1, function (c)
+        c:activate { context = "tasklist", action = "toggle_minimization" }
+    end),
+    awful.button({ }, 3, function()
+        awful.menu.client_list({ theme = { width = 250 } })
+    end),
+    awful.button({ }, 4, function ()
+        awful.client.focus.byidx(1)
+    end),
+    awful.button({ }, 5, function ()
+        awful.client.focus.byidx(-1)
+    end)
+)
+
+awful.screen.connect_for_each_screen(function(s)
+#+END_SRC
+
+****** Focused Window
+#+BEGIN_SRC lua :tangle ~/.dotfiles/awesome/.config/awesome/decorations/bar/widgets/tasklist.lua
+    s.myfocusedwindow = awful.widget.tasklist {
+        screen  = s,
+        filter  = awful.widget.tasklist.filter.focused,
+        buttons = tasklist_buttons,
+        widget_template = {
+            {
+                {id = "text_role", widget = wibox.widget.textbox},
+                layout = wibox.layout.flex.horizontal
+            },
+            id = "background_role",
+            widget = wibox.container.background
+        }
+    }
+#+END_SRC
+
+****** Minimized Windows
+#+BEGIN_SRC lua :tangle ~/.dotfiles/awesome/.config/awesome/decorations/bar/widgets/tasklist.lua
+    s.myminimizedlist = awful.widget.tasklist {
+        screen   = s,
+        filter   = awful.widget.tasklist.filter.minimizedcurrenttags,
+        buttons  = tasklist_buttons,
+        layout   = {
+            spacing = 3,
+            spacing_widget = {
+                widget       = wibox.container.margin
+            },
+            layout  = wibox.layout.flex.horizontal
+        },
+        -- Notice that there is *NO* wibox.wibox prefix, it is a template,
+        -- not a widget instance.
+        widget_template = {
+            {
+                {
+                    {
+                        id     = "text_role",
+                        widget = wibox.widget.textbox
+                    },
+                    layout = wibox.layout.fixed.horizontal
+                },
+                left = 3,
+                right = 3,
+                widget = wibox.container.margin
+            },
+            id     = "background_role",
+            widget = wibox.container.background
+        },
+    }
+end)
+#+END_SRC
+
+***** promptbox.lua
+#+BEGIN_SRC lua :tangle ~/.dotfiles/awesome/.config/awesome/decorations/bar/widgets/promptbox.lua
+local awful = require("awful")
+
+awful.screen.connect_for_each_screen(function(s)
+    -- Create a promptbox for each screen
+    s.mypromptbox = awful.widget.prompt()
+end)
+#+END_SRC
+
+***** volume.lua
+#+BEGIN_SRC lua :tangle ~/.dotfiles/awesome/.config/awesome/decorations/bar/widgets/volume.lua
+local awful = require("awful")
+local beautiful = require("beautiful")
+
+local command = [[
+sh -c '
+percent=$(pamixer --get-volume)
+muted=$(pamixer --get-mute)
+
+if [ "$muted" = "true" ]; then
+    icon=婢
+else
+    if [ "$percent" -ge 55 ]; then
+        icon=墳
+    elif [ "$percent" -gt 40 ]; then
+        icon=奔
+    elif [ "$percent" -ge 0 ]; then
+        icon=奄
+    fi
+fi
+
+echo "$icon $percent% "
+'
+]]
+
+-- Create volume widget
+myvol, myvolTimer = awful.widget.watch(command, 60, function(widget, stdout)
+    widget:set_markup("<span font=\"" .. beautiful.icon_font .. "\" color=\"" .. beautiful.fg_normal .. "\">" .. stdout .. "</span>")
+    collectgarbage("collect")
+end)
+#+END_SRC
+
+***** battery.lua
+#+BEGIN_SRC lua :tangle ~/.dotfiles/awesome/.config/awesome/decorations/bar/widgets/battery.lua
+local awful = require("awful")
+local beautiful = require("beautiful")
+
+local command = [[
+sh -c '
+state=$(acpi | cut -d " " -f 3 | cut -d "," -f 1 | tr "[:upper:]" "[:lower:]")
+percent=$(acpi | cut -d " " -f 4 | cut -d "," -f 1)
+
+if [ "$state" = "full" ]; then
+    icon=
+elif [ "$state" = "charging" ]; then
+    icon=
+elif [ "$state" = "discharging" ]; then
+    icon=
+fi
+
+echo " $icon $percent "
+'
+]]
+
+-- Create battery widget
+mybat = awful.widget.watch(command, 27, function(widget, stdout)
+    widget:set_markup("<span font=\"" .. beautiful.icon_font .. "\" color=\"" .. beautiful.fg_normal .. "\">" .. stdout .. "</span>")
+    collectgarbage("collect")
+end)
+#+END_SRC
+
+***** clock.lua
+#+BEGIN_SRC lua :tangle ~/.dotfiles/awesome/.config/awesome/decorations/bar/widgets/clock.lua
+local wibox = require("wibox")
+local beautiful = require("beautiful")
+
+-- Create a textclock widget
+mytextclock = wibox.widget.textclock(" <span font=\"" .. beautiful.icon_font .. "\" color=\"" .. beautiful.fg_normal .. "\"> %d.%m.%Y %H:%M</span>", 3)
+#+END_SRC
+
+***** layoutbox.lua
+#+BEGIN_SRC lua :tangle ~/.dotfiles/awesome/.config/awesome/decorations/bar/widgets/layoutbox.lua
+local gears = require("gears")
+local awful = require("awful")
+
+awful.screen.connect_for_each_screen(function(s)
+    -- Create an imagebox widget which will contain an icon indicating which layout we're using.
+    -- We need one layoutbox per screen.
+    s.mylayoutbox = awful.widget.layoutbox {
+        screen  = s,
+        buttons = {
+            awful.button({ }, 1, function () awful.layout.inc( 1) end),
+            awful.button({ }, 3, function () awful.layout.inc(-1) end),
+            awful.button({ }, 4, function () awful.layout.inc( 1) end),
+            awful.button({ }, 5, function () awful.layout.inc(-1) end)
+        }
+    }
+end)
+#+END_SRC
+
+***** menu.lua
+#+BEGIN_SRC lua :tangle ~/.dotfiles/awesome/.config/awesome/decorations/bar/widgets/menu.lua
+local awful = require("awful")
+local beautiful = require("beautiful")
+local hotkeys_popup = require("awful.hotkeys_popup")
+require("settings.vars")
+
+-- Create a main menu
+local myawesomemenu = {
+    { "hotkeys", function() hotkeys_popup.show_help(nil, awful.screen.focused()) end },
+    { "manual", terminal .. " -e man awesome" },
+    { "edit config", editor_cmd .. " " .. awesome.conffile },
+    { "restart", awesome.restart },
+    { "quit", function() awesome.quit() end },
+}
+
+local mysystemmenu = {
+    { "poweroff", function () awful.spawn.with_shell("ask 'Do you want to shutdown?' 'doas /sbin/poweroff'") end },
+    { "reboot", function () awful.spawn.with_shell("ask 'Do you want to reboot?' 'doas /sbin/reboot'") end }
+}
+
+local mymainmenu = awful.menu({
+    items = {
+        { "awesome", myawesomemenu },
+        { "system", mysystemmenu },
+        { "open terminal", terminal }
+    }
+})
+
+mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon, menu = mymainmenu })
+#+END_SRC
