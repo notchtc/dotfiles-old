@@ -1,12 +1,11 @@
 #+TITLE: [[https://Awesome.org][awesome]]
 #+AUTHOR: chtc
 
+*IMPORTANT: Requires Awesome git!*
+
 My epic gamer Awesome config.
 
-* IMPORTANT: Requires Awesome git!
-
 * Table Of Contents :toc:
-- [[#important-requires-awesome-git][IMPORTANT: Requires Awesome git!]]
 - [[#screenshots][Screenshots]]
 - [[#dependencies][Dependencies]]
   - [[#autostart][Autostart]]

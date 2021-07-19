@@ -3,10 +3,9 @@
 
 My simple personal zsh config.
 
-* IMPORTANT: Read through this to see dependencies and other stuff.
+*IMPORTANT: Read through this to see dependencies and other stuff.*
 
 * Table Of Contents :toc:
-- [[#important-read-through-this-to-see-dependencies-and-other-stuff][IMPORTANT: Read through this to see dependencies and other stuff.]]
 - [[#aliases][Aliases]]
 - [[#what-it-does][What it does]]
 - [[#config][Config]]

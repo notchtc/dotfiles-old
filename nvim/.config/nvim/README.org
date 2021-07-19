@@ -1,12 +1,11 @@
 #+TITLE: [[https://neovim.io][neovim]]
 #+AUTHOR: chtc
 
+*IMPORTANT: Requires neovim 0.5!*
+
 This config has only *one* purpose: editing the neovim config.
 
-* IMPORTANT: Requires neovim 0.5!
-
 * Table Of Contents :toc:
-- [[#important-requires-neovim-05][IMPORTANT: Requires neovim 0.5!]]
 - [[#screenshots][Screenshots]]
 - [[#plugin-list][Plugin List]]
 - [[#keybindings][Keybindings]]
