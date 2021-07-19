@@ -10,21 +10,21 @@ mpd_music_dir = "~/music"
 
 mpd_crossfade_time = 5
 
-song_status_format = {{$3%a$9 -{ $5{%t}}|{%f}$9} | }$7%b$9
-song_list_format = {%a} {$5%b$9} $7{%t}|{%f}$9
-song_library_format = {$7%n$9 $8-$9} {%t}|{%f}
+song_status_format = {{$(11)%a$9 -{ $(13){%t}}|{%f}$9} | $(15)%b$9}
+song_list_format = {%a} {$(13)%b$9} $(15){%t}|{%f}$9
+song_library_format = {$(15)%n.$9} {%t}|{%f}
 
-current_item_prefix = $7$b
-current_item_suffix = $/b$(end)
+current_item_prefix = $b
+current_item_suffix = $/b
 
-now_playing_prefix = $3$b
+now_playing_prefix = $(11)$b
 now_playing_suffix = $/b$(end)
 
-song_columns_list_format = (7f)[5]{l} (78)[]{t|f} (22)[3]{ar}
+song_columns_list_format = (7f)[15]{l} (78)[]{t|f} (22)[11]{ar}
 
 colors_enabled = "yes"
 
-empty_tag_color = 13
+empty_tag_color = 15
 
 main_window_color = 3
 
@@ -32,13 +32,15 @@ color1 = 16
 
 color2 = 15
 
-statusbar_time_color = 7
+statusbar_time_color = 15
 
 progressbar_color = 1
 
-player_state_color = 8
+player_state_color = 16
 
-header_window_color = 3
+header_window_color = 11
+
+state_line_color = 1
 
 ## Note: Possible display modes: classic, columns.
 browser_display_mode = "columns"
@@ -48,7 +50,7 @@ playlist_editor_display_mode = "columns"
 
 ## Note: You can specify third character which will be used to build 'empty'
 ## part of progressbar.
-progressbar_look = "─╼┈"
+progressbar_look = "─╼─"
 
 clock_display_seconds = "yes"
 
@@ -60,6 +62,7 @@ use_console_editor = "no"
 message_delay_time = 1
 
 titles_visibility = "no"
+statusbar_visibility = "yes"
 
 autocenter_mode = "yes"
 centered_cursor = "yes"

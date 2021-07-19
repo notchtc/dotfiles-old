@@ -19,9 +19,8 @@ These are my +horrible+ *awesome* dotfiles.
 
 Screenshots are located in the [[./screenshots][screenshots]] folder and shown in README's.
 
-* Table Of Contents :toc:noexport:
+* Table Of Contents :toc:
 - [[#things-used][Things used]]
-- [[#things-not-used][Things not used]]
 - [[#dependencies][Dependencies]]
 - [[#how-to-install][How To Install]]
 
@@ -31,7 +30,8 @@ Screenshots are located in the [[./screenshots][screenshots]] folder and shown i
 | [[./alacritty/.config/alacritty/][alacritty]]    | Terminal                                           |
 | [[./awesome/.config/awesome/][awesome]]      | Window Manager                                     |
 | [[./emacs/.config/doom/][doom emacs]]   | Emac                                               |
-| lollypop     | Music player                                       |
+| [[./mpd/.config/mpd/][mpd]]          | Music daemon                                       |
+| [[./ncmpcpp/.config/ncmpcpp/][ncmpcpp]]      | Music player                                       |
 | [[./nvim/.config/nvim/][nvim]]         | Text editor (Using it for quick edits)             |
 | [[./rofi/.config/rofi/][rofi]]         | Application launcher                               |
 | [[./xdg/.config/user-dirs.dirs][xdg dirs]]     | Some directory thingy                              |
@@ -42,12 +42,6 @@ Screenshots are located in the [[./screenshots][screenshots]] folder and shown i
 | [[./scripts/.local/bin/][scripts]]      | Scripts used by me                                 |
 | [[./fonts/.local/share/fonts/][fonts]]        | Used by everything that has a font setting in here |
 | [[https://github.com/morhetz/gruvbox][gruvbox]]      | Colorscheme                                        |
-
-* Things not used
-| Thing   | What it does |
-|---------+--------------|
-| [[./mpd/.config/mpd/][mpd]]     | Music daemon |
-| [[./ncmpcpp/.config/ncmpcpp/][ncmpcpp]] | Music player |
 
 * Dependencies
 If something requires something, it will be written in it's README or here.

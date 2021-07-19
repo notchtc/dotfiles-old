@@ -415,7 +415,7 @@ awful.keyboard.append_global_keybindings({
         description = "open music player",
         group       = "launch",
         on_press    = function()
-            awful.spawn(music)
+            awful.spawn(terminal .. ' -t ncmpcpp -e ' .. music)
         end
     },
     awful.key {

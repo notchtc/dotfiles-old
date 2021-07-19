@@ -15,10 +15,10 @@
   - [[#notify-script][Notify Script]]
 
 * Dependencies
-| Dependency           | Why?                     |
-|----------------------+--------------------------|
-| mpd                  | ncmpcpp needs it to work |
-| bash,mpc,notify-send | Used by notify script    |
+| Dependency                        | Why?                     |
+|-----------------------------------+--------------------------|
+| mpd                               | ncmpcpp needs it to work |
+| bash,image magick,mpc,notify-send | Used by notify script    |
 
 * Config
 ** Config File
@@ -95,14 +95,14 @@ Note that for standard colors this is interchangable with attributes listed abov
 
 Note: colors can be nested.
 #+BEGIN_SRC text :tangle ~/.dotfiles/ncmpcpp/.config/ncmpcpp/config
-song_status_format = {{$3%a$9 -{ $5{%t}}|{%f}$9} | }$7%b$9
-song_list_format = {%a} {$5%b$9} $7{%t}|{%f}$9
-song_library_format = {$7%n$9 $8-$9} {%t}|{%f}
+song_status_format = {{$(11)%a$9 -{ $(13){%t}}|{%f}$9} | $(15)%b$9}
+song_list_format = {%a} {$(13)%b$9} $(15){%t}|{%f}$9
+song_library_format = {$(15)%n.$9} {%t}|{%f}
 
-current_item_prefix = $7$b
-current_item_suffix = $/b$(end)
+current_item_prefix = $b
+current_item_suffix = $/b
 
-now_playing_prefix = $3$b
+now_playing_prefix = $(11)$b
 now_playing_suffix = $/b$(end)
 #+END_SRC
 
@@ -128,7 +128,7 @@ You can also:
 
 - define sequence of tags, that have to be displayed in case predecessor is empty in a way similar to the one in classic song format, i.e. using '|' character, e.g. {a|c|p:Owner} creates column named "Owner" that tries to display artist tag and then composer and performer if previous ones are not available.
 #+BEGIN_SRC text :tangle ~/.dotfiles/ncmpcpp/.config/ncmpcpp/config
-song_columns_list_format = (7f)[5]{l} (78)[]{t|f} (22)[3]{ar}
+song_columns_list_format = (7f)[15]{l} (78)[]{t|f} (22)[11]{ar}
 #+END_SRC
 
 *** Colors
@@ -150,7 +150,7 @@ Note: due to technical limitations of older ncurses version, if 256 colors are u
 #+BEGIN_SRC text :tangle ~/.dotfiles/ncmpcpp/.config/ncmpcpp/config
 colors_enabled = "yes"
 
-empty_tag_color = 13
+empty_tag_color = 15
 
 main_window_color = 3
 
@@ -158,14 +158,15 @@ color1 = 16
 
 color2 = 15
 
-statusbar_time_color = 7
+statusbar_time_color = 15
 
 progressbar_color = 1
 
-player_state_color = 8
+player_state_color = 16
 
-header_window_color = 3
+header_window_color = 11
 
+state_line_color = 1
 #+END_SRC
 
 *** Other
@@ -178,7 +179,7 @@ playlist_editor_display_mode = "columns"
 
 ## Note: You can specify third character which will be used to build 'empty'
 ## part of progressbar.
-progressbar_look = "─╼┈"
+progressbar_look = "─╼─"
 
 clock_display_seconds = "yes"
 
@@ -190,6 +191,7 @@ use_console_editor = "no"
 message_delay_time = 1
 
 titles_visibility = "no"
+statusbar_visibility = "yes"
 
 autocenter_mode = "yes"
 centered_cursor = "yes"
@@ -246,15 +248,24 @@ visualizer_look = "▉▉"
 #+END_SRC
 
 ** Notify Script
-#+BEGIN_SRC shell :tangle ~/.dotfiles/ncmpcpp/.config/ncmpcpp/notify
-#!/usr/bin/env bash
-MUSIC_PATH="$HOME/music"
+#+BEGIN_SRC shell :tangle ~/.dotfiles/ncmpcpp/.config/ncmpcpp/notify :shebang #!/usr/bin/env bash
+MUSIC_PATH="$HOME"/music
 ART_PATH=$(dirname "$(mpc current -f '%file%' | head -n1)")
+ART="$HOME"/.cache/cover.png
 
-ART=("$MUSIC_PATH"/"$ART_PATH"/[C-c][O-o][V-v][E-e][R-r].*)
+if [ ! -e "$ART" ]; then
+    convert -resize 512x512 "$MUSIC_PATH"/"$ART_PATH"/[C-c][O-o][V-v][E-e][R-r].* "$ART" >/dev/null 2>&1
+else
+    rm "$ART" >/dev/null 2>&1
+    convert -resize 512x512 "$MUSIC_PATH"/"$ART_PATH"/[C-c][O-o][V-v][E-e][R-r].* "$ART" >/dev/null 2>&1
+fi
+
+
 ARTIST=$(mpc current -f '%artist%')
 TITLE=$(mpc current -f '%title%')
 ALBUM=$(mpc current -f '%album%')
 
 notify-send -u low "<b>$TITLE</b>" "$ARTIST - $ALBUM" -i "$ART"
+
+exit 0
 #+END_SRC

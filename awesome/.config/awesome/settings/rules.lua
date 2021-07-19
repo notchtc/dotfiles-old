@@ -65,7 +65,7 @@ ruled.client.connect_signal("request::rules", function()
     }
 
     ruled.client.append_rule {
-        rule_any = { class = { "mpv", "Lollypop" }, name = { "rss" }  },
+        rule_any = { class = { "mpv" }, name = { "ncmpcpp", "rss" }  },
         properties = { tag = awful.screen.focused().tags[4] }
     }
 

@@ -66,7 +66,7 @@ theme.tasklist_fg_focus     = theme.fg_normal
 theme.tasklist_bg_minimize  = theme.bg_normal
 theme.tasklist_fg_minimize  = theme.fg_minimize
 
-theme.notification_icon_size = dpi(75)
+theme.notification_icon_size = dpi(85)
 theme.notification_margin    = dpi(6)
 
 theme.systray_icon_spacing = 3
@@ -104,4 +104,3 @@ theme.taglist_squares_unsel_empty = nil
 theme.wallpaper = config_path.."wall.png"
 
 return theme
--- vim: filetype=lua:expandtab:shiftwidth=4:tabstop=8:softtabstop=4:textwidth=80

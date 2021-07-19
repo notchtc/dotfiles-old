@@ -11,6 +11,7 @@ end
 autostart_apps = {
     "pulseaudio --start",
     "redshift-gtk",
+    "mpd",
     "emacs --daemon"
 }
 
