@@ -1,20 +1,22 @@
 #!/usr/bin/env bash
+#!/usr/bin/env bash
+
 MUSIC_PATH="$HOME"/music
 ART_PATH=$(dirname "$(mpc current -f '%file%' | head -n1)")
-ART="$HOME"/.cache/cover.png
+ART="$MUSIC_PATH"/"$ART_PATH"/[C-c][O-o][V-v][E-e][R-r].{jpg,jpeg,png,webp}
+COVER="$HOME"/.cache/cover.png
 
-if [ ! -e "$ART" ]; then
-    convert -resize 512x512 "$MUSIC_PATH"/"$ART_PATH"/[C-c][O-o][V-v][E-e][R-r].* "$ART" >/dev/null 2>&1
+if [ ! -e "$COVER" ]; then
+    convert -resize 512x512 "$ART" "$COVER" >/dev/null 2>&1
 else
-    rm "$ART" >/dev/null 2>&1
-    convert -resize 512x512 "$MUSIC_PATH"/"$ART_PATH"/[C-c][O-o][V-v][E-e][R-r].* "$ART" >/dev/null 2>&1
+    rm "$COVER" >/dev/null 2>&1
+    convert -resize 512x512 "$ART" "$COVER" >/dev/null 2>&1
 fi
-
 
 ARTIST=$(mpc current -f '%artist%')
 TITLE=$(mpc current -f '%title%')
 ALBUM=$(mpc current -f '%album%')
 
-notify-send -u low "<b>$TITLE</b>" "$ARTIST - $ALBUM" -i "$ART"
+notify-send -u low "<b>$TITLE</b>" "$ARTIST - $ALBUM" -i "$COVER"
 
 exit 0
