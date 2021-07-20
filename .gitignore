@@ -5,3 +5,4 @@
 /mpd/.config/mpd/pid
 /mpd/.config/mpd/state
 /ncmpcpp/.config/ncmpcpp/error.log
+/zsh/.config/zsh/history

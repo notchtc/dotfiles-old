@@ -12,6 +12,7 @@ autostart_apps = {
     "pulseaudio --start",
     "redshift-gtk",
     "mpd",
+    "mpdscribble --conf ~/.config/mpdscribble.conf",
     "emacs --daemon"
 }
 
