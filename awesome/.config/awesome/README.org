@@ -62,6 +62,8 @@ If you want to remove the autostart completely, just remove/comment out the requ
 | xrdb           | Load xresources at startup                          |
 | pulseaudio     | I don't trust pulseaudio being launched when needed |
 | redshift-gtk   | Saving my eyes                                      |
+| mpd            | Music Player Daemon                                 |
+| emacs          | Emacs Daemon                                        |
 
 * Keybindings
 When using Awesome you can just do Super+S.
@@ -131,7 +133,6 @@ autostart_apps = {
     "pulseaudio --start",
     "redshift-gtk",
     "mpd",
-    "mpdscribble --conf ~/.config/mpdscribble.conf",
     "emacs --daemon"
 }
 

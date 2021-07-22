@@ -33,4 +33,4 @@ export LIBERICA_DIR="$HOME/.local/bin/jdk8u292-full"
 
 # Set path
 typeset -U path
-path+="$HOME/.local/bin:$GEM_HOME/bin:$XDG_CONFIG_HOME/emacs/bin"
+path+="$HOME/.local/bin:$GEM_HOME/bin:$XDG_CONFIG_HOME/emacs/bin:$LIBERICA_DIR/bin"
