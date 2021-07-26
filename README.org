@@ -40,7 +40,7 @@ Screenshots are located in the [[./screenshots][screenshots]] folder and shown i
 | [[./zathura/.config/zathura/][zathura]]      | PDF reader                                         |
 | [[./zsh/.config/zsh/][zsh]] ([[./zsh/.zshenv][zshenv]]) | Shell                                              |
 | [[./scripts/.local/bin/][scripts]]      | Scripts used by me                                 |
-| [[./fonts/.local/share/fonts/][fonts]]        | Used by everything that has a font setting in here |
+| [[./fonts/][fonts]]        | Used by everything that has a font setting in here |
 | [[https://github.com/morhetz/gruvbox][gruvbox]]      | Colorscheme                                        |
 
 * Dependencies
