@@ -34,7 +34,7 @@ xif() {
 }
 alias xr="doas xbps-remove -R"
 xrf() {
-    xbps-query -l | cut -d " " -f 1,2 | fzf -q "$1" --preview "xbps-query -RS {2}" | cut -d " " -f 2 | xargs -ro doas xbps-remove -R
+    xbps-query -l | cut -d " " -f 2 | fzf -q "$1" --preview "xbps-query -S {1}" |  xargs -ro doas xbps-remove -R
 }
 alias xu="doas xbps-install -Su"
 alias xc="doas xbps-remove -Oo"
