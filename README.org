@@ -27,17 +27,17 @@ Screenshots are located in the [[./screenshots][screenshots]] folder and shown i
 * Things used
 | Thing        | What it does                                       |
 |--------------+----------------------------------------------------|
-| [[./alacritty/.config/alacritty/][alacritty]]    | Terminal                                           |
+| [[./alacritty/.config/alacritty/alacritty.yml][alacritty]]    | Terminal                                           |
 | [[./awesome/.config/awesome/][awesome]]      | Window Manager                                     |
 | [[./emacs/.config/doom/][doom emacs]]   | Emac                                               |
-| [[./mpd/.config/mpd/][mpd]]          | Music daemon                                       |
+| [[./mpd/.config/mpd/mpd.conf][mpd]]          | Music daemon                                       |
 | [[./ncmpcpp/.config/ncmpcpp/][ncmpcpp]]      | Music player                                       |
 | [[./nvim/.config/nvim/][nvim]]         | Text editor (Using it for quick edits)             |
 | [[./rofi/.config/rofi/][rofi]]         | Application launcher                               |
 | [[./xdg/.config/user-dirs.dirs][xdg dirs]]     | Some directory thingy                              |
 | [[./X11/.config/X11/xinitrc][xinitrc]]      | Launch the window manager and some programs        |
 | [[./X11/.config/X11/Xresources][xresources]]   | I only set colors in this                          |
-| [[./zathura/.config/zathura/][zathura]]      | PDF reader                                         |
+| [[./zathura/.config/zathura/zathurarc][zathura]]      | PDF reader                                         |
 | [[./zsh/.config/zsh/][zsh]] ([[./zsh/.zshenv][zshenv]]) | Shell                                              |
 | [[./scripts/.local/bin/][scripts]]      | Scripts used by me                                 |
 | [[./fonts/][fonts]]        | Used by everything that has a font setting in here |
