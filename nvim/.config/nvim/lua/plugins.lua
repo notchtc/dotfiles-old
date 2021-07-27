@@ -57,6 +57,7 @@ return require('packer').startup(function()
             vim.cmd('hi! link GitSignsAdd GruvboxGreen')
             vim.cmd('hi! link GitSignsChange GruvboxAqua')
             vim.cmd('hi! link GitSignsDelete GruvboxRed')
+            vim.g.gruvbox_transparent_bg = 1
         end
     }
 
