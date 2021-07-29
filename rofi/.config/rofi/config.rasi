@@ -1,5 +1,5 @@
 configuration {
-    font: "Hack 11";
+    font: "Iosevka Aile 12";
     theme: "~/.config/rofi/theme.rasi";
     modi: "window,run";
     location: 3;

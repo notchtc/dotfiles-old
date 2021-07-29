@@ -3,8 +3,7 @@
 
 #+BEGIN_CENTER
 #+CAPTION: Screenshots of Awesome
-#+ATTR_HTML: :alt Screenshots of Awesome :title Screenshots of Awesome :width 825
-#+ATTR_ORG: :width 825
+#+ATTR_HTML: :alt Screenshots of Awesome :title Screenshots of Awesome
 [[./screenshots/rice_thumb.png]]
 #+END_CENTER
 
@@ -40,16 +39,12 @@ Screenshots are located in the [[./screenshots][screenshots]] folder and shown i
 | [[./zathura/.config/zathura/zathurarc][zathura]]      | PDF reader                                         |
 | [[./zsh/.config/zsh/][zsh]] ([[./zsh/.zshenv][zshenv]]) | Shell                                              |
 | [[./scripts/.local/bin/][scripts]]      | Scripts used by me                                 |
-| [[./fonts/][fonts]]        | Used by everything that has a font setting in here |
 | [[https://github.com/morhetz/gruvbox][gruvbox]]      | Colorscheme                                        |
 
 * Dependencies
 If something requires something, it will be written in it's README or here.
-
-You only need to download the fonts manually, if you didn't clone the whole repo.
 - doas
-- [[https://github.com/source-foundry/Hack/releases/download/v3.003/Hack-v3.003-ttf.zip][Hack]]
-- [[https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Hack.zip][Hack Nerd Font]]
+- [[https://github.com/be5invis/Iosevka/releases][Iosevka, Iosevka Term & Iosevka Aile]]
 
 * How To Install
 - Step 1 :: Clone the repository

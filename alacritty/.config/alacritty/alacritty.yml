@@ -1,11 +1,11 @@
 # Font configuration
 font:
         normal:
-                family: monospace
+                family: Iosevka Term
                 style: Regular
 
         # Point size
-        size: 10
+        size: 10.5
 
         offset:
           y: -1

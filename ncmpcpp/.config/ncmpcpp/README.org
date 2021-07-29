@@ -1,12 +1,11 @@
 #+TITLE: [[https://rybczak.net/ncmpcpp/][ncmpcpp]]
 #+AUTHOR: chtc
 
-#+BEGIN_CENTER
+My clean ncmpcpp config.
+
 #+CAPTION: Screenshot of ncmpcpp
-#+ATTR_HTML: :alt Screenshot of ncmpcpp :title Screenshot of ncmpcpp :width 775
-#+ATTR_ORG: :width 775
+#+ATTR_HTML: :alt Screenshot of ncmpcpp :title Screenshot of ncmpcpp
 [[../../../screenshots/ncmpcpp_thumb.png]]
-#+END_CENTER
 
 * Table Of Contents :toc:
 - [[#dependencies][Dependencies]]

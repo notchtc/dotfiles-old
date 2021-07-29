@@ -5,8 +5,19 @@
 
 My epic gamer Awesome config.
 
+#+CAPTION: Screenshot of Awesome with no windows open
+#+ATTR_HTML: :alt Screenshot of Awesome with no windows open :title Screenshot of Awesome with no windows open
+[[../../../screenshots/awesome_idle_thumb.png]]
+
+#+CAPTION: Screenshot of Awesome with emacs, nvim and a terminal open
+#+ATTR_HTML: :alt Screenshot of Awesome with emacs, nvim and a terminal open :title Screenshot of Awesome with emacs, nvim and a terminal open
+[[../../../screenshots/awesome_busy_thumb.png]]
+
+#+CAPTION: Screenshot of Awesome with every window minimized except emacs
+#+ATTR_HTML: :alt Screenshot of Awesome with every window minimized except emacs :title Screenshot of Awesome with every window minimized except emacs
+[[../../../screenshots/awesome_minimized_thumb.png]]
+
 * Table Of Contents :toc:
-- [[#screenshots][Screenshots]]
 - [[#dependencies][Dependencies]]
   - [[#autostart][Autostart]]
 - [[#keybindings][Keybindings]]
@@ -16,24 +27,6 @@ My epic gamer Awesome config.
   - [[#autostartlua][autostart.lua]]
   - [[#settings][Settings]]
   - [[#decorations][Decorations]]
-
-* Screenshots
-#+BEGIN_CENTER
-#+CAPTION: Screenshot of Awesome with no windows open
-#+ATTR_HTML: :alt Screenshot of Awesome with no windows open :title Screenshot of Awesome with no windows open :width 825
-#+ATTR_ORG: :width 825
-[[../../../screenshots/awesome_idle_thumb.png]]
-
-#+CAPTION: Screenshot of Awesome with emacs, nvim and a terminal open
-#+ATTR_HTML: :alt Screenshot of Awesome with emacs, nvim and a terminal open :title Screenshot of Awesome with emacs, nvim and a terminal open :width 825
-#+ATTR_ORG: :width 825
-[[../../../screenshots/awesome_busy_thumb.png]]
-
-#+CAPTION: Screenshot of Awesome with every window minimized except emacs
-#+ATTR_HTML: :alt Screenshot of Awesome with every window minimized except emacs :title Screenshot of Awesome with every window minimized except emacs :width 825
-#+ATTR_ORG: :width 825
-[[../../../screenshots/awesome_minimized_thumb.png]]
-#+END_CENTER
 
 * Dependencies
 | Dependency | Why?                                                                    |
@@ -197,13 +190,13 @@ screen.connect_signal("request::desktop_decoration", function(s)
         screen            = s
     })
 
-    awful.tag.add("", {
+    awful.tag.add("", {
         layout            = awful.layout.floating,
         gap_single_client = false,
         screen            = s
     })
 
-    awful.tag.add("", {
+    awful.tag.add("契", {
         layout            = awful.layout.suit.tile.right,
         gap_single_client = false,
         screen            = s
@@ -949,9 +942,9 @@ local config_path = gfs.get_configuration_dir()
 local theme = dofile(themes_path.."default/theme.lua")
 -- load vector assets" generators for this theme
 
-theme.font         = "Hack 10"
-theme.icon_font    = "Hack Nerd Font 10"
-theme.taglist_font = "Hack Nerd Font Mono 11"
+theme.font         = "Iosevka Aile 11"
+theme.icon_font    = "Iosevka 13"
+theme.taglist_font = "Iosevka 11"
 
 theme.background = xrdb.background or "#282828"
 theme.foreground = xrdb.foreground or "#ebdbb2"
@@ -1296,13 +1289,13 @@ else
     fi
 fi
 
-echo "$icon $percent% "
+echo "<span font=\"]] .. beautiful.icon_font .. [[\">$icon</span> $percent% "
 '
 ]]
 
 -- Create volume widget
 myvol, myvolTimer = awful.widget.watch(command, 60, function(widget, stdout)
-    widget:set_markup("<span font=\"" .. beautiful.icon_font .. "\" color=\"" .. beautiful.fg_normal .. "\">" .. stdout .. "</span>")
+    widget:set_markup(stdout)
     collectgarbage("collect")
 end)
 #+END_SRC
@@ -1318,20 +1311,20 @@ state=$(acpi | cut -d " " -f 3 | cut -d "," -f 1 | tr "[:upper:]" "[:lower:]")
 percent=$(acpi | cut -d " " -f 4 | cut -d "," -f 1)
 
 if [ "$state" = "full" ]; then
-    icon=
+    icon=⌁
 elif [ "$state" = "charging" ]; then
-    icon=
+    icon=⚡
 elif [ "$state" = "discharging" ]; then
-    icon=
+    icon=❕
 fi
 
-echo " $icon $percent "
+echo " <span font=\"]] .. beautiful.icon_font .. [[\">$icon</span> $percent "
 '
 ]]
 
 -- Create battery widget
 mybat = awful.widget.watch(command, 27, function(widget, stdout)
-    widget:set_markup("<span font=\"" .. beautiful.icon_font .. "\" color=\"" .. beautiful.fg_normal .. "\">" .. stdout .. "</span>")
+    widget:set_markup(stdout)
     collectgarbage("collect")
 end)
 #+END_SRC
@@ -1342,7 +1335,7 @@ local wibox = require("wibox")
 local beautiful = require("beautiful")
 
 -- Create a textclock widget
-mytextclock = wibox.widget.textclock(" <span font=\"" .. beautiful.icon_font .. "\" color=\"" .. beautiful.fg_normal .. "\"> %d.%m.%Y %H:%M</span>", 3)
+mytextclock = wibox.widget.textclock(" <span font=\"" .. beautiful.icon_font .. "\"></span> %d.%m.%Y %H:%M", 3)
 #+END_SRC
 
 ***** layoutbox.lua

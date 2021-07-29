@@ -7,19 +7,19 @@ state=$(acpi | cut -d " " -f 3 | cut -d "," -f 1 | tr "[:upper:]" "[:lower:]")
 percent=$(acpi | cut -d " " -f 4 | cut -d "," -f 1)
 
 if [ "$state" = "full" ]; then
-    icon=
+    icon=⌁
 elif [ "$state" = "charging" ]; then
-    icon=
+    icon=⚡
 elif [ "$state" = "discharging" ]; then
-    icon=
+    icon=❕
 fi
 
-echo " $icon $percent "
+echo " <span font=\"]] .. beautiful.icon_font .. [[\">$icon</span> $percent "
 '
 ]]
 
 -- Create battery widget
 mybat = awful.widget.watch(command, 27, function(widget, stdout)
-    widget:set_markup("<span font=\"" .. beautiful.icon_font .. "\" color=\"" .. beautiful.fg_normal .. "\">" .. stdout .. "</span>")
+    widget:set_markup(stdout)
     collectgarbage("collect")
 end)

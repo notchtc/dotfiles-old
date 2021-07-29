@@ -1,9 +1,8 @@
 set default-bg \#282828
 set default-fg \#ebdbb2
 
-set font "hack normal 9"
+set font "iosevka normal 11"
 
-set show-scrollbars
 set scrollbar-bg \#32302f
 set scrollbar-fg \#ebdbb2
 
