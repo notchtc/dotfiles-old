@@ -3,10 +3,10 @@
 (setq user-full-name "chtc"
       user-mail-address "notnotcha0t1c@protonmail.com")
 
-(setq doom-font (font-spec :family "Iosevka" :size 15 :weight 'medium)
+(setq doom-font (font-spec :family "monospace" :size 15)
       doom-variable-pitch-font (font-spec :family "Iosevka Aile" :size 15)
-      doom-unicode-font (font-spec :family "Iosevka")
-      doom-big-font (font-spec :family "Iosevka" :size 20))
+      doom-unicode-font (font-spec :family "monospace")
+      doom-big-font (font-spec :family "monospace" :size 20))
 
 (setq doom-theme 'doom-gruvbox)
 (setq doom-themes-treemacs-theme "doom-colors")
@@ -20,20 +20,20 @@
   (interactive)
   (setq prettify-symbols-alist
     (mapcan (lambda (x) (list x (cons (upcase (car x)) (cdr x))))
-          '(("[ ]"             . ?☐)
-            ("[-]"             . ?○)
-            ("[X]"             . ?☑)
-            ("#+begin_src"     . ?▿)
-            ("#+end_src"       . ?▵)
+          '(("[ ]"             . ?)
+            ("[-]"             . ?)
+            ("[X]"             . ?)
+            ("#+begin_src"     . ?)
+            ("#+end_src"       . ?)
             ("#+begin_example" . ?⌄)
             ("#+end_example"   . ?⌃)
             ("#+begin_quote"   . ?❝)
             ("#+end_quote"     . ?❞)
-            ("#+title:"        . ?▷)
+            ("#+title:"        . ?)
             ("#+date:"         . ?)
-            ("#+author:"       . ?☺)
-            ("#+name:"         . ?▹)
-            ("#+caption:"      . ?▹)
+            ("#+author:"       . ?)
+            ("#+name:"         . ?)
+            ("#+caption:"      . ?)
             ("#+results:"      . ?)
             (":properties:"    . ?)
             (":logbook:"       . ?))))
@@ -41,14 +41,14 @@
 
 (after! org
   (add-hook 'org-mode-hook 'my/org/load-prettify-symbols)
-  (add-hook 'org-mode-hook '+zen/toggle)
+  (add-hook 'org-mode-hook 'mixed-pitch-mode 1)
   ;; If you use `org' and don't want your org files in the default location below, change `org-directory'.
   ;; It must be set before org loads!
   (setq org-directory "~/docs/org/"
         ;; Hide things like *text* /text/ etc.
         org-hide-emphasis-markers t
         ;; Change those 3 ugly dots
-        org-ellipsis " ▿ "))
+        org-ellipsis "  "))
 
 (custom-set-faces
   '(org-level-1 ((t (:inherit outline-1 :height 1.2))))

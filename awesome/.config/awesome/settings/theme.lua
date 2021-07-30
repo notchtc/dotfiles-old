@@ -11,8 +11,8 @@ local theme = dofile(themes_path.."default/theme.lua")
 -- load vector assets" generators for this theme
 
 theme.font         = "Iosevka Aile 11"
-theme.icon_font    = "Iosevka 13"
-theme.taglist_font = "Iosevka 11"
+theme.icon_font    = "Hack Nerd Font 12"
+theme.taglist_font = "Hack Nerd Font Mono 12"
 
 theme.background = xrdb.background or "#282828"
 theme.foreground = xrdb.foreground or "#ebdbb2"

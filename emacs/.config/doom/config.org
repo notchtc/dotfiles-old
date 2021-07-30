@@ -9,6 +9,7 @@ My Doom Emacs config, nothing crazy here.
 
 #+CAPTION: Screenshot of Doom Emacs Dashboard
 #+ATTR_HTML: :alt Screenshot of Doom Emacs Dashboard :title Screenshot of Doom Emacs Dashboard
+[[../../../screenshots/emacs_dashboard_thumb.png]]
 
 * Table Of Contents :toc:
 - [[#lexical-binding][Lexical Binding]]
@@ -54,10 +55,10 @@ You generally only need these two:
 #+END_SRC
 
 #+BEGIN_SRC elisp
-(setq doom-font (font-spec :family "Iosevka" :size 15 :weight 'medium)
+(setq doom-font (font-spec :family "monospace" :size 15)
       doom-variable-pitch-font (font-spec :family "Iosevka Aile" :size 15)
-      doom-unicode-font (font-spec :family "Iosevka")
-      doom-big-font (font-spec :family "Iosevka" :size 20))
+      doom-unicode-font (font-spec :family "monospace")
+      doom-big-font (font-spec :family "monospace" :size 20))
 #+END_SRC
 
 ** Theme
@@ -84,20 +85,20 @@ Setting symbols to be used by prettify-symbols-mode.
   (interactive)
   (setq prettify-symbols-alist
     (mapcan (lambda (x) (list x (cons (upcase (car x)) (cdr x))))
-          '(("[ ]"             . ?☐)
-            ("[-]"             . ?○)
-            ("[X]"             . ?☑)
-            ("#+begin_src"     . ?▿)
-            ("#+end_src"       . ?▵)
+          '(("[ ]"             . ?)
+            ("[-]"             . ?)
+            ("[X]"             . ?)
+            ("#+begin_src"     . ?)
+            ("#+end_src"       . ?)
             ("#+begin_example" . ?⌄)
             ("#+end_example"   . ?⌃)
             ("#+begin_quote"   . ?❝)
             ("#+end_quote"     . ?❞)
-            ("#+title:"        . ?▷)
+            ("#+title:"        . ?)
             ("#+date:"         . ?)
-            ("#+author:"       . ?☺)
-            ("#+name:"         . ?▹)
-            ("#+caption:"      . ?▹)
+            ("#+author:"       . ?)
+            ("#+name:"         . ?)
+            ("#+caption:"      . ?)
             ("#+results:"      . ?)
             (":properties:"    . ?)
             (":logbook:"       . ?))))
@@ -109,14 +110,14 @@ Setting org mode related variables and adding hooks.
 #+BEGIN_SRC elisp
 (after! org
   (add-hook 'org-mode-hook 'my/org/load-prettify-symbols)
-  (add-hook 'org-mode-hook '+zen/toggle)
+  (add-hook 'org-mode-hook 'mixed-pitch-mode 1)
   ;; If you use `org' and don't want your org files in the default location below, change `org-directory'.
   ;; It must be set before org loads!
   (setq org-directory "~/docs/org/"
         ;; Hide things like *text* /text/ etc.
         org-hide-emphasis-markers t
         ;; Change those 3 ugly dots
-        org-ellipsis " ▿ "))
+        org-ellipsis "  "))
 #+END_SRC
 
 ** Headings

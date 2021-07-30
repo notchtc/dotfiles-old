@@ -3,8 +3,8 @@
 
 #+BEGIN_CENTER
 #+CAPTION: Screenshots of Awesome
-#+ATTR_HTML: :alt Screenshots of Awesome :title Screenshots of Awesome
-[[./screenshots/rice_thumb.png]]
+#+ATTR_HTML: :width 825
+[[./screenshots/rice.png]]
 #+END_CENTER
 
 *CAUTION: Changing stuff to make it work/fit your needs*
@@ -24,32 +24,34 @@ Screenshots are located in the [[./screenshots][screenshots]] folder and shown i
 - [[#how-to-install][How To Install]]
 
 * Things used
-| Thing        | What it does                                       |
-|--------------+----------------------------------------------------|
-| [[./alacritty/.config/alacritty/alacritty.yml][alacritty]]    | Terminal                                           |
-| [[./awesome/.config/awesome/][awesome]]      | Window Manager                                     |
-| [[./emacs/.config/doom/][doom emacs]]   | Emac                                               |
-| [[./mpd/.config/mpd/mpd.conf][mpd]]          | Music daemon                                       |
-| [[./ncmpcpp/.config/ncmpcpp/][ncmpcpp]]      | Music player                                       |
-| [[./nvim/.config/nvim/][nvim]]         | Text editor (Using it for quick edits)             |
-| [[./rofi/.config/rofi/][rofi]]         | Application launcher                               |
-| [[./xdg/.config/user-dirs.dirs][xdg dirs]]     | Some directory thingy                              |
-| [[./X11/.config/X11/xinitrc][xinitrc]]      | Launch the window manager and some programs        |
-| [[./X11/.config/X11/Xresources][xresources]]   | I only set colors in this                          |
-| [[./zathura/.config/zathura/zathurarc][zathura]]      | PDF reader                                         |
-| [[./zsh/.config/zsh/][zsh]] ([[./zsh/.zshenv][zshenv]]) | Shell                                              |
-| [[./scripts/.local/bin/][scripts]]      | Scripts used by me                                 |
-| [[https://github.com/morhetz/gruvbox][gruvbox]]      | Colorscheme                                        |
+| Thing        | What it does                           |
+|--------------+----------------------------------------|
+| [[./alacritty/.config/alacritty/alacritty.yml][alacritty]]    | Terminal                               |
+| [[./awesome/.config/awesome/][awesome]]      | Window Manager                         |
+| [[./emacs/.config/doom/][doom emacs]]   | Emac                                   |
+| [[./mpd/.config/mpd/mpd.conf][mpd]]          | Music daemon                           |
+| [[./ncmpcpp/.config/ncmpcpp/][ncmpcpp]]      | Music player                           |
+| [[./nvim/.config/nvim/][nvim]]         | Text editor (Using it for quick edits) |
+| [[./rofi/.config/rofi/][rofi]]         | Application launcher                   |
+| [[./sxiv/.config/sxiv/exec/key-handler][sxiv]]         | Image Viewer                           |
+| [[./x11/.config/X11/][x11]]          | .xinitrc and .Xresources               |
+| [[./xdg/.config/user-dirs.dirs][xdg dirs]]     | Some directory thingy                  |
+| [[./zathura/.config/zathura/zathurarc][zathura]]      | PDF reader                             |
+| [[./zsh/.config/zsh/][zsh]] ([[./zsh/.zshenv][zshenv]]) | Shell                                  |
+| [[./fonts/.config/fontconfig/fonts.conf][fonts]]        | Font configuration                     |
+| [[./scripts/.local/bin/][scripts]]      | Scripts used by me                     |
+| [[https://github.com/morhetz/gruvbox][gruvbox]]      | Colorscheme                            |
 
 * Dependencies
 If something requires something, it will be written in it's README or here.
 - doas
 - [[https://github.com/be5invis/Iosevka/releases][Iosevka, Iosevka Term & Iosevka Aile]]
+- [[https://github.com/ryanoasis/nerd-fonts/releases][Hack Nerd Font]]
 
 * How To Install
 - Step 1 :: Clone the repository
 #+BEGIN_SRC shell
-git clone --recurse-submodules https://gitlab.com/chtc/dotfiles.git "$HOME"/.dotfiles
+git clone --recurse-submodules https://github.com/chtc/dotfiles.git "$HOME"/.dotfiles
 #+END_SRC
 
 - Step 2 :: Install [[https://www.gnu.org/software/stow/][GNU stow]].
@@ -64,7 +66,7 @@ cd "$HOME"/.dotfiles
 
 - If you want to install everything do this:
 #+BEGIN_SRC shell
-stow alacritty awesome emacs fonts mpd ncmpcpp newsboat nvim rofi scripts sxiv X11 xdg zathura zsh
+stow alacritty awesome emacs fonts mpd ncmpcpp nvim rofi scripts sxiv x11 xdg zathura zsh
 #+END_SRC
 
 - If you want just one/few things for example: alacritty and zsh, you would do:

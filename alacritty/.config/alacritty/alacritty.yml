@@ -1,7 +1,7 @@
 # Font configuration
 font:
         normal:
-                family: Iosevka Term
+                family: monospace
                 style: Regular
 
         # Point size

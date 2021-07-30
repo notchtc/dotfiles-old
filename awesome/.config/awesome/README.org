@@ -17,16 +17,28 @@ My epic gamer Awesome config.
 #+ATTR_HTML: :alt Screenshot of Awesome with every window minimized except emacs :title Screenshot of Awesome with every window minimized except emacs
 [[../../../screenshots/awesome_minimized_thumb.png]]
 
-* Table Of Contents :toc:
+* Table Of Contents :toc_3:
 - [[#dependencies][Dependencies]]
   - [[#autostart][Autostart]]
 - [[#keybindings][Keybindings]]
 - [[#other][Other]]
 - [[#config][Config]]
   - [[#rclua][rc.lua]]
+    - [[#error-handling][Error Handling]]
+    - [[#garbage-collection][Garbage Collection]]
   - [[#autostartlua][autostart.lua]]
   - [[#settings][Settings]]
+    - [[#initlua][init.lua]]
+    - [[#varslua][vars.lua]]
+    - [[#tagslua][tags.lua]]
+    - [[#ruleslua][rules.lua]]
+    - [[#signalslua][signals.lua]]
+    - [[#keyslua][keys.lua]]
+    - [[#themelua][theme.lua]]
   - [[#decorations][Decorations]]
+    - [[#initlua-1][init.lua]]
+    - [[#wallpaperlua][wallpaper.lua]]
+    - [[#wibar][wibar]]
 
 * Dependencies
 | Dependency | Why?                                                                    |
@@ -940,11 +952,11 @@ local config_path = gfs.get_configuration_dir()
 
 -- inherit default theme
 local theme = dofile(themes_path.."default/theme.lua")
--- load vector assets" generators for this theme
+-- load vector assets' generators for this theme
 
 theme.font         = "Iosevka Aile 11"
-theme.icon_font    = "Iosevka 13"
-theme.taglist_font = "Iosevka 11"
+theme.icon_font    = "Hack Nerd Font 11"
+theme.taglist_font = "Hack Nerd Font Mono 11"
 
 theme.background = xrdb.background or "#282828"
 theme.foreground = xrdb.foreground or "#ebdbb2"
@@ -1086,8 +1098,7 @@ local function wrap_margin(widget, l, r, t, b)
 end
 
 -- Function to add backgrounds to widgets
-local function wrap_bg(widget, bg_color)
-    return wibox.widget {
+local function wrap_bg(widget, bg_color) return wibox.widget {
         widget,
         bg = bg_color,
         shape = gears.shape.rectangle,
