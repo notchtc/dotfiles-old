@@ -4,12 +4,12 @@
 My Doom Emacs config, nothing crazy here.
 
 #+CAPTION: Screenshot of Doom Emacs
-#+ATTR_HTML: :alt Screenshot of Doom Emacs :title Screenshot of Doom Emacs
-[[../../../screenshots/emacs_thumb.png]]
+#+ATTR_HTML: :width 825
+[[../../../screenshots/emacs.png]]
 
 #+CAPTION: Screenshot of Doom Emacs Dashboard
-#+ATTR_HTML: :alt Screenshot of Doom Emacs Dashboard :title Screenshot of Doom Emacs Dashboard
-[[../../../screenshots/emacs_dashboard_thumb.png]]
+#+ATTR_HTML: :width 825
+[[../../../screenshots/emacs_dashboard.png]]
 
 * Table Of Contents :toc:
 - [[#lexical-binding][Lexical Binding]]

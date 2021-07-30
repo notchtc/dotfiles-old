@@ -6,16 +6,16 @@
 My epic gamer Awesome config.
 
 #+CAPTION: Screenshot of Awesome with no windows open
-#+ATTR_HTML: :alt Screenshot of Awesome with no windows open :title Screenshot of Awesome with no windows open
-[[../../../screenshots/awesome_idle_thumb.png]]
+#+ATTR_HTML: :width 825
+[[../../../screenshots/awesome_idle.png]]
 
 #+CAPTION: Screenshot of Awesome with emacs, nvim and a terminal open
-#+ATTR_HTML: :alt Screenshot of Awesome with emacs, nvim and a terminal open :title Screenshot of Awesome with emacs, nvim and a terminal open
-[[../../../screenshots/awesome_busy_thumb.png]]
+#+ATTR_HTML: :width 825
+[[../../../screenshots/awesome_busy.png]]
 
 #+CAPTION: Screenshot of Awesome with every window minimized except emacs
-#+ATTR_HTML: :alt Screenshot of Awesome with every window minimized except emacs :title Screenshot of Awesome with every window minimized except emacs
-[[../../../screenshots/awesome_minimized_thumb.png]]
+#+ATTR_HTML: :width 825
+[[../../../screenshots/awesome_minimized.png]]
 
 * Table Of Contents :toc_3:
 - [[#dependencies][Dependencies]]
@@ -75,9 +75,8 @@ When using Awesome you can just do Super+S.
 
 #+BEGIN_CENTER
 #+CAPTION: Screenshot of Awesome keybindings
-#+ATTR_HTML: :alt Screenshot of Awesome keybindings :title Screenshot of Awesome keybindings :width 825
-#+ATTR_ORG: :width 825
-[[../../../screenshots/awesome_keybindings_thumb.png]]
+#+ATTR_HTML: :width 825
+[[../../../screenshots/awesome_keybindings.png]]
 #+END_CENTER
 
 * Other

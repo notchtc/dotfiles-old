@@ -4,8 +4,8 @@
 My clean ncmpcpp config.
 
 #+CAPTION: Screenshot of ncmpcpp
-#+ATTR_HTML: :alt Screenshot of ncmpcpp :title Screenshot of ncmpcpp
-[[../../../screenshots/ncmpcpp_thumb.png]]
+#+ATTR_HTML: :width 825
+[[../../../screenshots/ncmpcpp.png]]
 
 * Table Of Contents :toc:
 - [[#dependencies][Dependencies]]

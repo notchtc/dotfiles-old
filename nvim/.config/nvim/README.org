@@ -6,12 +6,12 @@
 This config has only *one* purpose: editing the neovim config.
 
 #+CAPTION: Screenshot of neovim with nvim-tree open and git decorations
-#+ATTR_HTML: :alt Screenshot of neovim with nvim-tree open and git decorations :title Screenshot of neovim with nvim-tree open and git decorations
-[[../../../screenshots/nvim_thumb.png]]
+#+ATTR_HTML: :width 825
+[[../../../screenshots/nvim.png]]
 
 #+CAPTION: Screenshot of neovim with highlighted colors, git decorations and a buffer bar shown
-#+ATTR_HTML: :alt Screenshot of neovim with highlighted colors, git decorations and a buffer bar shown :title Screenshot of neovim with highlighted colors, git decorations and a buffer bar shown
-[[../../../screenshots/nvim2_thumb.png]]
+#+ATTR_HTML: :width 825
+[[../../../screenshots/nvim.png]]
 
 * Table Of Contents :toc:
 - [[#plugin-list][Plugin List]]
