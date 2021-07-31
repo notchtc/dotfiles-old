@@ -18,8 +18,7 @@ local function wrap_margin(widget, l, r, t, b)
 end
 
 -- Function to add backgrounds to widgets
-local function wrap_bg(widget, bg_color)
-    return wibox.widget {
+local function wrap_bg(widget, bg_color) return wibox.widget {
         widget,
         bg = bg_color,
         shape = gears.shape.rectangle,

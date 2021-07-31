@@ -8,11 +8,11 @@ local config_path = gfs.get_configuration_dir()
 
 -- inherit default theme
 local theme = dofile(themes_path.."default/theme.lua")
--- load vector assets" generators for this theme
+-- load vector assets' generators for this theme
 
 theme.font         = "Iosevka Aile 11"
-theme.icon_font    = "Hack Nerd Font 12"
-theme.taglist_font = "Hack Nerd Font Mono 12"
+theme.icon_font    = "Hack Nerd Font 11"
+theme.taglist_font = "Hack Nerd Font Mono 11"
 
 theme.background = xrdb.background or "#282828"
 theme.foreground = xrdb.foreground or "#ebdbb2"
