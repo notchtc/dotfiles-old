@@ -78,6 +78,18 @@ ruled.client.connect_signal("request::rules", function()
         rule_any = { class = { "hl2_linux", "openmw", "openttd" } },
         properties = { fullscreen = true }
     }
+
+    ruled.client.append_rule {
+        rule = { class = "Gsimplecal" },
+        properties = {
+            ontop = true,
+            floating = true,
+            sticky = true,
+            focusable = false,
+            placement = awful.placement.top_right,
+            border_width = 0
+        }
+    }
 end)
 
 ruled.notification.connect_signal("request::rules", function()

@@ -21,7 +21,7 @@ My Doom Emacs config, nothing crazy here.
 - [[#org][Org]]
   - [[#prettify-symbols-mode][Prettify Symbols Mode]]
   - [[#variables--hooks][Variables + Hooks]]
-  - [[#headings][Headings]]
+  - [[#theming-1][Theming]]
 - [[#git-gutter][Git Gutter]]
 - [[#centaur-tabs][Centaur Tabs]]
 - [[#other][Other]]
@@ -82,27 +82,27 @@ You can either set `doom-theme' or manually load a theme with the `load-theme' f
 Setting symbols to be used by prettify-symbols-mode.
 #+BEGIN_SRC elisp
 (defun my/org/load-prettify-symbols () "Prettify org mode keywords"
-  (interactive)
-  (setq prettify-symbols-alist
-    (mapcan (lambda (x) (list x (cons (upcase (car x)) (cdr x))))
-          '(("[ ]"             . ?)
-            ("[-]"             . ?)
-            ("[X]"             . ?)
-            ("#+begin_src"     . ?)
-            ("#+end_src"       . ?)
-            ("#+begin_example" . ?⌄)
-            ("#+end_example"   . ?⌃)
-            ("#+begin_quote"   . ?❝)
-            ("#+end_quote"     . ?❞)
-            ("#+title:"        . ?)
-            ("#+date:"         . ?)
-            ("#+author:"       . ?)
-            ("#+name:"         . ?)
-            ("#+caption:"      . ?)
-            ("#+results:"      . ?)
-            (":properties:"    . ?)
-            (":logbook:"       . ?))))
-  (prettify-symbols-mode 1))
+       (interactive)
+       (setq prettify-symbols-alist
+             (mapcan (lambda (x) (list x (cons (upcase (car x)) (cdr x))))
+                     '(("[ ]"             . ?)
+                       ("[-]"             . ?)
+                       ("[X]"             . ?)
+                       ("#+begin_src"     . ?)
+                       ("#+end_src"       . ?)
+                       ("#+begin_example" . ?⌄)
+                       ("#+end_example"   . ?⌃)
+                       ("#+begin_quote"   . ?❝)
+                       ("#+end_quote"     . ?❞)
+                       ("#+title:"        . ?)
+                       ("#+date:"         . ?)
+                       ("#+author:"       . ?)
+                       ("#+name:"         . ?)
+                       ("#+caption:"      . ?)
+                       ("#+results:"      . ?)
+                       (":properties:"    . ?)
+                       (":logbook:"       . ?))))
+       (prettify-symbols-mode 1))
 #+END_SRC
 
 ** Variables + Hooks
@@ -120,17 +120,19 @@ Setting org mode related variables and adding hooks.
         org-ellipsis "  "))
 #+END_SRC
 
-** Headings
-Changing heights of headings.
+** Theming
+Changing heights of headings and making org mode links have the same color as links.
 #+BEGIN_SRC elisp
 (custom-set-faces
-  '(org-level-1 ((t (:inherit outline-1 :height 1.2))))
-  '(org-level-2 ((t (:inherit outline-2 :height 1.15))))
-  '(org-level-3 ((t (:inherit outline-3 :height 1.1))))
-  '(org-level-4 ((t (:inherit outline-4 :height 1.05))))
-  '(org-level-5 ((t (:inherit outline-5 :height 1.0))))
-)
+ '(org-level-1 ((t (:inherit outline-1 :height 1.2))))
+ '(org-level-2 ((t (:inherit outline-2 :height 1.15))))
+ '(org-level-3 ((t (:inherit outline-3 :height 1.1))))
+ '(org-level-4 ((t (:inherit outline-4 :height 1.05))))
+ '(org-level-5 ((t (:inherit outline-5 :height 1.0))))
+ '(org-link ((t (:inherit link :foreground nil))))
+ )
 #+END_SRC
+
 * Git Gutter
 #+BEGIN_SRC elisp
 ;; Enable global git gutter mode

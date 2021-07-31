@@ -41,19 +41,20 @@ My epic gamer Awesome config.
     - [[#wibar][wibar]]
 
 * Dependencies
-| Dependency | Why?                                                                    |
-|------------+-------------------------------------------------------------------------|
-| acpi       | Make battery widget work                                                |
-| [[../../../scripts/.local/bin/ask][ask]]        | Asking if you want to shutdown/reboot                                   |
-| alacritty  | Terminal                                                                |
-| pamixer    | Change volume                                                           |
-| firefox    | Browser                                                                 |
-| maim       | Screenshot tool                                                         |
-| lollypop   | Music player                                                            |
-| newsboat   | RSS reader                                                              |
-| playerctl  | Control media players                                                   |
-| rofi       | Application launcher (and also a dmenu replacement and window switcher) |
-| xbacklight | Control screen brightness                                               |
+| Dependency       | Why?                                                                    |
+|------------------+-------------------------------------------------------------------------|
+| acpi             | Make battery widget work                                                |
+| [[../../../scripts/.local/bin/ask][ask]]              | Asking if you want to shutdown/reboot                                   |
+| alacritty        | Terminal                                                                |
+| pamixer          | Change volume                                                           |
+| firefox          | Browser                                                                 |
+| gsimplecal,pkill | Calendar                                                                |
+| maim             | Screenshot tool                                                         |
+| lollypop         | Music player                                                            |
+| newsboat         | RSS reader                                                              |
+| playerctl        | Control media players                                                   |
+| rofi             | Application launcher (and also a dmenu replacement and window switcher) |
+| xbacklight       | Control screen brightness                                               |
 
 ** Autostart
 There are some things launched at start in [[./autostart.lua][autostart.lua]].
@@ -311,6 +312,18 @@ ruled.client.connect_signal("request::rules", function()
     ruled.client.append_rule {
         rule_any = { class = { "hl2_linux", "openmw", "openttd" } },
         properties = { fullscreen = true }
+    }
+
+    ruled.client.append_rule {
+        rule = { class = "Gsimplecal" },
+        properties = {
+            ontop = true,
+            floating = true,
+            sticky = true,
+            focusable = false,
+            placement = awful.placement.top_right,
+            border_width = 0
+        }
     }
 end)
 #+END_SRC
@@ -1341,11 +1354,21 @@ end)
 
 ***** clock.lua
 #+BEGIN_SRC lua :tangle ~/.dotfiles/awesome/.config/awesome/decorations/bar/widgets/clock.lua
+local awful = require("awful")
+local gears = require("gears")
 local wibox = require("wibox")
 local beautiful = require("beautiful")
 
 -- Create a textclock widget
 mytextclock = wibox.widget.textclock(" <span font=\"" .. beautiful.icon_font .. "\"></span> %d.%m.%Y %H:%M", 3)
+
+-- Calendar
+mytextclock:buttons(gears.table.join(
+    mytextclock:buttons(),
+    awful.button({}, 1, nil, function()
+        awful.spawn("gsimplecal")
+    end)
+))
 #+END_SRC
 
 ***** layoutbox.lua
