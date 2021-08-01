@@ -10,6 +10,6 @@ mytextclock = wibox.widget.textclock(" <span font=\"" .. beautiful.icon_font .. 
 mytextclock:buttons(gears.table.join(
     mytextclock:buttons(),
     awful.button({}, 1, nil, function()
-        awful.spawn("gsimplecal")
+        awful.spawn.with_shell("pkill gnome-calendar || gnome-calendar")
     end)
 ))

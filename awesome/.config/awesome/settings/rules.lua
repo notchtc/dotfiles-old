@@ -80,14 +80,15 @@ ruled.client.connect_signal("request::rules", function()
     }
 
     ruled.client.append_rule {
-        rule = { class = "Gsimplecal" },
+        rule = { class = "Gnome-calendar" },
         properties = {
             ontop = true,
             floating = true,
             sticky = true,
             focusable = false,
             placement = awful.placement.top_right,
-            border_width = 0
+            border_width = 0,
+            height = beautiful.xresources.apply_dpi(150)
         }
     }
 end)
