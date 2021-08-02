@@ -1,4 +1,6 @@
 #!/bin/sh
+# Formats html files using tidy and html-beautify.
+
 if [ "$1" = "a" ]; then # Run on all files in selected directories
     read -p "Do you really want to format all files? (Press Y to continue or N to exit) " -r answer
     case "$answer" in

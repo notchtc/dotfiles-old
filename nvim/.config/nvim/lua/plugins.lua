@@ -1,3 +1,7 @@
+--
+-- BOOTSTRAP
+--
+
 local install_path = vim.fn.stdpath('data')..'/site/pack/packer/opt/packer.nvim'
 
 if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
@@ -5,10 +9,18 @@ if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
     vim.cmd('packadd packer.nvim')
 end
 
+--
+-- SETUP
+--
+
 -- Only required if you have packer configued as `opt`
 vim.cmd('packadd packer.nvim')
 
 return require('packer').startup(function()
+    --
+    -- PLUGINS
+    --
+
     -- Packer can manage itself as an optional plugin
     use {'wbthomason/packer.nvim', opt = true}
 

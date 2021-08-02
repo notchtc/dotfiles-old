@@ -1,0 +1,110 @@
+= https://zsh.org[zsh]
+chtc <notnotcha0t1c@protonmail.com>
+{docdate}
+:toc: preamble
+
+My simple personal zsh config.
+
+IMPORTANT: Read through this to see dependencies and other stuff.
+
+== Aliases
+|===
+|Alias|What it does
+
+|e
+|Launch editor (emacs)
+
+|se
+|Launch editor with doas (emacs)
+
+|ls
+|Use https://github.com/ogham/exa[exa] instead of ls
+
+|lsa
+|Show hidden files (exa)
+
+|lsl
+|Show files with extended info (exa)
+
+|lsla
+|Show extended info and hidden files (exa)
+
+|rm
+|Move file to trash can (trash-cli)
+
+|rme
+|Empty trash can (trash-cli)
+
+|rml
+|List files in trash can (trash-cli)
+
+|rmr
+|Restore file(s) from trash can (trash-cli)
+
+|xi
+|Install package(s) (xbps)
+
+|xif
+|View and install packages (xbps, fzf)
+
+|xr
+|Remove package(s) (xbps)
+
+|xrf
+|View and remove installed packages (xbps, fzf)
+
+|xu
+|Update packages (xbps)
+
+|xc
+|Clean cache and remove orphans (xbps)
+
+|adf
+|View adoc document as a pdf (asciidoctor-pdf, zathura)
+
+|setwal
+|Set wallpaper in Awesome (my config)
+|===
+
+== What it does
+* Sets some variables
+** BROWSER to `firefox`
+** EDITOR to `emacs`
+** VISUAL to `$EDITOR`
+** PAGER to `less`
+** TERM to `alacritty`
+** WM to `awesome`
+** Some fzf options
+* Cleaning up the home directory
+** XDG
+*** XDG_CACHE_HOME to `/.cache`
+*** XDG_CONFIG_HOME to `/.config`
+*** XDG_DATA_HOME to `/.local/share`
+** XINITRC to `$XDG_CONFIG_HOME/X11/xinitrc`
+** XSERVERRC to `$XDG_CONFIG_HOME/X11/xserverrc`
+** GEM_PATH to `$XDG_DATA_HOME/gem`
+** GEM_HOME to `$XDG_DATA_HOME/gem`
+** GEM_SPEC_CACHE to `$XDG_CACHE_HOME/gem`
+** GNUPGHOME to `$XDG_DATA_HOME/gnupg`
+** GTK2_RC_FILES to `$XDG_CONFIG_HOME/gtk-2.0/gtkrc`
+** INPUTRC to `$XDG_CONFIG_HOME/readline/inputrc`
+** EMACSDIR to `$XDG_CONFIG_HOME/emacs`
+** DOOMDIR to `$XDG_CONFIG_HOME/doom`
+** DOOMLOCALDIR to `$DOOMDIR/local`
+** HISTFILE to `$XDG_DATA_HOME/zsh/history`
+** LIBERICA_DIR to `$HOME/.local/bin/jdk8u292-full`
+** ZDOTDIR to `$XDG_CONFIG_HOME/zsh`
+** Disabling the less history file
+** zcompdumps are placed in `$XDG_CACHE_HOME/zsh`
+* PATH
+** `$HOME/.local/bin`
+** `$GEM_HOME/bin`
+** `$XDG_CONFIG_HOME/emacs/bin`
+* Makes gpg2 work
+* Minimal prompt
+* Completion
+* Syntax highlighting
+* Auto-suggestions
+* Vi keybindings
+* Cursor changes based on vi mode
+* Entering the directory just by entering the path.

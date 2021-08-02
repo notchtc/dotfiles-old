@@ -1,9 +1,10 @@
-[submodule "/home/chtc/.dotfiles/zsh/.config/zsh/asg"]
-	path = /home/chtc/.dotfiles/zsh/.config/zsh/asg
-	url = https://github.com/zsh-users/zsh-autosuggestions
+
 [submodule "/home/chtc/.dotfiles/zsh/.config/zsh/fsh"]
 	path = /home/chtc/.dotfiles/zsh/.config/zsh/fsh
 	url = https://github.com/zdharma/fast-syntax-highlighting
+[submodule "/home/chtc/.dotfiles/zsh/.config/zsh/asg"]
+	path = /home/chtc/.dotfiles/zsh/.config/zsh/asg
+	url = https://github.com/zsh-users/zsh-autosuggestions
 [submodule "/home/chtc/.dotfiles/emacs/.config/emacs"]
 	path = /home/chtc/.dotfiles/emacs/.config/emacs
 	url = https://github.com/hlissner/doom-emacs/

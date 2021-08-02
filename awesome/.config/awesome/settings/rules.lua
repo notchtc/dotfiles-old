@@ -3,6 +3,12 @@ local beautiful = require("beautiful")
 local naughty = require("naughty")
 local ruled = require("ruled")
 
+--
+-- CLIENTS
+--
+
+-- Rules to apply to new clients.
+
 ruled.client.connect_signal("request::rules", function()
     -- All clients will match this rule.
     ruled.client.append_rule {
@@ -92,6 +98,10 @@ ruled.client.connect_signal("request::rules", function()
         }
     }
 end)
+
+--
+-- NOTIFICATIONS
+--
 
 ruled.notification.connect_signal("request::rules", function()
     -- All notifications will match this rule.

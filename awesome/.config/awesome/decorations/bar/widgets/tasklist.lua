@@ -20,6 +20,10 @@ local tasklist_buttons = gears.table.join(
 
 awful.screen.connect_for_each_screen(function(s)
 
+    --
+    -- FOCUSED WINDOW
+    --
+
     s.myfocusedwindow = awful.widget.tasklist {
         screen  = s,
         filter  = awful.widget.tasklist.filter.focused,
@@ -33,6 +37,10 @@ awful.screen.connect_for_each_screen(function(s)
             widget = wibox.container.background
         }
     }
+
+    --
+    -- MINIMIZED WINDOWS
+    --
 
     s.myminimizedlist = awful.widget.tasklist {
         screen   = s,

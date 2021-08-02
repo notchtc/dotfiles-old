@@ -5,7 +5,7 @@ vim.o.clipboard = vim.o.clipboard .. 'unnamedplus'
 vim.wo.number = true
 vim.wo.relativenumber = true
 
--- Imaoine being case sensitive
+-- Imagine being case sensitive
 vim.o.ignorecase = true
 -- Be case sensitive when pattern is uppercase
 vim.o.smartcase = true

@@ -2,6 +2,10 @@ local awful = require("awful")
 local hotkeys_popup = require("awful.hotkeys_popup")
 require("decorations.bar.widgets.volume")
 
+--
+-- GENERAL AWESOME KEYS
+--
+
 awful.keyboard.append_global_keybindings({
     awful.key {
         modifiers   = { modkey },
@@ -40,6 +44,10 @@ awful.keyboard.append_global_keybindings({
     }
 })
 
+--
+-- TAG RELATED KEYBINDINGS
+--
+
 awful.keyboard.append_global_keybindings({
     awful.key {
         modifiers = { modkey },
@@ -63,6 +71,10 @@ awful.keyboard.append_global_keybindings({
         on_press = function() awful.tag.history.restore() end
     }
 })
+
+--
+-- FOCUS RELATED KEYBINDINGS
+--
 
 awful.keyboard.append_global_keybindings({
     awful.key {
@@ -169,6 +181,10 @@ awful.keyboard.append_global_keybindings({
     }
 })
 
+--
+-- LAYOUT RELATED KEYBINDINGS
+--
+
 awful.keyboard.append_global_keybindings({
     awful.key {
         modifiers = { modkey, "Mod1" },
@@ -228,6 +244,9 @@ awful.keyboard.append_global_keybindings({
     }
 })
 
+--
+-- SOME TAG RELATED KEYBINDINGS
+--
 awful.keyboard.append_global_keybindings({
     awful.key {
         modifiers   = { modkey },
@@ -297,6 +316,9 @@ awful.keyboard.append_global_keybindings({
     }
 })
 
+--
+-- MISC KEYBINDINGS
+--
 awful.keyboard.append_global_keybindings({
     awful.key {
         modifiers  = { },
@@ -438,6 +460,10 @@ awful.keyboard.append_global_keybindings({
     }
 })
 
+--
+-- MOUSEBINDINGS
+--
+
 client.connect_signal("request::default_mousebindings", function()
     awful.mouse.append_client_mousebindings({
         awful.button({ }, 1, function (c)
@@ -451,6 +477,10 @@ client.connect_signal("request::default_mousebindings", function()
         end),
     })
 end)
+
+--
+-- SOME CLIENT KEYBINDINGS
+--
 
 client.connect_signal("request::default_keybindings", function()
     awful.keyboard.append_client_keybindings({

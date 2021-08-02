@@ -10,6 +10,11 @@ require("settings")
 require("autostart")
 require("decorations")
 
+--
+-- ERROR HANDLING
+--
+
+-- Check if awesome encountered an error during startup and fell back to another config (This code will only ever execute for the fallback config)
 naughty.connect_signal("request::display_error", function(message, startup)
     naughty.notification {
         urgency = "critical",
@@ -18,6 +23,11 @@ naughty.connect_signal("request::display_error", function(message, startup)
     }
 end)
 
+--
+-- GARBAGE COLLECTION
+--
+
+-- Run garbage collection once in a while.
 collectgarbage("setpause", 110)
 collectgarbage("setstepmul", 1000)
 collectgarbage("step", 1024)

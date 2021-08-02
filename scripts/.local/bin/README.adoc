@@ -1,0 +1,19 @@
+= Scripts
+chtc <notnotcha0t1c@protonmail.com>
+{docdate}
+
+Simple scripts for various stuff.
+
+== List of scrips
+|===
+|Script|What it does
+
+|ask
+|Asks a Yes or No question using rofi and does something if the answer is Yes.
+
+|htmlformat
+|Formats html files using tidy and html-beautify.
+
+|imgshadow
+|Adds a shadow to images using imagemagick.
+|===

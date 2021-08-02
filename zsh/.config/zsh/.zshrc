@@ -1,6 +1,10 @@
 autoload colors && colors
 autoload -Uz compinit
 
+#
+# EXPORTS
+#
+
 HISTFILE="$XDG_CONFIG_HOME/zsh/history"
 HISTSIZE=10000
 SAVEHIST=10000
@@ -8,8 +12,12 @@ setopt INC_APPEND_HISTORY_TIME
 
 compinit -d $XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION
 
-# Prompt
+# prompt
 PS1="%F{cyan}%~ %(?.%F{green}.%F{red})>%F{normal} "
+
+#
+# ALIASES
+#
 
 # editor
 alias e="$EDITOR"
@@ -51,13 +59,20 @@ smn() {
     apropos . | cut -d "(" -f 1 | cut -d "," -f 1 | fzf --multi -q "$1" --preview "man {1}" | xargs -ro man
 }
 
-# Completion
+#
+# COMPLETION
+#
+
 zstyle ':completion:*' menu select
 zmodload zsh/complist
 compinit
 _comp_options+=(globdots)
 
-# Vi keys
+#
+# VI
+#
+
+# Enable Vi keybindings
 bindkey -v
 
 # Use vi keys in tab complete menu
@@ -83,11 +98,19 @@ zle -N zle-line-init
 echo -ne '\e[5 q'                # Use beam shape cursor on startup.
 preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 
-# Enter directory by just typing path
-setopt autocd
+#
+# PLUGINS
+#
 
 # Autosuggestions
 source "$XDG_CONFIG_HOME/zsh/asg/zsh-autosuggestions.zsh"
 
 # Syntax highlighting
 source "$XDG_CONFIG_HOME/zsh/fsh/fast-syntax-highlighting.plugin.zsh"
+
+#
+# MISC
+#
+
+# Enter directory by just typing path
+setopt autocd

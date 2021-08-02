@@ -1,0 +1,18 @@
+= https://rybczak.net/ncmpcpp/[ncmpcpp]
+chtc <notnotcha0t1c@protonmail.com>
+{docdate}
+
+My clean ncmpcpp config.
+
+image::../../../screenshots/ncmpcpp.png[Screenshot of ncmpcpp]
+
+== Dependencies
+|===
+|Dependency|Why?
+
+|mpd
+|ncmpcpp needs it to work
+
+|bash, image magick, mpc, notify-send
+|Used by notify script
+|===

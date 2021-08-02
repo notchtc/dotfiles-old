@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-#!/usr/bin/env bash
 
 MUSIC_PATH="$HOME"/music
 ART_PATH=$(dirname "$(mpc current -f '%file%' | head -n1)")
