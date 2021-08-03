@@ -1,6 +1,6 @@
 local awful = require("awful")
 local hotkeys_popup = require("awful.hotkeys_popup")
-require("decorations.bar.widgets.volume")
+require("decorations.bars.widgets.volume")
 
 --
 -- GENERAL AWESOME KEYS

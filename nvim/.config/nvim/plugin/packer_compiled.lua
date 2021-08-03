@@ -80,7 +80,7 @@ _G.packer_plugins = {
     path = "/home/chtc/.local/share/nvim/site/pack/packer/start/gitsigns.nvim"
   },
   ["gruvbox.nvim"] = {
-    config = { "\27LJ\2\2¤\2\0\0\2\0\t\0\0256\0\0\0009\0\1\0'\1\2\0B\0\2\0016\0\0\0009\0\1\0'\1\3\0B\0\2\0016\0\0\0009\0\1\0'\1\4\0B\0\2\0016\0\0\0009\0\1\0'\1\5\0B\0\2\0016\0\0\0009\0\1\0'\1\6\0B\0\2\0016\0\0\0009\0\a\0)\1\1\0=\1\b\0K\0\1\0\27gruvbox_transparent_bg\6g'hi! link GitSignsDelete GruvboxRed(hi! link GitSignsChange GruvboxAqua&hi! link GitSignsAdd GruvboxGreen\31hi! link SignColumn LineNr\24colorscheme gruvbox\bcmd\bvim\0" },
+    config = { "\27LJ\2\2®\2\0\0\2\0\b\0\0256\0\0\0009\0\1\0'\1\2\0B\0\2\0016\0\0\0009\0\1\0'\1\3\0B\0\2\0016\0\0\0009\0\1\0'\1\4\0B\0\2\0016\0\0\0009\0\1\0'\1\5\0B\0\2\0016\0\0\0009\0\1\0'\1\6\0B\0\2\0016\0\0\0009\0\1\0'\1\a\0B\0\2\1K\0\1\0'hi! Normal guibg=NONE ctermbg=NONE'hi! link GitSignsDelete GruvboxRed(hi! link GitSignsChange GruvboxAqua&hi! link GitSignsAdd GruvboxGreen\31hi! link SignColumn LineNr\24colorscheme gruvbox\bcmd\bvim\0" },
     loaded = true,
     path = "/home/chtc/.local/share/nvim/site/pack/packer/start/gruvbox.nvim"
   },
@@ -151,7 +151,7 @@ try_loadstring("\27LJ\2\2ˆ\1\0\0\3\0\6\0\t6\0\0\0'\1\1\0B\0\2\0029\0\2\0005\1\4\
 time([[Config for nvim-ts-rainbow]], false)
 -- Config for: gruvbox.nvim
 time([[Config for gruvbox.nvim]], true)
-try_loadstring("\27LJ\2\2¤\2\0\0\2\0\t\0\0256\0\0\0009\0\1\0'\1\2\0B\0\2\0016\0\0\0009\0\1\0'\1\3\0B\0\2\0016\0\0\0009\0\1\0'\1\4\0B\0\2\0016\0\0\0009\0\1\0'\1\5\0B\0\2\0016\0\0\0009\0\1\0'\1\6\0B\0\2\0016\0\0\0009\0\a\0)\1\1\0=\1\b\0K\0\1\0\27gruvbox_transparent_bg\6g'hi! link GitSignsDelete GruvboxRed(hi! link GitSignsChange GruvboxAqua&hi! link GitSignsAdd GruvboxGreen\31hi! link SignColumn LineNr\24colorscheme gruvbox\bcmd\bvim\0", "config", "gruvbox.nvim")
+try_loadstring("\27LJ\2\2®\2\0\0\2\0\b\0\0256\0\0\0009\0\1\0'\1\2\0B\0\2\0016\0\0\0009\0\1\0'\1\3\0B\0\2\0016\0\0\0009\0\1\0'\1\4\0B\0\2\0016\0\0\0009\0\1\0'\1\5\0B\0\2\0016\0\0\0009\0\1\0'\1\6\0B\0\2\0016\0\0\0009\0\1\0'\1\a\0B\0\2\1K\0\1\0'hi! Normal guibg=NONE ctermbg=NONE'hi! link GitSignsDelete GruvboxRed(hi! link GitSignsChange GruvboxAqua&hi! link GitSignsAdd GruvboxGreen\31hi! link SignColumn LineNr\24colorscheme gruvbox\bcmd\bvim\0", "config", "gruvbox.nvim")
 time([[Config for gruvbox.nvim]], false)
 -- Config for: indent-blankline.nvim
 time([[Config for indent-blankline.nvim]], true)

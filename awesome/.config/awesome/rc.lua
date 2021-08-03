@@ -3,7 +3,6 @@
 -- found (e.g. lgi). If LuaRocks is not installed, do nothing.
 pcall(require, "luarocks.loader")
 
-local beautiful = require("beautiful")
 local naughty = require("naughty")
 
 require("settings")

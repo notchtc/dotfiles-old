@@ -45,12 +45,6 @@ ruled.client.connect_signal("request::rules", function()
     }
 
     ruled.client.append_rule {
-        id         = "titlebars",
-        rule_any   = { type = { "normal", "dialog" } },
-        properties = { titlebars_enabled = true      }
-    }
-
-    ruled.client.append_rule {
         rule_any = { class = { "KeePassXC", "Pavucontrol" } },
         properties = { ontop = true }
     }

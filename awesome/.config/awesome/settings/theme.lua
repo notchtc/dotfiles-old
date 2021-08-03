@@ -44,7 +44,7 @@ theme.fg_focus     = theme.bg_normal
 theme.fg_urgent    = theme.bg_normal
 theme.fg_minimize  = theme.color8
 
-theme.useless_gap  = nil
+theme.useless_gap  = 0
 theme.border_width = dpi(2)
 theme.border_color_normal = theme.bg_normal
 theme.border_color_active = theme.bg_focus
@@ -65,6 +65,10 @@ theme.tasklist_bg_focus     = theme.bg_normal
 theme.tasklist_fg_focus     = theme.fg_normal
 theme.tasklist_bg_minimize  = theme.bg_normal
 theme.tasklist_fg_minimize  = theme.fg_minimize
+
+theme.titlebar_size      = dpi(18)
+theme.titlebar_bg_normal = theme.bg_normal
+theme.titlebar_bg_focus  = theme.bg_focus
 
 theme.notification_icon_size = dpi(85)
 theme.notification_margin    = dpi(6)

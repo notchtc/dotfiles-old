@@ -1,0 +1,8 @@
+require("decorations.bars.widgets.taglist")
+require("decorations.bars.widgets.tasklist")
+require("decorations.bars.widgets.promptbox")
+require("decorations.bars.widgets.volume")
+require("decorations.bars.widgets.battery")
+require("decorations.bars.widgets.clock")
+require("decorations.bars.widgets.layoutbox")
+require("decorations.bars.widgets.menu")
