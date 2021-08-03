@@ -7,11 +7,11 @@ state=$(acpi | cut -d " " -f 3 | cut -d "," -f 1 | tr "[:upper:]" "[:lower:]")
 percent=$(acpi | cut -d " " -f 4 | cut -d "," -f 1)
 
 if [ "$state" = "full" ]; then
-    icon=⌁
+    icon=
 elif [ "$state" = "charging" ]; then
-    icon=⚡
+    icon=
 elif [ "$state" = "discharging" ]; then
-    icon=❕
+    icon=
 fi
 
 echo " <span font=\"]] .. beautiful.icon_font .. [[\">$icon</span> $percent "
