@@ -24,6 +24,16 @@ client.connect_signal("request::titlebars", function(c)
     }
 end)
 
+-- Fix a specific issue where less of the client is seen in fullscreen
+local function hide_titlebar(c)
+    if c.fullscreen or c.maximized then
+        awful.titlebar.hide(c)
+    end
+end
+
+client.connect_signal("property::fullscreen", hide_titlebar)
+client.connect_signal("property::maximized", hide_titlebar)
+
 -- Show the titlebar only when the window is floating
 client.connect_signal("property::floating", function(c)
     local b = false;
@@ -45,7 +55,7 @@ client.connect_signal("manage", function(c)
         c.border_width = 0
         awful.titlebar.show(c)
     else
-        c.border_with = beautiful.border_width
+        c.border_width = beautiful.border_width
         awful.titlebar.hide(c)
     end
 end)

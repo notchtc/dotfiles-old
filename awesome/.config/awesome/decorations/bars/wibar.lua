@@ -38,10 +38,16 @@ end
 screen.connect_signal("request::desktop_decoration", function(s)
 
     -- Create the wibox
-    s.mywibox = awful.wibar({ position = "top", screen = s })
+    s.mywibox = awful.wibar({ position = "top", screen = s, type = "dock" })
+
+    -- Create layoutbox
+    s.mylayoutbox = awful.widget.layoutbox(s)
+
+    -- Create promptbox
+    s.mypromptbox = awful.widget.prompt()
 
     -- Add widgets to the wibox
-    s.mywibox.widget = {
+    s.mywibox:setup{
         layout = wibox.layout.align.horizontal,
         { -- Left widgets
             layout = wibox.layout.fixed.horizontal,
