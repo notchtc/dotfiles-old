@@ -66,12 +66,12 @@ theme.tasklist_fg_focus     = theme.fg_normal
 theme.tasklist_bg_minimize  = theme.bg_normal
 theme.tasklist_fg_minimize  = theme.fg_minimize
 
-theme.titlebar_size      = dpi(18)
+theme.titlebar_size      = dpi(20)
 theme.titlebar_bg_normal = theme.bg_normal
 theme.titlebar_bg_focus  = theme.bg_focus
 
 theme.notification_icon_size = dpi(85)
-theme.notification_margin    = dpi(6)
+theme.notification_margin    = dpi(3)
 
 theme.systray_icon_spacing = 3
 
