@@ -1,0 +1,20 @@
+#!/bin/sh
+
+user=$(whoami)
+hostname=$(hostname)
+os=$(grep '^NAME' /etc/os-release | cut -d "=" -f2 | tr -d '"')
+kernel=$(uname -r | cut -d "-" -f1)
+shell=$(basename "$SHELL")
+wm=$(wmctrl -m | grep "^[N-n]ame" | cut -d " " -f2)
+
+thing() {
+    printf "\033[1;32m│\033[0m \033[1;36m%s\033[0m %s\n" "$1" "$2"
+}
+
+printf "\033[1;32m╭──────────────\033[0m\n"
+printf "\033[1;32m│\033[0m \033[1;32m%s\033[0m@\033[1;32m%s\033[0m\n" "$user" "$hostname"
+thing "" "$os"
+thing "" "$kernel"
+thing "" "$shell"
+thing "" "$wm"
+printf "\033[1;32m╰──────────────\033[0m\n"

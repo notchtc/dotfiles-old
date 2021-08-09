@@ -11,6 +11,9 @@ Simple scripts for various stuff.
 |ask
 |Asks a Yes or No question using rofi and does something if the answer is Yes.
 
+|fetch
+|Something like neofetch or pfetch etc.
+
 |htmlformat
 |Formats html files using tidy and html-beautify.
 
