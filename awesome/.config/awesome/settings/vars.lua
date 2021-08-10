@@ -6,9 +6,9 @@ beautiful.init(gears.filesystem.get_configuration_dir() .. "settings/theme.lua")
 
 -- This is used later as the default terminal, editor, browser, rss reader and music player to run
 terminal = "alacritty"
-editor = os.getenv("EDITOR") or "nvim"
-editor_cmd = terminal .. " -e " .. editor
-browser = os.getenv("BROWSER") or "firefox"
+editor = os.getenv("EDITOR") or terminal .. " -e " .. "nvim"
+editor_cmd = editor
+browser = os.getenv("BROWSER") or "chromium"
 rss = "newsboat"
 music = "ncmpcpp"
 screenshot = "maim"

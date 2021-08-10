@@ -68,7 +68,7 @@ IMPORTANT: Read through this to see dependencies and other stuff.
 
 == What it does
 * Sets some variables
-** BROWSER to `firefox`
+** BROWSER to `chromium`
 ** EDITOR to `emacs`
 ** VISUAL to `$EDITOR`
 ** PAGER to `less`

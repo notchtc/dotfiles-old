@@ -50,7 +50,7 @@ ruled.client.connect_signal("request::rules", function()
     }
 
     ruled.client.append_rule {
-        rule = { class = "Firefox" },
+        rule_any = { class = { "Firefox", "Chromium-browser" } },
         properties = { tag = awful.screen.focused().tags[1] }
     }
 
@@ -70,7 +70,7 @@ ruled.client.connect_signal("request::rules", function()
     }
 
     ruled.client.append_rule {
-        rule = { class = "TelegramDesktop" },
+        rule_any = { class = { "TelegramDesktop" }, name = { "Discord" } },
         properties = { tag = awful.screen.focused().tags[5] }
     }
 
@@ -89,6 +89,13 @@ ruled.client.connect_signal("request::rules", function()
             placement = awful.placement.top_right,
             border_width = 0,
             height = beautiful.xresources.apply_dpi(150)
+        }
+    }
+
+    ruled.client.append_rule {
+        rule_any = { name = { "Discord", "Twitter", "YouTube" } },
+        properties = {
+            floating = false
         }
     }
 end)

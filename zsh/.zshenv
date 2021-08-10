@@ -23,7 +23,7 @@ export DOOMLOCALDIR="$DOOMDIR/local"
 export LESSHISTFILE=-
 
 # Default apps
-export BROWSER=firefox
+export BROWSER=chromium
 export EDITOR=emacs
 export VISUAL="$EDITOR"
 export PAGER=less

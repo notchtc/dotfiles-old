@@ -30,7 +30,7 @@ image::../../../screenshots/awesome_minimized.png[Screenshot of Awesome with eve
 |pamixer
 |Change volume
 
-|firefox
+|chromium
 |Browser
 
 |gnome-calendar,pkill
