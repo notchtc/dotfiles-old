@@ -8,6 +8,8 @@ IMPORTANT: Requires Awesome git!
 
 My epic gamer Awesome config.
 
+NOTE: If you want those titlebars you need to set titlebars to true in link:./settings/vars.lua[vars.lua]
+
 image::../../../screenshots/awesome_idle.png[Screenshot of Awesome with no windows open]
 
 image::../../../screenshots/awesome_busy.png[Screenshot of Awesome with emacs, nvim and a terminal open]
@@ -56,11 +58,11 @@ image::../../../screenshots/awesome_minimized.png[Screenshot of Awesome with eve
 |===
 
 === Autostart
-There are some things launched at start in link:./settings/autostart.lua[].
+There are some things launched at start in link:./settings/autostart.lua[autostart.lua].
 
 You probably want to add/remove/change some stuff here.
 
-If you want to remove the autostart completely, just remove/comment out the require line in file:./rc.lua and delete the file if you want.
+If you want to remove the autostart completely, just remove/comment out the require line in link:./rc.lua[rc.lua] and delete the file if you want.
 
 |===
 |Thing launched|Why?

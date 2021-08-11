@@ -10,9 +10,9 @@ end)
 -- No borders if only one tiled client
 screen.connect_signal("arrange", function(s)
     for _, c in pairs(s.clients) do
-        if #s.tiled_clients == 1 and c.floating == false and c.first_tag.layout.name ~= "floating" then
+        if #s.clients == 1 then
             c.border_width = 0
-        elseif #s.tiled_clients > 1 or c.first_tag.layout.name == "floating" then
+        elseif #s.clients > 1 then
             c.border_width = beautiful.border_width
         end
     end
