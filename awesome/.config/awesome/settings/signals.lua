@@ -7,10 +7,6 @@ client.connect_signal("mouse::enter", function(c)
     c:activate { context = "mouse_enter", raise = false }
 end)
 
--- Set border colors depending on focus state
-client.connect_signal("focus", function(c) c.border_color = beautiful.border_color_active end)
-client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_color_normal end)
-
 -- No borders if only one tiled client
 screen.connect_signal("arrange", function(s)
     for _, c in pairs(s.clients) do
@@ -21,3 +17,7 @@ screen.connect_signal("arrange", function(s)
         end
     end
 end)
+
+-- Set border colors depending on focus state
+client.connect_signal("focus", function(c) c.border_color = beautiful.border_color_active end)
+client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_color_normal end)

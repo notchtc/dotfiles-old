@@ -1,2 +1,3 @@
 require("decorations.wallpaper")
-require("decorations.bars")
+require("decorations.wibar")
+require("decorations.titlebar")

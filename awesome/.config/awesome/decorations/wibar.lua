@@ -3,7 +3,7 @@ local awful = require("awful")
 local wibox = require("wibox")
 local beautiful = require("beautiful")
 local dpi = beautiful.xresources.apply_dpi
-require("decorations.bars.widgets")
+require("decorations.widgets")
 
 -- Function to wrap margins around widgets
 local function wrap_margin(widget, l, r, t, b)

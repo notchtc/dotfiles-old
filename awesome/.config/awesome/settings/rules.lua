@@ -44,6 +44,13 @@ ruled.client.connect_signal("request::rules", function()
         properties = { floating = true }
     }
 
+    -- Add titlebars to normal clients and dialogs
+    ruled.client.append_rule {
+        id         = "titlebars",
+        rule_any   = { type = { "normal", "dialog" } },
+        properties = { titlebars_enabled = true }
+    }
+
     ruled.client.append_rule {
         rule_any = { class = { "KeePassXC", "Pavucontrol" } },
         properties = { ontop = true }
@@ -88,14 +95,16 @@ ruled.client.connect_signal("request::rules", function()
             focusable = false,
             placement = awful.placement.top_right,
             border_width = 0,
-            height = beautiful.xresources.apply_dpi(150)
+            height = beautiful.xresources.apply_dpi(200),
+            titlebars_enabled = false
         }
     }
 
     ruled.client.append_rule {
         rule_any = { name = { "Discord", "Twitter", "YouTube" } },
         properties = {
-            floating = false
+            floating = false,
+            titlebars_enabled = false
         }
     }
 end)
