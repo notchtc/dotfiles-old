@@ -30,7 +30,7 @@ ruled.client.connect_signal("request::rules", function()
         rule_any = {
             instance = { "pinentry" },
             class    = {
-                "Sxiv", "Steam", "KeePassXC", "Pavucontrol"
+                "Sxiv", "Steam", "KeePassXC", "Pavucontrol", "Gnome-calendar"
             },
             -- Note that the name property shown in xprop might be set slightly after creation of the client
             -- and the name shown there might not match defined rules here.
@@ -41,7 +41,7 @@ ruled.client.connect_signal("request::rules", function()
                 "pop-up",         -- e.g. Google Chrome"s (detached) Developer Tools.
             }
         },
-        properties = { floating = true }
+        properties = { floating = true, placement = awful.placement.centered+awful.placement.no_offscreen }
     }
 
     -- Add titlebars to normal clients and dialogs
@@ -90,12 +90,9 @@ ruled.client.connect_signal("request::rules", function()
         rule = { class = "Gnome-calendar" },
         properties = {
             ontop = true,
-            floating = true,
             sticky = true,
-            focusable = false,
-            placement = awful.placement.top_right,
+            focusable = true,
             border_width = 0,
-            height = beautiful.xresources.apply_dpi(200),
             titlebars_enabled = false
         }
     }
