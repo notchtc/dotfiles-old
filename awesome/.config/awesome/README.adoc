@@ -81,8 +81,8 @@ If you want to remove the autostart completely, just remove/comment out the requ
 |mpd
 |Music Player Daemon
 
-|emacs
-|Emacs Daemon
+|keepassxc
+|Password manager
 |===
 
 == Keybindings

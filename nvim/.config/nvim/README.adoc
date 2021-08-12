@@ -21,11 +21,11 @@ image::../../../screenshots/nvim2.png[Screenshot of neovim with highlighted colo
 |https://github.com/romgrk/barbar.nvim[barbar.nvim]
 |Fancy buffer bar
 
+|https://github.com/sainnhe/everforest[everforest]
+|Colorscheme
+
 |https://github.com/lewis6991/gitsigns.nvim[gitsigns.nvim]
 |Shows git changes
-
-|https://github.com/npxbr/gruvbox.nvim[gruvbox.nvim]
-|Colorscheme
 
 |https://github.com/lukas-reineke/indent-blankline.nvim[indent-blankline.nvim]
 |Display indentation levels
