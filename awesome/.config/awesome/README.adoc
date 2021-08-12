@@ -8,6 +8,8 @@ IMPORTANT: Requires Awesome git!
 
 My epic gamer Awesome config.
 
+file:./wall.png[Wallpaper] (Made using https://github.com/kiddae/ImageColorizer[ImageColorizer]) (https://unsplash.com/photos/AULwJzIhDRQ[Original])
+
 NOTE: If you want those titlebars you need to set titlebars to true in link:./settings/vars.lua[vars.lua]
 
 image::../../../screenshots/awesome_idle.png[Screenshot of Awesome with no windows open]

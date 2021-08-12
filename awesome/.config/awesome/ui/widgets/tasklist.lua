@@ -3,6 +3,7 @@ local awful = require("awful")
 local wibox = require("wibox")
 local beautiful = require("beautiful")
 
+-- BUTTONS {{{
 local tasklist_buttons = gears.table.join(
     awful.button({ }, 1, function (c)
         c:activate { context = "tasklist", action = "toggle_minimization" }
@@ -17,13 +18,10 @@ local tasklist_buttons = gears.table.join(
         awful.client.focus.byidx(-1)
     end)
 )
+-- }}}
 
 awful.screen.connect_for_each_screen(function(s)
-
-    --
-    -- FOCUSED WINDOW
-    --
-
+    -- FOCUSED WINDOW {{{
     s.myfocusedwindow = awful.widget.tasklist {
         screen  = s,
         filter  = awful.widget.tasklist.filter.focused,
@@ -37,11 +35,9 @@ awful.screen.connect_for_each_screen(function(s)
             widget = wibox.container.background
         }
     }
+    -- }}}
 
-    --
-    -- MINIMIZED WINDOWS
-    --
-
+    -- MINIMIZED WINDOWS {{{
     s.myminimizedlist = awful.widget.tasklist {
         screen   = s,
         filter   = awful.widget.tasklist.filter.minimizedcurrenttags,
@@ -72,4 +68,7 @@ awful.screen.connect_for_each_screen(function(s)
             widget = wibox.container.background
         },
     }
+    -- }}}
 end)
+
+-- vim: set foldmethod=marker:

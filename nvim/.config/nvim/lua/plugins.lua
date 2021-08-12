@@ -1,6 +1,4 @@
---
 -- BOOTSTRAP
---
 
 local install_path = vim.fn.stdpath('data')..'/site/pack/packer/opt/packer.nvim'
 
@@ -9,21 +7,14 @@ if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
     vim.cmd('packadd packer.nvim')
 end
 
---
--- SETUP
---
-
 -- Only required if you have packer configued as `opt`
 vim.cmd('packadd packer.nvim')
 
 return require('packer').startup(function()
-    --
-    -- PLUGINS
-    --
-
     -- Packer can manage itself as an optional plugin
     use {'wbthomason/packer.nvim', opt = true}
 
+    -- barbar.nvim {{{
     use {
         'romgrk/barbar.nvim',
         requires = 'kyazdani42/nvim-web-devicons',
@@ -42,7 +33,25 @@ return require('packer').startup(function()
             vim.cmd("let bufferline.maximum_padding = 2")
         end
     }
+    -- }}}
 
+    -- everforest {{{
+    use {
+        'sainnhe/everforest',
+        config = function()
+            if vim.fn.has('termguicolors') == 1 then
+                vim.o.termguicolors = true
+            end
+            vim.g.everforest_enable_italic = 1
+            vim.g.everforest_disable_italic_comment = 1
+            vim.g.everforest_sign_column_background = 'none'
+            vim.g.everforest_show_eob = 0
+            vim.cmd('colorscheme everforest')
+        end
+    }
+    -- }}}
+
+    -- gitsigns.nvim {{{
     use {
         'lewis6991/gitsigns.nvim',
         requires = 'nvim-lua/plenary.nvim',
@@ -59,20 +68,9 @@ return require('packer').startup(function()
             }
         end
     }
+    -- }}}
 
-    use {
-        'npxbr/gruvbox.nvim',
-        requires = 'rktjmp/lush.nvim',
-        config   = function()
-            vim.cmd('colorscheme gruvbox')
-            vim.cmd('hi! link SignColumn LineNr')
-            vim.cmd('hi! link GitSignsAdd GruvboxGreen')
-            vim.cmd('hi! link GitSignsChange GruvboxAqua')
-            vim.cmd('hi! link GitSignsDelete GruvboxRed')
-            vim.cmd('hi! Normal guibg=NONE ctermbg=NONE')
-        end
-    }
-
+    -- indent-blankline.nvim {{{
     use {
         'lukas-reineke/indent-blankline.nvim',
         config = function()
@@ -85,7 +83,9 @@ return require('packer').startup(function()
             vim.g.indent_blankline_filetype_exclude = {'fern', 'txt', 'packer', 'help'}
         end
     }
+    -- }}}
 
+    -- nvim-colorizer.lua {{{
     use {
         'norcalli/nvim-colorizer.lua',
         config = function()
@@ -99,7 +99,9 @@ return require('packer').startup(function()
             }
         end
     }
+    -- }}}
 
+    -- nvim-tree.lua {{{
     use {
         'kyazdani42/nvim-tree.lua',
         requires = 'kyazdani42/nvim-web-devicons',
@@ -132,7 +134,9 @@ return require('packer').startup(function()
             }
         end
     }
+    -- }}}
 
+    -- nvim-treesitter {{{
     use {
         'nvim-treesitter/nvim-treesitter',
         run    = ':TSUpdate',
@@ -153,7 +157,9 @@ return require('packer').startup(function()
             }
         end
     }
+    -- }}}
 
+    -- nvim-ts-rainbow {{{
     use {
         'p00f/nvim-ts-rainbow',
         requires = 'nvim-treesitter/nvim-treesitter',
@@ -170,6 +176,8 @@ return require('packer').startup(function()
             }
         end
     }
+    -- }}}
 
     use 'tpope/vim-fugitive'
 end)
+-- vim: set foldmethod=marker:

@@ -3,10 +3,7 @@ local beautiful = require("beautiful")
 local naughty = require("naughty")
 local ruled = require("ruled")
 
---
--- CLIENTS
---
-
+-- CLIENTS {{{
 -- Rules to apply to new clients.
 
 ruled.client.connect_signal("request::rules", function()
@@ -57,7 +54,7 @@ ruled.client.connect_signal("request::rules", function()
     }
 
     ruled.client.append_rule {
-        rule_any = { class = { "Firefox", "Chromium-browser" } },
+        rule_any = { class = { "Firefox", "LibreWolf", "Chromium-browser" } },
         properties = { tag = awful.screen.focused().tags[1] }
     }
 
@@ -77,7 +74,7 @@ ruled.client.connect_signal("request::rules", function()
     }
 
     ruled.client.append_rule {
-        rule_any = { class = { "TelegramDesktop" }, name = { "Discord" } },
+        rule = { class = "TelegramDesktop" },
         properties = { tag = awful.screen.focused().tags[5] }
     }
 
@@ -96,20 +93,10 @@ ruled.client.connect_signal("request::rules", function()
             titlebars_enabled = false
         }
     }
-
-    ruled.client.append_rule {
-        rule_any = { name = { "Discord", "Twitter", "YouTube" } },
-        properties = {
-            floating = false,
-            titlebars_enabled = false
-        }
-    }
 end)
+-- }}}
 
---
--- NOTIFICATIONS
---
-
+-- NOTIFICATIONS {{{
 ruled.notification.connect_signal("request::rules", function()
     -- All notifications will match this rule.
     ruled.notification.append_rule {
@@ -131,3 +118,6 @@ ruled.notification.connect_signal("request::rules", function()
 end)
 
 naughty.connect_signal("request::display", function(n) naughty.layout.box { notification = n } end)
+-- }}}
+
+-- vim: set foldmethod=marker:

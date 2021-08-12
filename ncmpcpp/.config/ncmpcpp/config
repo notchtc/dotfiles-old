@@ -168,10 +168,10 @@ progressbar_look = "─╼─"
 
 clock_display_seconds = "yes"
 
-external_editor = "emacs"
+external_editor = "nvim"
 
 ## Note: set to yes if external editor is a console application.
-use_console_editor = "no"
+use_console_editor = "yes"
 
 message_delay_time = 1
 

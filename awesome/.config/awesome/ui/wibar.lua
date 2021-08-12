@@ -3,8 +3,9 @@ local awful = require("awful")
 local wibox = require("wibox")
 local beautiful = require("beautiful")
 local dpi = beautiful.xresources.apply_dpi
-require("decorations.widgets")
+require("ui.widgets")
 
+-- FUNCTIONS {{{
 -- Function to wrap margins around widgets
 local function wrap_margin(widget, l, r, t, b)
     return wibox.widget {
@@ -34,17 +35,12 @@ local function wrap_constraint(widget, w)
         widget = wibox.container.constraint
     }
 end
+-- }}}
 
+-- WIBAR {{{
 screen.connect_signal("request::desktop_decoration", function(s)
-
     -- Create the wibox
     s.mywibox = awful.wibar({ position = "top", screen = s, type = "dock" })
-
-    -- Create layoutbox
-    s.mylayoutbox = awful.widget.layoutbox(s)
-
-    -- Create promptbox
-    s.mypromptbox = awful.widget.prompt()
 
     -- Add widgets to the wibox
     s.mywibox:setup{
@@ -65,8 +61,10 @@ screen.connect_signal("request::desktop_decoration", function(s)
             mybat,
             mytextclock,
             wrap_margin(wibox.widget.systray(), dpi(6)),
-            wrap_margin(s.mylayoutbox, dpi(3), dpi(3), dpi(1), dpi(1)),
-            wrap_margin(mylauncher, nil, dpi(3), dpi(2), dpi(2))
+            wrap_margin(s.mylayoutbox, dpi(3), dpi(3), dpi(1), dpi(1))
         },
     }
 end)
+-- }}}
+
+-- vim: set foldmethod=marker:

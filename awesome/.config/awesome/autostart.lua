@@ -11,8 +11,9 @@ end
 autostart_apps = {
     "pulseaudio --start",
     "redshift-gtk",
+--    "emacs --daemon",
     "mpd",
-    "emacs --daemon"
+    "keepassxc"
 }
 
 for app = 1, #autostart_apps do run_once(autostart_apps[app]) end

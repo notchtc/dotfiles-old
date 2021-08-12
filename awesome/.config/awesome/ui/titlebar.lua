@@ -1,8 +1,7 @@
 local awful = require("awful")
 local beautiful = require("beautiful")
 local wibox = require("wibox")
-require("settings.vars")
-
+require("configuration.vars")
 
 local function enable_tb(c)
     awful.titlebar.show(c)

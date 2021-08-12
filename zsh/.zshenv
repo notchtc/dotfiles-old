@@ -24,7 +24,7 @@ export LESSHISTFILE=-
 
 # Default apps
 export BROWSER=chromium
-export EDITOR=emacs
+export EDITOR=nvim
 export VISUAL="$EDITOR"
 export PAGER=less
 export WM=awesome

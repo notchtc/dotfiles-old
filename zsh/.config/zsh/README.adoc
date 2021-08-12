@@ -12,10 +12,10 @@ IMPORTANT: Read through this to see dependencies and other stuff.
 |Alias|What it does
 
 |e
-|Launch editor (emacs)
+|Launch editor (nvim)
 
 |se
-|Launch editor with doas (emacs)
+|Launch editor with doas (nvim)
 
 |ls
 |Use https://github.com/ogham/exa[exa] instead of ls
@@ -69,7 +69,7 @@ IMPORTANT: Read through this to see dependencies and other stuff.
 == What it does
 * Sets some variables
 ** BROWSER to `chromium`
-** EDITOR to `emacs`
+** EDITOR to `nvim`
 ** VISUAL to `$EDITOR`
 ** PAGER to `less`
 ** TERM to `alacritty`

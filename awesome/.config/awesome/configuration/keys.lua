@@ -1,11 +1,8 @@
 local awful = require("awful")
 local hotkeys_popup = require("awful.hotkeys_popup")
-require("decorations.widgets.volume")
+require("ui.widgets.volume")
 
---
--- GENERAL AWESOME KEYS
---
-
+-- GENERAL AWESOME KEYS {{{
 awful.keyboard.append_global_keybindings({
     awful.key {
         modifiers   = { modkey },
@@ -43,11 +40,9 @@ awful.keyboard.append_global_keybindings({
         on_press    = function() awful.spawn(launcher) end
     }
 })
+-- }}}
 
---
--- TAG RELATED KEYBINDINGS
---
-
+-- TAG RELATED KEYBINDINGS {{{
 awful.keyboard.append_global_keybindings({
     awful.key {
         modifiers = { modkey },
@@ -71,11 +66,9 @@ awful.keyboard.append_global_keybindings({
         on_press = function() awful.tag.history.restore() end
     }
 })
+-- }}}
 
---
--- FOCUS RELATED KEYBINDINGS
---
-
+-- FOCUS RELATED KEYBINDINGS {{{
 awful.keyboard.append_global_keybindings({
     awful.key {
         modifiers = { modkey },
@@ -180,11 +173,9 @@ awful.keyboard.append_global_keybindings({
         on_press = function () awful.client.urgent.jumpto() end
     }
 })
+-- }}}
 
---
--- LAYOUT RELATED KEYBINDINGS
---
-
+-- LAYOUT RELATED KEYBINDINGS {{{
 awful.keyboard.append_global_keybindings({
     awful.key {
         modifiers = { modkey, "Mod1" },
@@ -243,10 +234,9 @@ awful.keyboard.append_global_keybindings({
         on_press = function () awful.layout.inc(-1) end
     }
 })
+-- }}}
 
---
--- SOME TAG RELATED KEYBINDINGS
---
+-- SOME TAG RELATED KEYBINDINGS {{{
 awful.keyboard.append_global_keybindings({
     awful.key {
         modifiers   = { modkey },
@@ -315,16 +305,15 @@ awful.keyboard.append_global_keybindings({
         end
     }
 })
+-- }}}
 
---
--- MISC KEYBINDINGS
---
+-- MISC KEYBINDINGS {{{
 awful.keyboard.append_global_keybindings({
     awful.key {
         modifiers  = { },
         key         = "XF86AudioRaiseVolume",
         description = "raise volume",
-        group       = "misc",
+        group       = "system",
         on_press    = function()
             awful.spawn("pamixer -i 5")
             myvolTimer:emit_signal("timeout")
@@ -334,7 +323,7 @@ awful.keyboard.append_global_keybindings({
         modifiers   = { },
         key         = "XF86AudioLowerVolume",
         description = "lower volume",
-        group       = "misc",
+        group       = "system",
         on_press    = function()
             awful.spawn("pamixer -d 5")
             myvolTimer:emit_signal("timeout")
@@ -344,7 +333,7 @@ awful.keyboard.append_global_keybindings({
         modifiers   = { },
         key         = "XF86AudioMute",
         description = "toggle mute",
-        group       = "misc",
+        group       = "system",
         on_press    = function()
             awful.spawn("pamixer -t")
             myvolTimer:emit_signal("timeout")
@@ -354,7 +343,7 @@ awful.keyboard.append_global_keybindings({
         modifiers   = { },
         key         = "XF86AudioPlay",
         description = "play/pause",
-        group       = "misc",
+        group       = "system",
         on_press    = function()
             awful.spawn("playerctl play-pause")
         end
@@ -363,7 +352,7 @@ awful.keyboard.append_global_keybindings({
         modifiers   = { },
         key         = "XF86AudioNext",
         description = "go to next track",
-        group       = "misc",
+        group       = "system",
         on_press    = function()
             awful.spawn("playerctl next")
         end
@@ -372,7 +361,7 @@ awful.keyboard.append_global_keybindings({
         modifiers   = { },
         key         = "XF86AudioPrev",
         description = "go to previous track",
-        group       = "misc",
+        group       = "system",
         on_press    = function()
             awful.spawn("playerctl previous")
         end
@@ -417,7 +406,7 @@ awful.keyboard.append_global_keybindings({
         modifiers   = { },
         key         = "XF86MonBrightnessDown",
         description = "lower brightness",
-        group       = "misc",
+        group       = "system",
         on_press    = function()
             awful.spawn("xbacklight -dec 5")
         end
@@ -426,7 +415,7 @@ awful.keyboard.append_global_keybindings({
         modifiers   = { },
         key         = "XF86MonBrightnessUp",
         description = "raise brightness",
-        group       = "misc",
+        group       = "system",
         on_press    = function()
             awful.spawn("xbacklight -inc 5")
         end
@@ -457,13 +446,29 @@ awful.keyboard.append_global_keybindings({
         on_press    = function()
             awful.spawn(terminal .. " -t rss -e " .. rss)
         end
+    },
+    awful.key {
+        modifiers   = { modkey, "Shift" },
+        key         = "x",
+        description = "shutdown system",
+        group       = "system",
+        on_press    = function()
+            awful.spawn.with_shell("ask 'Do you want to shutdown?' 'doas /sbin/poweroff'")
+        end
+    },
+    awful.key {
+        modifiers   = { modkey, "Shift" },
+        key         = "r",
+        description = "reboot system",
+        group       = "system",
+        on_press    = function()
+            awful.spawn.with_shell("ask 'Do you want to reboot?' 'doas /sbin/reboot'")
+        end
     }
 })
+-- }}}
 
---
--- MOUSEBINDINGS
---
-
+-- MOUSEBINDINGS {{{
 client.connect_signal("request::default_mousebindings", function()
     awful.mouse.append_client_mousebindings({
         awful.button({ }, 1, function (c)
@@ -477,11 +482,9 @@ client.connect_signal("request::default_mousebindings", function()
         end),
     })
 end)
+-- }}}
 
---
--- SOME CLIENT KEYBINDINGS
---
-
+-- SOME CLIENT KEYBINDINGS {{{
 client.connect_signal("request::default_keybindings", function()
     awful.keyboard.append_client_keybindings({
         awful.key {
@@ -572,3 +575,6 @@ client.connect_signal("request::default_keybindings", function()
         }
     })
 end)
+-- }}}
+
+-- vim: set foldmethod=marker:

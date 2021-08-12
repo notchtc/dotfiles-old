@@ -46,9 +46,6 @@ vim.bo.swapfile = false
 -- Set dark background
 vim.o.background = 'dark'
 
--- More colors
-vim.o.termguicolors = true
-
 -- Remove those ~'s at the end of buffers
 vim.o.fcs = 'eob: '
 

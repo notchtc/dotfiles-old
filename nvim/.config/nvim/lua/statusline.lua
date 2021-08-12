@@ -23,7 +23,7 @@ end
 M.colors = {
     active     = '%#StatusLine#',
     inactive   = '%#StatusLineNC#',
-    normal     = '%#DiffAdd#',
+    normal     = '%#Search#',
 }
 
 M.modes = setmetatable({
@@ -143,7 +143,7 @@ M.set_active = function(self)
     local percentage = self:get_percentage()
 
     return table.concat({
-        colors.active, mode, filename, modified, readonly, '%=', fileencoding, fileformat, filetype, line_col, percentage
+        mode, filename, modified, readonly, '%=', fileencoding, fileformat, filetype, line_col, percentage
     })
 end
 
@@ -154,7 +154,7 @@ end
 M.set_explorer = function(self)
     local title = self.colors.normal .. ' explorer '
 
-    return table.concat({ self.colors.active, title, self.colors.active})
+    return table.concat({ title, self.colors.active})
 end
 
 Statusline = setmetatable(M, {
