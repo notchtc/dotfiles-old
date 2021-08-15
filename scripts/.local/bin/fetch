@@ -1,20 +1,22 @@
 #!/bin/sh
 
-user=$(whoami)
-hostname=$(hostname)
+exec 2> /dev/null
+
 os=$(grep '^PRETTY_NAME' /etc/os-release | cut -d "=" -f2 | tr -d '"')
-kernel=$(uname -r | cut -d "-" -f1)
+read -r _ _ version _ < /proc/version
+kernel=$(echo "$version" | cut -d "-" -f1)
 shell=$(basename "$SHELL")
-wm=$(xprop -id $(xprop -root -notype | awk '$1=="_NET_SUPPORTING_WM_CHECK:"{print $5}') -notype -f _NET_WM_NAME 8t | grep "WM_NAME" | cut -f2 -d \")
+wm=$(xprop -id "$(xprop -root -notype | awk '$1=="_NET_SUPPORTING_WM_CHECK:"{print $5}')" -notype -f _NET_WM_NAME 8t | grep "WM_NAME" | cut -f2 -d \")
 
 thing() {
-    printf "\033[1;32m│\033[0m \033[1;36m%s\033[0m %s\n" "$1" "$2"
+    if [ -n "$2" ]; then
+        printf "%6s:\t%s\n" "$1" "$2"
+    else
+        printf ""
+    fi
 }
 
-printf "\033[1;32m╭──────────────\033[0m\n"
-printf "\033[1;32m│\033[0m \033[1;32m%s\033[0m@\033[1;32m%s\033[0m\n" "$user" "$hostname"
-thing "" "$os"
-thing "" "$kernel"
-thing "" "$shell"
-thing "" "$wm"
-printf "\033[1;32m╰──────────────\033[0m\n"
+thing "os" "$os"
+thing "kernel" "$kernel"
+thing "shell" "$shell"
+thing "wm" "$wm"
