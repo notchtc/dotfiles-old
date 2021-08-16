@@ -23,7 +23,7 @@ end
 M.colors = {
     active     = '%#StatusLine#',
     inactive   = '%#StatusLineNC#',
-    normal     = '%#Search#',
+    normal     = '%#StatusMode#',
 }
 
 M.modes = setmetatable({

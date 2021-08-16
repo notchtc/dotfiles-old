@@ -1,10 +1,10 @@
  * {
-    bg: #2f383e;
-    fg: #d3c6aa;
-    selected: #a7c080;
-    urgent: #e67e80;
+    bg: #002b36;
+    fg: #839496;
+    selected: #859900;
+    urgent: #dc322f;
     alternate-background: @bg;
-    alternate-selected: #83c092;
+    alternate-selected: #073642;
     background-color: @bg;
     text-color: @fg;
     width: 30%;
@@ -45,7 +45,7 @@ element.normal.urgent {
 
 element.normal.active {
     background-color: @alternate-selected;
-    text-color: @bg;
+    text-color: @fg;
 }
 
 element.selected.normal {
@@ -69,7 +69,7 @@ button {
 
 button.selected {
     background-color: @alternate-selected;
-    text-color: @bg;
+    text-color: @fg;
 }
 
 scrollbar {

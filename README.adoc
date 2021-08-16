@@ -3,7 +3,7 @@ chtc <notnotcha0t1c@protonmail.com>
 {docdate}
 :toc: preamble
 
-image::./screenshots/rice.png[Screenshots of the rice]
+image::./screenshots/berry_busy.png[Screenshots of the rice]
 
 [CAUTION]
 ====
@@ -12,7 +12,7 @@ You probably *will* and *must* change something in my dotfiles.
 I recommend looking through these dotfiles and changing things to fit your setup and/or needs if you want to use this.
 ====
 
-These are my [.line-through]#horrible# *awesome* dotfiles.
+These are my [.line-through]#horrible# *very beautiful* dotfiles.
 
 https://www.youtube.com/watch?v=U245bbR2Fss[Nice video] showing how much this thing has evolved over the course of 1 year.
 
@@ -23,8 +23,11 @@ https://www.youtube.com/watch?v=U245bbR2Fss[Nice video] showing how much this th
 |link:./alacritty/.config/alacritty/alacritty.yml[alacritty]
 |Terminal
 
-|link:./awesome/.config/awesome/[awesome]
+|link:./berry/.config/berry/[berry]
 |Window Manager
+
+|link:./dunst/.config/dunst/[dunst]
+|Notification Daemon
 
 |link:./mpd/.config/mpd/mpd.conf[mpd]
 |Music player daemon
@@ -34,6 +37,9 @@ https://www.youtube.com/watch?v=U245bbR2Fss[Nice video] showing how much this th
 
 |link:./nvim/.config/nvim/[nvim]
 |Text editor
+
+|link:./polybar/.config/polybar/[polybar]
+|Bar
 
 |link:./rofi/.config/rofi/[rofi]
 |Application launcher
@@ -63,14 +69,6 @@ https://www.youtube.com/watch?v=U245bbR2Fss[Nice video] showing how much this th
 |Colorscheme
 |===
 
-== Things not used
-|===
-|Thing|What it does
-
-|link:./emacs/.config/doom/[doom emacs]
-|Emac
-|===
-
 == Dependencies
 If something requires something, it will be written in it's REDME or here.
 
@@ -93,15 +91,10 @@ cd "$HOME"/.dotfiles
 
 Step 5:: Install the dotfiles with GNU stow.
 
-- If you want to isntall everything (that's used) do this:
+- If you want to install everything do this:
 
 [source,shell]
-stow alacritty awesome fonts mpd ncmpcpp nvim rofi scripts sxiv x11 xdg zathura zsh
-
-- If you want to install everything (that isn't used) do this:
-
-[source,shell]
-stow alacritty awesome emacs fonts mpd ncmpcpp nvim rofi scripts sxiv x11 xdg zathura zsh
+stow alacritty berry dunst fonts mpd ncmpcpp nvim polybar rofi scripts sxiv x11 xdg zathura zsh
 
 - If you want just one/few things for example: alacritty and zsh, you would do:
 

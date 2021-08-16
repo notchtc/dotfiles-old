@@ -75,14 +75,14 @@ mpd_crossfade_time = 5
 
 # Note: colors can be nested.
 
-song_status_format = {{$(11)%a$9 -{ $(13){%t}}|{%f}$9} | $(15)%b$9}
-song_list_format = {%a} {$(13)%b$9} $(15){%t}|{%f}$9
-song_library_format = {$(15)%n.$9} {%t}|{%f}
+song_status_format = {{$3%a$9 -{ $5{%t}}|{%f}$9} | $7%b$9}
+song_list_format = {%a} {$5%b$9} $7{%t}|{%f}$9
+song_library_format = {$7%n.$9} {%t}|{%f}
 
 current_item_prefix = $b
 current_item_suffix = $/b
 
-now_playing_prefix = $(11)$b
+now_playing_prefix = $3$b
 now_playing_suffix = $/b$(end)
 
 # Syntax of song columns list format is "column column etc."
@@ -108,7 +108,7 @@ now_playing_suffix = $/b$(end)
 # - give a column custom name by putting it after attributes, separated with character ':', e.g. {lr:Length} gives you right aligned column of lengths named "Length".
 # - define sequence of tags, that have to be displayed in case predecessor is empty in a way similar to the one in classic song format, i.e. using '|' character, e.g. {a|c|p:Owner} creates column named "Owner" that tries to display artist tag and then composer and performer if previous ones are not available.
 
-song_columns_list_format = (7f)[15]{l} (78)[]{t|f} (22)[11]{ar}
+song_columns_list_format = (7f)[5]{l} (78)[]{t|f} (22)[7]{ar}
 
 # It is possible to set a background color by setting a color value "<foreground>_<background>",
 # e.g. red_black will set foregound color to red and background color to black.
@@ -138,7 +138,7 @@ song_columns_list_format = (7f)[15]{l} (78)[]{t|f} (22)[11]{ar}
 
 colors_enabled = "yes"
 
-empty_tag_color = 15
+empty_tag_color = 1
 
 main_window_color = 3
 
@@ -146,13 +146,13 @@ color1 = 16
 
 color2 = 15
 
-statusbar_time_color = 15
+statusbar_time_color = 7
 
 progressbar_color = 1
 
-player_state_color = 16
+player_state_color = 15
 
-header_window_color = 11
+header_window_color = 15
 
 state_line_color = 1
 

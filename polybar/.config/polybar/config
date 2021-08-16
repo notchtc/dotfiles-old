@@ -1,0 +1,156 @@
+[colors]
+background = ${xrdb:background:#002b36}
+foreground = ${xrdb:foreground:#657b83}
+black = ${xrdb:color0:#073642}
+gray = ${xrdb:color10:#586e75}
+red = ${xrdb:color1:#dc322f}
+green = ${xrdb:color2:#859900}
+yellow = ${xrdb:color3:#b58900}
+blue = ${xrdb:color4:#268bd2}
+magenta = ${xrdb:color5:#d33682}
+cyan = ${xrdb:color6:#2aa198}
+white = {xrdb:color15:#fdf6e3}
+
+[bar/main]
+;monitor = ${env:MONITOR:HDMI-1}
+width = 100%
+height = 20
+;offset-x = 1%
+;offset-y = 1%
+radius = 0
+fixed-center = false
+
+bottom = true
+
+enable-ipc = true
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-size = 0
+
+padding-left = 0
+padding-right = 2
+
+module-margin-left = 1
+module-margin-right = 2
+
+font-0 = Iosevka Aile:pixelsize=10;2
+font-1 = Hack Nerd Font:pixelsize=12;3
+
+modules-left = ewmh
+modules-right = pulseaudio battery date
+
+tray-position = right
+tray-padding = 2
+
+;wm-restack = bspwm
+;wm-restack = i3
+
+;override-redirect = true
+
+;scroll-up = bspwm-desknext
+;scroll-down = bspwm-deskprev
+
+;scroll-up = i3wm-wsnext
+;scroll-down = i3wm-wsprev
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+[module/ewmh]
+type = internal/xworkspaces
+
+; Create click handler used to focus desktop
+enable-click = true
+
+; Create scroll handlers used to cycle desktops
+enable-scroll = false
+
+format = <label-state>
+
+label-active = %name%
+label-active-background = ${colors.green}
+label-active-foreground = ${colors.background}
+label-active-padding = 1
+
+label-occupied = %name%
+label-occupied-foreground = ${colors.white}
+label-occupied-padding = 1
+
+label-urgent = %name%
+label-urgent-background = ${colors.red}
+label-urgent-foreground = ${colors.background}
+label-urgent-padding = 1
+
+label-empty = %name%
+label-empty-foreground = ${colors.gray}
+label-empty-padding = 1
+
+[module/xwindow]
+type = internal/xwindow
+label = %title:0:30:...%
+
+[module/pulseaudio]
+type = internal/pulseaudio
+
+format-volume = <ramp-volume> <label-volume>
+label-volume = %percentage%%
+
+label-muted = 婢 muted
+label-muted-foreground = ${colors.gray}
+
+ramp-volume-0 = 墳
+ramp-volume-1 = 奔
+ramp-volume-2 = 奄
+
+[module/battery]
+type = internal/battery
+battery = BAT1
+adapter = ADP1
+full-at = 100
+
+format-charging = <animation-charging> <label-charging>
+
+format-discharging = <animation-discharging> <label-discharging>
+
+format-full-prefix = " "
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-framerate = 750
+
+animation-discharging-0 = 
+animation-discharging-1 = 
+animation-discharging-2 = 
+animation-discharging-framerate = 750
+
+[module/date]
+type = internal/date
+interval = 5
+
+date = %d.%m.%Y
+
+time = %H:%M
+
+format-prefix = " "
+
+label = %date% %time%
+
+[settings]
+screenchange-reload = true
+;compositing-background = xor
+;compositing-background = screen
+;compositing-foreground = source
+;compositing-border = over
+;pseudo-transparency = false
+
+[global/wm]
+margin-top = 25
+
+; vim:ft=dosini

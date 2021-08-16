@@ -1,5 +1,0 @@
-require("configuration.vars")
-require("configuration.tags")
-require("configuration.rules")
-require("configuration.signals")
-require("configuration.keys")

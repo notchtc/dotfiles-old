@@ -21,7 +21,7 @@ PS1="%F{cyan}%~ %(?.%F{green}.%F{red})>%F{normal} "
 
 # editor
 alias e="$EDITOR"
-alias se="doas -E $EDITOR"
+alias se="doas $EDITOR"
 
 # ls
 alias ls="exa --icons --group-directories-first"

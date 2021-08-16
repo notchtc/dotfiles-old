@@ -1,7 +1,0 @@
-require("ui.widgets.taglist")
-require("ui.widgets.tasklist")
-require("ui.widgets.promptbox")
-require("ui.widgets.volume")
-require("ui.widgets.battery")
-require("ui.widgets.clock")
-require("ui.widgets.layoutbox")

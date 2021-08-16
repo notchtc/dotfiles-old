@@ -35,22 +35,6 @@ return require('packer').startup(function()
     }
     -- }}}
 
-    -- everforest {{{
-    use {
-        'sainnhe/everforest',
-        config = function()
-            if vim.fn.has('termguicolors') == 1 then
-                vim.o.termguicolors = true
-            end
-            vim.g.everforest_enable_italic = 1
-            vim.g.everforest_disable_italic_comment = 1
-            vim.g.everforest_sign_column_background = 'none'
-            vim.g.everforest_show_eob = 0
-            vim.cmd('colorscheme everforest')
-        end
-    }
-    -- }}}
-
     -- gitsigns.nvim {{{
     use {
         'lewis6991/gitsigns.nvim',
@@ -82,6 +66,25 @@ return require('packer').startup(function()
             vim.g.indent_blankline_show_foldtext = false
             vim.g.indent_blankline_filetype_exclude = {'fern', 'txt', 'packer', 'help'}
         end
+    }
+    -- }}}
+
+    -- NeoSolarized {{{
+    use {
+        'overcache/NeoSolarized',
+        config = function()
+            if vim.fn.has('termguicolors') == 1 then
+                vim.o.termguicolors = true
+            end
+            vim.g.neosolarized_bold = 1
+            vim.g.neosolarized_underline = 1
+            vim.g.neosolarized_italic = 1
+            vim.g.neosolarized_termBoldAsBright = 0
+            vim.cmd('colorscheme NeoSolarized')
+            vim.cmd('hi! link LineNr Normal')
+            vim.cmd('hi StatusMode guibg=#859900 guifg=#002b36')
+        end
+
     }
     -- }}}
 

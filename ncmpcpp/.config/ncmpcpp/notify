@@ -16,6 +16,6 @@ ARTIST=$(mpc current -f '%artist%')
 TITLE=$(mpc current -f '%title%')
 ALBUM=$(mpc current -f '%album%')
 
-notify-send -u low "<b>$TITLE</b>" "$ARTIST - $ALBUM" -i "$COVER"
+notify-send -u low "$TITLE" "$ARTIST - $ALBUM" -i "$COVER"
 
 exit 0
