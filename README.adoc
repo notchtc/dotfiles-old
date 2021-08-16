@@ -65,7 +65,7 @@ https://www.youtube.com/watch?v=U245bbR2Fss[Nice video] showing how much this th
 |link:./scripts/.local/bin/[scripts]
 |Scripts used by me
 
-|https://github.com/morhetz/gruvbox[gruvbox]
+|https://github.com/altercation/solarized[solarized]
 |Colorscheme
 |===
 
