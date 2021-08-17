@@ -39,7 +39,7 @@ font-0 = Iosevka Aile:pixelsize=10;2
 font-1 = Hack Nerd Font:pixelsize=12;3
 
 modules-left = ewmh
-modules-right = pulseaudio battery date
+modules-right = volume battery date
 
 tray-position = right
 tray-padding = 2
@@ -87,22 +87,16 @@ label-empty = %name%
 label-empty-foreground = ${colors.gray}
 label-empty-padding = 1
 
+[module/volume]
+type = custom/ipc
+hook-0 = getvol
+initial = 1
+click-left = pamixer -t && polybar-msg hook volume 1
+click-right = pavucontrol
+
 [module/xwindow]
 type = internal/xwindow
 label = %title:0:30:...%
-
-[module/pulseaudio]
-type = internal/pulseaudio
-
-format-volume = <ramp-volume> <label-volume>
-label-volume = %percentage%%
-
-label-muted = 婢 muted
-label-muted-foreground = ${colors.gray}
-
-ramp-volume-0 = 墳
-ramp-volume-1 = 奔
-ramp-volume-2 = 奄
 
 [module/battery]
 type = internal/battery

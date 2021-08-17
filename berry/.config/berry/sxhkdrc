@@ -26,15 +26,15 @@ super + control + r
 
 # raise volume
 XF86AudioRaiseVolume
-    pamixer -i 5
+    pamixer -i 5 && polybar-msg hook volume 1
 
 # lower volume
 XF86AudioLowerVolume
-    pamixer -d 5
+    pamixer -d 5 && polybar-msg hook volume 1
 
 # mute volume
 XF86AudioMute
-    pamixer -t
+    pamixer -t && polybar-msg hook volume 1
 
 # go to next track
 XF86AudioNext

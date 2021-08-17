@@ -6,17 +6,25 @@ Simple scripts for various stuff.
 
 == List of scrips
 |===
-|Script|What it does
+|Script|What it does|Dependencies
 
 |ask
-|Asks a Yes or No question using rofi and does something if the answer is Yes.
+|Asks a Yes or No question and does something if the answer is Yes.
+|rofi
 
 |fetch
 |Something like neofetch or pfetch etc.
+|An /etc/os-release file,xprop,awk
+
+|getvol
+|Get volume and print it with a specific nerd font icon depending on volume/state.
+|pamixer
 
 |htmlformat
-|Formats html files using tidy and html-beautify.
+|Formats html files.
+|tidy,html-beautify
 
 |imgshadow
-|Adds a shadow to images using imagemagick.
+|Adds a shadow to images.
+|imagemagick
 |===
