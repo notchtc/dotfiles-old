@@ -68,7 +68,7 @@ super + shift + r
 
 # move or resize current window
 super + {ctrl, shift} + {h, j, k, l}
-    berryc {window_move, window_resize} {-50 0, 0 50, 0 -50, 50 0}
+    berryc {window_move, window_resize} {-10 0, 0 10, 0 -10, 10 0}
 
 # switch to the nearest window in the specified direction
 super + {h, j, k, l}

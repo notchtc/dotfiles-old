@@ -10,11 +10,17 @@ image::./screenshots/berry_busy.png[Screenshots of the rice]
 You probably *will* and *must* change something in my dotfiles.
 
 I recommend looking through these dotfiles and changing things to fit your setup and/or needs if you want to use this.
+
+It's not my fault if something doesn't work for you.
 ====
 
 These are my [.line-through]#horrible# *very beautiful* dotfiles.
 
 https://www.youtube.com/watch?v=U245bbR2Fss[Nice video] showing how much this thing has evolved over the course of 1 year.
+
+Wallpaper is made by https://www.simonstalenhag.se/index.html[Simon Stålenhag].
+
+This is the used https://www.simonstalenhag.se/bilderbig/by_upload1_2560.jpg[image].
 
 == Things used
 |===
