@@ -61,10 +61,8 @@ cursor-scroll = ns-resize
 [module/ewmh]
 type = internal/xworkspaces
 
-; Create click handler used to focus desktop
-enable-click = true
+enable-click = false
 
-; Create scroll handlers used to cycle desktops
 enable-scroll = false
 
 format = <label-state>
