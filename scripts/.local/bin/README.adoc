@@ -27,4 +27,8 @@ Simple scripts for various stuff.
 |imgshadow
 |Adds a shadow to images.
 |imagemagick
+
+|panes
+|POSIX sh panes script
+|
 |===
