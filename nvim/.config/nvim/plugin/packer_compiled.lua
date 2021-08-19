@@ -70,97 +70,116 @@ time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
   NeoSolarized = {
-    config = { "\27LJ\2\2þ\2\0\0\2\0\14\1(6\0\0\0009\0\1\0009\0\2\0'\1\3\0B\0\2\2\t\0\0\0X\0\4€6\0\0\0009\0\4\0+\1\2\0=\1\3\0006\0\0\0009\0\5\0)\1\1\0=\1\6\0006\0\0\0009\0\5\0)\1\1\0=\1\a\0006\0\0\0009\0\5\0)\1\1\0=\1\b\0006\0\0\0009\0\5\0)\1\0\0=\1\t\0006\0\0\0009\0\n\0'\1\v\0B\0\2\0016\0\0\0009\0\n\0'\1\f\0B\0\2\0016\0\0\0009\0\n\0'\1\r\0B\0\2\1K\0\1\0.hi StatusMode guibg=#859900 guifg=#002b36\27hi! link LineNr Normal\29colorscheme NeoSolarized\bcmd\"neosolarized_termBoldAsBright\24neosolarized_italic\27neosolarized_underline\22neosolarized_bold\6g\6o\18termguicolors\bhas\afn\bvim\2\0" },
-    loaded = true,
-    path = "/home/chtc/.local/share/nvim/site/pack/packer/start/NeoSolarized"
-  },
-  ["barbar.nvim"] = {
-    config = { "\27LJ\2\2Æ\2\0\0\2\0\b\0\0256\0\0\0009\0\1\0'\1\2\0B\0\2\0016\0\0\0009\0\1\0'\1\3\0B\0\2\0016\0\0\0009\0\1\0'\1\4\0B\0\2\0016\0\0\0009\0\1\0'\1\5\0B\0\2\0016\0\0\0009\0\1\0'\1\6\0B\0\2\0016\0\0\0009\0\1\0'\1\a\0B\0\2\1K\0\1\0'let bufferline.maximum_padding = 2'let bufferline.animation = v:false\"let bufferline.icons = v:true&let bufferline.auto_hide = v:true/let bufferline = get(g:, 'bufferline', {})&hi! link BufferTabpageFill Normal\bcmd\bvim\0" },
-    loaded = true,
-    path = "/home/chtc/.local/share/nvim/site/pack/packer/start/barbar.nvim"
+    after = { "nvim-bufferline.lua", "nvim-web-devicons" },
+    config = { "\27LJ\2\2%\0\0\2\0\2\0\0046\0\0\0'\1\1\0B\0\2\1K\0\1\0\ntheme\frequire\0" },
+    load_after = {
+      ["packer.nvim"] = true
+    },
+    loaded = false,
+    needs_bufread = false,
+    path = "/home/chtc/.local/share/nvim/site/pack/packer/opt/NeoSolarized"
   },
   ["gitsigns.nvim"] = {
-    config = { "\27LJ\2\2Û\1\0\0\4\0\16\0\0196\0\0\0'\1\1\0B\0\2\0029\0\2\0005\1\14\0005\2\4\0005\3\3\0=\3\5\0025\3\6\0=\3\a\0025\3\b\0=\3\t\0025\3\n\0=\3\v\0025\3\f\0=\3\r\2=\2\15\1B\0\2\1K\0\1\0\nsigns\1\0\0\17changedelete\1\0\1\ttext\bâ•°\14topdelete\1\0\1\ttext\bâ•·\vdelete\1\0\1\ttext\bâ•µ\vchange\1\0\1\ttext\bâ”‚\badd\1\0\0\1\0\1\ttext\bâ”‚\nsetup\rgitsigns\frequire\0" },
-    loaded = true,
-    path = "/home/chtc/.local/share/nvim/site/pack/packer/start/gitsigns.nvim"
+    config = { "\27LJ\2\0020\0\0\2\0\2\0\0046\0\0\0'\1\1\0B\0\2\1K\0\1\0\21plugins.gitsigns\frequire\0" },
+    load_after = {
+      ["plenary.nvim"] = true
+    },
+    loaded = false,
+    needs_bufread = false,
+    path = "/home/chtc/.local/share/nvim/site/pack/packer/opt/gitsigns.nvim"
   },
   ["indent-blankline.nvim"] = {
-    config = { "\27LJ\2\2ƒ\2\0\0\2\0\b\0\0176\0\0\0009\0\1\0005\1\3\0=\1\2\0006\0\0\0009\0\1\0+\1\1\0=\1\4\0006\0\0\0009\0\1\0+\1\1\0=\1\5\0006\0\0\0009\0\1\0005\1\a\0=\1\6\0K\0\1\0\1\5\0\0\tfern\btxt\vpacker\thelp&indent_blankline_filetype_exclude#indent_blankline_show_foldtext-indent_blankline_show_first_indent_level\1\5\0\0\bâ”‚\bâ”†\bâ”Š\bî˜¡\31indent_blankline_char_list\6g\bvim\0" },
-    loaded = true,
-    path = "/home/chtc/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim"
+    loaded = false,
+    needs_bufread = false,
+    path = "/home/chtc/.local/share/nvim/site/pack/packer/opt/indent-blankline.nvim"
+  },
+  ["nvim-bufferline.lua"] = {
+    config = { "\27LJ\2\0022\0\0\2\0\2\0\0046\0\0\0'\1\1\0B\0\2\1K\0\1\0\23plugins.bufferline\frequire\0" },
+    load_after = {
+      NeoSolarized = true
+    },
+    loaded = false,
+    needs_bufread = false,
+    path = "/home/chtc/.local/share/nvim/site/pack/packer/opt/nvim-bufferline.lua"
   },
   ["nvim-colorizer.lua"] = {
-    config = { "\27LJ\2\2O\0\0\2\0\4\0\a6\0\0\0'\1\1\0B\0\2\0029\0\2\0005\1\3\0B\0\2\1K\0\1\0\1\4\0\0\6*\n!fern\f!packer\nsetup\14colorizer\frequire\0" },
-    loaded = true,
-    path = "/home/chtc/.local/share/nvim/site/pack/packer/start/nvim-colorizer.lua"
+    config = { "\27LJ\2\0021\0\0\2\0\2\0\0046\0\0\0'\1\1\0B\0\2\1K\0\1\0\22plugins.colorizer\frequire\0" },
+    loaded = false,
+    needs_bufread = false,
+    path = "/home/chtc/.local/share/nvim/site/pack/packer/opt/nvim-colorizer.lua"
   },
   ["nvim-tree.lua"] = {
-    config = { "\27LJ\2\2Þ\2\0\0\3\0\f\0\0276\0\0\0009\0\1\0)\1\1\0=\1\2\0006\0\0\0009\0\1\0)\1\1\0=\1\3\0006\0\0\0009\0\1\0)\1\1\0=\1\4\0006\0\0\0009\0\1\0)\1\1\0=\1\5\0006\0\0\0009\0\1\0005\1\a\0=\1\6\0006\0\0\0009\0\1\0005\1\n\0005\2\t\0=\2\v\1=\1\b\0K\0\1\0\bgit\1\0\0\1\0\6\runstaged\bï‘™\fdeleted\bï‘˜\14untracked\bï‘—\fignored\bï‘´\frenamed\bï‘š\vstaged\bîœ©\20nvim_tree_icons\1\0\3\ffolders\3\1\nfiles\3\1\bgit\3\1\25nvim_tree_show_icons\27nvim_tree_hijack_netrw\25nvim_tree_auto_close\24nvim_tree_auto_open\21nvim_tree_git_hl\6g\bvim\0" },
-    loaded = true,
-    path = "/home/chtc/.local/share/nvim/site/pack/packer/start/nvim-tree.lua"
+    commands = { "NvimTreeToggle" },
+    config = { "\27LJ\2\0020\0\0\2\0\2\0\0046\0\0\0'\1\1\0B\0\2\1K\0\1\0\21plugins.nvimtree\frequire\0" },
+    loaded = false,
+    needs_bufread = false,
+    path = "/home/chtc/.local/share/nvim/site/pack/packer/opt/nvim-tree.lua"
   },
   ["nvim-treesitter"] = {
-    config = { "\27LJ\2\2Ê\1\0\0\3\0\f\0\0156\0\0\0'\1\1\0B\0\2\0029\0\2\0005\1\4\0005\2\3\0=\2\5\0015\2\6\0=\2\a\0015\2\b\0=\2\t\0015\2\n\0=\2\v\1B\0\2\1K\0\1\0\vindent\1\0\1\venable\2\14highlight\1\0\1\venable\2\19ignore_install\1\2\0\0\6c\21ensure_installed\1\0\0\1\4\0\0\blua\bcss\thtml\nsetup\28nvim-treesitter.configs\frequire\0" },
-    loaded = true,
-    path = "/home/chtc/.local/share/nvim/site/pack/packer/start/nvim-treesitter"
+    after = { "nvim-ts-rainbow" },
+    config = { "\27LJ\2\2E\0\0\2\0\3\0\0066\0\0\0'\1\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\15treesitter\23plugins.treesitter\frequire\0" },
+    loaded = false,
+    needs_bufread = true,
+    path = "/home/chtc/.local/share/nvim/site/pack/packer/opt/nvim-treesitter"
   },
   ["nvim-ts-rainbow"] = {
-    config = { "\27LJ\2\2ˆ\1\0\0\3\0\6\0\t6\0\0\0'\1\1\0B\0\2\0029\0\2\0005\1\4\0005\2\3\0=\2\5\1B\0\2\1K\0\1\0\frainbow\1\0\0\1\0\3\19max_file_lines\3ˆ'\18extended_mode\2\venable\2\nsetup\28nvim-treesitter.configs\frequire\0" },
-    loaded = true,
-    path = "/home/chtc/.local/share/nvim/site/pack/packer/start/nvim-ts-rainbow"
+    config = { "\27LJ\2\2B\0\0\2\0\3\0\0066\0\0\0'\1\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\frainbow\23plugins.treesitter\frequire\0" },
+    load_after = {
+      ["nvim-treesitter"] = true
+    },
+    loaded = false,
+    needs_bufread = false,
+    path = "/home/chtc/.local/share/nvim/site/pack/packer/opt/nvim-ts-rainbow"
   },
   ["nvim-web-devicons"] = {
-    loaded = true,
-    path = "/home/chtc/.local/share/nvim/site/pack/packer/start/nvim-web-devicons"
+    load_after = {
+      NeoSolarized = true
+    },
+    loaded = false,
+    needs_bufread = false,
+    path = "/home/chtc/.local/share/nvim/site/pack/packer/opt/nvim-web-devicons"
   },
   ["packer.nvim"] = {
+    after = { "NeoSolarized" },
     loaded = false,
     needs_bufread = false,
     path = "/home/chtc/.local/share/nvim/site/pack/packer/opt/packer.nvim"
   },
   ["plenary.nvim"] = {
-    loaded = true,
-    path = "/home/chtc/.local/share/nvim/site/pack/packer/start/plenary.nvim"
-  },
-  ["vim-fugitive"] = {
-    loaded = true,
-    path = "/home/chtc/.local/share/nvim/site/pack/packer/start/vim-fugitive"
+    after = { "gitsigns.nvim" },
+    loaded = false,
+    needs_bufread = false,
+    path = "/home/chtc/.local/share/nvim/site/pack/packer/opt/plenary.nvim"
   }
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: NeoSolarized
-time([[Config for NeoSolarized]], true)
-try_loadstring("\27LJ\2\2þ\2\0\0\2\0\14\1(6\0\0\0009\0\1\0009\0\2\0'\1\3\0B\0\2\2\t\0\0\0X\0\4€6\0\0\0009\0\4\0+\1\2\0=\1\3\0006\0\0\0009\0\5\0)\1\1\0=\1\6\0006\0\0\0009\0\5\0)\1\1\0=\1\a\0006\0\0\0009\0\5\0)\1\1\0=\1\b\0006\0\0\0009\0\5\0)\1\0\0=\1\t\0006\0\0\0009\0\n\0'\1\v\0B\0\2\0016\0\0\0009\0\n\0'\1\f\0B\0\2\0016\0\0\0009\0\n\0'\1\r\0B\0\2\1K\0\1\0.hi StatusMode guibg=#859900 guifg=#002b36\27hi! link LineNr Normal\29colorscheme NeoSolarized\bcmd\"neosolarized_termBoldAsBright\24neosolarized_italic\27neosolarized_underline\22neosolarized_bold\6g\6o\18termguicolors\bhas\afn\bvim\2\0", "config", "NeoSolarized")
-time([[Config for NeoSolarized]], false)
--- Config for: nvim-treesitter
-time([[Config for nvim-treesitter]], true)
-try_loadstring("\27LJ\2\2Ê\1\0\0\3\0\f\0\0156\0\0\0'\1\1\0B\0\2\0029\0\2\0005\1\4\0005\2\3\0=\2\5\0015\2\6\0=\2\a\0015\2\b\0=\2\t\0015\2\n\0=\2\v\1B\0\2\1K\0\1\0\vindent\1\0\1\venable\2\14highlight\1\0\1\venable\2\19ignore_install\1\2\0\0\6c\21ensure_installed\1\0\0\1\4\0\0\blua\bcss\thtml\nsetup\28nvim-treesitter.configs\frequire\0", "config", "nvim-treesitter")
-time([[Config for nvim-treesitter]], false)
--- Config for: gitsigns.nvim
-time([[Config for gitsigns.nvim]], true)
-try_loadstring("\27LJ\2\2Û\1\0\0\4\0\16\0\0196\0\0\0'\1\1\0B\0\2\0029\0\2\0005\1\14\0005\2\4\0005\3\3\0=\3\5\0025\3\6\0=\3\a\0025\3\b\0=\3\t\0025\3\n\0=\3\v\0025\3\f\0=\3\r\2=\2\15\1B\0\2\1K\0\1\0\nsigns\1\0\0\17changedelete\1\0\1\ttext\bâ•°\14topdelete\1\0\1\ttext\bâ•·\vdelete\1\0\1\ttext\bâ•µ\vchange\1\0\1\ttext\bâ”‚\badd\1\0\0\1\0\1\ttext\bâ”‚\nsetup\rgitsigns\frequire\0", "config", "gitsigns.nvim")
-time([[Config for gitsigns.nvim]], false)
--- Config for: nvim-colorizer.lua
-time([[Config for nvim-colorizer.lua]], true)
-try_loadstring("\27LJ\2\2O\0\0\2\0\4\0\a6\0\0\0'\1\1\0B\0\2\0029\0\2\0005\1\3\0B\0\2\1K\0\1\0\1\4\0\0\6*\n!fern\f!packer\nsetup\14colorizer\frequire\0", "config", "nvim-colorizer.lua")
-time([[Config for nvim-colorizer.lua]], false)
--- Config for: barbar.nvim
-time([[Config for barbar.nvim]], true)
-try_loadstring("\27LJ\2\2Æ\2\0\0\2\0\b\0\0256\0\0\0009\0\1\0'\1\2\0B\0\2\0016\0\0\0009\0\1\0'\1\3\0B\0\2\0016\0\0\0009\0\1\0'\1\4\0B\0\2\0016\0\0\0009\0\1\0'\1\5\0B\0\2\0016\0\0\0009\0\1\0'\1\6\0B\0\2\0016\0\0\0009\0\1\0'\1\a\0B\0\2\1K\0\1\0'let bufferline.maximum_padding = 2'let bufferline.animation = v:false\"let bufferline.icons = v:true&let bufferline.auto_hide = v:true/let bufferline = get(g:, 'bufferline', {})&hi! link BufferTabpageFill Normal\bcmd\bvim\0", "config", "barbar.nvim")
-time([[Config for barbar.nvim]], false)
--- Config for: indent-blankline.nvim
-time([[Config for indent-blankline.nvim]], true)
-try_loadstring("\27LJ\2\2ƒ\2\0\0\2\0\b\0\0176\0\0\0009\0\1\0005\1\3\0=\1\2\0006\0\0\0009\0\1\0+\1\1\0=\1\4\0006\0\0\0009\0\1\0+\1\1\0=\1\5\0006\0\0\0009\0\1\0005\1\a\0=\1\6\0K\0\1\0\1\5\0\0\tfern\btxt\vpacker\thelp&indent_blankline_filetype_exclude#indent_blankline_show_foldtext-indent_blankline_show_first_indent_level\1\5\0\0\bâ”‚\bâ”†\bâ”Š\bî˜¡\31indent_blankline_char_list\6g\bvim\0", "config", "indent-blankline.nvim")
-time([[Config for indent-blankline.nvim]], false)
--- Config for: nvim-tree.lua
-time([[Config for nvim-tree.lua]], true)
-try_loadstring("\27LJ\2\2Þ\2\0\0\3\0\f\0\0276\0\0\0009\0\1\0)\1\1\0=\1\2\0006\0\0\0009\0\1\0)\1\1\0=\1\3\0006\0\0\0009\0\1\0)\1\1\0=\1\4\0006\0\0\0009\0\1\0)\1\1\0=\1\5\0006\0\0\0009\0\1\0005\1\a\0=\1\6\0006\0\0\0009\0\1\0005\1\n\0005\2\t\0=\2\v\1=\1\b\0K\0\1\0\bgit\1\0\0\1\0\6\runstaged\bï‘™\fdeleted\bï‘˜\14untracked\bï‘—\fignored\bï‘´\frenamed\bï‘š\vstaged\bîœ©\20nvim_tree_icons\1\0\3\ffolders\3\1\nfiles\3\1\bgit\3\1\25nvim_tree_show_icons\27nvim_tree_hijack_netrw\25nvim_tree_auto_close\24nvim_tree_auto_open\21nvim_tree_git_hl\6g\bvim\0", "config", "nvim-tree.lua")
-time([[Config for nvim-tree.lua]], false)
--- Config for: nvim-ts-rainbow
-time([[Config for nvim-ts-rainbow]], true)
-try_loadstring("\27LJ\2\2ˆ\1\0\0\3\0\6\0\t6\0\0\0'\1\1\0B\0\2\0029\0\2\0005\1\4\0005\2\3\0=\2\5\1B\0\2\1K\0\1\0\frainbow\1\0\0\1\0\3\19max_file_lines\3ˆ'\18extended_mode\2\venable\2\nsetup\28nvim-treesitter.configs\frequire\0", "config", "nvim-ts-rainbow")
-time([[Config for nvim-ts-rainbow]], false)
+-- Setup for: nvim-bufferline.lua
+time([[Setup for nvim-bufferline.lua]], true)
+try_loadstring("\27LJ\2\2;\0\0\2\0\3\0\0066\0\0\0'\1\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\15bufferline\rmappings\frequire\0", "setup", "nvim-bufferline.lua")
+time([[Setup for nvim-bufferline.lua]], false)
+-- Setup for: indent-blankline.nvim
+time([[Setup for indent-blankline.nvim]], true)
+try_loadstring("\27LJ\2\0021\0\0\2\0\2\0\0046\0\0\0'\1\1\0B\0\2\1K\0\1\0\22plugins.blankline\frequire\0", "setup", "indent-blankline.nvim")
+time([[Setup for indent-blankline.nvim]], false)
+-- Setup for: nvim-tree.lua
+time([[Setup for nvim-tree.lua]], true)
+try_loadstring("\27LJ\2\0029\0\0\2\0\3\0\0066\0\0\0'\1\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\rnvimtree\rmappings\frequire\0", "setup", "nvim-tree.lua")
+time([[Setup for nvim-tree.lua]], false)
+
+-- Command lazy-loads
+time([[Defining lazy-load commands]], true)
+pcall(vim.cmd, [[command! -nargs=* -range -bang -complete=file NvimTreeToggle lua require("packer.load")({'nvim-tree.lua'}, { cmd = "NvimTreeToggle", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]])
+time([[Defining lazy-load commands]], false)
+
+vim.cmd [[augroup packer_load_aucmds]]
+vim.cmd [[au!]]
+  -- Event lazy-loads
+time([[Defining lazy-load event autocommands]], true)
+vim.cmd [[au VimEnter * ++once lua require("packer.load")({'packer.nvim'}, { event = "VimEnter *" }, _G.packer_plugins)]]
+vim.cmd [[au BufRead * ++once lua require("packer.load")({'indent-blankline.nvim', 'nvim-treesitter', 'plenary.nvim', 'nvim-colorizer.lua'}, { event = "BufRead *" }, _G.packer_plugins)]]
+time([[Defining lazy-load event autocommands]], false)
+vim.cmd("augroup END")
 if should_profile then save_profiles() end
 
 end)

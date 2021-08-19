@@ -1,13 +1,16 @@
 #!/bin/sh
 
-xrdb -load "$XDG_CONFIG_HOME"/X11/Xresources &
-setxkbmap -option "caps:swapescape" &
-hsetroot -cover "$XDG_CONFIG_HOME"/berry/wall.png &
-pgrep -x "pulseaudio" > /dev/null || pulseaudio --start &
-pgrep -x "sxhkd" > /dev/null || sxhkd -c "$XDG_CONFIG_HOME"/berry/sxhkdrc -m 1 &
-# pgrep -x "redshift-gtk" > /dev/null || redshift-gtk &
-pgrep -x "keepassxc" > /dev/null || keepassxc &
-pgrep -x "dunst" > /dev/null || dunst &
+launch() {
+    pgrep -x "$1" -u $USER > /dev/null || $@ &
+}
+
+launch xrdb -load "$XDG_CONFIG_HOME"/X11/Xresources
+launch setxkbmap -option "caps:swapescape"
+launch hsetroot -cover "$XDG_CONFIG_HOME"/berry/wall.png
+launch pulseaudio --start
+launch sxhkd -c "$XDG_CONFIG_HOME"/berry/sxhkdrc -m 1
+launch keepassxc
+launch dunst
 "$XDG_CONFIG_HOME"/polybar/launch-polybar &
 
 # Set decoration geometry

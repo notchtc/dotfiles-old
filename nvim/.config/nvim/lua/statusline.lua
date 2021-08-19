@@ -21,9 +21,10 @@ M.is_truncated = function(_, width)
 end
 
 M.colors = {
+    normal     = '%#Normal#',
+    mode       = '%#StatusMode#',
     active     = '%#StatusLine#',
     inactive   = '%#StatusLineNC#',
-    normal     = '%#StatusMode#',
 }
 
 M.modes = setmetatable({
@@ -132,14 +133,14 @@ end
 M.set_active = function(self)
     local colors = self.colors
 
-    local mode = colors.normal .. self:get_current_mode()
+    local mode = colors.mode .. self:get_current_mode()
     local filename = colors.active .. self:get_filename()
     local modified = self:get_modified()
     local readonly = self:get_readonly()
     local fileencoding = self:get_fileencoding()
     local fileformat = self:get_fileformat()
     local filetype = self:get_filetype()
-    local line_col = colors.normal .. self:get_line_col()
+    local line_col = colors.mode .. self:get_line_col()
     local percentage = self:get_percentage()
 
     return table.concat({
@@ -152,9 +153,7 @@ M.set_inactive = function(self)
 end
 
 M.set_explorer = function(self)
-    local title = self.colors.normal .. ' explorer '
-
-    return table.concat({ title, self.colors.active})
+    return table.concat({ self.colors.active })
 end
 
 Statusline = setmetatable(M, {

@@ -13,28 +13,14 @@ image::../../../screenshots/nvim.png[Screenshot of neovim with nvim-tree open an
 image::../../../screenshots/nvim2.png[Screenshot of neovim with highlighted colors, git decorations and a buffer bar shown]
 
 == Plugin List
+This list only shows plugins that are something more than just a dependency.
 |===
 |Plugin|What it does
 |https://github.com/wbthomason/packer.nvim[packer.nvim]
 |Plugin manager
 
-|https://github.com/romgrk/barbar.nvim[barbar.nvim]
-|Fancy buffer bar
-
-|https://github.com/lewis6991/gitsigns.nvim[gitsigns.nvim]
-|Shows git changes
-
-|https://github.com/lukas-reineke/indent-blankline.nvim[indent-blankline.nvim]
-|Display indentation levels
-
 |https://github.com/overcache/NeoSolarized[NeoSolarized]
 |Colorscheme
-
-|https://github.com/norcalli/nvim-colorizer.lua[nvim-colorizer.lua]
-|Highlight colors
-
-|https://github.com/kyazdani42/nvim-tree.lua[nvim-tree.lua]
-|File explorer tree
 
 |https://github.com/nvim-treesitter/nvim-treesitter[nvim-treesitter]
 |Highlighting and folding based on treesitter
@@ -42,8 +28,20 @@ image::../../../screenshots/nvim2.png[Screenshot of neovim with highlighted colo
 |https://github.com/p00f/nvim-ts-rainbow[nvim-ts-rainbow]
 |Rainbow parentheses
 
-|https://github.com/tpope/vim-fugitive[vim-fugitive]
-|Git wrapper
+|https://github.com/lukas-reineke/indent-blankline.nvim[indent-blankline.nvim]
+|Display indentation levels
+
+|https://github.com/lewis6991/gitsigns.nvim[gitsigns.nvim]
+|Shows git changes
+
+|https://github.com/akinsho/nvim-bufferline.lua[bufferline.nvim]
+|Snazzy buffer line
+
+|https://github.com/norcalli/nvim-colorizer.lua[nvim-colorizer.lua]
+|Highlight colors
+
+|https://github.com/kyazdani42/nvim-tree.lua[nvim-tree.lua]
+|File explorer tree
 |===
 
 == Keybindings
@@ -88,23 +86,11 @@ Space is the leader key.
 |kbd:[Space+r]
 |Refresh nvim-tree
 
-|kbd:[Ctrl+s]
-|Magic buffer-picking mode
-
 |kbd:[Alt+,]
 |Move to previous buffer
 
 |kbd:[Alt+.]
 |Move to next buffer
-
-|kbd:[Alt+<]
-|Re-order buffer to previous
-
-|kbd:[Alt+>]
-|Re-order buffer to next
-
-|kbd:[Alt+1,2,3,4,5,6,7,8,9]
-|Switch buffers
 
 |kbd:[Alt+c]
 |Close buffer
