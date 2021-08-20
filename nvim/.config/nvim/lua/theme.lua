@@ -7,4 +7,4 @@ g.neosolarized_italic = 1
 g.neosolarized_termBoldAsBright = 0
 cmd('colorscheme NeoSolarized')
 cmd('hi! link LineNr Normal')
-cmd('hi StatusMode guibg=#859900 guifg=#002b36')
+cmd('hi StatusLineMode guibg=#859900 guifg=#002b36')

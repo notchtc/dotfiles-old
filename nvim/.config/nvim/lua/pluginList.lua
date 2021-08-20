@@ -62,13 +62,8 @@ return packer.startup(
         }
 
         use {
-            "kyazdani42/nvim-web-devicons",
-            after = "NeoSolarized"
-        }
-
-        use {
             "akinsho/nvim-bufferline.lua",
-            after  = "NeoSolarized",
+            event  = "BufWinEnter",
             config = function()
                 require "plugins.bufferline"
             end,

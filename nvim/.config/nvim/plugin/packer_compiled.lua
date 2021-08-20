@@ -70,7 +70,6 @@ time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
   NeoSolarized = {
-    after = { "nvim-bufferline.lua", "nvim-web-devicons" },
     config = { "\27LJ\2\2%\0\0\2\0\2\0\0046\0\0\0'\1\1\0B\0\2\1K\0\1\0\ntheme\frequire\0" },
     load_after = {
       ["packer.nvim"] = true
@@ -95,9 +94,6 @@ _G.packer_plugins = {
   },
   ["nvim-bufferline.lua"] = {
     config = { "\27LJ\2\0022\0\0\2\0\2\0\0046\0\0\0'\1\1\0B\0\2\1K\0\1\0\23plugins.bufferline\frequire\0" },
-    load_after = {
-      NeoSolarized = true
-    },
     loaded = false,
     needs_bufread = false,
     path = "/home/chtc/.local/share/nvim/site/pack/packer/opt/nvim-bufferline.lua"
@@ -130,14 +126,6 @@ _G.packer_plugins = {
     loaded = false,
     needs_bufread = false,
     path = "/home/chtc/.local/share/nvim/site/pack/packer/opt/nvim-ts-rainbow"
-  },
-  ["nvim-web-devicons"] = {
-    load_after = {
-      NeoSolarized = true
-    },
-    loaded = false,
-    needs_bufread = false,
-    path = "/home/chtc/.local/share/nvim/site/pack/packer/opt/nvim-web-devicons"
   },
   ["packer.nvim"] = {
     after = { "NeoSolarized" },
@@ -176,6 +164,7 @@ vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Event lazy-loads
 time([[Defining lazy-load event autocommands]], true)
+vim.cmd [[au BufWinEnter * ++once lua require("packer.load")({'nvim-bufferline.lua'}, { event = "BufWinEnter *" }, _G.packer_plugins)]]
 vim.cmd [[au VimEnter * ++once lua require("packer.load")({'packer.nvim'}, { event = "VimEnter *" }, _G.packer_plugins)]]
 vim.cmd [[au BufRead * ++once lua require("packer.load")({'indent-blankline.nvim', 'nvim-treesitter', 'plenary.nvim', 'nvim-colorizer.lua'}, { event = "BufRead *" }, _G.packer_plugins)]]
 time([[Defining lazy-load event autocommands]], false)

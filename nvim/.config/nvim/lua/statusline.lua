@@ -8,12 +8,11 @@ M.trunc_width = setmetatable( {
     mode      = 80,
     filename  = 140,
     filestuff = 57,
-    line_col  = 80,
     }, {
-    __index = function()
-        return 80 -- handle edge cases, if there's any
-    end
-})
+        __index = function()
+            return 80 -- handle edge cases, if there's any
+        end
+    })
 
 M.is_truncated = function(_, width)
     local current_width = api.nvim_win_get_width(0)
@@ -22,7 +21,7 @@ end
 
 M.colors = {
     normal     = '%#Normal#',
-    mode       = '%#StatusMode#',
+    mode       = '%#StatusLineMode#',
     active     = '%#StatusLine#',
     inactive   = '%#StatusLineNC#',
 }
@@ -49,9 +48,9 @@ M.modes = setmetatable({
     ['!']  = {'shell ', 'S'};
     ['t']  = {'terminal ', 'T'};
     }, {
-    __index = function()
-        return {'Unknown', 'U'} -- handle edge cases
-    end
+        __index = function()
+            return {'Unknown', 'U'} -- handle edge cases
+        end
     })
 
 M.get_current_mode = function(self)
@@ -69,7 +68,7 @@ M.get_filename = function(self)
     return ' %<%F '
 end
 
-M.get_modified = function(self)
+M.get_modified = function()
     local modified = vim.bo.modified
 
     if modified == true then
@@ -79,7 +78,7 @@ M.get_modified = function(self)
     end
 end
 
-M.get_readonly = function(self)
+M.get_readonly = function()
     local readonly = vim.bo.readonly
 
     if readonly == true then
@@ -92,37 +91,32 @@ end
 M.get_fileencoding = function(self)
     local fileencoding = vim.bo.fileencoding
 
-    if fileencoding == '' then return '' end
-
-    if self:is_truncated(self.trunc_width.filestuff) then
+    if self:is_truncated(self.trunc_width.filestuff) or fileencoding == '' or fileencoding == 'utf-8' then
         return ''
     end
 
-    return string.format('%s ', fileencoding):lower()
+    return string.format('%s ', fileencoding)
 end
 
 M.get_fileformat = function(self)
     local fileformat = vim.bo.fileformat
 
-    if fileformat == '' then return '' end
-
-    if self:is_truncated(self.trunc_width.filestuff) then
+    if self:is_truncated(self.trunc_width.filestuff) or fileformat == '' or fileformat == 'unix' then
         return ''
     end
 
-    return string.format('%s ', fileformat):lower()
+    return string.format('%s ', fileformat)
 end
 
 M.get_filetype = function(self)
     local filetype = vim.bo.filetype
 
     if filetype == '' then return '' end
-    return string.format('%s ', filetype):lower()
+    return string.format('%s ', filetype)
 end
 
-M.get_line_col = function(self)
-    if self:is_truncated(self.trunc_width.line_col) then return ' %l:%c ' end
-    return ' L:%l C:%c '
+M.get_line_col = function()
+    return ' %l:%c '
 end
 
 M.get_percentage = function(self)
@@ -153,22 +147,20 @@ M.set_inactive = function(self)
 end
 
 M.set_explorer = function(self)
-    return table.concat({ self.colors.active })
+    return self.colors.active
 end
 
 Statusline = setmetatable(M, {
-    __call = function(statusline, mode)
-        if mode == 'active' then return statusline:set_active() end
-        if mode == 'inactive' then return statusline:set_inactive() end
-        if mode == 'explorer' then return statusline:set_explorer() end
+    __call = function(self, mode)
+        return self["set_" .. mode](self)
     end
 })
 
 api.nvim_exec([[
     augroup Statusline
-    au!
-    au WinEnter,BufEnter * setlocal statusline=%!v:lua.Statusline('active')
-    au WinLeave,BufLeave * setlocal statusline=%!v:lua.Statusline('inactive')
-    au WinEnter,BufEnter,FileType NvimTree setlocal statusline=%!v:lua.Statusline('explorer')
+        au!
+        au WinEnter,BufEnter * setlocal statusline=%!v:lua.Statusline('active')
+        au WinLeave,BufLeave * setlocal statusline=%!v:lua.Statusline('inactive')
+        au WinEnter,BufEnter,FileType NvimTree setlocal statusline=%!v:lua.Statusline('explorer')
     augroup END
 ]], false)
