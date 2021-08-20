@@ -13,11 +13,10 @@ white = {xrdb:color15:#fdf6e3}
 
 [bar/main]
 ;monitor = ${env:MONITOR:HDMI-1}
-width = 100%
+width = 100%:-12
 height = 20
-;offset-x = 1%
-;offset-y = 1%
-radius = 0
+offset-x = 6
+offset-y = 6
 fixed-center = false
 
 bottom = true

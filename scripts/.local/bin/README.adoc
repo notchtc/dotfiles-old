@@ -13,8 +13,8 @@ Simple scripts for various stuff.
 |rofi
 
 |fetch
-|Something like neofetch or pfetch etc.
-|An /etc/os-release file,xprop,awk
+|Something like neofetch or pfetch etc. (can be displayed as an notification with ~fetch notif~)
+|An /etc/os-release file,xprop,awk,notify-send (if doing ~fetch notif~)
 
 |getvol
 |Get volume and print it with a specific nerd font icon depending on volume/state.
