@@ -31,6 +31,9 @@ There are some other things launched at start which you may not want.
 |===
 |Thing|What it does
 
+|xrdb
+|Loads my Xresources file
+
 |setxkbmap -option "caps:swapescape"
 |Swaps caps lock with escape
 
@@ -92,6 +95,9 @@ There are some other things launched at start which you may not want.
 
 |kbd:[super+shift+r]
 |Reboot system (link:../../../scripts/.local/bin/ask[ask],reboot)
+
+|kbd:[super+b]
+|Toggle polybar
 
 |kbd:[super+ctrl+h,j,k,l]
 |Move current window in the specified direction

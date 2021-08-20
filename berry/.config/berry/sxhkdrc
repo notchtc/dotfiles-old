@@ -64,6 +64,11 @@ super + shift + x
 super + shift + r
     ask 'Do you want to reboot?' 'doas /sbin/reboot'
 
+# toggle bar
+super + b
+    {polybar-msg cmd toggle; berryc edge_gap 6 6 6 6,\
+    polybar-msg cmd toggle; berryc edge_gap 6 32 6 6}
+
 # BERRY HOTKEYS
 
 # move or resize current window
