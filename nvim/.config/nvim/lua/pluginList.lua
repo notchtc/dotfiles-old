@@ -49,7 +49,7 @@ return packer.startup(
             "lukas-reineke/indent-blankline.nvim",
             event  = "BufRead",
             setup  = function()
-                require "plugins.blankline"
+                require("plugins.others").blankline()
             end
         }
 
@@ -74,9 +74,12 @@ return packer.startup(
 
         use {
             "norcalli/nvim-colorizer.lua",
-            event  = "BufRead",
+            cmd    = "ColorizerAttachToBuffer",
             config = function()
-                require "plugins.colorizer"
+                require("plugins.others").colorizer()
+            end,
+            setup = function()
+                require("mappings").colorizer()
             end
         }
 

@@ -28,19 +28,19 @@ M.misc = function()
     map("", "<C-l>", "<C-w>l", opt)
 
     -- Make creating splits easier
-    map("", "<leader>sv", ":split<CR>",  opt)
-    map("", "<leader>sh", ":vsplit<CR>", opt)
+    map("", "<leader>sv", "<CMD>split<CR>",  opt)
+    map("", "<leader>sh", "<CMD>vsplit<CR>", opt)
 
     -- Go through wrapped lines
     map("", "j", "gj", opt)
     map("", "k", "gk", opt)
 
     -- Go to next/previous file
-    map("n", "<leader>l", ":wn<CR>", opt)
-    map("n", "<leader>h", ":wN<CR>", opt)
+    map("n", "<leader>l", "<CMD>wn<CR>", opt)
+    map("n", "<leader>h", "<CMD>wN<CR>", opt)
 
     -- Spell Check
-    map("n", "<leader>sp", ":setlocal spell! spelllang=en_us<CR>", opt)
+    map("n", "<leader>sp", "<CMD>setlocal spell! spelllang=en_us<CR>", opt)
 
     -- Packer commands till because we are not loading it at startup
     cmd("silent! command PackerCompile lua require 'pluginList' require('packer').compile()")
@@ -52,20 +52,38 @@ end
 
 M.bufferline = function()
     -- Go to next/previous tab
-    map("n", "<M-.>", ":BufferLineCycleNext<CR>", {silent = true})
-    map("n", "<M-,>", ":BufferLineCyclePrev<CR>", {silent = true})
+    map("n", "<M-.>", "<CMD>BufferLineCycleNext<CR>", {silent = true})
+    map("n", "<M-,>", "<CMD>BufferLineCyclePrev<CR>", {silent = true})
 
     -- Close tab
-    map("n", "<M-c>", ":bdelete<CR>", {silent = true})
+    map("n", "<M-c>", "<CMD>bdelete<CR>", {silent = true})
+
+    -- Go to nth visible buffer
+    map("n", "<M-1>", "<CMD>BufferLineGoToBuffer 1<CR>", {silent = true})
+    map("n", "<M-2>", "<CMD>BufferLineGoToBuffer 2<CR>", {silent = true})
+    map("n", "<M-3>", "<CMD>BufferLineGoToBuffer 3<CR>", {silent = true})
+    map("n", "<M-4>", "<CMD>BufferLineGoToBuffer 4<CR>", {silent = true})
+    map("n", "<M-5>", "<CMD>BufferLineGoToBuffer 5<CR>", {silent = true})
+    map("n", "<M-6>", "<CMD>BufferLineGoToBuffer 6<CR>", {silent = true})
+    map("n", "<M-7>", "<CMD>BufferLineGoToBuffer 7<CR>", {silent = true})
+    map("n", "<M-8>", "<CMD>BufferLineGoToBuffer 8<CR>", {silent = true})
+    map("n", "<M-9>", "<CMD>BufferLineGoToBuffer 9<CR>", {silent = true})
 end
 
 M.nvimtree = function()
     -- Toggle visibility of nvim-tree
-    map("n", "<leader>n", ":NvimTreeToggle<CR>",   {silent = true})
+    map("n", "<leader>n", "<CMD>NvimTreeToggle<CR>",   opt)
     -- Go to the current file in nvim-tree
-    map("n", "<leader>N", ":NvimTreeFindFile<CR>", {silent = true})
+    map("n", "<leader>N", "<CMD>NvimTreeFindFile<CR>", opt)
     -- Refresh nvim-tree
-    map("n", "<leader>r", ":NvimTreeRefresh<CR>",  {silent = true})
+    map("n", "<leader>r", "<CMD>NvimTreeRefresh<CR>",  opt)
+end
+
+M.colorizer = function()
+    -- Enable colorizer in current buffer
+    map("n", "<leader>ca", "<CMD>ColorizerAttachToBuffer<CR>", opt)
+    -- Disable colorizer in current buffer
+    map("n", "<leader>cd", "<CMD>ColorizerDetachFromBuffer<CR>", opt)
 end
 
 return M
