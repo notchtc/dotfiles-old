@@ -17,7 +17,7 @@ thing() {
 }
 
 if [ "$1" = "notif" ]; then
-    notify-send --urgency low "fetch" "<b>os:</b>     $os\n<b>kernel:</b> $kernel\n<b>shell:</b>   $shell\n<b>wm:</b>     $wm"
+    notify-send --urgency low "fetch" "<b>os:</b>     $os\n<b>kernel:</b> $kernel\n<b>shell:</b>  $shell\n<b>wm:</b>     $wm"
 else
     thing "os" "$os"
     thing "kernel" "$kernel"

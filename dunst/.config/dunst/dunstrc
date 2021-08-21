@@ -15,7 +15,7 @@
     #
     # If this option is set to mouse or keyboard, the monitor option
     # will be ignored.
-    follow = mouse
+    follow = keyboard
 
     # The geometry of the window:
     #   [{width}]x{height}[+/-{x}+/-{y}]
@@ -83,7 +83,7 @@
     frame_width = 0
 
     # Defines color of the frame around the notification window.
-    frame_color = "#002b36"
+    #frame_color = "#002b36"
 
     # Define a color for the separator.
     # possible values are:
@@ -326,14 +326,14 @@
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
-    background = "#002b36"
+    background = "#073642"
     foreground = "#839496"
     timeout = 10
     # Icon for notifications with low urgency, uncomment to enable
     #icon = /path/to/icon
 
 [urgency_normal]
-    background = "#002b36"
+    background = "#073642"
     foreground = "#fdf6e3"
     timeout = 15
     # Icon for notifications with normal urgency, uncomment to enable

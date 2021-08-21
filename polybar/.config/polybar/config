@@ -142,6 +142,6 @@ screenchange-reload = true
 ;pseudo-transparency = false
 
 [global/wm]
-margin-top = 25
+margin-bottom = 32
 
 ; vim:ft=dosini
