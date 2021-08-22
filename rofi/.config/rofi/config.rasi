@@ -148,7 +148,7 @@ inputbar {
         border:            0px;
         handle-color:      @fg;
         handle-width:      6px;
-        padding:           3px;
+        padding:           0px 3px 3px 3px;
     }
 
     message {
