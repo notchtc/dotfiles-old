@@ -7,7 +7,7 @@ configuration {
     columns:           2;
     font:              "Iosevka 12";
     bw:                0;
-    location:          7;
+    location:          1;
     padding:           0;
     modi:              [ window,run ];
     fixed-num-lines:   true;
@@ -16,7 +16,7 @@ configuration {
     separator-style:   "none";
     hide-scrollbar:    false;
     fullscreen:        false;
-    fake-transparency: false;
+    fake-transparency: true;
     scroll-method:     0;
     click-to-exit:     true;
 }
