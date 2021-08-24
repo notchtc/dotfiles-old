@@ -1,71 +1,59 @@
 local opt = vim.opt
 
--- Use system clipboard
+-- Don't write to shadafile yet
+opt.shadafile = "NONE"
+
+-- Switch to a faster shell
+opt.shell = "/bin/sh"
+
+-- Make life better
 opt.clipboard = "unnamedplus"
+opt.mouse = "a"
 
--- Enable termguicolors
-opt.termguicolors = true
-
--- Fancy line numbers
+-- Numbers
 opt.number = true
 opt.relativenumber = true
 
--- Imagine being case sensitive
+-- Only case sensitive when there are uppercase letters
 opt.ignorecase = true
--- Be case sensitive when pattern is uppercase
 opt.smartcase = true
 
--- Better splitting
 opt.splitright = true
 opt.splitbelow = true
-
--- Add a cursor line
-opt.cursorline = true
 
 -- Spaces > tabs
 opt.expandtab = true
 opt.tabstop = 4
 opt.softtabstop = 4
 opt.shiftwidth = 4
-opt.expandtab = true
-opt.tabstop = 4
-opt.softtabstop = 4
-opt.shiftwidth = 4
 
--- Show trailing spaces
+-- Show trailing whitespace
 opt.list = true
 opt.listchars = "trail:·"
 
--- Folding based on expression
+-- Folding with treesitter
 opt.foldmethod = "expr"
 opt.foldexpr= "nvim_treesitter#foldexpr()"
--- Set maximum fold nesting
 opt.foldnestmax = 1
 
--- Enable lazy redrawing
+-- Faster vim or something
 opt.lazyredraw = true
-
--- Disable swap files
 opt.swapfile = false
 
--- Set dark background
+-- Stuff to look cool
+opt.termguicolors = true
 opt.background = "dark"
-
--- Remove those ~'s at the end of buffers
-opt.fcs = "eob: "
-
--- Always show statusline
 opt.laststatus = 2
-
--- Don't show mode
 opt.showmode = false
-
--- Mouse support
-opt.mouse = "a"
-
+opt.fillchars = { eob = " " }
+opt.cursorline = true
 -- Hack to remove cursorline staying on blank lines
 opt.colorcolumn = "9999"
 
+-- Disable nvim intro
+opt.shortmess:append "casI"
+
+-- Disable some built in plugins
 local disabled_built_ins = {
     "netrw",
     "netrwPlugin",

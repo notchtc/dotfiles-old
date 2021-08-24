@@ -3,11 +3,7 @@ local cmd = vim.cmd
 
 local colors = require("colors")
 
-g.neosolarized_bold = 1
-g.neosolarized_underline = 1
-g.neosolarized_italic = 1
-g.neosolarized_termBoldAsBright = 0
-cmd("colorscheme NeoSolarized")
+cmd("colorscheme solarized")
 
 local function fg(group, color)
     cmd("hi " .. group .. " guifg=" .. color)
@@ -21,6 +17,17 @@ local function fg_bg(group, fgcol, bgcol)
     cmd("hi " .. group .. " guifg=" .. fgcol .. " guibg=" .. bgcol)
 end
 
-cmd("hi! link LineNr Normal")
+local function link(group1, group2)
+    cmd("hi! link " .. group1 .. " " .. group2)
+end
+
+link("LineNr", "Normal")
+
 fg_bg("StatusLineMode", colors.bg, colors.green)
+
 fg("IndentBlankLineChar", colors.bg3)
+
+bg("DiffAdd", "NONE")
+bg("DiffChange", "NONE")
+bg("DiffDelete", "NONE")
+bg("DiffText", "NONE")

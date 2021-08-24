@@ -113,4 +113,4 @@ source "$XDG_CONFIG_HOME/zsh/fsh/fast-syntax-highlighting.plugin.zsh"
 #
 
 # Enter directory by just typing path
-setopt autocd
+setopt autocd autopushd

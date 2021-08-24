@@ -22,7 +22,7 @@ return packer.startup(
         }
 
         use {
-            "overcache/NeoSolarized",
+            "ishan9299/nvim-solarized-lua",
             after  = "packer.nvim",
             config = function()
                 require "theme"
@@ -33,15 +33,7 @@ return packer.startup(
             "nvim-treesitter/nvim-treesitter",
             event  = "BufRead",
             config = function()
-                require("plugins.treesitter").treesitter()
-            end
-        }
-
-        use {
-            "p00f/nvim-ts-rainbow",
-            after  = "nvim-treesitter",
-            config = function()
-                require("plugins.treesitter").rainbow()
+                require "plugins.treesitter"
             end
         }
 
@@ -55,7 +47,7 @@ return packer.startup(
 
         use {
             "lewis6991/gitsigns.nvim",
-            after  = "plenary.nvim",
+            after  = {"plenary.nvim", "nvim-solarized-lua"},
             config = function()
                 require "plugins.gitsigns"
             end
@@ -63,7 +55,7 @@ return packer.startup(
 
         use {
             "akinsho/nvim-bufferline.lua",
-            event  = "BufWinEnter",
+            after  = "nvim-solarized-lua",
             config = function()
                 require "plugins.bufferline"
             end,

@@ -6,10 +6,10 @@ end
 require("gitsigns").setup {
     -- Set characters used by gitsigns.nvim
     signs = {
-        add          = { text = "│" },
-        change       = { text = "│" },
-        delete       = { text = "╵" },
-        topdelete    = { text = "╷" },
-        changedelete = { text = "╰" }
+        add          = { hl = "DiffAdd", text = "│" },
+        change       = { hl = "DiffChange", text = "│" },
+        delete       = { hl = "DiffDelete", text = "╵" },
+        topdelete    = { hl = "DiffDelete", text = "╷" },
+        changedelete = { hl = "DiffChange", text = "╰" }
     }
 }

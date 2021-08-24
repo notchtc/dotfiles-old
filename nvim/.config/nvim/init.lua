@@ -1,7 +1,7 @@
 local modules = {
         "options",
-        "mappings",
         "utils",
+        "mappings",
         "statusline"
 }
 

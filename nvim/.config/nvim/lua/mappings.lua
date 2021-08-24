@@ -35,12 +35,11 @@ M.misc = function()
     map("", "j", "gj", opt)
     map("", "k", "gk", opt)
 
-    -- Go to next/previous file
-    map("n", "<leader>l", "<CMD>wn<CR>", opt)
-    map("n", "<leader>h", "<CMD>wN<CR>", opt)
-
     -- Spell Check
     map("n", "<leader>sp", "<CMD>setlocal spell! spelllang=en_us<CR>", opt)
+
+    -- Disable search highlighting
+    map("n", "<Esc>", "<CMD>noh<CR>", opt)
 
     -- Packer commands till because we are not loading it at startup
     cmd("silent! command PackerCompile lua require 'pluginList' require('packer').compile()")
@@ -52,22 +51,22 @@ end
 
 M.bufferline = function()
     -- Go to next/previous tab
-    map("n", "<M-.>", "<CMD>BufferLineCycleNext<CR>", {silent = true})
-    map("n", "<M-,>", "<CMD>BufferLineCyclePrev<CR>", {silent = true})
+    map("n", "<M-.>", "<CMD>BufferLineCycleNext<CR>", opt)
+    map("n", "<M-,>", "<CMD>BufferLineCyclePrev<CR>", opt)
 
     -- Close tab
-    map("n", "<M-c>", "<CMD>bdelete<CR>", {silent = true})
+    map("n", "<M-c>", "<CMD>bdelete<CR>", opt)
 
     -- Go to nth visible buffer
-    map("n", "<M-1>", "<CMD>BufferLineGoToBuffer 1<CR>", {silent = true})
-    map("n", "<M-2>", "<CMD>BufferLineGoToBuffer 2<CR>", {silent = true})
-    map("n", "<M-3>", "<CMD>BufferLineGoToBuffer 3<CR>", {silent = true})
-    map("n", "<M-4>", "<CMD>BufferLineGoToBuffer 4<CR>", {silent = true})
-    map("n", "<M-5>", "<CMD>BufferLineGoToBuffer 5<CR>", {silent = true})
-    map("n", "<M-6>", "<CMD>BufferLineGoToBuffer 6<CR>", {silent = true})
-    map("n", "<M-7>", "<CMD>BufferLineGoToBuffer 7<CR>", {silent = true})
-    map("n", "<M-8>", "<CMD>BufferLineGoToBuffer 8<CR>", {silent = true})
-    map("n", "<M-9>", "<CMD>BufferLineGoToBuffer 9<CR>", {silent = true})
+    map("n", "<M-1>", "<CMD>BufferLineGoToBuffer 1<CR>", opt)
+    map("n", "<M-2>", "<CMD>BufferLineGoToBuffer 2<CR>", opt)
+    map("n", "<M-3>", "<CMD>BufferLineGoToBuffer 3<CR>", opt)
+    map("n", "<M-4>", "<CMD>BufferLineGoToBuffer 4<CR>", opt)
+    map("n", "<M-5>", "<CMD>BufferLineGoToBuffer 5<CR>", opt)
+    map("n", "<M-6>", "<CMD>BufferLineGoToBuffer 6<CR>", opt)
+    map("n", "<M-7>", "<CMD>BufferLineGoToBuffer 7<CR>", opt)
+    map("n", "<M-8>", "<CMD>BufferLineGoToBuffer 8<CR>", opt)
+    map("n", "<M-9>", "<CMD>BufferLineGoToBuffer 9<CR>", opt)
 end
 
 M.nvimtree = function()

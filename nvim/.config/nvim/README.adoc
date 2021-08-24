@@ -19,23 +19,20 @@ This list only shows plugins that are something more than just a dependency.
 |https://github.com/wbthomason/packer.nvim[packer.nvim]
 |Plugin manager
 
-|https://github.com/overcache/NeoSolarized[NeoSolarized]
+|https://github.com/ishan9299/nvim-solarized-lua[nvim-solarized-lua]
 |Colorscheme
 
 |https://github.com/nvim-treesitter/nvim-treesitter[nvim-treesitter]
 |Highlighting and folding based on treesitter
 
-|https://github.com/p00f/nvim-ts-rainbow[nvim-ts-rainbow]
-|Rainbow parentheses
-
 |https://github.com/lukas-reineke/indent-blankline.nvim[indent-blankline.nvim]
 |Display indentation levels
 
-|https://github.com/lewis6991/gitsigns.nvim[gitsigns.nvim]
-|Shows git changes
-
 |https://github.com/akinsho/nvim-bufferline.lua[bufferline.nvim]
 |Snazzy buffer line
+
+|https://github.com/lewis6991/gitsigns.nvim[gitsigns.nvim]
+|Shows git changes
 
 |https://github.com/norcalli/nvim-colorizer.lua[nvim-colorizer.lua]
 |Highlight colors
@@ -68,14 +65,23 @@ Space is the leader key.
 |kbd:[Space+s+h]
 |Create horizontal split
 
-|kbd:[Space+l]
-|Go to next file
-
-|kbd:[Space+h]
-|Go to previous file
-
 |kbd:[Space+s+p]
 |Toggle spell checking (en_US)
+
+|kbd:[Esc]
+|Disable search highlighting
+
+|kbd:[Alt+.]
+|Move to next buffer
+
+|kbd:[Alt+,]
+|Move to previous buffer
+
+|kbd:[Alt+c]
+|Close buffer
+
+|kbd:[Alt+1-9]
+|Go to buffer 1-9
 
 |kbd:[Space+n]
 |Open nvim-tree
@@ -86,14 +92,12 @@ Space is the leader key.
 |kbd:[Space+r]
 |Refresh nvim-tree
 
-|kbd:[Alt+,]
-|Move to previous buffer
+|kbd:[Space+c+a]
+|Enable colorizer in current buffer
 
-|kbd:[Alt+.]
-|Move to next buffer
+|kbd:[Space+c+d]
+|Disable colorizer in current buffer
 
-|kbd:[Alt+c]
-|Close buffer
 |===
 
 == Features
