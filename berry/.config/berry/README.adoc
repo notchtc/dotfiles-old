@@ -4,8 +4,8 @@ chtc <notnotcha0t1c@protonmail.com>
 :toc: preamble
 :experimental:
 
-image::../../../screenshots/berry_idle.png[Screenshot of berry with no windows and a few notifications]
-image::../../../screenshots/berry_busy.png[Screenshot of berry with multile windows open]
+image::https://raw.githubusercontent.com/notchtc/dotfiles/screenshots/screenshots/berry_idle.png[Screenshot of berry with no windows and a few notifications]
+image::https://raw.githubusercontent.com/notchtc/dotfiles/screenshots/screenshots/berry_busy.png[Screenshot of berry with multile windows open]
 
 My nice and simple berry config.
 

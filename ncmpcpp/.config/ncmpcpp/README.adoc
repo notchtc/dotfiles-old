@@ -4,7 +4,7 @@ chtc <notnotcha0t1c@protonmail.com>
 
 My clean ncmpcpp config.
 
-image::../../../screenshots/ncmpcpp.png[Screenshot of ncmpcpp]
+image::https://raw.githubusercontent.com/notchtc/dotfiles/screenshots/screenshots/ncmpcpp.png[Screenshot of ncmpcpp]
 
 == Dependencies
 |===

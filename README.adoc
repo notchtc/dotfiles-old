@@ -3,7 +3,7 @@ chtc <notnotcha0t1c@protonmail.com>
 {docdate}
 :toc: preamble
 
-image::./screenshots/berry_busy.png[Screenshots of the rice]
+image::https://raw.githubusercontent.com/notchtc/dotfiles/screenshots/screenshots/rice.png[Screenshots of the rice]
 
 [CAUTION]
 ====

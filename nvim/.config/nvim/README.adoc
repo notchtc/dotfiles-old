@@ -8,9 +8,9 @@ IMPORTANT: Requires neovim 0.5!
 
 This config has only *one* purpose: editing the neovim config.
 
-image::../../../screenshots/nvim.png[Screenshot of neovim with nvim-tree open and git decorations]
+image::https://raw.githubusercontent.com/notchtc/dotfiles/screenshots/screenshots/nvim.png[Screenshot of neovim with nvim-tree open and git decorations]
 
-image::../../../screenshots/nvim2.png[Screenshot of neovim with highlighted colors, git decorations and a buffer bar shown]
+image::https://raw.githubusercontent.com/notchtc/dotfiles/screenshots/screenshots/nvim2.png[Screenshot of neovim with highlighted colors, git decorations and a buffer bar shown]
 
 == Plugin List
 This list only shows plugins that are something more than just a dependency.
