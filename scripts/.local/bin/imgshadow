@@ -1,4 +1,0 @@
-#!/bin/sh
-# Adds a shadow to images using imagemagick.
-
-convert $1 \( +clone -background black -shadow 75x10+0+0 \) +swap -bordercolor none -border 10 -background none -layers merge +repage $1

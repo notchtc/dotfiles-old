@@ -1,4 +1,0 @@
-#!/bin/sh
-# Asks a Yes or No question using rofi and does something if the answer is Yes.
-
-sleep 0.075 && [ "$(printf "No\nYes" | rofi -dmenu -p "$1")" = "Yes" ] && $2
