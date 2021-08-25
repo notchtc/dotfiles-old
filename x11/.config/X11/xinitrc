@@ -1,4 +1,0 @@
-#xrdb -load "$XDG_CONFIG_HOME/X11/Xresources" &
-#exec awesome
-sxhkd -c $HOME/.config/berry/sxhkdrc &
-exec berry
