@@ -1,9 +1,6 @@
-local present, _ = pcall(require, "packerInit")
-local packer
+local present, packer = pcall(require, "packerInit")
 
-if present then
-    packer = require "packer"
-else
+if not present then
     return false
 end
 
@@ -47,9 +44,11 @@ return packer.startup(
 
         use {
             "lewis6991/gitsigns.nvim",
-            after  = {"plenary.nvim", "nvim-solarized-lua"},
             config = function()
                 require "plugins.gitsigns"
+            end,
+            setup  = function()
+                require("utils").packer_lazy_load "gitsigns.nvim"
             end
         }
 

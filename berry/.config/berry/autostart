@@ -9,7 +9,6 @@ launch setxkbmap -option "caps:swapescape"
 launch hsetroot -cover "$XDG_CONFIG_HOME"/berry/wall.png
 launch pulseaudio --start
 launch sxhkd -c "$XDG_CONFIG_HOME"/berry/sxhkdrc -m 1
-launch keepassxc
 launch dunst
 launch polybar -r main 2>&1
 #"$XDG_CONFIG_HOME"/polybar/launch-polybar &

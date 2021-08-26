@@ -1,10 +1,12 @@
--- Remove trailing whitespaces and newlines when saving
--- Enable rasi highlighting
-vim.api.nvim_exec([[
-au BufWritePre * %s/\s\+$//e
-au BufWritePre * %s/\n\+\%$//e
-au BufNewFile,BufRead /*.rasi setf css
-]], false)
+local M = {}
 
--- We can write to the shada file now
-vim.opt.shadafile = ""
+M.packer_lazy_load = function(plugin, timer)
+   if plugin then
+      timer = timer or 0
+      vim.defer_fn(function()
+         require("packer").loader(plugin)
+      end, timer)
+   end
+end
+
+return M
