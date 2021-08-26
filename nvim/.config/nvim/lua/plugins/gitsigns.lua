@@ -11,5 +11,8 @@ require("gitsigns").setup {
         delete       = { hl = "DiffDelete", text = "╵" },
         topdelete    = { hl = "DiffDelete", text = "╷" },
         changedelete = { hl = "DiffChange", text = "╰" }
+    },
+    watch_index = {
+        interval = 100
     }
 }

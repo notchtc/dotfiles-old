@@ -44,6 +44,7 @@ return packer.startup(
 
         use {
             "lewis6991/gitsigns.nvim",
+            opt = true,
             config = function()
                 require "plugins.gitsigns"
             end,

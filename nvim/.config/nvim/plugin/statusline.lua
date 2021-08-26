@@ -46,7 +46,7 @@ M.modes = setmetatable({
     ['r?'] = {'confirm ', 'C'};
     ['!']  = {'shell ', 'S'};
     ['t']  = {'terminal ', 'T'};
-    }, {
+}, {
         __index = function()
             return {'Unknown', 'U'} -- handle edge cases
         end
@@ -156,10 +156,10 @@ Statusline = setmetatable(M, {
 })
 
 api.nvim_exec([[
-    augroup Statusline
-        au!
-        au WinEnter,BufEnter * setlocal statusline=%!v:lua.Statusline('active')
-        au WinLeave,BufLeave * setlocal statusline=%!v:lua.Statusline('inactive')
-        au WinEnter,BufEnter,FileType NvimTree setlocal statusline=%!v:lua.Statusline('explorer')
-    augroup END
+augroup Statusline
+    au!
+    au WinEnter,BufEnter * setlocal statusline=%!v:lua.Statusline('active')
+    au WinLeave,BufLeave * setlocal statusline=%!v:lua.Statusline('inactive')
+    au WinEnter,BufEnter,FileType NvimTree setlocal statusline=%!v:lua.Statusline('explorer')
+augroup END
 ]], false)

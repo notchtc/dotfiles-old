@@ -3,7 +3,7 @@ local cmd = vim.cmd
 
 local colors = require("colors")
 
-cmd("colorscheme solarized")
+cmd "colorscheme solarized"
 
 local function fg(group, color)
     cmd("hi " .. group .. " guifg=" .. color)

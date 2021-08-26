@@ -42,11 +42,11 @@ M.misc = function()
     map("n", "<Esc>", "<CMD>noh<CR>", opt)
 
     -- Packer commands till because we are not loading it at startup
-    cmd("silent! command PackerCompile lua require 'pluginList' require('packer').compile()")
-    cmd("silent! command PackerInstall lua require 'pluginList' require('packer').install()")
-    cmd("silent! command PackerStatus lua require 'pluginList' require('packer').status()")
-    cmd("silent! command PackerSync lua require 'pluginList' require('packer').sync()")
-    cmd("silent! command PackerUpdate lua require 'pluginList' require('packer').update()")
+    cmd "silent! command PackerCompile lua require 'pluginList' require('packer').compile()"
+    cmd "silent! command PackerInstall lua require 'pluginList' require('packer').install()"
+    cmd "silent! command PackerStatus lua require 'pluginList' require('packer').status()"
+    cmd "silent! command PackerSync lua require 'pluginList' require('packer').sync()"
+    cmd"silent! command PackerUpdate lua require 'pluginList' require('packer').update()"
 end
 
 M.bufferline = function()
