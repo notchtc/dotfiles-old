@@ -22,14 +22,17 @@ This list only shows plugins that are something more than just a dependency.
 |https://github.com/ishan9299/nvim-solarized-lua[nvim-solarized-lua]
 |Colorscheme
 
+|https://github.com/famiu/feline.nvim[feline.nvim]
+|A minimal, stylish and customizable statusline
+
+|https://github.com/akinsho/nvim-bufferline.lua[nvim-bufferline.lua]
+|Snazzy buffer line
+
 |https://github.com/nvim-treesitter/nvim-treesitter[nvim-treesitter]
 |Highlighting and folding based on treesitter
 
 |https://github.com/lukas-reineke/indent-blankline.nvim[indent-blankline.nvim]
 |Display indentation levels
-
-|https://github.com/akinsho/nvim-bufferline.lua[bufferline.nvim]
-|Snazzy buffer line
 
 |https://github.com/lewis6991/gitsigns.nvim[gitsigns.nvim]
 |Shows git changes

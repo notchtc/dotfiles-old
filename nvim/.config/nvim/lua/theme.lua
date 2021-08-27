@@ -23,7 +23,8 @@ end
 
 link("LineNr", "Normal")
 
-fg_bg("StatusLineMode", colors.bg, colors.green)
+fg("StatusLine", colors.bg)
+fg("StatusLineNC", colors.bg)
 
 fg("IndentBlankLineChar", colors.bg3)
 
