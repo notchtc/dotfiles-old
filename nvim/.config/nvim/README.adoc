@@ -90,7 +90,7 @@ Space is the leader key.
 |Open nvim-tree
 
 |kbd:[Space+N]
-|Find file in nvim-tree
+|Focus nvim-tree
 
 |kbd:[Space+r]
 |Refresh nvim-tree
