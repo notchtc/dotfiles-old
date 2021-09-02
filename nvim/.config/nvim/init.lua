@@ -1,7 +1,7 @@
 local modules = {
     "options",
     "mappings",
-    "other"
+    "other",
 }
 
 for i = 1, #modules, 1 do

@@ -32,5 +32,5 @@ g.nvim_tree_icons = {
         untracked = "",
         deleted = "",
         ignored = "",
-    }
+    },
 }

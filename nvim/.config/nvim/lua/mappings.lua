@@ -1,5 +1,5 @@
 local function map(mode, lhs, rhs, opts)
-    local options = {noremap = true, silent = true}
+    local options = { noremap = true, silent = true }
     if opts then
         options = vim.tbl_extend("force", options, opts)
     end
@@ -16,9 +16,9 @@ vim.g.mapleader = " "
 
 M.misc = function()
     -- Disable arrow keys for moving in normal mode
-    map("", "<up>",    "", opt)
-    map("", "<down>",  "", opt)
-    map("", "<left>",  "", opt)
+    map("", "<up>", "", opt)
+    map("", "<down>", "", opt)
+    map("", "<left>", "", opt)
     map("", "<right>", "", opt)
 
     -- Make navigating through splits easier
@@ -28,7 +28,7 @@ M.misc = function()
     map("", "<C-l>", "<C-w>l", opt)
 
     -- Make creating splits easier
-    map("", "<leader>sv", "<CMD>split<CR>",  opt)
+    map("", "<leader>sv", "<CMD>split<CR>", opt)
     map("", "<leader>sh", "<CMD>vsplit<CR>", opt)
 
     -- Go through wrapped lines
@@ -46,7 +46,7 @@ M.misc = function()
     cmd "silent! command PackerInstall lua require 'pluginList' require('packer').install()"
     cmd "silent! command PackerStatus lua require 'pluginList' require('packer').status()"
     cmd "silent! command PackerSync lua require 'pluginList' require('packer').sync()"
-    cmd"silent! command PackerUpdate lua require 'pluginList' require('packer').update()"
+    cmd "silent! command PackerUpdate lua require 'pluginList' require('packer').update()"
 end
 
 M.bufferline = function()
@@ -71,11 +71,11 @@ end
 
 M.nvimtree = function()
     -- Toggle visibility of nvim-tree
-    map("n", "<leader>n", "<CMD>NvimTreeToggle<CR>",   opt)
+    map("n", "<leader>n", "<CMD>NvimTreeToggle<CR>", opt)
     -- Focus nvim-tree
-    map("n", "<leader>N", "<CMD>NvimTreeFocus<CR>",    opt)
+    map("n", "<leader>N", "<CMD>NvimTreeFocus<CR>", opt)
     -- Refresh nvim-tree
-    map("n", "<leader>r", "<CMD>NvimTreeRefresh<CR>",  opt)
+    map("n", "<leader>r", "<CMD>NvimTreeRefresh<CR>", opt)
 end
 
 M.colorizer = function()

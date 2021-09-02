@@ -29,11 +29,13 @@ opt.shiftwidth = 4
 
 -- Show trailing whitespace
 opt.list = true
-opt.listchars = "trail:·"
+opt.listchars = {
+    trail = "·",
+}
 
 -- Folding with treesitter
 opt.foldmethod = "expr"
-opt.foldexpr= "nvim_treesitter#foldexpr()"
+opt.foldexpr = "nvim_treesitter#foldexpr()"
 opt.foldnestmax = 1
 
 -- Faster vim or something
@@ -47,8 +49,6 @@ opt.laststatus = 2
 opt.showmode = false
 opt.fillchars = { eob = " " }
 opt.cursorline = true
--- Hack to remove cursorline staying on blank lines
-opt.colorcolumn = "9999"
 
 -- Disable nvim intro
 opt.shortmess:append "casI"
@@ -72,7 +72,7 @@ local disabled_built_ins = {
     "logipat",
     "rrhelper",
     "spellfile_plugin",
-    "matchit"
+    "matchit",
 }
 
 for _, plugin in pairs(disabled_built_ins) do

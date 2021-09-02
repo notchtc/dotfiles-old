@@ -17,50 +17,51 @@ local function is_truncated(width)
     return current_width < width
 end
 
+-- stylua: ignore
 local mode_colors = {
-    ["n"]  = { "NORMAL",    "N",    colors.green },
-    ["no"] = { "N-PENDING", "N-P",  colors.green },
-    ["i"]  = { "INSERT",    "I",    colors.blue },
-    ["ic"] = { "INSERT",    "I",    colors.blue },
-    ["t"]  = { "TERMINAL",  "T",    colors.bg3 },
-    ["v"]  = { "VISUAL",    "V",    colors.yellow },
-    ["V"]  = { "V-LINE",    "V-L",  colors.yellow },
-    [""] = { "V-BLOCK",   "V-B",  colors.yellow },
-    ["R"]  = { "REPLACE",   "R",    colors.cyan },
-    ["Rv"] = { "V-REPLACE", "V-R",  colors.cyan },
-    ["s"]  = { "SELECT",    "S",    colors.cyan },
-    ["S"]  = { "S-LINE",    "S-L",  colors.cyan },
-    [""] = { "S-BLOCK",   "S-B",  colors.cyan },
-    ["c"]  = { "COMMAND",   "C",    colors.bg3 },
-    ["cv"] = { "COMMAND",   "C",    colors.bg3 },
-    ["ce"] = { "COMMAND",   "C",    colors.bg3 },
-    ["r"]  = { "PROMPT",    "P",    colors.bg3 },
-    ["rm"] = { "MORE",      "M",    colors.bg3 },
-    ["r?"] = { "CONFIRM",   "C",    colors.bg3 },
-    ["!"]  = { "SHELL",     "S",    colors.bg3 },
+    ["n"]  = { "NORMAL", "N", colors.green },
+    ["no"] = { "N-PENDING", "N-P", colors.green },
+    ["i"]  = { "INSERT", "I", colors.blue },
+    ["ic"] = { "INSERT", "I", colors.blue },
+    ["t"]  = { "TERMINAL", "T", colors.bg3 },
+    ["v"]  = { "VISUAL", "V", colors.yellow },
+    ["V"]  = { "V-LINE", "V-L", colors.yellow },
+    [""] = { "V-BLOCK", "V-B", colors.yellow },
+    ["R"]  = { "REPLACE", "R", colors.cyan },
+    ["Rv"] = { "V-REPLACE", "V-R", colors.cyan },
+    ["s"]  = { "SELECT", "S", colors.cyan },
+    ["S"]  = { "S-LINE", "S-L", colors.cyan },
+    [""] = { "S-BLOCK", "S-B", colors.cyan },
+    ["c"]  = { "COMMAND", "C", colors.bg3 },
+    ["cv"] = { "COMMAND", "C", colors.bg3 },
+    ["ce"] = { "COMMAND", "C", colors.bg3 },
+    ["r"]  = { "PROMPT", "P", colors.bg3 },
+    ["rm"] = { "MORE", "M", colors.bg3 },
+    ["r?"] = { "CONFIRM", "C", colors.bg3 },
+    ["!"]  = { "SHELL", "S", colors.bg3 },
 }
 
 local properties = {
     force_inactive = {
         filetypes = {},
-        buftypes  = {},
-        bufnames  = {}
-    }
+        buftypes = {},
+        bufnames = {},
+    },
 }
 
 properties.force_inactive.filetypes = {
     "NvimTree",
-    "packer"
+    "packer",
 }
 
 properties.force_inactive.buftypes = {
-    "terminal"
+    "terminal",
 }
 
 local components = {
-    left  = {active = {}, inactive = {}},
-    mid   = {active = {}, inactive = {}},
-    right = {active = {}, inactive = {}}
+    left = { active = {}, inactive = {} },
+    mid = { active = {}, inactive = {} },
+    right = { active = {}, inactive = {} },
 }
 
 components.left.active[1] = {
@@ -74,13 +75,13 @@ components.left.active[1] = {
     hl = function()
         return {
             bg = mode_colors[fn.mode()][3],
-            fg = colors.bg
+            fg = colors.bg,
         }
-    end
+    end,
 }
 
 components.left.active[2] = {
-    provider = filename
+    provider = filename,
 }
 
 components.left.active[3] = {
@@ -94,7 +95,7 @@ components.left.active[3] = {
         else
             return ""
         end
-    end
+    end,
 }
 
 components.left.active[4] = {
@@ -106,7 +107,7 @@ components.left.active[4] = {
         else
             return ""
         end
-    end
+    end,
 }
 
 components.right.active[1] = {
@@ -118,7 +119,7 @@ components.right.active[1] = {
         end
 
         return encoding .. " "
-    end
+    end,
 }
 
 components.right.active[2] = {
@@ -130,7 +131,7 @@ components.right.active[2] = {
         end
 
         return format .. " "
-    end
+    end,
 }
 
 components.right.active[3] = {
@@ -142,7 +143,7 @@ components.right.active[3] = {
         end
 
         return filetype .. " "
-    end
+    end,
 }
 
 components.right.active[4] = {
@@ -151,21 +152,21 @@ components.right.active[4] = {
     end,
     hl = function()
         return {
-            bg = mode_colors[fn.mode()][3]
+            bg = mode_colors[fn.mode()][3],
         }
-    end
+    end,
 }
 
 components.left.inactive[1] = {
     provider = filename,
     hl = {
-        bg = colors.statuslinenc
-    }
+        bg = colors.statuslinenc,
+    },
 }
 
 feline.setup {
     default_bg = colors.statusline,
     default_fg = colors.bg,
     components = components,
-    properties = properties
+    properties = properties,
 }

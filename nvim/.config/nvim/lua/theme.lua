@@ -1,7 +1,7 @@
 local g = vim.g
 local cmd = vim.cmd
 
-local colors = require("colors")
+local colors = require "colors"
 
 cmd "colorscheme solarized"
 

@@ -5,11 +5,11 @@ end
 
 ts_config.setup {
     -- Ensure parsers are installed for these languages
-    ensure_installed = {'lua', 'css', 'html'},
+    ensure_installed = { "lua", "css", "html" },
     -- Don't install the parser for C
-    ignore_install = {'c'},
+    ignore_install = { "c" },
     -- Enable highlighting
     highlight = {
-        enable = true
-    }
+        enable = true,
+    },
 }

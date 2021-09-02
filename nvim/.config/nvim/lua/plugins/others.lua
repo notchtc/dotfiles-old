@@ -1,5 +1,7 @@
 local M = {}
 
+local g = vim.g
+
 M.colorizer = function()
     local present, colorizer = pcall(require, "colorizer")
     if present then
@@ -9,13 +11,18 @@ M.colorizer = function()
 end
 
 M.blankline = function()
-    -- List of characters to be used as an indent line for each indentation level
-    vim.g.indent_blankline_char_list = {"│", "┆", "┊", ""}
-    -- Don't display indentation in the first column
-    vim.g.indent_blankline_show_first_indent_level = false
-    -- Don't display the full fold text
-    vim.g.indent_blankline_show_foldtext = false
-    vim.g.indent_blankline_filetype_exclude = {"txt", "packer", "help"}
+    -- Enable
+    g.indent_blankline_enabled = true
+    -- Set character
+    g.indent_blankline_char = "▏"
+    -- Exclude some filetypes
+    g.indent_blankline_filetype_exclude = { "txt", "packer", "help" }
+    -- Exclude some buffer types
+    g.indent_blankline_buftype_exclude = { "terminal" }
+    -- Don't show first indent level
+    g.indent_blankline_show_first_indent_level = false
+    -- Don't show foldtext
+    g.indent_blankline_show_foldtext = false
 end
 
 return M
