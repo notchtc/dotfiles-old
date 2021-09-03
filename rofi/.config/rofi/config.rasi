@@ -129,7 +129,7 @@ sidebar {
 }
 
 button {
-    margin:       6px;
+    margin:       3px;
     padding:      6px;
     text-color:   @fg;
 }
