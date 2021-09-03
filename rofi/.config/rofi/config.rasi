@@ -7,7 +7,7 @@ configuration {
     columns:           2;
     font:              "Iosevka 12";
     bw:                0;
-    location:          1;
+    location:          0;
     padding:           0;
     modi:              [ window,run ];
     fixed-num-lines:   true;
@@ -16,7 +16,6 @@ configuration {
     separator-style:   "none";
     hide-scrollbar:    false;
     fullscreen:        false;
-    fake-transparency: true;
     scroll-method:     0;
     click-to-exit:     true;
 }
@@ -33,11 +32,9 @@ configuration {
 window {
     border:        0px;
     border-color:  @ac;
-    border-radius: 12px;
     padding:       12px;
-    width:         35%;
-    height:        100%;
-    margin:        6px 6px 32px 6px;
+    width:         50%;
+    height:        75%;
 }
 
 prompt {
@@ -68,95 +65,94 @@ inputbar {
     text-color: @fg;
     padding:    3px;
     children:   [ prompt,textbox-prompt-colon,entry,case-indicator ];
-    }
+}
 
-    mainbox {
-        border:       0px;
-        border-color: @ac;
-        padding:      6px;
-    }
+mainbox {
+    border:       0px;
+    border-color: @ac;
+    padding:      6px;
+}
 
-    listview {
-        fixed-height: 0;
-        border:       0px;
-        border-color: @ac;
-        spacing:      3px;
-        scrollbar:    true;
-        padding:      3px 0px 0px;
-    }
+listview {
+    fixed-height: 0;
+    border:       0px;
+    border-color: @ac;
+    spacing:      3px;
+    scrollbar:    true;
+    padding:      3px 0px 0px;
+}
 
-    element {
-        border:  0px;
-        padding: 6px;
-    }
-    element normal.normal {
-        background-color: @bg;
-        text-color:       @fg;
-    }
-    element normal.urgent {
-        background-color: @red;
-        text-color:       @bg;
-    }
-    element normal.active {
-        background-color: @cyan;
-        text-color:       @bg;
-    }
-    element selected.normal {
-        background-color: @ac;
-        text-color:       @bg;
-    }
-    element selected.urgent {
-        background-color: @red;
-        text-color:       @bg;
-    }
-    element selected.active {
-        background-color: @ac;
-        text-color:       @bg;
-    }
-    element alternate.normal {
-        background-color: @bg;
-        text-color:       @fg;
-    }
-    element alternate.urgent {
-        background-color: @bg;
-        text-color:       @fg;
-    }
-    element alternate.active {
-        background-color: @bg;
-        text-color:       @fg;
-    }
+element {
+    border:  0px;
+    padding: 6px;
+}
+element normal.normal {
+    background-color: @bg;
+    text-color:       @fg;
+}
+element normal.urgent {
+    background-color: @red;
+    text-color:       @bg;
+}
+element normal.active {
+    background-color: @cyan;
+    text-color:       @bg;
+}
+element selected.normal {
+    background-color: @ac;
+    text-color:       @bg;
+}
+element selected.urgent {
+    background-color: @red;
+    text-color:       @bg;
+}
+element selected.active {
+    background-color: @ac;
+    text-color:       @bg;
+}
+element alternate.normal {
+    background-color: @bg;
+    text-color:       @fg;
+}
+element alternate.urgent {
+    background-color: @bg;
+    text-color:       @fg;
+}
+element alternate.active {
+    background-color: @bg;
+    text-color:       @fg;
+}
 
-    sidebar {
-        border:        0px;
-        border-color:  @ac;
-        border-radius: 12px;
-    }
+sidebar {
+    border:        0px;
+    border-color:  @ac;
+}
 
-    button {
-        margin:       6px;
-        padding:      6px;
-        text-color:   @fg;
-    }
+button {
+    margin:       6px;
+    padding:      6px;
+    text-color:   @fg;
+}
 
-    button selected {
-        background-color: @ac;
-        text-color:       @bg;
-    }
+button selected {
+    background-color: @ac;
+    text-color:       @bg;
+}
 
-    scrollbar {
-        width:             3px;
-        border:            0px;
-        handle-color:      @fg;
-        handle-width:      6px;
-        padding:           0px 3px;
-    }
+scrollbar {
+    width:             3px;
+    border:            0px;
+    handle-color:      @fg;
+    handle-width:      6px;
+    padding:           0px 3px;
+}
 
-    message {
-        border:       0px;
-        border-color: @ac;
-        padding:      3px;
-    }
+message {
+    border:       0px;
+    border-color: @ac;
+    padding:      3px;
+}
 
-    textbox {
-        text-color: @fg;
+textbox {
+    text-color: @fg;
 }
