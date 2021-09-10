@@ -17,6 +17,35 @@ local function is_truncated(width)
     return current_width < width
 end
 
+local properties = {
+    force_inactive = {
+        filetypes = {},
+        buftypes = {},
+        bufnames = {},
+    },
+}
+
+properties.force_inactive.filetypes = {
+    "NvimTree",
+    "packer",
+}
+
+properties.force_inactive.buftypes = {
+    "terminal",
+}
+
+local components = {
+    active = {},
+    inactive = {},
+}
+
+table.insert(components.active, {})
+table.insert(components.active, {})
+table.insert(components.active, {})
+table.insert(components.inactive, {})
+table.insert(components.inactive, {})
+table.insert(components.inactive, {})
+
 -- stylua: ignore
 local mode_colors = {
     ["n"]  = { "NORMAL", "N", colors.green },
@@ -41,30 +70,14 @@ local mode_colors = {
     ["!"]  = { "SHELL", "S", colors.bg3 },
 }
 
-local properties = {
-    force_inactive = {
-        filetypes = {},
-        buftypes = {},
-        bufnames = {},
-    },
-}
+local mode_hl = function()
+    return {
+        bg = mode_colors[vim.fn.mode()][3],
+        fg = colors.bg,
+    }
+end
 
-properties.force_inactive.filetypes = {
-    "NvimTree",
-    "packer",
-}
-
-properties.force_inactive.buftypes = {
-    "terminal",
-}
-
-local components = {
-    left = { active = {}, inactive = {} },
-    mid = { active = {}, inactive = {} },
-    right = { active = {}, inactive = {} },
-}
-
-components.left.active[1] = {
+components.active[1][1] = {
     provider = function()
         if is_truncated(80) then
             return " " .. mode_colors[fn.mode()][2] .. " "
@@ -72,19 +85,14 @@ components.left.active[1] = {
 
         return " " .. mode_colors[fn.mode()][1] .. " "
     end,
-    hl = function()
-        return {
-            bg = mode_colors[fn.mode()][3],
-            fg = colors.bg,
-        }
-    end,
+    hl = mode_hl,
 }
 
-components.left.active[2] = {
+components.active[1][2] = {
     provider = filename,
 }
 
-components.left.active[3] = {
+components.active[1][3] = {
     provider = function()
         local modified = bo.modified
 
@@ -98,7 +106,7 @@ components.left.active[3] = {
     end,
 }
 
-components.left.active[4] = {
+components.active[1][4] = {
     provider = function()
         if bo.readonly == true then
             return "%<ro "
@@ -110,7 +118,7 @@ components.left.active[4] = {
     end,
 }
 
-components.right.active[1] = {
+components.active[3][1] = {
     provider = function()
         local encoding = bo.fileencoding
 
@@ -122,7 +130,7 @@ components.right.active[1] = {
     end,
 }
 
-components.right.active[2] = {
+components.active[3][2] = {
     provider = function()
         local format = bo.fileformat
 
@@ -134,7 +142,7 @@ components.right.active[2] = {
     end,
 }
 
-components.right.active[3] = {
+components.active[3][3] = {
     provider = function()
         local filetype = bo.filetype
 
@@ -146,18 +154,14 @@ components.right.active[3] = {
     end,
 }
 
-components.right.active[4] = {
+components.active[3][4] = {
     provider = function()
-        return " " .. fn.line "." .. ":" .. fn.col "." .. " "
+        return string.format(" %d:%d ", vim.fn.line ".", vim.fn.col ".")
     end,
-    hl = function()
-        return {
-            bg = mode_colors[fn.mode()][3],
-        }
-    end,
+    hl = mode_hl,
 }
 
-components.left.inactive[1] = {
+components.inactive[1][1] = {
     provider = filename,
     hl = {
         bg = colors.statuslinenc,

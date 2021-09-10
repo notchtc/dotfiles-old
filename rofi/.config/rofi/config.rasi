@@ -3,21 +3,13 @@
  */
 
 configuration {
-    lines:             12;
-    columns:           2;
-    font:              "Iosevka 12";
-    bw:                0;
-    location:          0;
-    padding:           0;
-    modi:              [ window,run ];
-    fixed-num-lines:   true;
-    show-icons:        false;
-    sidebar-mode:      true;
-    separator-style:   "none";
-    hide-scrollbar:    false;
-    fullscreen:        false;
-    scroll-method:     0;
-    click-to-exit:     true;
+    font:            "Iosevka 12";
+    fixed-num-lines: true;
+    show-icons:      false;
+    sidebar-mode:    false;
+    scroll-method:   0;
+    click-to-exit:   true;
+    modi:            [ window,run ];
 }
 
 * {
@@ -30,33 +22,33 @@ configuration {
 }
 
 window {
-    border:        0px;
-    border-color:  @ac;
-    padding:       12px;
-    width:         50%;
-    height:        75%;
+    border:     0px;
+    padding:    0px;
+    width:      50%;
+    height:     71%;
+    fullscreen: false;
 }
 
 prompt {
-    spacing:    0;
-    border:     0;
+    spacing:    0px;
+    border:     0px;
     text-color: @fg;
 }
 
 textbox-prompt-colon {
     expand:     false;
-    str:        " ";
-    margin:     0px 3px 0px 0px;
+    str:        "";
+    margin:     0px 6px 0px 0px;
     text-color: inherit;
 }
 
 entry {
-    spacing:    0;
+    spacing:    0px;
     text-color: @fg;
 }
 
 case-indicator {
-    spacing:    0;
+    spacing:    0px;
     text-color: @fg;
 }
 
@@ -64,22 +56,27 @@ inputbar {
     spacing:    0px;
     text-color: @fg;
     padding:    3px;
-    children:   [ prompt,textbox-prompt-colon,entry,case-indicator ];
+    children: [ prompt,textbox-prompt-colon,entry,case-indicator ];
 }
 
 mainbox {
-    border:       0px;
-    border-color: @ac;
-    padding:      6px;
+    border:  0px;
+    padding: 6px;
 }
 
 listview {
+    lines:        12;
+    columns:      2;
     fixed-height: 0;
-    border:       0px;
-    border-color: @ac;
     spacing:      3px;
-    scrollbar:    true;
-    padding:      3px 0px 0px;
+    border:       0px;
+    scrollbar:    false;
+    padding:      0px 0px 0px 0px;
+}
+
+element-text, element-icon {
+    background-color: #00000000;
+    text-color:       inherit;
 }
 
 element {
@@ -124,33 +121,34 @@ element alternate.active {
 }
 
 sidebar {
-    border:        0px;
-    border-color:  @ac;
+    border: 0px;
 }
 
 button {
-    margin:       3px;
-    padding:      6px;
-    text-color:   @fg;
+    horizontal-align: 0.5;
+    vertical-align:   0.5;
+    padding:          6px;
+    spacing:          3px;
+    text-color:       @fg;
+    border:           0px;
 }
 
 button selected {
     background-color: @ac;
     text-color:       @bg;
+    border:           0px;
 }
 
 scrollbar {
-    width:             3px;
-    border:            0px;
-    handle-color:      @fg;
-    handle-width:      6px;
-    padding:           0px 3px;
+    border:       0px;
+    handle-color: @fg;
+    handle-width: 6px;
+    padding:      0px 0px 0px 3px;
 }
 
 message {
-    border:       0px;
-    border-color: @ac;
-    padding:      3px;
+    border: 0px;
+    padding: 3px;
 }
 
 textbox {
