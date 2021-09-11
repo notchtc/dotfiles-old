@@ -8,31 +8,10 @@ local colors = require "colors"
 local bo = vim.bo
 local fn = vim.fn
 
-local function filename()
-    return " %<" .. fn.expand "%:t" .. " "
-end
-
 local function is_truncated(width)
     local current_width = vim.api.nvim_win_get_width(0)
     return current_width < width
 end
-
-local properties = {
-    force_inactive = {
-        filetypes = {},
-        buftypes = {},
-        bufnames = {},
-    },
-}
-
-properties.force_inactive.filetypes = {
-    "NvimTree",
-    "packer",
-}
-
-properties.force_inactive.buftypes = {
-    "terminal",
-}
 
 local components = {
     active = {},
@@ -72,7 +51,7 @@ local mode_colors = {
 
 local mode_hl = function()
     return {
-        bg = mode_colors[vim.fn.mode()][3],
+        bg = mode_colors[fn.mode()][3],
         fg = colors.bg,
     }
 end
@@ -89,7 +68,9 @@ components.active[1][1] = {
 }
 
 components.active[1][2] = {
-    provider = filename,
+    provider = function()
+        return " %<" .. fn.expand "%:t" .. " "
+    end,
 }
 
 components.active[1][3] = {
@@ -156,21 +137,31 @@ components.active[3][3] = {
 
 components.active[3][4] = {
     provider = function()
-        return string.format(" %d:%d ", vim.fn.line ".", vim.fn.col ".")
+        return string.format(" %d:%d ", fn.line ".", fn.col ".")
     end,
     hl = mode_hl,
 }
 
 components.inactive[1][1] = {
-    provider = filename,
+    provider = "",
     hl = {
         bg = colors.statuslinenc,
     },
 }
 
 feline.setup {
-    default_bg = colors.statusline,
-    default_fg = colors.bg,
+    colors = {
+        bg = colors.statusline,
+        fg = colors.bg,
+    },
+    force_inactive = {
+        filetypes = {
+            "NvimTree",
+            "packer",
+        },
+        buftypes = {
+            "terminal",
+        },
+    },
     components = components,
-    properties = properties,
 }
