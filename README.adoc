@@ -5,7 +5,7 @@ chtc <notnotcha0t1c@protonmail.com>
 
 image::https://raw.githubusercontent.com/notchtc/dotfiles/screenshots/screenshots/rice.png[Screenshots of the rice]
 
-These are my [.line-through]#horrible# *very beautiful* dotfiles.
+These are my *very horrible* dotfiles.
 
 IMPORTANT: Look through README's to find out about dependencies/required application versions.
 
@@ -24,27 +24,22 @@ Wallpaper is made by https://www.simonstalenhag.se/index.html[Simon Stålenhag].
 This is the used https://www.simonstalenhag.se/bilderbig/by_upload1_2560.jpg[image].
 
 == How To Install
-Step 1:: Clone the repository
-
+* *Step 1:* Clone the repository
 [source,shell]
 git clone --recurse-submodules https://github.com/notchtc/dotfiles.git "$HOME"/.dotfiles
 
-Step 2:: Install https://www.gnu.org/software/stow/[GNU stow]
-Step 3:: Install dependencies.
-Step 4:: Enter the dotfiles directory.
-
+* *Step 2:* Install https://www.gnu.org/software/stow/[GNU stow]
+* *Step 3:* Install dependencies.
+* *Step 4:* Enter the dotfiles directory.
 [source,shell]
 cd "$HOME"/.dotfiles
 
-Step 5:: Install the dotfiles with GNU stow.
-
-- If you want to install everything do this:
-
+* *Step 5:* Install the dotfiles with GNU stow.
+** If you want to install everything do this:
 [source,shell]
 stow alacritty berry dunst fonts mpd ncmpcpp nvim polybar rofi scripts sxiv x11 xdg zathura zsh
 
-- If you want just one/few things for example: alacritty and zsh, you would do:
-
+** If you want just one/few things for example: alacritty and zsh, you would do:
 [source,shell]
 stow alacritty zsh
 
