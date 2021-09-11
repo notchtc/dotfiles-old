@@ -10,8 +10,7 @@ launch hsetroot -cover "$XDG_CONFIG_HOME"/berry/wall.png
 launch pulseaudio --start
 launch sxhkd -c "$XDG_CONFIG_HOME"/berry/sxhkdrc -m 1
 launch dunst
-launch polybar -r main 2>&1
-#"$XDG_CONFIG_HOME"/polybar/launch-polybar &
+"$XDG_CONFIG_HOME"/polybar/launch-polybar &
 
 # Set decoration geometry
 berryc border_width       0

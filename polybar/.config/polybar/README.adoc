@@ -1,0 +1,7 @@
+= https://github.com/polybar/polybar[polybar]
+chtc <notnotcha0t1c@protonmail.com>
+{docdate}
+
+IMPORTANT: Requires the git version of polybar!
+
+image::https://raw.githubusercontent.com/notchtc/dotfiles/screenshots/screenshots/polybar.png[Screenshot of polybar]

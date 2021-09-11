@@ -43,10 +43,9 @@ modules-right = volume battery date
 tray-position = right
 tray-padding = 2
 
-;wm-restack = bspwm
-;wm-restack = i3
+wm-restack = generic
 
-;override-redirect = true
+override-redirect = true
 
 ;scroll-up = bspwm-desknext
 ;scroll-down = bspwm-deskprev
