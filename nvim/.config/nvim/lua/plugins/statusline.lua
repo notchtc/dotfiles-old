@@ -154,14 +154,5 @@ feline.setup {
         bg = colors.statusline,
         fg = colors.bg,
     },
-    force_inactive = {
-        filetypes = {
-            "NvimTree",
-            "packer",
-        },
-        buftypes = {
-            "terminal",
-        },
-    },
     components = components,
 }
