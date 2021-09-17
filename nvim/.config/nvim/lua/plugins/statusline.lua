@@ -7,11 +7,7 @@ local colors = require "colors"
 
 local bo = vim.bo
 local fn = vim.fn
-
-local function is_truncated(width)
-    local current_width = vim.api.nvim_win_get_width(0)
-    return current_width < width
-end
+local api = vim.api
 
 local components = {
     active = {},
@@ -57,8 +53,8 @@ local mode_hl = function()
 end
 
 components.active[1][1] = {
-    provider = function()
-        if is_truncated(80) then
+    provider = function(winid)
+        if api.nvim_win_get_width(winid) < 80 then
             return " " .. mode_colors[fn.mode()][2] .. " "
         end
 
@@ -75,63 +71,79 @@ components.active[1][2] = {
 
 components.active[1][3] = {
     provider = function()
-        local modified = bo.modified
+        return "+ "
+    end,
 
-        if modified == true then
-            return "%<+ "
-        elseif is_truncated(35) then
-            return ""
+    enabled = function(winid)
+        if bo.modified == true then
+            if api.nvim_win_get_width(winid) > 57 then
+                return true
+            else
+                return false
+            end
         else
-            return ""
+            return false
         end
     end,
 }
 
 components.active[1][4] = {
     provider = function()
+        return "ro "
+    end,
+
+    enabled = function(winid)
         if bo.readonly == true then
-            return "%<ro "
-        elseif is_truncated(35) then
-            return ""
+            if api.nvim_win_get_width(winid) > 57 then
+                return true
+            else
+                return false
+            end
         else
-            return ""
+            return false
         end
     end,
 }
 
 components.active[3][1] = {
     provider = function()
-        local encoding = bo.fileencoding
+        return bo.fileencoding .. " "
+    end,
 
-        if encoding == "" or encoding == "utf-8" or is_truncated(57) then
-            return ""
+    enabled = function(winid)
+        if bo.fileencoding == "" or bo.fileencoding == "utf-8" then
+            return false
+        else
+            return api.nvim_win_get_width(winid) > 57
         end
-
-        return encoding .. " "
     end,
 }
 
 components.active[3][2] = {
     provider = function()
-        local format = bo.fileformat
+        return bo.format .. " "
+    end,
 
-        if format == "" or format == "unix" or is_truncated(57) then
-            return ""
+    enabled = function(winid)
+        if bo.fileformat == "" or bo.fileformat == "unix" then
+            return false
+        else
+            return api.nvim_win_get_width(winid) > 57
         end
-
-        return format .. " "
     end,
 }
 
 components.active[3][3] = {
     provider = function()
-        local filetype = bo.filetype
+        return bo.filetype .. " "
+    end,
 
-        if filetype == "" or is_truncated(35) then
-            return ""
+    enabled = function(winid)
+        if bo.filetype == "" then
+            return false
+        else
+            return api.nvim_win_get_width(winid) > 35
         end
-
-        return filetype .. " "
     end,
 }
 
