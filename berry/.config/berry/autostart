@@ -32,7 +32,7 @@ berryc draw_text   "true"
 berryc edge_lock   "true"
 berryc set_font    "Iosevka-Aile-11"
 
-berryc move_mask   "mod4"
+berryc move_mask   "mod5"
 berryc resize_mask "mod1"
 
 berryc name_desktop 0 "1"
