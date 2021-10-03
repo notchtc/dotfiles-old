@@ -7,6 +7,7 @@ local colors = require "colors"
 
 bufferline.setup {
     options = {
+        offsets = { { filetype = "NvimTree", text = "", padding = 1 } },
         numbers = "none",
         separator_style = "thin",
         always_show_bufferline = false,
@@ -73,6 +74,18 @@ bufferline.setup {
         },
         duplicate_selected = {
             guibg = colors.bg2,
+        },
+        separator = {
+            guifg = colors.bg2,
+            guibg = colors.bg,
+        },
+        separator_visible = {
+            guifg = colors.bg2,
+            guibg = colors.bg,
+        },
+        separator_selected = {
+            guifg = colors.bg2,
+            guibg = colors.bg,
         },
     },
 }

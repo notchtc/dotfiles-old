@@ -29,7 +29,7 @@ return packer.startup(function()
     }
 
     use {
-        "akinsho/nvim-bufferline.lua",
+        "akinsho/bufferline.nvim",
         after = { "nvim-solarized-lua", "feline.nvim" },
         config = function()
             require "plugins.bufferline"
@@ -84,7 +84,7 @@ return packer.startup(function()
 
     use {
         "kyazdani42/nvim-tree.lua",
-        cmd = { " NvimTreeToggle", "NvimTreeFocus " },
+        cmd = { "NvimTreeToggle", "NvimTreeFocus" },
         config = function()
             require "plugins.nvimtree"
         end,

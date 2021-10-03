@@ -18,8 +18,6 @@ table.insert(components.active, {})
 table.insert(components.active, {})
 table.insert(components.active, {})
 table.insert(components.inactive, {})
-table.insert(components.inactive, {})
-table.insert(components.inactive, {})
 
 -- stylua: ignore
 local mode_colors = {
@@ -154,10 +152,14 @@ components.active[3][4] = {
     hl = mode_hl,
 }
 
-components.inactive[1][1] = {
-    provider = "",
-    hl = {
-        bg = colors.statuslinenc,
+components.inactive = {
+    {
+        {
+            provider = " ",
+            hl = {
+                bg = colors.statuslinenc,
+            },
+        },
     },
 }
 

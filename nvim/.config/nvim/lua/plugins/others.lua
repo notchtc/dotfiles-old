@@ -16,7 +16,7 @@ M.blankline = function()
     -- Set character
     g.indent_blankline_char = "▏"
     -- Exclude some filetypes
-    g.indent_blankline_filetype_exclude = { "txt", "packer", "help" }
+    g.indent_blankline_filetype_exclude = { "txt", "packer", "help", "NvimTree" }
     -- Exclude some buffer types
     g.indent_blankline_buftype_exclude = { "terminal" }
     -- Don't show first indent level
