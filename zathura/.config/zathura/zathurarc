@@ -1,7 +1,9 @@
 set default-bg \#002b36
 set default-fg \#839496
 
-set font "iosevka aile normal 12"
+set adjust-open "best-fit"
+
+set font "iosevka aile normal 13"
 
 set guioptions svh
 
