@@ -23,8 +23,10 @@ end
 
 link("LineNr", "Normal")
 
-fg("StatusLine", colors.statuslinenc)
-fg("StatusLineNC", colors.statuslinenc)
+bg("StatusLine", colors.statuslinenc)
+bg("StatusLineNC", colors.statuslinenc)
+
+fg("NvimTreeVertSplit", colors.bg)
 
 fg("IndentBlankLineChar", colors.bg3)
 
