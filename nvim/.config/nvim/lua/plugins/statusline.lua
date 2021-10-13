@@ -151,13 +151,5 @@ feline.setup {
         bg = colors.statusline,
         fg = colors.bg,
     },
-    default_hl = {
-        active = {
-            bg = colors.statuslinenc,
-        },
-        inactive = {
-            bg = colors.statuslinenc,
-        },
-    },
     components = components,
 }
