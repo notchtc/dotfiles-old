@@ -24,29 +24,8 @@ bufferline.setup {
         background = {
             guibg = colors.bg,
         },
-        buffer_selected = {
-            guifg = fg,
-            guibg = colors.bg2,
-            gui = "bold",
-        },
-        separator = {
-            guifg = bg3,
-            guibg = colors.bg,
-        },
-        separator_selected = {
-            guifg = bg3,
-            guibg = colors.bg2,
-        },
-        separator_visible = {
-            guifg = bg2,
-            guibg = colors.bg2,
-        },
-        indicator_selected = {
-            guifg = colors.blue,
-            guibg = colors.bg2,
-        },
         tab = {
-            guifg = fg,
+            guifg = colors.fg,
             guibg = colors.bg,
         },
         tab_selected = {
@@ -57,9 +36,14 @@ bufferline.setup {
             guifg = colors.blue,
             guibg = colors.bg2,
         },
-        modified_selected = {
-            guifg = colors.green,
+        buffer_visible = {
+            guifg = colors.fg,
+            guibg = colors.bg,
+        },
+        buffer_selected = {
+            guifg = colors.fg,
             guibg = colors.bg2,
+            gui = "bold",
         },
         modified = {
             guifg = colors.red,
@@ -69,11 +53,19 @@ bufferline.setup {
             guifg = colors.blue,
             guibg = colors.bg,
         },
+        modified_selected = {
+            guifg = colors.green,
+            guibg = colors.bg2,
+        },
         duplicate = {
             guibg = colors.bg,
         },
         duplicate_selected = {
             guibg = colors.bg2,
+        },
+        separator = {
+            guifg = colors.bg3,
+            guibg = colors.bg,
         },
         separator = {
             guifg = colors.bg2,
@@ -86,6 +78,10 @@ bufferline.setup {
         separator_selected = {
             guifg = colors.bg2,
             guibg = colors.bg,
+        },
+        indicator_selected = {
+            guifg = colors.blue,
+            guibg = colors.bg2,
         },
     },
 }
