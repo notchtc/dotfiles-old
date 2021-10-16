@@ -4,7 +4,7 @@ font:
     family: monospace
     style: Regular
 
-  size: 10.5
+  size: 11
 
   offset:
     x: -1
@@ -162,8 +162,8 @@ window:
   # Blank space added around the window in pixels. This padding is scaled
   # by DPI and the specified value is always added at both opposing sides.
   padding:
-    x: 6
-    y: 6
+    x: 9
+    y: 9
 
   # Spread additional padding evenly around the terminal content.
   dynamic_padding: true

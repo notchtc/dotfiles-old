@@ -3,9 +3,10 @@ chtc <notnotcha0t1c@protonmail.com>
 {docdate}
 :toc: preamble
 
-(screenshot coming soon i'm too lazy)
-
 These are my *very horrible* dotfiles.
+
+
+(screenshot coming soon i'm too lazy)
 
 IMPORTANT: Look through README's to find out about dependencies/required application versions.
 
@@ -52,7 +53,7 @@ stow alacritty zsh
 |link:./alacritty/.config/alacritty/alacritty.yml[alacritty]
 |Terminal
 
-|link:./cwm/.cwmrc[cwm]
+|link:./cwm/[cwm]
 |Window Manager
 
 |link:./dunst/.config/dunst/[dunst]

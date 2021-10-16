@@ -18,14 +18,14 @@ borderwidth 1
 
 color font "#d3c6aa"
 
-color inactiveborder "#2f383e"
+color inactiveborder "#4b565c"
 color activeborder   "#a7c080"
 color urgencyborder  "#e67e80"
 color groupborder    "#7fbbb3"
 color ungroupborder  "#e67e80"
 
 color menubg "#2f383e"
-color menufg "#d3c6aa"
+color menufg "#4b565c"
 
 ### BINDINGS
 # unbind all bindings

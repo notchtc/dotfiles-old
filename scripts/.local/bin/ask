@@ -1,4 +1,4 @@
 #!/bin/sh
 # Asks a Yes or No question using rofi and does something if the answer is Yes.
 
-[ "$(printf "No\nYes" | fzf --disabled --cycle --prompt "$1")" = "Yes" ] && $2
+[ "$(printf "No\nYes" | fzf --disabled --cycle --prompt "$1 ")" = "Yes" ] && $2
