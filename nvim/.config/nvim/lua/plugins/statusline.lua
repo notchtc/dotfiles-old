@@ -24,7 +24,7 @@ local mode_colors = {
     ["no"] = { "N-PENDING", "N-P", colors.green },
     ["i"]  = { "INSERT", "I", colors.blue },
     ["ic"] = { "INSERT", "I", colors.blue },
-    ["t"]  = { "TERMINAL", "T", colors.bg3 },
+    ["t"]  = { "TERMINAL", "T", colors.green },
     ["v"]  = { "VISUAL", "V", colors.yellow },
     ["V"]  = { "V-LINE", "V-L", colors.yellow },
     [""] = { "V-BLOCK", "V-B", colors.yellow },
@@ -33,13 +33,13 @@ local mode_colors = {
     ["s"]  = { "SELECT", "S", colors.cyan },
     ["S"]  = { "S-LINE", "S-L", colors.cyan },
     [""] = { "S-BLOCK", "S-B", colors.cyan },
-    ["c"]  = { "COMMAND", "C", colors.bg3 },
-    ["cv"] = { "COMMAND", "C", colors.bg3 },
-    ["ce"] = { "COMMAND", "C", colors.bg3 },
-    ["r"]  = { "PROMPT", "P", colors.bg3 },
-    ["rm"] = { "MORE", "M", colors.bg3 },
-    ["r?"] = { "CONFIRM", "C", colors.bg3 },
-    ["!"]  = { "SHELL", "S", colors.bg3 },
+    ["c"]  = { "COMMAND", "C", colors.green },
+    ["cv"] = { "COMMAND", "C", colors.green },
+    ["ce"] = { "COMMAND", "C", colors.green },
+    ["r"]  = { "PROMPT", "P", colors.green },
+    ["rm"] = { "MORE", "M", colors.green },
+    ["r?"] = { "CONFIRM", "C", colors.green },
+    ["!"]  = { "SHELL", "S", colors.green },
 }
 
 local mode_hl = function()
@@ -149,7 +149,7 @@ components.inactive = {
 feline.setup {
     colors = {
         bg = colors.statusline,
-        fg = colors.bg,
+        fg = colors.fg,
     },
     components = components,
 }

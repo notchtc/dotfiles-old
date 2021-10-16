@@ -64,11 +64,7 @@ bufferline.setup {
             guibg = colors.bg2,
         },
         separator = {
-            guifg = colors.bg3,
-            guibg = colors.bg,
-        },
-        separator = {
-            guifg = colors.bg2,
+            guifg = colors.bg,
             guibg = colors.bg,
         },
         separator_visible = {

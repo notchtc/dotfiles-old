@@ -10,7 +10,7 @@ Simple scripts for various stuff.
 
 |ask
 |Asks a Yes or No question and does something if the answer is Yes.
-|rofi
+|fzf
 
 |fetch
 |Something like neofetch or pfetch etc. (can be displayed as an notification with ~fetch notif~)

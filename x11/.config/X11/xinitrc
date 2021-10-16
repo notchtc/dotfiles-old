@@ -1,3 +1,7 @@
-#xrdb -load "$XDG_CONFIG_HOME/X11/Xresources" &
-sxhkd -c $HOME/.config/berry/sxhkdrc &
-exec berry
+xrdb -load "$XDG_CONFIG_HOME/X11/Xresources" &
+setxkbmap -option "caps:swapescape" &
+pulseaudio &
+hsetroot -tile ~/.cache/wall.png &
+dunst &
+"$XDG_CONFIG_HOME"/polybar/launch-polybar &
+exec cwm

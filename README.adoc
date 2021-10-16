@@ -3,7 +3,7 @@ chtc <notnotcha0t1c@protonmail.com>
 {docdate}
 :toc: preamble
 
-image::https://raw.githubusercontent.com/notchtc/dotfiles/screenshots/screenshots/rice.png[Screenshots of the rice]
+(screenshot coming soon i'm too lazy)
 
 These are my *very horrible* dotfiles.
 
@@ -20,9 +20,6 @@ It's not my fault if something doesn't work for you.
 
 https://www.youtube.com/watch?v=U245bbR2Fss[Nice video] showing how much this thing has evolved over the course of 1 year.
 
-Wallpaper is made by https://www.simonstalenhag.se/index.html[Simon Stålenhag].
-This is the used https://www.simonstalenhag.se/bilderbig/by_upload1_2560.jpg[image].
-
 == How To Install
 * *Step 1:* Clone the repository
 [source,shell]
@@ -37,7 +34,7 @@ cd "$HOME"/.dotfiles
 * *Step 5:* Install the dotfiles with GNU stow.
 ** If you want to install everything do this:
 [source,shell]
-stow alacritty berry dunst fonts mpd ncmpcpp nvim polybar rofi scripts sxiv x11 xdg zathura zsh
+stow alacritty cwm dunst fonts nvim polybar scripts sxiv x11 xdg zathura zsh
 
 ** If you want just one/few things for example: alacritty and zsh, you would do:
 [source,shell]
@@ -55,26 +52,17 @@ stow alacritty zsh
 |link:./alacritty/.config/alacritty/alacritty.yml[alacritty]
 |Terminal
 
-|link:./berry/.config/berry/[berry]
+|link:./cwm/.cwmrc[cwm]
 |Window Manager
 
 |link:./dunst/.config/dunst/[dunst]
 |Notification Daemon
-
-|link:./mpd/.config/mpd/mpd.conf[mpd]
-|Music player daemon
-
-|link:./ncmpcpp/.config/ncmpcpp/[ncmpcpp]
-|Music player
 
 |link:./nvim/.config/nvim/[nvim]
 |Text editor
 
 |link:./polybar/.config/polybar/[polybar]
 |Bar
-
-|link:./rofi/.config/rofi/[rofi]
-|Application launcher
 
 |link:./sxiv/.config/sxiv/exec/key-handler[sxiv]
 |Image viewer
@@ -97,6 +85,6 @@ stow alacritty zsh
 |link:./scripts/.local/bin/[scripts]
 |Scripts used by me
 
-|https://github.com/altercation/solarized[solarized]
+|https://github.com/sainnhe/everforest[everforest]
 |Colorscheme
 |===

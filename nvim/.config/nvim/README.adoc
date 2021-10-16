@@ -8,9 +8,7 @@ IMPORTANT: Requires neovim 0.5!
 
 This config has only *one* purpose: editing the neovim config.
 
-image::https://raw.githubusercontent.com/notchtc/dotfiles/screenshots/screenshots/nvim.png[Screenshot of neovim with nvim-tree open and git decorations]
-
-image::https://raw.githubusercontent.com/notchtc/dotfiles/screenshots/screenshots/nvim2.png[Screenshot of neovim with highlighted colors, git decorations and a buffer bar shown]
+(screenshots coming soon)
 
 == Plugin List
 This list only shows plugins that are something more than just a dependency.
@@ -19,13 +17,13 @@ This list only shows plugins that are something more than just a dependency.
 |https://github.com/wbthomason/packer.nvim[packer.nvim]
 |Plugin manager
 
-|https://github.com/ishan9299/nvim-solarized-lua[nvim-solarized-lua]
+|https://github.com/sainnhe/everforest[everforest]
 |Colorscheme
 
 |https://github.com/famiu/feline.nvim[feline.nvim]
 |A minimal, stylish and customizable statusline
 
-|https://github.com/akinsho/nvim-bufferline.lua[nvim-bufferline.lua]
+|https://github.com/akinsho/bufferline.nvim[bufferline.nvim]
 |Snazzy buffer line
 
 |https://github.com/nvim-treesitter/nvim-treesitter[nvim-treesitter]

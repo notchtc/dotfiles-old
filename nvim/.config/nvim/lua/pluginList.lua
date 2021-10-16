@@ -13,8 +13,9 @@ return packer.startup(function()
     }
 
     use {
-        "ishan9299/nvim-solarized-lua",
+        "sainnhe/everforest",
         after = "packer.nvim",
+        as = "colorscheme",
         config = function()
             require "theme"
         end,
@@ -22,7 +23,7 @@ return packer.startup(function()
 
     use {
         "famiu/feline.nvim",
-        after = "nvim-solarized-lua",
+        after = "colorscheme",
         config = function()
             require "plugins.statusline"
         end,
@@ -30,7 +31,7 @@ return packer.startup(function()
 
     use {
         "akinsho/bufferline.nvim",
-        after = { "nvim-solarized-lua", "feline.nvim" },
+        after = { "colorscheme", "feline.nvim" },
         config = function()
             require "plugins.bufferline"
         end,

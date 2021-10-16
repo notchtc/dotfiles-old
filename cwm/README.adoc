@@ -1,0 +1,20 @@
+= cwm
+chtc <notnotcha0t1c@protonmail.com>
+:experimental:
+
+(screenshots coming soon)
+
+== Dependencies
+These aren't anything you really need to run this, just stuff that I use.
+|===
+|Dependency|Why?
+
+|alacritty
+|Terminal
+
+|===
+
+== Bindings
+They are all stored in the config and are quite readable.
+
+Maybe someday when I stop being lazy I will turn this them into a table here.

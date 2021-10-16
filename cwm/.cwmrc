@@ -1,0 +1,225 @@
+### OPTIONS
+sticky yes
+snapdist 9
+gap 20 0 0 0
+
+ignore polybar
+ignore Dunst
+
+command term    "alacritty"
+command firefox "firefox"
+command gimp    "gimp"
+command xonotic "xonotic-sdl"
+command nvim    "alacritty -e nvim"
+
+### THEMING
+fontname "Iosevka:pixelsize=15"
+borderwidth 1
+
+color font "#d3c6aa"
+
+color inactiveborder "#2f383e"
+color activeborder   "#a7c080"
+color urgencyborder  "#e67e80"
+color groupborder    "#7fbbb3"
+color ungroupborder  "#e67e80"
+
+color menubg "#2f383e"
+color menufg "#d3c6aa"
+
+### BINDINGS
+# unbind all bindings
+unbind-key all
+unbind-mouse all
+
+## CWM {{{
+# super + control + r
+# restart cwm, reloading configuration
+bind-key 4C-r restart
+
+# super + control + q
+# quit cwm
+bind-key 4C-q quit
+## }}}
+
+## LAUNCHING {{{
+# super + enter
+# spawn terminal
+bind-key 4-Return terminal
+
+# super + r
+# launch exec menu
+bind-key 4-r menu-exec
+
+# super + d
+# launch application menu
+bind-key 4-d menu-cmd
+## }}}
+
+## WINDOW FOCUS {{{
+# super + up arrow
+# raise window's focus
+bind-key 4-Up window-raise
+
+# super + down arrow
+# lower window's focus
+bind-key 4-Down window-lower
+
+# super + tab
+# cycle through current windows
+bind-key 4-Tab window-cycle
+
+# super + shift + tab
+# cycle through current windows in reverse
+bind-key 4S-Tab window-rcycle
+## }}}
+
+## WINDOW STUFF {{{
+# super + shift  c
+# kill window
+bind-key 4S-c window-delete
+
+# super + s
+# make current window visible in all groups
+bind-key 4-s window-stick
+
+# super + f
+# make current window fullscreen
+bind-key 4-f window-fullscreen
+
+# super + m
+# maximize current window
+bind-key 4-m window-maximize
+
+# super + equals
+# maximize window in vertical direction only
+bind-key 4-equal window-vmaximize
+
+# super + shift + equals
+# maximize window in horizontal direction only
+bind-key 4S-equal window-hmaximize
+
+# super + H,J,K,L
+# move window left, down, up, right 10 pixels
+bind-key 4-h window-move-left-big
+bind-key 4-j window-move-down-big
+bind-key 4-k window-move-up-big
+bind-key 4-l window-move-right-big
+
+# super + shift + H,J,K,L
+# resize window left, down, up, right by 10 pixels
+bind-key 4S-h window-resize-left-big
+bind-key 4S-j window-resize-down-big
+bind-key 4S-k window-resize-up-big
+bind-key 4S-l window-resize-right-big
+
+# super + v
+# tile windows vertically, current window to the left
+bind-key 4-v window-vtile
+
+# super + c
+# tile windows horizontally, current window to the top
+bind-key 4-c window-htile
+## }}}
+
+## GROUPS {{{
+# They are kinda workspaces
+
+# super + NUMBER
+# show only windows for group NUMBER
+bind-key 4-1 group-only-1
+bind-key 4-2 group-only-2
+bind-key 4-3 group-only-3
+bind-key 4-4 group-only-4
+bind-key 4-5 group-only-5
+bind-key 4-6 group-only-6
+bind-key 4-7 group-only-7
+bind-key 4-8 group-only-8
+bind-key 4-9 group-only-9
+
+# super + shift + NUMBER
+# move window to group NUMBER
+bind-key 4S-1 window-movetogroup-1
+bind-key 4S-2 window-movetogroup-2
+bind-key 4S-3 window-movetogroup-3
+bind-key 4S-4 window-movetogroup-4
+bind-key 4S-5 window-movetogroup-5
+bind-key 4S-6 window-movetogroup-6
+bind-key 4S-7 window-movetogroup-7
+bind-key 4S-8 window-movetogroup-8
+bind-key 4S-9 window-movetogroup-9
+
+# super + a
+# toggle showing windows from all groups
+bind-key 4-a group-toggle-all
+
+# super + g
+# toggle current window's group membership
+bind-key 4-g window-group
+
+# super + right arrow
+# cycle through the groups
+bind-key 4-Right group-cycle
+
+# super + left arrow
+# cycle through the groups in reverse
+bind-key 4-Left group-rcycle
+## }}}
+
+## MISC {{{
+# mute/unmute audio
+bind-key XF86AudioMute         "/bin/sh -c 'pamixer -t && polybar-msg hook volume 1'"
+
+# lower volume
+bind-key XF86AudioLowerVolume  "/bin/sh -c 'pamixer -d 5 && polybar-msg hook volume 1'"
+
+# raise volume
+bind-key XF86AudioRaiseVolume  "/bin/sh -c 'pamixer -i 5 && polybar-msg hook volume 1'"
+
+# go to next track
+bind-key XF86AudioNext         "playerctl next"
+
+# go to previous track
+bind-key XF86AudioPrev         "playerctl previous"
+
+# play/pause track
+bind-key XF86AudioPlay         "playerctl play-pause"
+
+# lower brightness
+bind-key XF86MonBrightnessDown "xbacklight -dec 5"
+
+# raise brightness
+bind-key XF86MonBrightnessUp   "xbacklight -inc 5"
+
+# super + shift + x
+# shutdown
+bind-key 4S-x "alacritty -e /bin/sh -c \"ask 'Do you want to shutdown?' 'doas /sbin/poweroff'\""
+
+# super + shift + r
+# reboot
+bind-key 4S-r "alacritty -e /bin/sh -c \"ask 'Do you want to reboot?' 'doas /sbin/reboot'\""
+
+# print screen
+# take screenshot
+bind-key Print   "/bin/sh -c 'maim -u | xclip -selection clipboard -t image/png'"
+
+# shift + print screen
+# take screenshot with selection
+bind-key S-Print "/bin/sh -c 'maim -su | xclip -selection clipboard -t image/png'"
+## }}}
+
+## MOUSE BINDINGS {{{
+# super + left click drag
+# move window
+bind-mouse 4-1 window-move
+
+# super + right click drag
+# resize window
+bind-mouse 4-3 window-resize
+
+# super + middle click
+# lower window's focus
+bind-mouse 4-2 window-lower
+## }}}
+
+# vim: set foldmethod=marker:

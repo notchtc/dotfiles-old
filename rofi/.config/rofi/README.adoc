@@ -1,3 +1,0 @@
-= https://github.com/davatorium/rofi[rofi]
-
-image::https://raw.githubusercontent.com/notchtc/dotfiles/screenshots/screenshots/rofi.png[Screenshot of rofi]
