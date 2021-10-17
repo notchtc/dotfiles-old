@@ -1,10 +1,7 @@
 autoload colors && colors
 autoload -Uz compinit
 
-#
-# EXPORTS
-#
-
+## EXPORTS
 HISTFILE="$XDG_CONFIG_HOME/zsh/history"
 HISTSIZE=10000
 SAVEHIST=10000
@@ -13,12 +10,9 @@ setopt INC_APPEND_HISTORY_TIME
 compinit -d $XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION
 
 # prompt
-PS1="%F{cyan}%~ %(?.%F{green}.%F{red})>%F{normal} "
+PS1="%F{cyan}%~ %(?.%F{green}.%F{red})|%F{normal} "
 
-#
-# ALIASES
-#
-
+## ALIASES
 # editor
 alias e="$EDITOR"
 alias se="doas $EDITOR"
@@ -59,19 +53,14 @@ smn() {
     apropos . | cut -d "(" -f 1 | cut -d "," -f 1 | fzf --multi -q "$1" --preview "man {1}" | xargs -ro man
 }
 
-#
-# COMPLETION
-#
-
+## COMPLETION
 zstyle ':completion:*' menu select
 zmodload zsh/complist
 compinit
 _comp_options+=(globdots)
 
-#
-# VI
-#
 
+## VI
 # Enable Vi keybindings
 bindkey -v
 
@@ -98,19 +87,13 @@ zle -N zle-line-init
 echo -ne '\e[5 q'                # Use beam shape cursor on startup.
 preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 
-#
-# PLUGINS
-#
-
+## PLUGINS
 # Autosuggestions
 source "$XDG_CONFIG_HOME/zsh/asg/zsh-autosuggestions.zsh"
 
 # Syntax highlighting
 source "$XDG_CONFIG_HOME/zsh/fsh/fast-syntax-highlighting.plugin.zsh"
 
-#
-# MISC
-#
-
+## MISC
 # Enter directory by just typing path
 setopt autocd autopushd

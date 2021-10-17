@@ -68,12 +68,12 @@ IMPORTANT: Read through this to see dependencies and other stuff.
 
 == What it does
 * Sets some variables
-** BROWSER to `chromium`
+** BROWSER to `firefox`
 ** EDITOR to `nvim`
 ** VISUAL to `$EDITOR`
 ** PAGER to `less`
 ** TERM to `alacritty`
-** WM to `awesome`
+** WM to `cwm`
 ** Some fzf options
 * Cleaning up the home directory
 ** XDG
@@ -92,7 +92,6 @@ IMPORTANT: Read through this to see dependencies and other stuff.
 ** DOOMDIR to `$XDG_CONFIG_HOME/doom`
 ** DOOMLOCALDIR to `$DOOMDIR/local`
 ** HISTFILE to `$XDG_DATA_HOME/zsh/history`
-** LIBERICA_DIR to `$HOME/.local/bin/jdk8u292-full`
 ** ZDOTDIR to `$XDG_CONFIG_HOME/zsh`
 ** Disabling the less history file
 ** zcompdumps are placed in `$XDG_CACHE_HOME/zsh`

@@ -5,7 +5,6 @@ chtc <notnotcha0t1c@protonmail.com>
 
 These are my *very horrible* dotfiles.
 
-
 (screenshot coming soon i'm too lazy)
 
 IMPORTANT: Look through README's to find out about dependencies/required application versions.

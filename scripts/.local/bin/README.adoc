@@ -4,7 +4,7 @@ chtc <notnotcha0t1c@protonmail.com>
 
 Simple scripts for various stuff.
 
-== List of scrips
+== List of scripts
 |===
 |Script|What it does|Dependencies
 

@@ -1,6 +1,10 @@
 = cwm
 chtc <notnotcha0t1c@protonmail.com>
+{docdate}
 :experimental:
+:toc: preamble
+
+My very simple cwm config.
 
 (screenshots coming soon)
 
@@ -9,10 +13,36 @@ These aren't anything you really need to run this, just stuff that I use.
 |===
 |Dependency|Why?
 
+|link:../scripts/.local/bin/ask[ask]
+|Yes/No prompt
+
 |alacritty
 |Terminal
 
+|maim
+|Taking screenshots
+
+|pamixer
+|Changing volume
+
+|playerctl
+|Media controls
+
+|xbacklight
+|Changing brightness
+
+|xclip
+|Copying (the screenshots)
 |===
+
+=== Applications
+These are applications that can be launched by the application menu.
+They are set in the config file with the command option.
+
+- Firefox
+- Gimp
+- Xonotic (SDL)
+- Neovim (with alacritty)
 
 == Bindings
 They are all stored in the config and are quite readable.
