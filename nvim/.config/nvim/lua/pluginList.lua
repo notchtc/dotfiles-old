@@ -22,16 +22,8 @@ return packer.startup(function()
     }
 
     use {
-        "famiu/feline.nvim",
-        after = "colorscheme",
-        config = function()
-            require "plugins.statusline"
-        end,
-    }
-
-    use {
         "akinsho/bufferline.nvim",
-        after = { "colorscheme", "feline.nvim" },
+        after = "colorscheme",
         config = function()
             require "plugins.bufferline"
         end,
