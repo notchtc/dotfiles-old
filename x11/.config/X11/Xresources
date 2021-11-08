@@ -34,3 +34,31 @@
 ! white
 *.color7:       #d3c6aa
 *.color15:      #d3c6aa
+
+URxvt.font: xft:monospace:style=Regular:size=12
+URxvt.boldFont: xft:monospace:style=Bold:size=12
+URxvt.italicFont: xft:monospace:style=Italic:size=12
+URxvt.boldItalicFont: xft:monospace:style=Bold Italic:size=12
+URxvt.letterSpace: 0
+URxvt.lineSpace: 0
+URxvt.internalBorder: 6
+URxvt.cursorBlink: true
+URxvt.saveline: 2048
+URxvt.scrollBar: false
+URxvt.scrollBar_right: false
+URxvt.depth: 24
+URxvt.iso14755: false
+
+URxvt.perl-lib: /usr/lib/urxvt/perl
+URxvt.perl-ext-common: default,clipboard,url-select,keyboard-select
+
+URxvt.keysym.M-c: perl:clipboard:copy
+URxvt.keysym.M-v: perl:clipboard:paste
+URxvt.clipboard.copycmd:  xclip -i -selection clipboard
+URxvt.clipboard.pastecmd: xclip -o -selection clipboard
+
+URxvt.keysym.M-Escape: perl:keyboard-select:activate
+URxvt.keysym.M-s: perl:keyboard-select:search
+URxvt.keysym.M-u: perl:url-select:select_next
+URxvt.url-select.launcher: /usr/bin/xdg-open
+URxvt.underlineURLs: true

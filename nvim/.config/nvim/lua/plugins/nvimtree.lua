@@ -3,6 +3,8 @@ local g = vim.g
 -- Enable file highlight for git attributes
 g.nvim_tree_git_hl = 1
 
+g.nvim_tree_symlink_arrow = "  "
+
 -- Show git, folder and file icons
 g.nvim_tree_show_icons = {
     git = 1,
@@ -12,6 +14,8 @@ g.nvim_tree_show_icons = {
 
 -- Set git icons
 g.nvim_tree_icons = {
+    default = "",
+    symlink = "",
     git = {
         deleted = "",
         ignored = "",
@@ -20,6 +24,16 @@ g.nvim_tree_icons = {
         unmerged = "",
         unstaged = "",
         untracked = "",
+    },
+    folder = {
+        arrow_open = "",
+        arrow_closed = "",
+        default = "",
+        open = "",
+        empty = "",
+        empty_open = "",
+        symlink = "",
+        symlink_open = "",
     },
 }
 

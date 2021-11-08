@@ -16,7 +16,7 @@ These aren't anything you really need to run this, just stuff that I use.
 |link:../scripts/.local/bin/ask[ask]
 |Yes/No prompt
 
-|alacritty
+|urxvt
 |Terminal
 
 |maim
@@ -42,7 +42,7 @@ They are set in the config file with the command option.
 - Firefox
 - Gimp
 - Xonotic (SDL)
-- Neovim (with alacritty)
+- Neovim (with urxvt)
 
 == Bindings
 They are all stored in the config and are quite readable.

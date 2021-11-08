@@ -72,7 +72,7 @@ IMPORTANT: Read through this to see dependencies and other stuff.
 ** EDITOR to `nvim`
 ** VISUAL to `$EDITOR`
 ** PAGER to `less`
-** TERM to `alacritty`
+** TERM to `urxvt`
 ** WM to `cwm`
 ** Some fzf options
 * Cleaning up the home directory

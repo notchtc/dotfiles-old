@@ -34,23 +34,20 @@ cd "$HOME"/.dotfiles
 * *Step 5:* Install the dotfiles with GNU stow.
 ** If you want to install everything do this:
 [source,shell]
-stow alacritty cwm dunst fonts nvim polybar scripts sxiv x11 xdg zathura zsh
+stow cwm dunst fonts nvim polybar scripts sxiv x11 xdg zathura zsh
 
-** If you want just one/few things for example: alacritty and zsh, you would do:
+** If you want just one/few things for example: urxvt and zsh, you would do:
 [source,shell]
-stow alacritty zsh
+stow x11 zsh
 
 == Dependencies for (nearly) everything
 - doas
 - https://github.com/be5invis/Iosevka/releases[Iosevka & Iosevka Aile]
-- https://github.com/ryanoasis/nerd-fonts/releases[Hack Nerd Font]
+- https://github.com/ryanoasis/nerd-fonts/releases[Iosevka Nerd Font]
 
 == Things used
 |===
 |Thing|What it does
-
-|link:./alacritty/.config/alacritty/alacritty.yml[alacritty]
-|Terminal
 
 |link:./cwm/[cwm]
 |Window Manager
@@ -68,7 +65,7 @@ stow alacritty zsh
 |Image viewer
 
 |link:./x11/.config/X11/[x11]
-|.xinitrc and .Xresources
+|.xinitrc (colors and urxvt config) and .Xresources
 
 |link:./xdg/.config/user-dirs.dirs[xdg dirs]
 |Some directory thingy

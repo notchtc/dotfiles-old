@@ -16,6 +16,7 @@ bufferline.setup {
         show_close_icon = false,
         left_trunc_marker = "←",
         right_trunc_marker = "→",
+        indicator_icon = " ",
     },
     highlights = {
         fill = {

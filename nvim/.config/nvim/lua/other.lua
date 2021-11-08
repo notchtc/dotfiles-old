@@ -8,6 +8,7 @@ cmd [[ au BufWritePre * %s/\n\+\%$//e ]]
 cmd [[ au WinEnter * setlocal statusline=%!luaeval('statusline()') ]]
 -- Inactive statusline
 cmd [[ au WinLeave * setlocal statusline=%f ]]
+cmd [[ au BufEnter NvimTree setlocal statusline=%f ]]
 
 -- We can write to the shada file now
 vim.opt.shadafile = ""

@@ -1,3 +1,5 @@
+local bo = vim.bo
+
 local colors = require "colors"
 
 -- stylua: ignore
@@ -30,16 +32,50 @@ local function mode()
     return mode_colors[vim.fn.mode()][1] .. " "
 end
 
+local function fileencoding()
+    local encoding = bo.fileencoding
+
+    if encoding == "utf-8" then
+        return ""
+    else
+        return encoding .. " "
+    end
+end
+
+local function fileformat()
+    local format = bo.fileformat
+
+    if format == "unix" then
+        return ""
+    else
+        return format .. " "
+    end
+end
+
+local function filetype()
+    local type = bo.filetype
+
+    if type == "" then
+        return ""
+    else
+        return type .. " | "
+
+    end
+end
+
 function statusline()
     local stl = {
         "%#StatusLineMode#",
         mode(),
         "%#Normal#",
+        "| ",
         "%f%< ",
         "%M ",
         "%R",
         "%=",
-        "%{&filetype} ",
+        fileencoding(),
+        fileformat(),
+        filetype(),
         "%l:%c",
     }
     return table.concat(stl)

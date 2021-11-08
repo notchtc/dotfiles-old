@@ -6,11 +6,11 @@ gap 20 0 0 0
 ignore polybar
 ignore Dunst
 
-command term    "alacritty"
+command term    "urxvt"
 command firefox "firefox"
 command gimp    "gimp"
 command xonotic "xonotic-sdl"
-command nvim    "alacritty -e nvim"
+command nvim    "urxvt -e nvim"
 
 ### THEMING
 fontname "Iosevka:pixelsize=15"
@@ -193,11 +193,11 @@ bind-key XF86MonBrightnessUp   "xbacklight -inc 5"
 
 # super + shift + x
 # shutdown
-bind-key 4S-x "alacritty -e /bin/sh -c \"ask 'Do you want to shutdown?' 'doas /sbin/poweroff'\""
+bind-key 4S-x "urxvt -e /bin/sh -c \"ask 'Do you want to shutdown?' 'doas /sbin/poweroff'\""
 
 # super + shift + r
 # reboot
-bind-key 4S-r "alacritty -e /bin/sh -c \"ask 'Do you want to reboot?' 'doas /sbin/reboot'\""
+bind-key 4S-r "urxvt -e /bin/sh -c \"ask 'Do you want to reboot?' 'doas /sbin/reboot'\""
 
 # print screen
 # take screenshot
