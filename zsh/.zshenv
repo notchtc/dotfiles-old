@@ -24,7 +24,7 @@ export LESSHISTFILE=-
 
 # Default apps
 export BROWSER=firefox
-export TERM=urxvt
+export TERM=rxvt-unicode
 export EDITOR=nvim
 export VISUAL="$EDITOR"
 export PAGER=less
