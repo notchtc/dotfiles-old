@@ -3,6 +3,8 @@ chtc <notnotcha0t1c@protonmail.com>
 {docdate}
 :toc: preamble
 
+WARNING: EVERYTHING HAS BEEN MOVED https://github.com/notchtc/dotfiles[HERE]! THIS IS JUST FOR ARCHIVAL PURPOSES BECAUSE I POO POO FARDED THE REPO
+
 These are my *very horrible* dotfiles.
 
 (screenshot coming soon i'm too lazy)
