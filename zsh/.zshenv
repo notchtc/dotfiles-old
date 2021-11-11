@@ -34,6 +34,8 @@ export FZF_DEFAULT_OPTS="-m --color '16,bg+:-1,border:0' --border sharp --previe
 
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=0'
 
+export QT_QPA_PLATFORMTHEME=gtk2
+
 # Set path
 typeset -U path
 path+="$HOME/.local/bin:$GEM_HOME/bin:$XDG_CONFIG_HOME/emacs/bin:$LIBERICA_DIR/bin"

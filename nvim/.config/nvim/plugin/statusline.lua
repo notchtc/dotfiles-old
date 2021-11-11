@@ -58,7 +58,7 @@ local function filetype()
     if type == "" then
         return ""
     else
-        return type .. " | "
+        return type .. " "
 
     end
 end
@@ -68,7 +68,6 @@ function statusline()
         "%#StatusLineMode#",
         mode(),
         "%#Normal#",
-        "| ",
         "%f%< ",
         "%M ",
         "%R",

@@ -15,4 +15,4 @@ elif [ "$volume" -ge 0 ]; then
     icon="奄"
 fi
 
-echo "$icon $volumehuman"
+echo "%{T2}$icon%{T-} $volumehuman"

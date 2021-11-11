@@ -84,4 +84,10 @@ stow x11 zsh
 
 |https://github.com/sainnhe/everforest[everforest]
 |Colorscheme
+
+|https://github.com/notchtc/gtk[phocus]
+|GTK theme
+
+|https://addons.mozilla.org/en-US/firefox/addon/everforest/[everforest (firefox)]
+|Firefox theme
 |===

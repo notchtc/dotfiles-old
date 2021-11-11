@@ -1,16 +1,17 @@
 ### OPTIONS
 sticky yes
-snapdist 9
-gap 20 0 0 0
+snapdist 6
+gap 33 18 18 18
 
 ignore polybar
 ignore Dunst
 
-command term    "urxvt"
-command firefox "firefox"
-command gimp    "gimp"
-command xonotic "xonotic-sdl"
-command nvim    "urxvt -e nvim"
+command term      "urxvt"
+command nvim      "urxvt -e nvim"
+command rhythmbox "rhythmbox"
+command firefox   "firefox"
+command gimp      "gimp"
+command xonotic   "xonotic-sdl"
 
 ### THEMING
 fontname "Iosevka:pixelsize=15"

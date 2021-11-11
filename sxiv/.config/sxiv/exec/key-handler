@@ -6,6 +6,6 @@ do
             trash-put "$file" ;;
         "C-w")
 #            cp "$file" "$XDG_CONFIG_HOME/awesome/wall.png" ;;
-            hsetroot -cover "$file" ;;
+            hsetroot -cover "$file" -write "$XDG_CACHE_HOME/wall.png" ;;
     esac
 done
